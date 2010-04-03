@@ -1,4 +1,4 @@
-// $Id$
+﻿// $Id$
 // Copyright (c) 2007,2008 Bogdan Pistol and other contributors
 // All rights reserved.
 //
