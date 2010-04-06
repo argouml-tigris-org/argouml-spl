@@ -66,6 +66,9 @@
   <target name="jpp-compile" depends="jpp-preprocess"
       description="Compile the preprocessed sources.">
 
+    <mkdir dir="${build.dir}"/>
+    <mkdir dir="${build.classes}"/>
+    	
     <echo message="Compiling the preprocessed sources in argouml-core-model"/>
 
     <javac debug="${debug}" 
