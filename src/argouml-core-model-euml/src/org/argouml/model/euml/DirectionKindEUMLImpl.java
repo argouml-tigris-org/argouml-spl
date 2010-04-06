@@ -1,4 +1,4 @@
-﻿// $Id$
+// $Id$
 // Copyright (c) 2007, ArgoUML Project
 // All rights reserved.
 //

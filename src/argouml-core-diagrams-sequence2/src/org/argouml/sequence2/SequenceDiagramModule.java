@@ -1,4 +1,4 @@
-ï»¿// $Id$
+// $Id$
 // Copyright (c) 2007 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
 // software and its documentation without fee, and without a written
@@ -140,7 +140,7 @@ public class SequenceDiagramModule implements ModuleInterface {
         case DESCRIPTION:
             return "The new sequence diagram implementation";
         case AUTHOR:
-            return "Christian LÃ³pez EspÃ­nola";
+            return "Christian López Espínola";
         case VERSION:
             return "0.28";
         case DOWNLOADSITE:
