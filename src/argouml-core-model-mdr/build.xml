@@ -152,8 +152,7 @@ Building this requires:
   <!-- Generate, compile, & package the JMI interfaces                     -->
   <!-- =================================================================== -->
   <target name="generate" depends="generate-internal" 
-      description="Generate the JMI interfaces for a UML metamodel."
-      unless="generate.notRequired">
+      description="Generate the JMI interfaces for a UML metamodel.">
 
     <javac srcdir="${build.javas}"
            source="1.5"
