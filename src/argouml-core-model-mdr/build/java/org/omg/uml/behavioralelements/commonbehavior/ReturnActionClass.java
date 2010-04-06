@@ -20,10 +20,10 @@ public interface ReturnActionClass extends javax.jmi.reflect.RefClass {
      * @param visibility 
      * @param isSpecification 
      * @param recurrence 
-     * @param target 
-     * @param isAsynchronous 
      * @param script 
+     * @param isAsynchronous 
+     * @param target 
      * @return The created instance object.
      */
-    public ReturnAction createReturnAction(java.lang.String name, org.omg.uml.foundation.datatypes.VisibilityKind visibility, boolean isSpecification, org.omg.uml.foundation.datatypes.IterationExpression recurrence, org.omg.uml.foundation.datatypes.ObjectSetExpression target, boolean isAsynchronous, org.omg.uml.foundation.datatypes.ActionExpression script);
+    public ReturnAction createReturnAction(java.lang.String name, org.omg.uml.foundation.datatypes.VisibilityKind visibility, boolean isSpecification, org.omg.uml.foundation.datatypes.IterationExpression recurrence, org.omg.uml.foundation.datatypes.ActionExpression script, boolean isAsynchronous, org.omg.uml.foundation.datatypes.ObjectSetExpression target);
 }

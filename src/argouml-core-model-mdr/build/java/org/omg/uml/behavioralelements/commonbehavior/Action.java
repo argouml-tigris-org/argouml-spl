@@ -20,16 +20,16 @@ public interface Action extends org.omg.uml.foundation.core.ModelElement {
      */
     public void setRecurrence(org.omg.uml.foundation.datatypes.IterationExpression newValue);
     /**
-     * Returns the value of attribute target.
-     * @return Value of attribute target.
+     * Returns the value of attribute script.
+     * @return Value of attribute script.
      */
-    public org.omg.uml.foundation.datatypes.ObjectSetExpression getTarget();
+    public org.omg.uml.foundation.datatypes.ActionExpression getScript();
     /**
-     * Sets the value of target attribute. See {@link #getTarget} for description 
+     * Sets the value of script attribute. See {@link #getScript} for description 
      * on the attribute.
      * @param newValue New value to be set.
      */
-    public void setTarget(org.omg.uml.foundation.datatypes.ObjectSetExpression newValue);
+    public void setScript(org.omg.uml.foundation.datatypes.ActionExpression newValue);
     /**
      * Returns the value of attribute isAsynchronous.
      * @return Value of attribute isAsynchronous.
@@ -42,21 +42,16 @@ public interface Action extends org.omg.uml.foundation.core.ModelElement {
      */
     public void setAsynchronous(boolean newValue);
     /**
-     * Returns the value of attribute script.
-     * @return Value of attribute script.
+     * Returns the value of attribute target.
+     * @return Value of attribute target.
      */
-    public org.omg.uml.foundation.datatypes.ActionExpression getScript();
+    public org.omg.uml.foundation.datatypes.ObjectSetExpression getTarget();
     /**
-     * Sets the value of script attribute. See {@link #getScript} for description 
+     * Sets the value of target attribute. See {@link #getTarget} for description 
      * on the attribute.
      * @param newValue New value to be set.
      */
-    public void setScript(org.omg.uml.foundation.datatypes.ActionExpression newValue);
-    /**
-     * Returns the value of reference actualArgument.
-     * @return Value of reference actualArgument. Element type: {@link org.omg.uml.behavioralelements.commonbehavior.Argument}
-     */
-    public java.util.List<org.omg.uml.behavioralelements.commonbehavior.Argument> getActualArgument();
+    public void setTarget(org.omg.uml.foundation.datatypes.ObjectSetExpression newValue);
     /**
      * Returns the value of reference actionSequence.
      * @return Value of reference actionSequence.
@@ -68,4 +63,9 @@ public interface Action extends org.omg.uml.foundation.core.ModelElement {
      * @param newValue New value to be set.
      */
     public void setActionSequence(org.omg.uml.behavioralelements.commonbehavior.ActionSequence newValue);
+    /**
+     * Returns the value of reference actualArgument.
+     * @return Value of reference actualArgument. Element type: {@link org.omg.uml.behavioralelements.commonbehavior.Argument}
+     */
+    public java.util.List<org.omg.uml.behavioralelements.commonbehavior.Argument> getActualArgument();
 }
