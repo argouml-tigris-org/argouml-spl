@@ -239,9 +239,8 @@ Property files to be searched (in argouml-build):
     <ant dir="../argouml-core-infra" inheritAll="false"           target="jar"/>
     <ant dir="../argouml-core-model" inheritAll="false"           target="jar"/>
     <ant dir="../argouml-core-model-mdr" inheritAll="false"       target="jar"/>
-    <ant dir="../argouml-core-model-euml" inheritAll="false"     	  target="jar"/>
+    <ant dir="../argouml-core-model-euml" inheritAll="false"      target="jar"/>
     <ant dir="../argouml-app" inheritAll="false"               	  target="jar"/>
-
     <ant dir="../argouml-core-diagrams-sequence2" inheritAll="false" target="jar"/>
 
     <!-- Copy everything to the build directory -->
@@ -317,7 +316,6 @@ Property files to be searched (in argouml-build):
     <ant dir="../argouml-core-model-mdr"	inheritAll="false"  target="jpp-jar"/>
     <ant dir="../argouml-core-model-euml" 	inheritAll="false"  target="jpp-jar"/>
     <ant dir="../argouml-app" 				inheritAll="false"  target="jpp-jar"/>
-
     <ant dir="../argouml-core-diagrams-sequence2" inheritAll="false" target="jpp-jar"/>
 
     <!-- Copy everything to the build directory -->
@@ -506,6 +504,8 @@ Property files to be searched (in argouml-build):
     <ant dir="../argouml-core-model-mdr" inheritAll="false"   target="jpp-clean"/>
     <ant dir="../argouml-core-model" inheritAll="false"       target="jpp-clean"/>  	
   	<ant dir="../argouml-core-infra" inheritAll="false"       target="clean"/>
+  	
+  	<antcall target="clean"/>
   	
   </target>		
 
