@@ -292,7 +292,10 @@ public class Main {
         initTranslator();
 
         // then, print out some version info for debuggers...
+        //#if defined(LOGGING)
+        //@#$LPS-LOGGING:GranularityType:Command
         org.argouml.util.Tools.logVersionInfo();
+        //#endif
         setSystemProperties();
     }
     

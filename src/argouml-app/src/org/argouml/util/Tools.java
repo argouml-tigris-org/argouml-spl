@@ -176,7 +176,9 @@ public class Tools {
         }
 
     }
-
+    //#if defined(LOGGING)
+    //@#$LPS-LOGGING:GranularityType:Method
+    //@#$LPS-LOGGING:Localization:EntireMethod
     /**
      * Print out some version info for debugging.
      */
@@ -190,15 +192,12 @@ public class Tools {
                 if (s == null) {
                     break;
                 }
-                //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
-                //@#$LPS-LOGGING:Localization:NestedCommand
-                LOG.info(s);
-                //#endif
+                LOG.info(s);                
             }
         } catch (IOException ioe) { }
     }
-
+    //#endif
+    
     /**
      * Gets the file extension of a file.
      *
