@@ -1,5 +1,5 @@
 //#if defined(ACTIVITYDIAGRAM)
-//@#$LPS-ACTIVITYDIAGRAM:GranularityType:Class
+//@#$LPS-ACTIVITYDIAGRAM:GranularityType:Package
 
 // $Id$
 // Copyright (c) 1996-2006 The Regents of the University of California. All
