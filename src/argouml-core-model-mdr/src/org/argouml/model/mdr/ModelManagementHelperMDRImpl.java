@@ -38,6 +38,7 @@ import javax.jmi.reflect.RefObject;
 import javax.jmi.reflect.RefPackage;
 
 //#if defined(LOGGING)
+//@#$LPS-LOGGING:GranularityType:Import
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.model.InvalidElementException;
@@ -67,7 +68,8 @@ import org.omg.uml.modelmanagement.UmlPackage;
  * @author Thierry Lach
  */
 class ModelManagementHelperMDRImpl implements ModelManagementHelper {
-    //#if defined(LOGGING) 
+    //#if defined(LOGGING)
+    //@#$LPS-LOGGING:GranularityType:Field
     private static final Logger LOG = 
         Logger.getLogger(ModelManagementHelperMDRImpl.class);
     //#endif

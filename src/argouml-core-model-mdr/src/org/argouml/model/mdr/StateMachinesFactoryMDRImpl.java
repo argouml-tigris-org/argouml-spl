@@ -27,6 +27,7 @@ package org.argouml.model.mdr;
 import java.util.Collection;
 
 //#if defined(LOGGING)
+//@#$LPS-LOGGING:GranularityType:Import
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.model.StateMachinesFactory;
@@ -71,6 +72,7 @@ import org.omg.uml.foundation.datatypes.TimeExpression;
 class StateMachinesFactoryMDRImpl extends AbstractUmlModelFactoryMDR
         implements StateMachinesFactory {
     //#if defined(LOGGING)
+    //@#$LPS-LOGGING:GranularityType:Field
     /**
      * Logger
      */

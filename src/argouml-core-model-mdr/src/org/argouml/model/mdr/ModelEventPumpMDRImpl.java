@@ -50,6 +50,7 @@ import javax.jmi.reflect.RefBaseObject;
 import javax.jmi.reflect.RefObject;
 
 //#if defined(LOGGING)
+//@#$LPS-LOGGING:GranularityType:Import
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.model.AbstractModelEventPump;
@@ -86,6 +87,7 @@ import org.netbeans.api.mdr.events.VetoChangeException;
 class ModelEventPumpMDRImpl extends AbstractModelEventPump implements
         MDRPreChangeListener {
     //#if defined(LOGGING)
+    //@#$LPS-LOGGING:GranularityType:Field
     /**
      * Logger.
      */
@@ -1021,6 +1023,7 @@ class ModelEventPumpMDRImpl extends AbstractModelEventPump implements
  */
 class Registry<T> {
     //#if defined(LOGGING) 
+    //@#$LPS-LOGGING:GranularityType:Field
     private static final Logger LOG = Logger.getLogger(Registry.class);
     //#endif
     Map<String, Map<String, List<T>>> registry;

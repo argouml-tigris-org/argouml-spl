@@ -143,14 +143,14 @@ public class ObjectFlowStateStateNotationUml extends
                 Iterator i = namesToBeAdded.iterator();
                 while (i.hasNext()) {
                     String name = (String) i.next();
-                    //#if defined(ACTIVITYDIAGRAM)                    
+                    //#if defined(ACTIVITYDIAGRAM)            
+                    //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
+                    //@#$LPS-ACTIVITYDIAGRAM:Localization:NestedCommand                    
                     /*
                      * Now we have to see if any state in any statemachine of
                      * classifier is named [name]. If so, then we only have to
                      * link the state to c.
                      */
-                    //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
-                    //@#$LPS-ACTIVITYDIAGRAM:Localization:NestedCommand
                     Object state =
                         Model.getActivityGraphsHelper()
                             .findStateByName(classifier, name);

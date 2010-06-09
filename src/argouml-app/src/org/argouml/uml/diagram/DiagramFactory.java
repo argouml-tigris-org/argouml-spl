@@ -224,6 +224,7 @@ public final class DiagramFactory {
             }
         } else {
             //#if defined(UMLSTATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+            //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Command
             if ((
                  //#if defined(UMLSTATEDIAGRAM)
                  //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Expression

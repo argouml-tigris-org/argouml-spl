@@ -496,7 +496,6 @@ class UmlFactoryMDRImpl extends AbstractUmlModelFactoryMDR implements
         //#if defined(ACTIVITYDIAGRAM)
         //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
         } else if (elementType == metaTypes.getCallState()) {
-            //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
             return getActivityGraphs().createCallState();
         //#endif
         } else if (elementType == metaTypes.getSimpleState()) {
@@ -508,19 +507,12 @@ class UmlFactoryMDRImpl extends AbstractUmlModelFactoryMDR implements
         //#if defined(ACTIVITYDIAGRAM)
         //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
         } else if (elementType == metaTypes.getObjectFlowState()) {
-            //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
             return getActivityGraphs().createObjectFlowState();
-        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
         } else if (elementType == metaTypes.getActionState()) {
-            //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
             return getActivityGraphs().createActionState();
-        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
         } else if (elementType == metaTypes.getSubactivityState()) {
-            //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
             return getActivityGraphs().createSubactivityState();
-        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
         } else if (elementType == metaTypes.getPartition()) {
-            //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
             return getActivityGraphs().createPartition();
         //#endif
         } else if (elementType == metaTypes.getStubState()) {
@@ -929,7 +921,6 @@ class UmlFactoryMDRImpl extends AbstractUmlModelFactoryMDR implements
                         //#if defined(ACTIVITYDIAGRAM)
                         //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
                         if (elem instanceof ActivityGraph) {
-                            //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
                             getActivityGraphs().deleteActivityGraph(elem);
                         }
                         //#endif
@@ -960,7 +951,6 @@ class UmlFactoryMDRImpl extends AbstractUmlModelFactoryMDR implements
             //#if defined(ACTIVITYDIAGRAM)
             //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
             if (elem instanceof Partition) {
-                //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
                 getActivityGraphs().deletePartition(elem);
             }
             //#endif
@@ -1166,7 +1156,6 @@ class UmlFactoryMDRImpl extends AbstractUmlModelFactoryMDR implements
             //#if defined(ACTIVITYDIAGRAM)
             //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
             else if (elem instanceof ClassifierInState) {
-                //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
                 getActivityGraphs().deleteClassifierInState(elem);
             }
             //#endif
@@ -1292,7 +1281,6 @@ class UmlFactoryMDRImpl extends AbstractUmlModelFactoryMDR implements
                     //#if defined(ACTIVITYDIAGRAM)
                     //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
                     if (elem instanceof SubactivityState) {
-                        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
                         getActivityGraphs().deleteSubactivityState(elem);
                     }
                     //#endif
@@ -1302,16 +1290,11 @@ class UmlFactoryMDRImpl extends AbstractUmlModelFactoryMDR implements
                 //#if defined(ACTIVITYDIAGRAM)
                 //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
                 if (elem instanceof ActionState) {
-                    //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
                     getActivityGraphs().deleteActionState(elem);
-                    //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
                     if (elem instanceof CallState) {
-                        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
                         getActivityGraphs().deleteCallState(elem);
                     }
-                //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
                 } else if (elem instanceof ObjectFlowState) {
-                    //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
                     getActivityGraphs().deleteObjectFlowState(elem);
                 }
                 //#endif

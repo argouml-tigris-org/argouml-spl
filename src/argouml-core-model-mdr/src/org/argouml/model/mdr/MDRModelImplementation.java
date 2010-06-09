@@ -42,6 +42,7 @@ import javax.jmi.reflect.RefPackage;
 import javax.jmi.xmi.MalformedXMIException;
 
 //#if defined(LOGGING)
+//@#$LPS-LOGGING:GranularityType:Import
 import org.apache.log4j.Logger;
 //#endif
 //#if defined(ACTIVITYDIAGRAM)
@@ -97,6 +98,7 @@ import org.omg.uml.UmlPackage;
  */
 public class MDRModelImplementation implements ModelImplementation {
     //#if defined(LOGGING)
+    //@#$LPS-LOGGING:GranularityType:Field
     /**
      * Logger.
      */

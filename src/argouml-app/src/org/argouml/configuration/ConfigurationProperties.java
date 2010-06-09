@@ -281,7 +281,6 @@ class ConfigurationProperties extends ConfigurationHandler {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Command
             if (canComplain) {
-                //@#$LPS-LOGGING:GranularityType:Command
                 LOG.warn("Unable to save configuration " + file + "\n");
             }
             //#endif
@@ -310,7 +309,6 @@ class ConfigurationProperties extends ConfigurationHandler {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Command
             if (canComplain) {
-                //@#$LPS-LOGGING:GranularityType:Command
                 LOG.warn("Unable to load configuration " + url + "\n");
             }
             //#endif

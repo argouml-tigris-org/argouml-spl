@@ -249,7 +249,6 @@ class UmlFactoryEUMLImpl implements UmlFactory, AbstractModelFactory {
         //#if defined(ACTIVITYDIAGRAM)
         //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
         } else if (elementType == metaTypes.getCallState()) {
-            //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
             o = modelImpl.getActivityGraphsFactory().createCallState();
         //#endif
         } else if (elementType == metaTypes.getSimpleState()) {
@@ -261,19 +260,12 @@ class UmlFactoryEUMLImpl implements UmlFactory, AbstractModelFactory {
         //#if defined(ACTIVITYDIAGRAM)
         //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
         } else if (elementType == metaTypes.getObjectFlowState()) {
-            //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
             o = modelImpl.getActivityGraphsFactory().createObjectFlowState();
-        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
         } else if (elementType == metaTypes.getActionState()) {
-            //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
             o = modelImpl.getActivityGraphsFactory().createActionState();
-        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
         } else if (elementType == metaTypes.getSubactivityState()) {
-            //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
             o = modelImpl.getActivityGraphsFactory().createSubactivityState();
-        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
         } else if (elementType == metaTypes.getPartition()) {
-            //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
             o = modelImpl.getActivityGraphsFactory().createPartition();
         //#endif
         } else if (elementType == metaTypes.getStubState()) {

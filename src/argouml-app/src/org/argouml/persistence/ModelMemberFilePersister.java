@@ -382,13 +382,13 @@ class ModelMemberFilePersister extends MemberFilePersister
             } else {
             //#endif
                 //#if defined(UMLSTATEDIAGRAM)
-                //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                    //#if defined(LOGGING)
+                    //@#$LPS-LOGGING:GranularityType:Command
+                    //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.info("Creating state diagram for "
                         + facade.getUMLClassName(statemachine)
                         + "<<" + facade.getName(statemachine) + ">>");
-                //#endif
+                    //#endif
                 //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Command
                 diagram = diagramFactory.createDiagram(
                         DiagramType.State,

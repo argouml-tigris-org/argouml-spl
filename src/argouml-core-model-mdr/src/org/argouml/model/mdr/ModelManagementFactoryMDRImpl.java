@@ -25,6 +25,7 @@
 package org.argouml.model.mdr;
 
 //#if defined(LOGGING)
+//@#$LPS-LOGGING:GranularityType:Import
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.model.ModelManagementFactory;
@@ -47,7 +48,8 @@ import org.omg.uml.modelmanagement.UmlPackage;
  */
 final class ModelManagementFactoryMDRImpl extends
         AbstractUmlModelFactoryMDR implements ModelManagementFactory {
-    //#if defined(LOGGING) 
+    //#if defined(LOGGING)
+    //@#$LPS-LOGGING:GranularityType:Field
     /**
      * Logger.
      */

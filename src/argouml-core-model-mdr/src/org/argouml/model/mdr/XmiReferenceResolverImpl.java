@@ -306,7 +306,6 @@ class XmiReferenceResolverImpl extends XmiContext {
         //@#$LPS-LOGGING:GranularityType:Command
         //@#$LPS-LOGGING:Localization:StartMethod
         if (LOG.isDebugEnabled()) {
-            //@#$LPS-LOGGING:GranularityType:Command
             LOG.debug("attempting to resolve Xmi Href --> '" + systemId + "'");
         }
         //#endif
