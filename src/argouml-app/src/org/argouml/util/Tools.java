@@ -103,7 +103,10 @@ public class Tools {
             // class preloading, so packages are there...
             Class cls = org.tigris.gef.base.Editor.class;
             cls = org.xml.sax.AttributeList.class;
+            //#if defined(LOGGING)
+            //@#$LPS-LOGGING:GranularityType:Command
             cls = org.apache.log4j.Logger.class;
+            //#endif
             
             // TODO: The following is MDR specific.  We need something generic
             // to all Model subsystems - tfm 20070716
