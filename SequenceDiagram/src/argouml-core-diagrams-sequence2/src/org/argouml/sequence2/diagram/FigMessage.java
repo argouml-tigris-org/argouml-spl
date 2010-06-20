@@ -1,3 +1,5 @@
+//#if defined(SEQUENCEDIAGRAM)
+//@#$LPS-SEQUENCEDIAGRAM:GranularityType:Package
 // $Id$
 // Copyright (c) 2007-2009 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
@@ -39,6 +41,7 @@ import javax.swing.JSeparator;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
+//@#$LPS-LOGGING:Localization:NestedIfdef
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.model.Model;
@@ -69,6 +72,7 @@ public class FigMessage extends FigEdgeModelElement {
     private static final long serialVersionUID = -2961220746360335159L;
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
+    //@#$LPS-LOGGING:Localization:NestedIfdef
     private static final Logger LOG =
         Logger.getLogger(FigEdgeModelElement.class);
     //#endif
@@ -442,6 +446,7 @@ public class FigMessage extends FigEdgeModelElement {
             // This call seems not very robust. Yet to determine cause.
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Command
+        	//@#$LPS-FEATURE:LOGGING:NestedIfdef
             LOG.error("Exception caught", e);
             //#endif
         }
@@ -494,3 +499,4 @@ public class FigMessage extends FigEdgeModelElement {
         return null;
     }
 }
+//#endif

@@ -39,7 +39,10 @@ import org.argouml.uml.diagram.ArgoDiagram;
 //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Import
 import org.argouml.uml.diagram.activity.ui.UMLActivityDiagram;
 //#endif
+//#if defined(SEQUENCEDIAGRAM)
+//@#$LPS-SEQUENCEDIAGRAM:GranularityType:Import
 import org.argouml.uml.diagram.sequence.ui.UMLSequenceDiagram;
+//#endif
 //#if defined(UMLSTATEDIAGRAM)
 //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Import
 import org.argouml.uml.diagram.state.ui.UMLStateDiagram;
@@ -82,7 +85,12 @@ public class GoNamespaceToDiagram extends AbstractPerspectiveRule {
                         //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Expression
                         || diagram instanceof UMLActivityDiagram
                         //#endif
-                        || diagram instanceof UMLSequenceDiagram) {
+                        //#if defined(SEQUENCEDIAGRAM)
+                        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Expression
+                        //@#$LPS-SEQUENCEDIAGRAM:Localization:NestedIfdef
+                        || diagram instanceof UMLSequenceDiagram
+                        //#endif
+                        ) {
                     continue;
                 }
                 //#endif

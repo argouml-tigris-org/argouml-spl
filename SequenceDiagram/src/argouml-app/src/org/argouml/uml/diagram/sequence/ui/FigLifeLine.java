@@ -1,3 +1,5 @@
+//#if defined(SEQUENCEDIAGRAM)
+//@#$LPS-SEQUENCEDIAGRAM:GranularityType:Package
 // $Id$
 // Copyright (c) 2006-2008 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
@@ -34,6 +36,7 @@ import java.util.StringTokenizer;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
+//@#$LPS-LOGGING:Localization:NestedIfdef
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.uml.diagram.sequence.MessageNode;
@@ -57,6 +60,7 @@ class FigLifeLine extends ArgoFigGroup implements HandlerFactory {
     private static final long serialVersionUID = -1242239243040698287L;
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
+    //@#$LPS-LOGGING:Localization:NestedIfdef
     private static final Logger LOG = Logger.getLogger(FigLifeLine.class);
     //#endif
     static final int WIDTH = 20;
@@ -151,6 +155,7 @@ class FigLifeLine extends ArgoFigGroup implements HandlerFactory {
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Command
         //@#$LPS-LOGGING:Localization:StartMethod
+        //@#$LPS-LOGGING:Localization:NestedIfdef
         LOG.info("Removing " + f.getClass().getName());
         //#endif
         super.removeFig(f);
@@ -275,3 +280,4 @@ class FigLifeLine extends ArgoFigGroup implements HandlerFactory {
         }
     }
 }
+//#endif

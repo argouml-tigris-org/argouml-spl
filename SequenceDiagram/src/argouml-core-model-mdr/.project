@@ -3,6 +3,15 @@
 	<name>argouml-core-model-mdr</name>
 	<comment></comment>
 	<projects>
+		<project>argouml-app</project>
+		<project>argouml-build</project>
+		<project>argouml-core-diagrams-sequence2</project>
+		<project>argouml-core-infra</project>
+		<project>argouml-core-model</project>
+		<project>argouml-core-model-euml</project>
+		<project>argouml-core-tools</project>
+		<project>RemoteSystemsTempFiles</project>
+		<project>www</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

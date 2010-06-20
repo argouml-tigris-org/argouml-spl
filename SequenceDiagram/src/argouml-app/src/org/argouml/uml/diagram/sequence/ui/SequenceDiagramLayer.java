@@ -1,3 +1,6 @@
+//#if defined(SEQUENCEDIAGRAM)
+//@#$LPS-SEQUENCEDIAGRAM:GranularityType:Package
+
 // $Id$
 // Copyright (c) 2003-2007 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
@@ -34,6 +37,7 @@ import java.util.ListIterator;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
+//@#$LPS-LOGGING:Localization:NestedIfdef
 import org.apache.log4j.Logger;
 //#endif
 import org.tigris.gef.base.LayerPerspectiveMutable;
@@ -52,6 +56,7 @@ import org.tigris.gef.presentation.FigEdge;
 public class SequenceDiagramLayer extends LayerPerspectiveMutable {
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
+    //@#$LPS-LOGGING:Localization:NestedIfdef
     /**
      * Logger.
      */
@@ -332,6 +337,7 @@ public class SequenceDiagramLayer extends LayerPerspectiveMutable {
         super.remove(f);
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:Localization:NestedIfdef
         LOG.info("A Fig has been removed, updating activations");
         //#endif
         updateActivations();
@@ -383,3 +389,4 @@ public class SequenceDiagramLayer extends LayerPerspectiveMutable {
      */
     private static final long serialVersionUID = 4291295642883664670L;
 }
+//#endif

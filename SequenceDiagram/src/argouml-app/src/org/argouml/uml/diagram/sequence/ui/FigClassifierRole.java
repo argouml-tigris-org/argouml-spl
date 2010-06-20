@@ -1,3 +1,5 @@
+//#if defined(SEQUENCEDIAGRAM)
+//@#$LPS-SEQUENCEDIAGRAM:GranularityType:Package
 // $Id$
 // Copyright (c) 1996-2008 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
@@ -38,6 +40,7 @@ import java.util.StringTokenizer;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
+//@#$LPS-LOGGING:Localization:NestedIfdef
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.model.Model;
@@ -71,6 +74,7 @@ public class FigClassifierRole extends FigNodeModelElement
     implements MouseListener, HandlerFactory {
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
+    //@#$LPS-LOGGING:Localization:NestedIfdef
     /**
      * Logger.
      */
@@ -673,6 +677,7 @@ public class FigClassifierRole extends FigNodeModelElement
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Command
         //@#$LPS-LOGGING:Localization:StartMethod
+        //@#$LPS-LOGGING:Localization:NestedIfdef
         LOG.debug("Updating activations");
         //#endif
         lifeLineFig.removeActivations();
@@ -1085,6 +1090,7 @@ public class FigClassifierRole extends FigNodeModelElement
             //@#$LPS-LOGGING:GranularityType:Command
             //@#$LPS-LOGGING:Localization:NestedCommand
             //@#$LPS-LOGGING:Localization:BeforeReturn
+            //@#$LPS-LOGGING:Localization:NestedIfdef
             LOG.debug("Got a ClassifierRole - only legal on load");
             //#endif
             return null;
@@ -1338,3 +1344,4 @@ public class FigClassifierRole extends FigNodeModelElement
      */
     private static final long serialVersionUID = 7763573563940441408L;
 }
+//#endif

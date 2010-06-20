@@ -1,3 +1,5 @@
+//#if defined(SEQUENCEDIAGRAM)
+//@#$LPS-SEQUENCEDIAGRAM:GranularityType:Package
 // $Id$
 // Copyright (c) 1996-2008 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
@@ -34,6 +36,7 @@ import java.util.List;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
+//@#$LPS-LOGGING:Localization:NestedIfdef
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.model.DeleteInstanceEvent;
@@ -58,6 +61,7 @@ public class SequenceDiagramGraphModel
     implements VetoableChangeListener, PropertyChangeListener {
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
+    //@#$LPS-LOGGING:Localization:NestedIfdef
     /**
      * Logger.
      */
@@ -198,6 +202,7 @@ public class SequenceDiagramGraphModel
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Command
             //@#$LPS-LOGGING:Localization:BeforeReturn
+            //@#$LPS-LOGGING:Localization:NestedIfdef
             LOG.error("Edge rejected. Its destination end is attached to "
                     + end1
                     + " but this is not in the graph model");
@@ -394,6 +399,7 @@ public class SequenceDiagramGraphModel
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Command
         //@#$LPS-LOGGING:Localization:BeforeReturn
+        //@#$LPS-LOGGING:Localization:NestedIfdef
         if (edge == null) {            
             LOG.debug("Incorrect edge");
         }
@@ -511,3 +517,4 @@ public class SequenceDiagramGraphModel
         
     }
 }
+//#endif

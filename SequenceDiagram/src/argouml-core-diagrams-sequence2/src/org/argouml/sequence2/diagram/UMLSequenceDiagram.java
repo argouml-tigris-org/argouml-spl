@@ -1,3 +1,5 @@
+//#if defined(SEQUENCEDIAGRAM)
+//@#$LPS-SEQUENCEDIAGRAM:GranularityType:Package
 // $Id$
 // Copyright (c) 2007-2009 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
@@ -32,6 +34,7 @@ import java.util.List;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
+//@#$LPS-LOGGING:Localization:NestedIfdef
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.i18n.Translator;
@@ -64,6 +67,7 @@ public class UMLSequenceDiagram extends UMLDiagram {
     private Object[] actions;
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
+    //@#$LPS-LOGGING:Localization:NestedIfdef
     private static final Logger LOG = Logger
         .getLogger(UMLSequenceDiagram.class);
     //#endif
@@ -92,6 +96,7 @@ public class UMLSequenceDiagram extends UMLDiagram {
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Command
         //@#$LPS-LOGGING:Localization:EndMethod
+        //@#$LPS-LOGGING:Localization:NestedIfdef
         LOG.debug("Created sequence diagram");
         //#endif
     }
@@ -108,6 +113,7 @@ public class UMLSequenceDiagram extends UMLDiagram {
         } catch (PropertyVetoException e) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:Localization:NestedIfdef
             LOG.error("Exception", e);
             //#endif
         }
@@ -301,6 +307,7 @@ public class UMLSequenceDiagram extends UMLDiagram {
         }
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:Localization:NestedIfdef
         if (figNode != null) {
             LOG.debug("Dropped object " + droppedObject + " converted to " 
                     + figNode);
@@ -371,6 +378,7 @@ public class UMLSequenceDiagram extends UMLDiagram {
                 	//#if defined(LOGGING)
                 	//@#$LPS-LOGGING:GranularityType:Command
                 	//@#$LPS-LOGGING:Localization:NestedCommand
+                    //@#$LPS-LOGGING:Localization:NestedIfdef
                         LOG.warn("namespace of interaction does not match "
                                 + "collaboration - moving "
                                 + message + " to " + correctInteraction);
@@ -384,6 +392,7 @@ public class UMLSequenceDiagram extends UMLDiagram {
                             //#if defined(LOGGING)
                             //@#$LPS-LOGGING:GranularityType:Command
                             //@#$LPS-LOGGING:Localization:NestedCommand
+                            //@#$LPS-LOGGING:Localization:NestedIfdef
                             LOG.warn("Deleting empty interaction "
                                     + interaction);
                             //#endif
@@ -394,6 +403,7 @@ public class UMLSequenceDiagram extends UMLDiagram {
                         	//#if defined(LOGGING)
                         	//@#$LPS-LOGGING:GranularityType:Command
                         	//@#$LPS-LOGGING:Localization:NestedCommand
+                            //@#$LPS-LOGGING:Localization:NestedIfdef
                                 LOG.warn("Deleting empty collaboration "
                                         + context);
                                 //#endif
@@ -408,6 +418,7 @@ public class UMLSequenceDiagram extends UMLDiagram {
                 	//#if defined(LOGGING)
                 	//@#$LPS-LOGGING:GranularityType:Command
                 	//@#$LPS-LOGGING:Localization:NestedCommand
+                    //@#$LPS-LOGGING:Localization:NestedIfdef
                         LOG.warn("namespace of classifierrole does not match "
                                 + "collaboration - moving "
                                 + cr + " to " + collaboration);
@@ -429,6 +440,7 @@ public class UMLSequenceDiagram extends UMLDiagram {
                             //#if defined(LOGGING)
                             //@#$LPS-LOGGING:GranularityType:Command
                             //@#$LPS-LOGGING:Localization:NestedCommand
+                        	//@#$LPS-LOGGING:Localization:NestedIfdef
                             LOG.warn("Deleting empty collaboration "
                                     + collaboration);
                             //#endif
@@ -440,3 +452,4 @@ public class UMLSequenceDiagram extends UMLDiagram {
         }
     }
 }
+//#endif

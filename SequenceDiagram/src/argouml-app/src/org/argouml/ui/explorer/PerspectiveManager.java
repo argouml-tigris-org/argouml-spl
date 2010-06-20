@@ -48,7 +48,10 @@ import org.argouml.ui.explorer.rules.GoClassToSummary;
 import org.argouml.ui.explorer.rules.GoClassifierToBehavioralFeature;
 import org.argouml.ui.explorer.rules.GoClassifierToCollaboration;
 import org.argouml.ui.explorer.rules.GoClassifierToInstance;
+//#if defined(SEQUENCEDIAGRAM)
+//@#$LPS-SEQUENCEDIAGRAM:GranularityType:import
 import org.argouml.ui.explorer.rules.GoClassifierToSequenceDiagram;
+//#endif
 import org.argouml.ui.explorer.rules.GoClassifierToStateMachine;
 import org.argouml.ui.explorer.rules.GoClassifierToStructuralFeature;
 import org.argouml.ui.explorer.rules.GoCollaborationToDiagram;
@@ -86,7 +89,10 @@ import org.argouml.ui.explorer.rules.GoNamespaceToOwnedElements;
 import org.argouml.ui.explorer.rules.GoNodeToResidentComponent;
 import org.argouml.ui.explorer.rules.GoOperationToCollaboration;
 import org.argouml.ui.explorer.rules.GoOperationToCollaborationDiagram;
+//#if defined(SEQUENCEDIAGRAM)
+//@#$LPS-SEQUENCEDIAGRAM:GranularityType:Import
 import org.argouml.ui.explorer.rules.GoOperationToSequenceDiagram;
+//#endif
 import org.argouml.ui.explorer.rules.GoPackageToClass;
 import org.argouml.ui.explorer.rules.GoPackageToElementImport;
 import org.argouml.ui.explorer.rules.GoProfileConfigurationToProfile;
@@ -437,8 +443,11 @@ public final class PerspectiveManager {
         packagePerspective.addRule(new GoStateToDoActivity());
         packagePerspective.addRule(new GoStateToEntry());
         packagePerspective.addRule(new GoStateToExit());
+        //#if defined(SEQUENCEDIAGRAM)
+        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
         packagePerspective.addRule(new GoClassifierToSequenceDiagram());
         packagePerspective.addRule(new GoOperationToSequenceDiagram());
+        //#endif
         packagePerspective.addRule(new GoClassifierToInstance());
         //#if defined(UMLSTATEDIAGRAM)
         //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Command
@@ -596,7 +605,10 @@ public final class PerspectiveManager {
             new GoClassifierToBehavioralFeature(),
             new GoClassifierToCollaboration(),
             new GoClassifierToInstance(),
+            //#if defined(SEQUENCEDIAGRAM)
+            //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
             new GoClassifierToSequenceDiagram(),
+            //#endif
             new GoClassifierToStateMachine(),
             new GoClassifierToStructuralFeature(),
             new GoClassToAssociatedClass(), new GoClassToNavigableClass(),
@@ -623,7 +635,10 @@ public final class PerspectiveManager {
             new GoNodeToResidentComponent(),
             new GoOperationToCollaborationDiagram(),
             new GoOperationToCollaboration(),
+            //#if defined(SEQUENCEDIAGRAM)
+            //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
             new GoOperationToSequenceDiagram(), new GoPackageToClass(),
+            //#endif
             new GoPackageToElementImport(),
             new GoProjectToCollaboration(), new GoProjectToDiagram(),
             //#if defined(UMLSTATEDIAGRAM)

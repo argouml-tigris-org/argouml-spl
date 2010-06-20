@@ -446,9 +446,10 @@ public final class ModuleLoader2 {
      * As the modules are found they are appended to {@link #moduleStatus}.<p>
      */
     private void huntForModules() {
+        //#if defined(SEQUENCEDIAGRAM)
+        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:MethodBody   
         huntForModulesFromExtensionDir();
-        // TODO: huntForModulesFromJavaWebStart();
-
+        // TODO: huntForModulesFromJavaWebStart();     
         // Load modules specified by a System property.
         // Modules specified by a system property is for
         // running modules from within Eclipse and running
@@ -469,6 +470,7 @@ public final class ModuleLoader2 {
                 }
             }
         }
+     //#endif
     }
     
     /**

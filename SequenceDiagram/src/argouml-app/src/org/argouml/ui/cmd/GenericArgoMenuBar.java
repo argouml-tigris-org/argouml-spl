@@ -85,7 +85,10 @@ import org.argouml.uml.ui.ActionRevertToSaved;
 import org.argouml.uml.ui.ActionSaveAllGraphics;
 import org.argouml.uml.ui.ActionSaveGraphics;
 import org.argouml.uml.ui.ActionSaveProjectAs;
+//#if defined(SEQUENCEDIAGRAM)
+//@#$LPS-SEQUENCEDIAGRAM:GranularityType:import
 import org.argouml.uml.ui.ActionSequenceDiagram;
+//#endif
 //#if defined(UMLSTATEDIAGRAM)
 //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Import
 import org.argouml.uml.ui.ActionStateDiagram;
@@ -618,14 +621,15 @@ public class GenericArgoMenuBar extends JMenuBar implements
         toolbarTools.add((new ActionClassDiagram()));
         ShortcutMgr.assignAccelerator(classDiagram,
                 ShortcutMgr.ACTION_CLASS_DIAGRAM);
-
+      //#if defined(SEQUENCEDIAGRAM)
+      //@#$LPS-SEQUENCEDIAGRAM:GranularityType:command
         JMenuItem sequenzDiagram =
             createDiagramMenu.add(new ActionSequenceDiagram());
         setMnemonic(sequenzDiagram, "Sequenz Diagram");
         toolbarTools.add((new ActionSequenceDiagram()));
         ShortcutMgr.assignAccelerator(sequenzDiagram,
                 ShortcutMgr.ACTION_SEQUENCE_DIAGRAM);
-        
+        //#endif
         JMenuItem collaborationDiagram =
             createDiagramMenu.add(new ActionCollaborationDiagram());
         setMnemonic(collaborationDiagram, "Collaboration Diagram");

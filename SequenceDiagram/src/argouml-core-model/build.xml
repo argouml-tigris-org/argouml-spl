@@ -160,6 +160,12 @@
 		</then>
 	</if> 
 	<if>
+		<isset property="SEQUENCEDIAGRAM"/>
+		<then>
+			<echo message="SEQUENCEDIAGRAM"/>
+		</then>
+	</if> 
+	<if>
 		<isset property="LOGGING"/>
 		<then>
 			<echo message="LOGGING"/>

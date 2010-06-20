@@ -1,3 +1,5 @@
+//#if defined(SEQUENCEDIAGRAM)
+//@#$LPS-SEQUENCEDIAGRAM:GranularityType:Package
 // $Id$
 // Copyright (c) 1996-2009 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
@@ -152,3 +154,4 @@ class FigHead extends ArgoFigGroup {
      */
     private static final long serialVersionUID = 2970745558193935791L;
 }
+//#endif

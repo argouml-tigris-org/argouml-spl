@@ -1,3 +1,5 @@
+//#if defined(SEQUENCEDIAGRAM)
+//@#$LPS-SEQUENCEDIAGRAM:GranularityType:Package
 // $Id$
 // Copyright (c) 1996-2006 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
@@ -159,3 +161,4 @@ public class ModeChangeHeight extends FigModifyingModeImpl {
      */
     private static final long serialVersionUID = 2383958235268066102L;
 }
+//#endif

@@ -1,3 +1,5 @@
+//#if defined(SEQUENCEDIAGRAM)
+//@#$LPS-SEQUENCEDIAGRAM:GranularityType:Package
 // $Id$
 // Copyright (c) 1996-2009 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
@@ -35,6 +37,7 @@ import java.util.List;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
+//@#$LPS-LOGGING:Localization:NestedIfdef
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.kernel.ProjectManager;
@@ -58,6 +61,7 @@ class SequenceDiagramGraphModel extends UMLMutableGraphSupport implements
         VetoableChangeListener, PropertyChangeListener, MutableGraphModel {
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
+    //@#$LPS-LOGGING:Localization:NestedIfdef
     /**
      * Logger.
      */
@@ -175,6 +179,7 @@ class SequenceDiagramGraphModel extends UMLMutableGraphSupport implements
 	//#if defined(LOGGING)
 	//@#$LPS-LOGGING:GranularityType:Command
 	//@#$LPS-LOGGING:Localization:StartMethod
+    //@#$LPS-LOGGING:Localization:NestedIfdef
         LOG.debug("Setting the collaboration of sequence diagram to " + c);
         //#endif
         collaboration = c;
@@ -409,6 +414,7 @@ class SequenceDiagramGraphModel extends UMLMutableGraphSupport implements
         }
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:Localization:NestedIfdef
         if (edge == null) {
             LOG.debug("Incorrect edge");
         }
@@ -428,3 +434,4 @@ class SequenceDiagramGraphModel extends UMLMutableGraphSupport implements
         }
     }
 }
+//#endif

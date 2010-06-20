@@ -1,3 +1,5 @@
+//#if defined(SEQUENCEDIAGRAM)
+//@#$LPS-SEQUENCEDIAGRAM:GranularityType:Package
 // $Id$
 // Copyright (c) 1996-2006 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
@@ -23,13 +25,12 @@
 // UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
 
 package org.argouml.uml.diagram.sequence.ui;
-
 import java.awt.Cursor;
 import java.awt.Point;
 import java.awt.event.MouseEvent;
-
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
+//@#$LPS-LOGGING:Localization:NestedIfdef
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.i18n.Translator;
@@ -41,7 +42,6 @@ import org.tigris.gef.graph.GraphModel;
 import org.tigris.gef.graph.MutableGraphModel;
 import org.tigris.gef.presentation.Fig;
 import org.tigris.gef.presentation.FigLine;
-
 /**
  * Mode to create a link between two figobjects. This mode extends
  * ModeCreate and not ModeCreateEdge because ModeCreateEdge hides its
@@ -52,6 +52,7 @@ import org.tigris.gef.presentation.FigLine;
 public class ModeCreateMessage extends ModeCreate {
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
+    //@#$LPS-LOGGING:Localization:NestedIfdef
     /**
      * Logger.
      */
@@ -94,7 +95,6 @@ public class ModeCreateMessage extends ModeCreate {
     public ModeCreateMessage(Editor par) {
         super(par);
     }
-
     /*
      * @see org.tigris.gef.base.ModeCreate#createNewItem(
      *      java.awt.event.MouseEvent, int, int)
@@ -107,7 +107,6 @@ public class ModeCreateMessage extends ModeCreate {
             snapY,
             Globals.getPrefs().getRubberbandColor());
     }
-
     /*
      * @see org.tigris.gef.base.FigModifyingMode#instructions()
      */
@@ -281,3 +280,4 @@ public class ModeCreateMessage extends ModeCreate {
      */
     private static final long serialVersionUID = 6004200950886660909L;
 } /* end class ModeCreateEdge */
+//#endif

@@ -1,3 +1,5 @@
+//#if defined(SEQUENCEDIAGRAM)
+//@#$LPS-SEQUENCEDIAGRAM:GranularityType:Package
 // $Id$
 // Copyright (c) 1996-2006 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
@@ -30,6 +32,7 @@ import java.util.List;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
+//@#$LPS-LOGGING:Localization:NestedIfdef
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.uml.diagram.sequence.MessageNode;
@@ -47,6 +50,7 @@ public class FigMessagePort extends ArgoFigGroup {
     private static final long serialVersionUID = -7805833566723101923L;
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
+    //@#$LPS-LOGGING:Localization:NestedIfdef
     private static final Logger LOG = Logger.getLogger(FigMessagePort.class);
     //#endif
     private MessageNode node;
@@ -152,3 +156,4 @@ public class FigMessagePort extends ArgoFigGroup {
         return (FigLine) getFigs().get(0);
     }
 }
+//#endif

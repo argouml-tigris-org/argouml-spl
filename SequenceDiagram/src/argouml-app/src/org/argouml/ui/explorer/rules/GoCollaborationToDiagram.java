@@ -35,7 +35,10 @@ import org.argouml.kernel.ProjectManager;
 import org.argouml.model.Model;
 import org.argouml.uml.diagram.ArgoDiagram;
 import org.argouml.uml.diagram.collaboration.ui.UMLCollaborationDiagram;
+//#if defined(SEQUENCEDIAGRAM)
+//@#$LPS-SEQUENCEDIAGRAM:GranularityType:Import
 import org.argouml.uml.diagram.sequence.ui.UMLSequenceDiagram;
+//#endif
 
 /**
  * Rule for Collaboration->Diagram.
@@ -69,6 +72,8 @@ public class GoCollaborationToDiagram extends AbstractPerspectiveRule {
                     && ((UMLCollaborationDiagram) d).getNamespace() == parent) {
                 res.add(d);
             }
+            //#if defined(SEQUENCEDIAGRAM)
+            //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
             /* Also show unattached sequence diagrams: */
             if ((d instanceof UMLSequenceDiagram)
                     && (Model.getFacade().getRepresentedClassifier(parent) == null)
@@ -76,6 +81,7 @@ public class GoCollaborationToDiagram extends AbstractPerspectiveRule {
                     && (parent == ((UMLSequenceDiagram) d).getNamespace())) {
                 res.add(d);
             }
+            //#endif
         }
         return res;
     }

@@ -1,3 +1,5 @@
+//#if defined(SEQUENCEDIAGRAM)
+//@#$LPS-SEQUENCEDIAGRAM:GranularityType:Package
 // $Id$
 // Copyright (c) 2007 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
@@ -28,12 +30,14 @@ import java.beans.PropertyVetoException;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
+//@#$LPS-LOGGING:Localization:NestedIfdef
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.uml.diagram.ArgoDiagram;
 import org.argouml.uml.diagram.DiagramFactoryInterface;
 import org.argouml.uml.diagram.DiagramFactoryInterface2;
 import org.argouml.uml.diagram.DiagramSettings;
+
 
 /**
  * This factory creates a sequence2 Sequence Diagram.
@@ -44,6 +48,7 @@ public class SequenceDiagramFactory
         implements DiagramFactoryInterface, DiagramFactoryInterface2{
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
+	//@#$LPS-LOGGING:Localization:NestedIfdef
     /**
      * Logger.
      */
@@ -97,3 +102,4 @@ public class SequenceDiagramFactory
         return diagram;  
     }
 }
+//#endif
