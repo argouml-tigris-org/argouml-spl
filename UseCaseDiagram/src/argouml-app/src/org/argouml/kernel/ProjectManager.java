@@ -339,9 +339,12 @@ public final class ProjectManager implements ModelCommandCreationObserver {
                 model, 
                 project.getProjectSettings().getDefaultDiagramSettings());
         project.addMember(d);
+        //#if defined(USECASEDIAGRAM)
+        //@#$LPS-USECASEDIAGRAM:GranularityType:Command
         project.addMember(df.create(
                 DiagramFactory.DiagramType.UseCase, model, 
                 project.getProjectSettings().getDefaultDiagramSettings()));
+        //#endif
         //#if defined(COGNITIVE)
         //@#$LPS-COGNITIVE:GranularityType:Command
         project.addMember(new ProjectMemberTodoList("",

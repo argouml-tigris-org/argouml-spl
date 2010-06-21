@@ -83,7 +83,10 @@ import org.argouml.uml.ui.ActionSequenceDiagram;
 //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Import
 import org.argouml.uml.ui.ActionStateDiagram;
 //#endif
+//#if defined(USECASEDIAGRAM)
+//@#$LPS-USECASEDIAGRAM:GranularityType:import
 import org.argouml.uml.ui.ActionUseCaseDiagram;
+//#endif
 import org.argouml.util.KeyEventUtils;
 import org.tigris.gef.base.AlignAction;
 import org.tigris.gef.base.DistributeAction;
@@ -208,9 +211,11 @@ public class ShortcutMgr {
     /** Action key for show xml dump */
     public static final String ACTION_SHOW_XML_DUMP = "showXmlDump";
 
+    //#if defined(USECASEDIAGRAM)
+    //@#$LPS-USECASEDIAGRAM:GranularityType:Command
     /** Action key for use case diagram */
     public static final String ACTION_USE_CASE_DIAGRAM = "useCaseDiagrams";
-
+    //#endif
     /** Action key for class diagram */
     public static final String ACTION_CLASS_DIAGRAM = "classDiagrams";
 
@@ -662,8 +667,11 @@ public class ShortcutMgr {
                 0), new ActionFind());
 
         // create menu
+        //#if defined(USECASEDIAGRAM)
+        //@#$LPS-USECASEDIAGRAM:GranularityType:Command
         putDefaultShortcut(ACTION_USE_CASE_DIAGRAM, null,
                 new ActionUseCaseDiagram());
+        //#endif
         putDefaultShortcut(ACTION_CLASS_DIAGRAM, null, 
                 new ActionClassDiagram());
         putDefaultShortcut(ACTION_SEQUENCE_DIAGRAM, null,

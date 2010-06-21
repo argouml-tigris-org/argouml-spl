@@ -1,3 +1,5 @@
+//#if defined(USECASEDIAGRAM)
+//@#$LPS-USECASEDIAGRAM:GranularityType:Package
 // $Id$
 // Copyright (c) 1996-2008 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
@@ -34,6 +36,7 @@ import javax.swing.Action;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
+//@#$LPS-LOGGING:Localization:NestedIfdef
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.i18n.Translator;
@@ -66,6 +69,7 @@ import org.tigris.gef.presentation.FigNode;
 public class UMLUseCaseDiagram extends UMLDiagram {
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
+    //@#$LPS-LOGGING:Localization:NestedIfdef
     private static final Logger LOG = Logger.getLogger(UMLUseCaseDiagram.class);
     //#endif
     // Actions specific to the use case diagram toolbar
@@ -501,6 +505,7 @@ public class UMLUseCaseDiagram extends UMLDiagram {
         }
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:Localization:NestedIfdef
         if (figNode != null) {
             LOG.debug("Dropped object " + droppedObject + " converted to " 
                     + figNode);
@@ -511,3 +516,4 @@ public class UMLUseCaseDiagram extends UMLDiagram {
         return figNode;
     }
 }
+//#endif

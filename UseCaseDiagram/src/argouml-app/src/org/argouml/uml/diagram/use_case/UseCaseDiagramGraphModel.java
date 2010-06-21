@@ -1,3 +1,5 @@
+//#if defined(USECASEDIAGRAM)
+//@#$LPS-USECASEDIAGRAM:GranularityType:Package
 // $Id$
 // Copyright (c) 1996-2006 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
@@ -53,6 +55,7 @@ public class UseCaseDiagramGraphModel
         implements VetoableChangeListener {
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
+    //@#$LPS-LOGGING:Localization:NestedCommand
     /**
      * Logger.
      */
@@ -596,3 +599,4 @@ public class UseCaseDiagramGraphModel
     static final long serialVersionUID = -8516841965639203796L;
 
 }
+//#endif

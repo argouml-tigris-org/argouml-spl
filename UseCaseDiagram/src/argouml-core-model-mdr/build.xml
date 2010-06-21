@@ -482,6 +482,12 @@ Building this requires:
 		</then>
 	</if> 
 	<if>
+		<isset property="USECASEDIAGRAM"/>
+		<then>
+			<echo message="USECASEDIAGRAM"/>
+		</then>
+	</if> 
+	<if>
 		<isset property="LOGGING"/>
 		<then>
 			<echo message="LOGGING"/>

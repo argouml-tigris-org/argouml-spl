@@ -50,7 +50,10 @@ import org.argouml.uml.diagram.ui.ActionSetMode;
 import org.argouml.uml.diagram.ui.FigNodeAssociation;
 import org.argouml.uml.diagram.ui.RadioAction;
 import org.argouml.uml.diagram.ui.UMLDiagram;
+//#if defined(USECASEDIAGRAM)
+//@#$LPS-USECASEDIAGRAM:GranularityType:Import
 import org.argouml.uml.diagram.use_case.ui.FigActor;
+//#endif
 import org.argouml.util.ToolBarUtility;
 import org.tigris.gef.base.LayerPerspective;
 import org.tigris.gef.base.LayerPerspectiveMutable;
@@ -567,8 +570,11 @@ public class UMLDeploymentDiagram extends UMLDiagram {
             return true;
         } else if (Model.getFacade().isAComment(objectToAccept)) {
             return true;
+        //#if defined(USECASEDIAGRAM)
+        //@#$LPS-USECASEDIAGRAM:GranularityType:Command
         } else if (Model.getFacade().isAActor(objectToAccept)) {
             return true;
+        //#endif
         }
         return false;
     }
@@ -601,8 +607,11 @@ public class UMLDeploymentDiagram extends UMLDiagram {
             figNode = new FigInterface(droppedObject, bounds, settings);
         } else if (Model.getFacade().isAObject(droppedObject)) {
             figNode = new FigObject(droppedObject, bounds, settings);
+        //#if defined(USECASEDIAGRAM)
+        //@#$LPS-USECASEDIAGRAM:GranularityType:Command
         } else if (Model.getFacade().isAActor(droppedObject)) {
             figNode = new FigActor(droppedObject, bounds, settings);
+        //#endif
         } else if (Model.getFacade().isAComment(droppedObject)) {
             figNode = new FigComment(droppedObject, bounds, settings);
         }

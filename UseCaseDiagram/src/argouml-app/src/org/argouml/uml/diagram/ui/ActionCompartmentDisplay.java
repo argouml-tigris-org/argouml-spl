@@ -36,7 +36,10 @@ import org.argouml.i18n.Translator;
 import org.argouml.uml.diagram.AttributesCompartmentContainer;
 import org.argouml.uml.diagram.ExtensionsCompartmentContainer;
 import org.argouml.uml.diagram.OperationsCompartmentContainer;
+//#if defined(USECASEDIAGRAM)
+//@#$LPS-USECASEDIAGRAM:GranularityType:Import
 import org.argouml.uml.diagram.use_case.ui.FigUseCase;
+//#endif
 import org.tigris.gef.base.Editor;
 import org.tigris.gef.base.Globals;
 import org.tigris.gef.base.Selection;
@@ -323,9 +326,12 @@ public class ActionCompartmentDisplay extends UndoableAction {
             }
 
             if ((cType & COMPARTMENT_EXTENSIONPOINT) != 0) {
+                //#if defined(USECASEDIAGRAM)
+                //@#$LPS-USECASEDIAGRAM:GranularityType:Command
                 if (f instanceof FigUseCase) {
                     ((FigUseCase) f).setExtensionPointVisible(display);
                 }
+                //#endif
             }
             if ((cType & COMPARTMENT_ENUMLITERAL) != 0) {
                 if (f instanceof EnumLiteralsCompartmentContainer) {

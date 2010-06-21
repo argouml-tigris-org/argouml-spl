@@ -90,7 +90,10 @@ import org.argouml.uml.ui.ActionSequenceDiagram;
 //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Import
 import org.argouml.uml.ui.ActionStateDiagram;
 //#endif
+//#if defined(USECASEDIAGRAM)
+//@#$LPS-USECASEDIAGRAM:GranularityType:Import
 import org.argouml.uml.ui.ActionUseCaseDiagram;
+//#endif
 import org.argouml.util.osdep.OSXAdapter;
 import org.argouml.util.osdep.OsUtil;
 import org.tigris.gef.base.AlignAction;
@@ -605,13 +608,15 @@ public class GenericArgoMenuBar extends JMenuBar implements
         Collection<Action> toolbarTools = new ArrayList<Action>();
         createDiagramMenu = add(new JMenu(menuLocalize("Create Diagram")));
         setMnemonic(createDiagramMenu, "Create Diagram");
+        //#if defined(USECASEDIAGRAM)
+        //@#$LPS-USECASEDIAGRAM:GranularityType:command
         JMenuItem usecaseDiagram = createDiagramMenu
                 .add(new ActionUseCaseDiagram());
         setMnemonic(usecaseDiagram, "Usecase Diagram");
         toolbarTools.add((new ActionUseCaseDiagram()));
         ShortcutMgr.assignAccelerator(usecaseDiagram,
                 ShortcutMgr.ACTION_USE_CASE_DIAGRAM);
-
+        //#endif
         JMenuItem classDiagram =
             createDiagramMenu.add(new ActionClassDiagram());
         setMnemonic(classDiagram, "Class Diagram");

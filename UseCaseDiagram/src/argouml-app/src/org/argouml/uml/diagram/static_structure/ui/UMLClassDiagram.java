@@ -51,8 +51,11 @@ import org.argouml.uml.diagram.ui.ModeCreateDependency;
 import org.argouml.uml.diagram.ui.ModeCreatePermission;
 import org.argouml.uml.diagram.ui.ModeCreateUsage;
 import org.argouml.uml.diagram.ui.UMLDiagram;
+//#if defined(USECASEDIAGRAM)
+//@#$LPS-USECASEDIAGRAM:GranularityType:import
 import org.argouml.uml.diagram.use_case.ui.FigActor;
 import org.argouml.uml.diagram.use_case.ui.FigUseCase;
+//#endif
 import org.argouml.uml.ui.foundation.core.ActionAddAttribute;
 import org.argouml.uml.ui.foundation.core.ActionAddOperation;
 import org.argouml.util.ToolBarUtility;
@@ -644,10 +647,13 @@ public class UMLClassDiagram extends UMLDiagram {
             return true;
         } else if (Model.getFacade().isASignal(objectToAccept)) {
             return true;
+        //#if defined(USECASEDIAGRAM)
+        //@#$LPS-USECASEDIAGRAM:GranularityType:Command
         } else if (Model.getFacade().isAActor(objectToAccept)) {
-            return true;
+            return true;        
         } else if (Model.getFacade().isAUseCase(objectToAccept)) {
             return true;
+        //#endif
         } else if (Model.getFacade().isAObject(objectToAccept)) {
             return true;
         } else if (Model.getFacade().isANodeInstance(objectToAccept)) {
@@ -701,10 +707,13 @@ public class UMLClassDiagram extends UMLDiagram {
             figNode = new FigException(droppedObject, bounds, settings);
         } else if (Model.getFacade().isASignal(droppedObject)) {
             figNode = new FigSignal(droppedObject, bounds, settings);
+        //#if defined(USECASEDIAGRAM)
+        //@#$LPS-USECASEDIAGRAM:GranularityType:Command
         } else if (Model.getFacade().isAActor(droppedObject)) {
             figNode = new FigActor(droppedObject, bounds, settings);
         } else if (Model.getFacade().isAUseCase(droppedObject)) {
             figNode = new FigUseCase(droppedObject, bounds, settings);
+        //#endif
         } else if (Model.getFacade().isAObject(droppedObject)) {
             figNode = new FigObject(droppedObject, bounds, settings);
         } else if (Model.getFacade().isANodeInstance(droppedObject)) {
