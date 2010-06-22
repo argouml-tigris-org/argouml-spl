@@ -84,7 +84,10 @@ class ExtensionMechanismsHelperMDRImpl implements ExtensionMechanismsHelper {
         packageMap.put("core", "Core");
         packageMap.put("datatypes", "Data_Types");
         packageMap.put("commonbehavior", "Common_Behavior");
+        //#if defined(USECASEDIAGRAM)
+        //@#$LPS-USECASEDIAGRAM:GranularityType:Command
         packageMap.put("usecases", "Use_Cases");
+        //#endif
         packageMap.put("statemachines", "State_Machines");
         packageMap.put("collaborations", "Collaborations");
         packageMap.put("activitygraphs", "Activity_Graphs");
