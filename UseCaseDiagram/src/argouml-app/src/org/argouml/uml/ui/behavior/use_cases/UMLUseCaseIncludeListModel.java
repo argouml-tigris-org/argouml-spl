@@ -1,3 +1,5 @@
+//#if defined(USECASEDIAGRAM)
+//@#$LPS-USECASEDIAGRAM:GranularityType:Package
 // $Id$
 // Copyright (c) 1996-2006 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
@@ -55,3 +57,4 @@ public class UMLUseCaseIncludeListModel extends UMLModelElementListModel2 {
     }
 
 }
+//#endif

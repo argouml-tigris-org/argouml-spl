@@ -87,10 +87,10 @@ import org.argouml.uml.diagram.ui.FigPermission;
 import org.argouml.uml.diagram.ui.FigUsage;
 //#if defined(USECASEDIAGRAM)
 //@#$LPS-USECASEDIAGRAM:GranularityType:Import
-/*import org.argouml.uml.diagram.use_case.ui.FigActor;
+import org.argouml.uml.diagram.use_case.ui.FigActor;
 import org.argouml.uml.diagram.use_case.ui.FigExtend;
 import org.argouml.uml.diagram.use_case.ui.FigInclude;
-import org.argouml.uml.diagram.use_case.ui.FigUseCase;*/
+import org.argouml.uml.diagram.use_case.ui.FigUseCase;
 //#endif
 import org.tigris.gef.base.Layer;
 import org.tigris.gef.graph.GraphEdgeRenderer;

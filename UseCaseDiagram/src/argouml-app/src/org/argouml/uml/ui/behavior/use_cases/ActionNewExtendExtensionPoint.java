@@ -1,3 +1,5 @@
+//#if defined(USECASEDIAGRAM)
+//@#$LPS-USECASEDIAGRAM:GranularityType:Package
 // $Id$
 // Copyright (c) 2002-2006 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
@@ -64,3 +66,4 @@ public class ActionNewExtendExtensionPoint
     }
 
 }
+//#endif

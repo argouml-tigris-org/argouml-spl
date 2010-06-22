@@ -72,11 +72,14 @@ import org.argouml.uml.ui.behavior.state_machines.PropPanelSubmachineState;
 import org.argouml.uml.ui.behavior.state_machines.PropPanelSynchState;
 import org.argouml.uml.ui.behavior.state_machines.PropPanelTimeEvent;
 import org.argouml.uml.ui.behavior.state_machines.PropPanelTransition;
+//#if defined(USECASEDIAGRAM)
+//@#$LPS-USECASEDIAGRAM:GranularityType:import
 import org.argouml.uml.ui.behavior.use_cases.PropPanelActor;
 import org.argouml.uml.ui.behavior.use_cases.PropPanelExtend;
 import org.argouml.uml.ui.behavior.use_cases.PropPanelExtensionPoint;
 import org.argouml.uml.ui.behavior.use_cases.PropPanelInclude;
 import org.argouml.uml.ui.behavior.use_cases.PropPanelUseCase;
+//#endif
 import org.argouml.uml.ui.foundation.core.PropPanelAbstraction;
 import org.argouml.uml.ui.foundation.core.PropPanelAssociation;
 import org.argouml.uml.ui.foundation.core.PropPanelAssociationClass;
@@ -164,8 +167,11 @@ class ElementPropPanelFactory implements PropPanelFactory {
                 return new PropPanelConstraint();
             } else if (Model.getFacade().isAEnumerationLiteral(element)) {
                 return new PropPanelEnumerationLiteral();
+           //#if defined(USECASEDIAGRAM)
+           //@#$LPS-USECASEDIAGRAM:GranularityType:Command
             } else if (Model.getFacade().isAExtensionPoint(element)) {
                 return new PropPanelExtensionPoint();
+            //#endif
             } else if (Model.getFacade().isAGuard(element)) {
                 return new PropPanelGuard();
             } else if (Model.getFacade().isAInteraction(element)) {
@@ -224,9 +230,14 @@ class ElementPropPanelFactory implements PropPanelFactory {
 
 
     private PropPanelClassifier getClassifierPropPanel(Object element) {
-        if (Model.getFacade().isAActor(element)) {
+        if 
+        //#if defined(USECASEDIAGRAM)
+        //@#$LPS-USECASEDIAGRAM:GranularityType:Command
+        (Model.getFacade().isAActor(element)) {
             return new PropPanelActor();
-        } else if (Model.getFacade().isAAssociationClass(element)) {
+        } else if 
+        //#endif
+        (Model.getFacade().isAAssociationClass(element)) {
             return new PropPanelAssociationClass();
         } else if (Model.getFacade().isAClass(element)) {
             return new PropPanelClass();
@@ -252,9 +263,13 @@ class ElementPropPanelFactory implements PropPanelFactory {
             } else {
                 return new PropPanelSignal();
             }
+        //#if defined(USECASEDIAGRAM)
+        //@#$LPS-USECASEDIAGRAM:GranularityType:Package
         } else if (Model.getFacade().isAUseCase(element)) {
             return new PropPanelUseCase();
-        } 
+        //#endif
+        }
+        
         
         // TODO: A Subsystem is a Classifier, but its PropPanel is derived from
         // PropPanelPackage
@@ -289,14 +304,20 @@ class ElementPropPanelFactory implements PropPanelFactory {
             } else {
                 return new PropPanelDependency();
             }
+        //#if defined(USECASEDIAGRAM)
+        //@#$LPS-USECASEDIAGRAM:GranularityType:Command
         } else if (Model.getFacade().isAExtend(element)) {
             return new PropPanelExtend();
+        //#endif
         } else if (Model.getFacade().isAFlow(element)) {
             return new PropPanelFlow();
         } else if (Model.getFacade().isAGeneralization(element)) {
             return new PropPanelGeneralization();
+        //#if defined(USECASEDIAGRAM)
+        //@#$LPS-USECASEDIAGRAM:GranularityType:Command
         } else if (Model.getFacade().isAInclude(element)) {
             return new PropPanelInclude();
+        //#endif
         }
         throw new IllegalArgumentException("Unsupported Relationship type");
     }
