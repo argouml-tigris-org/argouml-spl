@@ -85,7 +85,7 @@ import org.argouml.uml.ui.ActionSetSourcePath;
 import org.argouml.uml.ui.ActionStateDiagram;
 //#endif
 //#if defined(USECASEDIAGRAM)
-//@#$LPS-USECASEDIAGRAM:GranularityType:import
+//@#$LPS-USECASEDIAGRAM:GranularityType:Import
 import org.argouml.uml.ui.ActionUseCaseDiagram;
 //#endif
 import org.tigris.gef.base.Diagram;
@@ -121,7 +121,7 @@ public class ExplorerPopup extends JPopupMenu {
             Model.getMetaTypes().getActor(), 
             "button.new-actor",
             //#if defined(USECASEDIAGRAM)
-            //@#$LPS-USECASEDIAGRAM:GranularityType:command
+            //@#$LPS-USECASEDIAGRAM:GranularityType:Command
             Model.getMetaTypes().getUseCase(), 
             "button.new-usecase",
             //#endif

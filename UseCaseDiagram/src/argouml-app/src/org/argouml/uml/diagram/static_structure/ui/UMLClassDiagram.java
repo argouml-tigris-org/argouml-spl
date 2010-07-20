@@ -52,7 +52,7 @@ import org.argouml.uml.diagram.ui.ModeCreatePermission;
 import org.argouml.uml.diagram.ui.ModeCreateUsage;
 import org.argouml.uml.diagram.ui.UMLDiagram;
 //#if defined(USECASEDIAGRAM)
-//@#$LPS-USECASEDIAGRAM:GranularityType:import
+//@#$LPS-USECASEDIAGRAM:GranularityType:Import
 import org.argouml.uml.diagram.use_case.ui.FigActor;
 import org.argouml.uml.diagram.use_case.ui.FigUseCase;
 //#endif

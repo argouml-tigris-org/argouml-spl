@@ -84,7 +84,7 @@ import org.argouml.uml.ui.ActionSequenceDiagram;
 import org.argouml.uml.ui.ActionStateDiagram;
 //#endif
 //#if defined(USECASEDIAGRAM)
-//@#$LPS-USECASEDIAGRAM:GranularityType:import
+//@#$LPS-USECASEDIAGRAM:GranularityType:Import
 import org.argouml.uml.ui.ActionUseCaseDiagram;
 //#endif
 import org.argouml.util.KeyEventUtils;
@@ -212,7 +212,7 @@ public class ShortcutMgr {
     public static final String ACTION_SHOW_XML_DUMP = "showXmlDump";
 
     //#if defined(USECASEDIAGRAM)
-    //@#$LPS-USECASEDIAGRAM:GranularityType:Command
+    //@#$LPS-USECASEDIAGRAM:GranularityType:Field
     /** Action key for use case diagram */
     public static final String ACTION_USE_CASE_DIAGRAM = "useCaseDiagrams";
     //#endif

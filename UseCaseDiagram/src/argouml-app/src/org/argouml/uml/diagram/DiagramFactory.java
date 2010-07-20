@@ -93,7 +93,7 @@ public final class DiagramFactory {
     public enum DiagramType {
         Class, 
         //#if defined(USECASEDIAGRAM)
-        //@#$LPS-USECASEDIAGRAM:GranularityType:Enum
+        //@#$LPS-USECASEDIAGRAM:GranularityType:Enumeration
         UseCase,
         //#endif
         //#if defined(UMLSTATEDIAGRAM)

@@ -73,7 +73,7 @@ import org.argouml.uml.ui.behavior.state_machines.PropPanelSynchState;
 import org.argouml.uml.ui.behavior.state_machines.PropPanelTimeEvent;
 import org.argouml.uml.ui.behavior.state_machines.PropPanelTransition;
 //#if defined(USECASEDIAGRAM)
-//@#$LPS-USECASEDIAGRAM:GranularityType:import
+//@#$LPS-USECASEDIAGRAM:GranularityType:Import
 import org.argouml.uml.ui.behavior.use_cases.PropPanelActor;
 import org.argouml.uml.ui.behavior.use_cases.PropPanelExtend;
 import org.argouml.uml.ui.behavior.use_cases.PropPanelExtensionPoint;
