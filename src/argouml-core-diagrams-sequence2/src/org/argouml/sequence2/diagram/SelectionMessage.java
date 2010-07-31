@@ -1,3 +1,5 @@
+//#if defined(SEQUENCEDIAGRAM)
+//@#$LPS-SEQUENCEDIAGRAM:GranularityType:Package
 // $Id$
 // Copyright (c) 2007 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
@@ -30,6 +32,7 @@ import java.util.List;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
+//@#$LPS-LOGGING:Localization:NestedIfdef
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.uml.diagram.ui.FigEdgeModelElement;
@@ -45,6 +48,7 @@ import org.tigris.gef.presentation.Handle;
 class SelectionMessage extends SelectionRerouteEdge {
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
+	//@#$LPS-LOGGING:Localization:NestedIfdef
     /**
      * Logger.
      */
@@ -121,3 +125,4 @@ class SelectionMessage extends SelectionRerouteEdge {
     }
     
 }
+//#endif

@@ -1,3 +1,5 @@
+//#if defined(SEQUENCEDIAGRAM)
+//@#$LPS-SEQUENCEDIAGRAM:GranularityType:Package
 // $Id$
 // Copyright (c) 2007-2009 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
@@ -28,6 +30,7 @@ import java.util.Map;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
+//@#$LPS-LOGGING:Localization:NestedIfdef
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.model.Model;
@@ -50,6 +53,7 @@ import org.tigris.gef.presentation.FigNode;
  */
 class SequenceDiagramRenderer extends UmlDiagramRenderer {
     //#if defined(LOGGING)
+    //@#$LPS-LOGGING:Localization:NestedIfdef
     //@#$LPS-LOGGING:GranularityType:Field
     /**
      * Logger.
@@ -82,6 +86,7 @@ class SequenceDiagramRenderer extends UmlDiagramRenderer {
         }
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:Localization:NestedIfdef
         LOG.debug("SequenceDiagramRenderer getFigNodeFor " + result);
         //#endif
         lay.add(result);
@@ -114,3 +119,4 @@ class SequenceDiagramRenderer extends UmlDiagramRenderer {
     }
 
 }
+//#endif

@@ -58,7 +58,10 @@ import org.argouml.uml.diagram.DiagramUtils;
 //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Import
 import org.argouml.uml.diagram.activity.ui.UMLActivityDiagram;
 //#endif
+//#if defined(SEQUENCEDIAGRAM)
+//@#$LPS-ACTIVITYDIAGRAM:GranularityType:Import
 import org.argouml.uml.diagram.sequence.ui.UMLSequenceDiagram;
+//#endif
 //#if defined(UMLSTATEDIAGRAM)
 //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Import
 import org.argouml.uml.diagram.state.ui.UMLStateDiagram;
@@ -78,7 +81,10 @@ import org.argouml.uml.ui.ActionClassDiagram;
 import org.argouml.uml.ui.ActionCollaborationDiagram;
 import org.argouml.uml.ui.ActionDeleteModelElements;
 import org.argouml.uml.ui.ActionDeploymentDiagram;
+//#if defined(SEQUENCEDIAGRAM)
+//@#$LPS-ACTIVITYDIAGRAM:GranularityType:Import
 import org.argouml.uml.ui.ActionSequenceDiagram;
+//#endif
 import org.argouml.uml.ui.ActionSetSourcePath;
 //#if defined(UMLSTATEDIAGRAM)
 //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Import
@@ -249,8 +255,11 @@ public class ExplorerPopup extends JPopupMenu {
             final boolean activityDiagramActive =
                 activeDiagram instanceof UMLActivityDiagram;
             //#endif
+            //#if defined(SEQUENCEDIAGRAM)
+            //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Field
             final boolean sequenceDiagramActive =
                 activeDiagram instanceof UMLSequenceDiagram;
+            //#endif
             //#if defined(UMLSTATEDIAGRAM)
             //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Command
             final boolean stateDiagramActive =
@@ -296,7 +305,11 @@ public class ExplorerPopup extends JPopupMenu {
                             )
                         || (instanceSelected
                                 && !dataValueSelected
-                                && !sequenceDiagramActive)
+                                //#if defined(SEQUENCEDIAGRAM)
+                                //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Expression
+                                && !sequenceDiagramActive
+                                //#endif
+                                )
                         || nAryAssociationSelected || commentSelected) {
                     // TODO: Why can't we use ActionAddExistingNodes here? Bob.
                     Action action =
@@ -309,7 +322,12 @@ public class ExplorerPopup extends JPopupMenu {
                 if ((relationshipSelected
                         && !flowSelected
                         && !nAryAssociationSelected)
-                        || (linkSelected && !sequenceDiagramActive)
+                        || (linkSelected
+                                //#if defined(SEQUENCEDIAGRAM)
+                                //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Expression
+                                && !sequenceDiagramActive
+                                //#endif
+                                )
                         || transitionSelected) {
 
                     Action action =
@@ -384,9 +402,10 @@ public class ExplorerPopup extends JPopupMenu {
         createDiagrams.add(new ActionUseCaseDiagram());
 
         createDiagrams.add(new ActionClassDiagram());
-
+        //#if defined(SEQUENCEDIAGRAM)
+        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
         createDiagrams.add(new ActionSequenceDiagram());
-
+        //#endif
         createDiagrams.add(new ActionCollaborationDiagram());
         //#if defined(UMLSTATEDIAGRAM)
         //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Command

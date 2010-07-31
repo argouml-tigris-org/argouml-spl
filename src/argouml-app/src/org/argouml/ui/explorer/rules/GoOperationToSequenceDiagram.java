@@ -1,3 +1,5 @@
+//#if defined(SEQUENCEDIAGRAM)
+//@#$LPS-SEQUENCEDIAGRAM:GranularityType:Class
 // $Id$
 // Copyright (c) 1996-2006 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
@@ -84,3 +86,4 @@ public class GoOperationToSequenceDiagram extends AbstractPerspectiveRule {
 	return Collections.EMPTY_SET;
     }
 }
+//#endif

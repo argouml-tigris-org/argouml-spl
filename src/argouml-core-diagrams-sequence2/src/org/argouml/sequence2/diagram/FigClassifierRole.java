@@ -1,3 +1,5 @@
+//#if defined(SEQUENCEDIAGRAM)
+//@#$LPS-SEQUENCEDIAGRAM:GranularityType:Package
 // $Id$
 // Copyright (c) 2007-2008 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
@@ -34,6 +36,7 @@ import java.util.List;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
+//@#$LPS-LOGGING:Localization:NestedIfdef
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.model.Model;
@@ -54,6 +57,7 @@ import org.tigris.gef.presentation.FigRect;
 public class FigClassifierRole extends FigNodeModelElement {
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
+	//@#$LPS-LOGGING:Localization:NestedIfdef
     private static final Logger LOG = Logger.getLogger(FigClassifierRole.class);
     //#endif
     /**
@@ -440,3 +444,4 @@ public class FigClassifierRole extends FigNodeModelElement {
         return new SelectionClassifierRole(this);
     }
 }
+//#endif

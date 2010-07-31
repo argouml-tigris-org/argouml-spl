@@ -38,7 +38,10 @@ import org.argouml.model.CollaborationDiagram;
 import org.argouml.model.DeploymentDiagram;
 import org.argouml.model.DiDiagram;
 import org.argouml.model.Model;
+//#if defined(SEQUENCEDIAGRAM)
+//@#$LPS-SEQUENCEDIAGRAM:GranularityType:Import
 import org.argouml.model.SequenceDiagram;
+//#endif
 import org.argouml.model.StateDiagram;
 import org.argouml.model.UseCaseDiagram;
 //#if defined(ACTIVITYDIAGRAM)
@@ -47,7 +50,10 @@ import org.argouml.uml.diagram.activity.ui.UMLActivityDiagram;
 //#endif
 import org.argouml.uml.diagram.collaboration.ui.UMLCollaborationDiagram;
 import org.argouml.uml.diagram.deployment.ui.UMLDeploymentDiagram;
+//#if defined(SEQUENCEDIAGRAM)
+//@#$LPS-SEQUENCEDIAGRAM:GranularityType:Import
 import org.argouml.uml.diagram.sequence.ui.UMLSequenceDiagram;
+//#endif
 //#if defined(UMLSTATEDIAGRAM)
 //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Import
 import org.argouml.uml.diagram.state.ui.UMLStateDiagram;
@@ -95,7 +101,10 @@ public final class DiagramFactory {
         //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Enumeration
         Activity, 
         //#endif
+        //#if defined(SEQUENCEDIAGRAM)
+        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Enumeration
         Sequence
+        //#endif
     }
 
     private Map<DiagramType, Object> factories =
@@ -121,7 +130,10 @@ public final class DiagramFactory {
         //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
         diagramClasses.put(DiagramType.Activity, UMLActivityDiagram.class);
         //#endif
+        //#if defined(SEQUENCEDIAGRAM)
+        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
         diagramClasses.put(DiagramType.Sequence, UMLSequenceDiagram.class);
+        //#endif        
     }
 
     /**
@@ -228,13 +240,16 @@ public final class DiagramFactory {
             if ((
                  //#if defined(UMLSTATEDIAGRAM)
                  //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Expression
+                 //@#$LPS-UMLSTATEDIADRAM:Localization:NestedIfdef
                  type == DiagramType.State
                  //#endif
                     //#if defined(UMLSTATEDIAGRAM) and defined(ACTIVITYDIAGRAM)
+                    //@#$LPS-UMLSTATEDIADRAM:Localization:NestedIfdef
                     ||
                     //#endif
                     //#if defined(ACTIVITYDIAGRAM)
                     //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Expression
+                    //@#$LPS-ACTIVITYDIAGRAM:Localization:NestedIfdef
                     type == DiagramType.Activity
                     //#endif
                     )
@@ -301,11 +316,14 @@ public final class DiagramFactory {
             diagram = new UMLActivityDiagram(namespace, machine);
             diType = ActivityDiagram.class;
         //#endif
-        } else if (type == UMLSequenceDiagram.class) {
+        }
+        //#if defined(SEQUENCEDIAGRAM)      
+        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
+         else if (type == UMLSequenceDiagram.class) {
             diagram = new UMLSequenceDiagram(namespace);
             diType = SequenceDiagram.class;
         }
-
+        //#endif
         if (diagram == null) {
             throw new IllegalArgumentException ("Unknown diagram type");
         }

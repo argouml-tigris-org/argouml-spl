@@ -1,3 +1,5 @@
+//#if defined(SEQUENCEDIAGRAM)
+//@#$LPS-SEQUENCEDIAGRAM:GranularityType:Package
 // $Id$
 // Copyright (c) 2007 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
@@ -30,6 +32,7 @@ import java.util.List;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
+//@#$LPS-LOGGING:Localization:NestedIfdef
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.model.Model;
@@ -48,6 +51,7 @@ import org.tigris.gef.presentation.FigPoly;
 public class ModeCreateMessage extends ModeCreatePolyEdge {
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
+	//@#$LPS-LOGGING:Localization:NestedIfdef
     /**
      * Logger.
      */
@@ -67,6 +71,7 @@ public class ModeCreateMessage extends ModeCreatePolyEdge {
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Command
         //@#$LPS-LOGGING:Localization:EndMethod
+        //@#$LPS-LOGGING:Localization:NestedIfdef
         if (LOG.isDebugEnabled()) {
             LOG.debug("ModeCreateMessage created with editor:" + editor);
         }
@@ -81,6 +86,7 @@ public class ModeCreateMessage extends ModeCreatePolyEdge {
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Command
         //@#$LPS-LOGGING:Localization:EndMethod
+        //@#$LPS-LOGGING:Localization:NestedIfdef
         if (LOG.isDebugEnabled()) {
             LOG.debug("ModeCreateMessage created without editor.");
         }
@@ -204,6 +210,7 @@ public class ModeCreateMessage extends ModeCreatePolyEdge {
         // Make sure there is the minimum gap below the message being drawn
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:Localization:NestedIfdef
         LOG.info("Looking for minimum space below");
         //#endif
         final FigMessage firstMessageBelow = getNearestMessage(
@@ -310,3 +317,4 @@ public class ModeCreateMessage extends ModeCreatePolyEdge {
         return false;
     }
 }
+//#endif
