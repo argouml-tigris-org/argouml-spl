@@ -90,7 +90,10 @@ import org.argouml.uml.ui.ActionSetSourcePath;
 //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Import
 import org.argouml.uml.ui.ActionStateDiagram;
 //#endif
+//#if defined(USECASEDIAGRAM)
+//@#$LPS-USECASEDIAGRAM:GranularityType:Import
 import org.argouml.uml.ui.ActionUseCaseDiagram;
+//#endif
 import org.tigris.gef.base.Diagram;
 import org.tigris.gef.base.Editor;
 import org.tigris.gef.base.Globals;
@@ -123,8 +126,11 @@ public class ExplorerPopup extends JPopupMenu {
             "button.new-package",
             Model.getMetaTypes().getActor(), 
             "button.new-actor",
+            //#if defined(USECASEDIAGRAM)
+            //@#$LPS-USECASEDIAGRAM:GranularityType:StaticInitialization
             Model.getMetaTypes().getUseCase(), 
             "button.new-usecase",
+            //#endif
             Model.getMetaTypes().getExtensionPoint(), 
             "button.new-extension-point",
             Model.getMetaTypes().getUMLClass(), 
@@ -399,8 +405,10 @@ public class ExplorerPopup extends JPopupMenu {
      *
      */
     private void initMenuCreateDiagrams() {
+        //#if defined(USECASEDIAGRAM)
+        //@#$LPS-USECASEDIAGRAM:GranularityType:Command
         createDiagrams.add(new ActionUseCaseDiagram());
-
+        //#endif
         createDiagrams.add(new ActionClassDiagram());
         //#if defined(SEQUENCEDIAGRAM)
         //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command

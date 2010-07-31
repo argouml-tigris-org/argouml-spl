@@ -381,6 +381,12 @@ This is designed to work in two different environments:
 		</then>
 	</if> 
 	<if>
+		<isset property="USECASEDIAGRAM"/>
+		<then>
+			<echo message="USECASEDIAGRAM"/>
+		</then>
+	</if>
+	<if>
 		<isset property="LOGGING"/>
 		<then>
 			<echo message="LOGGING"/>

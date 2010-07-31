@@ -486,7 +486,13 @@ Building this requires:
 		<then>
 			<echo message="SEQUENCEDIAGRAM"/>
 		</then>
-	</if> 
+	</if>
+	<if>
+		<isset property="USECASEDIAGRAM"/>
+		<then>
+			<echo message="USECASEDIAGRAM"/>
+		</then>
+	</if>	
 	<if>
 		<isset property="LOGGING"/>
 		<then>

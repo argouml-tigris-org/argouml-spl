@@ -97,7 +97,10 @@ import org.argouml.uml.diagram.state.ui.InitStateDiagram;
 //#endif
 import org.argouml.uml.diagram.static_structure.ui.InitClassDiagram;
 import org.argouml.uml.diagram.ui.InitDiagramAppearanceUI;
+//#if defined(USECASEDIAGRAM)
+//@#$LPS-USECASEDIAGRAM:GranularityType:Import
 import org.argouml.uml.diagram.use_case.ui.InitUseCaseDiagram;
+//#endif
 import org.argouml.uml.ui.InitUmlUI;
 import org.argouml.util.ArgoFrame;
 import org.argouml.util.JavaRuntimeUtility;
@@ -454,7 +457,10 @@ public class Main {
         SubsystemUtility.initSubsystem(new InitStateDiagram());
         //#endif
         SubsystemUtility.initSubsystem(new InitClassDiagram());
+        //#if defined(USECASEDIAGRAM)
+        //@#$LPS-USECASEDIAGRAM:GranularityType:Command
         SubsystemUtility.initSubsystem(new InitUseCaseDiagram());
+        //#endif
         SubsystemUtility.initSubsystem(new InitUmlUI());
         //#if defined(COGNITIVE)
         //@#$LPS-COGNITIVE:GranularityType:Command

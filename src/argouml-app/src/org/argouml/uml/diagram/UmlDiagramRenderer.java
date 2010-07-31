@@ -85,10 +85,13 @@ import org.argouml.uml.diagram.ui.FigMessage;
 import org.argouml.uml.diagram.ui.FigNodeAssociation;
 import org.argouml.uml.diagram.ui.FigPermission;
 import org.argouml.uml.diagram.ui.FigUsage;
+//#if defined(USECASEDIAGRAM)
+//@#$LPS-USECASEDIAGRAM:GranularityType:Import
 import org.argouml.uml.diagram.use_case.ui.FigActor;
 import org.argouml.uml.diagram.use_case.ui.FigExtend;
 import org.argouml.uml.diagram.use_case.ui.FigInclude;
 import org.argouml.uml.diagram.use_case.ui.FigUseCase;
+//#endif
 import org.tigris.gef.base.Layer;
 import org.tigris.gef.graph.GraphEdgeRenderer;
 import org.tigris.gef.graph.GraphNodeRenderer;
@@ -151,10 +154,13 @@ public abstract class UmlDiagramRenderer
             figNode = new FigPackage(node, x, y);
         } else if (Model.getFacade().isAAssociation(node)) {
             figNode = new FigNodeAssociation();
+        //#if defined(USECASEDIAGRAM)
+        //@#$LPS-USECASEDIAGRAM:GranularityType:Command
         } else if (Model.getFacade().isAActor(node)) {
             figNode = new FigActor();
         } else if (Model.getFacade().isAUseCase(node)) {
             figNode = new FigUseCase();
+        //#endif
         //#if defined(ACTIVITYDIAGRAM)
         //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
         } else if (Model.getFacade().isAPartition(node)) {
@@ -302,10 +308,13 @@ public abstract class UmlDiagramRenderer
         } else if (Model.getFacade().isATransition(edge)) {
             newEdge = new FigTransition();
         //#endif
+       //#if defined(USECASEDIAGRAM)
+       //@#$LPS-USECASEDIAGRAM:GranularityType:Command
         } else if (Model.getFacade().isAExtend(edge)) {
             newEdge = new FigExtend();
         } else if (Model.getFacade().isAInclude(edge)) {
             newEdge = new FigInclude();
+        //#endif
         }
 
         if (newEdge == null) {

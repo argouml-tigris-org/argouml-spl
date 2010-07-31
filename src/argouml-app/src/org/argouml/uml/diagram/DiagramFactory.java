@@ -43,7 +43,10 @@ import org.argouml.model.Model;
 import org.argouml.model.SequenceDiagram;
 //#endif
 import org.argouml.model.StateDiagram;
+//#if defined(USECASEDIAGRAM)
+//@#$LPS-USECASEDIAGRAM:GranularityType:Import
 import org.argouml.model.UseCaseDiagram;
+//#endif
 //#if defined(ACTIVITYDIAGRAM)
 //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Import
 import org.argouml.uml.diagram.activity.ui.UMLActivityDiagram;
@@ -59,7 +62,10 @@ import org.argouml.uml.diagram.sequence.ui.UMLSequenceDiagram;
 import org.argouml.uml.diagram.state.ui.UMLStateDiagram;
 //#endif
 import org.argouml.uml.diagram.static_structure.ui.UMLClassDiagram;
+//#if defined(USECASEDIAGRAM)
+//@#$LPS-USECASEDIAGRAM:GranularityType:Import
 import org.argouml.uml.diagram.use_case.ui.UMLUseCaseDiagram;
+//#endif
 import org.tigris.gef.base.Diagram;
 import org.tigris.gef.graph.GraphNodeRenderer;
 
@@ -91,7 +97,11 @@ public final class DiagramFactory {
      * Enumeration containing all the different types of UML diagrams.
      */
     public enum DiagramType {
-        Class, UseCase, 
+        Class, 
+        //#if defined(USECASEDIAGRAM)
+        //@#$LPS-USECASEDIAGRAM:GranularityType:Enumeration
+        UseCase,
+        //#endif
         //#if defined(UMLSTATEDIAGRAM)
         //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Enumeration
         State, 
@@ -118,7 +128,10 @@ public final class DiagramFactory {
         // TODO: Use our extension registration mechanism for our internal
         // classes as well, so everything is treated the same
         diagramClasses.put(DiagramType.Class, UMLClassDiagram.class);
+        //#if defined(USECASEDIAGRAM)
+        //@#$LPS-USECASEDIAGRAM:GranularityType:Command
         diagramClasses.put(DiagramType.UseCase, UMLUseCaseDiagram.class);
+        //#endif
         //#if defined(UMLSTATEDIAGRAM)
         //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Command
         diagramClasses.put(DiagramType.State, UMLStateDiagram.class);
@@ -295,9 +308,12 @@ public final class DiagramFactory {
         if (type == UMLClassDiagram.class) {
             diagram = new UMLClassDiagram(namespace);
             diType = ClassDiagram.class;
+        //#if defined(USECASEDIAGRAM)
+        //@#$LPS-USECASEDIAGRAM:GranularityType:Command
         } else if (type == UMLUseCaseDiagram.class) {
             diagram = new UMLUseCaseDiagram(namespace);
             diType = UseCaseDiagram.class;
+        //#endif
         //#if defined(UMLSTATEDIAGRAM)
         //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Command
         } else if (type == UMLStateDiagram.class) {

@@ -1,3 +1,5 @@
+//#if defined(USECASEDIAGRAM)
+//@#$LPS-USECASEDIAGRAM:GranularityType:Class
 // $Id$
 // Copyright (c) 1996-2007 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
@@ -26,6 +28,7 @@ package org.argouml.uml.ui;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
+//@#$LPS-LOGGING:Localization:NestedIfdef
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.model.Model;
@@ -39,6 +42,7 @@ import org.argouml.uml.diagram.DiagramSettings;
 public class ActionUseCaseDiagram extends ActionAddDiagram {
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
+    //@#$LPS-LOGGING:Localization:NestedIfdef
     private static final Logger LOG =
         Logger.getLogger(ActionUseCaseDiagram.class);
     //#endif
@@ -105,3 +109,4 @@ public class ActionUseCaseDiagram extends ActionAddDiagram {
     }
 
 }
+//#endif
