@@ -148,6 +148,12 @@
 		</then>
 	</if>	
 	<if>
+		<isset property="LOGGING"/>
+		<then>
+			<echo message="LOGGING"/>
+		</then>
+	</if>  	
+	<if>
 		<isset property="ACTIVITYDIAGRAM"/>
 		<then>
 			<echo message="ACTIVITYDIAGRAM"/>
@@ -166,11 +172,11 @@
 		</then>
 	</if> 
 	<if>
-		<isset property="LOGGING"/>
+		<isset property="USECASEDIAGRAM"/>
 		<then>
-			<echo message="LOGGING"/>
+			<echo message="USECASEDIAGRAM"/>
 		</then>
-	</if> 	
+	</if>  	
   	
   </target>
 	
