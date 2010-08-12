@@ -713,7 +713,13 @@ Building this requires:
 		<then>
 			<echo message="COGNITIVE"/>
 		</then>
-	</if>	
+	</if>
+	<if>
+		<isset property="LOGGING"/>
+		<then>
+			<echo message="LOGGING"/>
+		</then>
+	</if> 			
 	<if>
 		<isset property="ACTIVITYDIAGRAM"/>
 		<then>
@@ -738,12 +744,6 @@ Building this requires:
 			<echo message="USECASEDIAGRAM"/>
 		</then>
 	</if>	
-	<if>
-		<isset property="LOGGING"/>
-		<then>
-			<echo message="LOGGING"/>
-		</then>
-	</if> 	
   	
   </target>
 

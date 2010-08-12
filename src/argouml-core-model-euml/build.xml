@@ -361,7 +361,13 @@ This is designed to work in two different environments:
 		<then>
 			<echo message="COGNITIVE"/>
 		</then>
-	</if>	
+	</if>
+	<if>
+		<isset property="LOGGING"/>
+		<then>
+			<echo message="LOGGING"/>
+		</then>
+	</if> 	  	
 	<if>
 		<isset property="ACTIVITYDIAGRAM"/>
 		<then>
@@ -386,12 +392,6 @@ This is designed to work in two different environments:
 			<echo message="USECASEDIAGRAM"/>
 		</then>
 	</if>
-	<if>
-		<isset property="LOGGING"/>
-		<then>
-			<echo message="LOGGING"/>
-		</then>
-	</if> 	
   	
   </target>
 	
