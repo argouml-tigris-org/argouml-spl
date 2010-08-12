@@ -36,7 +36,6 @@ import org.argouml.cognitive.Critic;
 import org.argouml.cognitive.Designer;
 import org.argouml.cognitive.ListSet;
 import org.argouml.cognitive.ToDoItem;
-import org.argouml.model.Model;
 import org.argouml.uml.cognitive.UMLDecision;
 import org.argouml.uml.diagram.deployment.ui.FigObject;
 import org.argouml.uml.diagram.deployment.ui.UMLDeploymentDiagram;
@@ -62,12 +61,12 @@ public class CrNodesOverlap extends CrUML {
      * The constructor.
      */
     public CrNodesOverlap() {
-	// TODO: {name} is not expanded for diagram objects
+        // TODO: {name} is not expanded for diagram objects
         setupHeadAndDesc();
-	addSupportedDecision(UMLDecision.CLASS_SELECTION);
-	addSupportedDecision(UMLDecision.EXPECTED_USAGE);
-	addSupportedDecision(UMLDecision.STATE_MACHINES);
-	setKnowledgeTypes(Critic.KT_PRESENTATION);
+        addSupportedDecision(UMLDecision.CLASS_SELECTION);
+        addSupportedDecision(UMLDecision.EXPECTED_USAGE);
+        addSupportedDecision(UMLDecision.STATE_MACHINES);
+        setKnowledgeTypes(Critic.KT_PRESENTATION);
     }
 
     ////////////////////////////////////////////////////////////////
@@ -79,23 +78,24 @@ public class CrNodesOverlap extends CrUML {
      */
     @Override
     public boolean predicate2(Object dm, Designer dsgr) {
-	if (!(dm instanceof Diagram)) {
+        if (!(dm instanceof Diagram)) {
             return NO_PROBLEM;
         }
-	Diagram d = (Diagram) dm;
-	//#if defined(SEQUENCEDIAGRAM)
-	//@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
-	//@#$LPS-SEQUENCEDIAGRAM:Localization:NestedIfdef
-	// fixes bug #669. Sequencediagrams always overlap, so they shall
-	// never report a problem
-	if (dm instanceof UMLSequenceDiagram) {
-            return NO_PROBLEM;
-        }
-	//endif
+        Diagram d = (Diagram) dm;
 
-	ListSet offs = computeOffenders(d);
-	if (offs == null) return NO_PROBLEM;
-	return PROBLEM_FOUND;
+        //#if defined(SEQUENCEDIAGRAM)
+        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
+        //@#$LPS-SEQUENCEDIAGRAM:Localization:NestedIfdef
+        // fixes bug #669. Sequencediagrams always overlap, so they shall
+        // never report a problem
+        if (dm instanceof UMLSequenceDiagram) {
+            return NO_PROBLEM;
+        }
+        //#endif
+
+        ListSet offs = computeOffenders(d);
+        if (offs == null) return NO_PROBLEM;
+        return PROBLEM_FOUND;
     }
 
 
@@ -105,9 +105,9 @@ public class CrNodesOverlap extends CrUML {
      */
     @Override
     public ToDoItem toDoItem(Object dm, Designer dsgr) {
-	Diagram d = (Diagram) dm;
-	ListSet offs = computeOffenders(d);
-	return new ToDoItem(this, offs, dsgr);
+        Diagram d = (Diagram) dm;
+        ListSet offs = computeOffenders(d);
+        return new ToDoItem(this, offs, dsgr);
     }
 
     /*
@@ -116,15 +116,15 @@ public class CrNodesOverlap extends CrUML {
      */
     @Override
     public boolean stillValid(ToDoItem i, Designer dsgr) {
-	if (!isActive()) {
+        if (!isActive()) {
             return false;
         }
-	ListSet offs = i.getOffenders();
-	Diagram d = (Diagram) offs.get(0);
-	//if (!predicate(dm, dsgr)) return false;
-	ListSet newOffs = computeOffenders(d);
-	boolean res = offs.equals(newOffs);
-	return res;
+        ListSet offs = i.getOffenders();
+        Diagram d = (Diagram) offs.get(0);
+        //if (!predicate(dm, dsgr)) return false;
+        ListSet newOffs = computeOffenders(d);
+        boolean res = offs.equals(newOffs);
+        return res;
     }
 
     /**
@@ -132,61 +132,61 @@ public class CrNodesOverlap extends CrUML {
      * @return the set of offenders
      */
     public ListSet computeOffenders(Diagram d) {
-	//TODO: algorithm is n^2 in number of nodes
-	List figs = d.getLayer().getContents();
-	int numFigs = figs.size();
-	ListSet offs = null;
-	for (int i = 0; i < numFigs - 1; i++) {
-	    Object oi = figs.get(i);
-	    if (!(oi instanceof FigNode)) {
+        //TODO: algorithm is n^2 in number of nodes
+        List figs = d.getLayer().getContents();
+        int numFigs = figs.size();
+        ListSet offs = null;
+        for (int i = 0; i < numFigs - 1; i++) {
+            Object oi = figs.get(i);
+            if (!(oi instanceof FigNode)) {
                 continue;
             }
-	    FigNode fni = (FigNode) oi;
-	    Rectangle boundsi = fni.getBounds();
-	    for (int j = i + 1; j < numFigs; j++) {
-		Object oj = figs.get(j);
-		if (!(oj instanceof FigNode)) {
+            FigNode fni = (FigNode) oi;
+            Rectangle boundsi = fni.getBounds();
+            for (int j = i + 1; j < numFigs; j++) {
+                Object oj = figs.get(j);
+                if (!(oj instanceof FigNode)) {
                     continue;
                 }
-		FigNode fnj = (FigNode) oj;
-		if (fnj.intersects(boundsi)) {
-		    if (!(d instanceof UMLDeploymentDiagram)) {
-			if (fni instanceof FigNodeModelElement) {
-			    if (((FigNodeModelElement) fni).getEnclosingFig()
-				== fnj)
-				continue;
-			}
-			if (fnj instanceof FigNodeModelElement) {
-			    if (((FigNodeModelElement) fnj).getEnclosingFig()
-				== fni)
-				continue;
-			}
-		    }
-		    // In DeploymentDiagrams the situation is not the
-		    // same as in other diagrams only classes,
-		    // interfaces and objects can intersect each other
-		    // while they are not the EnclosingFig, so you
-		    // have to prouve only these elements.
-		    else {
-			if ((!((fni instanceof  FigClass)
-			       || (fni instanceof FigInterface)
-			       || (fni instanceof FigObject)))
-			    || (!((fnj instanceof  FigClass)
-				  || (fnj instanceof FigInterface)
-				  || (fnj instanceof FigObject))))
-			    continue;
-		    }
-		    if (offs == null) {
-			offs = new ListSet();
-			offs.add(d);
-		    }
-		    offs.add(fni);
-		    offs.add(fnj);
-		    break;
-		}
-	    }
-	}
-	return offs;
+                FigNode fnj = (FigNode) oj;
+                if (fnj.intersects(boundsi)) {
+                    if (!(d instanceof UMLDeploymentDiagram)) {
+                        if (fni instanceof FigNodeModelElement) {
+                            if (((FigNodeModelElement) fni).getEnclosingFig()
+                                    == fnj)
+                                continue;
+                        }
+                        if (fnj instanceof FigNodeModelElement) {
+                            if (((FigNodeModelElement) fnj).getEnclosingFig()
+                                    == fni)
+                                continue;
+                        }
+                    }
+                    // In DeploymentDiagrams the situation is not the
+                    // same as in other diagrams only classes,
+                    // interfaces and objects can intersect each other
+                    // while they are not the EnclosingFig, so you
+                    // have to prouve only these elements.
+                    else {
+                        if ((!((fni instanceof  FigClass)
+                                || (fni instanceof FigInterface)
+                                || (fni instanceof FigObject)))
+                                || (!((fnj instanceof  FigClass)
+                                        || (fnj instanceof FigInterface)
+                                        || (fnj instanceof FigObject))))
+                            continue;
+                    }
+                    if (offs == null) {
+                        offs = new ListSet();
+                        offs.add(d);
+                    }
+                    offs.add(fni);
+                    offs.add(fnj);
+                    break;
+                }
+            }
+        }
+        return offs;
     }
 
     /*
@@ -196,10 +196,6 @@ public class CrNodesOverlap extends CrUML {
         Set<Object> ret = new HashSet<Object>();
         return ret;
     }
-    
+
 } 
-
-
-
-
 //#endif
