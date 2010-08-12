@@ -446,7 +446,7 @@ public class FigMessage extends FigEdgeModelElement {
             // This call seems not very robust. Yet to determine cause.
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Command
-        	//@#$LPS-FEATURE:LOGGING:NestedIfdef
+        	//@#$LPS-LOGGING:Localization:NestedIfdef
             LOG.error("Exception caught", e);
             //#endif
         }
