@@ -4,16 +4,18 @@ package foo;
 public class Main {
 
 	/**
-	 * @param args
+	 * Inicializa o sistema.
+	 * @param args parâmetros de execução. 
+	 * 				1º parâmetro: diretório raiz / 2º parâmetro: arquivo de saída.
 	 */
 	public static void main(String[] args) {
-		String outputFilename = "..\\metrics.csv"; 
 		Log.info("Starting gattering metrics");
-		
-		GatherMetrics rd = new GatherMetrics("..\\..\\workspace-argouml-spl"); 
-		rd.gatherMetrics(outputFilename);	
-		
-		Log.info("End of gattering metrics. File " + outputFilename + " generated.");
+		if (args.length > 0) {
+			GatherMetrics rd = new GatherMetrics(args[0]);			
+			rd.gatherMetrics(args[1]);
+			Log.info("End of gattering metrics. File " + args[1] + " generated.");
+		} else {
+			Log.info("No args found.");
+		}		
 	}
-
 }
