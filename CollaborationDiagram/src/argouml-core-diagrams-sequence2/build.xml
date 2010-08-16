@@ -317,6 +317,12 @@ Building this requires:
 			<echo message="USECASEDIAGRAM"/>
 		</then>
 	</if>	
+	<if>
+		<isset property="COLLABORATIONDIAGRAM"/>
+		<then>
+			<echo message="COLLABORATIONDIAGRAM"/>
+		</then>
+	</if>  	
   	
   </target>
 	

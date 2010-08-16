@@ -51,7 +51,13 @@ public class ActionNewTimeEvent extends ActionNewEvent {
      *         java.lang.Object)
      */
     protected Object createEvent(Object ns) {
+        //#if defined(UMLSTATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+        //@#$LPS-UMLSTATEDIAGRAM:GranularityType:MethodBody
+        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:MethodBody
+        //@#$LPS-UMLSTATEDIAGRAM:Localization:EntireMethod
+        //@#$LPS-ACTIVITYDIAGRAM:Localization:EntireMethod
         return Model.getStateMachinesFactory().buildTimeEvent(ns);
+        //#endif
     }
 
     /**

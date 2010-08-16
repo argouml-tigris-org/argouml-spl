@@ -225,10 +225,17 @@ public class TransitionNotationUml extends TransitionNotation {
         Object ns =
             Model.getStateMachinesHelper()
                 .findNamespaceForEvent(trans, null);
+        //#if defined(UMLSTATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+        //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Command
+        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
         StateMachinesFactory sMFactory =
                 Model.getStateMachinesFactory();
+        //#endif
         boolean createdEvent = false;
         if (trigger.length() > 0) {
+            //#if defined(UMLSTATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+            //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Command
+            //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
             // case 1 and 2
             if (evt == null) {
                 // case 1
@@ -253,6 +260,7 @@ public class TransitionNotationUml extends TransitionNotation {
                     evt = sMFactory.buildSignalEvent(trigger, ns);
                 }
                 createdEvent = true;
+                //#endif
             } else {
                 // case 2
                 if (timeEvent) {
@@ -361,9 +369,12 @@ public class TransitionNotationUml extends TransitionNotation {
      * @param guard the string that represents the guard expression
      */
     private void parseGuard(Object trans, String guard) {
-        Object g = Model.getFacade().getGuard(trans);
-        if (guard.length() > 0) {
+        Object g = Model.getFacade().getGuard(trans);        
+        if (guard.length() > 0) {            
             if (g == null) {
+                //#if defined(UMLSTATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+                //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Command
+                //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
                 // case 1
                 /*TODO: In the next line, I should use buildGuard(),
                  * but it doesn't show the guard on the diagram...
@@ -380,6 +391,7 @@ public class TransitionNotationUml extends TransitionNotation {
                     // NSUML does this (?)
                     // Model.getFacade().setGuard(trans, g);
                 }
+                //#endif
             } else {
                 // case 2
                 Object expr = Model.getFacade().getExpression(g);

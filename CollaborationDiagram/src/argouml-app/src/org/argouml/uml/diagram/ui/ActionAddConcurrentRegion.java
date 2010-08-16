@@ -136,11 +136,8 @@ public class ActionAddConcurrentRegion extends UndoableAction {
             //#if defined(UMLSTATEDIAGRAM)
             //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Command
             StateDiagramGraphModel mgm = (StateDiagramGraphModel) gm;
-            //#endif
             final StateMachinesFactory factory =
                 Model.getStateMachinesFactory();
-            //#if defined(UMLSTATEDIAGRAM)
-            //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Command
             if (!Model.getFacade().isConcurrent(umlCompositeState)) {
                 final Object umlRegion1 =
                     factory.buildCompositeState(umlCompositeState);
@@ -177,7 +174,7 @@ public class ActionAddConcurrentRegion extends UndoableAction {
                         curFig.redrawEnclosedFigs();
                     }
                 }
-            }            
+            }
             final Object umlRegion2 = 
                 factory.buildCompositeState(umlCompositeState);
             

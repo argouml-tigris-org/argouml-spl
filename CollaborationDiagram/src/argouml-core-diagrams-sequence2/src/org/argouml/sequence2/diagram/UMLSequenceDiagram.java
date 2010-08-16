@@ -365,6 +365,8 @@ public class UMLSequenceDiagram extends UMLDiagram {
                 }
             }
         }
+	    //#if defined(COLLABORATIONDIAGRAM)
+        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
         if (correctInteraction != null) {
             final CollaborationsHelper collabHelper =
                 Model.getCollaborationsHelper();
@@ -450,6 +452,7 @@ public class UMLSequenceDiagram extends UMLDiagram {
                 }
             }
         }
+        //#endif
     }
 }
 //#endif

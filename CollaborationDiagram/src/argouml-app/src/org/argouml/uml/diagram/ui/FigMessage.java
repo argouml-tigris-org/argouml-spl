@@ -35,7 +35,10 @@ import java.util.Vector;
 import org.argouml.model.Model;
 import org.argouml.notation.NotationProviderFactory2;
 import org.argouml.uml.diagram.DiagramSettings;
+//#if defined(COLLABORATIONDIAGRAM)
+//@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Import
 import org.argouml.uml.diagram.collaboration.ui.FigAssociationRole;
+//#endif
 import org.tigris.gef.base.Layer;
 import org.tigris.gef.graph.GraphModel;
 import org.tigris.gef.presentation.Fig;
@@ -532,7 +535,8 @@ public class FigMessage extends FigNodeModelElement {
 	    setArrow(NORTH);
 	}
     }
-
+    //#if defined(COLLABORATIONDIAGRAM)
+    //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Method
     /**
      * Add the FigMessage to the Path Items of its FigAssociationRole.
      * 
@@ -550,7 +554,7 @@ public class FigMessage extends FigNodeModelElement {
 	    }
 	}
     }
-
+    //#endif
     /*
      * @see org.argouml.uml.diagram.ui.FigNodeModelElement#renderingChanged()
      */

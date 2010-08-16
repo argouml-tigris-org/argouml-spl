@@ -1,3 +1,6 @@
+//#if defined(COLLABORATIONDIAGRAM)
+//@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Package
+
 // $Id$
 // Copyright (c) 2008 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
@@ -60,3 +63,4 @@ public class InitCollaborationDiagram implements InitSubsystem {
     }
 
 }
+//#endif

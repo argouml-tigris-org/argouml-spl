@@ -50,12 +50,15 @@ public final class Model {
      */
     private static ActivityGraphsHelper activityGraphsHelper;
     //#endif
-
+    
+    //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
+    //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Field
+    //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Field
     /**
      * The decorated helper.
      */
     private static CollaborationsHelper collaborationsHelper;
-
+    //#endif
     /**
      * The decorated helper.
      */
@@ -85,12 +88,13 @@ public final class Model {
      * The decorated helper.
      */
     private static UmlHelper umlHelper;
-
+    //#if defined(USECASEDIAGRAM)
+    //@#$LPS-USECASEDIAGRAM:GranularityType:Field
     /**
      * The decorated helper.
      */
     private static UseCasesHelper useCasesHelper;
-
+    //#endif
     /**
      * The register for the observer.
      */
@@ -122,14 +126,25 @@ public final class Model {
         //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
         activityGraphsHelper = impl.getActivityGraphsHelper();
         //#endif
+        //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
+        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
+        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
         collaborationsHelper = impl.getCollaborationsHelper();
+        //#endif
         commonBehaviorHelper = impl.getCommonBehaviorHelper();
         coreHelper = impl.getCoreHelper();
         dataTypesHelper = impl.getDataTypesHelper();
         extensionMechanismsHelper = impl.getExtensionMechanismsHelper();
+        //#if defined(UMLSTATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+        //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Command
+        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
         stateMachinesHelper = impl.getStateMachinesHelper();
+        //#endif
         umlHelper = impl.getUmlHelper();
+        //#if defined(USECASEDIAGRAM)
+        //@#$LPS-USECASEDIAGRAM:GranularityType:Command
         useCasesHelper = impl.getUseCasesHelper();
+        //#endif
     }
 
     /**
@@ -182,6 +197,10 @@ public final class Model {
         return activityGraphsHelper;
     }
     //#endif
+    
+    //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
+    //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Method
+    //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Method
     /**
      * Getter for CollaborationsFactory.
      *
@@ -190,7 +209,8 @@ public final class Model {
     public static CollaborationsFactory getCollaborationsFactory() {
         return impl.getCollaborationsFactory();
     }
-
+    //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Method
+    //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Method
     /**
      * Getter for CollaborationsHelper.
      *
@@ -199,7 +219,7 @@ public final class Model {
     public static CollaborationsHelper getCollaborationsHelper() {
         return collaborationsHelper;
     }
-
+    //#endif
     /**
      * Getter for CommonBehaviorFactory.
      *
@@ -289,7 +309,9 @@ public final class Model {
     public static ModelManagementHelper getModelManagementHelper() {
         return impl.getModelManagementHelper();
     }
-
+    //#if defined(UMLSTATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+    //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Method
+    //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Method
     /**
      * Getter for StateMachinesFactory.
      *
@@ -298,7 +320,8 @@ public final class Model {
     public static StateMachinesFactory getStateMachinesFactory() {
         return impl.getStateMachinesFactory();
     }
-
+    //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Method
+    //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Method
     /**
      * Getter for StateMachinesHelper.
      *
@@ -307,7 +330,7 @@ public final class Model {
     public static StateMachinesHelper getStateMachinesHelper() {
         return stateMachinesHelper;
     }
-
+  //#endif
     /**
      * Getter for UmlFactory.
      *
@@ -325,7 +348,8 @@ public final class Model {
     public static UmlHelper getUmlHelper() {
         return umlHelper;
     }
-
+    //#if defined(USECASEDIAGRAM)
+    //@#$LPS-USECASEDIAGRAM:GranularityType:Method
     /**
      * Getter for UseCasesFactory.
      *
@@ -334,7 +358,7 @@ public final class Model {
     public static UseCasesFactory getUseCasesFactory() {
         return impl.getUseCasesFactory();
     }
-
+  //@#$LPS-USECASEDIAGRAM:GranularityType:Method
     /**
      * Getter for UseCasesHelper.
      *
@@ -343,7 +367,7 @@ public final class Model {
     public static UseCasesHelper getUseCasesHelper() {
         return useCasesHelper;
     }
-
+    //#endif
     /**
      * Getter for the MetaTypes object.
      *

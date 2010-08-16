@@ -67,6 +67,11 @@ public class ActionNewTransition extends AbstractActionNewModelElement {
      */
     public void actionPerformed(ActionEvent e) {
         super.actionPerformed(e);
+        //#if defined(UMLSTATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+        //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Command
+        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
+        //@#$LPS-UMLSTATEDIAGRAM:Localization:EndMethod
+        //@#$LPS-ACTIVITYDIAGRAM:Localization:EndMethod        
         if (getValue(SOURCE) == null || getValue(DESTINATION) == null) {
             Object target = TargetManager.getInstance().getModelTarget();
             Model.getStateMachinesFactory()
@@ -75,6 +80,7 @@ public class ActionNewTransition extends AbstractActionNewModelElement {
             Model.getStateMachinesFactory()
                 .buildTransition(getValue(SOURCE), getValue(DESTINATION));
         }
+        //#endif
     }
 
     /*

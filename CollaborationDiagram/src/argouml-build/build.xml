@@ -497,15 +497,14 @@ Property files to be searched (in argouml-build):
           description="Clean out all staging files.">
   	
     <!-- Build the subdirs in opposite order. -->
-    <ant dir="../argouml-core-diagrams-sequence2"
-         inheritAll="false"                                   target="jpp-clean"/>
-    <ant dir="../argouml-app" inheritAll="false"              target="jpp-clean"/>
-    <ant dir="../argouml-core-model-euml" inheritAll="false"  target="jpp-clean"/>
-    <ant dir="../argouml-core-model-mdr" inheritAll="false"   target="jpp-clean"/>
-    <ant dir="../argouml-core-model" inheritAll="false"       target="jpp-clean"/>  	
-  	<ant dir="../argouml-core-infra" inheritAll="false"       target="clean"/>
+    <ant dir="../argouml-core-diagrams-sequence2"	inheritAll="false"	target="jpp-clean"/>
+    <ant dir="../argouml-app" 						inheritAll="false"  target="jpp-clean"/>
+    <ant dir="../argouml-core-model-euml"			inheritAll="false"	target="jpp-clean"/>
+    <ant dir="../argouml-core-model-mdr" 			inheritAll="false"  target="jpp-clean"/>
+    <ant dir="../argouml-core-model" 				inheritAll="false"	target="jpp-clean"/>  	
+  	<!-- <ant dir="../argouml-core-infra" 				inheritAll="false"   target="clean"/> -->
   	
-  	<antcall target="clean"/>
+  	<!-- <antcall target="clean"/> -->
   	
   </target>		
 
@@ -968,12 +967,11 @@ For details see http://www.clarkware.com/software/JDepend.html.
     	description="Execute preprocessor on all projects.">
 
 	<!-- Preprocess the subdirs in order. -->
-	<ant dir="../argouml-core-model"		inheritAll="false" target="jpp-preprocess"/>
-	<ant dir="../argouml-core-model-mdr"	inheritAll="false" target="jpp-preprocess"/>
-	<ant dir="../argouml-core-model-euml"	inheritAll="false" target="jpp-preprocess"/>
-	<ant dir="../argouml-app"				inheritAll="false" target="jpp-preprocess"/>
-	<ant dir="../argouml-core-diagrams-sequence2" inheritAll="false" 
-			target="jpp-preprocess"/>
+	<ant dir="../argouml-core-model"				inheritAll="false" target="jpp-preprocess"/>
+	<ant dir="../argouml-core-model-mdr"			inheritAll="false" target="jpp-preprocess"/>
+	<ant dir="../argouml-core-model-euml"			inheritAll="false" target="jpp-preprocess"/>
+	<ant dir="../argouml-app"						inheritAll="false" target="jpp-preprocess"/>
+	<ant dir="../argouml-core-diagrams-sequence2"	inheritAll="false" 	target="jpp-preprocess"/>
 	  	
   </target>		
 </project>

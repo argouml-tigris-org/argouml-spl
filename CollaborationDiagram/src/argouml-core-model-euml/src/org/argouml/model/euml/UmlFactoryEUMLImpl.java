@@ -200,6 +200,8 @@ class UmlFactoryEUMLImpl implements UmlFactory, AbstractModelFactory {
         } else if (elementType == metaTypes.getLink()) {
             connection = modelImpl.getCommonBehaviorFactory().buildLink(
                     fromElement, toElement);
+        //#if defined(USECASEDIAGRAM)
+        //@#$LPS-USECASEDIAGRAM:GranularityType:Command
         } else if (elementType == metaTypes.getExtend()) {
             // Extend, but only between two use cases. Remember we draw from the
             // extension port to the base port.
@@ -208,6 +210,7 @@ class UmlFactoryEUMLImpl implements UmlFactory, AbstractModelFactory {
         } else if (elementType == metaTypes.getInclude()) {
             connection = modelImpl.getUseCasesFactory().buildInclude(
                     fromElement, toElement);
+        //#endif
         } else if (elementType == metaTypes.getTransition()) {
             connection = modelImpl.getStateMachinesFactory().buildTransition(
                     fromElement, toElement);
@@ -227,11 +230,15 @@ class UmlFactoryEUMLImpl implements UmlFactory, AbstractModelFactory {
 
     public Object buildNode(Object elementType) {
         Object o = null;
+        //#if defined(USECASEDIAGRAM)
+        //@#$LPS-USECASEDIAGRAM:GranularityType:Command
         if (elementType == metaTypes.getActor()) {
             o = modelImpl.getUseCasesFactory().createActor();
         } else if (elementType == metaTypes.getUseCase()) {
             o = modelImpl.getUseCasesFactory().createUseCase();
-        } else if (elementType == metaTypes.getUMLClass()) {
+        } else
+            //#endif
+            if (elementType == metaTypes.getUMLClass()) {
             o = modelImpl.getCoreFactory().buildClass();
         } else if (elementType == metaTypes.getInterface()) {
             o = modelImpl.getCoreFactory().buildInterface();

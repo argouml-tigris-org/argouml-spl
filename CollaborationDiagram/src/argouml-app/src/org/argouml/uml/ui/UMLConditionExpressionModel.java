@@ -71,7 +71,11 @@ public class UMLConditionExpressionModel extends UMLExpressionModel2 {
             throw new IllegalStateException("There is no target for "
                     + getContainer());
         }
+        //#if defined(USECASEDIAGRAM)
+        //@#$LPS-USECASEDIAGRAM:GranularityType:Command
+        //@#$LPS-USECASEDIAGRAM:Localization:EndMethod
         Model.getUseCasesHelper().setCondition(target, expression);
+        //#endif
     }
 
     /*

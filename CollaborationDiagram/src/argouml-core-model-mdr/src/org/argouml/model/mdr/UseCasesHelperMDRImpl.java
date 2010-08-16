@@ -1,3 +1,6 @@
+//#if defined(USECASEDIAGRAM)
+//@#$LPS-USECASEDIAGRAM:GranularityType:Class
+
 // $Id$
 // Copyright (c) 1996-2007 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
@@ -232,11 +235,14 @@ class UseCasesHelperMDRImpl implements UseCasesHelper {
             for (ExtensionPoint point : theExtend.getExtensionPoint()) {
                 removeExtend(point, theExtend);
             }
+            //#if defined(USECASEDIAGRAM)
+            //@#$LPS-USECASEDIAGRAM:GranularityType:Command
             ExtensionPoint point =
                 (ExtensionPoint) modelImpl.
                     getUseCasesFactory().buildExtensionPoint(base);
             theExtend.setBase((UseCase) base);
             addExtensionPoint(theExtend, point);
+            //#endif
         } else if (extend instanceof Include) {
             // TODO: this can be simplified to just
             //((Include) extend).setBase((UseCase) base);
@@ -473,3 +479,4 @@ class UseCasesHelperMDRImpl implements UseCasesHelper {
                 + usecase);
     }
 }
+//#endif

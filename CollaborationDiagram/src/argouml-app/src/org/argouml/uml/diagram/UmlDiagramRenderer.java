@@ -37,8 +37,11 @@ import org.argouml.uml.diagram.activity.ui.FigObjectFlowState;
 import org.argouml.uml.diagram.activity.ui.FigPartition;
 import org.argouml.uml.diagram.activity.ui.FigSubactivityState;
 //#endif
+//#if defined(COLLABORATIONDIAGRAM)
+//@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Import
 import org.argouml.uml.diagram.collaboration.ui.FigAssociationRole;
 import org.argouml.uml.diagram.collaboration.ui.FigClassifierRole;
+//#endif
 import org.argouml.uml.diagram.deployment.ui.FigComponent;
 import org.argouml.uml.diagram.deployment.ui.FigComponentInstance;
 import org.argouml.uml.diagram.deployment.ui.FigMNode;
@@ -172,8 +175,11 @@ public abstract class UmlDiagramRenderer
         } else if (Model.getFacade().isASubactivityState(node)) {
             figNode = new FigSubactivityState();
         //#endif
+        //#if defined(COLLABORATIONDIAGRAM)
+        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command            
         } else if (Model.getFacade().isAClassifierRole(node)) {
             figNode = new FigClassifierRole();
+        //#endif
         } else if (Model.getFacade().isAMessage(node)) {
             figNode = new FigMessage();
         } else if (Model.getFacade().isANode(node)) {
@@ -301,8 +307,11 @@ public abstract class UmlDiagramRenderer
             }
         } else if (edge instanceof CommentEdge) {
             newEdge = null;
+        //#if defined(COLLABORATIONDIAGRAM)
+        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
         } else if (Model.getFacade().isAAssociationRole(edge)) {
             newEdge = new FigAssociationRole();
+        //#endif
         //#if defined(UMLSTATEDIAGRAM)
         //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Command
         } else if (Model.getFacade().isATransition(edge)) {

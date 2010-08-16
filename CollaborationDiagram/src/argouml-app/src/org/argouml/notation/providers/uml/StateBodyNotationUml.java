@@ -190,7 +190,9 @@ public class StateBodyNotationUml extends StateBodyNotation {
                         && line.substring(2).trim().startsWith("/")) {
                     parseStateDoAction(st, line);
                     foundDo = true;
-                } else {
+                } 
+                //#if defined(UMLSTATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+                else {
                     Object t =
                         Model.getStateMachinesFactory()
                                 .buildInternalTransition(st);
@@ -209,6 +211,7 @@ public class StateBodyNotationUml extends StateBodyNotation {
                     /* Add this new one, and mark it to be retained: */
                     internalsInfo.add(t, true);
                 }
+                //#endif
             }
         }
 

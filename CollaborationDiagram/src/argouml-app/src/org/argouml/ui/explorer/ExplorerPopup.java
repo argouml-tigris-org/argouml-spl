@@ -78,7 +78,10 @@ import org.argouml.uml.diagram.ui.ModeAddToDiagram;
 import org.argouml.uml.ui.ActionActivityDiagram;
 //#endif
 import org.argouml.uml.ui.ActionClassDiagram;
+//#if defined(COLLABORATIONDIAGRAM)
+//@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Import
 import org.argouml.uml.ui.ActionCollaborationDiagram;
+//#endif
 import org.argouml.uml.ui.ActionDeleteModelElements;
 import org.argouml.uml.ui.ActionDeploymentDiagram;
 //#if defined(SEQUENCEDIAGRAM)
@@ -414,7 +417,10 @@ public class ExplorerPopup extends JPopupMenu {
         //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
         createDiagrams.add(new ActionSequenceDiagram());
         //#endif
+        //#if defined(COLLABORATIONDIAGRAM)
+        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
         createDiagrams.add(new ActionCollaborationDiagram());
+        //#endif
         //#if defined(UMLSTATEDIAGRAM)
         //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Command
         createDiagrams.add(new ActionStateDiagram());

@@ -2768,7 +2768,8 @@ public interface Facade {
      *         value 'unlimited' represented graphically by '*'.
      */
     int getUpper(Object handle);
-
+    //#if defined(USECASEDIAGRAM)
+    //@#$LPS-USECASEDIAGRAM:GranularityType:InterfaceMethod
     /**
      * Return the UseCase of an ExtensionPoint.
      *
@@ -2776,6 +2777,7 @@ public interface Facade {
      * @return a UseCase
      */
     Object getUseCase(Object handle);
+    //#endif
 
     /**
      * Return the lower bound of the multiplicity of the given element

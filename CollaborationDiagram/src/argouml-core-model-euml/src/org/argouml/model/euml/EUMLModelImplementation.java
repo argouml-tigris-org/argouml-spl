@@ -157,11 +157,14 @@ public class EUMLModelImplementation implements ModelImplementation {
     private UmlFactoryEUMLImpl theUmlFactory;
 
     private UmlHelperEUMLImpl theUmlHelper;
-
+    //#if defined(USECASEDIAGRAM)
+    //@#$LPS-USECASEDIAGRAM:GranularityType:Field
     private UseCasesFactoryEUMLImpl theUseCasesFactory;
-
+    //#endif
+    //#if defined(USECASEDIAGRAM)
+    //@#$LPS-USECASEDIAGRAM:GranularityType:Field
     private UseCasesHelperEUMLImpl theUseCasesHelper;
-
+    //#endif
     private VisibilityKindEUMLImpl theVisibilityKind;
     
     private CommandStackImpl theCommandStack;
@@ -509,13 +512,15 @@ public class EUMLModelImplementation implements ModelImplementation {
         }
         return theUmlHelper;
     }
-
+    //#if defined(USECASEDIAGRAM)
+    //@#$LPS-USECASEDIAGRAM:GranularityType:Method
     public UseCasesFactoryEUMLImpl getUseCasesFactory() {
         if (theUseCasesFactory == null) {
             theUseCasesFactory = new UseCasesFactoryEUMLImpl(this);
         }
         return theUseCasesFactory;
     }
+    
 
     public UseCasesHelperEUMLImpl getUseCasesHelper() {
         if (theUseCasesHelper == null) {
@@ -523,7 +528,7 @@ public class EUMLModelImplementation implements ModelImplementation {
         }
         return theUseCasesHelper;
     }
-
+    //#endif
     public VisibilityKindEUMLImpl getVisibilityKind() {
         if (theVisibilityKind == null) {
             theVisibilityKind = new VisibilityKindEUMLImpl();

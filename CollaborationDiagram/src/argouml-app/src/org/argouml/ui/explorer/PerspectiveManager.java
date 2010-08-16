@@ -46,16 +46,25 @@ import org.argouml.ui.explorer.rules.GoClassToAssociatedClass;
 import org.argouml.ui.explorer.rules.GoClassToNavigableClass;
 import org.argouml.ui.explorer.rules.GoClassToSummary;
 import org.argouml.ui.explorer.rules.GoClassifierToBehavioralFeature;
+//#if defined(COLLABORATIONDIAGRAM)
+//@#$LPS-COLLABORATIONDIAGRAMM:GranularityType:Import
 import org.argouml.ui.explorer.rules.GoClassifierToCollaboration;
+//#endif
 import org.argouml.ui.explorer.rules.GoClassifierToInstance;
 //#if defined(SEQUENCEDIAGRAM)
 //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Import
 import org.argouml.ui.explorer.rules.GoClassifierToSequenceDiagram;
 //#endif
+//#if defined(UMLSTATEDIAGRAM)
+//@#$LPS-UMLSTATEDIAGRAM:GranularityType:Import
 import org.argouml.ui.explorer.rules.GoClassifierToStateMachine;
+//#endif
 import org.argouml.ui.explorer.rules.GoClassifierToStructuralFeature;
+//#if defined(COLLABORATIONDIAGRAM)
+//@#$LPS-COLLABORATIONDIAGRAMM:GranularityType:Import
 import org.argouml.ui.explorer.rules.GoCollaborationToDiagram;
 import org.argouml.ui.explorer.rules.GoCollaborationToInteraction;
+//#endif
 import org.argouml.ui.explorer.rules.GoComponentToResidentModelElement;
 //#if defined(UMLSTATEDIAGRAM)
 //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Import
@@ -79,7 +88,10 @@ import org.argouml.ui.explorer.rules.GoModelElementToContainedDiagrams;
 import org.argouml.ui.explorer.rules.GoModelElementToContainedLostElements;
 import org.argouml.ui.explorer.rules.GoModelElementToContents;
 import org.argouml.ui.explorer.rules.GoModelToBaseElements;
+//#if defined(COLLABORATIONDIAGRAM)
+//@#$LPS-COLLABORATIONDIAGRAMM:GranularityType:Import
 import org.argouml.ui.explorer.rules.GoModelToCollaboration;
+//#endif
 import org.argouml.ui.explorer.rules.GoModelToDiagrams;
 import org.argouml.ui.explorer.rules.GoModelToElements;
 import org.argouml.ui.explorer.rules.GoModelToNode;
@@ -87,8 +99,11 @@ import org.argouml.ui.explorer.rules.GoNamespaceToClassifierAndPackage;
 import org.argouml.ui.explorer.rules.GoNamespaceToDiagram;
 import org.argouml.ui.explorer.rules.GoNamespaceToOwnedElements;
 import org.argouml.ui.explorer.rules.GoNodeToResidentComponent;
+//#if defined(COLLABORATIONDIAGRAM)
+//@#$LPS-COLLABORATIONDIAGRAMM:GranularityType:Import
 import org.argouml.ui.explorer.rules.GoOperationToCollaboration;
 import org.argouml.ui.explorer.rules.GoOperationToCollaborationDiagram;
+//#endif
 //#if defined(SEQUENCEDIAGRAM)
 //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Import
 import org.argouml.ui.explorer.rules.GoOperationToSequenceDiagram;
@@ -101,7 +116,10 @@ import org.argouml.ui.explorer.rules.GoProfileConfigurationToProfile;
 import org.argouml.ui.explorer.rules.GoProfileToCritics;
 //#endif
 import org.argouml.ui.explorer.rules.GoProfileToModel;
+//#if defined(COLLABORATIONDIAGRAM)
+//@#$LPS-COLLABORATIONDIAGRAMM:GranularityType:Import
 import org.argouml.ui.explorer.rules.GoProjectToCollaboration;
+//#endif
 import org.argouml.ui.explorer.rules.GoProjectToDiagram;
 import org.argouml.ui.explorer.rules.GoProjectToModel;
 import org.argouml.ui.explorer.rules.GoProjectToProfileConfiguration;
@@ -417,16 +435,25 @@ public final class PerspectiveManager {
         packagePerspective.addRule(new GoClassifierToStructuralFeature());
         packagePerspective.addRule(new GoClassifierToBehavioralFeature());
         packagePerspective.addRule(new GoEnumerationToLiterals());
+        //#if defined(COLLABORATIONDIAGRAM)
+        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
         packagePerspective.addRule(new GoCollaborationToInteraction());
+        //#endif
         packagePerspective.addRule(new GoInteractionToMessages());
         packagePerspective.addRule(new GoMessageToAction());
         packagePerspective.addRule(new GoSignalToReception());
         packagePerspective.addRule(new GoLinkToStimuli());
         packagePerspective.addRule(new GoStimulusToAction());
-        packagePerspective.addRule(new GoClassifierToCollaboration());
+        //#if defined(COLLABORATIONDIAGRAM)
+        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
+        packagePerspective.addRule(new GoClassifierToCollaboration());        
         packagePerspective.addRule(new GoOperationToCollaboration());
+        //#endif
         packagePerspective.addRule(new GoModelElementToComment());
+        //#if defined(COLLABORATIONDIAGRAM)
+        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
         packagePerspective.addRule(new GoCollaborationToDiagram());
+        //#endif
         /*
          * Removed the next one due to issue 2165.
          * packagePerspective.addRule(new GoOperationToCollaborationDiagram());
@@ -603,17 +630,27 @@ public final class PerspectiveManager {
             //#endif
             new GoBehavioralFeatureToStateMachine(),
             new GoClassifierToBehavioralFeature(),
+            //#if defined(COLLABORATIONDIAGRAM)
+            //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:StaticInitialization
             new GoClassifierToCollaboration(),
+            //#endif
             new GoClassifierToInstance(),
             //#if defined(SEQUENCEDIAGRAM)
-            //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
+            //@#$LPS-SEQUENCEDIAGRAM:GranularityType:StaticInitialization
             new GoClassifierToSequenceDiagram(),
             //#endif
+            //#if defined(UMLSTATEDIAGRAM)
+            //@#$LPS-UMLSTATEDIAGRAM:GranularityType:StaticInitialization
             new GoClassifierToStateMachine(),
+            //#endif
             new GoClassifierToStructuralFeature(),
             new GoClassToAssociatedClass(), new GoClassToNavigableClass(),
-            new GoClassToSummary(), new GoCollaborationToDiagram(),
+            new GoClassToSummary(), 
+            //#if defined(COLLABORATIONDIAGRAM)
+            //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:StaticInitialization
+            new GoCollaborationToDiagram(),            
             new GoCollaborationToInteraction(),
+            //#endif
             new GoComponentToResidentModelElement(),
             //#if defined(UMLSTATEDIAGRAM)
             //@#$LPS-UMLSTATEDIAGRAM:GranularityType:StaticInitialization
@@ -628,19 +665,30 @@ public final class PerspectiveManager {
             new GoModelElementToContents(),
             new GoModelElementToContainedDiagrams(),
             new GoModelElementToContainedLostElements(),
-            new GoModelToBaseElements(), new GoModelToCollaboration(),
+            new GoModelToBaseElements(),
+            //#if defined(COLLABORATIONDIAGRAM)
+            //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:StaticInitialization
+            new GoModelToCollaboration(),
+            //#endif
             new GoModelToDiagrams(), new GoModelToElements(),
             new GoModelToNode(), new GoNamespaceToClassifierAndPackage(),
             new GoNamespaceToDiagram(), new GoNamespaceToOwnedElements(),
-            new GoNodeToResidentComponent(),
+            new GoNodeToResidentComponent(),            
+            //#if defined(COLLABORATIONDIAGRAM)
+            //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:StaticInitialization
             new GoOperationToCollaborationDiagram(),
             new GoOperationToCollaboration(),
+            //#endif
             //#if defined(SEQUENCEDIAGRAM)
-            //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
+            //@#$LPS-SEQUENCEDIAGRAM:GranularityType:StaticInitialization
             new GoOperationToSequenceDiagram(), new GoPackageToClass(),
             //#endif
             new GoPackageToElementImport(),
-            new GoProjectToCollaboration(), new GoProjectToDiagram(),
+            //#if defined(COLLABORATIONDIAGRAM)
+            //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:StaticInitialization
+            new GoProjectToCollaboration(),
+            //#endif
+            new GoProjectToDiagram(),
             //#if defined(UMLSTATEDIAGRAM)
             //@#$LPS-UMLSTATEDIAGRAM:GranularityType:StaticInitialization
             new GoProjectToModel(), new GoProjectToStateMachine(),
