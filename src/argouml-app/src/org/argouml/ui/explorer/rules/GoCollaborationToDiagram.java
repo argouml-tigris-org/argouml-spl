@@ -1,3 +1,6 @@
+//#if defined(COLLABORATIONDIAGRAM)
+//@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Class
+
 // $Id$
 // Copyright (c) 1996-2006 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
@@ -37,6 +40,7 @@ import org.argouml.uml.diagram.ArgoDiagram;
 import org.argouml.uml.diagram.collaboration.ui.UMLCollaborationDiagram;
 //#if defined(SEQUENCEDIAGRAM)
 //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Import
+//@#$LPS-SEQUENCEDIAGRAM:Localization:NestedIfdef
 import org.argouml.uml.diagram.sequence.ui.UMLSequenceDiagram;
 //#endif
 
@@ -74,6 +78,7 @@ public class GoCollaborationToDiagram extends AbstractPerspectiveRule {
             }
             //#if defined(SEQUENCEDIAGRAM)
             //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
+            //@#$LPS-SEQUENCEDIAGRAM:Localization:NestedIfdef
             /* Also show unattached sequence diagrams: */
             if ((d instanceof UMLSequenceDiagram)
                     && (Model.getFacade().getRepresentedClassifier(parent) == null)
@@ -94,3 +99,4 @@ public class GoCollaborationToDiagram extends AbstractPerspectiveRule {
 	return Collections.EMPTY_SET;
     }
 }
+//#endif

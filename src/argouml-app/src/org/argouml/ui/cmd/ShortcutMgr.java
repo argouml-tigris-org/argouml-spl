@@ -65,7 +65,10 @@ import org.argouml.ui.explorer.ActionPerspectiveConfig;
 import org.argouml.uml.ui.ActionActivityDiagram;
 //#endif
 import org.argouml.uml.ui.ActionClassDiagram;
+//#if defined(COLLABORATIONDIAGRAM)
+//@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Import
 import org.argouml.uml.ui.ActionCollaborationDiagram;
+//#endif
 import org.argouml.uml.ui.ActionDeleteModelElements;
 import org.argouml.uml.ui.ActionDeploymentDiagram;
 import org.argouml.uml.ui.ActionGenerateAll;
@@ -227,10 +230,12 @@ public class ShortcutMgr {
     /** Action key for sequence diagram */
     public static final String ACTION_SEQUENCE_DIAGRAM = "sequenceDiagrams";
     //#endif
-
+    //#if defined(COLLABORATIONDIAGRAM)
+    //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Field
     /** Action key for collaboration diagram */
     public static final String ACTION_COLLABORATION_DIAGRAM = 
         "collaborationDiagrams";
+    //#endif
     //#if defined(UMLSTATEDIAGRAM)
     //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Field
     /** Action key for state diagram */
@@ -685,8 +690,11 @@ public class ShortcutMgr {
         putDefaultShortcut(ACTION_SEQUENCE_DIAGRAM, null,
                 new ActionSequenceDiagram());
         //#endif
+        //#if defined(COLLABORATIONDIAGRAM)
+        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
         putDefaultShortcut(ACTION_COLLABORATION_DIAGRAM, null,
                 new ActionCollaborationDiagram());
+        //#endif
         //#if defined(UMLSTATEDIAGRAM)
         //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Command
         putDefaultShortcut(ACTION_STATE_DIAGRAM, null, 

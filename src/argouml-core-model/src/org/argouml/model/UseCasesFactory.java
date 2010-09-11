@@ -1,3 +1,6 @@
+//#if defined(USECASEDIAGRAM)
+//@#$LPS-USECASEDIAGRAM:GranularityType:Interface
+
 // $Id$
 // Copyright (c) 2005-2006 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
@@ -129,3 +132,4 @@ public interface UseCasesFactory extends Factory {
      */
     Object buildActor(Object actor, Object model);
 }
+//#endif

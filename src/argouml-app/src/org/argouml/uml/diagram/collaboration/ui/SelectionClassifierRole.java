@@ -1,3 +1,6 @@
+//#if defined(COLLABORATIONDIAGRAM)
+//@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Package
+
 // $Id$
 // Copyright (c) 1996-2009 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
@@ -161,3 +164,4 @@ public class SelectionClassifierRole extends SelectionNodeClarifiers2 {
     }
 
 } 
+//#endif

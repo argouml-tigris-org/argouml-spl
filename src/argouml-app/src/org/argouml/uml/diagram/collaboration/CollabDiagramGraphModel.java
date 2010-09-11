@@ -1,3 +1,6 @@
+//#if defined(COLLABORATIONDIAGRAM)
+//@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Package
+
 // $Id$
 // Copyright (c) 1996-2006 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
@@ -34,6 +37,7 @@ import java.util.List;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
+//@#$LPS-LOGGING:Localization:NestedIfdef
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.model.Model;
@@ -49,6 +53,7 @@ public class CollabDiagramGraphModel extends UMLMutableGraphSupport
     implements VetoableChangeListener {
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
+    //@#$LPS-LOGGING:Localization:NestedIfdef
     /**
      * Logger.
      */
@@ -72,6 +77,7 @@ public class CollabDiagramGraphModel extends UMLMutableGraphSupport
         } catch (IllegalArgumentException e) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:Localization:NestedIfdef
             LOG.error("Illegal Argument to setCollaboration", e);
             //#endif
             throw e;
@@ -217,6 +223,7 @@ public class CollabDiagramGraphModel extends UMLMutableGraphSupport
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Command
             //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedIfdef
             LOG.error("Edge rejected. Its ends are not attached to anything");
             //#endif
             return false;
@@ -227,6 +234,7 @@ public class CollabDiagramGraphModel extends UMLMutableGraphSupport
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Command
             //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedIfdef
             LOG.error("Edge rejected. Its source end is attached to " + end0
                     + " but this is not in the graph model");
             //#endif
@@ -257,6 +265,7 @@ public class CollabDiagramGraphModel extends UMLMutableGraphSupport
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Command
         //@#$LPS-LOGGING:Localization:StartMethod
+        //@#$LPS-LOGGING:Localization:NestedIfdef
 	LOG.debug("adding MClassifierRole node!!");
 	//#endif
 	if (!canAddNode(node)) {
@@ -280,8 +289,9 @@ public class CollabDiagramGraphModel extends UMLMutableGraphSupport
     @Override
     public void addEdge(Object edge) {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Command        
         //@#$LPS-LOGGING:Localization:StartMethod
+        //@#$LPS-LOGGING:Localization:NestedIfdef
         LOG.debug("adding class edge!!!!!!");
         //#endif
         if (!canAddEdge(edge)) {
@@ -375,6 +385,7 @@ public class CollabDiagramGraphModel extends UMLMutableGraphSupport
 	        //#if defined(LOGGING)
 	        //@#$LPS-LOGGING:GranularityType:Command
 	        //@#$LPS-LOGGING:Localization:NestedCommand
+	        //@#$LPS-LOGGING:Localization:NestedIfdef
 		LOG.debug("model removed " + me);
 		//#endif
 		if (Model.getFacade().isAClassifier(me)) {
@@ -390,6 +401,7 @@ public class CollabDiagramGraphModel extends UMLMutableGraphSupport
 	    //#if defined(LOGGING)
 	    //@#$LPS-LOGGING:GranularityType:Command
 	    //@#$LPS-LOGGING:Localization:NestedCommand
+	    //@#$LPS-LOGGING:Localization:NestedIfdef
 	    else {
 		LOG.debug("model added " + me);
 	    }
@@ -402,3 +414,4 @@ public class CollabDiagramGraphModel extends UMLMutableGraphSupport
      */
     private static final long serialVersionUID = -4895696235473642985L;
 } /* end class CollabDiagramGraphModel */
+//#endif

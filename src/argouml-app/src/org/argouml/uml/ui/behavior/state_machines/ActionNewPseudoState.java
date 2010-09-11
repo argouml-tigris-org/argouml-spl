@@ -66,11 +66,17 @@ public class ActionNewPseudoState extends AbstractActionNewModelElement {
      */
     public void actionPerformed(ActionEvent e) {
         super.actionPerformed(e);
-        Object target = TargetManager.getInstance().getModelTarget();
+        //#if defined(UMLSTATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+        //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Command
+        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
+        //@#$LPS-UMLSTATEDIAGRAM:Localization:EndMethod
+        //@#$LPS-ACTIVITYDIAGRAM:Localization:EndMethod
+        Object target = TargetManager.getInstance().getModelTarget();        
         Object ps =
             Model.getStateMachinesFactory().buildPseudoState(target);
         if (kind != null) {
             Model.getCoreHelper().setKind(ps, kind);
         }
+        //#endif
     }
 }

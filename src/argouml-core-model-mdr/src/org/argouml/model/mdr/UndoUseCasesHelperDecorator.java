@@ -1,3 +1,6 @@
+//#if defined(USECASEDIAGRAM)
+//@#$LPS-USECASEDIAGRAM:GranularityType:Class
+
 // $Id$
 // Copyright (c) 2005-2006 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
@@ -45,4 +48,4 @@ class UndoUseCasesHelperDecorator
         super(component);
     }
 }
-
+//#endif

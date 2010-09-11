@@ -83,9 +83,13 @@ class UmlHelperMDRImpl implements UmlHelper {
             // include which are not members of core
             return modelImpl.getCoreHelper().getSource(relationship);
         }
+        //#if defined(UMLSTATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+        //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Command
+        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
         if (relationship instanceof Transition) {
             return modelImpl.getStateMachinesHelper().getSource(relationship);
         }
+        //#endif
         if (relationship instanceof AssociationEnd) {
             return modelImpl.getCoreHelper().getSource(relationship);
         }
@@ -105,10 +109,14 @@ class UmlHelperMDRImpl implements UmlHelper {
             // include which are not members of core
             return modelImpl.getCoreHelper().getDestination(relationship);
         }
+        //#if defined(UMLSTATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+        //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Command
+        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
         if (relationship instanceof Transition) {
             return modelImpl.getStateMachinesHelper().
                     getDestination(relationship);
         }
+        //#endif
         if (relationship instanceof AssociationEnd) {
             return modelImpl.getCoreHelper().getDestination(relationship);
         }

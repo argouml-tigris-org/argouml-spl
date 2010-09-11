@@ -1,3 +1,7 @@
+//#if defined(UMLSTATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+//@#$LPS-UMLSTATEDIAGRAM:GranularityType:Class
+//@#$LPS-ACTIVITYDIAGRAM:GranularityType:Class
+
 // $Id$
 // Copyright (c) 1996-2008 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
@@ -28,6 +32,7 @@ import java.util.Collection;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
+//@#$LPS-LOGGING:Localization:NestedIfdef
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.model.StateMachinesFactory;
@@ -73,6 +78,7 @@ class StateMachinesFactoryMDRImpl extends AbstractUmlModelFactoryMDR
         implements StateMachinesFactory {
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
+    //@#$LPS-LOGGING:Localization:NestedIfdef
     /**
      * Logger
      */
@@ -459,6 +465,7 @@ class StateMachinesFactoryMDRImpl extends AbstractUmlModelFactoryMDR
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Command
             //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedIfdef
             if (t.getGuard() != null) {                
                 LOG.warn("Replacing Guard " + t.getGuard().getName() 
                         + " on Transition " + t.getName());
@@ -733,4 +740,4 @@ class StateMachinesFactoryMDRImpl extends AbstractUmlModelFactoryMDR
     }
 
 }
-
+//#endif

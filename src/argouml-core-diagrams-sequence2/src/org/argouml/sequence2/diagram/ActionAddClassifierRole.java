@@ -54,7 +54,9 @@ public class ActionAddClassifierRole extends CmdCreateNode {
     protected Mode createMode(String instructions) { 
         return new ModePlaceClassifierRole(this, instructions);
     }
-
+    //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
+    //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Method
+    //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Method
     /*
      * @see org.tigris.gef.graph.GraphFactory#makeNode()
      */
@@ -79,6 +81,7 @@ public class ActionAddClassifierRole extends CmdCreateNode {
         }
         return node;
     }
+    //#endif
 
 }
 //#endif

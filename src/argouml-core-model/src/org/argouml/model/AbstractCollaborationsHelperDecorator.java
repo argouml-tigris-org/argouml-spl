@@ -1,3 +1,6 @@
+//#if defined(COLLABORATIONDIAGRAM)
+//@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Class
+
 // $Id$
 // Copyright (c) 2005-2007 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
@@ -197,3 +200,4 @@ public abstract class AbstractCollaborationsHelperDecorator
     }
 
 }
+//#endif

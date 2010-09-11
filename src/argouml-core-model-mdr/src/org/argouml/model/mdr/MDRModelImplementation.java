@@ -48,7 +48,6 @@ import org.apache.log4j.Logger;
 //#if defined(ACTIVITYDIAGRAM)
 //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Import
 import org.argouml.model.ActivityGraphsFactory;
-//@#$LPS-ACTIVITYDIAGRAM:GranularityType:Import
 import org.argouml.model.ActivityGraphsHelper;
 //#endif
 import org.argouml.model.AggregationKind;
@@ -81,8 +80,11 @@ import org.argouml.model.UUIDManager;
 import org.argouml.model.UmlException;
 import org.argouml.model.UmlFactory;
 import org.argouml.model.UmlHelper;
+//#if defined(USECASEDIAGRAM)
+//@#$LPS-USECASEDIAGRAM:GranularityType:Import
 import org.argouml.model.UseCasesFactory;
 import org.argouml.model.UseCasesHelper;
+//#endif
 import org.argouml.model.VisibilityKind;
 import org.argouml.model.XmiReader;
 import org.argouml.model.XmiWriter;
@@ -127,18 +129,23 @@ public class MDRModelImplementation implements ModelImplementation {
     private UmlFactory theUmlFactory;
 
     private UmlHelper theUmlHelper;
-
-    private UseCasesFactory theUseCasesFactory;
-
+    //#if defined(USECASEDIAGRAM)
+    //@#$LPS-USECASEDIAGRAM:GranularityType:Field
+    private UseCasesFactory theUseCasesFactory;    
     private UseCasesHelper theUseCasesHelper;
+    //#endif
     //#if defined(ACTIVITYDIAGRAM)
     //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Field
     private ActivityGraphsFactory theActivityGraphsFactory;
     //#endif
+    
+    //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
+    //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Field
+    //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Field
     private CollaborationsFactory theCollaborationsFactory;
 
     private CollaborationsHelper theCollaborationsHelper;
-
+    //#endif
     private CommonBehaviorFactory theCommonBehaviorFactory;
 
     private CommonBehaviorHelper theCommonBehaviorHelper;
@@ -520,8 +527,11 @@ public class MDRModelImplementation implements ModelImplementation {
         //@#$LPS-LOGGING:GranularityType:Command
         LOG.debug("MDR Init - initialized package StateMachines");
         //#endif
-        theUseCasesFactory = new UseCasesFactoryMDRImpl(this);
+        //#if defined(USECASEDIAGRAM)
+        //@#$LPS-USECASEDIAGRAM:GranularityType:Command
+        theUseCasesFactory = new UseCasesFactoryMDRImpl(this);        
         theUseCasesHelper = new UseCasesHelperMDRImpl(this);
+        //#endif
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Command
         LOG.debug("MDR Init - initialized package Use Cases");
@@ -540,7 +550,11 @@ public class MDRModelImplementation implements ModelImplementation {
         //@#$LPS-LOGGING:GranularityType:Command
         LOG.debug("MDR Init - initialized package CommonBehavior");
         //#endif
+        //#if defined(UMLSTATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+        //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Command
+        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
         theStateMachinesFactory = new StateMachinesFactoryMDRImpl(this);
+        //#endif
         theCoreFactory = new CoreFactoryMDRImpl(this);
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Command
@@ -635,6 +649,9 @@ public class MDRModelImplementation implements ModelImplementation {
         return theActivityGraphsHelper;
     }
     //#endif
+    //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
+    //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Method
+    //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Method   
     /*
      * @see org.argouml.model.ModelImplementation#getCollaborationsFactory()
      */
@@ -645,7 +662,8 @@ public class MDRModelImplementation implements ModelImplementation {
         }
         return theCollaborationsFactory;
     }
-
+    //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Method
+    //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Method 
     /*
      * @see org.argouml.model.ModelImplementation#getCollaborationsHelper()
      */
@@ -656,7 +674,7 @@ public class MDRModelImplementation implements ModelImplementation {
         }
         return theCollaborationsHelper;
     }
-
+    //#endif
     /*
      * @see org.argouml.model.ModelImplementation#getCommonBehaviorFactory()
      */
@@ -767,21 +785,23 @@ public class MDRModelImplementation implements ModelImplementation {
         }
         return theUmlHelper;
     }
-
+    //#if defined(USECASEDIAGRAM)
+    //@#$LPS-USECASEDIAGRAM:GranularityType:Method
     /*
      * @see org.argouml.model.ModelImplementation#getUseCasesFactory()
      */
     public UseCasesFactory getUseCasesFactory() {
         return theUseCasesFactory;
     }
-
+    //@#$LPS-USECASEDIAGRAM:GranularityType:Method
     /*
      * @see org.argouml.model.ModelImplementation#getUseCasesHelper()
      */
     public UseCasesHelper getUseCasesHelper() {
         return theUseCasesHelper;
     }
-
+    //#endif
+    
     /*
      * @see org.argouml.model.ModelImplementation#getMetaTypes()
      */

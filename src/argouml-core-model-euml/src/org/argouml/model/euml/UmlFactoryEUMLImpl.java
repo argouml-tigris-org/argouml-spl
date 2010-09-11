@@ -177,12 +177,18 @@ class UmlFactoryEUMLImpl implements UmlFactory, AbstractModelFactory {
             }
         } else if (elementType == metaTypes.getAssociationClass()) {
             connection = modelImpl.getCoreFactory().buildAssociationClass(
-                    fromElement, toElement);
-        } else if (elementType == metaTypes.getAssociationRole()) {
+                    fromElement, toElement);            
+        } 
+        //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
+          //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
+          //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
+        else if (elementType == metaTypes.getAssociationRole()) {
             connection = modelImpl.getCollaborationsFactory().buildAssociationRole(
                     fromElement, fromStyle, toElement, toStyle,
                     (Boolean) unidirectional);
-        } else if (elementType == metaTypes.getGeneralization()) {
+        } 
+        //#endif
+        else if (elementType == metaTypes.getGeneralization()) {
             connection = modelImpl.getCoreFactory().buildGeneralization(
                     fromElement, toElement);
         } else if (elementType == metaTypes.getPackageImport()) {
@@ -200,6 +206,8 @@ class UmlFactoryEUMLImpl implements UmlFactory, AbstractModelFactory {
         } else if (elementType == metaTypes.getLink()) {
             connection = modelImpl.getCommonBehaviorFactory().buildLink(
                     fromElement, toElement);
+        //#if defined(USECASEDIAGRAM)
+        //@#$LPS-USECASEDIAGRAM:GranularityType:Command
         } else if (elementType == metaTypes.getExtend()) {
             // Extend, but only between two use cases. Remember we draw from the
             // extension port to the base port.
@@ -208,6 +216,7 @@ class UmlFactoryEUMLImpl implements UmlFactory, AbstractModelFactory {
         } else if (elementType == metaTypes.getInclude()) {
             connection = modelImpl.getUseCasesFactory().buildInclude(
                     fromElement, toElement);
+        //#endif
         } else if (elementType == metaTypes.getTransition()) {
             connection = modelImpl.getStateMachinesFactory().buildTransition(
                     fromElement, toElement);
@@ -227,11 +236,15 @@ class UmlFactoryEUMLImpl implements UmlFactory, AbstractModelFactory {
 
     public Object buildNode(Object elementType) {
         Object o = null;
+        //#if defined(USECASEDIAGRAM)
+        //@#$LPS-USECASEDIAGRAM:GranularityType:Command
         if (elementType == metaTypes.getActor()) {
             o = modelImpl.getUseCasesFactory().createActor();
         } else if (elementType == metaTypes.getUseCase()) {
             o = modelImpl.getUseCasesFactory().createUseCase();
-        } else if (elementType == metaTypes.getUMLClass()) {
+        } else
+            //#endif
+            if (elementType == metaTypes.getUMLClass()) {
             o = modelImpl.getCoreFactory().buildClass();
         } else if (elementType == metaTypes.getInterface()) {
             o = modelImpl.getCoreFactory().buildInterface();
@@ -281,9 +294,15 @@ class UmlFactoryEUMLImpl implements UmlFactory, AbstractModelFactory {
                     "Attempt to instantiate abstract type"); //$NON-NLS-1$
         } else if (elementType == modelImpl.getMetaTypes().getSimpleState()) {
             o = modelImpl.getStateMachinesFactory().createSimpleState();
-        } else if (elementType == metaTypes.getClassifierRole()) {
+        } 
+        //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
+        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
+        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command        
+        else if (elementType == metaTypes.getClassifierRole()) {
             o = modelImpl.getCollaborationsFactory().createClassifierRole();
-        } else if (elementType == metaTypes.getComponent()) {
+        } 
+        //#endif
+        else if (elementType == metaTypes.getComponent()) {
             o = modelImpl.getCoreFactory().createComponent();
         } else if (elementType == metaTypes.getComponentInstance()) {
             o = modelImpl.getCommonBehaviorFactory().createComponentInstance();

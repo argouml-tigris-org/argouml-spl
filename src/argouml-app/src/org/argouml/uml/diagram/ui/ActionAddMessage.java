@@ -118,8 +118,10 @@ public class ActionAddMessage extends UndoableAction {
         Layer lay = e.getLayerManager().getActiveLayer();
         GraphNodeRenderer gr = e.getGraphNodeRenderer();
         FigNode figMsg = gr.getFigNodeFor(gm, lay, message, null);
+        //#if defined(COLLABORATIONDIAGRAM)
+        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
         ((FigMessage) figMsg).addPathItemToFigAssociationRole(lay);
-
+        //#endif
         gm.getNodes().add(message); /*MVW This is not the correct way,
         * but it allows connecting a CommentEdge to it!
         * See e.g. ActionAddNote for the correct way.

@@ -1,3 +1,6 @@
+//#if defined(USECASEDIAGRAM)
+//@#$LPS-USECASEDIAGRAM:GranularityType:Class
+
 // $Id$
 // Copyright (c) 2007, The ArgoUML Project
 // All rights reserved.
@@ -184,3 +187,4 @@ class UseCasesFactoryEUMLImpl implements UseCasesFactory, AbstractModelFactory {
 
 
 }
+//#endif

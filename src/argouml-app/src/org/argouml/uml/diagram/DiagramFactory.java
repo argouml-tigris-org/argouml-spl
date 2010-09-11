@@ -34,7 +34,10 @@ import org.argouml.kernel.ProjectManager;
 import org.argouml.model.ActivityDiagram;
 //#endif
 import org.argouml.model.ClassDiagram;
+//#if defined(COLLABORATIONDIAGRAM)
+//@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Import
 import org.argouml.model.CollaborationDiagram;
+//#endif
 import org.argouml.model.DeploymentDiagram;
 import org.argouml.model.DiDiagram;
 import org.argouml.model.Model;
@@ -42,7 +45,10 @@ import org.argouml.model.Model;
 //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Import
 import org.argouml.model.SequenceDiagram;
 //#endif
+//#if defined(UMLSTATEDIAGRAM)
+//@#$LPS-UMLSTATEDIAGRAM:GranularityType:Import
 import org.argouml.model.StateDiagram;
+//#endif
 //#if defined(USECASEDIAGRAM)
 //@#$LPS-USECASEDIAGRAM:GranularityType:Import
 import org.argouml.model.UseCaseDiagram;
@@ -51,7 +57,10 @@ import org.argouml.model.UseCaseDiagram;
 //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Import
 import org.argouml.uml.diagram.activity.ui.UMLActivityDiagram;
 //#endif
+//#if defined(COLLABORATIONDIAGRAM)
+//@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Import
 import org.argouml.uml.diagram.collaboration.ui.UMLCollaborationDiagram;
+//#endif
 import org.argouml.uml.diagram.deployment.ui.UMLDeploymentDiagram;
 //#if defined(SEQUENCEDIAGRAM)
 //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Import
@@ -106,7 +115,11 @@ public final class DiagramFactory {
         //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Enumeration
         State, 
         //#endif
-        Deployment, Collaboration, 
+        Deployment,
+        //#if defined(COLLABORATIONDIAGRAM)
+        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Enumeration
+        Collaboration,
+        //#endif
         //#if defined(ACTIVITYDIAGRAM)
         //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Enumeration
         Activity, 
@@ -137,8 +150,10 @@ public final class DiagramFactory {
         diagramClasses.put(DiagramType.State, UMLStateDiagram.class);
         //#endif
         diagramClasses.put(DiagramType.Deployment, UMLDeploymentDiagram.class);
-        diagramClasses.put(DiagramType.Collaboration, 
-                UMLCollaborationDiagram.class);
+        //#if defined(COLLABORATIONDIAGRAM)
+        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
+        diagramClasses.put(DiagramType.Collaboration, UMLCollaborationDiagram.class);
+        //#endif
         //#if defined(ACTIVITYDIAGRAM)
         //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
         diagramClasses.put(DiagramType.Activity, UMLActivityDiagram.class);
@@ -323,9 +338,12 @@ public final class DiagramFactory {
         } else if (type == UMLDeploymentDiagram.class) {
             diagram = new UMLDeploymentDiagram(namespace);
             diType = DeploymentDiagram.class;
+        //#if defined(COLLABORATIONDIAGRAM)
+        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
         } else if (type == UMLCollaborationDiagram.class) {
             diagram = new UMLCollaborationDiagram(namespace);
             diType = CollaborationDiagram.class;
+        //#endif
         //#if defined(ACTIVITYDIAGRAM)      
         //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
         } else if (type == UMLActivityDiagram.class) {

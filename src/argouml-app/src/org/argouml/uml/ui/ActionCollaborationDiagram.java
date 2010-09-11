@@ -1,3 +1,6 @@
+//#if defined(COLLABORATIONDIAGRAM)
+//@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Class
+
 // $Id$
 // Copyright (c) 1996-2007 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
@@ -55,3 +58,4 @@ public class ActionCollaborationDiagram extends ActionNewDiagram {
     private static final long serialVersionUID = -1089352213298998155L;
 
 }
+//#endif

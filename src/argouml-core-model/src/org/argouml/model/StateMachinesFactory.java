@@ -1,3 +1,7 @@
+//#if defined(UMLSTATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+//@#$LPS-UMLSTATEDIAGRAM:GranularityType:Interface
+//@#$LPS-ACTIVITYDIAGRAM:GranularityType:Interface
+
 // $Id$
 // Copyright (c) 2005-2006 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
@@ -342,3 +346,4 @@ public interface StateMachinesFactory extends Factory {
      */
     Object buildGuard(Object transition);
 }
+//#endif

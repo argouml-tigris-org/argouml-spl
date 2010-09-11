@@ -1,8 +1,7 @@
-//#if defined(SEQUENCEDIAGRAM)
+//#if defined(SEQUENCEDIAGRAM) and defined(COGNITIVE) 
 //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Class
-//#if defined(COGNITIVE)
-//@#$LPS-COGNITIVE:GranularityType:Package
-//@#$LPS-COGNITIVE:Localization:NestedIfdef
+//@#$LPS-COGNITIVE:GranularityType:Class
+
 // $Id$
 // Copyright (c) 1996-2006 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
@@ -135,6 +134,4 @@ public class CrSeqInstanceWithoutClassifier extends CrUML {
     }
 
 }
-
-//#endif
 //#endif

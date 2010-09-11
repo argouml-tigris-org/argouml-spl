@@ -71,7 +71,10 @@ import org.argouml.ui.targetmanager.TargetManager;
 import org.argouml.uml.ui.ActionActivityDiagram;
 //#endif
 import org.argouml.uml.ui.ActionClassDiagram;
+//#if defined(COLLABORATIONDIAGRAM)
+//@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Import
 import org.argouml.uml.ui.ActionCollaborationDiagram;
+//#endif
 import org.argouml.uml.ui.ActionDeleteModelElements;
 import org.argouml.uml.ui.ActionDeploymentDiagram;
 import org.argouml.uml.ui.ActionGenerateAll;
@@ -626,8 +629,8 @@ public class GenericArgoMenuBar extends JMenuBar implements
         toolbarTools.add((new ActionClassDiagram()));
         ShortcutMgr.assignAccelerator(classDiagram,
                 ShortcutMgr.ACTION_CLASS_DIAGRAM);
-      //#if defined(SEQUENCEDIAGRAM)
-      //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
+        //#if defined(SEQUENCEDIAGRAM)
+        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
         JMenuItem sequenzDiagram =
             createDiagramMenu.add(new ActionSequenceDiagram());
         setMnemonic(sequenzDiagram, "Sequenz Diagram");
@@ -635,12 +638,15 @@ public class GenericArgoMenuBar extends JMenuBar implements
         ShortcutMgr.assignAccelerator(sequenzDiagram,
                 ShortcutMgr.ACTION_SEQUENCE_DIAGRAM);
         //#endif
+        //#if defined(COLLABORATIONDIAGRAM)
+        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
         JMenuItem collaborationDiagram =
             createDiagramMenu.add(new ActionCollaborationDiagram());
         setMnemonic(collaborationDiagram, "Collaboration Diagram");
         toolbarTools.add((new ActionCollaborationDiagram()));
         ShortcutMgr.assignAccelerator(collaborationDiagram,
                 ShortcutMgr.ACTION_COLLABORATION_DIAGRAM);
+        //#endif
         //#if defined(UMLSTATEDIAGRAM)
         //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Command
         JMenuItem stateDiagram =

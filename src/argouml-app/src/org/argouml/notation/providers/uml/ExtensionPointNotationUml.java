@@ -78,14 +78,17 @@ public class ExtensionPointNotationUml extends ExtensionPointNotation {
     public void parseExtensionPointFig(Object ep, String text) {
         // We can do nothing if we don't have both the use case and extension
         // point.
+        //#if defined(USECASEDIAGRAM)
+        //@#$LPS-USECASEDIAGRAM:GranularityType:Command        
         if (ep == null) {
             return;
         }
+        
         Object useCase = Model.getFacade().getUseCase(ep);
         if (useCase == null) {
             return;
         }
-
+        
         // Parse the string to creat a new extension point.
         Object newEp = parseExtensionPoint(text);
 
@@ -101,8 +104,11 @@ public class ExtensionPointNotationUml extends ExtensionPointNotation {
         }
         /* TODO: This needs more work! 
          * We simply throw the new extension point away? */
+      //#endif
     }
 
+    //#if defined(USECASEDIAGRAM)
+    //@#$LPS-USECASEDIAGRAM:GranularityType:Method
     /**
      * Parse a string representing an extension point and return a new extension
      * point.<p>
@@ -196,7 +202,7 @@ public class ExtensionPointNotationUml extends ExtensionPointNotation {
 
         return ep;
     }
-
+    //#endif
     /*
      * @see org.argouml.notation.providers.NotationProvider#getParsingHelp()
      */

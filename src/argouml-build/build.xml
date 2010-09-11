@@ -502,9 +502,6 @@ Property files to be searched (in argouml-build):
     <ant dir="../argouml-core-model-euml"			inheritAll="false"	target="jpp-clean"/>
     <ant dir="../argouml-core-model-mdr" 			inheritAll="false"  target="jpp-clean"/>
     <ant dir="../argouml-core-model" 				inheritAll="false"	target="jpp-clean"/>  	
-  	<!-- <ant dir="../argouml-core-infra" 				inheritAll="false"   target="clean"/> -->
-  	
-  	<!-- <antcall target="clean"/> -->
   	
   </target>		
 

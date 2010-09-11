@@ -57,8 +57,14 @@ public class ActionNewGuard extends AbstractActionNewModelElement {
      */
     public void actionPerformed(ActionEvent e) {
         super.actionPerformed(e);
+        //#if defined(UMLSTATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+        //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Command
+        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
+        //@#$LPS-UMLSTATEDIAGRAM:Localization:EndMethod
+        //@#$LPS-ACTIVITYDIAGRAM:Localization:EndMethod
         TargetManager.getInstance().setTarget(
                 Model.getStateMachinesFactory().buildGuard(getTarget()));
+        //#endif
     }
 
     /**
