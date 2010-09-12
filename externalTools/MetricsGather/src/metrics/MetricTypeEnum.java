@@ -1,7 +1,7 @@
 package metrics;
 
 public enum MetricTypeEnum {
-	GRAN(MetricsProcessor.GRAN_IDENTIFIER), LOCAL(MetricsProcessor.LOCAL_IDENTIFIER);
+	GRAN(MetricsProcessor.GRAN_IDENTIFIER), LOCAL(MetricsProcessor.LOCAL_IDENTIFIER), LOC(MetricsProcessor.LOC_METRIC);
 	
 	 /** Origem da venda.*/
     private final String metricIdentifier;
@@ -25,17 +25,21 @@ public enum MetricTypeEnum {
     public static MetricTypeEnum getByIdentifier(String metricIdentifier) {
     	if (MetricTypeEnum.GRAN.getMetricIdentifier().equals(metricIdentifier)) {
     		return MetricTypeEnum.GRAN;
-    	} else {
+    	} else if (MetricTypeEnum.LOCAL.getMetricIdentifier().equals(metricIdentifier)) {
     		return MetricTypeEnum.LOCAL;
+    	} else {
+    		return MetricTypeEnum.LOC;
     	}
     }
 
-    public static MetricTypeEnum getByOrd(Integer ord) {
+    public static MetricTypeEnum getByOrd(Integer ord) {    
     	if (MetricTypeEnum.GRAN.ordinal() == ord) {
     		return MetricTypeEnum.GRAN;
-    	} else {
+    	} else if (MetricTypeEnum.LOCAL.ordinal() == ord) {
     		return MetricTypeEnum.LOCAL;
-    	}
+    	} else {
+    		return MetricTypeEnum.LOC;
+    	}    		
     }
     
 }

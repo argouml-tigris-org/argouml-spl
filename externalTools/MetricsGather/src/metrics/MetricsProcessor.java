@@ -28,6 +28,16 @@ public class MetricsProcessor {
 	 * Identificador de tipo anotação de métrica de localozação.
 	 */
 	public static String LOCAL_IDENTIFIER = "Localization";
+
+	/**
+	 * Identificador de métrica do tipo LOC
+	 */
+	public static String LOC_METRIC = "LOC";
+	
+	/**
+	 * Último token lido.
+	 */
+	private boolean startComment;
 	
 	/**
 	 * Map para armazenar as métricas de granularidade.
@@ -43,6 +53,11 @@ public class MetricsProcessor {
 	 */
 	private Vector<Metric> metrics;
 	
+	/** 
+	 * Armazena métrica LOC.
+	 */
+	private Integer locMetric;
+	
 	/**
 	 * Construtor padrão.
 	 */
@@ -50,6 +65,8 @@ public class MetricsProcessor {
 		granMetrics = new HashMap<String, Integer>();
 		localMetrics = new HashMap<String, Integer>();
 		metrics = new Vector<Metric>();
+		locMetric = new Integer(0);
+		startComment = false;
 	}
 	
 	/**
@@ -58,33 +75,67 @@ public class MetricsProcessor {
 	 * @param metricType Tipo de métrica. {@link #GRAN_IDENTIFIER} {@link #LOCAL_IDENTIFIER}
 	 */
 	private void insertMetric(String line, String metricType) {
-		Map<String, Integer> metricMap;
-		if (MetricsProcessor.GRAN_IDENTIFIER.equals(metricType)) {
-			metricMap = granMetrics;
-		} else {
-			metricMap = localMetrics;
+		if (MetricsProcessor.LOC_METRIC.equals(metricType)) {
+			locMetric++;
+		} else {		
+			Map<String, Integer> metricMap;
+			if (MetricsProcessor.GRAN_IDENTIFIER.equals(metricType)) {
+				metricMap = granMetrics;
+			} else {
+				metricMap = localMetrics;
+			}
+
+			Integer value = 1;
+			if (metricMap.containsKey(line)) {
+				value = metricMap.get(line);
+				value++;						
+			}
+			metricMap.put(line, value);
 		}
-		
-		Integer value = 1;
-		if (metricMap.containsKey(line)) {
-			value = metricMap.get(line);
-			value++;						
-		}
-		metricMap.put(line, value);		
 	}	
+	
+	/**
+	 * Verifica se a linha é um comentário ou linha em branco
+	 * @param line linha a ser verificada
+	 * @return <code>true</code> se a linha for comentário ou branco,
+	 * <code>false</code> caso contrário.
+	 */
+	private boolean isCommentOrBlankLine(String line) {
+		if (line.startsWith("/*")) {
+			if (line.endsWith("*/")) {
+				return true;
+			}
+			startComment = true;
+			return true;
+		} else if (startComment && line.endsWith("*/")) {
+			startComment = false;
+			return true;
+		}
+		if (startComment) {
+			return true;
+		} else {
+			return (line.startsWith("/") || line.startsWith("*") || line.length() == 0);
+		}
+	}
 	
 	/**
 	 * Contabiliza a métrica encontrada na linha do arquivo Java. 
 	 * @param line linha lida da classe Java.
 	 */
 	public void insertMetric(String line) {
-		if (line.contains(MetricsProcessor.GRAN_IDENTIFIER)) {			
-			insertMetric(line, MetricsProcessor.GRAN_IDENTIFIER);
-		} else if (line.contains(MetricsProcessor.LOCAL_IDENTIFIER)) {
-			insertMetric(line, MetricsProcessor.LOCAL_IDENTIFIER);
-		} else {
-			Log.info("Identificador inválido. Dados: "  + line);
-		}
+		
+		line = line.trim();
+		if (line.contains(MetricsProcessor.IDENTIFIER)) {
+			if (line.contains(MetricsProcessor.GRAN_IDENTIFIER)) {			
+				insertMetric(line, MetricsProcessor.GRAN_IDENTIFIER);
+			} else if (line.contains(MetricsProcessor.LOCAL_IDENTIFIER)) {
+				insertMetric(line, MetricsProcessor.LOCAL_IDENTIFIER);
+			} else{
+				Log.info("Identificador inválido. Dados: "  + line);
+			}			
+		} else if (!isCommentOrBlankLine(line)) {
+			insertMetric(line, MetricsProcessor.LOC_METRIC);
+		} 
 	}
 	
 	/**
@@ -141,17 +192,27 @@ public class MetricsProcessor {
 		try {
 			 PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(filename)));
 			 pw.println("FEATURE" + separator + "TIPO_METRICA" + separator + "METRICA" + separator + "VALOR");
+			 // Gravar LOC
+			 StringBuilder textOutput = new StringBuilder();			
+			 textOutput.append("TODAS");
+			 textOutput.append(separator);
+			 textOutput.append(MetricTypeEnum.LOC.getMetricIdentifier());
+			 textOutput.append(separator);
+			 textOutput.append("N/A");
+			 textOutput.append(separator);
+			 textOutput.append(this.locMetric);
+			 pw.println(textOutput);
 
 			 for (Iterator<Metric> it = metrics.iterator(); it.hasNext();) {
 				 Metric metric = (Metric) it.next();
 				 
-				 for (int i=0; i< MetricTypeEnum.values().length; i++) {
+				 for (int i=0; i<=MetricTypeEnum.LOCAL.ordinal(); i++) {
 					 // processar métricas de granularidade
 					 Set<String> keySet = metric.getSubMetric(MetricTypeEnum.getByOrd(i)).getValues().keySet();
 					 for (Iterator<String> iterator = keySet.iterator(); iterator.hasNext();) {
 						 String key = iterator.next();  
 						 if(key != null) {
-							 StringBuilder textOutput = new StringBuilder();			
+							 textOutput = new StringBuilder();			
 							 textOutput.append(metric.getFeature());
 							 textOutput.append(separator);
 							 textOutput.append(MetricTypeEnum.getByOrd(i).getMetricIdentifier());

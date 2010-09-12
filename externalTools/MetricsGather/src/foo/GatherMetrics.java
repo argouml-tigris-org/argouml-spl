@@ -20,17 +20,28 @@ public class GatherMetrics {
 	private MetricsProcessor metricsProcessor;
 	
 	/**
-	 * Filtro para não listar diretórios iniciados com '.'
+	 * Filtro de diretórios.
 	 * */
 	FilenameFilter dirFilter = new FilenameFilter() { 
 		public boolean accept(File dir, String name) {
-			return (!name.startsWith(".") && !name.endsWith(".properties") && !name.endsWith(".xml")
+			name = name.toLowerCase();
+			return (!name.startsWith(".") && !name.startsWith("build")
+					&& !name.endsWith(".properties") && !name.endsWith(".xml")
 					&& !name.endsWith(".launch") && !name.endsWith(".log") && !name.endsWith(".txt")
 					&& !name.endsWith(".ico") && !name.endsWith(".bat") && !name.endsWith(".sh")
-					&& !name.endsWith(".MF") && !name.endsWith(".ini") && !name.endsWith(".class")
-					&& !name.endsWith(".java") && !name.startsWith("build") && !name.equals("META-INF") 
+					&& !name.endsWith(".mf") && !name.endsWith(".ini") && !name.endsWith(".class")
+					&& !name.endsWith(".java") && !name.endsWith(".html") && !name.endsWith(".gif") 
+					&& !name.equals("meta-inf")
 					&& !name.equals("lib") && !name.equals("bin") && !name.equals("templates")
-					&& !name.equals("staging")); 
+					&& !name.equals("staging") && !name.equals("tests") && !name.equals("argouml-build")
+					&& !name.equals("argouml-core-tools") && !name.equals("argouml-core-infra") 
+					/*
+					&& !name.equals("argouml-core-diagrams-sequence2")
+					&& !name.equals("argouml-core-model")
+					&& !name.equals("argouml-core-model-euml")
+					&& !name.equals("argouml-core-model-mdr")
+					&& !name.equals("argouml-app")*/
+					);
 			} 
 		};	 
 
@@ -40,6 +51,7 @@ public class GatherMetrics {
 	FilenameFilter javaFileFilter = new FilenameFilter() { 
 		public boolean accept(File dir, String name) {
 			return name.endsWith(".java");
+			//&& name.equals("Designer.java"); 
 			} 
 		};	 
 		
@@ -86,10 +98,7 @@ public class GatherMetrics {
 			BufferedReader br = new BufferedReader(new FileReader(file));
 			
 			while (br.ready()) {
-				String line = br.readLine().trim();				
-				if (line.contains(MetricsProcessor.IDENTIFIER)) {
-					metricsProcessor.insertMetric(line);
-				}
+				metricsProcessor.insertMetric(br.readLine().trim());
 			}
 			br.close();
 		} catch (FileNotFoundException e) {
