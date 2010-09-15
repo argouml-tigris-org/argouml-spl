@@ -1,5 +1,9 @@
 package metrics;
 
+/**
+ * Representa uma métrica, contendo suas submétricas e valores
+ * @author Marcus
+ */
 public class Metric {
 	
 	/**
@@ -20,21 +24,35 @@ public class Metric {
 		return feature;
 	}
 
+	/**
+	 * Construtor padrão.
+	 * @param feature nome da Feature
+	 */
 	public Metric(String feature) {
-		this.subMetrics = new SubMetric[2];
-		this.subMetrics[MetricTypeEnum.GRAN.ordinal()] = new SubMetric();
-		this.subMetrics[MetricTypeEnum.LOCAL.ordinal()] = new SubMetric();
-		
+		this.subMetrics = new SubMetric[MetricType.values().length-1];
+		for (int i=0; i<this.subMetrics.length; i++) {
+			this.subMetrics[i] = new SubMetric();
+		}
 		this.feature = feature;
 	}
 	
-	public SubMetric getSubMetric(MetricTypeEnum typeEnum) {
+	/**
+	 * Retorna a submétrica.
+	 * @param typeEnum tipo da métrica a retornar.
+	 * @return submétroca encontada.
+	 */
+	public SubMetric getSubMetric(MetricType typeEnum) {
 		return this.subMetrics[typeEnum.ordinal()];
 	}	
 	
-	public void storeMetric(MetricTypeEnum metricType, String subMetric, Integer value) {
+	/**
+	 * Armazena uma submétrica para a métrica.
+	 * @param metricType Tipo da métrica.
+	 * @param subMetric Tipo da submétrica.
+	 * @param value Valor da submétrica.
+	 */
+	public void storeMetric(MetricType metricType, String subMetric, Integer value) {
 		this.subMetrics[metricType.ordinal()].addValue(subMetric, value);
 		
 	}
-	
 }

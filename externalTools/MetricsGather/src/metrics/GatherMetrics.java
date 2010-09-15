@@ -1,4 +1,4 @@
-package foo;
+package metrics;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -7,7 +7,9 @@ import java.io.FileReader;
 import java.io.FilenameFilter;
 import java.io.IOException;
 
-import metrics.MetricsProcessor;
+import util.Log;
+
+
 
 
 public class GatherMetrics {
@@ -35,12 +37,6 @@ public class GatherMetrics {
 					&& !name.equals("lib") && !name.equals("bin") && !name.equals("templates")
 					&& !name.equals("staging") && !name.equals("tests") && !name.equals("argouml-build")
 					&& !name.equals("argouml-core-tools") && !name.equals("argouml-core-infra") 
-					/*
-					&& !name.equals("argouml-core-diagrams-sequence2")
-					&& !name.equals("argouml-core-model")
-					&& !name.equals("argouml-core-model-euml")
-					&& !name.equals("argouml-core-model-mdr")
-					&& !name.equals("argouml-app")*/
 					);
 			} 
 		};	 
@@ -51,7 +47,6 @@ public class GatherMetrics {
 	FilenameFilter javaFileFilter = new FilenameFilter() { 
 		public boolean accept(File dir, String name) {
 			return name.endsWith(".java");
-			//&& name.equals("Designer.java"); 
 			} 
 		};	 
 		

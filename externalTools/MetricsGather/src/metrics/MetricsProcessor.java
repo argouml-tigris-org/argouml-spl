@@ -11,31 +11,17 @@ import java.util.Map;
 import java.util.Set;
 import java.util.Vector;
 
-import foo.Log;
+import util.Log;
+
 
 public class MetricsProcessor {	
 	/**
 	 * Identificador de anotação de métrica.
 	 */
-	public static String IDENTIFIER = "//@#$LPS-";
+	public static final String IDENTIFIER = "//@#$LPS-";
 	
 	/**
-	 * Identificador de tipo anotação de métrica de granularidade.
-	 */
-	public static String GRAN_IDENTIFIER = "GranularityType";
-	
-	/**
-	 * Identificador de tipo anotação de métrica de localozação.
-	 */
-	public static String LOCAL_IDENTIFIER = "Localization";
-
-	/**
-	 * Identificador de métrica do tipo LOC
-	 */
-	public static String LOC_METRIC = "LOC";
-	
-	/**
-	 * Último token lido.
+	 * Informa se iniciou-se um comentário.
 	 */
 	private boolean startComment;
 	
@@ -46,7 +32,11 @@ public class MetricsProcessor {
 	/**
 	 * Map para armazenar as métricas de localização.
 	 */
-	private Map<String, Integer> localMetrics;
+	private Map<String, Integer> localMetrics;	
+	/**
+	 * Map para armazenar outras métricas.
+	 */
+	private Map<String, Integer> otherMetrics;
 	
 	/**
 	 * Vetor que armazena as métricas processadas
@@ -64,6 +54,7 @@ public class MetricsProcessor {
 	public MetricsProcessor(){
 		granMetrics = new HashMap<String, Integer>();
 		localMetrics = new HashMap<String, Integer>();
+		otherMetrics = new HashMap<String, Integer>();
 		metrics = new Vector<Metric>();
 		locMetric = new Integer(0);
 		startComment = false;
@@ -74,15 +65,17 @@ public class MetricsProcessor {
 	 * @param line linha lida da classe Java.
 	 * @param metricType Tipo de métrica. {@link #GRAN_IDENTIFIER} {@link #LOCAL_IDENTIFIER}
 	 */
-	private void insertMetric(String line, String metricType) {
-		if (MetricsProcessor.LOC_METRIC.equals(metricType)) {
+	private void insertMetric(String line, MetricType metricType) {
+		if (MetricType.LOC.equals(metricType)) {
 			locMetric++;
 		} else {		
 			Map<String, Integer> metricMap;
-			if (MetricsProcessor.GRAN_IDENTIFIER.equals(metricType)) {
+			if (MetricType.GRANULARITY.equals(metricType)) {
 				metricMap = granMetrics;
-			} else {
+			} else if(MetricType.LOCALIZATION.equals(metricType)) {
 				metricMap = localMetrics;
+			} else {
+				metricMap = otherMetrics;
 			}
 
 			Integer value = 1;
@@ -114,7 +107,7 @@ public class MetricsProcessor {
 		if (startComment) {
 			return true;
 		} else {
-			return (line.startsWith("/") || line.startsWith("*") || line.length() == 0);
+			return (line.startsWith("//") || line.startsWith("*") || line.isEmpty());
 		}
 	}
 	
@@ -125,21 +118,38 @@ public class MetricsProcessor {
 	public void insertMetric(String line) {
 		
 		line = line.trim();
+		// Common Metrics
 		if (line.contains(MetricsProcessor.IDENTIFIER)) {
-			if (line.contains(MetricsProcessor.GRAN_IDENTIFIER)) {			
-				insertMetric(line, MetricsProcessor.GRAN_IDENTIFIER);
-			} else if (line.contains(MetricsProcessor.LOCAL_IDENTIFIER)) {
-				insertMetric(line, MetricsProcessor.LOCAL_IDENTIFIER);
+			if (line.contains(MetricType.GRANULARITY.getIdentifier())) {			
+				insertMetric(line, MetricType.GRANULARITY);
+			} else if (line.contains(MetricType.LOCALIZATION.getIdentifier())) {
+				insertMetric(line, MetricType.LOCALIZATION);
 			} else{
 				Log.info("Identificador inválido. Dados: "  + line);
-			}			
+			}
+		// LOC Metric
 		} else if (!isCommentOrBlankLine(line)) {
-			insertMetric(line, MetricsProcessor.LOC_METRIC);
+			insertMetric(line, MetricType.LOC);
+		// AND e OR Metrics
+		} else if (line.matches("//#if defined\\(.*\\) (and|or) defined\\(.*\\)")) {
+			String feature1 = line.substring(line.indexOf("(")+1, line.indexOf(")"));
+			String feature2 = line.substring(line.lastIndexOf("(")+1, line.lastIndexOf(")"));
+			String auxLine1 = "//@#$LPS-"+feature1+":%s:N/A";
+			String auxLine2 = "//@#$LPS-"+feature2+":%s:N/A";
+				
+			if (line.toLowerCase().contains(MetricType.OR.getIdentifier().toLowerCase())) {				
+				insertMetric(String.format(auxLine1, MetricType.OR.getIdentifier()), MetricType.OR);
+				insertMetric(String.format(auxLine2, MetricType.OR.getIdentifier()), MetricType.OR);
+			} else {
+				insertMetric(String.format(auxLine1, MetricType.AND.getIdentifier()), MetricType.AND);
+				insertMetric(String.format(auxLine2, MetricType.AND.getIdentifier()), MetricType.AND);				
+			}
 		} 
 	}
 	
 	/**
-	 * Retorna o índice da feature no Vetor de metricas. Caso a feature não exista no vetor, ela será inserida. 
+	 * Retorna o índice da feature no Vetor de metricas. 
+	 * Caso a feature não exista no vetor, ela será inserida. 
 	 * @param feature Nome da feature
 	 * @return índice da feature no vetor de metricas
 	 */
@@ -158,12 +168,22 @@ public class MetricsProcessor {
 		return index;
 	}
 	
+	/**
+	 * Processa as métricas colhidas.
+	 * @return <code>true</code> se processamento correto, <false> caso contrário.
+	 */
 	public boolean processGatheredMetrics() {
-		boolean result = this.processGatheredMetrics(granMetrics);
+		boolean result = this.processGatheredMetrics(otherMetrics);
+		result = result && this.processGatheredMetrics(granMetrics);
 		result = result && this.processGatheredMetrics(localMetrics);
 		return result;
 	}
 	
+	/**
+	 * Processa as métricas colhidas.
+	 * @param metricMap Map contendo as métricas
+	 * @return <code>true</code> se processamento correto, <false> caso contrário.
+	 */
 	private boolean processGatheredMetrics(Map<String, Integer> metricMap) {
 		try {
 			Set<String> keySet = metricMap.keySet();				
@@ -176,7 +196,7 @@ public class MetricsProcessor {
 					 String[] metricsTypeAndSubType = key.substring(key.indexOf(":")+1).split(":");				 
 					 Integer featureIndex = getFeatureMetricIndex(feature);				 
 					 Metric metric = metrics.get(featureIndex);
-					 metric.storeMetric(MetricTypeEnum.getByIdentifier(metricsTypeAndSubType[0]), 
+					 metric.storeMetric(MetricType.getByIdentifier(metricsTypeAndSubType[0]), 
 							 metricsTypeAndSubType[1], metricMap.get(key));
 				 }
 			 }
@@ -187,6 +207,10 @@ public class MetricsProcessor {
 		}
 	}
 	
+	/**
+	 * Salva as métricas em arquivo, no formado CSV.
+	 * @param filename nome do arquivo.
+	 */
 	public void saveGatheredMetrics(String filename) {
 		String separator = ",";
 		try {
@@ -196,7 +220,7 @@ public class MetricsProcessor {
 			 StringBuilder textOutput = new StringBuilder();			
 			 textOutput.append("TODAS");
 			 textOutput.append(separator);
-			 textOutput.append(MetricTypeEnum.LOC.getMetricIdentifier());
+			 textOutput.append(MetricType.LOC.getIdentifier());
 			 textOutput.append(separator);
 			 textOutput.append("N/A");
 			 textOutput.append(separator);
@@ -205,21 +229,19 @@ public class MetricsProcessor {
 
 			 for (Iterator<Metric> it = metrics.iterator(); it.hasNext();) {
 				 Metric metric = (Metric) it.next();
-				 
-				 for (int i=0; i<=MetricTypeEnum.LOCAL.ordinal(); i++) {
-					 // processar métricas de granularidade
-					 Set<String> keySet = metric.getSubMetric(MetricTypeEnum.getByOrd(i)).getValues().keySet();
+				 for (int i=0; i<MetricType.values().length-1; i++) {
+					 Set<String> keySet = metric.getSubMetric(MetricType.values()[i]).getValues().keySet();
 					 for (Iterator<String> iterator = keySet.iterator(); iterator.hasNext();) {
 						 String key = iterator.next();  
 						 if(key != null) {
 							 textOutput = new StringBuilder();			
 							 textOutput.append(metric.getFeature());
 							 textOutput.append(separator);
-							 textOutput.append(MetricTypeEnum.getByOrd(i).getMetricIdentifier());
+							 textOutput.append(MetricType.values()[i].getIdentifier());
 							 textOutput.append(separator);
 							 textOutput.append(key);
 							 textOutput.append(separator);
-							 textOutput.append(metric.getSubMetric(MetricTypeEnum.getByOrd(i)).getValues().get(key));
+							 textOutput.append(metric.getSubMetric(MetricType.values()[i]).getValues().get(key));
 							 pw.println(textOutput);
 						 }
 					 }

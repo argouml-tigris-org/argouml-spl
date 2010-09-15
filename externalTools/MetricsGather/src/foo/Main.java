@@ -1,5 +1,8 @@
 package foo;
 
+import util.Log;
+import metrics.GatherMetrics;
+
 
 public class Main {
 
