@@ -191,7 +191,7 @@ public class StateBodyNotationUml extends StateBodyNotation {
                     parseStateDoAction(st, line);
                     foundDo = true;
                 } 
-                //#if defined(UMLSTATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+                //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
                 else {
                     Object t =
                         Model.getStateMachinesFactory()

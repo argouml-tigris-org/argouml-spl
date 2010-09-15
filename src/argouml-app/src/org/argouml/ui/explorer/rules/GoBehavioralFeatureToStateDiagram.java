@@ -1,5 +1,5 @@
-//#if defined(UMLSTATEDIAGRAM)
-//@#$LPS-UMLSTATEDIAGRAM:GranularityType:Class
+//#if defined(STATEDIAGRAM)
+//@#$LPS-STATEDIAGRAM:GranularityType:Class
 
 // $Id$
 // Copyright (c) 1996-2007 The Regents of the University of California. All
@@ -37,8 +37,8 @@ import org.argouml.kernel.Project;
 import org.argouml.kernel.ProjectManager;
 import org.argouml.model.Model;
 import org.argouml.uml.diagram.ArgoDiagram;
-//#if defined(UMLSTATEDIAGRAM)
-//@#$LPS-UMLSTATEDIAGRAM:GranularityType:Import
+//#if defined(STATEDIAGRAM)
+//@#$LPS-STATEDIAGRAM:GranularityType:Import
 import org.argouml.uml.diagram.state.ui.UMLStateDiagram;
 //#endif;
 

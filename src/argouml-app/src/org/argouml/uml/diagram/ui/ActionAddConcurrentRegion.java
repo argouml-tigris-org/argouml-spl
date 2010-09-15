@@ -41,8 +41,8 @@ import org.argouml.model.Model;
 import org.argouml.model.StateMachinesFactory;
 import org.argouml.ui.targetmanager.TargetManager;
 import org.argouml.uml.diagram.DiagramSettings;
-//#if defined(UMLSTATEDIAGRAM)
-//@#$LPS-UMLSTATEDIAGRAM:GranularityType:Import
+//#if defined(STATEDIAGRAM)
+//@#$LPS-STATEDIAGRAM:GranularityType:Import
 import org.argouml.uml.diagram.state.StateDiagramGraphModel;
 import org.argouml.uml.diagram.state.ui.FigCompositeState;
 import org.argouml.uml.diagram.state.ui.FigConcurrentRegion;
@@ -115,8 +115,8 @@ public class ActionAddConcurrentRegion extends UndoableAction {
             if (Model.getFacade().isAConcurrentRegion(f.getOwner())) {
                 f = f.getEnclosingFig();
             }
-            //#if defined(UMLSTATEDIAGRAM)
-            //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Command
+            //#if defined(STATEDIAGRAM)
+            //@#$LPS-STATEDIAGRAM:GranularityType:Command
             final FigCompositeState figCompositeState = (FigCompositeState) f;
             final List<FigConcurrentRegion> regionFigs = 
                 ((List<FigConcurrentRegion>) f.getEnclosedFigs().clone());
@@ -133,8 +133,8 @@ public class ActionAddConcurrentRegion extends UndoableAction {
             if (!(gm instanceof MutableGraphModel)) {
                 return;
             }
-            //#if defined(UMLSTATEDIAGRAM)
-            //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Command
+            //#if defined(STATEDIAGRAM)
+            //@#$LPS-STATEDIAGRAM:GranularityType:Command
             StateDiagramGraphModel mgm = (StateDiagramGraphModel) gm;
             final StateMachinesFactory factory =
                 Model.getStateMachinesFactory();
@@ -198,8 +198,8 @@ public class ActionAddConcurrentRegion extends UndoableAction {
             lay.add(newRegionFig);
             //#endif
             editor.getSelectionManager().select(f);
-            //#if defined(UMLSTATEDIAGRAM)
-            //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Command
+            //#if defined(STATEDIAGRAM)
+            //@#$LPS-STATEDIAGRAM:GranularityType:Command
             if (mgm.canAddNode(umlRegion2)) {
                 mgm.getNodes().add(umlRegion2);
                 mgm.fireNodeAdded(umlRegion2);

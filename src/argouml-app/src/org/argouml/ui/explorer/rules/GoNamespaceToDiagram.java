@@ -43,8 +43,8 @@ import org.argouml.uml.diagram.activity.ui.UMLActivityDiagram;
 //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Import
 import org.argouml.uml.diagram.sequence.ui.UMLSequenceDiagram;
 //#endif
-//#if defined(UMLSTATEDIAGRAM)
-//@#$LPS-UMLSTATEDIAGRAM:GranularityType:Import
+//#if defined(STATEDIAGRAM)
+//@#$LPS-STATEDIAGRAM:GranularityType:Import
 import org.argouml.uml.diagram.state.ui.UMLStateDiagram;
 //#endif;
 
@@ -78,8 +78,8 @@ public class GoNamespaceToDiagram extends AbstractPerspectiveRule {
                 // Statediagrams and activitydiagrams are shown as children
                 // of the statemachine or activitygraph they belong to.
                 
-                //#if defined(UMLSTATEDIAGRAM)
-                //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Command
+                //#if defined(STATEDIAGRAM)
+                //@#$LPS-STATEDIAGRAM:GranularityType:Command
                 if (diagram instanceof UMLStateDiagram
                         //#if defined(ACTIVITYDIAGRAM)
                         //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Expression

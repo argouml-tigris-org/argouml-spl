@@ -46,10 +46,10 @@ public class ActionNewCallEvent extends ActionNewEvent {
      * @see org.argouml.uml.ui.behavior.state_machines.ActionNewEvent#createEvent(java.lang.Object)
      */
     protected Object createEvent(Object ns) {
-        //#if defined(UMLSTATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
-        //@#$LPS-UMLSTATEDIAGRAM:GranularityType:MethodBody
+        //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+        //@#$LPS-STATEDIAGRAM:GranularityType:MethodBody
         //@#$LPS-ACTIVITYDIAGRAM:GranularityType:MethodBody
-        //@#$LPS-UMLSTATEDIAGRAM:Localization:EntireMethod
+        //@#$LPS-STATEDIAGRAM:Localization:EntireMethod
         //@#$LPS-ACTIVITYDIAGRAM:Localization:EntireMethod
         return Model.getStateMachinesFactory().buildCallEvent(ns);
         //#endif

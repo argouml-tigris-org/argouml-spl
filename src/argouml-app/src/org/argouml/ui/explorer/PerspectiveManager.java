@@ -37,8 +37,8 @@ import org.apache.log4j.Logger;
 import org.argouml.application.api.Argo;
 import org.argouml.configuration.Configuration;
 import org.argouml.ui.explorer.rules.GoAssocRoleToMessages;
-//#if defined(UMLSTATEDIAGRAM)
-//@#$LPS-UMLSTATEDIAGRAM:GranularityType:Import
+//#if defined(STATEDIAGRAM)
+//@#$LPS-STATEDIAGRAM:GranularityType:Import
 import org.argouml.ui.explorer.rules.GoBehavioralFeatureToStateDiagram;
 //#endif
 import org.argouml.ui.explorer.rules.GoBehavioralFeatureToStateMachine;
@@ -47,7 +47,7 @@ import org.argouml.ui.explorer.rules.GoClassToNavigableClass;
 import org.argouml.ui.explorer.rules.GoClassToSummary;
 import org.argouml.ui.explorer.rules.GoClassifierToBehavioralFeature;
 //#if defined(COLLABORATIONDIAGRAM)
-//@#$LPS-COLLABORATIONDIAGRAMM:GranularityType:Import
+//@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Import
 import org.argouml.ui.explorer.rules.GoClassifierToCollaboration;
 //#endif
 import org.argouml.ui.explorer.rules.GoClassifierToInstance;
@@ -55,19 +55,19 @@ import org.argouml.ui.explorer.rules.GoClassifierToInstance;
 //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Import
 import org.argouml.ui.explorer.rules.GoClassifierToSequenceDiagram;
 //#endif
-//#if defined(UMLSTATEDIAGRAM)
-//@#$LPS-UMLSTATEDIAGRAM:GranularityType:Import
+//#if defined(STATEDIAGRAM)
+//@#$LPS-STATEDIAGRAM:GranularityType:Import
 import org.argouml.ui.explorer.rules.GoClassifierToStateMachine;
 //#endif
 import org.argouml.ui.explorer.rules.GoClassifierToStructuralFeature;
 //#if defined(COLLABORATIONDIAGRAM)
-//@#$LPS-COLLABORATIONDIAGRAMM:GranularityType:Import
+//@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Import
 import org.argouml.ui.explorer.rules.GoCollaborationToDiagram;
 import org.argouml.ui.explorer.rules.GoCollaborationToInteraction;
 //#endif
 import org.argouml.ui.explorer.rules.GoComponentToResidentModelElement;
-//#if defined(UMLSTATEDIAGRAM)
-//@#$LPS-UMLSTATEDIAGRAM:GranularityType:Import
+//#if defined(STATEDIAGRAM)
+//@#$LPS-STATEDIAGRAM:GranularityType:Import
 import org.argouml.ui.explorer.rules.GoCompositeStateToSubvertex;
 //#endif
 //#if defined(COGNITIVE)
@@ -89,7 +89,7 @@ import org.argouml.ui.explorer.rules.GoModelElementToContainedLostElements;
 import org.argouml.ui.explorer.rules.GoModelElementToContents;
 import org.argouml.ui.explorer.rules.GoModelToBaseElements;
 //#if defined(COLLABORATIONDIAGRAM)
-//@#$LPS-COLLABORATIONDIAGRAMM:GranularityType:Import
+//@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Import
 import org.argouml.ui.explorer.rules.GoModelToCollaboration;
 //#endif
 import org.argouml.ui.explorer.rules.GoModelToDiagrams;
@@ -100,7 +100,7 @@ import org.argouml.ui.explorer.rules.GoNamespaceToDiagram;
 import org.argouml.ui.explorer.rules.GoNamespaceToOwnedElements;
 import org.argouml.ui.explorer.rules.GoNodeToResidentComponent;
 //#if defined(COLLABORATIONDIAGRAM)
-//@#$LPS-COLLABORATIONDIAGRAMM:GranularityType:Import
+//@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Import
 import org.argouml.ui.explorer.rules.GoOperationToCollaboration;
 import org.argouml.ui.explorer.rules.GoOperationToCollaborationDiagram;
 //#endif
@@ -117,20 +117,20 @@ import org.argouml.ui.explorer.rules.GoProfileToCritics;
 //#endif
 import org.argouml.ui.explorer.rules.GoProfileToModel;
 //#if defined(COLLABORATIONDIAGRAM)
-//@#$LPS-COLLABORATIONDIAGRAMM:GranularityType:Import
+//@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Import
 import org.argouml.ui.explorer.rules.GoProjectToCollaboration;
 //#endif
 import org.argouml.ui.explorer.rules.GoProjectToDiagram;
 import org.argouml.ui.explorer.rules.GoProjectToModel;
 import org.argouml.ui.explorer.rules.GoProjectToProfileConfiguration;
 import org.argouml.ui.explorer.rules.GoProjectToRoots;
-//#if defined(UMLSTATEDIAGRAM)
-//@#$LPS-UMLSTATEDIAGRAM:GranularityType:Import
+//#if defined(STATEDIAGRAM)
+//@#$LPS-STATEDIAGRAM:GranularityType:Import
 import org.argouml.ui.explorer.rules.GoProjectToStateMachine;
 //#endif
 import org.argouml.ui.explorer.rules.GoSignalToReception;
-//#if defined(UMLSTATEDIAGRAM)
-//@#$LPS-UMLSTATEDIAGRAM:GranularityType:Import
+//#if defined(STATEDIAGRAM)
+//@#$LPS-STATEDIAGRAM:GranularityType:Import
 import org.argouml.ui.explorer.rules.GoStateMachineToState;
 import org.argouml.ui.explorer.rules.GoStateMachineToTop;
 import org.argouml.ui.explorer.rules.GoStateMachineToTransition;
@@ -139,13 +139,13 @@ import org.argouml.ui.explorer.rules.GoStateToDoActivity;
 import org.argouml.ui.explorer.rules.GoStateToDownstream;
 import org.argouml.ui.explorer.rules.GoStateToEntry;
 import org.argouml.ui.explorer.rules.GoStateToExit;
-//#if defined(UMLSTATEDIAGRAM)
-//@#$LPS-UMLSTATEDIAGRAM:GranularityType:Import
+//#if defined(STATEDIAGRAM)
+//@#$LPS-STATEDIAGRAM:GranularityType:Import
 import org.argouml.ui.explorer.rules.GoStateToIncomingTrans;
 //#endif
 import org.argouml.ui.explorer.rules.GoStateToInternalTrans;
-//#if defined(UMLSTATEDIAGRAM)
-//@#$LPS-UMLSTATEDIAGRAM:GranularityType:Import
+//#if defined(STATEDIAGRAM)
+//@#$LPS-STATEDIAGRAM:GranularityType:Import
 import org.argouml.ui.explorer.rules.GoStateToOutgoingTrans;
 import org.argouml.ui.explorer.rules.GoStatemachineToDiagram;
 //#endif
@@ -460,8 +460,8 @@ public final class PerspectiveManager {
          */
         packagePerspective.addRule(new GoBehavioralFeatureToStateMachine());
         // works for both statediagram as activitygraph
-        //#if defined(UMLSTATEDIAGRAM)
-        //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Command
+        //#if defined(STATEDIAGRAM)
+        //@#$LPS-STATEDIAGRAM:GranularityType:Command
         packagePerspective.addRule(new GoStatemachineToDiagram());
         packagePerspective.addRule(new GoStateMachineToState());
         packagePerspective.addRule(new GoCompositeStateToSubvertex());
@@ -476,8 +476,8 @@ public final class PerspectiveManager {
         packagePerspective.addRule(new GoOperationToSequenceDiagram());
         //#endif
         packagePerspective.addRule(new GoClassifierToInstance());
-        //#if defined(UMLSTATEDIAGRAM)
-        //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Command
+        //#if defined(STATEDIAGRAM)
+        //@#$LPS-STATEDIAGRAM:GranularityType:Command
         packagePerspective.addRule(new GoStateToIncomingTrans());
         packagePerspective.addRule(new GoStateToOutgoingTrans());
         //#endif
@@ -552,8 +552,8 @@ public final class PerspectiveManager {
         residencePerspective.addRule(new GoModelToNode());
         residencePerspective.addRule(new GoNodeToResidentComponent());
         residencePerspective.addRule(new GoComponentToResidentModelElement());
-        //#if defined(UMLSTATEDIAGRAM)
-        //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Command
+        //#if defined(STATEDIAGRAM)
+        //@#$LPS-STATEDIAGRAM:GranularityType:Command
         ExplorerPerspective statePerspective =
             new ExplorerPerspective(
                 "combobox.item.state-centric");
@@ -569,8 +569,8 @@ public final class PerspectiveManager {
         ExplorerPerspective transitionsPerspective =
             new ExplorerPerspective(
                 "combobox.item.transitions-centric");
-        //#if defined(UMLSTATEDIAGRAM)
-        //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Command
+        //#if defined(STATEDIAGRAM)
+        //@#$LPS-STATEDIAGRAM:GranularityType:Command
         transitionsPerspective.addRule(new GoProjectToStateMachine());
         transitionsPerspective.addRule(new GoStatemachineToDiagram());
         transitionsPerspective.addRule(new GoStateMachineToTransition());
@@ -604,8 +604,8 @@ public final class PerspectiveManager {
         c.add(inheritancePerspective);
         c.add(associationsPerspective);
         c.add(residencePerspective);
-        //#if defined(UMLSTATEDIAGRAM)
-        //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Command
+        //#if defined(STATEDIAGRAM)
+        //@#$LPS-STATEDIAGRAM:GranularityType:Command
         c.add(statePerspective);
         //#endif
         c.add(transitionsPerspective);
@@ -624,8 +624,8 @@ public final class PerspectiveManager {
     public void loadRules() {
 
         PerspectiveRule[] ruleNamesArray = {new GoAssocRoleToMessages(),
-            //#if defined(UMLSTATEDIAGRAM)
-            //@#$LPS-UMLSTATEDIAGRAM:GranularityType:StaticInitialization
+            //#if defined(STATEDIAGRAM)
+            //@#$LPS-STATEDIAGRAM:GranularityType:StaticInitialization
             new GoBehavioralFeatureToStateDiagram(),
             //#endif
             new GoBehavioralFeatureToStateMachine(),
@@ -639,8 +639,8 @@ public final class PerspectiveManager {
             //@#$LPS-SEQUENCEDIAGRAM:GranularityType:StaticInitialization
             new GoClassifierToSequenceDiagram(),
             //#endif
-            //#if defined(UMLSTATEDIAGRAM)
-            //@#$LPS-UMLSTATEDIAGRAM:GranularityType:StaticInitialization
+            //#if defined(STATEDIAGRAM)
+            //@#$LPS-STATEDIAGRAM:GranularityType:StaticInitialization
             new GoClassifierToStateMachine(),
             //#endif
             new GoClassifierToStructuralFeature(),
@@ -652,8 +652,8 @@ public final class PerspectiveManager {
             new GoCollaborationToInteraction(),
             //#endif
             new GoComponentToResidentModelElement(),
-            //#if defined(UMLSTATEDIAGRAM)
-            //@#$LPS-UMLSTATEDIAGRAM:GranularityType:StaticInitialization
+            //#if defined(STATEDIAGRAM)
+            //@#$LPS-STATEDIAGRAM:GranularityType:StaticInitialization
             new GoCompositeStateToSubvertex(), new GoDiagramToEdge(),
             //#endif
             new GoDiagramToNode(), new GoElementToMachine(),
@@ -689,8 +689,8 @@ public final class PerspectiveManager {
             new GoProjectToCollaboration(),
             //#endif
             new GoProjectToDiagram(),
-            //#if defined(UMLSTATEDIAGRAM)
-            //@#$LPS-UMLSTATEDIAGRAM:GranularityType:StaticInitialization
+            //#if defined(STATEDIAGRAM)
+            //@#$LPS-STATEDIAGRAM:GranularityType:StaticInitialization
             new GoProjectToModel(), new GoProjectToStateMachine(),
             //#endif
             new GoProjectToProfileConfiguration(), 
@@ -702,15 +702,15 @@ public final class PerspectiveManager {
             new GoCriticsToCritic(),
             //#endif
             new GoProjectToRoots(),
-            //#if defined(UMLSTATEDIAGRAM)
-            //@#$LPS-UMLSTATEDIAGRAM:GranularityType:StaticInitialization
+            //#if defined(STATEDIAGRAM)
+            //@#$LPS-STATEDIAGRAM:GranularityType:StaticInitialization
             new GoSignalToReception(), new GoStateMachineToTop(),
             new GoStatemachineToDiagram(), new GoStateMachineToState(),
             new GoStateMachineToTransition(), new GoStateToDoActivity(),
             //#endif
             new GoStateToDownstream(), new GoStateToEntry(),
-            //#if defined(UMLSTATEDIAGRAM)
-            //@#$LPS-UMLSTATEDIAGRAM:GranularityType:StaticInitialization
+            //#if defined(STATEDIAGRAM)
+            //@#$LPS-STATEDIAGRAM:GranularityType:StaticInitialization
             new GoStateToExit(), new GoStateToIncomingTrans(),
             new GoStateToInternalTrans(), new GoStateToOutgoingTrans(),
             //#endif

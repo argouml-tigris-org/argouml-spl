@@ -1,5 +1,5 @@
-//#if defined(UMLSTATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
-//@#$LPS-UMLSTATEDIAGRAM:GranularityType:Class
+//#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+//@#$LPS-STATEDIAGRAM:GranularityType:Class
 //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Class
 
 // $Id$
@@ -149,9 +149,9 @@ public class FigFinalState extends FigStateVertex {
                 sel = new SelectionActionState(this);
                 ((SelectionActionState) sel).setOutgoingButtonEnabled(false);
             } 
-            //#if defined(UMLSTATEDIAGRAM)
-            //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Command
-            //@#$LPS-UMLSTATEDIAGRAM:Localization:NestedCommand
+            //#if defined(STATEDIAGRAM)
+            //@#$LPS-STATEDIAGRAM:GranularityType:Command
+            //@#$LPS-STATEDIAGRAM:Localization:NestedCommand
             else {
                 sel = new SelectionState(this);
                 ((SelectionState) sel).setOutgoingButtonEnabled(false);

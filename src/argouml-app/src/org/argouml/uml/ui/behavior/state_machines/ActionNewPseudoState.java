@@ -66,10 +66,10 @@ public class ActionNewPseudoState extends AbstractActionNewModelElement {
      */
     public void actionPerformed(ActionEvent e) {
         super.actionPerformed(e);
-        //#if defined(UMLSTATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
-        //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Command
+        //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+        //@#$LPS-STATEDIAGRAM:GranularityType:Command
         //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
-        //@#$LPS-UMLSTATEDIAGRAM:Localization:EndMethod
+        //@#$LPS-STATEDIAGRAM:Localization:EndMethod
         //@#$LPS-ACTIVITYDIAGRAM:Localization:EndMethod
         Object target = TargetManager.getInstance().getModelTarget();        
         Object ps =

@@ -55,10 +55,10 @@ public class ButtonActionNewGuard extends UndoableAction
     public void actionPerformed(ActionEvent e) {
         if (!isEnabled()) return;
         super.actionPerformed(e);
-        //#if defined(UMLSTATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
-        //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Command
+        //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+        //@#$LPS-STATEDIAGRAM:GranularityType:Command
         //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
-        //@#$LPS-UMLSTATEDIAGRAM:Localization:EndMethod
+        //@#$LPS-STATEDIAGRAM:Localization:EndMethod
         //@#$LPS-ACTIVITYDIAGRAM:Localization:EndMethod              
         Object target = TargetManager.getInstance().getModelTarget();
         Object guard = Model.getFacade().getGuard(target);

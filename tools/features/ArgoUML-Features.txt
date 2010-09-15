@@ -2,7 +2,7 @@ PREMISSAS:
 	- Não haverá tratamento nas classes de testes (fonte gerado não terá jUnits);
 	- Marcação da granularidade do código da feature:
 			//@#$LPS-FEATURE:GranularityType:TIPOGRANULARIDADE, no qual FEATURE deverá ser substituído por uma das 
-				features (COGNITIVE, ACTIVITYDIAGRAM, UMLSTATEDIAGRAM, LOGGING) e TIPOGRANULARIDADE deverá ser substituído pelos tipos definidos abaixo.
+				features (COGNITIVE, ACTIVITYDIAGRAM, STATEDIAGRAM, LOGGING) e TIPOGRANULARIDADE deverá ser substituído pelos tipos definidos abaixo.
 				
 		- Tipos de granularidade:
 			- Package (Pacote inteiro - todas as classes. Se houver uma classe do pacote que não deve ser marcada, todas devem ser marcadas como Class)
@@ -26,7 +26,7 @@ PREMISSAS:
 		
 	- Marcar localização do código da Feature:
 			//@#$LPS-FEATURE:Localization:TIPOLOCALIZAÇÃO, no qual FEATURE deverá ser substituído por uma das 
-				features (COGNITIVE, ACTIVITYDIAGRAM, UMLSTATEDIAGRAM, LOGGING) e TIPOLOCALIZAÇÃO deverá ser substituído pelos tipos definidos abaixo.
+				features (COGNITIVE, ACTIVITYDIAGRAM, STATEDIAGRAM, LOGGING) e TIPOLOCALIZAÇÃO deverá ser substituído pelos tipos definidos abaixo.
 		
 		Tipos de localização (considerar o bloco):
 			- StartMethod (Início de método)
@@ -200,10 +200,10 @@ FEATURES DEFINIDAS:
 			ActionLayout.java						-> 81
 		
 		Ifdef aninhado:
-			GoNamespaceToDiagram					81 (UMLSTATEDIAGRAM)
-			GoStatemachineToDiagram.java			-> UMLSTATEDIAGRAM
-			UMLStateDiagram.java					-> UMLSTATEDIAGRAM
-			UMLActivityDiagram.java					400, 585, 868, 880 (UMLSTATEDIAGRAM)
+			GoNamespaceToDiagram					81 (STATEDIAGRAM)
+			GoStatemachineToDiagram.java			-> STATEDIAGRAM
+			UMLStateDiagram.java					-> STATEDIAGRAM
+			UMLActivityDiagram.java					400, 585, 868, 880 (STATEDIAGRAM)
 			
 		Método inteiro:
 			SelectionActionState.java				-> 129
@@ -220,12 +220,12 @@ FEATURES DEFINIDAS:
 			FigStateVertex.java						1 (UMLStateDiagram)
 			FigFinalState							1 (UMLStateDiagram)
 			FigTransition.java						1 (UMLStateDiagram)
-			ButtonActionNewCallEvent.java			1 (UMLSTATEDIAGRAM)
-			ButtonActionNewChangeEvent.java			1 (UMLSTATEDIAGRAM)
-			ButtonActionNewEvent.java				1 (UMLSTATEDIAGRAM)
-			ButtonActionNewSignalEvent.java			1 (UMLSTATEDIAGRAM)
-			ButtonActionNewTimeEvent.java			1 (UMLSTATEDIAGRAM)
-			DiagramFactory.java						227 (UMLSTATEDIAGRAM)
+			ButtonActionNewCallEvent.java			1 (STATEDIAGRAM)
+			ButtonActionNewChangeEvent.java			1 (STATEDIAGRAM)
+			ButtonActionNewEvent.java				1 (STATEDIAGRAM)
+			ButtonActionNewSignalEvent.java			1 (STATEDIAGRAM)
+			ButtonActionNewTimeEvent.java			1 (STATEDIAGRAM)
+			DiagramFactory.java						227 (STATEDIAGRAM)
 			
 		AND ifdefs
 			DiagramFactory.java						231 (UMLStateDiagram)
@@ -254,8 +254,8 @@ FEATURES DEFINIDAS:
 	CIDE: Demais partes do código comentado com :  /* @#$-LPSFeature: UMLStateDiagram %INIT% .......... @#$-LPSFeature: UMLStateDiagram %END% */
 	
 	CC:
-		Defined: UMLSTATEDIAGRAM
-			//#if defined(UMLSTATEDIAGRAM)
+		Defined: STATEDIAGRAM
+			//#if defined(STATEDIAGRAM)
 			//#endif
 		
 		Corpo de Método inteiro (//@#$ METHOD_BODY):
@@ -305,9 +305,9 @@ FEATURES DEFINIDAS:
 		ArgoParser.java
 	
 	Ifdef aninhado:	
-		ModelMemberFilePersister.java	371 (ACTIVITYDIAGRAM), 385 (UMLSTATEDIAGRAM)
+		ModelMemberFilePersister.java	371 (ACTIVITYDIAGRAM), 385 (STATEDIAGRAM)
 		XmiFilePersister.java			373	(COGNITIVE)
-		UMLStateDiagram.java			(UMLSTATEDIAGRAM)
+		UMLStateDiagram.java			(STATEDIAGRAM)
 		MDRModelImplementation.java		511 (ACTIVITYDIAGRAM)
 		ProjectImpl.java				294, 318 (COGNITIVE)
 		

@@ -62,8 +62,8 @@ import org.argouml.uml.diagram.activity.ui.UMLActivityDiagram;
 //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Import
 import org.argouml.uml.diagram.sequence.ui.UMLSequenceDiagram;
 //#endif
-//#if defined(UMLSTATEDIAGRAM)
-//@#$LPS-UMLSTATEDIAGRAM:GranularityType:Import
+//#if defined(STATEDIAGRAM)
+//@#$LPS-STATEDIAGRAM:GranularityType:Import
 import org.argouml.uml.diagram.state.ui.UMLStateDiagram;
 //#endif
 import org.argouml.uml.diagram.static_structure.ui.UMLClassDiagram;
@@ -89,8 +89,8 @@ import org.argouml.uml.ui.ActionDeploymentDiagram;
 import org.argouml.uml.ui.ActionSequenceDiagram;
 //#endif
 import org.argouml.uml.ui.ActionSetSourcePath;
-//#if defined(UMLSTATEDIAGRAM)
-//@#$LPS-UMLSTATEDIAGRAM:GranularityType:Import
+//#if defined(STATEDIAGRAM)
+//@#$LPS-STATEDIAGRAM:GranularityType:Import
 import org.argouml.uml.ui.ActionStateDiagram;
 //#endif
 //#if defined(USECASEDIAGRAM)
@@ -269,8 +269,8 @@ public class ExplorerPopup extends JPopupMenu {
             final boolean sequenceDiagramActive =
                 activeDiagram instanceof UMLSequenceDiagram;
             //#endif
-            //#if defined(UMLSTATEDIAGRAM)
-            //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Command
+            //#if defined(STATEDIAGRAM)
+            //@#$LPS-STATEDIAGRAM:GranularityType:Command
             final boolean stateDiagramActive =
                 activeDiagram instanceof UMLStateDiagram;
             //#endif
@@ -278,8 +278,8 @@ public class ExplorerPopup extends JPopupMenu {
                 (stateVertexSelected) ? Model
                     .getStateMachinesHelper().getStateMachine(selectedItem)
                     : null;
-            //#if defined(UMLSTATEDIAGRAM)
-            //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Command
+            //#if defined(STATEDIAGRAM)
+            //@#$LPS-STATEDIAGRAM:GranularityType:Command
             final Object diagramStateMachine =
                 (stateDiagramActive) ? ((UMLStateDiagram) activeDiagram)
                     .getStateMachine()
@@ -306,8 +306,8 @@ public class ExplorerPopup extends JPopupMenu {
                                 && diagramActivity == selectedStateMachine)
                         //#endif
                         || (stateVertexSelected
-                                //#if defined(UMLSTATEDIAGRAM)
-                                //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Expression
+                                //#if defined(STATEDIAGRAM)
+                                //@#$LPS-STATEDIAGRAM:GranularityType:Expression
                                 && stateDiagramActive                                
                                 && diagramStateMachine == selectedStateMachine
                                 //#endif
@@ -421,8 +421,8 @@ public class ExplorerPopup extends JPopupMenu {
         //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
         createDiagrams.add(new ActionCollaborationDiagram());
         //#endif
-        //#if defined(UMLSTATEDIAGRAM)
-        //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Command
+        //#if defined(STATEDIAGRAM)
+        //@#$LPS-STATEDIAGRAM:GranularityType:Command
         createDiagrams.add(new ActionStateDiagram());
         //#endif
         //#if defined(ACTIVITYDIAGRAM)

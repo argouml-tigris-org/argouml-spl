@@ -85,8 +85,8 @@ import org.argouml.uml.ui.ActionSaveProjectAs;
 //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Import
 import org.argouml.uml.ui.ActionSequenceDiagram;
 //#endif
-//#if defined(UMLSTATEDIAGRAM)
-//@#$LPS-UMLSTATEDIAGRAM:GranularityType:Import
+//#if defined(STATEDIAGRAM)
+//@#$LPS-STATEDIAGRAM:GranularityType:Import
 import org.argouml.uml.ui.ActionStateDiagram;
 //#endif
 //#if defined(USECASEDIAGRAM)
@@ -236,8 +236,8 @@ public class ShortcutMgr {
     public static final String ACTION_COLLABORATION_DIAGRAM = 
         "collaborationDiagrams";
     //#endif
-    //#if defined(UMLSTATEDIAGRAM)
-    //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Field
+    //#if defined(STATEDIAGRAM)
+    //@#$LPS-STATEDIAGRAM:GranularityType:Field
     /** Action key for state diagram */
     public static final String ACTION_STATE_DIAGRAM = "stateDiagrams";
     //#endif
@@ -695,8 +695,8 @@ public class ShortcutMgr {
         putDefaultShortcut(ACTION_COLLABORATION_DIAGRAM, null,
                 new ActionCollaborationDiagram());
         //#endif
-        //#if defined(UMLSTATEDIAGRAM)
-        //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Command
+        //#if defined(STATEDIAGRAM)
+        //@#$LPS-STATEDIAGRAM:GranularityType:Command
         putDefaultShortcut(ACTION_STATE_DIAGRAM, null, 
                 new ActionStateDiagram());
         //#endif

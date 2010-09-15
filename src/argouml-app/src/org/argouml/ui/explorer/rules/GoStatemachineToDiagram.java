@@ -1,5 +1,5 @@
-//#if defined(UMLSTATEDIAGRAM)
-//@#$LPS-UMLSTATEDIAGRAM:GranularityType:Class
+//#if defined(STATEDIAGRAM)
+//@#$LPS-STATEDIAGRAM:GranularityType:Class
 
 // $Id$
 // Copyright (c) 1996-2006 The Regents of the University of California. All
@@ -41,8 +41,8 @@ import org.argouml.uml.diagram.ArgoDiagram;
 //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Import
 import org.argouml.uml.diagram.activity.ui.UMLActivityDiagram;
 //#endif
-//#if defined(UMLSTATEDIAGRAM)
-//@#$LPS-UMLSTATEDIAGRAM:GranularityType:Import
+//#if defined(STATEDIAGRAM)
+//@#$LPS-STATEDIAGRAM:GranularityType:Import
 import org.argouml.uml.diagram.state.ui.UMLStateDiagram;
 //#endif;
 
@@ -76,9 +76,9 @@ public class GoStatemachineToDiagram extends AbstractPerspectiveRule {
                     }
                 }
                 //#endif
-                //#if defined(UMLSTATEDIAGRAM)
-                //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Command      
-                //@#$LPS-UMLSTATEDIAGRAM:Localization:NestedCommand
+                //#if defined(STATEDIAGRAM)
+                //@#$LPS-STATEDIAGRAM:GranularityType:Command      
+                //@#$LPS-STATEDIAGRAM:Localization:NestedCommand
                 if (diagram instanceof UMLStateDiagram) {
                     UMLStateDiagram stateDiagram = (UMLStateDiagram) diagram;
                     Object stateMachine = stateDiagram.getStateMachine();

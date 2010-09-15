@@ -25,8 +25,8 @@
 package org.argouml.uml.ui.behavior.state_machines;
 
 import javax.swing.JList;
-//#if defined(UMLSTATEDIAGRAM)
-//@#$LPS-UMLSTATEDIAGRAM:GranularityType:Import
+//#if defined(STATEDIAGRAM)
+//@#$LPS-STATEDIAGRAM:GranularityType:Import
 import org.argouml.uml.diagram.state.ui.ButtonActionNewCallEvent;
 import org.argouml.uml.diagram.state.ui.ButtonActionNewChangeEvent;
 import org.argouml.uml.diagram.state.ui.ButtonActionNewSignalEvent;
@@ -86,8 +86,8 @@ public class PropPanelTransition extends PropPanelModelElement {
                 getSingleRowScroll(new UMLTransitionEffectListModel()));
 
         addAction(new ActionNavigateContainerElement());
-        //#if defined(UMLSTATEDIAGRAM)
-        //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Command
+        //#if defined(STATEDIAGRAM)
+        //@#$LPS-STATEDIAGRAM:GranularityType:Command
         addAction(getTriggerActions());
         //#endif
         addAction(new ButtonActionNewGuard());
@@ -95,8 +95,8 @@ public class PropPanelTransition extends PropPanelModelElement {
         addAction(new ActionNewStereotype());
         addAction(getDeleteAction());
     }
-    //#if defined(UMLSTATEDIAGRAM)
-    //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Method
+    //#if defined(STATEDIAGRAM)
+    //@#$LPS-STATEDIAGRAM:GranularityType:Method
     private Object[] getTriggerActions() {
         Object[] actions = {
             new ButtonActionNewCallEvent(),

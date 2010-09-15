@@ -45,8 +45,8 @@ import org.argouml.model.Model;
 //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Import
 import org.argouml.model.SequenceDiagram;
 //#endif
-//#if defined(UMLSTATEDIAGRAM)
-//@#$LPS-UMLSTATEDIAGRAM:GranularityType:Import
+//#if defined(STATEDIAGRAM)
+//@#$LPS-STATEDIAGRAM:GranularityType:Import
 import org.argouml.model.StateDiagram;
 //#endif
 //#if defined(USECASEDIAGRAM)
@@ -66,8 +66,8 @@ import org.argouml.uml.diagram.deployment.ui.UMLDeploymentDiagram;
 //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Import
 import org.argouml.uml.diagram.sequence.ui.UMLSequenceDiagram;
 //#endif
-//#if defined(UMLSTATEDIAGRAM)
-//@#$LPS-UMLSTATEDIAGRAM:GranularityType:Import
+//#if defined(STATEDIAGRAM)
+//@#$LPS-STATEDIAGRAM:GranularityType:Import
 import org.argouml.uml.diagram.state.ui.UMLStateDiagram;
 //#endif
 import org.argouml.uml.diagram.static_structure.ui.UMLClassDiagram;
@@ -111,8 +111,8 @@ public final class DiagramFactory {
         //@#$LPS-USECASEDIAGRAM:GranularityType:Enumeration
         UseCase,
         //#endif
-        //#if defined(UMLSTATEDIAGRAM)
-        //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Enumeration
+        //#if defined(STATEDIAGRAM)
+        //@#$LPS-STATEDIAGRAM:GranularityType:Enumeration
         State, 
         //#endif
         Deployment,
@@ -145,8 +145,8 @@ public final class DiagramFactory {
         //@#$LPS-USECASEDIAGRAM:GranularityType:Command
         diagramClasses.put(DiagramType.UseCase, UMLUseCaseDiagram.class);
         //#endif
-        //#if defined(UMLSTATEDIAGRAM)
-        //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Command
+        //#if defined(STATEDIAGRAM)
+        //@#$LPS-STATEDIAGRAM:GranularityType:Command
         diagramClasses.put(DiagramType.State, UMLStateDiagram.class);
         //#endif
         diagramClasses.put(DiagramType.Deployment, UMLDeploymentDiagram.class);
@@ -263,16 +263,16 @@ public final class DiagramFactory {
                         "Unknown factory type registered");
             }
         } else {
-            //#if defined(UMLSTATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
-            //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Command
+            //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+            //@#$LPS-STATEDIAGRAM:GranularityType:Command
             if ((
-                 //#if defined(UMLSTATEDIAGRAM)
-                 //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Expression
-                 //@#$LPS-UMLSTATEDIADRAM:Localization:NestedIfdef
+                 //#if defined(STATEDIAGRAM)
+                 //@#$LPS-STATEDIAGRAM:GranularityType:Expression
+                 //@#$LPS-STATEDIAGRAM:Localization:NestedIfdef
                  type == DiagramType.State
                  //#endif
-                    //#if defined(UMLSTATEDIAGRAM) and defined(ACTIVITYDIAGRAM)
-                    //@#$LPS-UMLSTATEDIADRAM:Localization:NestedIfdef
+                    //#if defined(STATEDIAGRAM) and defined(ACTIVITYDIAGRAM)
+                    //@#$LPS-STATEDIAGRAM:Localization:NestedIfdef
                     ||
                     //#endif
                     //#if defined(ACTIVITYDIAGRAM)
@@ -288,7 +288,7 @@ public final class DiagramFactory {
             //#endif
                 diagram = createDiagram(diagramClasses.get(type), namespace,
                         machine);
-            //#if defined(UMLSTATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+            //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
             }
             //#endif
             diagram.setDiagramSettings(settings);
@@ -329,8 +329,8 @@ public final class DiagramFactory {
             diagram = new UMLUseCaseDiagram(namespace);
             diType = UseCaseDiagram.class;
         //#endif
-        //#if defined(UMLSTATEDIAGRAM)
-        //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Command
+        //#if defined(STATEDIAGRAM)
+        //@#$LPS-STATEDIAGRAM:GranularityType:Command
         } else if (type == UMLStateDiagram.class) {
             diagram = new UMLStateDiagram(namespace, machine);
             diType = StateDiagram.class;

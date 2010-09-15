@@ -1,5 +1,5 @@
-//#if defined(UMLSTATEDIAGRAM)
-//@#$LPS-UMLSTATEDIAGRAM:GranularityType:Class
+//#if defined(STATEDIAGRAM)
+//@#$LPS-STATEDIAGRAM:GranularityType:Class
 
 // $Id$
 // Copyright (c) 2005-2006 The Regents of the University of California. All

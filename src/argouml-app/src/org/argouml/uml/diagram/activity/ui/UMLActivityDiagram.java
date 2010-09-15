@@ -53,8 +53,8 @@ import org.argouml.ui.CmdCreateNode;
 import org.argouml.uml.diagram.DiagramSettings;
 import org.argouml.uml.diagram.UMLMutableGraphSupport;
 import org.argouml.uml.diagram.activity.ActivityDiagramGraphModel;
-//#if defined(UMLSTATEDIAGRAM)
-//@#$LPS-UMLSTATEDIAGRAM:GranularityType:Import
+//#if defined(STATEDIAGRAM)
+//@#$LPS-STATEDIAGRAM:GranularityType:Import
 import org.argouml.uml.diagram.state.StateDiagramGraphModel;
 import org.argouml.uml.diagram.state.ui.ActionCreatePseudostate;
 import org.argouml.uml.diagram.state.ui.ButtonActionNewCallEvent;
@@ -64,8 +64,8 @@ import org.argouml.uml.diagram.state.ui.ButtonActionNewTimeEvent;
 import org.argouml.uml.diagram.state.ui.FigBranchState;
 //#endif
 import org.argouml.uml.diagram.state.ui.FigFinalState;
-//#if defined(UMLSTATEDIAGRAM)
-//@#$LPS-UMLSTATEDIAGRAM:GranularityType:Import
+//#if defined(STATEDIAGRAM)
+//@#$LPS-STATEDIAGRAM:GranularityType:Import
 import org.argouml.uml.diagram.state.ui.FigForkState;
 import org.argouml.uml.diagram.state.ui.FigInitialState;
 import org.argouml.uml.diagram.state.ui.FigJoinState;
@@ -328,10 +328,10 @@ public class UMLActivityDiagram extends UMLDiagram {
      * the same thing.
      */
     public Object getStateMachine() {
-        //#if defined(UMLSTATEDIAGRAM)        
-        //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Command
-        //@#$LPS-UMLSTATEDIAGRAM:Localization:StartMethod
-        //@#$LPS-UMLSTATEDIAGRAM:Localization:BeforeReturn
+        //#if defined(STATEDIAGRAM)        
+        //@#$LPS-STATEDIAGRAM:GranularityType:Command
+        //@#$LPS-STATEDIAGRAM:Localization:StartMethod
+        //@#$LPS-STATEDIAGRAM:Localization:BeforeReturn
         GraphModel gm = getGraphModel();
         if (gm instanceof StateDiagramGraphModel) {
             Object machine = ((StateDiagramGraphModel) gm).getMachine();
@@ -368,13 +368,13 @@ public class UMLActivityDiagram extends UMLDiagram {
             getActionState(),
             getActionTransition(),
 	    null,
-	    //#if defined(UMLSTATEDIAGRAM)
-	    //@#$LPS-UMLSTATEDIAGRAM:GranularityType:StaticInitialization
+	    //#if defined(STATEDIAGRAM)
+	    //@#$LPS-STATEDIAGRAM:GranularityType:StaticInitialization
 	    getActionStartPseudoState(),
 	    //#endif
 	    getActionFinalPseudoState(),
-	    //#if defined(UMLSTATEDIAGRAM)
-	    //@#$LPS-UMLSTATEDIAGRAM:GranularityType:StaticInitialization
+	    //#if defined(STATEDIAGRAM)
+	    //@#$LPS-STATEDIAGRAM:GranularityType:StaticInitialization
 	    getActionJunctionPseudoState(),
 	    getActionForkPseudoState(),
 	    getActionJoinPseudoState(),
@@ -385,8 +385,8 @@ public class UMLActivityDiagram extends UMLDiagram {
             getActionObjectFlowState(),
             /*getActionSubactivityState()*/
             null,
-            //#if defined(UMLSTATEDIAGRAM)
-            //@#$LPS-UMLSTATEDIAGRAM:GranularityType:StaticInitialization
+            //#if defined(STATEDIAGRAM)
+            //@#$LPS-STATEDIAGRAM:GranularityType:StaticInitialization
             getTriggerActions(),
             //#endif
             getActionGuard(),
@@ -394,8 +394,8 @@ public class UMLActivityDiagram extends UMLDiagram {
 	};
         return actions;
     }
-    //#if defined(UMLSTATEDIAGRAM)
-    //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Method
+    //#if defined(STATEDIAGRAM)
+    //@#$LPS-STATEDIAGRAM:GranularityType:Method
     protected Object[] getTriggerActions() {
         Object[] actions = {
             getActionCallEvent(),
@@ -456,8 +456,8 @@ public class UMLActivityDiagram extends UMLDiagram {
         }
         return actionFinalPseudoState;
     }
-    //#if defined(UMLSTATEDIAGRAM)
-    //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Method
+    //#if defined(STATEDIAGRAM)
+    //@#$LPS-STATEDIAGRAM:GranularityType:Method
     /**
      * @return Returns the actionForkPseudoState.
      */
@@ -471,7 +471,7 @@ public class UMLActivityDiagram extends UMLDiagram {
         }
         return actionForkPseudoState;
     }
-    //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Method
+    //@#$LPS-STATEDIAGRAM:GranularityType:Method
     /**
      * @return Returns the actionJoinPseudoState.
      */
@@ -485,7 +485,7 @@ public class UMLActivityDiagram extends UMLDiagram {
         }
         return actionJoinPseudoState;
     }
-    //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Method
+    //@#$LPS-STATEDIAGRAM:GranularityType:Method
     /**
      * @return Returns the actionJunctionPseudoState.
      */
@@ -523,8 +523,8 @@ public class UMLActivityDiagram extends UMLDiagram {
         }
         return actionObjectFlowState;
     }
-    //#if defined(UMLSTATEDIAGRAM)
-    //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Method
+    //#if defined(STATEDIAGRAM)
+    //@#$LPS-STATEDIAGRAM:GranularityType:Method
     /**
      * @return Returns the actionStartPseudoState.
      */
@@ -581,8 +581,8 @@ public class UMLActivityDiagram extends UMLDiagram {
         return actionTransition;
     }
     
-    //#if defined(UMLSTATEDIAGRAM)
-    //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Method
+    //#if defined(STATEDIAGRAM)
+    //@#$LPS-STATEDIAGRAM:GranularityType:Method
     /**
      * @return Returns the actionCallEvent.
      */
@@ -592,7 +592,7 @@ public class UMLActivityDiagram extends UMLDiagram {
         }
         return actionCallEvent;
     }
-    //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Method
+    //@#$LPS-STATEDIAGRAM:GranularityType:Method
     /**
      * @return Returns the actionCallEvent.
      */
@@ -602,7 +602,7 @@ public class UMLActivityDiagram extends UMLDiagram {
         }
         return actionChangeEvent;
     }
-    //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Method
+    //@#$LPS-STATEDIAGRAM:GranularityType:Method
     /**
      * @return Returns the actionCallEvent.
      */
@@ -612,7 +612,7 @@ public class UMLActivityDiagram extends UMLDiagram {
         }
         return actionSignalEvent;
     }
-    //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Method
+    //@#$LPS-STATEDIAGRAM:GranularityType:Method
     /**
      * @return Returns the actionCallEvent.
      */
@@ -778,8 +778,8 @@ public class UMLActivityDiagram extends UMLDiagram {
 	    return;
 	}
 	
-	if (//#if defined(UMLSTATEDIAGRAM)
-	        //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Expression
+	if (//#if defined(STATEDIAGRAM)
+	        //@#$LPS-STATEDIAGRAM:GranularityType:Expression
 	        enclosed instanceof FigStateVertex  
 		|| 
 		//#endif
@@ -880,9 +880,9 @@ public class UMLActivityDiagram extends UMLDiagram {
                 //#endif
                 return null;
             }
-            //#if defined(UMLSTATEDIAGRAM)
-            //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Command     
-            //@#$LPS-UMLSTATEDIAGRAM:Localization:NestedCommand
+            //#if defined(STATEDIAGRAM)
+            //@#$LPS-STATEDIAGRAM:GranularityType:Command     
+            //@#$LPS-STATEDIAGRAM:Localization:NestedCommand
             if (kind.equals(Model.getPseudostateKind().getInitial())) {
                 figNode = new FigInitialState(droppedObject, bounds, settings);
             } else if (kind.equals(

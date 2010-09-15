@@ -160,8 +160,8 @@ public interface ModelImplementation {
      * @return The model management helper.
      */
     ModelManagementHelper getModelManagementHelper();
-    //#if defined(UMLSTATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
-    //@#$LPS-UMLSTATEDIAGRAM:GranularityType:InterfaceMethod
+    //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+    //@#$LPS-STATEDIAGRAM:GranularityType:InterfaceMethod
     //@#$LPS-ACTIVITYDIAGRAM:GranularityType:InterfaceMethod
     /**
      * Getter for StateMachinesFactory.
@@ -169,7 +169,7 @@ public interface ModelImplementation {
      * @return the factory
      */
     StateMachinesFactory getStateMachinesFactory();
-    //@#$LPS-UMLSTATEDIAGRAM:GranularityType:InterfaceMethod
+    //@#$LPS-STATEDIAGRAM:GranularityType:InterfaceMethod
     //@#$LPS-ACTIVITYDIAGRAM:GranularityType:InterfaceMethod
     /**
      * Getter for StateMachinesHelper.

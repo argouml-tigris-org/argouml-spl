@@ -300,9 +300,9 @@ Building this requires:
 		</then>
 	</if>  	  
 	<if>
-		<isset property="UMLSTATEDIAGRAM"/>
+		<isset property="STATEDIAGRAM"/>
 		<then>
-			<echo message="UMLSTATEDIAGRAM"/>
+			<echo message="STATEDIAGRAM"/>
 		</then>
 	</if> 
 	<if>

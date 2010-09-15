@@ -381,7 +381,7 @@ class ModelMemberFilePersister extends MemberFilePersister
                 	statemachine);
             } else {
             //#endif
-                //#if defined(UMLSTATEDIAGRAM)
+                //#if defined(STATEDIAGRAM)
                     //#if defined(LOGGING)
                     //@#$LPS-LOGGING:GranularityType:Command
                     //@#$LPS-LOGGING:Localization:NestedCommand
@@ -389,7 +389,7 @@ class ModelMemberFilePersister extends MemberFilePersister
                         + facade.getUMLClassName(statemachine)
                         + "<<" + facade.getName(statemachine) + ">>");
                     //#endif
-                //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Command
+                //@#$LPS-STATEDIAGRAM:GranularityType:Command
                 diagram = diagramFactory.createDiagram(
                         DiagramType.State,
                 	namespace,

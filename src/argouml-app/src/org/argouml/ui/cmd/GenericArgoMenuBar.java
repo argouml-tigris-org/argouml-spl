@@ -92,8 +92,8 @@ import org.argouml.uml.ui.ActionSaveProjectAs;
 //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Import
 import org.argouml.uml.ui.ActionSequenceDiagram;
 //#endif
-//#if defined(UMLSTATEDIAGRAM)
-//@#$LPS-UMLSTATEDIAGRAM:GranularityType:Import
+//#if defined(STATEDIAGRAM)
+//@#$LPS-STATEDIAGRAM:GranularityType:Import
 import org.argouml.uml.ui.ActionStateDiagram;
 //#endif
 //#if defined(USECASEDIAGRAM)
@@ -647,8 +647,8 @@ public class GenericArgoMenuBar extends JMenuBar implements
         ShortcutMgr.assignAccelerator(collaborationDiagram,
                 ShortcutMgr.ACTION_COLLABORATION_DIAGRAM);
         //#endif
-        //#if defined(UMLSTATEDIAGRAM)
-        //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Command
+        //#if defined(STATEDIAGRAM)
+        //@#$LPS-STATEDIAGRAM:GranularityType:Command
         JMenuItem stateDiagram =
             createDiagramMenu.add(new ActionStateDiagram());
         setMnemonic(stateDiagram, "Statechart Diagram");

@@ -1,5 +1,5 @@
-//#if defined(UMLSTATEDIAGRAM) or defined(ACTIVITYDIAGRAM) 
-//@#$LPS-UMLSTATEDIAGRAM:GranularityType:Class
+//#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM) 
+//@#$LPS-STATEDIAGRAM:GranularityType:Class
 //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Class
 
 // $Id$
@@ -174,8 +174,8 @@ public abstract class FigStateVertex extends FigNodeModelElement {
                             Model.getFacade().getContainer(pstate)))) {
                 return new SelectionActionState(this);
             }
-            //#if defined(UMLSTATEDIAGRAM)
-            //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Command
+            //#if defined(STATEDIAGRAM)
+            //@#$LPS-STATEDIAGRAM:GranularityType:Command
             return new SelectionState(this);
             //#endif
         }

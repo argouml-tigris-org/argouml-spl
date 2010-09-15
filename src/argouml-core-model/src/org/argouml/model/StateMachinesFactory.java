@@ -1,5 +1,5 @@
-//#if defined(UMLSTATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
-//@#$LPS-UMLSTATEDIAGRAM:GranularityType:Interface
+//#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+//@#$LPS-STATEDIAGRAM:GranularityType:Interface
 //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Interface
 
 // $Id$

@@ -47,8 +47,8 @@ import org.argouml.uml.diagram.deployment.ui.FigComponentInstance;
 import org.argouml.uml.diagram.deployment.ui.FigMNode;
 import org.argouml.uml.diagram.deployment.ui.FigNodeInstance;
 import org.argouml.uml.diagram.deployment.ui.FigObject;
-//#if defined(UMLSTATEDIAGRAM)
-//@#$LPS-UMLSTATEDIAGRAM:GranularityType:Import
+//#if defined(STATEDIAGRAM)
+//@#$LPS-STATEDIAGRAM:GranularityType:Import
 import org.argouml.uml.diagram.state.ui.FigBranchState;
 import org.argouml.uml.diagram.state.ui.FigCompositeState;
 import org.argouml.uml.diagram.state.ui.FigConcurrentRegion;
@@ -132,8 +132,8 @@ public abstract class UmlDiagramRenderer
         FigNode figNode = null;
         if (Model.getFacade().isAComment(node)) {
             figNode = new FigComment();
-        //#if defined(UMLSTATEDIAGRAM)
-        //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Command
+        //#if defined(STATEDIAGRAM)
+        //@#$LPS-STATEDIAGRAM:GranularityType:Command
         } else if (Model.getFacade().isAStubState(node)) {
             return new FigStubState();
         //#endif
@@ -199,8 +199,8 @@ public abstract class UmlDiagramRenderer
         } else if (Model.getFacade().isAActionState(node)) {
             figNode = new FigActionState();
         //#endif
-        //#if defined(UMLSTATEDIAGRAM)
-        //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Command
+        //#if defined(STATEDIAGRAM)
+        //@#$LPS-STATEDIAGRAM:GranularityType:Command
         } else if (Model.getFacade().isAFinalState(node)) {
             figNode = new FigFinalState();
         } else if (Model.getFacade().isASubmachineState(node)) {
@@ -312,8 +312,8 @@ public abstract class UmlDiagramRenderer
         } else if (Model.getFacade().isAAssociationRole(edge)) {
             newEdge = new FigAssociationRole();
         //#endif
-        //#if defined(UMLSTATEDIAGRAM)
-        //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Command
+        //#if defined(STATEDIAGRAM)
+        //@#$LPS-STATEDIAGRAM:GranularityType:Command
         } else if (Model.getFacade().isATransition(edge)) {
             newEdge = new FigTransition();
         //#endif

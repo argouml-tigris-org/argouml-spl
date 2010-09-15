@@ -135,8 +135,8 @@ public final class Model {
         coreHelper = impl.getCoreHelper();
         dataTypesHelper = impl.getDataTypesHelper();
         extensionMechanismsHelper = impl.getExtensionMechanismsHelper();
-        //#if defined(UMLSTATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
-        //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Command
+        //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+        //@#$LPS-STATEDIAGRAM:GranularityType:Command
         //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
         stateMachinesHelper = impl.getStateMachinesHelper();
         //#endif
@@ -309,8 +309,8 @@ public final class Model {
     public static ModelManagementHelper getModelManagementHelper() {
         return impl.getModelManagementHelper();
     }
-    //#if defined(UMLSTATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
-    //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Method
+    //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+    //@#$LPS-STATEDIAGRAM:GranularityType:Method
     //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Method
     /**
      * Getter for StateMachinesFactory.
@@ -320,7 +320,7 @@ public final class Model {
     public static StateMachinesFactory getStateMachinesFactory() {
         return impl.getStateMachinesFactory();
     }
-    //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Method
+    //@#$LPS-STATEDIAGRAM:GranularityType:Method
     //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Method
     /**
      * Getter for StateMachinesHelper.

@@ -550,8 +550,8 @@ public class MDRModelImplementation implements ModelImplementation {
         //@#$LPS-LOGGING:GranularityType:Command
         LOG.debug("MDR Init - initialized package CommonBehavior");
         //#endif
-        //#if defined(UMLSTATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
-        //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Command
+        //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+        //@#$LPS-STATEDIAGRAM:GranularityType:Command
         //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
         theStateMachinesFactory = new StateMachinesFactoryMDRImpl(this);
         //#endif

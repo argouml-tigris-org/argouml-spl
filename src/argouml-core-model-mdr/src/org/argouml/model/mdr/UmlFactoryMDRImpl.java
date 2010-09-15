@@ -536,8 +536,8 @@ class UmlFactoryMDRImpl extends AbstractUmlModelFactoryMDR implements
         } else if (elementType == metaTypes.getState()) {
             throw new IllegalArgumentException(
                     "Attempt to instantiate abstract type");
-        //#if defined(UMLSTATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
-        //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Command
+        //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+        //@#$LPS-STATEDIAGRAM:GranularityType:Command
         //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
         } else if (elementType == modelImpl.getMetaTypes().getSimpleState()) {
             return getStateMachines().createSimpleState();
@@ -763,8 +763,8 @@ class UmlFactoryMDRImpl extends AbstractUmlModelFactoryMDR implements
         return (UseCasesFactoryMDRImpl) modelImpl.getUseCasesFactory();
     }
     //#endif
-    //#if defined(UMLSTATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
-    //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Method
+    //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+    //@#$LPS-STATEDIAGRAM:GranularityType:Method
     //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Method
     /**
      * Returns the package factory for the UML package

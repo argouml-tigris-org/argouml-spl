@@ -225,16 +225,16 @@ public class TransitionNotationUml extends TransitionNotation {
         Object ns =
             Model.getStateMachinesHelper()
                 .findNamespaceForEvent(trans, null);
-        //#if defined(UMLSTATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
-        //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Command
+        //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+        //@#$LPS-STATEDIAGRAM:GranularityType:Command
         //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
         StateMachinesFactory sMFactory =
                 Model.getStateMachinesFactory();
         //#endif
         boolean createdEvent = false;
         if (trigger.length() > 0) {
-            //#if defined(UMLSTATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
-            //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Command
+            //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+            //@#$LPS-STATEDIAGRAM:GranularityType:Command
             //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
             // case 1 and 2
             if (evt == null) {
@@ -372,8 +372,8 @@ public class TransitionNotationUml extends TransitionNotation {
         Object g = Model.getFacade().getGuard(trans);        
         if (guard.length() > 0) {            
             if (g == null) {
-                //#if defined(UMLSTATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
-                //@#$LPS-UMLSTATEDIAGRAM:GranularityType:Command
+                //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+                //@#$LPS-STATEDIAGRAM:GranularityType:Command
                 //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
                 // case 1
                 /*TODO: In the next line, I should use buildGuard(),
