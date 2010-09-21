@@ -134,7 +134,9 @@ public abstract class ActionNewDiagram extends UndoableAction {
     public boolean isValidNamespace(Object ns) {
         return true;
     }
-
+    //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
+    //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Method
+    //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Method
     /**
      * Utility function to create a collaboration.
      * 
@@ -147,6 +149,7 @@ public abstract class ActionNewDiagram extends UndoableAction {
                 && Model.getModelManagementHelper().isReadOnly(target)) {
             target = namespace;
         }
+        
         Object collaboration = null;
         if (Model.getFacade().isAOperation(target)) {
             Object ns = Model.getFacade().getNamespace(
@@ -177,4 +180,5 @@ public abstract class ActionNewDiagram extends UndoableAction {
         }
         return collaboration;
     }
+    //#endif
 }

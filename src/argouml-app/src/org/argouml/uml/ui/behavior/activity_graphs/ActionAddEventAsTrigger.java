@@ -88,6 +88,11 @@ public class ActionAddEventAsTrigger extends AbstractActionAddModelElement2 {
 
     @Override
     protected void doIt(Collection selected) {
+        //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+        //@#$LPS-STATEDIAGRAM:GranularityType:MethodBody
+        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:MethodBody
+        //@#$LPS-STATEDIAGRAM:Localization:EntireMethod
+        //@#$LPS-ACTIVITYDIAGRAM:Localization:EntireMethod          
         Object trans = getTarget();
         if (selected == null || selected.size() == 0) {
             Model.getStateMachinesHelper().setEventAsTrigger(trans, null);
@@ -95,6 +100,7 @@ public class ActionAddEventAsTrigger extends AbstractActionAddModelElement2 {
             Model.getStateMachinesHelper().setEventAsTrigger(trans,
                     selected.iterator().next());
         }
+        //#endif
     }
 
 }

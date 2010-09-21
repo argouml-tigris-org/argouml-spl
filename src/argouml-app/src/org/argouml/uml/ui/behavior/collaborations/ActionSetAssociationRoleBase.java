@@ -60,10 +60,16 @@ public class ActionSetAssociationRoleBase extends UndoableAction {
                 /* This check is needed, otherwise the setbase()
                  *  below gives an exception.*/
             }
+            //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
+            //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
+            //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
+            //@#$LPS-COLLABORATIONDIAGRAM:Localization:EndMethod
+            //@#$LPS-SEQUENCEDIAGRAM:Localization:EndMethod                 
             if (Model.getFacade().isAAssociation(assoc)
                     && Model.getFacade().isAAssociationRole(ar)) {
                 Model.getCollaborationsHelper().setBase(ar, assoc);
             }
+            //#endif
         }
     }
 

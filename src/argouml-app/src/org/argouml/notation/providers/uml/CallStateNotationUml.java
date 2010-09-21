@@ -178,8 +178,12 @@ public class CallStateNotationUml extends CallStateNotation {
                         if (!Model.getFacade().isACallAction(entry)) {
                             entry = Model.getCommonBehaviorFactory()
                                 .buildCallAction(op, "ca");
+                            //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+                            //@#$LPS-STATEDIAGRAM:GranularityType:Command
+                            //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Comand
                             Model.getStateMachinesHelper().setEntry(
                                     callState, entry);
+                            //#endif
                         } else {
                             Model.getCommonBehaviorHelper().setOperation(
                                     entry, op);

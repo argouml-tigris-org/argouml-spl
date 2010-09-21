@@ -104,6 +104,9 @@ public abstract class ActionNewAction extends AbstractActionNewModelElement
     public void actionPerformed(ActionEvent e) {
         super.actionPerformed(e);
         Object action = createAction();
+        //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+        //@#$LPS-STATEDIAGRAM:GranularityType:Command
+        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
         if (getValue(ROLE).equals(Roles.EXIT)) {
             Model.getStateMachinesHelper().setExit(getTarget(), action);
         } else if (getValue(ROLE).equals(Roles.ENTRY)) {
@@ -111,11 +114,23 @@ public abstract class ActionNewAction extends AbstractActionNewModelElement
         } else if (getValue(ROLE).equals(Roles.DO)) {
             Model.getStateMachinesHelper().setDoActivity(
                     getTarget(), action);
-        } else if (getValue(ROLE).equals(Roles.ACTION)) {
+        } else
+        //#endif
+        //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
+        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
+        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
+        if (getValue(ROLE).equals(Roles.ACTION)) {
             Model.getCollaborationsHelper().setAction(getTarget(), action);
-        } else if (getValue(ROLE).equals(Roles.EFFECT)) {
+        } 
+        //#endif
+        //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+        //@#$LPS-STATEDIAGRAM:GranularityType:Command
+        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
+        else if (getValue(ROLE).equals(Roles.EFFECT)) {
             Model.getStateMachinesHelper().setEffect(getTarget(), action);
-        } else if (getValue(ROLE).equals(Roles.MEMBER)) {
+        } else 
+        //#endif
+            if (getValue(ROLE).equals(Roles.MEMBER)) {
             Model.getCommonBehaviorHelper().addAction(getTarget(), action);
         }
         TargetManager.getInstance().setTarget(action);

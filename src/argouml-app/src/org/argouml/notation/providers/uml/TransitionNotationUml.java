@@ -36,7 +36,11 @@ import org.argouml.application.events.ArgoEventTypes;
 import org.argouml.application.events.ArgoHelpEvent;
 import org.argouml.i18n.Translator;
 import org.argouml.model.Model;
+//#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+//@#$LPS-STATEDIAGRAM:GranularityType:Import
+//@#$LPS-ACTIVITYDIAGRAM:GranularityType:Import
 import org.argouml.model.StateMachinesFactory;
+//#endif
 import org.argouml.notation.NotationSettings;
 import org.argouml.notation.providers.TransitionNotation;
 
@@ -220,22 +224,18 @@ public class TransitionNotationUml extends TransitionNotation {
          * 4. Unhook and erase the existing trigger.
          */
         Object evt = Model.getFacade().getTrigger(trans);
+        //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+        //@#$LPS-STATEDIAGRAM:GranularityType:Command
+        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
         /* It is safe to give a null to the next function,
          * since a statemachine is always composed by a model anyhow. */
         Object ns =
             Model.getStateMachinesHelper()
-                .findNamespaceForEvent(trans, null);
-        //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
-        //@#$LPS-STATEDIAGRAM:GranularityType:Command
-        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
+                .findNamespaceForEvent(trans, null);        
         StateMachinesFactory sMFactory =
                 Model.getStateMachinesFactory();
-        //#endif
         boolean createdEvent = false;
         if (trigger.length() > 0) {
-            //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
-            //@#$LPS-STATEDIAGRAM:GranularityType:Command
-            //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
             // case 1 and 2
             if (evt == null) {
                 // case 1
@@ -260,7 +260,6 @@ public class TransitionNotationUml extends TransitionNotation {
                     evt = sMFactory.buildSignalEvent(trigger, ns);
                 }
                 createdEvent = true;
-                //#endif
             } else {
                 // case 2
                 if (timeEvent) {
@@ -336,6 +335,7 @@ public class TransitionNotationUml extends TransitionNotation {
                 Model.getStateMachinesHelper().setEventAsTrigger(trans, evt);
             }
         } else {
+          //#endif
             // case 3 and 4
             if (evt == null) {
                 /* case 3 */
@@ -343,7 +343,9 @@ public class TransitionNotationUml extends TransitionNotation {
                 // case 4
                 delete(evt); // erase it
             }
+            //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
         }
+            //#endif
     }
 
     /**
@@ -405,9 +407,13 @@ public class TransitionNotationUml extends TransitionNotation {
                 if (expr != null) {
                     language = Model.getDataTypesHelper().getLanguage(expr);
                 }
+                //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+                //@#$LPS-STATEDIAGRAM:GranularityType:Command
+                //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
                 Model.getStateMachinesHelper().setExpression(g,
                         Model.getDataTypesFactory()
                                 .createBooleanExpression(language, guard));
+                //#endif
                 /* TODO: In this case, the properties panel
                  is not updated with the changed expression! */
             }
@@ -452,7 +458,11 @@ public class TransitionNotationUml extends TransitionNotation {
                         .createCallAction();
                 /* And hook it to the transition immediately,
                  * so that an exception can not cause it to remain dangling: */
+                //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+                //@#$LPS-STATEDIAGRAM:GranularityType:Command
+                //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
                 Model.getStateMachinesHelper().setEffect(trans, effect);
+                //#endif
                 Model.getCommonBehaviorHelper().setScript(effect,
                         Model.getDataTypesFactory()
                                 .createActionExpression(""/*language*/,

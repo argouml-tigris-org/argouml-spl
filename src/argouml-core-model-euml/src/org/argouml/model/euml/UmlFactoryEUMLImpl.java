@@ -217,11 +217,15 @@ class UmlFactoryEUMLImpl implements UmlFactory, AbstractModelFactory {
             connection = modelImpl.getUseCasesFactory().buildInclude(
                     fromElement, toElement);
         //#endif
-        } else if (elementType == metaTypes.getTransition()) {
+        } 
+        //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+        //@#$LPS-STATEDIAGRAM:GranularityType:Command
+        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
+        else if (elementType == metaTypes.getTransition()) {
             connection = modelImpl.getStateMachinesFactory().buildTransition(
                     fromElement, toElement);
         }
-
+        //#endif
         if (connection == null) {
             throw exception;
         }
@@ -259,20 +263,27 @@ class UmlFactoryEUMLImpl implements UmlFactory, AbstractModelFactory {
                     "Attempt to instantiate abstract type"); //$NON-NLS-1$
         } else if (elementType == metaTypes.getSubsystem()) {
             o = modelImpl.getModelManagementFactory().createSubsystem();
+        } 
         //#if defined(ACTIVITYDIAGRAM)
         //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
-        } else if (elementType == metaTypes.getCallState()) {
-            o = modelImpl.getActivityGraphsFactory().createCallState();
+        else if (elementType == metaTypes.getCallState()) {
+            o = modelImpl.getActivityGraphsFactory().createCallState();        
+        }
         //#endif
-        } else if (elementType == metaTypes.getSimpleState()) {
+        //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+        //@#$LPS-STATEDIAGRAM:GranularityType:Command
+        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
+        else if (elementType == metaTypes.getSimpleState()) {
             o = modelImpl.getStateMachinesFactory().createSimpleState();
         } else if (elementType == metaTypes.getFinalState()) {
             o = modelImpl.getStateMachinesFactory().createFinalState();
         } else if (elementType == metaTypes.getPseudostate()) {
             o = modelImpl.getStateMachinesFactory().createPseudostate();
+        }
+        //#endif
         //#if defined(ACTIVITYDIAGRAM)
         //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
-        } else if (elementType == metaTypes.getObjectFlowState()) {
+        else if (elementType == metaTypes.getObjectFlowState()) {
             o = modelImpl.getActivityGraphsFactory().createObjectFlowState();
         } else if (elementType == metaTypes.getActionState()) {
             o = modelImpl.getActivityGraphsFactory().createActionState();
@@ -280,8 +291,12 @@ class UmlFactoryEUMLImpl implements UmlFactory, AbstractModelFactory {
             o = modelImpl.getActivityGraphsFactory().createSubactivityState();
         } else if (elementType == metaTypes.getPartition()) {
             o = modelImpl.getActivityGraphsFactory().createPartition();
+        } 
         //#endif
-        } else if (elementType == metaTypes.getStubState()) {
+        //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+        //@#$LPS-STATEDIAGRAM:GranularityType:Command
+        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
+        else if (elementType == metaTypes.getStubState()) {
             o = modelImpl.getStateMachinesFactory().createStubState();
         } else if (elementType == metaTypes.getSubmachineState()) {
             o = modelImpl.getStateMachinesFactory().createSubmachineState();
@@ -293,8 +308,9 @@ class UmlFactoryEUMLImpl implements UmlFactory, AbstractModelFactory {
             throw new IllegalArgumentException(
                     "Attempt to instantiate abstract type"); //$NON-NLS-1$
         } else if (elementType == modelImpl.getMetaTypes().getSimpleState()) {
-            o = modelImpl.getStateMachinesFactory().createSimpleState();
-        } 
+            o = modelImpl.getStateMachinesFactory().createSimpleState();        
+        }
+        //#endif
         //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
         //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
         //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command        
@@ -329,9 +345,14 @@ class UmlFactoryEUMLImpl implements UmlFactory, AbstractModelFactory {
             o = modelImpl.getCommonBehaviorFactory().createSignal();
         } else if (elementType == metaTypes.getException()) {
             o = modelImpl.getCommonBehaviorFactory().createException();
-        } else if (elementType == metaTypes.getTransition()) {
+        } 
+        //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+        //@#$LPS-STATEDIAGRAM:GranularityType:Command
+        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
+        else if (elementType == metaTypes.getTransition()) {
             o = modelImpl.getStateMachinesFactory().createTransition();
         }
+        //#endif
         if (!(o instanceof EObject)) {
             throw new IllegalArgumentException(
                     "Attempted to create unsupported model element type: " //$NON-NLS-1$

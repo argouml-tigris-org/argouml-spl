@@ -71,7 +71,13 @@ public class UMLTimeExpressionModel extends UMLExpressionModel2 {
             throw new IllegalStateException("There is no target for "
                     + getContainer());
         }
+        //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+        //@#$LPS-STATEDIAGRAM:GranularityType:Command
+        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
+        //@#$LPS-STATEDIAGRAM:Localization:BeforeReturn
+        //@#$LPS-ACTIVITYDIAGRAM:Localization:BeforeReturn
         Model.getStateMachinesHelper().setWhen(target, expression);
+        //#endif
     }
 
     /*

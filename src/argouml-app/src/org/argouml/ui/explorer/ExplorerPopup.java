@@ -273,13 +273,10 @@ public class ExplorerPopup extends JPopupMenu {
             //@#$LPS-STATEDIAGRAM:GranularityType:Command
             final boolean stateDiagramActive =
                 activeDiagram instanceof UMLStateDiagram;
-            //#endif
             final Object selectedStateMachine =
                 (stateVertexSelected) ? Model
                     .getStateMachinesHelper().getStateMachine(selectedItem)
                     : null;
-            //#if defined(STATEDIAGRAM)
-            //@#$LPS-STATEDIAGRAM:GranularityType:Command
             final Object diagramStateMachine =
                 (stateDiagramActive) ? ((UMLStateDiagram) activeDiagram)
                     .getStateMachine()

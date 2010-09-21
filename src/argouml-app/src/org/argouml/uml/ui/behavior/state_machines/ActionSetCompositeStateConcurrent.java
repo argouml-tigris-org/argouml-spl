@@ -60,6 +60,11 @@ public class ActionSetCompositeStateConcurrent extends UndoableAction {
      */
     public void actionPerformed(ActionEvent e) {
         super.actionPerformed(e);
+        //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+        //@#$LPS-STATEDIAGRAM:GranularityType:Command
+        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Comand
+        //@#$LPS-STATEDIAGRAM:Localization:EndMethod
+        //@#$LPS-ACTIVITYDIAGRAM:Localization:EndMethod    
         if (e.getSource() instanceof UMLCheckBox2) {
             UMLCheckBox2 source = (UMLCheckBox2) e.getSource();
             Object target = source.getTarget();
@@ -70,6 +75,7 @@ public class ActionSetCompositeStateConcurrent extends UndoableAction {
                         !Model.getFacade().isConcurrent(compositeState));
             }
         }
+        //#endif
     }
 
     /**

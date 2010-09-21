@@ -150,6 +150,8 @@ class SequenceDiagramGraphModel extends UMLMutableGraphSupport implements
         return port;
     }
     
+    //#if defined(COLLABORATIONDIAGRAM)
+    //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
     /**
      * Gets the collaboration that is shown on the sequence diagram.<p>
      *
@@ -170,7 +172,7 @@ class SequenceDiagramGraphModel extends UMLMutableGraphSupport implements
 
         return collaboration;
     }
-
+    //#endif
     /**
      * Sets the collaboration that is shown at the sequence diagram.
      * @param c the collaboration
@@ -223,9 +225,15 @@ class SequenceDiagramGraphModel extends UMLMutableGraphSupport implements
             // Comments from anywhere in the model are allowed
             return true;
         }
+        
         return Model.getFacade().isAModelElement(node)
+            //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+		    //@#$LPS-STATEDIAGRAM:GranularityType:Expression
+		    //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Expression
                 // All other types of elements must be in this namespace
-                && Model.getFacade().getNamespace(node) == getCollaboration();
+                && Model.getFacade().getNamespace(node) == getCollaboration()
+            //#endif
+            ;
     }
 
     /*
@@ -385,6 +393,9 @@ class SequenceDiagramGraphModel extends UMLMutableGraphSupport implements
                 .equals(actionType)) {
             // not implemented yet
         }
+        //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
+        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
+        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
         if (fromPort != null && toPort != null && action != null) {
             Object associationRole =
                 Model.getCollaborationsHelper().getAssociationRole(
@@ -395,7 +406,6 @@ class SequenceDiagramGraphModel extends UMLMutableGraphSupport implements
                     Model.getCollaborationsFactory().buildAssociationRole(
                             fromPort, toPort);
             }
-
             Object message =
                 Model.getCollaborationsFactory().buildMessage(
                     getInteraction(),
@@ -412,6 +422,7 @@ class SequenceDiagramGraphModel extends UMLMutableGraphSupport implements
             addEdge(message);
             edge = message;
         }
+        //#endif
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Command
         //@#$LPS-LOGGING:Localization:NestedIfdef

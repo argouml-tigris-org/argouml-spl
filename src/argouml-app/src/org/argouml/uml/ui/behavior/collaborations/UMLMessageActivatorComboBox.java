@@ -56,12 +56,18 @@ public class UMLMessageActivatorComboBox extends UMLComboBox2 {
      * @see org.argouml.uml.ui.UMLComboBox2#doIt(ActionEvent)
      */
     protected void doIt(ActionEvent event) {
+        //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
+        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
+        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
+        //@#$LPS-COLLABORATIONDIAGRAM:Localization:EntireMethod
+        //@#$LPS-SEQUENCEDIAGRAM:Localization:EntireMethod        
         Object o = getModel().getElementAt(getSelectedIndex());
         Object activator = o;
         Object mes = getTarget();
         if (activator != Model.getFacade().getActivator(mes)) {
             Model.getCollaborationsHelper().setActivator(mes, activator);
         }
+        //#endif
     }
 
 }

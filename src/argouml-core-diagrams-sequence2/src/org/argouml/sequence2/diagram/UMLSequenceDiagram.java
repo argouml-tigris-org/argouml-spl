@@ -243,8 +243,13 @@ public class UMLSequenceDiagram extends UMLDiagram {
                 Model.getCollaborationsFactory().buildClassifierRole(
                         collaboration);
         }
+        //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
+        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
+        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
+        //@#$LPS-COLLABORATIONDIAGRAM:Localization:BeforeReturn
+        //@#$LPS-SEQUENCEDIAGRAM:Localization:BeforeReturn            
         Model.getCollaborationsHelper().addBase(node, base);
-        
+        //#endif
         return node;
     }
     
@@ -335,10 +340,12 @@ public class UMLSequenceDiagram extends UMLDiagram {
         return new ModePlaceClassifierRole(gf, instructions);
     }
 
+    //#if defined(STATEDIAGRAM)
+    //@#$LPS-STATEDIAGRAM:GranularityType:Method
     public Object getCollaboration() {
         return ((SequenceDiagramGraphModel) getGraphModel()).getCollaboration();
     }
-
+    //#endif
     /**
      * Ensure that all elements represented in this diagram are part of this
      * diagrams collaboration
@@ -347,6 +354,9 @@ public class UMLSequenceDiagram extends UMLDiagram {
         super.postLoad();
         
         final Facade facade = Model.getFacade();                   
+	    
+        //#if defined(COLLABORATIONDIAGRAM)
+        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
         
         // See issue 5811. We have collaborationroles, associationroles
         // and messages and actions saved to the incorrect interaction and
@@ -365,8 +375,7 @@ public class UMLSequenceDiagram extends UMLDiagram {
                 }
             }
         }
-	    //#if defined(COLLABORATIONDIAGRAM)
-        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
+
         if (correctInteraction != null) {
             final CollaborationsHelper collabHelper =
                 Model.getCollaborationsHelper();

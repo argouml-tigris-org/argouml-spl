@@ -86,10 +86,16 @@ public class PropPanelStimulus extends PropPanelModelElement {
      * @param element the sender of this stimulus
      */
     public void setSender(Object element) {
+        //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
+        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
+        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
+        //@#$LPS-COLLABORATIONDIAGRAM:Localization:EntireMethod
+        //@#$LPS-SEQUENCEDIAGRAM:Localization:EntireMethod
         Object target = getTarget();
         if (Model.getFacade().isAStimulus(target)) {
             Model.getCollaborationsHelper().setSender(target, element);
         }
+        //#endif
     }
 
 

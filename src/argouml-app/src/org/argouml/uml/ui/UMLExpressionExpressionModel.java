@@ -58,8 +58,14 @@ public class UMLExpressionExpressionModel extends UMLExpressionModel2 {
      * @see org.argouml.uml.ui.UMLExpressionModel2#setExpression(java.lang.Object)
      */
     public void setExpression(Object expr) {
+        //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+        //@#$LPS-STATEDIAGRAM:GranularityType:MethodBody
+        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:MethodBody
+        //@#$LPS-STATEDIAGRAM:Localization:EntireMethod
+        //@#$LPS-ACTIVITYDIAGRAM:Localization:EntireMethod
         Model.getStateMachinesHelper()
         	.setExpression(TargetManager.getInstance().getTarget(), expr);
+        //#endif
     }
 
     /*

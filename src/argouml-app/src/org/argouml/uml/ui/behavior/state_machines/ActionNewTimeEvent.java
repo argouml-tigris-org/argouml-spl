@@ -45,21 +45,18 @@ public class ActionNewTimeEvent extends ActionNewEvent {
         super();
         putValue(NAME, Translator.localize("button.new-timeevent"));
     }
-
+    //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+    //@#$LPS-STATEDIAGRAM:GranularityType:Method
+    //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Method
     /*
      * @see org.argouml.uml.ui.behavior.state_machines.ActionNewEvent#createEvent(
      *         java.lang.Object)
      */
     protected Object createEvent(Object ns) {
-        //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
-        //@#$LPS-STATEDIAGRAM:GranularityType:MethodBody
-        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:MethodBody
-        //@#$LPS-STATEDIAGRAM:Localization:EntireMethod
-        //@#$LPS-ACTIVITYDIAGRAM:Localization:EntireMethod
         return Model.getStateMachinesFactory().buildTimeEvent(ns);
-        //#endif
+        
     }
-
+    //#endif
     /**
      * @return Returns the singleton.
      */

@@ -73,7 +73,13 @@ class UMLChangeExpressionModel extends UMLExpressionModel2 {
             throw new IllegalStateException("There is no target for "
                     + getContainer());
         }
+        //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+        //@#$LPS-STATEDIAGRAM:GranularityType:Command
+        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
+        //@#$LPS-STATEDIAGRAM:Localization:EndMethod
+        //@#$LPS-ACTIVITYDIAGRAM:Localization:EndMethod
         Model.getStateMachinesHelper().setChangeExpression(target, expression);
+        //#endif
     }
 
     /*

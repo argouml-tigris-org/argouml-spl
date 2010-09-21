@@ -890,7 +890,13 @@ public abstract class AbstractMessageNotationUml extends MessageNotation {
             if (ptr.message != null && !pre.contains(ptr.message)) {
                 pre.add(ptr.message);
             }
+            //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
+            //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
+            //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
+            //@#$LPS-COLLABORATIONDIAGRAM:Localization:EndMethod
+            //@#$LPS-SEQUENCEDIAGRAM:Localization:EndMethod               
             Model.getCollaborationsHelper().setPredecessors(umlMessage, pre);
+            //#endif
         }
     }
 
@@ -1026,7 +1032,11 @@ public abstract class AbstractMessageNotationUml extends MessageNotation {
                             != Model.getFacade().getReceiver(umlMessage))) {
                 String msg = "parsing.error.message.reverse-direction-message";
                 throw new ParseException(Translator.localize(msg), 0);
-            } else {
+            } 
+            //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
+            //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
+            //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command            
+            else {
                 /* Disconnect the message from the call graph
                  * Make copies of returned live collections
                  * since we're modifying
@@ -1036,13 +1046,11 @@ public abstract class AbstractMessageNotationUml extends MessageNotation {
                 Collection c2 = new ArrayList(
                         Model.getFacade().getSuccessors(umlMessage));
                 Iterator it;
-
                 it = c2.iterator();
                 while (it.hasNext()) {
                     Model.getCollaborationsHelper().removeSuccessor(umlMessage,
                             it.next());
                 }
-
                 it = c.iterator();
                 while (it.hasNext()) {
                     Iterator it2 = c2.iterator();
@@ -1098,6 +1106,7 @@ public abstract class AbstractMessageNotationUml extends MessageNotation {
                 }
                 refindOperation = true;
             }
+            //#endif
         }
         return refindOperation;
     }
@@ -1310,7 +1319,13 @@ public abstract class AbstractMessageNotationUml extends MessageNotation {
                 .createCallAction();
             Model.getCoreHelper().addOwnedElement(Model.getFacade().getContext(
                     Model.getFacade().getInteraction(umlMessage)), a);
+            //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
+            //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
+            //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
+            //@#$LPS-COLLABORATIONDIAGRAM:Localization:EndMethod
+            //@#$LPS-SEQUENCEDIAGRAM:Localization:EndMethod           
             Model.getCollaborationsHelper().setAction(umlMessage, a);
+            //#endif
         }
     }
 
@@ -1666,7 +1681,13 @@ public abstract class AbstractMessageNotationUml extends MessageNotation {
         } else {
             successors.add(s);
         }
+        //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
+        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
+        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
+        //@#$LPS-COLLABORATIONDIAGRAM:Localization:EndMethod
+        //@#$LPS-SEQUENCEDIAGRAM:Localization:EndMethod             
         Model.getCollaborationsHelper().setSuccessors(m, successors);
+        //#endif
     }
 
     /**

@@ -488,11 +488,17 @@ public class FigMessage extends FigEdgeModelElement {
             if ((messageFig.isCreateAction() || messageFig.isCallAction())
                     && messageFig.getDestNode() == fcr) {
                 activator = messageFig.getOwner();
-            } else if (messageFig == this) {
+            } 
+            //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
+            //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
+            //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
+            else if (messageFig == this) {
                 Model.getCollaborationsHelper().setActivator(
                         getOwner(), activator);
                 return activator;
-            } else if (messageFig.isReturnAction()) {
+            } 
+            //#endif
+            else if (messageFig.isReturnAction()) {
                 activator = null;
             }
         }

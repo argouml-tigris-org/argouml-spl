@@ -48,7 +48,15 @@ public final class ActionSequenceDiagram extends ActionNewDiagram {
     public ArgoDiagram createDiagram(Object namespace) {
         return DiagramFactory.getInstance().createDiagram(
                 DiagramFactory.DiagramType.Sequence,
-                createCollaboration(namespace),
+                //#if defined(COLLABORATIONDIAGRAM)
+                //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:MethodCall
+                createCollaboration(
+                //#endif
+                        namespace
+                //#if defined(COLLABORATIONDIAGRAM)
+                //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:MethodCall
+                 ),
+                //#endif
                 null);
     }
 

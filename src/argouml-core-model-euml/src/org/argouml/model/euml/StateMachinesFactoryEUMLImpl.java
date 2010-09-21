@@ -1,3 +1,6 @@
+//#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+//@#$LPS-STATEDIAGRAM:GranularityType:Class
+//@#$LPS-ACTIVITYDIAGRAM:GranularityType:Class
 // $Id$
 // Copyright (c) 2007, The ArgoUML Project
 // All rights reserved.
@@ -248,3 +251,4 @@ class StateMachinesFactoryEUMLImpl implements StateMachinesFactory,
     }
 
 }
+//#endif

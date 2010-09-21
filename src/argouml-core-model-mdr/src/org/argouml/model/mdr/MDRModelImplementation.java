@@ -52,8 +52,12 @@ import org.argouml.model.ActivityGraphsHelper;
 //#endif
 import org.argouml.model.AggregationKind;
 import org.argouml.model.ChangeableKind;
+//#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
+//@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Import
+//@#$LPS-SEQUENCEDIAGRAM:GranularityType:Import
 import org.argouml.model.CollaborationsFactory;
 import org.argouml.model.CollaborationsHelper;
+//#endif
 import org.argouml.model.CommonBehaviorFactory;
 import org.argouml.model.CommonBehaviorHelper;
 import org.argouml.model.ConcurrencyKind;
@@ -74,7 +78,11 @@ import org.argouml.model.ModelManagementHelper;
 import org.argouml.model.OrderingKind;
 import org.argouml.model.PseudostateKind;
 import org.argouml.model.ScopeKind;
+//#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
+//@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Import
+//@#$LPS-SEQUENCEDIAGRAM:GranularityType:Import
 import org.argouml.model.StateMachinesFactory;
+//#endif
 import org.argouml.model.StateMachinesHelper;
 import org.argouml.model.UUIDManager;
 import org.argouml.model.UmlException;
@@ -123,9 +131,11 @@ public class MDRModelImplementation implements ModelImplementation {
     private ModelManagementFactory theModelManagementFactory;
 
     private ModelManagementHelper theModelManagementHelper;
-
+    //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+    //@#$LPS-STATEDIAGRAM:GranularityType:Field
+    //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Field
     private StateMachinesHelper theStateMachinesHelper;
-
+    //#endif
     private UmlFactory theUmlFactory;
 
     private UmlHelper theUmlHelper;
@@ -157,9 +167,11 @@ public class MDRModelImplementation implements ModelImplementation {
     private ExtensionMechanismsFactory theExtensionMechanismsFactory;
 
     private ExtensionMechanismsHelper theExtensionMechanismsHelper;
-
+    //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+    //@#$LPS-STATEDIAGRAM:GranularityType:Field
+    //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Field
     private StateMachinesFactory theStateMachinesFactory;
-
+    //#endif
     private CoreFactory theCoreFactory;
 
     private KindsMDRImpl theKindsObject;
@@ -522,7 +534,11 @@ public class MDRModelImplementation implements ModelImplementation {
         LOG.debug("MDR Init - initialized package Core helper");
         //#endif
         theModelManagementHelper = new ModelManagementHelperMDRImpl(this);
+        //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+        //@#$LPS-STATEDIAGRAM:GranularityType:Command
+        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
         theStateMachinesHelper = new StateMachinesHelperMDRImpl(this);
+        //#endif
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Command
         LOG.debug("MDR Init - initialized package StateMachines");
@@ -751,21 +767,23 @@ public class MDRModelImplementation implements ModelImplementation {
     public ModelManagementHelper getModelManagementHelper() {
         return theModelManagementHelper;
     }
-
+    //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+    //@#$LPS-STATEDIAGRAM:GranularityType:Method
+    //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Method
     /*
      * @see org.argouml.model.ModelImplementation#getStateMachinesFactory()
      */
     public StateMachinesFactory getStateMachinesFactory() {
         return theStateMachinesFactory;
     }
-
+    
     /*
      * @see org.argouml.model.ModelImplementation#getStateMachinesHelper()
      */
     public StateMachinesHelper getStateMachinesHelper() {
         return theStateMachinesHelper;
     }
-
+    //#endif
     /*
      * @see org.argouml.model.ModelImplementation#getUmlFactory()
      */

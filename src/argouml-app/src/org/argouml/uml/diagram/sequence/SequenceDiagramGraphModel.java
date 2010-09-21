@@ -369,6 +369,9 @@ public class SequenceDiagramGraphModel
                 // not implemented yet
             }
         }
+        //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
+        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
+        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
         if (fromObject != null && toObject != null && action != null) {
             Object associationRole =
                 Model.getCollaborationsHelper().getAssociationRole(
@@ -396,6 +399,7 @@ public class SequenceDiagramGraphModel
             addEdge(message);
             edge = message;
         }
+        //#endif
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Command
         //@#$LPS-LOGGING:Localization:BeforeReturn

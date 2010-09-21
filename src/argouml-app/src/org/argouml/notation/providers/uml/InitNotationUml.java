@@ -62,9 +62,13 @@ public class InitNotationUml implements InitSubsystem {
         npf.addNotationProvider(
                 NotationProviderFactory2.TYPE_TRANSITION,
                 name, TransitionNotationUml.class);
+        //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+        //@#$LPS-STATEDIAGRAM:GranularityType:Command
+        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
         npf.addNotationProvider(
                 NotationProviderFactory2.TYPE_STATEBODY,
                 name, StateBodyNotationUml.class);
+        //#endif
         npf.addNotationProvider(
                 NotationProviderFactory2.TYPE_ACTIONSTATE,
                 name, ActionStateNotationUml.class);

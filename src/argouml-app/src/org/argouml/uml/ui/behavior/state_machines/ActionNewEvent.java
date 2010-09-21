@@ -70,7 +70,9 @@ public abstract class ActionNewEvent extends AbstractActionNewModelElement {
     protected ActionNewEvent() {
         super();
     }
-
+    //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+    //@#$LPS-STATEDIAGRAM:GranularityType:Method
+    //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Method
     /**
      * Implementors should create a concrete event like an instance of
      * SignalEvent in this method.
@@ -78,7 +80,7 @@ public abstract class ActionNewEvent extends AbstractActionNewModelElement {
      * @return Object
      */
     protected abstract Object createEvent(Object ns);
-
+    //#endif
     /**
      * Creates the event, sets its role and namespace,
      * and navigates towards it.
@@ -90,8 +92,13 @@ public abstract class ActionNewEvent extends AbstractActionNewModelElement {
         Object target = getTarget();
         Object model =
         	ProjectManager.getManager().getCurrentProject().getModel();
+        //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+        //@#$LPS-STATEDIAGRAM:GranularityType:Command
+        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Comand
+        //@#$LPS-STATEDIAGRAM:Localization:EndMethod
+        //@#$LPS-ACTIVITYDIAGRAM:Localization:EndMethod
         Object ns = Model.getStateMachinesHelper()
-        		.findNamespaceForEvent(target, model);
+        .findNamespaceForEvent(target, model);
         Object event = createEvent(ns);
         if (getValue(ROLE).equals(Roles.TRIGGER)) {
             Model.getStateMachinesHelper()
@@ -102,6 +109,7 @@ public abstract class ActionNewEvent extends AbstractActionNewModelElement {
                         .addDeferrableEvent(target, event);
         }
         TargetManager.getInstance().setTarget(event);
+        //#endif
     }
 
     /**

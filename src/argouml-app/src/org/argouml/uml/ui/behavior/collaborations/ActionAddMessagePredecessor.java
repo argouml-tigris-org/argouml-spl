@@ -57,8 +57,14 @@ public class ActionAddMessagePredecessor extends AbstractActionAddModelElement2 
             return Collections.EMPTY_LIST;
         }
         List vec = new ArrayList();
+        //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
+        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
+        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
+        //@#$LPS-COLLABORATIONDIAGRAM:Localization:BeforeReturn
+        //@#$LPS-SEQUENCEDIAGRAM:Localization:BeforeReturn           
         vec.addAll(Model.getCollaborationsHelper()
                 .getAllPossiblePredecessors(getTarget()));
+        //#endif
         return vec;
     }
 
@@ -83,8 +89,14 @@ public class ActionAddMessagePredecessor extends AbstractActionAddModelElement2 
 	if (getTarget() == null)
 	    throw new IllegalStateException(
                 "doIt may not be called with null target");
+        //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
+        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
+        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
+        //@#$LPS-COLLABORATIONDIAGRAM:Localization:EndMethod
+        //@#$LPS-SEQUENCEDIAGRAM:Localization:EndMethod   	
 	Object message = getTarget();
 	Model.getCollaborationsHelper().setPredecessors(message, selected);
+	//#endif
     }
 
     /**

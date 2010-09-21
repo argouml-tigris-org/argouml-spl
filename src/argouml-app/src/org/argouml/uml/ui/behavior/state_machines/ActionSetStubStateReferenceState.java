@@ -59,6 +59,11 @@ public class ActionSetStubStateReferenceState extends UndoableAction {
      */
     public void actionPerformed(ActionEvent e) {
         super.actionPerformed(e);
+        //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+        //@#$LPS-STATEDIAGRAM:GranularityType:Command
+        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Comand
+        //@#$LPS-STATEDIAGRAM:Localization:EndMethod
+        //@#$LPS-ACTIVITYDIAGRAM:Localization:EndMethod    
         if (e.getSource() instanceof UMLComboBox2) {
             UMLComboBox2 box = (UMLComboBox2) e.getSource();
             Object o = box.getSelectedItem();
@@ -69,6 +74,7 @@ public class ActionSetStubStateReferenceState extends UndoableAction {
                             .setReferenceState(box.getTarget(), name);
             }
         }
+        //#endif
     }
 
     /**

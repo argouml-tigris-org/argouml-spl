@@ -490,8 +490,13 @@ public class UMLCollaborationDiagram extends UMLDiagram {
                 Model.getCollaborationsFactory().buildClassifierRole(
                         collaboration);
           }
+        //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
+        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
+        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
+        //@#$LPS-COLLABORATIONDIAGRAM:Localization:BeforeReturn
+        //@#$LPS-SEQUENCEDIAGRAM:Localization:BeforeReturn          
         Model.getCollaborationsHelper().addBase(node, base);
-        
+        //#endif
         return node;
     }
     

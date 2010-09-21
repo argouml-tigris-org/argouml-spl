@@ -67,9 +67,17 @@ import org.argouml.uml.ui.behavior.state_machines.PropPanelSignalEvent;
 import org.argouml.uml.ui.behavior.state_machines.PropPanelSimpleState;
 import org.argouml.uml.ui.behavior.state_machines.PropPanelStateMachine;
 import org.argouml.uml.ui.behavior.state_machines.PropPanelStateVertex;
+//#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+//@#$LPS-STATEDIAGRAM:GranularityType:Import
+//@#$LPS-ACTIVITYDIAGRAM:GranularityType:Import
 import org.argouml.uml.ui.behavior.state_machines.PropPanelStubState;
+//#endif
 import org.argouml.uml.ui.behavior.state_machines.PropPanelSubmachineState;
+//#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+//@#$LPS-STATEDIAGRAM:GranularityType:Import
+//@#$LPS-ACTIVITYDIAGRAM:GranularityType:Import
 import org.argouml.uml.ui.behavior.state_machines.PropPanelSynchState;
+//#endif
 import org.argouml.uml.ui.behavior.state_machines.PropPanelTimeEvent;
 import org.argouml.uml.ui.behavior.state_machines.PropPanelTransition;
 //#if defined(USECASEDIAGRAM)
@@ -365,11 +373,17 @@ class ElementPropPanelFactory implements PropPanelFactory {
             }
         } else if (Model.getFacade().isAPseudostate(element)) {
             return new PropPanelPseudostate();
-        } else if (Model.getFacade().isAStubState(element)) {
+        } 
+        //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+        //@#$LPS-STATEDIAGRAM:GranularityType:Command
+        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
+        else if (Model.getFacade().isAStubState(element)) {
             return new PropPanelStubState();
-        } else if (Model.getFacade().isASynchState(element)) {
+        }         
+        else if (Model.getFacade().isASynchState(element)) {
             return new PropPanelSynchState();
         }
+        //#endif
         throw new IllegalArgumentException("Unsupported State type");
     }
 

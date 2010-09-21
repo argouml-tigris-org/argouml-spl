@@ -56,10 +56,14 @@ public class UMLAssociationRoleBaseComboBoxModel extends UMLComboBoxModel2 {
         removeAllElements();
         Object ar = getTarget();
         Object base = Model.getFacade().getBase(ar);
+        //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
+        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
+        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
         if (Model.getFacade().isAAssociationRole(ar)) {
             setElements(
                     Model.getCollaborationsHelper().getAllPossibleBases(ar));
         }
+        //#endif
         if (base != null) {
             addElement(base);
         }
@@ -91,9 +95,15 @@ public class UMLAssociationRoleBaseComboBoxModel extends UMLComboBoxModel2 {
             if (element == base) {
                 return true;
             }
+            //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
+            //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
+            //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
+            //@#$LPS-COLLABORATIONDIAGRAM:Localization:BeforeReturn
+            //@#$LPS-SEQUENCEDIAGRAM:Localization:BeforeReturn  
             Collection b = 
                 Model.getCollaborationsHelper().getAllPossibleBases(ar);
             return b.contains(element);
+            //#endif
         }
         return false;
     }

@@ -99,13 +99,22 @@ public class ActionAddEventAsDeferrableEvent
         for (Object o : selected) {
             if (oldOnes.contains(o)) {
                 toBeRemoved.remove(o);
-            } else {
+            } 
+            //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+            //@#$LPS-STATEDIAGRAM:GranularityType:Command
+            //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command    
+            else {
                 Model.getStateMachinesHelper().addDeferrableEvent(state, o);
             }
+            //#endif
         }
+        //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+        //@#$LPS-STATEDIAGRAM:GranularityType:Command
+        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command    
         for (Object o : toBeRemoved) {
             Model.getStateMachinesHelper().removeDeferrableEvent(state, o);
         }
+        //#endif
     }
 
     /**

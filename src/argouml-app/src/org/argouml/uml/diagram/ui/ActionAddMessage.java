@@ -109,6 +109,11 @@ public class ActionAddMessage extends UndoableAction {
      *                        must be added
      */
     private void addMessage(Object associationrole) {
+        //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
+        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Method
+        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Method
+        //@#$LPS-COLLABORATIONDIAGRAM:Localization:EntireMethod
+        //@#$LPS-SEQUENCEDIAGRAM:Localization:EntireMethod
         Object collaboration = Model.getFacade().getNamespace(associationrole);
         Object message =
             Model.getCollaborationsFactory()
@@ -118,10 +123,8 @@ public class ActionAddMessage extends UndoableAction {
         Layer lay = e.getLayerManager().getActiveLayer();
         GraphNodeRenderer gr = e.getGraphNodeRenderer();
         FigNode figMsg = gr.getFigNodeFor(gm, lay, message, null);
-        //#if defined(COLLABORATIONDIAGRAM)
-        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
         ((FigMessage) figMsg).addPathItemToFigAssociationRole(lay);
-        //#endif
+        
         gm.getNodes().add(message); /*MVW This is not the correct way,
         * but it allows connecting a CommentEdge to it!
         * See e.g. ActionAddNote for the correct way.
@@ -131,6 +134,7 @@ public class ActionAddMessage extends UndoableAction {
         * */
 
         TargetManager.getInstance().setTarget(message);
+      //#endif
     }
     
     /*

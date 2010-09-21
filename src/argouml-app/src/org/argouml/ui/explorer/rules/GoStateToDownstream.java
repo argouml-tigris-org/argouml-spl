@@ -49,9 +49,15 @@ public class GoStateToDownstream extends AbstractPerspectiveRule {
      * @see org.argouml.ui.explorer.rules.PerspectiveRule#getChildren(java.lang.Object)
      */
     public Collection getChildren(Object parent) {
+        //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+        //@#$LPS-STATEDIAGRAM:GranularityType:Command
+        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
+        //@#$LPS-STATEDIAGRAM:Localization:StartMethod
+        //@#$LPS-ACTIVITYDIAGRAM:Localization:StartMethod        
 	if (Model.getFacade().isAStateVertex(parent)) {
 	    return Model.getStateMachinesHelper().getOutgoingStates(parent);
 	}
+	//#endif
 	return Collections.EMPTY_SET;
     }
 

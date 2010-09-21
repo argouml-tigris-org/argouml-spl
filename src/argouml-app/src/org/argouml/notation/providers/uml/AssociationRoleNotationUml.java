@@ -158,6 +158,9 @@ public class AssociationRoleNotationUml extends AssociationRoleNotation {
                 return;
             }
         }
+        //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
+        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
+        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
         Collection c = 
             Model.getCollaborationsHelper().getAllPossibleBases(role);
         Iterator i = c.iterator();
@@ -178,6 +181,7 @@ public class AssociationRoleNotationUml extends AssociationRoleNotation {
                 return;
             }
         }
+        //#endif
         String msg = "parsing.error.association-role.base-not-found";
         throw new ParseException(Translator.localize(msg), 0);        
     }

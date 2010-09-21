@@ -1,3 +1,7 @@
+//#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+//@#$LPS-STATEDIAGRAM:GranularityType:Class
+//@#$LPS-ACTIVITYDIAGRAM:GranularityType:Class
+
 // $Id$
 // Copyright (c) 1996-2006 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
@@ -82,6 +86,7 @@ public class UMLStubStateComboBoxModel extends UMLComboBoxModel2 {
      * @see org.argouml.uml.ui.UMLComboBoxModel2#getSelectedModelElement()
      */
     protected Object getSelectedModelElement() {
+
         String objectName = null;
         Object container = null;
         if (getTarget() != null) {
@@ -97,7 +102,9 @@ public class UMLStubStateComboBoxModel extends UMLComboBoxModel2 {
                                         .getSubmachine(container)));
             }
         }
+
         return null;
     }
 
 }
+//#endif

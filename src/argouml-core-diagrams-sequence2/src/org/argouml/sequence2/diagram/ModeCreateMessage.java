@@ -128,11 +128,13 @@ public class ModeCreateMessage extends ModeCreatePolyEdge {
                     returnMessageDest, 
                     Model.getMetaTypes().getMessage(),
                     Model.getMetaTypes().getReturnAction());
-            
+            //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
+            //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
+            //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
             // Correct the activator value
             Model.getCollaborationsHelper().setActivator(
                     returnMessage, message);
-            
+            //#endif
             final LayerPerspective layer = 
                 (LayerPerspective) editor.getLayerManager().getActiveLayer();
             

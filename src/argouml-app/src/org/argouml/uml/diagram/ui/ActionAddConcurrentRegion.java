@@ -38,7 +38,11 @@ import org.apache.log4j.Logger;
 import org.argouml.application.helpers.ResourceLoaderWrapper;
 import org.argouml.i18n.Translator;
 import org.argouml.model.Model;
+//#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+//@#$LPS-STATEDIAGRAM:GranularityType:Import
+//@#$LPS-ACTIVITYDIAGRAM:GranularityType:Import
 import org.argouml.model.StateMachinesFactory;
+//#endif
 import org.argouml.ui.targetmanager.TargetManager;
 import org.argouml.uml.diagram.DiagramSettings;
 //#if defined(STATEDIAGRAM)
@@ -97,9 +101,13 @@ public class ActionAddConcurrentRegion extends UndoableAction {
      */
     public boolean isEnabled() {
         Object target = TargetManager.getInstance().getModelTarget();
+        //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+        //@#$LPS-STATEDIAGRAM:GranularityType:Command
+        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command    
         if (Model.getStateMachinesHelper().isTopState(target)) {
             return false;
         }
+        //#endif
         return TargetManager.getInstance().getModelTargets().size() < 2;
     }
 

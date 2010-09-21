@@ -57,8 +57,14 @@ public class UMLClassifierRoleAvailableFeaturesListModel
      * @see org.argouml.uml.ui.UMLModelElementListModel2#buildModelList()
      */
     protected void buildModelList() {
+        //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
+        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
+        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
+        //@#$LPS-COLLABORATIONDIAGRAM:Localization:EntireMethod
+        //@#$LPS-SEQUENCEDIAGRAM:Localization:EntireMethod        
         setAllElements(Model.getCollaborationsHelper()
                 .allAvailableFeatures(getTarget()));
+        //#endif
     }
 
     /*

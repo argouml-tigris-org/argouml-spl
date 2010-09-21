@@ -62,11 +62,17 @@ class ActionSetRepresentedOperationCollaboration extends UndoableAction {
             if (!Model.getFacade().isAOperation(newValue)) {
                 newValue = null;
             }
+            //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
+            //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
+            //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
+            //@#$LPS-COLLABORATIONDIAGRAM:Localization:EndMethod
+            //@#$LPS-SEQUENCEDIAGRAM:Localization:EndMethod   
             if (Model.getFacade().getRepresentedOperation(target)
                     != newValue) {
                 Model.getCollaborationsHelper().setRepresentedOperation(
                         target, newValue);
             }
+            //#endif
         }
     }
 

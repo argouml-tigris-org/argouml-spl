@@ -64,12 +64,14 @@ public final class NotationProviderFactory2 {
      * TYPE_TRANSITION the main text shown above the transition.
      */
     public static final int TYPE_TRANSITION = 2;
-
+    //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+    //@#$LPS-STATEDIAGRAM:GranularityType:Field
+    //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Field
     /**
      * TYPE_STATEBODY the multiline text shown inside the state body.
      */
     public static final int TYPE_STATEBODY = 3;
-
+    //#endif
     /**
      * TYPE_ACTIONSTATE the text shown in an actionstate.
      */

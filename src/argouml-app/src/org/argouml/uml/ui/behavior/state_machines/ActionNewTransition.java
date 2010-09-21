@@ -89,7 +89,12 @@ public class ActionNewTransition extends AbstractActionNewModelElement {
     public boolean isEnabled() {
         Object target = TargetManager.getInstance().getModelTarget();
         return super.isEnabled() 
-            && !Model.getStateMachinesHelper().isTopState(target);
+            //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+            //@#$LPS-STATEDIAGRAM:GranularityType:Expression
+            //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Expression
+            && !Model.getStateMachinesHelper().isTopState(target)
+            //#endif
+            ;
     }
     
     

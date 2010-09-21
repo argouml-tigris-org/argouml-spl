@@ -47,7 +47,7 @@ import java.util.List;
 import java.util.Map;
 
 //#if defined(LOGGING)
-//@#$LPS-LOGGING:GranularityType:Command
+//@#$LPS-LOGGING:GranularityType:Import
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.model.DiagramInterchangeModel;
@@ -152,9 +152,11 @@ public class EUMLModelImplementation implements ModelImplementation {
 
     @SuppressWarnings("deprecation")
     private ScopeKindEUMLImpl theScopeKind;
-
+    //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+    //@#$LPS-STATEDIAGRAM:GranularityType:Field
+    //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Field
     private StateMachinesFactoryEUMLImpl theStateMachinesFactory;
-
+    //#endif
     private StateMachinesHelperEUMLImpl theStateMachinesHelper;
 
     private UmlFactoryEUMLImpl theUmlFactory;
@@ -490,14 +492,16 @@ public class EUMLModelImplementation implements ModelImplementation {
         return theScopeKind;
     }
 
-
+    //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+    //@#$LPS-STATEDIAGRAM:GranularityType:Method
+    //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Method
     public StateMachinesFactoryEUMLImpl getStateMachinesFactory() {
         if (theStateMachinesFactory == null) {
             theStateMachinesFactory = new StateMachinesFactoryEUMLImpl(this);
         }
         return theStateMachinesFactory;
     }
-
+    //#endif
     public StateMachinesHelperEUMLImpl getStateMachinesHelper() {
         if (theStateMachinesHelper == null) {
             theStateMachinesHelper = new StateMachinesHelperEUMLImpl(this);

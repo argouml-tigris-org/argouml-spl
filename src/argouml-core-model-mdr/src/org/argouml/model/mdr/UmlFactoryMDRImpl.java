@@ -432,14 +432,17 @@ class UmlFactoryMDRImpl extends AbstractUmlModelFactoryMDR implements
                 == metaTypes.getAssociationClass()) {
             connection =
                 getCore().buildAssociationClass(fromElement, toElement);
+        } 
         //#if defined(COLLABORATIONDIAGRAM)
         //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
-        } else if (elementType == metaTypes.getAssociationRole()) {
+        else if (elementType == metaTypes.getAssociationRole()) {
             connection =
                 getCollaborations().buildAssociationRole(fromElement,                        
                     fromStyle, toElement, toStyle, (Boolean) unidirectional);
+        
+        }
         //#endif
-        } else if (elementType == metaTypes.getGeneralization()) {
+        else if (elementType == metaTypes.getGeneralization()) {
             connection = getCore().buildGeneralization(fromElement, toElement);
         } else if (elementType == metaTypes.getPackageImport()) {
             connection = getCore().buildPackageImport(fromElement, toElement);
@@ -454,20 +457,25 @@ class UmlFactoryMDRImpl extends AbstractUmlModelFactoryMDR implements
                 getCore().buildRealization(fromElement, toElement, namespace);
         } else if (elementType == metaTypes.getLink()) {
             connection = getCommonBehavior().buildLink(fromElement, toElement);
+        } 
         //#if defined(USECASEDIAGRAM)
-        //@#$LPS-USECASEDIAGRAM:GranularityType:Command        
-        } else if (elementType == metaTypes.getExtend()) {
+        //@#$LPS-USECASEDIAGRAM:GranularityType:Command
+        else if (elementType == metaTypes.getExtend()) {
             // Extend, but only between two use cases. Remember we draw from the
             // extension port to the base port.
             connection = getUseCases().buildExtend(toElement, fromElement);
         } else if (elementType == metaTypes.getInclude()) {
             connection = getUseCases().buildInclude(fromElement, toElement);
+        } 
         //#endif
-        } else if (elementType == metaTypes.getTransition()) {
+        //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+        //@#$LPS-STATEDIAGRAM:GranularityType:Command
+        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
+        else if (elementType == metaTypes.getTransition()) {
             connection =
                 getStateMachines().buildTransition(fromElement, toElement);
         }
-
+        //#endif
         if (connection == null) {
             throw new IllegalModelElementConnectionException("Cannot make a "
                     + elementType.getClass().getName() + " between a "
@@ -503,20 +511,27 @@ class UmlFactoryMDRImpl extends AbstractUmlModelFactoryMDR implements
                     "Attempt to instantiate abstract type");
         } else if (elementType == metaTypes.getSubsystem()) {
             return getModelManagement().createSubsystem();
+        } 
         //#if defined(ACTIVITYDIAGRAM)
         //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
-        } else if (elementType == metaTypes.getCallState()) {
+        else if (elementType == metaTypes.getCallState()) {
             return getActivityGraphs().createCallState();
+        }
         //#endif
-        } else if (elementType == metaTypes.getSimpleState()) {
+        //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+        //@#$LPS-STATEDIAGRAM:GranularityType:Command
+        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
+        else if (elementType == metaTypes.getSimpleState()) {
             return getStateMachines().createSimpleState();
         } else if (elementType == metaTypes.getFinalState()) {
             return getStateMachines().createFinalState();
         } else if (elementType == metaTypes.getPseudostate()) {
             return getStateMachines().createPseudostate();
+        } 
+        //#endif
         //#if defined(ACTIVITYDIAGRAM)
-        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
-        } else if (elementType == metaTypes.getObjectFlowState()) {
+        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command        
+        else if (elementType == metaTypes.getObjectFlowState()) {
             return getActivityGraphs().createObjectFlowState();
         } else if (elementType == metaTypes.getActionState()) {
             return getActivityGraphs().createActionState();
@@ -524,8 +539,12 @@ class UmlFactoryMDRImpl extends AbstractUmlModelFactoryMDR implements
             return getActivityGraphs().createSubactivityState();
         } else if (elementType == metaTypes.getPartition()) {
             return getActivityGraphs().createPartition();
+        } 
         //#endif
-        } else if (elementType == metaTypes.getStubState()) {
+        //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+        //@#$LPS-STATEDIAGRAM:GranularityType:Command
+        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
+        else if (elementType == metaTypes.getStubState()) {
             return getStateMachines().createStubState();
         } else if (elementType == metaTypes.getSubmachineState()) {
             return getStateMachines().createSubmachineState();
@@ -536,18 +555,22 @@ class UmlFactoryMDRImpl extends AbstractUmlModelFactoryMDR implements
         } else if (elementType == metaTypes.getState()) {
             throw new IllegalArgumentException(
                     "Attempt to instantiate abstract type");
+        } 
+        //#endif
         //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
         //@#$LPS-STATEDIAGRAM:GranularityType:Command
         //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
-        } else if (elementType == modelImpl.getMetaTypes().getSimpleState()) {
+        else if (elementType == modelImpl.getMetaTypes().getSimpleState()) {
             return getStateMachines().createSimpleState();
+        } 
         //#endif
         //#if defined(COLLABORATIONDIAGRAM)
         //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
-        } else if (elementType == metaTypes.getClassifierRole()) {
+        else if (elementType == metaTypes.getClassifierRole()) {
             return getCollaborations().createClassifierRole();
+        }
         //#endif
-        } else if (elementType == metaTypes.getComponent()) {
+        else if (elementType == metaTypes.getComponent()) {
             return getCore().createComponent();
         } else if (elementType == metaTypes.getComponentInstance()) {
             return getCommonBehavior().createComponentInstance();
@@ -574,9 +597,14 @@ class UmlFactoryMDRImpl extends AbstractUmlModelFactoryMDR implements
             return getCommonBehavior().createSignal();
         } else if (elementType == metaTypes.getException()) {
             return getCommonBehavior().createException();
-        } else if (elementType == metaTypes.getTransition()) {
+        } 
+        //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+        //@#$LPS-STATEDIAGRAM:GranularityType:Command
+        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
+        else if (elementType == metaTypes.getTransition()) {
             return getStateMachines().createTransition();
         }
+        //#endif
             
         throw new IllegalArgumentException(
                 "Attempted to create unsupported model element type: " 
@@ -933,9 +961,10 @@ class UmlFactoryMDRImpl extends AbstractUmlModelFactoryMDR implements
                         getCommonBehavior().deleteLink(elem);
                     } else if (elem instanceof LinkEnd) {
                         getCommonBehavior().deleteLinkEnd(elem);
+                    } 
                     //#if defined(COLLABORATIONDIAGRAM)
                     //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
-                    } else if (elem instanceof Interaction) {
+                    else if (elem instanceof Interaction) {
                         getCollaborations().deleteInteraction(elem);
                     } else if (elem instanceof InteractionInstanceSet) {
                         getCollaborations().deleteInteractionInstanceSet(elem);
@@ -943,30 +972,42 @@ class UmlFactoryMDRImpl extends AbstractUmlModelFactoryMDR implements
                         getCollaborations()
                                 .deleteCollaborationInstanceSet(elem);
                     } else if (elem instanceof Message) {
-                        getCollaborations().deleteMessage(elem);
+                        getCollaborations().deleteMessage(elem);                    
+                    }
                     //#endif
                     //#if defined(USECASEDIAGRAM)
                     //@#$LPS-USECASEDIAGRAM:GranularityType:Command
-                    } else if (elem instanceof ExtensionPoint) {
+                    else if (elem instanceof ExtensionPoint) {
                         getUseCases().deleteExtensionPoint(elem);
+                        
+                    } 
                     //#endif
-                    } else if (elem instanceof StateVertex) {
+                    //#if defined(STATEDIAGRAM)
+                    //@#$LPS-STATEDIAGRAM:GranularityType:Command
+                    else if (elem instanceof StateVertex) {
                         deleteStateVertex((StateVertex) elem);
                     }
-
+                    //#endif
+                    //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+                    //@#$LPS-STATEDIAGRAM:GranularityType:Command
+                    //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
                     if (elem instanceof StateMachine) {
                         getStateMachines().deleteStateMachine(elem);
                         //#if defined(ACTIVITYDIAGRAM)
                         //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
+                        //@#$LPS-ACTIVITYDIAGRAM:Localization:NestedCommand
                         if (elem instanceof ActivityGraph) {
                             getActivityGraphs().deleteActivityGraph(elem);
                         }
                         //#endif
-                    } else if (elem instanceof Transition) {
+                    }                     
+                    else if (elem instanceof Transition) {
                         getStateMachines().deleteTransition(elem);
                     } else if (elem instanceof Guard) {
                         getStateMachines().deleteGuard(elem);
-                    } else if (elem instanceof TaggedValue) {
+                    } 
+                    //#endif
+                    else if (elem instanceof TaggedValue) {
                         getExtensionMechanisms().deleteTaggedValue(elem);
                     } else if (elem instanceof TagDefinition) {
                         getExtensionMechanisms().deleteTagDefinition(elem);
@@ -1322,6 +1363,8 @@ class UmlFactoryMDRImpl extends AbstractUmlModelFactoryMDR implements
         //#endif
     }
 
+    //#if defined(STATEDIAGRAM)
+    //@#$LPS-STATEDIAGRAM:GranularityType:Method
     /**
      * Delete a StateVertex.
      *
@@ -1341,17 +1384,12 @@ class UmlFactoryMDRImpl extends AbstractUmlModelFactoryMDR implements
                 getStateMachines().deleteCompositeState(elem);
                 if (elem instanceof SubmachineState) {
                     getStateMachines().deleteSubmachineState(elem);
-                    //#if defined(ACTIVITYDIAGRAM)
-                    //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
                     if (elem instanceof SubactivityState) {
                         getActivityGraphs().deleteSubactivityState(elem);
                     }
-                    //#endif
                 }
             } else if (elem instanceof SimpleState) {
                 getStateMachines().deleteSimpleState(elem);
-                //#if defined(ACTIVITYDIAGRAM)
-                //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
                 if (elem instanceof ActionState) {
                     getActivityGraphs().deleteActionState(elem);
                     if (elem instanceof CallState) {
@@ -1360,13 +1398,12 @@ class UmlFactoryMDRImpl extends AbstractUmlModelFactoryMDR implements
                 } else if (elem instanceof ObjectFlowState) {
                     getActivityGraphs().deleteObjectFlowState(elem);
                 }
-                //#endif
             } else if (elem instanceof FinalState) {
                 getStateMachines().deleteFinalState(elem);
             }
         }
     }
-
+    //#endif
     public void deleteExtent(Object element) {
         try {
             org.omg.uml.UmlPackage extent = 

@@ -50,9 +50,15 @@ public class UMLMessageActivatorComboBoxModel extends UMLComboBoxModel2 {
         if (Model.getFacade().isAMessage(target)) {
             Object mes = target;
             removeAllElements();
+            //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
+            //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
+            //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
+            //@#$LPS-COLLABORATIONDIAGRAM:Localization:EndMethod
+            //@#$LPS-SEQUENCEDIAGRAM:Localization:EndMethod
             // fill the list with items
             setElements(Model.getCollaborationsHelper()
                     .getAllPossibleActivators(mes));
+            //#endif
         }
     }
 

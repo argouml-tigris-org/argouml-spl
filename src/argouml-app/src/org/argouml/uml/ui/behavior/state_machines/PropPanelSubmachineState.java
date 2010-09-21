@@ -71,12 +71,16 @@ public class PropPanelSubmachineState extends PropPanelCompositeState {
         super("label.submachine-state", lookupIcon("SubmachineState"));
         addField("label.name", getNameTextField());
         addField("label.container", getContainerScroll());
+        //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+        //@#$LPS-STATEDIAGRAM:GranularityType:Command
+        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
         final JComboBox submachineBox = new UMLComboBox2(
                 new UMLSubmachineStateComboBoxModel(),
                 ActionSetSubmachineStateSubmachine.getInstance());
         addField("label.submachine",
                 new UMLComboBoxNavigator(Translator.localize(
                         "tooltip.nav-submachine"), submachineBox));
+        //#endif
         addField("label.entry", getEntryScroll());
         addField("label.exit", getExitScroll());
         addField("label.do-activity", getDoScroll());

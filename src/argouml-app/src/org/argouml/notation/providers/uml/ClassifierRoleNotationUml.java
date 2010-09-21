@@ -226,14 +226,16 @@ public class ClassifierRoleNotationUml extends ClassifierRoleNotation {
             } else {
                 ns = Model.getFacade().getModel(cls);
             }
-
+            //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
+            //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
+            //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
             while (it.hasNext()) {
                 c = it.next();
                 if (!bases.contains(Model.getFacade().getName(c))) {
                     Model.getCollaborationsHelper().removeBase(cls, c);
                 }
             }
-
+            //#endif
             it = bases.iterator();
         addBases:
             while (it.hasNext()) {
@@ -251,7 +253,11 @@ public class ClassifierRoleNotationUml extends ClassifierRoleNotation {
                         Model.getFacade().getNamespace(c))) {
                     Model.getCoreHelper().setNamespace(c, ns);
                 }
+                //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
+                //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
+                //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
                 Model.getCollaborationsHelper().addBase(cls, c);
+                //#endif
             }
         }
         

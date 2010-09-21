@@ -1,3 +1,7 @@
+//#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
+//@#$LPS-STATEDIAGRAM:GranularityType:Class
+//@#$LPS-ACTIVITYDIAGRAM:GranularityType:Class
+
 // $Id$
 // Copyright (c) 2005-2007 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
@@ -673,3 +677,4 @@ class StateMachinesHelperMDRImpl implements StateMachinesHelper {
                 + " or me: " + modelElement);
     }
 }
+//#endif
