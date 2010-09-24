@@ -180,7 +180,7 @@ public class CallStateNotationUml extends CallStateNotation {
                                 .buildCallAction(op, "ca");
                             //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
                             //@#$LPS-STATEDIAGRAM:GranularityType:Command
-                            //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Comand
+                            //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
                             Model.getStateMachinesHelper().setEntry(
                                     callState, entry);
                             //#endif

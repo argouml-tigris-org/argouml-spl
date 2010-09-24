@@ -615,7 +615,7 @@ public class GenericArgoMenuBar extends JMenuBar implements
         createDiagramMenu = add(new JMenu(menuLocalize("Create Diagram")));
         setMnemonic(createDiagramMenu, "Create Diagram");
         //#if defined(USECASEDIAGRAM)
-        //@#$LPS-USECASEDIAGRAM:GranularityType:command
+        //@#$LPS-USECASEDIAGRAM:GranularityType:Command
         JMenuItem usecaseDiagram = createDiagramMenu
                 .add(new ActionUseCaseDiagram());
         setMnemonic(usecaseDiagram, "Usecase Diagram");

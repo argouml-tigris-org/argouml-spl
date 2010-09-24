@@ -61,7 +61,7 @@ public class ActionSetContextStateMachine extends UndoableAction {
         super.actionPerformed(e);
         //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
         //@#$LPS-STATEDIAGRAM:GranularityType:Command
-        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Comand
+        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
         //@#$LPS-STATEDIAGRAM:Localization:EndMethod
         //@#$LPS-ACTIVITYDIAGRAM:Localization:EndMethod            
         if (e.getSource() instanceof UMLComboBox2) {

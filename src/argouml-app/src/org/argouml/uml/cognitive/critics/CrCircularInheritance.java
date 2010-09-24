@@ -52,7 +52,7 @@ import org.argouml.uml.cognitive.UMLDecision;
  */
 public class CrCircularInheritance extends CrUML {
     //#if defined(LOGGING)
-    //@#$LPS-LOGGING:GranularityType:Field3
+    //@#$LPS-LOGGING:GranularityType:Field
     //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
     /**
      * Logger.
