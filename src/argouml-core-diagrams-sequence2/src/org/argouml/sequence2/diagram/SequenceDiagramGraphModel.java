@@ -153,7 +153,6 @@ class SequenceDiagramGraphModel extends UMLMutableGraphSupport implements
     //#if defined(COLLABORATIONDIAGRAM)
     //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Method
     //@#$LPS-COLLABORATIONDIAGRAM:Localization:NestedIfdef-SEQUENCEDIAGRAM
-    
     /**
      * Gets the collaboration that is shown on the sequence diagram.<p>
      *
@@ -176,7 +175,7 @@ class SequenceDiagramGraphModel extends UMLMutableGraphSupport implements
 
         return collaboration;
     }
-    //#endif
+    
     /**
      * Sets the collaboration that is shown at the sequence diagram.
      * @param c the collaboration
@@ -194,7 +193,7 @@ class SequenceDiagramGraphModel extends UMLMutableGraphSupport implements
             interaction = interactions.iterator().next();
         }
     }
-
+    //#endif
     /**
      * Gets the interaction that is shown on the sequence diagram.
      * @return the interaction of the diagram.
@@ -418,7 +417,11 @@ class SequenceDiagramGraphModel extends UMLMutableGraphSupport implements
                     associationRole);
             if (action != null) {
                 Model.getCollaborationsHelper().setAction(message, action);
+                //#if defined(COLLABORATIONDIAGRAM)
+			    //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
+			    //@#$LPS-COLLABORATIONDIAGRAM:Localization:NestedIfdef-SEQUENCEDIAGRAM
                 Model.getCoreHelper().setNamespace(action, getCollaboration());
+                //#endif
             }
             Model.getCollaborationsHelper()
                 .setSender(message, fromPort);

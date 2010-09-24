@@ -117,8 +117,11 @@ public class UMLSequenceDiagram extends UMLDiagram {
             LOG.error("Exception", e);
             //#endif
         }
+        //#if defined(COLLABORATIONDIAGRAM)
+        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
         ((SequenceDiagramGraphModel) getGraphModel()).
             setCollaboration(collaboration);
+        //#endif
         setNamespace(collaboration);
     }
     
@@ -134,7 +137,11 @@ public class UMLSequenceDiagram extends UMLDiagram {
         super.initialize(owner);
         SequenceDiagramGraphModel gm =
             (SequenceDiagramGraphModel) getGraphModel();
+        //#if defined(COLLABORATIONDIAGRAM)
+        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
+        //@#$LPS-COLLABORATIONDIAGRAM:Localization:EndMethod
         gm.setCollaboration(owner);
+        //#endif
     }
 
     
@@ -203,8 +210,12 @@ public class UMLSequenceDiagram extends UMLDiagram {
 
     @Override
     public boolean relocate(Object base) {
+    	//#if defined(COLLABORATIONDIAGRAM)
+        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
+        //@#$LPS-COLLABORATIONDIAGRAM:Localization:StartMethod
         ((SequenceDiagramGraphModel) getGraphModel())
 	    	.setCollaboration(base);
+        //#endif
         setNamespace(base);
         damage();
         return true;
