@@ -38,6 +38,8 @@ import java.util.List;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
+//@#$LPS-LOGGING:Localization:NestedIfdef-STATEDIAGRAM
+//@#$LPS-LOGGING:Localization:NestedIfdef-ACTIVITYDIAGRAM
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.kernel.ProjectManager;
@@ -55,6 +57,8 @@ public class StateDiagramGraphModel extends UMLMutableGraphSupport implements
         VetoableChangeListener {
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
+    //@#$LPS-LOGGING:Localization:NestedIfdef-STATEDIAGRAM
+    //@#$LPS-LOGGING:Localization:NestedIfdef-ACTIVITYDIAGRAM
     /**
      * Logger.
      */
@@ -126,6 +130,8 @@ public class StateDiagramGraphModel extends UMLMutableGraphSupport implements
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Command
         //@#$LPS-LOGGING:Localization:BeforeReturn
+        //@#$LPS-LOGGING:Localization:NestedIfdef-STATEDIAGRAM
+        //@#$LPS-LOGGING:Localization:NestedIfdef-ACTIVITYDIAGRAM
         LOG.debug("TODO: getInEdges of MState");
         //#endif
         return Collections.EMPTY_LIST;
@@ -141,6 +147,8 @@ public class StateDiagramGraphModel extends UMLMutableGraphSupport implements
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Command
         //@#$LPS-LOGGING:Localization:BeforeReturn
+        //@#$LPS-LOGGING:Localization:NestedIfdef-STATEDIAGRAM
+        //@#$LPS-LOGGING:Localization:NestedIfdef-ACTIVITYDIAGRAM
         LOG.debug("TODO: getOutEdges of MState");
         //#endif
         return Collections.EMPTY_LIST;
@@ -220,6 +228,8 @@ public class StateDiagramGraphModel extends UMLMutableGraphSupport implements
             //@#$LPS-LOGGING:GranularityType:Command
             //@#$LPS-LOGGING:Localization:NestedCommand
             //@#$LPS-LOGGING:Localization:BeforeReturn
+            //@#$LPS-LOGGING:Localization:NestedIfdef-STATEDIAGRAM
+            //@#$LPS-LOGGING:Localization:NestedIfdef-ACTIVITYDIAGRAM
             LOG.error("Edge rejected. Its ends are not attached to anything");
             //#endif
             return false;
@@ -231,6 +241,8 @@ public class StateDiagramGraphModel extends UMLMutableGraphSupport implements
             //@#$LPS-LOGGING:GranularityType:Command
             //@#$LPS-LOGGING:Localization:NestedCommand
             //@#$LPS-LOGGING:Localization:BeforeReturn
+            //@#$LPS-LOGGING:Localization:NestedIfdef-STATEDIAGRAM
+            //@#$LPS-LOGGING:Localization:NestedIfdef-ACTIVITYDIAGRAM
             LOG.error("Edge rejected. Its source end is attached to "
                     + end0
                     + " but this is not in the graph model");
@@ -243,6 +255,8 @@ public class StateDiagramGraphModel extends UMLMutableGraphSupport implements
             //@#$LPS-LOGGING:GranularityType:Command
             //@#$LPS-LOGGING:Localization:NestedCommand
             //@#$LPS-LOGGING:Localization:BeforeReturn
+            //@#$LPS-LOGGING:Localization:NestedIfdef-STATEDIAGRAM
+            //@#$LPS-LOGGING:Localization:NestedIfdef-ACTIVITYDIAGRAM
             LOG.error("Edge rejected. Its destination end is attached to "
                     + end1
                     + " but this is not in the graph model");
@@ -260,6 +274,8 @@ public class StateDiagramGraphModel extends UMLMutableGraphSupport implements
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Command
         //@#$LPS-LOGGING:Localization:StartMethod
+        //@#$LPS-LOGGING:Localization:NestedIfdef-STATEDIAGRAM
+        //@#$LPS-LOGGING:Localization:NestedIfdef-ACTIVITYDIAGRAM
         LOG.debug("adding statechart/activity diagram node: " + node);
         //#endif
         if (!canAddNode(node)) {
@@ -286,6 +302,8 @@ public class StateDiagramGraphModel extends UMLMutableGraphSupport implements
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Command
         //@#$LPS-LOGGING:Localization:StartMethod
+        //@#$LPS-LOGGING:Localization:NestedIfdef-STATEDIAGRAM
+        //@#$LPS-LOGGING:Localization:NestedIfdef-ACTIVITYDIAGRAM
         LOG.debug("adding statechart/activity diagram edge!!!!!!");
         //#endif
         if (!canAddEdge(edge)) {
@@ -324,6 +342,8 @@ public class StateDiagramGraphModel extends UMLMutableGraphSupport implements
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Command
             //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedIfdef-STATEDIAGRAM
+            //@#$LPS-LOGGING:Localization:NestedIfdef-ACTIVITYDIAGRAM
             LOG.error("internal error not from sv");
             //#endif
             return false;
@@ -332,6 +352,8 @@ public class StateDiagramGraphModel extends UMLMutableGraphSupport implements
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Command
             //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedIfdef-STATEDIAGRAM
+            //@#$LPS-LOGGING:Localization:NestedIfdef-ACTIVITYDIAGRAM
             LOG.error("internal error not to sv");
             //#endif
             return false;
@@ -391,6 +413,8 @@ public class StateDiagramGraphModel extends UMLMutableGraphSupport implements
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Command
                 //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedIfdef-STATEDIAGRAM
+                //@#$LPS-LOGGING:Localization:NestedIfdef-ACTIVITYDIAGRAM
                 LOG.error("buildConnection() failed", ex);
                 //#endif
             }
@@ -400,6 +424,8 @@ public class StateDiagramGraphModel extends UMLMutableGraphSupport implements
             //@#$LPS-LOGGING:GranularityType:Command
             //@#$LPS-LOGGING:Localization:NestedCommand
             //@#$LPS-LOGGING:Localization:BeforeReturn
+            //@#$LPS-LOGGING:Localization:NestedIfdef-STATEDIAGRAM
+            //@#$LPS-LOGGING:Localization:NestedIfdef-ACTIVITYDIAGRAM
             LOG.debug("wrong kind of edge in StateDiagram connect3 "
                     + edgeClass);
             //#endif
@@ -424,6 +450,8 @@ public class StateDiagramGraphModel extends UMLMutableGraphSupport implements
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Command
                 //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedIfdef-STATEDIAGRAM
+                //@#$LPS-LOGGING:Localization:NestedIfdef-ACTIVITYDIAGRAM
                 LOG.debug("model removed " + me);
                 //#endif
                 if (Model.getFacade().isAState(me)) {
@@ -438,6 +466,8 @@ public class StateDiagramGraphModel extends UMLMutableGraphSupport implements
             } 
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:Localization:NestedIfdef-STATEDIAGRAM
+            //@#$LPS-LOGGING:Localization:NestedIfdef-ACTIVITYDIAGRAM
             else {
                 LOG.debug("model added " + me);
             }

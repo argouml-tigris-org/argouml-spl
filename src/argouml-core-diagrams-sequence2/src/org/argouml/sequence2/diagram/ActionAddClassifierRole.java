@@ -54,9 +54,9 @@ public class ActionAddClassifierRole extends CmdCreateNode {
     protected Mode createMode(String instructions) { 
         return new ModePlaceClassifierRole(this, instructions);
     }
-    //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
+    //#if defined(COLLABORATIONDIAGRAM)
     //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Method
-    //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Method
+    //@#$LPS-COLLABORATIONDIAGRAM:Localization:NestedIfdef-SEQUENCEDIAGRAM
     /*
      * @see org.tigris.gef.graph.GraphFactory#makeNode()
      */

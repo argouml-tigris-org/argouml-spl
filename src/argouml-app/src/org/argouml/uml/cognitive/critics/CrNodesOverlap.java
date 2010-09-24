@@ -41,7 +41,7 @@ import org.argouml.uml.diagram.deployment.ui.FigObject;
 import org.argouml.uml.diagram.deployment.ui.UMLDeploymentDiagram;
 //#if defined(SEQUENCEDIAGRAM)
 //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Import
-//@#$LPS-SEQUENCEDIAGRAM:Localization:NestedIfdef
+//@#$LPS-SEQUENCEDIAGRAM:Localization:NestedIfdef-COGNITIVE
 import org.argouml.uml.diagram.sequence.ui.UMLSequenceDiagram;
 //#endif
 import org.argouml.uml.diagram.static_structure.ui.FigClass;
@@ -85,7 +85,7 @@ public class CrNodesOverlap extends CrUML {
 
         //#if defined(SEQUENCEDIAGRAM)
         //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
-        //@#$LPS-SEQUENCEDIAGRAM:Localization:NestedIfdef
+        //@#$LPS-SEQUENCEDIAGRAM:Localization:NestedIfdef-COGNITIVE
         // fixes bug #669. Sequencediagrams always overlap, so they shall
         // never report a problem
         if (dm instanceof UMLSequenceDiagram) {

@@ -34,6 +34,7 @@ import java.awt.Rectangle;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
+//@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.cognitive.ToDoItem;
@@ -49,6 +50,7 @@ import org.tigris.gef.presentation.Fig;
 public class ClAttributeCompartment implements Clarifier {
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
+    //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
     private static final Logger LOG =
 	Logger.getLogger(ClAttributeCompartment.class);
     //#endif
@@ -134,6 +136,7 @@ public class ClAttributeCompartment implements Clarifier {
 	    //@#$LPS-LOGGING:GranularityType:Command
 	    //@#$LPS-LOGGING:Localization:NestedCommand
 	    //@#$LPS-LOGGING:Localization:BeforeReturn
+	    //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 	    LOG.debug("not a FigClass");
 	    //#endif
 	    return false;

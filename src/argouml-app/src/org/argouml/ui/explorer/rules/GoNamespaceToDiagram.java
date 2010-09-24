@@ -83,11 +83,12 @@ public class GoNamespaceToDiagram extends AbstractPerspectiveRule {
                 if (diagram instanceof UMLStateDiagram
                         //#if defined(ACTIVITYDIAGRAM)
                         //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Expression
+                        //@#$LPS-ACTIVITYDIAGRAM:Localization:NestedIfdef-STATEDIAGRAM
                         || diagram instanceof UMLActivityDiagram
                         //#endif
                         //#if defined(SEQUENCEDIAGRAM)
                         //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Expression
-                        //@#$LPS-SEQUENCEDIAGRAM:Localization:NestedIfdef
+                        //@#$LPS-SEQUENCEDIAGRAM:Localization:NestedIfdef-STATEDIAGRAM
                         || diagram instanceof UMLSequenceDiagram
                         //#endif
                         ) {

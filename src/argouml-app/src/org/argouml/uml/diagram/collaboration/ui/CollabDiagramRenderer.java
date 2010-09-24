@@ -31,6 +31,7 @@ import java.util.Map;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
+//@#$LPS-LOGGING:Localization:NestedIfdef-COLLABORATIONDIAGRAM
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.model.Model;
@@ -76,6 +77,7 @@ import org.tigris.gef.presentation.FigNode;
 public class CollabDiagramRenderer extends UmlDiagramRenderer {
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
+    //@#$LPS-LOGGING:Localization:NestedIfdef-COLLABORATIONDIAGRAM
     /**
      * Logger.
      */
@@ -103,6 +105,7 @@ public class CollabDiagramRenderer extends UmlDiagramRenderer {
         } else {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:Localization:NestedIfdef-COLLABORATIONDIAGRAM
             LOG.error("TODO: CollabDiagramRenderer getFigNodeFor");
             //#endif
             throw new IllegalArgumentException(
@@ -126,6 +129,7 @@ public class CollabDiagramRenderer extends UmlDiagramRenderer {
         //#if defined(LOGGING)     
         //@#$LPS-LOGGING:GranularityType:Command
         //@#$LPS-LOGGING:Localization:StartMethod
+        //@#$LPS-LOGGING:Localization:NestedIfdef-COLLABORATIONDIAGRAM
         if (LOG.isDebugEnabled()) {
             LOG.debug("making figedge for " + edge);
         }

@@ -66,6 +66,7 @@ public class GoStatemachineToDiagram extends AbstractPerspectiveRule {
                 //#if defined(ACTIVITYDIAGRAM)
                 //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
                 //@#$LPS-ACTIVITYDIAGRAM:Localization:NestedCommand
+                //@#$LPS-ACTIVITYDIAGRAM:Localization:NestedIfdef-STATEDIAGRAM
                 if (diagram instanceof UMLActivityDiagram) {
                     UMLActivityDiagram activityDiagram =
                         (UMLActivityDiagram) diagram;
@@ -76,9 +77,6 @@ public class GoStatemachineToDiagram extends AbstractPerspectiveRule {
                     }
                 }
                 //#endif
-                //#if defined(STATEDIAGRAM)
-                //@#$LPS-STATEDIAGRAM:GranularityType:Command      
-                //@#$LPS-STATEDIAGRAM:Localization:NestedCommand
                 if (diagram instanceof UMLStateDiagram) {
                     UMLStateDiagram stateDiagram = (UMLStateDiagram) diagram;
                     Object stateMachine = stateDiagram.getStateMachine();
@@ -87,7 +85,6 @@ public class GoStatemachineToDiagram extends AbstractPerspectiveRule {
                         continue;
                     }
                 }
-                //#endif
             }
             return returnList;
         }

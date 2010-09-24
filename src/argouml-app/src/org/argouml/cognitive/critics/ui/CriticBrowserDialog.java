@@ -58,6 +58,7 @@ import javax.swing.text.Document;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
+//@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.cognitive.Critic;
@@ -82,6 +83,7 @@ public class CriticBrowserDialog extends ArgoDialog
                Observer {
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
+    //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
     private static final Logger LOG =
 	Logger.getLogger(CriticBrowserDialog.class);
     //#endif
@@ -392,6 +394,7 @@ public class CriticBrowserDialog extends ArgoDialog
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:MethodBody
 	//@#$LPS-LOGGING:Localization:NestedCommand
+        //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 	LOG.debug("setting clarifier usage rule");
 	//#endif
     }
@@ -412,6 +415,7 @@ public class CriticBrowserDialog extends ArgoDialog
 	if (e.getSource() == networkButton) {
 	    //#if defined(LOGGING)
 	    //@#$LPS-LOGGING:GranularityType:Command
+	    //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 	    LOG.debug("TODO: network!");
 	    //#endif
 	    return;
@@ -419,6 +423,7 @@ public class CriticBrowserDialog extends ArgoDialog
 	if (e.getSource() == configButton) {
 	    //#if defined(LOGGING)
 	    //@#$LPS-LOGGING:GranularityType:Command
+	    //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 	    LOG.debug("TODO: config!");
 	    //#endif
 	    return;
@@ -436,6 +441,7 @@ public class CriticBrowserDialog extends ArgoDialog
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Command
         //@#$LPS-LOGGING:Localization:EndMethod
+        //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 	LOG.debug("unknown src in CriticBrowserDialog: " + e.getSource());
 	//#endif
     }
@@ -449,12 +455,14 @@ public class CriticBrowserDialog extends ArgoDialog
 	if (src != table.getSelectionModel()) {
 	    //#if defined(LOGGING)
 	    //@#$LPS-LOGGING:GranularityType:Command
+	    //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 	    LOG.debug("src = " + src);
 	    //#endif
 	    return;
 	}
 	//#if defined(LOGGING)
 	//@#$LPS-LOGGING:GranularityType:Command
+	//@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 	LOG.debug("got valueChanged from " + src);
 	//#endif
 	int row = table.getSelectedRow();
@@ -484,6 +492,7 @@ public class CriticBrowserDialog extends ArgoDialog
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Command
         //@#$LPS-LOGGING:Localization:StartMethod
+        //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 	LOG.debug(getClass().getName() + " insert");
 	//#endif
 	Document hDoc = headline.getDocument();
@@ -506,6 +515,7 @@ public class CriticBrowserDialog extends ArgoDialog
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:MethodBody
         //@#$LPS-LOGGING:Localization:EntireMethod
+        //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 	LOG.debug(getClass().getName() + " changed");
 	//#endif
 	// Apparently, this method is never called.
@@ -523,8 +533,9 @@ public class CriticBrowserDialog extends ArgoDialog
 	    setTargetUseClarifiers();
 	} 
 	//#if defined(LOGGING)
+	//@#$LPS-LOGGING:GranularityType:Command
+	//@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 	else {
-	    //@#$LPS-LOGGING:GranularityType:Command
 	    LOG.debug("unknown itemStateChanged src: " + src);	    
 	}
 	//#endif

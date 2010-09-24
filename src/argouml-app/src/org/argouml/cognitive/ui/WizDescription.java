@@ -35,6 +35,7 @@ import javax.swing.JTextArea;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Field
+//@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.cognitive.Critic;
@@ -56,6 +57,7 @@ import org.argouml.model.Model;
 public class WizDescription extends WizStep {
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field    
+    //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
     /**
      * Logger.
      */
@@ -75,6 +77,7 @@ public class WizDescription extends WizStep {
 	super();
 	//#if defined(LOGGING)
 	//@#$LPS-LOGGING:GranularityType:Command
+	//@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 	LOG.info("making WizDescription");
 	//#endif
 	description.setLineWrap(true);

@@ -35,6 +35,7 @@ import javax.swing.JPanel;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
+//@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 import org.apache.log4j.Logger;
 //#endif
 
@@ -61,6 +62,7 @@ import org.argouml.model.Model;
 public class WizAssocComposite extends UMLWizard {
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
+    //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
     /**
      * Logger.
      */
@@ -305,6 +307,7 @@ public class WizAssocComposite extends UMLWizard {
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Command
                 //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
                 LOG.warn("WizAssocComposite: nothing selected, "
                         + "should not get here");
                 //#endif
@@ -382,6 +385,7 @@ public class WizAssocComposite extends UMLWizard {
                 // Someone took our association away.
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
                 LOG.error("WizAssocComposite: could not set " + "aggregation.",
                         pve);
                 //#endif

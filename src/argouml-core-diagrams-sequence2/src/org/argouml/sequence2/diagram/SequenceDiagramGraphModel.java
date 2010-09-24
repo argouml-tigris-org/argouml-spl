@@ -37,7 +37,7 @@ import java.util.List;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
-//@#$LPS-LOGGING:Localization:NestedIfdef
+//@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.kernel.ProjectManager;
@@ -61,7 +61,7 @@ class SequenceDiagramGraphModel extends UMLMutableGraphSupport implements
         VetoableChangeListener, PropertyChangeListener, MutableGraphModel {
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
-    //@#$LPS-LOGGING:Localization:NestedIfdef
+	//@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
     /**
      * Logger.
      */
@@ -151,7 +151,9 @@ class SequenceDiagramGraphModel extends UMLMutableGraphSupport implements
     }
     
     //#if defined(COLLABORATIONDIAGRAM)
-    //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
+    //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Method
+    //@#$LPS-COLLABORATIONDIAGRAM:Localization:NestedIfdef-SEQUENCEDIAGRAM
+    
     /**
      * Gets the collaboration that is shown on the sequence diagram.<p>
      *
@@ -162,6 +164,8 @@ class SequenceDiagramGraphModel extends UMLMutableGraphSupport implements
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Command
             //@#$LPS-LOGGING:Localization:NestedCommand
+        	//@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
+        	//@#$LPS-LOGGING:Localization:NestedIfdef-COLLABORATIONDIAGRAM
             LOG.debug("The collaboration is null so creating a new collaboration");
             //#endif
             collaboration =
@@ -181,7 +185,7 @@ class SequenceDiagramGraphModel extends UMLMutableGraphSupport implements
 	//#if defined(LOGGING)
 	//@#$LPS-LOGGING:GranularityType:Command
 	//@#$LPS-LOGGING:Localization:StartMethod
-    //@#$LPS-LOGGING:Localization:NestedIfdef
+    	//@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
         LOG.debug("Setting the collaboration of sequence diagram to " + c);
         //#endif
         collaboration = c;
@@ -203,6 +207,7 @@ class SequenceDiagramGraphModel extends UMLMutableGraphSupport implements
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Command
             //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
             LOG.debug("Interaction built.");
             //#endif
             Model.getPump().addModelEventListener(this, interaction);
@@ -227,9 +232,9 @@ class SequenceDiagramGraphModel extends UMLMutableGraphSupport implements
         }
         
         return Model.getFacade().isAModelElement(node)
-            //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
-		    //@#$LPS-STATEDIAGRAM:GranularityType:Expression
-		    //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Expression
+            //#if defined(COLLABORATIONDIAGRAM)
+		    //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Expression
+        	//@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
                 // All other types of elements must be in this namespace
                 && Model.getFacade().getNamespace(node) == getCollaboration()
             //#endif
@@ -268,6 +273,7 @@ class SequenceDiagramGraphModel extends UMLMutableGraphSupport implements
             //@#$LPS-LOGGING:GranularityType:Command
             //@#$LPS-LOGGING:Localization:BeforeReturn
             //@#$LPS-LOGGING:Localization:NestedCommand
+        	//@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
             LOG.error("Edge rejected. Its ends are not attached to anything");
             //#endif
             return false;
@@ -278,6 +284,7 @@ class SequenceDiagramGraphModel extends UMLMutableGraphSupport implements
             //@#$LPS-LOGGING:GranularityType:Command
             //@#$LPS-LOGGING:Localization:BeforeReturn
             //@#$LPS-LOGGING:Localization:NestedCommand
+        	//@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
             LOG.error("Edge rejected. Its source end is attached to "
                     + end0
                     + " but this is not in the graph model");
@@ -289,6 +296,7 @@ class SequenceDiagramGraphModel extends UMLMutableGraphSupport implements
             //@#$LPS-LOGGING:GranularityType:Command
             //@#$LPS-LOGGING:Localization:BeforeReturn
             //@#$LPS-LOGGING:Localization:NestedCommand
+        	//@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
             LOG.error("Edge rejected. Its destination end is attached to "
                     + end1
                     + " but this is not in the graph model");
@@ -393,9 +401,7 @@ class SequenceDiagramGraphModel extends UMLMutableGraphSupport implements
                 .equals(actionType)) {
             // not implemented yet
         }
-        //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
-        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
-        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
+        
         if (fromPort != null && toPort != null && action != null) {
             Object associationRole =
                 Model.getCollaborationsHelper().getAssociationRole(
@@ -422,10 +428,9 @@ class SequenceDiagramGraphModel extends UMLMutableGraphSupport implements
             addEdge(message);
             edge = message;
         }
-        //#endif
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Command
-        //@#$LPS-LOGGING:Localization:NestedIfdef
+        //@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
         if (edge == null) {
             LOG.debug("Incorrect edge");
         }

@@ -37,6 +37,7 @@ import java.util.List;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
+//@#$LPS-LOGGING:Localization:NestedIfdef-USECASEDIAGRAM
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.model.Model;
@@ -56,6 +57,7 @@ public class UseCaseDiagramGraphModel
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
     //@#$LPS-LOGGING:Localization:NestedCommand
+    //@#$LPS-LOGGING:Localization:NestedIfdef-USECASEDIAGRAM
     /**
      * Logger.
      */
@@ -283,6 +285,7 @@ public class UseCaseDiagramGraphModel
             //@#$LPS-LOGGING:GranularityType:Command
             //@#$LPS-LOGGING:Localization:NestedCommand
             //@#$LPS-LOGGING:Localization:BeforeReturn
+            //@#$LPS-LOGGING:Localization:NestedIfdef-USECASEDIAGRAM
             LOG.error("Edge rejected. Its ends are not attached to anything");
             //#endif
             return false;
@@ -294,6 +297,7 @@ public class UseCaseDiagramGraphModel
             //@#$LPS-LOGGING:GranularityType:Command
             //@#$LPS-LOGGING:Localization:NestedCommand
             //@#$LPS-LOGGING:Localization:BeforeReturn
+            //@#$LPS-LOGGING:Localization:NestedIfdef-USECASEDIAGRAM
             LOG.error("Edge rejected. Its source end is attached to "
                     + sourceModelElement
                     + " but this is not in the graph model");
@@ -306,6 +310,7 @@ public class UseCaseDiagramGraphModel
             //@#$LPS-LOGGING:GranularityType:Command
             //@#$LPS-LOGGING:Localization:NestedCommand
             //@#$LPS-LOGGING:Localization:BeforeReturn
+            //@#$LPS-LOGGING:Localization:NestedIfdef-USECASEDIAGRAM
             LOG.error("Edge rejected. Its destination end is attached to "
                     + destModelElement
                     + " but this is not in the graph model");
@@ -339,6 +344,7 @@ public class UseCaseDiagramGraphModel
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Command
         //@#$LPS-LOGGING:Localization:StartMethod
+        //@#$LPS-LOGGING:Localization:NestedIfdef-USECASEDIAGRAM
         LOG.debug("adding usecase node");
         //#endif
         // Give up if we are already on the graph. This is a bit inconistent
@@ -390,6 +396,7 @@ public class UseCaseDiagramGraphModel
         }
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:Localization:NestedIfdef-USECASEDIAGRAM
         if (LOG.isInfoEnabled()) {
             LOG.info("Adding an edge of type "
                    + edge.getClass().getName()
@@ -400,6 +407,7 @@ public class UseCaseDiagramGraphModel
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Command
             //@#$LPS-LOGGING:Localization:BeforeReturn
+            //@#$LPS-LOGGING:Localization:NestedIfdef-USECASEDIAGRAM
             LOG.info("Attempt to add edge rejected");
             //#endif
             return;
@@ -565,6 +573,7 @@ public class UseCaseDiagramGraphModel
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:Localization:NestedIfdef-USECASEDIAGRAM
                 LOG.debug("model removed " + me);
                 //#endif
                 // Remove a node
@@ -585,6 +594,7 @@ public class UseCaseDiagramGraphModel
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Command
             //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedIfdef-USECASEDIAGRAM
             else {
                 // Something was added - nothing for us to worry about                
                 LOG.debug("model added " + me);

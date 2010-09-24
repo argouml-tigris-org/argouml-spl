@@ -32,6 +32,7 @@ import java.util.Set;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
+//@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.cognitive.Critic;
@@ -49,6 +50,7 @@ import org.argouml.uml.cognitive.UMLToDoItem;
 public class CrCircularComposition extends CrUML {
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
+    //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
     private static final Logger LOG =
 	Logger.getLogger(CrCircularComposition.class);
     //#endif
@@ -120,6 +122,7 @@ public class CrCircularComposition extends CrUML {
 	//#if defined(LOGGING)
 	//@#$LPS-LOGGING:GranularityType:Command
 	//@#$LPS-LOGGING:Localization:BeforeReturn
+	//@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 	LOG.debug("offs=" + offs.toString()
 		  + " newOffs=" + newOffs.toString()
 		  + " res = " + res);

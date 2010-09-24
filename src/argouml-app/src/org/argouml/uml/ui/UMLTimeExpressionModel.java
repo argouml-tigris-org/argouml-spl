@@ -74,8 +74,8 @@ public class UMLTimeExpressionModel extends UMLExpressionModel2 {
         //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
         //@#$LPS-STATEDIAGRAM:GranularityType:Command
         //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
-        //@#$LPS-STATEDIAGRAM:Localization:BeforeReturn
-        //@#$LPS-ACTIVITYDIAGRAM:Localization:BeforeReturn
+        //@#$LPS-STATEDIAGRAM:Localization:EndMethod
+        //@#$LPS-ACTIVITYDIAGRAM:Localization:EndMethod
         Model.getStateMachinesHelper().setWhen(target, expression);
         //#endif
     }

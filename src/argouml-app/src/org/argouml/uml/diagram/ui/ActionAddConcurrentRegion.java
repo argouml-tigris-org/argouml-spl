@@ -103,7 +103,9 @@ public class ActionAddConcurrentRegion extends UndoableAction {
         Object target = TargetManager.getInstance().getModelTarget();
         //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
         //@#$LPS-STATEDIAGRAM:GranularityType:Command
-        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command    
+        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
+        //@#$LPS-STATEDIAGRAM:Localization:BeforeReturn
+        //@#$LPS-ACTIVITYDIAGRAM:Localization:BeforeReturn
         if (Model.getStateMachinesHelper().isTopState(target)) {
             return false;
         }

@@ -32,7 +32,7 @@ import java.awt.event.MouseEvent;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
-//@#$LPS-LOGGING:Localization:NestedIfdef
+//@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.i18n.Translator;
@@ -55,7 +55,7 @@ import org.tigris.gef.presentation.FigLine;
 public class ModeCreateMessage extends ModeCreate {
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
-    //@#$LPS-LOGGING:Localization:NestedIfdef
+    //@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
     /**
      * Logger.
      */
@@ -248,7 +248,7 @@ public class ModeCreateMessage extends ModeCreate {
                 } 
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Command
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
                 else {
                     LOG.debug("connection return null");
                 }

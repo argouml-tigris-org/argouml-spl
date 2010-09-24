@@ -35,6 +35,7 @@ import java.util.Iterator;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
+//@#$LPS-LOGGING:Localization:NestedIfdef-STATEDIAGRAM
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.model.Facade;
@@ -57,6 +58,7 @@ import org.tigris.gef.presentation.FigText;
 public class FigStubState extends FigStateVertex {
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
+    //@#$LPS-LOGGING:Localization:NestedIfdef-STATEDIAGRAM
     private static final Logger LOG = Logger.getLogger(FigStubState.class);
     //#endif
     private static final int X = 0;
@@ -373,6 +375,7 @@ public class FigStubState extends FigStateVertex {
         } catch (Exception e) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:Localization:NestedIfdef-STATEDIAGRAM
             LOG.error("Exception caught and ignored!!", e);
             //#endif
         }

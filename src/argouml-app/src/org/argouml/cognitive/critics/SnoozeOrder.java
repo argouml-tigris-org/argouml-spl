@@ -32,6 +32,7 @@ import java.util.Date;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
+//@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 import org.apache.log4j.Logger;
 //#endif
 
@@ -50,6 +51,7 @@ import org.apache.log4j.Logger;
 public class SnoozeOrder implements Serializable {
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
+    //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
     /**
      * Logger.
      */
@@ -138,6 +140,7 @@ public class SnoozeOrder implements Serializable {
 	//#if defined(LOGGING)
 	//@#$LPS-LOGGING:GranularityType:Command
 	//@#$LPS-LOGGING:Localization:EndMethod
+	//@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 	LOG.info("Setting snooze order to: " + snoozeUntil.toString());
 	//#endif
     }

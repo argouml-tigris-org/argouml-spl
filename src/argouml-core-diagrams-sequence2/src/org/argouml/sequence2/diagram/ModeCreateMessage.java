@@ -32,7 +32,7 @@ import java.util.List;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
-//@#$LPS-LOGGING:Localization:NestedIfdef
+//@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.model.Model;
@@ -51,7 +51,7 @@ import org.tigris.gef.presentation.FigPoly;
 public class ModeCreateMessage extends ModeCreatePolyEdge {
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
-	//@#$LPS-LOGGING:Localization:NestedIfdef
+	//@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
     /**
      * Logger.
      */
@@ -71,7 +71,7 @@ public class ModeCreateMessage extends ModeCreatePolyEdge {
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Command
         //@#$LPS-LOGGING:Localization:EndMethod
-        //@#$LPS-LOGGING:Localization:NestedIfdef
+        //@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
         if (LOG.isDebugEnabled()) {
             LOG.debug("ModeCreateMessage created with editor:" + editor);
         }
@@ -86,7 +86,7 @@ public class ModeCreateMessage extends ModeCreatePolyEdge {
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Command
         //@#$LPS-LOGGING:Localization:EndMethod
-        //@#$LPS-LOGGING:Localization:NestedIfdef
+        //@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
         if (LOG.isDebugEnabled()) {
             LOG.debug("ModeCreateMessage created without editor.");
         }
@@ -128,13 +128,9 @@ public class ModeCreateMessage extends ModeCreatePolyEdge {
                     returnMessageDest, 
                     Model.getMetaTypes().getMessage(),
                     Model.getMetaTypes().getReturnAction());
-            //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
-            //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
-            //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
             // Correct the activator value
             Model.getCollaborationsHelper().setActivator(
                     returnMessage, message);
-            //#endif
             final LayerPerspective layer = 
                 (LayerPerspective) editor.getLayerManager().getActiveLayer();
             
@@ -212,7 +208,7 @@ public class ModeCreateMessage extends ModeCreatePolyEdge {
         // Make sure there is the minimum gap below the message being drawn
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Command
-        //@#$LPS-LOGGING:Localization:NestedIfdef
+        //@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
         LOG.info("Looking for minimum space below");
         //#endif
         final FigMessage firstMessageBelow = getNearestMessage(

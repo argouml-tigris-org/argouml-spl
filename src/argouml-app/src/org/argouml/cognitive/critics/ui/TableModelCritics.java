@@ -40,6 +40,7 @@ import javax.swing.table.AbstractTableModel;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
+//@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.cognitive.Agency;
@@ -58,6 +59,7 @@ class TableModelCritics extends AbstractTableModel
     implements VetoableChangeListener {
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
+    //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
     private static final Logger LOG =
         Logger.getLogger(TableModelCritics.class);
     //#endif
@@ -192,6 +194,7 @@ class TableModelCritics extends AbstractTableModel
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Command
         //@#$LPS-LOGGING:Localization:StartMethod
+        //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
         LOG.debug("setting table value " + rowIndex + ", " + columnIndex);
         //#endif
         if (columnIndex != 0) return;

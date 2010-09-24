@@ -29,6 +29,7 @@ package org.argouml.cognitive.ui;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
+//@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.cognitive.Designer;
@@ -45,6 +46,7 @@ public class ToDoByGoal extends ToDoPerspective
     implements ToDoListListener {
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
+    //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
     private static final Logger LOG =
         Logger.getLogger(ToDoByGoal.class);
     //#endif
@@ -67,7 +69,8 @@ public class ToDoByGoal extends ToDoPerspective
     public void toDoItemsChanged(ToDoListEvent tde) {
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Command
-        //@#$LPS-LOGGING:Localization:StartMethod        
+        //@#$LPS-LOGGING:Localization:StartMethod       
+        //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 	LOG.debug("toDoItemsChanged");
 	//#endif
 	Object[] path = new Object[2];
@@ -105,6 +108,7 @@ public class ToDoByGoal extends ToDoPerspective
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Command
         //@#$LPS-LOGGING:Localization:StartMethod
+        //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 	LOG.debug("toDoItemAdded");
 	//#endif
 	Object[] path = new Object[2];
@@ -145,6 +149,7 @@ public class ToDoByGoal extends ToDoPerspective
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Command
         //@#$LPS-LOGGING:Localization:StartMethod
+        //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 	LOG.debug("toDoItemAdded");
 	//#endif
 	Object[] path = new Object[2];
@@ -153,6 +158,7 @@ public class ToDoByGoal extends ToDoPerspective
         for (Goal g : Designer.theDesigner().getGoalList()) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 	    LOG.debug("toDoItemRemoved updating decision node!");
 	    //#endif
 	    boolean anyInGoal = false;

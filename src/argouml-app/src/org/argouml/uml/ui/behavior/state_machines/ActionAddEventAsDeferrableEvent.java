@@ -111,6 +111,8 @@ public class ActionAddEventAsDeferrableEvent
         //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
         //@#$LPS-STATEDIAGRAM:GranularityType:Command
         //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command    
+        //@#$LPS-STATEDIAGRAM:Localization:EndMethod
+        //@#$LPS-ACTIVITYDIAGRAM:Localization:EndMethod
         for (Object o : toBeRemoved) {
             Model.getStateMachinesHelper().removeDeferrableEvent(state, o);
         }

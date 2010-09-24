@@ -29,6 +29,7 @@ package org.argouml.uml.cognitive.critics;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
+//@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.cognitive.Critic;
@@ -55,6 +56,7 @@ import org.tigris.gef.ocl.ExpansionException;
 public class CrUML extends Critic {
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
+    //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
     /**
      * Logger.
      */
@@ -234,6 +236,7 @@ public class CrUML extends Critic {
                 //#if defined(LOGGING)            
                 //@#$LPS-LOGGING:GranularityType:Command
                 //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
                 LOG.error("Failed to evaluate critic expression", e);
                 //#endif
             }

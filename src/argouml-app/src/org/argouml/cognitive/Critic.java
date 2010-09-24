@@ -39,6 +39,7 @@ import javax.swing.Icon;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
+//@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.application.helpers.ApplicationVersion;
@@ -67,6 +68,7 @@ public class Critic
     implements Poster, Serializable {
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
+    //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
     /**
      * Logger.
      */
@@ -450,6 +452,7 @@ public class Critic
 	    //#if defined(LOGGING)
 	    //@#$LPS-LOGGING:GranularityType:Command
 	    //@#$LPS-LOGGING:Localization:NestedCommand
+	    //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 	    LOG.warn("got to stillvalid while not active");
 	    //#endif
 	    return false;
@@ -801,12 +804,14 @@ public class Critic
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Command
                 //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
                 LOG.error("Could not access wizard: ", illEx);
                 //#endif
             } catch (InstantiationException instEx) {                
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Command
                 //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
                 LOG.error("Could not instantiate wizard: ", instEx);
                 //#endif
             }

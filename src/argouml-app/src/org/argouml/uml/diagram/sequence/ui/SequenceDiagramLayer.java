@@ -37,7 +37,7 @@ import java.util.ListIterator;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
-//@#$LPS-LOGGING:Localization:NestedIfdef
+//@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
 import org.apache.log4j.Logger;
 //#endif
 import org.tigris.gef.base.LayerPerspectiveMutable;
@@ -56,7 +56,7 @@ import org.tigris.gef.presentation.FigEdge;
 public class SequenceDiagramLayer extends LayerPerspectiveMutable {
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
-    //@#$LPS-LOGGING:Localization:NestedIfdef
+    //@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
     /**
      * Logger.
      */
@@ -312,7 +312,7 @@ public class SequenceDiagramLayer extends LayerPerspectiveMutable {
         if (f instanceof FigMessage) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Command
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
             LOG.info("Removing a FigMessage");
             //#endif
             FigMessage fm = (FigMessage) f;
@@ -337,7 +337,7 @@ public class SequenceDiagramLayer extends LayerPerspectiveMutable {
         super.remove(f);
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Command
-        //@#$LPS-LOGGING:Localization:NestedIfdef
+        //@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
         LOG.info("A Fig has been removed, updating activations");
         //#endif
         updateActivations();

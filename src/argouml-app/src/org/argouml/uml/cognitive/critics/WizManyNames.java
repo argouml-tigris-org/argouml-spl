@@ -35,6 +35,7 @@ import javax.swing.JPanel;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
+//@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.cognitive.ui.WizStepManyTextFields;
@@ -50,6 +51,7 @@ import org.argouml.model.Model;
 public class WizManyNames extends UMLWizard {
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
+    //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
     /**
      * Logger.
      */
@@ -123,6 +125,7 @@ public class WizManyNames extends UMLWizard {
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Command
         //@#$LPS-LOGGING:Localization:StartMethod
+        //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
         LOG.debug("doAction " + oldStep);
         //#endif
         switch (oldStep) {
@@ -141,6 +144,7 @@ public class WizManyNames extends UMLWizard {
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Command
                 //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
                 LOG.error("could not set name", pve);
                 //#endif
             }

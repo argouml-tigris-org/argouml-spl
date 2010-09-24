@@ -49,6 +49,7 @@ import javax.swing.table.TableColumn;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
+//@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.application.api.AbstractArgoJPanel;
@@ -297,6 +298,7 @@ class TableModelChecklist extends AbstractTableModel
     implements VetoableChangeListener, PropertyChangeListener {
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
+    //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
     /**
      * Logger.
      */
@@ -428,6 +430,7 @@ class TableModelChecklist extends AbstractTableModel
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Command
         //@#$LPS-LOGGING:Localization:StartMethod
+        //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 	LOG.debug("setting table value " + rowIndex + ", " + columnIndex);
 	//#endif
 	if (columnIndex != 0) {

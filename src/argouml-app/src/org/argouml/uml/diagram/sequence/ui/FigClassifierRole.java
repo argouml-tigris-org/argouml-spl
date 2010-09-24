@@ -40,7 +40,7 @@ import java.util.StringTokenizer;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
-//@#$LPS-LOGGING:Localization:NestedIfdef
+//@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.model.Model;
@@ -74,7 +74,7 @@ public class FigClassifierRole extends FigNodeModelElement
     implements MouseListener, HandlerFactory {
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
-    //@#$LPS-LOGGING:Localization:NestedIfdef
+    //@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
     /**
      * Logger.
      */
@@ -677,7 +677,7 @@ public class FigClassifierRole extends FigNodeModelElement
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Command
         //@#$LPS-LOGGING:Localization:StartMethod
-        //@#$LPS-LOGGING:Localization:NestedIfdef
+        //@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
         LOG.debug("Updating activations");
         //#endif
         lifeLineFig.removeActivations();
@@ -1090,7 +1090,7 @@ public class FigClassifierRole extends FigNodeModelElement
             //@#$LPS-LOGGING:GranularityType:Command
             //@#$LPS-LOGGING:Localization:NestedCommand
             //@#$LPS-LOGGING:Localization:BeforeReturn
-            //@#$LPS-LOGGING:Localization:NestedIfdef
+            //@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
             LOG.debug("Got a ClassifierRole - only legal on load");
             //#endif
             return null;

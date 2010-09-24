@@ -87,8 +87,8 @@ public class PropPanelStimulus extends PropPanelModelElement {
      */
     public void setSender(Object element) {
         //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
-        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
-        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
+        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:MethodBody
+        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:MethodBody
         //@#$LPS-COLLABORATIONDIAGRAM:Localization:EntireMethod
         //@#$LPS-SEQUENCEDIAGRAM:Localization:EntireMethod
         Object target = getTarget();

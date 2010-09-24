@@ -32,7 +32,7 @@ import java.util.List;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
-//@#$LPS-LOGGING:Localization:NestedIfdef
+//@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.uml.diagram.ui.FigEdgeModelElement;
@@ -48,7 +48,7 @@ import org.tigris.gef.presentation.Handle;
 class SelectionMessage extends SelectionRerouteEdge {
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
-	//@#$LPS-LOGGING:Localization:NestedIfdef
+	//@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
     /**
      * Logger.
      */

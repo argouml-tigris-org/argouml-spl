@@ -50,13 +50,16 @@ public final class ActionSequenceDiagram extends ActionNewDiagram {
                 DiagramFactory.DiagramType.Sequence,
                 //#if defined(COLLABORATIONDIAGRAM)
                 //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:MethodCall
+                //@#$LPS-COLLABORATIONDIAGRAM:Localization:NestedIfdef-SEQUENCEDIAGRAM
                 createCollaboration(
                 //#endif
                         namespace
                 //#if defined(COLLABORATIONDIAGRAM)
                 //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:MethodCall
-                 ),
+                //@#$LPS-COLLABORATIONDIAGRAM:Localization:NestedIfdef-SEQUENCEDIAGRAM
+                 )
                 //#endif
+                ,
                 null);
     }
 

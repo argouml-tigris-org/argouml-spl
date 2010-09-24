@@ -29,6 +29,7 @@ package org.argouml.uml.cognitive.checklist;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
+//@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.cognitive.checklist.CheckItem;
@@ -47,6 +48,7 @@ import org.tigris.gef.ocl.ExpansionException;
 public class UMLCheckItem extends CheckItem {
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
+    //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
     private static final Logger LOG =
         Logger.getLogger(UMLCheckItem.class);
     //#endif
@@ -111,6 +113,7 @@ public class UMLCheckItem extends CheckItem {
 	        //#if defined(LOGGING)
 	        //@#$LPS-LOGGING:GranularityType:Command
 	        //@#$LPS-LOGGING:Localization:NestedCommand
+	        //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 	        LOG.error("Failed to evaluate critic expression", e);
 	        //#endif
 	    } catch (InvalidElementException e) {
@@ -120,6 +123,7 @@ public class UMLCheckItem extends CheckItem {
             }
 	    //#if defined(LOGGING)
 	    //@#$LPS-LOGGING:GranularityType:Command
+	    //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 	    LOG.debug("expr='" + expr + "' = '" + evalStr + "'");
 	    //#endif
 	    res = res.substring(0, matchPos) + evalStr

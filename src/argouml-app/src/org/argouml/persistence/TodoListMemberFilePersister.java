@@ -57,6 +57,7 @@ import org.tigris.gef.ocl.TemplateReader;
 class TodoListMemberFilePersister extends MemberFilePersister {
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
+    //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
     private static final Logger LOG =
         Logger.getLogger(ProjectMemberTodoList.class);
     //#endif

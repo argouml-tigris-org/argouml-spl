@@ -30,7 +30,7 @@ import java.beans.PropertyVetoException;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
-//@#$LPS-LOGGING:Localization:NestedIfdef
+//@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.uml.diagram.ArgoDiagram;
@@ -47,7 +47,7 @@ public class SequenceDiagramFactory
         implements DiagramFactoryInterface, DiagramFactoryInterface2{
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
-	//@#$LPS-LOGGING:Localization:NestedIfdef
+	//@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
     /**
      * Logger.
      */
@@ -93,6 +93,7 @@ public class SequenceDiagramFactory
         	//#if defined(LOGGING)
         	//@#$LPS-LOGGING:GranularityType:Command
         	//@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
                 LOG.error("Cannot set the name " + name + 
                         " to the diagram just created: "+ diagram.getName(), e);
                 //#endif

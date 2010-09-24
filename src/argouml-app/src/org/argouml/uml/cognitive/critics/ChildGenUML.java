@@ -36,6 +36,7 @@ import java.util.List;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
+//@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.kernel.Project;
@@ -64,6 +65,7 @@ import org.tigris.gef.util.ChildGenerator;
 public class ChildGenUML implements ChildGenerator {
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
+    //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
     private static final Logger LOG = Logger.getLogger(ChildGenUML.class);
     //#endif
     /**
@@ -91,6 +93,7 @@ public class ChildGenUML implements ChildGenerator {
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Command
         //@#$LPS-LOGGING:Localization:StartMethod
+        //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
         if (LOG.isDebugEnabled()) {
             if (o == null) {
                 LOG.debug("Object is null");

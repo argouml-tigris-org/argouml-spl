@@ -272,7 +272,7 @@ class ElementPropPanelFactory implements PropPanelFactory {
                 return new PropPanelSignal();
             }
         //#if defined(USECASEDIAGRAM)
-        //@#$LPS-USECASEDIAGRAM:GranularityType:Package
+        //@#$LPS-USECASEDIAGRAM:GranularityType:Command
         } else if (Model.getFacade().isAUseCase(element)) {
             return new PropPanelUseCase();
         //#endif

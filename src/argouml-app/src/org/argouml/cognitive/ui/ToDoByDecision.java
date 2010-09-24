@@ -31,6 +31,7 @@ import java.util.List;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
+//@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.cognitive.Decision;
@@ -46,6 +47,7 @@ public class ToDoByDecision extends ToDoPerspective
     implements ToDoListListener {
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
+    //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
     private static final Logger LOG =
         Logger.getLogger(ToDoByDecision.class);
     //#endif
@@ -69,6 +71,7 @@ public class ToDoByDecision extends ToDoPerspective
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Command
         //@#$LPS-LOGGING:Localization:StartMethod
+        //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 	LOG.debug("toDoItemChanged");
 	//#endif
         List<ToDoItem> items = tde.getToDoItemList();
@@ -110,6 +113,7 @@ public class ToDoByDecision extends ToDoPerspective
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Command
         //@#$LPS-LOGGING:Localization:StartMethod
+        //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 	LOG.debug("toDoItemAdded");
 	//#endif
 	List<ToDoItem> items = tde.getToDoItemList();
@@ -151,6 +155,7 @@ public class ToDoByDecision extends ToDoPerspective
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Command
         //@#$LPS-LOGGING:Localization:StartMethod
+        //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 	LOG.debug("toDoItemRemoved");
 	//#endif
 	List<ToDoItem> items = tde.getToDoItemList();
@@ -161,6 +166,7 @@ public class ToDoByDecision extends ToDoPerspective
                 .getDecisionList()) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 	    LOG.debug("toDoItemRemoved updating decision node!");
 	    //#endif
 	    boolean anyInDec = false;

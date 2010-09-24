@@ -32,7 +32,7 @@ import java.util.List;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
-//@#$LPS-LOGGING:Localization:NestedIfdef
+//@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.uml.diagram.sequence.MessageNode;
@@ -50,7 +50,7 @@ public class FigMessagePort extends ArgoFigGroup {
     private static final long serialVersionUID = -7805833566723101923L;
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
-    //@#$LPS-LOGGING:Localization:NestedIfdef
+    //@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
     private static final Logger LOG = Logger.getLogger(FigMessagePort.class);
     //#endif
     private MessageNode node;

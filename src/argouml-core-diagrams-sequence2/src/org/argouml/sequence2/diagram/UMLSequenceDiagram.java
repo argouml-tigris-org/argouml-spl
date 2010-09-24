@@ -34,7 +34,7 @@ import java.util.List;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
-//@#$LPS-LOGGING:Localization:NestedIfdef
+//@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.i18n.Translator;
@@ -67,7 +67,7 @@ public class UMLSequenceDiagram extends UMLDiagram {
     private Object[] actions;
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
-    //@#$LPS-LOGGING:Localization:NestedIfdef
+    //@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
     private static final Logger LOG = Logger
         .getLogger(UMLSequenceDiagram.class);
     //#endif
@@ -96,7 +96,7 @@ public class UMLSequenceDiagram extends UMLDiagram {
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Command
         //@#$LPS-LOGGING:Localization:EndMethod
-        //@#$LPS-LOGGING:Localization:NestedIfdef
+        //@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
         LOG.debug("Created sequence diagram");
         //#endif
     }
@@ -113,7 +113,7 @@ public class UMLSequenceDiagram extends UMLDiagram {
         } catch (PropertyVetoException e) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Command
-            //@#$LPS-LOGGING:Localization:NestedIfdef
+        	//@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
             LOG.error("Exception", e);
             //#endif
         }
@@ -234,6 +234,9 @@ public class UMLSequenceDiagram extends UMLDiagram {
      */
     private Object makeNewCR(Object base) {
         Object node = null;
+        //#if defined(COLLABORATIONDIAGRAM)
+        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
+        //@#$LPS-COLLABORATIONDIAGRAM:Localization:NestedIfdef-SEQUENCEDIAGRAM
         Editor ce = Globals.curEditor();
         GraphModel gm = ce.getGraphModel();
         if (gm instanceof SequenceDiagramGraphModel) {
@@ -243,11 +246,6 @@ public class UMLSequenceDiagram extends UMLDiagram {
                 Model.getCollaborationsFactory().buildClassifierRole(
                         collaboration);
         }
-        //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
-        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
-        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
-        //@#$LPS-COLLABORATIONDIAGRAM:Localization:BeforeReturn
-        //@#$LPS-SEQUENCEDIAGRAM:Localization:BeforeReturn            
         Model.getCollaborationsHelper().addBase(node, base);
         //#endif
         return node;
@@ -312,7 +310,7 @@ public class UMLSequenceDiagram extends UMLDiagram {
         }
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Command
-        //@#$LPS-LOGGING:Localization:NestedIfdef
+        //@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
         if (figNode != null) {
             LOG.debug("Dropped object " + droppedObject + " converted to " 
                     + figNode);
@@ -340,8 +338,9 @@ public class UMLSequenceDiagram extends UMLDiagram {
         return new ModePlaceClassifierRole(gf, instructions);
     }
 
-    //#if defined(STATEDIAGRAM)
-    //@#$LPS-STATEDIAGRAM:GranularityType:Method
+    //#if defined(COLLABORATIONDIAGRAM)
+    //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Method
+    //@#$LPS-COLLABORATIONDIAGRAM:Localization:NestedIfdef-SEQUENCEDIAGRAM
     public Object getCollaboration() {
         return ((SequenceDiagramGraphModel) getGraphModel()).getCollaboration();
     }
@@ -357,6 +356,7 @@ public class UMLSequenceDiagram extends UMLDiagram {
 	    
         //#if defined(COLLABORATIONDIAGRAM)
         //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
+        //@#$LPS-COLLABORATIONDIAGRAM:Localization:NestedIfdef-SEQUENCEDIAGRAM
         
         // See issue 5811. We have collaborationroles, associationroles
         // and messages and actions saved to the incorrect interaction and
@@ -389,7 +389,7 @@ public class UMLSequenceDiagram extends UMLDiagram {
                 	//#if defined(LOGGING)
                 	//@#$LPS-LOGGING:GranularityType:Command
                 	//@#$LPS-LOGGING:Localization:NestedCommand
-                    //@#$LPS-LOGGING:Localization:NestedIfdef
+                    //@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
                         LOG.warn("namespace of interaction does not match "
                                 + "collaboration - moving "
                                 + message + " to " + correctInteraction);
@@ -403,7 +403,7 @@ public class UMLSequenceDiagram extends UMLDiagram {
                             //#if defined(LOGGING)
                             //@#$LPS-LOGGING:GranularityType:Command
                             //@#$LPS-LOGGING:Localization:NestedCommand
-                            //@#$LPS-LOGGING:Localization:NestedIfdef
+                        	//@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
                             LOG.warn("Deleting empty interaction "
                                     + interaction);
                             //#endif
@@ -414,7 +414,7 @@ public class UMLSequenceDiagram extends UMLDiagram {
                         	//#if defined(LOGGING)
                         	//@#$LPS-LOGGING:GranularityType:Command
                         	//@#$LPS-LOGGING:Localization:NestedCommand
-                            //@#$LPS-LOGGING:Localization:NestedIfdef
+                            //@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
                                 LOG.warn("Deleting empty collaboration "
                                         + context);
                                 //#endif
@@ -429,7 +429,7 @@ public class UMLSequenceDiagram extends UMLDiagram {
                 	//#if defined(LOGGING)
                 	//@#$LPS-LOGGING:GranularityType:Command
                 	//@#$LPS-LOGGING:Localization:NestedCommand
-                    //@#$LPS-LOGGING:Localization:NestedIfdef
+                    	//@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
                         LOG.warn("namespace of classifierrole does not match "
                                 + "collaboration - moving "
                                 + cr + " to " + collaboration);
@@ -451,7 +451,7 @@ public class UMLSequenceDiagram extends UMLDiagram {
                             //#if defined(LOGGING)
                             //@#$LPS-LOGGING:GranularityType:Command
                             //@#$LPS-LOGGING:Localization:NestedCommand
-                        	//@#$LPS-LOGGING:Localization:NestedIfdef
+                        	//@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
                             LOG.warn("Deleting empty collaboration "
                                     + collaboration);
                             //#endif

@@ -29,6 +29,7 @@ package org.argouml.application;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
+//@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.application.api.Argo;
@@ -49,6 +50,7 @@ import org.argouml.uml.cognitive.critics.InitCognitiveCritics;
 public class StartCritics implements Runnable {
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
+    //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
     /**
      * Logger.
      */
@@ -74,6 +76,7 @@ public class StartCritics implements Runnable {
         }
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
         LOG.info("spawned critiquing thread");
         //#endif
         dsgr.getDecisionModel().startConsidering(UMLDecision.CLASS_SELECTION);

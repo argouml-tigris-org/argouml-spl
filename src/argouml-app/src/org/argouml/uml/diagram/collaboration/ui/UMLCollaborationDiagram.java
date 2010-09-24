@@ -38,7 +38,7 @@ import javax.swing.Action;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
-//@#$LPS-LOGGING:Localization:NestedIfdef
+//@#$LPS-LOGGING:Localization:NestedIfdef-COLLABORATIONDIAGRAM
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.i18n.Translator;
@@ -75,7 +75,7 @@ import org.tigris.gef.presentation.FigNode;
 public class UMLCollaborationDiagram extends UMLDiagram {
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
-    //@#$LPS-LOGGING:Localization:NestedIfdef
+    //@#$LPS-LOGGING:Localization:NestedIfdef-COLLABORATIONDIAGRAM
     /**
      * Logging.
      */
@@ -167,7 +167,7 @@ public class UMLCollaborationDiagram extends UMLDiagram {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Command
             //@#$LPS-LOGGING:Localization:NestedCommand
-            //@#$LPS-LOGGING:Localization:NestedIfdef
+            //@#$LPS-LOGGING:Localization:NestedIfdef-COLLABORATIONDIAGRAM
             LOG.error(
                 "Illegal argument. Object " + handle + " is not a namespace");
             //#endif
@@ -490,13 +490,8 @@ public class UMLCollaborationDiagram extends UMLDiagram {
                 Model.getCollaborationsFactory().buildClassifierRole(
                         collaboration);
           }
-        //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
-        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
-        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
-        //@#$LPS-COLLABORATIONDIAGRAM:Localization:BeforeReturn
-        //@#$LPS-SEQUENCEDIAGRAM:Localization:BeforeReturn          
+       
         Model.getCollaborationsHelper().addBase(node, base);
-        //#endif
         return node;
     }
     
@@ -546,7 +541,7 @@ public class UMLCollaborationDiagram extends UMLDiagram {
         }
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Command
-        //@#$LPS-LOGGING:Localization:NestedIfdef
+        //@#$LPS-LOGGING:Localization:NestedIfdef-COLLABORATIONDIAGRAM
         if (figNode != null) {            
             LOG.debug("Dropped object " + droppedObject + " converted to " 
                     + figNode);

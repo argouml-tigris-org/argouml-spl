@@ -31,6 +31,7 @@ import java.util.List;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
+//@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.cognitive.Designer;
@@ -47,6 +48,7 @@ public class ToDoByOffender extends ToDoPerspective
         implements ToDoListListener {
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
+    //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
     private static final Logger LOG = Logger.getLogger(ToDoByOffender.class);
     //#endif
     /**
@@ -68,6 +70,7 @@ public class ToDoByOffender extends ToDoPerspective
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Command
         //@#$LPS-LOGGING:Localization:StartMethod
+        //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
         LOG.debug("toDoItemsChanged");
         //#endif
         List<ToDoItem> items = tde.getToDoItemList();
@@ -119,6 +122,7 @@ public class ToDoByOffender extends ToDoPerspective
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Command
         //@#$LPS-LOGGING:Localization:StartMethod
+        //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
         LOG.debug("toDoItemAdded");
         //#endif
         List<ToDoItem> items = tde.getToDoItemList();
@@ -172,6 +176,7 @@ public class ToDoByOffender extends ToDoPerspective
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Command
         //@#$LPS-LOGGING:Localization:StartMethod
+        //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
         LOG.debug("toDoItemRemoved");
         //#endif
         List<ToDoItem> items = tde.getToDoItemList();
@@ -198,6 +203,7 @@ public class ToDoByOffender extends ToDoPerspective
                 }
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE       
                 LOG.debug("toDoItemRemoved updating PriorityNode");
                 //#endif
                 path[1] = off;

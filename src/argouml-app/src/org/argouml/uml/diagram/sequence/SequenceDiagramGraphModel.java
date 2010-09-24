@@ -36,7 +36,7 @@ import java.util.List;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
-//@#$LPS-LOGGING:Localization:NestedIfdef
+//@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.model.DeleteInstanceEvent;
@@ -61,7 +61,7 @@ public class SequenceDiagramGraphModel
     implements VetoableChangeListener, PropertyChangeListener {
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
-    //@#$LPS-LOGGING:Localization:NestedIfdef
+    //@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
     /**
      * Logger.
      */
@@ -182,6 +182,7 @@ public class SequenceDiagramGraphModel
             //@#$LPS-LOGGING:GranularityType:Command
             //@#$LPS-LOGGING:Localization:NestedCommand
             //@#$LPS-LOGGING:Localization:BeforeReturn
+            //@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
             LOG.error("Edge rejected. Its ends are not attached to anything");
             //#endif
             return false;
@@ -192,6 +193,7 @@ public class SequenceDiagramGraphModel
             //@#$LPS-LOGGING:GranularityType:Command
             //@#$LPS-LOGGING:Localization:NestedCommand
             //@#$LPS-LOGGING:Localization:BeforeReturn
+            //@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
             LOG.error("Edge rejected. Its source end is attached to "
                     + end0
                     + " but this is not in the graph model");
@@ -202,7 +204,7 @@ public class SequenceDiagramGraphModel
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Command
             //@#$LPS-LOGGING:Localization:BeforeReturn
-            //@#$LPS-LOGGING:Localization:NestedIfdef
+            //@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
             LOG.error("Edge rejected. Its destination end is attached to "
                     + end1
                     + " but this is not in the graph model");
@@ -403,7 +405,7 @@ public class SequenceDiagramGraphModel
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Command
         //@#$LPS-LOGGING:Localization:BeforeReturn
-        //@#$LPS-LOGGING:Localization:NestedIfdef
+        //@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
         if (edge == null) {            
             LOG.debug("Incorrect edge");
         }

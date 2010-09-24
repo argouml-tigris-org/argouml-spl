@@ -30,7 +30,7 @@ import java.util.Map;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
-//@#$LPS-LOGGING:Localization:NestedIfdef
+//@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.model.Model;
@@ -53,8 +53,8 @@ import org.tigris.gef.presentation.FigNode;
  */
 class SequenceDiagramRenderer extends UmlDiagramRenderer {
     //#if defined(LOGGING)
-    //@#$LPS-LOGGING:Localization:NestedIfdef
     //@#$LPS-LOGGING:GranularityType:Field
+	//@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
     /**
      * Logger.
      */
@@ -79,6 +79,7 @@ class SequenceDiagramRenderer extends UmlDiagramRenderer {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Command
             //@#$LPS-LOGGING:Localization:NestedCommand
+        	//@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
             LOG.warn("SequenceDiagramRenderer getFigNodeFor unexpected node " 
                     + node);
             //#endif
@@ -86,7 +87,7 @@ class SequenceDiagramRenderer extends UmlDiagramRenderer {
         }
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Command
-        //@#$LPS-LOGGING:Localization:NestedIfdef
+        //@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
         LOG.debug("SequenceDiagramRenderer getFigNodeFor " + result);
         //#endif
         lay.add(result);

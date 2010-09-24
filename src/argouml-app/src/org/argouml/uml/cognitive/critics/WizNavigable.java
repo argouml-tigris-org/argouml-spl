@@ -34,6 +34,8 @@ import javax.swing.JPanel;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
+//@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
+//@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.cognitive.ui.WizStepChoice;
@@ -47,6 +49,7 @@ import org.argouml.model.Model;
 public class WizNavigable extends UMLWizard {
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
+    //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
     /**
      * Logger.
      */
@@ -125,6 +128,7 @@ public class WizNavigable extends UMLWizard {
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Command
         //@#$LPS-LOGGING:Localization:StartMethod
+        //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 	LOG.debug("doAction " + oldStep);
 	//#endif
 	switch (oldStep) {
@@ -150,6 +154,7 @@ public class WizNavigable extends UMLWizard {
 	        //#if defined(LOGGING)
 	        //@#$LPS-LOGGING:GranularityType:Command
 	        //@#$LPS-LOGGING:Localization:NestedCommand
+	        //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 		LOG.error("could not set navigablity", pve);
 		//#endif
 	    }

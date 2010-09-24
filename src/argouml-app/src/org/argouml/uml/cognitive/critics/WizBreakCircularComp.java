@@ -36,6 +36,7 @@ import javax.swing.JPanel;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
+//@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.cognitive.ListSet;
@@ -52,6 +53,7 @@ import org.argouml.model.Model;
 public class WizBreakCircularComp extends UMLWizard {
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
+    //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
     private static final Logger LOG =
 	Logger.getLogger(WizBreakCircularComp.class);
     //#endif
@@ -167,6 +169,7 @@ public class WizBreakCircularComp extends UMLWizard {
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Command
         //@#$LPS-LOGGING:Localization:StartMethod
+        //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 	LOG.debug("doAction " + oldStep);
 	//#endif
 	int choice = -1;
@@ -216,6 +219,7 @@ public class WizBreakCircularComp extends UMLWizard {
 		    //#if defined(LOGGING)
 		    //@#$LPS-LOGGING:GranularityType:Command
 		    //@#$LPS-LOGGING:Localization:NestedCommand
+		    //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 		    LOG.error("could not set aggregation", pve);
 		    //#endif
 		}

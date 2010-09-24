@@ -28,7 +28,7 @@ package org.argouml.uml.ui;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
-//@#$LPS-LOGGING:Localization:NestedIfdef
+//@#$LPS-LOGGING:Localization:NestedIfdef-USECASEDIAGRAM
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.model.Model;
@@ -42,7 +42,7 @@ import org.argouml.uml.diagram.DiagramSettings;
 public class ActionUseCaseDiagram extends ActionAddDiagram {
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
-    //@#$LPS-LOGGING:Localization:NestedIfdef
+    //@#$LPS-LOGGING:Localization:NestedIfdef-USECASEDIAGRAM
     private static final Logger LOG =
         Logger.getLogger(ActionUseCaseDiagram.class);
     //#endif
@@ -65,6 +65,7 @@ public class ActionUseCaseDiagram extends ActionAddDiagram {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Command
             //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedIfdef-USECASEDIAGRAM
             LOG.error("No namespace as argument");
             LOG.error(namespace);
             //#endif
@@ -88,6 +89,7 @@ public class ActionUseCaseDiagram extends ActionAddDiagram {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Command
             //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedIfdef-USECASEDIAGRAM
             LOG.error("No namespace as argument");
             LOG.error(namespace);
             //#endif

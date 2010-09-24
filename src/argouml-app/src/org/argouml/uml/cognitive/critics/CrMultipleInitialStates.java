@@ -34,6 +34,7 @@ import java.util.Set;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
+//@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.cognitive.Designer;
@@ -51,6 +52,7 @@ import org.argouml.uml.cognitive.UMLToDoItem;
 public class CrMultipleInitialStates extends CrUML {
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
+    //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
     /**
      * Logger.
      */
@@ -89,6 +91,7 @@ public class CrMultipleInitialStates extends CrUML {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Command
             //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
             LOG.debug("null parent state");
             //#endif
             return NO_PROBLEM;
@@ -132,6 +135,7 @@ public class CrMultipleInitialStates extends CrUML {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Command
             //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
             LOG.debug("null parent in still valid");
             //#endif
             return offs;

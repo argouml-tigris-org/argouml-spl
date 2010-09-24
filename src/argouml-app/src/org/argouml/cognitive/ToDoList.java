@@ -40,6 +40,7 @@ import javax.swing.event.EventListenerList;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
+//@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.i18n.Translator;
@@ -76,6 +77,7 @@ import org.argouml.model.InvalidElementException;
 public class ToDoList extends Observable implements Runnable {
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
+    //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
     /**
      * Logger.
      */
@@ -182,6 +184,7 @@ public class ToDoList extends Observable implements Runnable {
                         //#if defined(LOGGING)
                         //@#$LPS-LOGGING:GranularityType:Command
                         //@#$LPS-LOGGING:Localization:NestedCommand
+                        //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
                         LOG.error("InterruptedException!!!", ignore);
                         //#endif                        
                     }
@@ -195,6 +198,7 @@ public class ToDoList extends Observable implements Runnable {
             } catch (InterruptedException ignore) {
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
                 LOG.error("InterruptedException!!!", ignore);
                 //#endif
             }
@@ -247,6 +251,7 @@ public class ToDoList extends Observable implements Runnable {
                     //#if defined(LOGGING)
                     //@#$LPS-LOGGING:GranularityType:Command
                     //@#$LPS-LOGGING:Localization:NestedCommand
+                    //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
                     LOG.error(buf.toString(), ex);
                     //#endif
                 }
@@ -470,6 +475,7 @@ public class ToDoList extends Observable implements Runnable {
                         //#if defined(LOGGING)
                         //@#$LPS-LOGGING:GranularityType:Command
                         //@#$LPS-LOGGING:Localization:NestedCommand
+                        //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
                         LOG.debug("ToDoItem not added because it was resolved");
                         //#endif
                         return;
@@ -598,6 +604,7 @@ public class ToDoList extends Observable implements Runnable {
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Command
         //@#$LPS-LOGGING:Localization:StartMethod
+        //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
         LOG.debug("removing all todo items");
         //#endif
         List<ToDoItem> oldItems = new ArrayList<ToDoItem>(items);

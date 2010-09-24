@@ -314,9 +314,10 @@ public class ActionDeleteModelElements extends UndoableAction {
             return Model.getFacade().getOtherAssociationEnds(target).size() > 1;
         }
         //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
-        //@#$LPS-STATEDIAGRAM:GranularityType:Method
-        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Method
-        
+        //@#$LPS-STATEDIAGRAM:GranularityType:Command
+        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
+        //@#$LPS-STATEDIAGRAM:Localization:BeforeReturn
+        //@#$LPS-ACTIVITYDIAGRAM:Localization:BeforeReturn
         if (Model.getStateMachinesHelper().isTopState(target)) {
             /* we can not delete a "top" state,
              * it comes and goes with the statemachine. Issue 2655.

@@ -195,7 +195,6 @@ public class StateBodyNotationUml extends StateBodyNotation {
                     parseStateDoAction(st, line);
                     foundDo = true;
                 } 
-                //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
                 else {
                     Object t =
                         Model.getStateMachinesFactory()
@@ -215,7 +214,6 @@ public class StateBodyNotationUml extends StateBodyNotation {
                     /* Add this new one, and mark it to be retained: */
                     internalsInfo.add(t, true);
                 }
-                //#endif
             }
         }
 

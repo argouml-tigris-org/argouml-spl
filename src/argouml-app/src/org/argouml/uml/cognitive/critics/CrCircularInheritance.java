@@ -32,6 +32,7 @@ import java.util.Set;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
+//@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.cognitive.Critic;
@@ -51,7 +52,8 @@ import org.argouml.uml.cognitive.UMLDecision;
  */
 public class CrCircularInheritance extends CrUML {
     //#if defined(LOGGING)
-    //@#$LPS-LOGGING:GranularityType:Field
+    //@#$LPS-LOGGING:GranularityType:Field3
+    //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
     /**
      * Logger.
      */
@@ -84,6 +86,7 @@ public class CrCircularInheritance extends CrUML {
 		//#if defined(LOGGING)
 		//@#$LPS-LOGGING:GranularityType:Command
 		//@#$LPS-LOGGING:Localization:NestedCommand
+		//@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
                 LOG.info("problem found for: " + this);
                 //#endif
 	    }

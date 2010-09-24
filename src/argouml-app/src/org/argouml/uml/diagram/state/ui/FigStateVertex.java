@@ -176,6 +176,7 @@ public abstract class FigStateVertex extends FigNodeModelElement {
             }
             //#if defined(STATEDIAGRAM)
             //@#$LPS-STATEDIAGRAM:GranularityType:Command
+            //@#$LPS-STATEDIAGRAM:Localization:NestedIfdef-ACTIVITYDIAGRAM
             return new SelectionState(this);
             //#endif
         }

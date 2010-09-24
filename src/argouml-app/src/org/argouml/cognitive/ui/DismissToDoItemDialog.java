@@ -43,6 +43,7 @@ import javax.swing.JTextArea;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
+//@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.cognitive.Designer;
@@ -60,6 +61,7 @@ import org.tigris.swidgets.Dialog;
 public class DismissToDoItemDialog extends ArgoDialog {
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
+    //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
     private static final Logger LOG =
         Logger.getLogger(DismissToDoItemDialog.class);
     //#endif
@@ -165,8 +167,9 @@ public class DismissToDoItemDialog extends ArgoDialog {
                     explain(e);
                 }
                 //#if defined(LOGGING)
+                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
                 else {                    
-                    //@#$LPS-LOGGING:GranularityType:Command
                     LOG.warn("DissmissToDoItemDialog: Unknown action: " + e);                   
                 }
                 //#endif
@@ -247,6 +250,7 @@ public class DismissToDoItemDialog extends ArgoDialog {
         catch (UnresolvableException ure) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
             LOG.error("Resolve failed (ure): ", ure);
             //#endif
             JOptionPane.showMessageDialog(

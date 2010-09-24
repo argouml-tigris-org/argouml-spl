@@ -28,6 +28,7 @@ package org.argouml.sequence2;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
+//@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.moduleloader.ModuleInterface;
@@ -51,6 +52,7 @@ import org.argouml.uml.ui.PropPanelFactoryManager;
 public class SequenceDiagramModule implements ModuleInterface {
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
+	//@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
     private static final Logger LOG = Logger
             .getLogger(SequenceDiagramModule.class);
     //#endif
@@ -112,6 +114,7 @@ public class SequenceDiagramModule implements ModuleInterface {
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Command
         //@#$LPS-LOGGING:Localization:BeforeReturn
+        //@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
         LOG.info("SequenceDiagram Module enabled.");
         //#endif
         return true;
@@ -128,6 +131,7 @@ public class SequenceDiagramModule implements ModuleInterface {
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Command
         //@#$LPS-LOGGING:Localization:BeforeReturn
+        //@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
         LOG.info("SequenceDiagram Module disabled.");
         //#endif
         return true;

@@ -32,6 +32,7 @@ import java.util.List;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
+//@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.util.ItemUID;
@@ -47,6 +48,7 @@ import org.argouml.util.ItemUID;
 public class ResolvedCritic {
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
+    //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
     /**
      * The logger.
      */
@@ -260,6 +262,7 @@ public class ResolvedCritic {
 		//#if defined(LOGGING)
 		//@#$LPS-LOGGING:GranularityType:Command
 		//@#$LPS-LOGGING:Localization:NestedCommand
+		//@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 		LOG.warn("Offender " + obj.getClass() + " unresolvable");
 		//#endif
 		// Use this for fast fail instead.

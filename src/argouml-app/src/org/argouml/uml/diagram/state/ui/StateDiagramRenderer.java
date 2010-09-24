@@ -32,6 +32,8 @@ import java.util.Map;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
+//@#$LPS-LOGGING:Localization:NestedIfdef-STATEDIAGRAM
+//@#$LPS-LOGGING:Localization:NestedIfdef-ACTIVITYDIAGRAM
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.model.Model;
@@ -77,6 +79,8 @@ import org.tigris.gef.presentation.FigNode;
 public class StateDiagramRenderer extends UmlDiagramRenderer {
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
+    //@#$LPS-LOGGING:Localization:NestedIfdef-STATEDIAGRAM
+    //@#$LPS-LOGGING:Localization:NestedIfdef-ACTIVITYDIAGRAM
     private static final Logger LOG =
         Logger.getLogger(StateDiagramRenderer.class);
     //#endif
@@ -101,6 +105,8 @@ public class StateDiagramRenderer extends UmlDiagramRenderer {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Command
             //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedIfdef-STATEDIAGRAM
+            //@#$LPS-LOGGING:Localization:NestedIfdef-ACTIVITYDIAGRAM
             LOG.debug("TODO: StateDiagramRenderer getFigNodeFor");
             //#endif
             throw new IllegalArgumentException(
@@ -135,6 +141,8 @@ public class StateDiagramRenderer extends UmlDiagramRenderer {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Command
             //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedIfdef-STATEDIAGRAM
+            //@#$LPS-LOGGING:Localization:NestedIfdef-ACTIVITYDIAGRAM
             LOG.debug("TODO: StateDiagramRenderer getFigEdgeFor");
             //#endif
             return null;

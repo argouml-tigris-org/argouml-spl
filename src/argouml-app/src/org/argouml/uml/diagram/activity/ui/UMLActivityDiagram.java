@@ -43,6 +43,7 @@ import javax.swing.Action;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
+//@#$LPS-LOGGING:Localization:NestedIfdef-ACTIVITYDIAGRAM
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.i18n.Translator;
@@ -55,6 +56,7 @@ import org.argouml.uml.diagram.UMLMutableGraphSupport;
 import org.argouml.uml.diagram.activity.ActivityDiagramGraphModel;
 //#if defined(STATEDIAGRAM)
 //@#$LPS-STATEDIAGRAM:GranularityType:Import
+//@#$LPS-STATEDIAGRAM:Localization:NestedIfdef-ACTIVITYDIAGRAM
 import org.argouml.uml.diagram.state.StateDiagramGraphModel;
 import org.argouml.uml.diagram.state.ui.ActionCreatePseudostate;
 import org.argouml.uml.diagram.state.ui.ButtonActionNewCallEvent;
@@ -66,6 +68,7 @@ import org.argouml.uml.diagram.state.ui.FigBranchState;
 import org.argouml.uml.diagram.state.ui.FigFinalState;
 //#if defined(STATEDIAGRAM)
 //@#$LPS-STATEDIAGRAM:GranularityType:Import
+//@#$LPS-STATEDIAGRAM:Localization:NestedIfdef-ACTIVITYDIAGRAM
 import org.argouml.uml.diagram.state.ui.FigForkState;
 import org.argouml.uml.diagram.state.ui.FigInitialState;
 import org.argouml.uml.diagram.state.ui.FigJoinState;
@@ -101,6 +104,7 @@ import org.tigris.gef.presentation.FigNode;
 public class UMLActivityDiagram extends UMLDiagram {
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
+    //@#$LPS-LOGGING:Localization:NestedIfdef-ACTIVITYDIAGRAM
     /**
      * Logger.
      */
@@ -332,6 +336,7 @@ public class UMLActivityDiagram extends UMLDiagram {
         //@#$LPS-STATEDIAGRAM:GranularityType:Command
         //@#$LPS-STATEDIAGRAM:Localization:StartMethod
         //@#$LPS-STATEDIAGRAM:Localization:BeforeReturn
+        //@#$LPS-STATEDIAGRAM:Localization:NestedIfdef-ACTIVITYDIAGRAM
         GraphModel gm = getGraphModel();
         if (gm instanceof StateDiagramGraphModel) {
             Object machine = ((StateDiagramGraphModel) gm).getMachine();
@@ -370,11 +375,13 @@ public class UMLActivityDiagram extends UMLDiagram {
 	    null,
 	    //#if defined(STATEDIAGRAM)
 	    //@#$LPS-STATEDIAGRAM:GranularityType:StaticInitialization
+	    //@#$LPS-STATEDIAGRAM:Localization:NestedIfdef-ACTIVITYDIAGRAM
 	    getActionStartPseudoState(),
 	    //#endif
 	    getActionFinalPseudoState(),
 	    //#if defined(STATEDIAGRAM)
 	    //@#$LPS-STATEDIAGRAM:GranularityType:StaticInitialization
+	    //@#$LPS-STATEDIAGRAM:Localization:NestedIfdef-ACTIVITYDIAGRAM
 	    getActionJunctionPseudoState(),
 	    getActionForkPseudoState(),
 	    getActionJoinPseudoState(),
@@ -387,6 +394,7 @@ public class UMLActivityDiagram extends UMLDiagram {
             null,
             //#if defined(STATEDIAGRAM)
             //@#$LPS-STATEDIAGRAM:GranularityType:StaticInitialization
+            //@#$LPS-STATEDIAGRAM:Localization:NestedIfdef-ACTIVITYDIAGRAM
             getTriggerActions(),
             //#endif
             getActionGuard(),
@@ -396,6 +404,7 @@ public class UMLActivityDiagram extends UMLDiagram {
     }
     //#if defined(STATEDIAGRAM)
     //@#$LPS-STATEDIAGRAM:GranularityType:Method
+    //@#$LPS-STATEDIAGRAM:Localization:NestedIfdef-ACTIVITYDIAGRAM
     protected Object[] getTriggerActions() {
         Object[] actions = {
             getActionCallEvent(),
@@ -458,6 +467,7 @@ public class UMLActivityDiagram extends UMLDiagram {
     }
     //#if defined(STATEDIAGRAM)
     //@#$LPS-STATEDIAGRAM:GranularityType:Method
+    //@#$LPS-STATEDIAGRAM:Localization:NestedIfdef-ACTIVITYDIAGRAM
     /**
      * @return Returns the actionForkPseudoState.
      */
@@ -472,6 +482,7 @@ public class UMLActivityDiagram extends UMLDiagram {
         return actionForkPseudoState;
     }
     //@#$LPS-STATEDIAGRAM:GranularityType:Method
+    //@#$LPS-STATEDIAGRAM:Localization:NestedIfdef-ACTIVITYDIAGRAM
     /**
      * @return Returns the actionJoinPseudoState.
      */
@@ -486,6 +497,7 @@ public class UMLActivityDiagram extends UMLDiagram {
         return actionJoinPseudoState;
     }
     //@#$LPS-STATEDIAGRAM:GranularityType:Method
+    //@#$LPS-STATEDIAGRAM:Localization:NestedIfdef-ACTIVITYDIAGRAM
     /**
      * @return Returns the actionJunctionPseudoState.
      */
@@ -525,6 +537,7 @@ public class UMLActivityDiagram extends UMLDiagram {
     }
     //#if defined(STATEDIAGRAM)
     //@#$LPS-STATEDIAGRAM:GranularityType:Method
+    //@#$LPS-STATEDIAGRAM:Localization:NestedIfdef-ACTIVITYDIAGRAM
     /**
      * @return Returns the actionStartPseudoState.
      */
@@ -583,6 +596,7 @@ public class UMLActivityDiagram extends UMLDiagram {
     
     //#if defined(STATEDIAGRAM)
     //@#$LPS-STATEDIAGRAM:GranularityType:Method
+    //@#$LPS-STATEDIAGRAM:Localization:NestedIfdef-ACTIVITYDIAGRAM
     /**
      * @return Returns the actionCallEvent.
      */
@@ -593,6 +607,7 @@ public class UMLActivityDiagram extends UMLDiagram {
         return actionCallEvent;
     }
     //@#$LPS-STATEDIAGRAM:GranularityType:Method
+    //@#$LPS-STATEDIAGRAM:Localization:NestedIfdef-ACTIVITYDIAGRAM
     /**
      * @return Returns the actionCallEvent.
      */
@@ -603,6 +618,7 @@ public class UMLActivityDiagram extends UMLDiagram {
         return actionChangeEvent;
     }
     //@#$LPS-STATEDIAGRAM:GranularityType:Method
+    //@#$LPS-STATEDIAGRAM:Localization:NestedIfdef-ACTIVITYDIAGRAM
     /**
      * @return Returns the actionCallEvent.
      */
@@ -613,6 +629,7 @@ public class UMLActivityDiagram extends UMLDiagram {
         return actionSignalEvent;
     }
     //@#$LPS-STATEDIAGRAM:GranularityType:Method
+    //@#$LPS-STATEDIAGRAM:Localization:NestedIfdef-ACTIVITYDIAGRAM
     /**
      * @return Returns the actionCallEvent.
      */
@@ -780,6 +797,7 @@ public class UMLActivityDiagram extends UMLDiagram {
 	
 	if (//#if defined(STATEDIAGRAM)
 	        //@#$LPS-STATEDIAGRAM:GranularityType:Expression
+	        //@#$LPS-STATEDIAGRAM:Localization:NestedIfdef-ACTIVITYDIAGRAM
 	        enclosed instanceof FigStateVertex  
 		|| 
 		//#endif
@@ -829,6 +847,7 @@ public class UMLActivityDiagram extends UMLDiagram {
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Command
                 //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedIfdef-ACTIVITYDIAGRAM
                 LOG.warn("found a null type pseudostate");
                 //#endif
                 return false;
@@ -876,6 +895,7 @@ public class UMLActivityDiagram extends UMLDiagram {
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Command
                 //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedIfdef-ACTIVITYDIAGRAM
                 LOG.warn("found a null type pseudostate");
                 //#endif
                 return null;
@@ -883,6 +903,7 @@ public class UMLActivityDiagram extends UMLDiagram {
             //#if defined(STATEDIAGRAM)
             //@#$LPS-STATEDIAGRAM:GranularityType:Command     
             //@#$LPS-STATEDIAGRAM:Localization:NestedCommand
+            //@#$LPS-STATEDIAGRAM:Localization:NestedIfdef-ACTIVITYDIAGRAM
             if (kind.equals(Model.getPseudostateKind().getInitial())) {
                 figNode = new FigInitialState(droppedObject, bounds, settings);
             } else if (kind.equals(
@@ -901,6 +922,7 @@ public class UMLActivityDiagram extends UMLDiagram {
             //#endif
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:Localization:NestedIfdef-ACTIVITYDIAGRAM
             else {
                 LOG.warn("found a type not known");
             }
@@ -917,14 +939,15 @@ public class UMLActivityDiagram extends UMLDiagram {
             }
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:Localization:NestedIfdef-ACTIVITYDIAGRAM
             LOG.debug("Dropped object " + droppedObject + " converted to " 
                     + figNode);
             //#endif
         } 
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:Localization:NestedIfdef-ACTIVITYDIAGRAM
         else {
-            //@#$LPS-LOGGING:GranularityType:Command
             LOG.debug("Dropped object NOT added. This usualy means that this " 
                     + "type of object is not accepted!");
         }

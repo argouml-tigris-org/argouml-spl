@@ -109,11 +109,9 @@ public class ActionAddMessage extends UndoableAction {
      *                        must be added
      */
     private void addMessage(Object associationrole) {
-        //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
-        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Method
-        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Method
+        //#if defined(COLLABORATIONDIAGRAM)
+        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:MethodBody
         //@#$LPS-COLLABORATIONDIAGRAM:Localization:EntireMethod
-        //@#$LPS-SEQUENCEDIAGRAM:Localization:EntireMethod
         Object collaboration = Model.getFacade().getNamespace(associationrole);
         Object message =
             Model.getCollaborationsFactory()

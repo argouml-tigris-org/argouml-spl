@@ -32,6 +32,7 @@ import java.util.List;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
+//@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.cognitive.ToDoItem;
@@ -45,6 +46,7 @@ import org.argouml.ui.TreeModelComposite;
 public abstract class ToDoPerspective extends TreeModelComposite {
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
+    //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
     /**
      * Logger.
      */
@@ -158,6 +160,7 @@ public abstract class ToDoPerspective extends TreeModelComposite {
 	}
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
         LOG.debug("addFlatChildren");
         //#endif
         // hack for to do items only, should check isLeaf(node), but that

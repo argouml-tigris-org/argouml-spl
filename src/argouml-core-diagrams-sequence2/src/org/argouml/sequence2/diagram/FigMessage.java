@@ -41,7 +41,7 @@ import javax.swing.JSeparator;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
-//@#$LPS-LOGGING:Localization:NestedIfdef
+//@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.model.Model;
@@ -72,7 +72,7 @@ public class FigMessage extends FigEdgeModelElement {
     private static final long serialVersionUID = -2961220746360335159L;
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
-    //@#$LPS-LOGGING:Localization:NestedIfdef
+    //@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
     private static final Logger LOG =
         Logger.getLogger(FigEdgeModelElement.class);
     //#endif
@@ -446,7 +446,7 @@ public class FigMessage extends FigEdgeModelElement {
             // This call seems not very robust. Yet to determine cause.
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Command
-        	//@#$LPS-LOGGING:Localization:NestedIfdef
+        	//@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
             LOG.error("Exception caught", e);
             //#endif
         }
@@ -489,15 +489,11 @@ public class FigMessage extends FigEdgeModelElement {
                     && messageFig.getDestNode() == fcr) {
                 activator = messageFig.getOwner();
             } 
-            //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
-            //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
-            //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
             else if (messageFig == this) {
                 Model.getCollaborationsHelper().setActivator(
                         getOwner(), activator);
                 return activator;
             } 
-            //#endif
             else if (messageFig.isReturnAction()) {
                 activator = null;
             }

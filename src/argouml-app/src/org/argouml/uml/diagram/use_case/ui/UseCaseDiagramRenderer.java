@@ -30,6 +30,7 @@ import java.util.Map;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
+//@#$LPS-LOGGING:Localization:NestedIfdef-USECASEDIAGRAM
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.model.Model;
@@ -81,6 +82,7 @@ public class UseCaseDiagramRenderer extends UmlDiagramRenderer {
     static final long serialVersionUID = 2217410137377934879L;
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
+    //@#$LPS-LOGGING:Localization:NestedIfdef-USECASEDIAGRAM
     /**
      * Logger.
      */
@@ -119,6 +121,7 @@ public class UseCaseDiagramRenderer extends UmlDiagramRenderer {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Command
             //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedIfdef-USECASEDIAGRAM
             LOG.debug(this.getClass().toString()
                   + ": getFigNodeFor(" + gm.toString() + ", "
                   + lay.toString() + ", " + node.toString()
@@ -163,6 +166,7 @@ public class UseCaseDiagramRenderer extends UmlDiagramRenderer {
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Command
         //@#$LPS-LOGGING:Localization:StartMethod
+        //@#$LPS-LOGGING:Localization:NestedIfdef-USECASEDIAGRAM
         if (LOG.isDebugEnabled()) {
             LOG.debug("making figedge for " + edge);
         }

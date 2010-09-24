@@ -36,7 +36,7 @@ import java.util.List;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
-//@#$LPS-LOGGING:Localization:NestedIfdef
+//@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.model.Model;
@@ -57,7 +57,7 @@ import org.tigris.gef.presentation.FigRect;
 public class FigClassifierRole extends FigNodeModelElement {
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
-	//@#$LPS-LOGGING:Localization:NestedIfdef
+	//@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
     private static final Logger LOG = Logger.getLogger(FigClassifierRole.class);
     //#endif
     /**

@@ -57,8 +57,8 @@ public class UMLClassifierRoleAvailableContentsListModel
      */
     protected void buildModelList() {
         //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
-        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
-        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
+        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:MethodBody
+        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:MethodBody
         //@#$LPS-COLLABORATIONDIAGRAM:Localization:EntireMethod
         //@#$LPS-SEQUENCEDIAGRAM:Localization:EntireMethod
         setAllElements(

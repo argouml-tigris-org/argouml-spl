@@ -113,16 +113,10 @@ public abstract class FigState extends FigStateVertex {
 
         NotationName notation = Notation.findNotation(
                 getNotationSettings().getNotationLanguage());
-        //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
-        //@#$LPS-STATEDIAGRAM:GranularityType:Command
-        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
-        //@#$LPS-STATEDIAGRAM:Localization:EndMethod
-        //@#$LPS-ACTIVITYDIAGRAM:Localization:EndMethod         
         notationProviderBody =
             NotationProviderFactory2.getInstance().getNotationProvider(
                     NotationProviderFactory2.TYPE_STATEBODY, getOwner(), this, 
                     notation);
-        //#endif
     }
 
     private void initializeState() {
@@ -174,18 +168,13 @@ public abstract class FigState extends FigStateVertex {
         super.initNotationProviders(own);
         NotationName notation = Notation.findNotation(
                 getNotationSettings().getNotationLanguage());
-        //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
-        //@#$LPS-STATEDIAGRAM:GranularityType:Command
-        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
-        //@#$LPS-STATEDIAGRAM:Localization:EndMethod
-        //@#$LPS-ACTIVITYDIAGRAM:Localization:EndMethod 
+
         if (Model.getFacade().isAState(own)) {
             notationProviderBody =
                 NotationProviderFactory2.getInstance().getNotationProvider(
                         NotationProviderFactory2.TYPE_STATEBODY, own, this, 
                         notation);
         }
-        //#endif
     }
 
     /*

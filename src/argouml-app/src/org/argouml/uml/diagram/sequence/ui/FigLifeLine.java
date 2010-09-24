@@ -36,7 +36,7 @@ import java.util.StringTokenizer;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
-//@#$LPS-LOGGING:Localization:NestedIfdef
+//@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.uml.diagram.sequence.MessageNode;
@@ -60,7 +60,7 @@ class FigLifeLine extends ArgoFigGroup implements HandlerFactory {
     private static final long serialVersionUID = -1242239243040698287L;
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
-    //@#$LPS-LOGGING:Localization:NestedIfdef
+    //@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
     private static final Logger LOG = Logger.getLogger(FigLifeLine.class);
     //#endif
     static final int WIDTH = 20;
@@ -155,7 +155,7 @@ class FigLifeLine extends ArgoFigGroup implements HandlerFactory {
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Command
         //@#$LPS-LOGGING:Localization:StartMethod
-        //@#$LPS-LOGGING:Localization:NestedIfdef
+        //@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
         LOG.info("Removing " + f.getClass().getName());
         //#endif
         super.removeFig(f);

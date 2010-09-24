@@ -268,16 +268,18 @@ public final class DiagramFactory {
             if ((
                  //#if defined(STATEDIAGRAM)
                  //@#$LPS-STATEDIAGRAM:GranularityType:Expression
-                 //@#$LPS-STATEDIAGRAM:Localization:NestedIfdef
+                 //@#$LPS-STATEDIAGRAM:Localization:NestedIfdef-ACTIVITYDIAGRAM
                  type == DiagramType.State
                  //#endif
                     //#if defined(STATEDIAGRAM) and defined(ACTIVITYDIAGRAM)
-                    //@#$LPS-STATEDIAGRAM:Localization:NestedIfdef
+                    //@#$LPS-STATEDIAGRAM:Localization:NestedIfdef-ACTIVITYDIAGRAM
+                    //@#$LPS-ACTIVITYDIAGRAM:Localization:NestedIfdef-STATEDIAGRAM
                     ||
                     //#endif
                     //#if defined(ACTIVITYDIAGRAM)
                     //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Expression
-                    //@#$LPS-ACTIVITYDIAGRAM:Localization:NestedIfdef
+                    //@#$LPS-STATEDIAGRAM:Localization:NestedIfdef-ACTIVITYDIAGRAM
+                    //@#$LPS-ACTIVITYDIAGRAM:Localization:NestedIfdef-STATEDIAGRAM
                     type == DiagramType.Activity
                     //#endif
                     )
