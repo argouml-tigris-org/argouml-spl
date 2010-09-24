@@ -1,7 +1,3 @@
-//#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
-//@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Interface
-//@#$LPS-SEQUENCEDIAGRAM:GranularityType:Interface
-
 // $Id$
 // Copyright (c) 2005-2006 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
@@ -207,4 +203,3 @@ public interface CollaborationsFactory extends Factory {
      */
     Object buildActivator(Object owner, Object interaction);
 }
-//#endif

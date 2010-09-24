@@ -96,24 +96,17 @@ public class EUMLModelImplementation implements ModelImplementation {
     private static final Logger LOG =
         Logger.getLogger(EUMLModelImplementation.class);
     //#endif
-    //#if defined(ACTIVITYDIAGRAM)
-    //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Field
     private ActivityGraphsFactoryEUMLlImpl theActivityGraphsFactory;
-    //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Field
     private ActivityGraphsHelperEUMLImpl theActivityGraphsHelper;
-    //#endif
     private AggregationKindEUMLImpl theAggregationKind;
 
     @SuppressWarnings("deprecation")
     private ChangeableKindEUMLImpl theChangeableKind;
 
-    //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
-    //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Field
-    //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Field
     private CollaborationsFactoryEUMLImpl theCollaborationsFactory;
 
     private CollaborationsHelperEUMLImpl theCollaborationsHelper;
-    //#endif
+
     private CommonBehaviorFactoryEUMLImpl theCommonBehaviorFactory;
 
     private CommonBehaviorHelperEUMLImpl theCommonBehaviorHelper;
@@ -152,24 +145,19 @@ public class EUMLModelImplementation implements ModelImplementation {
 
     @SuppressWarnings("deprecation")
     private ScopeKindEUMLImpl theScopeKind;
-    //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
-    //@#$LPS-STATEDIAGRAM:GranularityType:Field
-    //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Field
+
     private StateMachinesFactoryEUMLImpl theStateMachinesFactory;
-    //#endif
+
     private StateMachinesHelperEUMLImpl theStateMachinesHelper;
 
     private UmlFactoryEUMLImpl theUmlFactory;
 
     private UmlHelperEUMLImpl theUmlHelper;
-    //#if defined(USECASEDIAGRAM)
-    //@#$LPS-USECASEDIAGRAM:GranularityType:Field
+
     private UseCasesFactoryEUMLImpl theUseCasesFactory;
-    //#endif
-    //#if defined(USECASEDIAGRAM)
-    //@#$LPS-USECASEDIAGRAM:GranularityType:Field
+
     private UseCasesHelperEUMLImpl theUseCasesHelper;
-    //#endif
+
     private VisibilityKindEUMLImpl theVisibilityKind;
     
     private CommandStackImpl theCommandStack;
@@ -306,8 +294,6 @@ public class EUMLModelImplementation implements ModelImplementation {
     public Map<Resource, Boolean> getReadOnlyMap() {
         return readOnlyMap;
     }
-    //#if defined(ACTIVITYDIAGRAM)
-    //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Method
     public ActivityGraphsFactoryEUMLlImpl getActivityGraphsFactory() {
         if (theActivityGraphsFactory == null) {
             theActivityGraphsFactory = 
@@ -315,14 +301,12 @@ public class EUMLModelImplementation implements ModelImplementation {
         }
         return theActivityGraphsFactory;
     }
-    //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Method
     public ActivityGraphsHelperEUMLImpl getActivityGraphsHelper() {
         if (theActivityGraphsHelper == null) {
             theActivityGraphsHelper = new ActivityGraphsHelperEUMLImpl(this);
         }
         return theActivityGraphsHelper;
     }
-    //#endif
     public AggregationKindEUMLImpl getAggregationKind() {
         if (theAggregationKind == null) {
             theAggregationKind = new AggregationKindEUMLImpl();
@@ -337,24 +321,21 @@ public class EUMLModelImplementation implements ModelImplementation {
         }
         return theChangeableKind;
     }
-    //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
-    //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Method
-    //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Method
+
     public CollaborationsFactoryEUMLImpl getCollaborationsFactory() {
         if (theCollaborationsFactory == null) {
             theCollaborationsFactory = new CollaborationsFactoryEUMLImpl(this);
         }
         return theCollaborationsFactory;
     }
-    //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Method
-    //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Method
+
     public CollaborationsHelperEUMLImpl getCollaborationsHelper() {
         if (theCollaborationsHelper == null) {
             theCollaborationsHelper = new CollaborationsHelperEUMLImpl(this);
         }
         return theCollaborationsHelper;
     }
-    //#endif
+
     public CommonBehaviorFactoryEUMLImpl getCommonBehaviorFactory() {
         if (theCommonBehaviorFactory == null) {
             theCommonBehaviorFactory = new CommonBehaviorFactoryEUMLImpl(this);
@@ -492,16 +473,14 @@ public class EUMLModelImplementation implements ModelImplementation {
         return theScopeKind;
     }
 
-    //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
-    //@#$LPS-STATEDIAGRAM:GranularityType:Method
-    //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Method
+
     public StateMachinesFactoryEUMLImpl getStateMachinesFactory() {
         if (theStateMachinesFactory == null) {
             theStateMachinesFactory = new StateMachinesFactoryEUMLImpl(this);
         }
         return theStateMachinesFactory;
     }
-    //#endif
+
     public StateMachinesHelperEUMLImpl getStateMachinesHelper() {
         if (theStateMachinesHelper == null) {
             theStateMachinesHelper = new StateMachinesHelperEUMLImpl(this);
@@ -522,15 +501,13 @@ public class EUMLModelImplementation implements ModelImplementation {
         }
         return theUmlHelper;
     }
-    //#if defined(USECASEDIAGRAM)
-    //@#$LPS-USECASEDIAGRAM:GranularityType:Method
+
     public UseCasesFactoryEUMLImpl getUseCasesFactory() {
         if (theUseCasesFactory == null) {
             theUseCasesFactory = new UseCasesFactoryEUMLImpl(this);
         }
         return theUseCasesFactory;
     }
-    
 
     public UseCasesHelperEUMLImpl getUseCasesHelper() {
         if (theUseCasesHelper == null) {
@@ -538,7 +515,7 @@ public class EUMLModelImplementation implements ModelImplementation {
         }
         return theUseCasesHelper;
     }
-    //#endif
+
     public VisibilityKindEUMLImpl getVisibilityKind() {
         if (theVisibilityKind == null) {
             theVisibilityKind = new VisibilityKindEUMLImpl();

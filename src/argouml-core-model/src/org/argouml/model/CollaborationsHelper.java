@@ -1,7 +1,3 @@
-//#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
-//@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Interface
-//@#$LPS-SEQUENCEDIAGRAM:GranularityType:Interface
-
 // $Id$
 // Copyright (c) 2005-2007 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
@@ -352,4 +348,3 @@ public interface CollaborationsHelper {
      */
     void removeInteraction(Object collab, Object interaction);
 }
-//#endif

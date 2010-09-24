@@ -54,8 +54,6 @@ public interface ModelImplementation {
      * @return the current ModelEventPump.
      */
     ModelEventPump getModelEventPump();
-    //#if defined(ACTIVITYDIAGRAM)
-    //@#$LPS-ACTIVITYDIAGRAM:GranularityType:InterfaceMethod
     /**
      * Getter for ActivityGraphsFactory.
      *
@@ -63,34 +61,26 @@ public interface ModelImplementation {
      */
     ActivityGraphsFactory getActivityGraphsFactory();
 
-    //@#$LPS-ACTIVITYDIAGRAM:GranularityType:InterfaceMethod
     /**
      * Getter for the ActivityGraphsHelper.
      *
      * @return the instance of the helper
      */
     ActivityGraphsHelper getActivityGraphsHelper();
-    //#endif
-    
-    //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
-    //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:InterfaceMethod
-    //@#$LPS-SEQUENCEDIAGRAM:GranularityType:InterfaceMethod
     /**
      * Getter for CollaborationsFactory.
      *
      * @return the factory
      */
     CollaborationsFactory getCollaborationsFactory();
-    //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:InterfaceMethod
-    //@#$LPS-SEQUENCEDIAGRAM:GranularityType:InterfaceMethod
+
     /**
      * Getter for CollaborationsHelper.
      *
      * @return the helper
      */
     CollaborationsHelper getCollaborationsHelper();
-    //#endif
-    
+
     /**
      * Getter for CommonBehaviorFactory.
      *
@@ -160,24 +150,21 @@ public interface ModelImplementation {
      * @return The model management helper.
      */
     ModelManagementHelper getModelManagementHelper();
-    //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
-    //@#$LPS-STATEDIAGRAM:GranularityType:InterfaceMethod
-    //@#$LPS-ACTIVITYDIAGRAM:GranularityType:InterfaceMethod
+
     /**
      * Getter for StateMachinesFactory.
      *
      * @return the factory
      */
     StateMachinesFactory getStateMachinesFactory();
-    //@#$LPS-STATEDIAGRAM:GranularityType:InterfaceMethod
-    //@#$LPS-ACTIVITYDIAGRAM:GranularityType:InterfaceMethod
+
     /**
      * Getter for StateMachinesHelper.
      *
      * @return the helper
      */
     StateMachinesHelper getStateMachinesHelper();
-    //#endif
+
     /**
      * Getter for UmlFactory.
      *
@@ -191,22 +178,21 @@ public interface ModelImplementation {
      * @return the helper
      */
     UmlHelper getUmlHelper();
-    //#if defined(USECASEDIAGRAM)
-    //@#$LPS-USECASEDIAGRAM:GranularityType:InterfaceMethod
+
     /**
      * Getter for UseCasesFactory.
      *
      * @return the factory
      */
     UseCasesFactory getUseCasesFactory();
-    //@#$LPS-USECASEDIAGRAM:GranularityType:InterfaceMethod
+
     /**
      * Getter for UseCasesHelper.
      *
      * @return the helper
      */
     UseCasesHelper getUseCasesHelper();
-    //#endif
+
 
     /**
      * Getter for the MetaTypes object.

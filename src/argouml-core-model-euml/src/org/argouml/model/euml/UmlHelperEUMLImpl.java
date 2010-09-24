@@ -76,12 +76,8 @@ class UmlHelperEUMLImpl implements UmlHelper {
             // handles all children of relationship including extend and
             // include which are not members of core
             return modelImpl.getCoreHelper().getSource(relationship);
-        //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
-        //@#$LPS-STATEDIAGRAM:GranularityType:Command
-        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
         } else if (relationship instanceof Transition) {
             return modelImpl.getStateMachinesHelper().getSource(relationship);
-        //#endif
         } else if (relationship instanceof Property) {
             // TODO: We expect an association end here - check more carefully? - tfm
             return modelImpl.getCoreHelper().getSource(relationship);
@@ -97,13 +93,9 @@ class UmlHelperEUMLImpl implements UmlHelper {
             // handles all children of relationship including extend and
             // include which are not members of core
             return modelImpl.getCoreHelper().getDestination(relationShip);
-        //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
-        //@#$LPS-STATEDIAGRAM:GranularityType:Command
-        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
         } else if (relationShip instanceof Transition) {
             return modelImpl.getStateMachinesHelper().
                     getDestination(relationShip);
-        //#endif
         } else if (relationShip instanceof Property) {
             // TODO: We expect an association end here - check more carefully? - tfm
             return modelImpl.getCoreHelper().getDestination(relationShip);

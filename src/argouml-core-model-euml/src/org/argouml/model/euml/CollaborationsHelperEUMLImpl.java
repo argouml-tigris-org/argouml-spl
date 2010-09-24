@@ -1,7 +1,3 @@
-//#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
-//@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Class
-//@#$LPS-SEQUENCEDIAGRAM:GranularityType:Class
-
 // $Id$
 // Copyright (c) 2007, The ArgoUML Project
 // All rights reserved.
@@ -220,4 +216,3 @@ class CollaborationsHelperEUMLImpl implements CollaborationsHelper {
 
 
 }
-//#endif

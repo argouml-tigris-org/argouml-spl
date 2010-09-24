@@ -1,6 +1,3 @@
-//#if defined(USECASEDIAGRAM)
-//@#$LPS-USECASEDIAGRAM:GranularityType:Interface
-
 // $Id$
 // Copyright (c) 2005-2007 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
@@ -221,4 +218,3 @@ public interface UseCasesHelper {
      */
     void setUseCase(Object elem, Object usecase);
 }
-//#endif

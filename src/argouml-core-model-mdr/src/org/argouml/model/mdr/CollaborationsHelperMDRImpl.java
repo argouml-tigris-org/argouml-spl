@@ -1,7 +1,3 @@
-//#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
-//@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Class
-//@#$LPS-SEQUENCEDIAGRAM:GranularityType:Class
-
 // $Id$
 // Copyright (c) 1996-2009 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
@@ -1018,4 +1014,3 @@ class CollaborationsHelperMDRImpl implements CollaborationsHelper {
                 + " or interaction: " + interaction);
     }
 }
-//#endif

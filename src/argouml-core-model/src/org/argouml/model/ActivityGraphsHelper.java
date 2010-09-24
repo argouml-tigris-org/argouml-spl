@@ -1,6 +1,3 @@
-//#if defined(ACTIVITYDIAGRAM)
-//@#$LPS-ACTIVITYDIAGRAM:GranularityType:Interface
-
 // $Id$
 // Copyright (c) 2005-2007 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
@@ -161,4 +158,3 @@ public interface ActivityGraphsHelper {
      */
     void setParameters(Object objectFlowState, Collection parameters);
 }
-//#endif

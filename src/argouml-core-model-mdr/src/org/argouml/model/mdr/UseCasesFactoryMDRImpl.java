@@ -1,6 +1,3 @@
-//#if defined(USECASEDIAGRAM)
-//@#$LPS-USECASEDIAGRAM:GranularityType:Class
-
 // $Id$
 // Copyright (c) 1996-2007 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
@@ -48,12 +45,8 @@ import org.omg.uml.foundation.core.Namespace;
  * @author Ludovic Ma&icirc;tre
  * @author Tom Morris
  */
-class UseCasesFactoryMDRImpl extends AbstractUmlModelFactoryMDR 
-//#if defined(USECASEDIAGRAM)
-//@#$LPS-USECASEDIAGRAM:GranularityType:ClassSignature
-        implements UseCasesFactory 
-//#endif
-        {
+class UseCasesFactoryMDRImpl extends AbstractUmlModelFactoryMDR
+        implements UseCasesFactory {
 
     /**
      * The model implementation.
@@ -299,4 +292,3 @@ class UseCasesFactoryMDRImpl extends AbstractUmlModelFactoryMDR
         }
     }
 }
-//#endif

@@ -361,10 +361,7 @@ class CommonBehaviorFactoryMDRImpl extends AbstractUmlModelFactoryMDR
             Object sender = modelImpl.getCoreHelper().getSource(link);
             Object receiver = modelImpl.getCoreHelper().getDestination(link);
             modelImpl.getCommonBehaviorHelper().setReceiver(stimulus, receiver);
-            //#if defined(COLLABORATIONDIAGRAM)
-            //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
             modelImpl.getCollaborationsHelper().setSender(stimulus, sender);
-            //#endif
             modelImpl.getCommonBehaviorHelper().setCommunicationLink(stimulus,
                     link);
             return stimulus;

@@ -1,6 +1,3 @@
-//#if defined(ACTIVITYDIAGRAM)
-//@#$LPS-ACTIVITYDIAGRAM:GranularityType:Class
-
 // $Id$
 // Copyright (c) 2007, The ArgoUML Project
 // All rights reserved.
@@ -114,4 +111,3 @@ class ActivityGraphsHelperEUMLImpl implements ActivityGraphsHelper {
     }
 
 }
-//#endif
