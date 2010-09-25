@@ -49,6 +49,16 @@ public class MetricsProcessor {
 	private Integer locMetric;
 	
 	/**
+	 * Contador de classes
+	 */
+	private static Integer CLASS_COUNTER;
+	
+	/**
+	 * String para criação de métricas que não estão mapeadas diretamente nas classes.
+	 */
+	private static final String FAKEMETRICIDENTIFIER = "//@#$LPS-%s:%s:N/A";
+		
+	/**
 	 * Construtor padrão.
 	 */
 	public MetricsProcessor(){
@@ -56,14 +66,25 @@ public class MetricsProcessor {
 		localMetrics = new HashMap<String, Integer>();
 		otherMetrics = new HashMap<String, Integer>();
 		metrics = new Vector<Metric>();
-		locMetric = new Integer(0);
+		locMetric = 0;
 		startComment = false;
+		CLASS_COUNTER = 0;
+	}
+	
+	/**
+	 * Insere uma métrica já contabilizada
+	 * @param line Indentificador da linha, para processamento posterior
+	 * @param metricType Tipo da métrica
+	 * @param value Valor calculado
+	 */
+	private void insertMetric(String line, MetricType metricType, Integer value) {		
+		otherMetrics.put(line, value);
 	}
 	
 	/**
 	 * Contabilizar as métricas por tipo.
 	 * @param line linha lida da classe Java.
-	 * @param metricType Tipo de métrica. {@link #GRAN_IDENTIFIER} {@link #LOCAL_IDENTIFIER}
+	 * @param metricType Tipo de métrica.
 	 */
 	private void insertMetric(String line, MetricType metricType) {
 		if (MetricType.LOC.equals(metricType)) {
@@ -112,39 +133,53 @@ public class MetricsProcessor {
 	}
 	
 	/**
-	 * Contabiliza a métrica encontrada na linha do arquivo Java. 
-	 * @param line linha lida da classe Java.
+	 * Insere uma métrica que não depende do conteúdo do arquivo Java. 
+	 * @param metricType Tipo da métrica.
+	 * @param line Valor da métrica
 	 */
-	public void insertMetric(String line) {
-		
-		line = line.trim();
+	public void insertMetric(MetricType metricType, Integer value) {
+		insertMetric(String.format(FAKEMETRICIDENTIFIER, "TODAS", metricType.getIdentifier()), metricType, value);
+	}
+	
+	/**
+	 * Contabiliza a métrica encontrada na linha do arquivo Java. 
+	 * @param value linha lida da classe Java.
+	 */
+	public void insertMetric(String value) {
+		value = value.trim();
 		// Common Metrics
-		if (line.contains(MetricsProcessor.IDENTIFIER)) {
-			if (line.contains(MetricType.GRANULARITY.getIdentifier())) {			
-				insertMetric(line, MetricType.GRANULARITY);
-			} else if (line.contains(MetricType.LOCALIZATION.getIdentifier())) {
-				insertMetric(line, MetricType.LOCALIZATION);
+		if (value.contains(MetricsProcessor.IDENTIFIER)) {
+			if (value.contains(MetricType.GRANULARITY.getIdentifier())) {			
+				insertMetric(value, MetricType.GRANULARITY);
+			} else if (value.contains(MetricType.LOCALIZATION.getIdentifier())) {
+				insertMetric(value, MetricType.LOCALIZATION);
 			} else{
-				Log.info("Identificador inválido. Dados: "  + line);
+				Log.info("Identificador inválido. Dados: "  + value);
 			}
-		// LOC Metric
-		} else if (!isCommentOrBlankLine(line)) {
-			insertMetric(line, MetricType.LOC);
+		}
 		// AND e OR Metrics
-		} else if (line.matches("//#if defined\\(.*\\) (and|or) defined\\(.*\\)")) {
-			String feature1 = line.substring(line.indexOf("(")+1, line.indexOf(")"));
-			String feature2 = line.substring(line.lastIndexOf("(")+1, line.lastIndexOf(")"));
-			String auxLine1 = "//@#$LPS-"+feature1+":%s:N/A";
-			String auxLine2 = "//@#$LPS-"+feature2+":%s:N/A";
+		else if (value.matches("//#if defined\\(.*\\) (and|or) defined\\(.*\\)")) {
+			String feature1 = value.substring(value.indexOf("(")+1, value.indexOf(")"));
+			String feature2 = value.substring(value.lastIndexOf("(")+1, value.lastIndexOf(")"));
 				
-			if (line.toLowerCase().contains(MetricType.OR.getIdentifier().toLowerCase())) {				
-				insertMetric(String.format(auxLine1, MetricType.OR.getIdentifier()), MetricType.OR);
-				insertMetric(String.format(auxLine2, MetricType.OR.getIdentifier()), MetricType.OR);
+			if (value.toLowerCase().contains(MetricType.OR.getIdentifier().toLowerCase())) {				
+				insertMetric(String.format(FAKEMETRICIDENTIFIER, feature1, MetricType.OR.getIdentifier()), MetricType.OR);
+				insertMetric(String.format(FAKEMETRICIDENTIFIER, feature2, MetricType.OR.getIdentifier()), MetricType.OR);
 			} else {
-				insertMetric(String.format(auxLine1, MetricType.AND.getIdentifier()), MetricType.AND);
-				insertMetric(String.format(auxLine2, MetricType.AND.getIdentifier()), MetricType.AND);				
+				insertMetric(String.format(FAKEMETRICIDENTIFIER, feature1, MetricType.AND.getIdentifier()), MetricType.AND);
+				insertMetric(String.format(FAKEMETRICIDENTIFIER, feature2, MetricType.AND.getIdentifier()), MetricType.AND);
 			}
-		} 
+		}		
+		// LOC Metric
+		else if (!isCommentOrBlankLine(value)) {
+			insertMetric(value, MetricType.LOC);
+			// Contabilizar classes
+			if (value.matches("(private|public|protected){0,1}.*class .*")) {
+				CLASS_COUNTER++;
+			}
+		}
+
+		
 	}
 	
 	/**
@@ -173,6 +208,9 @@ public class MetricsProcessor {
 	 * @return <code>true</code> se processamento correto, <false> caso contrário.
 	 */
 	public boolean processGatheredMetrics() {
+		// Inserir métrica que contabiliza o número de classes
+		insertMetric(MetricType.CLASS_NUMBER, CLASS_COUNTER);
+		// Processar demais métricas.
 		boolean result = this.processGatheredMetrics(otherMetrics);
 		result = result && this.processGatheredMetrics(granMetrics);
 		result = result && this.processGatheredMetrics(localMetrics);

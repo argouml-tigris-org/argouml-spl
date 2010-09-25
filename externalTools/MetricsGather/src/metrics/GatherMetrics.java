@@ -18,8 +18,17 @@ public class GatherMetrics {
 	 * Diretório raiz (onde se inicia a varredura).
 	 * */
 	private String rootDir;
-	
+		
+	/**
+	 * Processador de métricas.
+	 */
 	private MetricsProcessor metricsProcessor;
+	
+	/**
+	 * Contador de pacotes Java
+	 */
+	private static Integer PACKAGE_COUNTER;
+	
 	
 	/**
 	 * Filtro de diretórios.
@@ -57,6 +66,7 @@ public class GatherMetrics {
 	public GatherMetrics(String rootDir) {
 		this.rootDir = rootDir.replace("\\", File.separator);
 		metricsProcessor = new MetricsProcessor();
+		PACKAGE_COUNTER = 0;
 	}
 	
 	/**
@@ -64,7 +74,8 @@ public class GatherMetrics {
 	 * @param filename Nome do arquivo que conterá as métricas
 	 */
 	public void gatherMetrics(String filename) {
-		this.listDir(new File(rootDir));	
+		this.listDir(new File(rootDir));
+		metricsProcessor.insertMetric(MetricType.PACKAGE_NUMBER, PACKAGE_COUNTER);
 		metricsProcessor.processGatheredMetrics();
 		metricsProcessor.saveGatheredMetrics(filename);
 	}
@@ -81,17 +92,21 @@ public class GatherMetrics {
 	
 	private void listDirFiles(File dir) {
 		Log.debug(dir.toString());
-		String[] children = dir.list(javaFileFilter);  
-	    for (int i=0; i<children.length; i++) {  
+		String[] children = dir.list(javaFileFilter);
+		int i;
+	    for (i=0; i<children.length; i++) {  
 	    	Log.debug(children[i]);
 	    	processFile(new File(dir, children[i]));
+	    }
+	    // Se foi processado algum arquivo do diretório, considerar o pacote
+	    if (i > 0) {
+	    	PACKAGE_COUNTER++;
 	    }
 	}
 	
 	private void processFile(File file) {
 		try {
-			BufferedReader br = new BufferedReader(new FileReader(file));
-			
+			BufferedReader br = new BufferedReader(new FileReader(file));			
 			while (br.ready()) {
 				metricsProcessor.insertMetric(br.readLine().trim());
 			}
