@@ -9,9 +9,6 @@ import java.io.IOException;
 
 import util.Log;
 
-
-
-
 public class GatherMetrics {
 
 	/**
@@ -28,6 +25,8 @@ public class GatherMetrics {
 	 * Contador de pacotes Java
 	 */
 	private static Integer PACKAGE_COUNTER;
+	
+	private static Boolean HasValidJavaFile;
 	
 	
 	/**
@@ -56,6 +55,7 @@ public class GatherMetrics {
 	FilenameFilter javaFileFilter = new FilenameFilter() { 
 		public boolean accept(File dir, String name) {
 			return name.endsWith(".java");
+//			&& name.equals("Agency.java");
 			} 
 		};	 
 		
@@ -67,6 +67,7 @@ public class GatherMetrics {
 		this.rootDir = rootDir.replace("\\", File.separator);
 		metricsProcessor = new MetricsProcessor();
 		PACKAGE_COUNTER = 0;
+		HasValidJavaFile = false;
 	}
 	
 	/**
@@ -99,16 +100,18 @@ public class GatherMetrics {
 	    	processFile(new File(dir, children[i]));
 	    }
 	    // Se foi processado algum arquivo do diretório, considerar o pacote
-	    if (i > 0) {
+	    if (HasValidJavaFile && (i > 0)) {
 	    	PACKAGE_COUNTER++;
 	    }
 	}
 	
 	private void processFile(File file) {
 		try {
-			BufferedReader br = new BufferedReader(new FileReader(file));			
+			BufferedReader br = new BufferedReader(new FileReader(file));
+			HasValidJavaFile = br.ready();
 			while (br.ready()) {
 				metricsProcessor.insertMetric(br.readLine().trim());
+				
 			}
 			br.close();
 		} catch (FileNotFoundException e) {

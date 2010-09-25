@@ -118,18 +118,19 @@ public class MetricsProcessor {
 		if (line.startsWith("/*")) {
 			if (line.endsWith("*/")) {
 				return true;
-			}
-			startComment = true;
-			return true;
+			} else if (!line.contains("*/")) {
+				startComment = true;
+				return true;	
+			}			
 		} else if (startComment && line.endsWith("*/")) {
 			startComment = false;
 			return true;
-		}
-		if (startComment) {
+		} else if (startComment) {
 			return true;
 		} else {
 			return (line.startsWith("//") || line.startsWith("*") || line.isEmpty());
 		}
+		return false;
 	}
 	
 	/**
@@ -161,14 +162,15 @@ public class MetricsProcessor {
 		else if (value.matches("//#if defined\\(.*\\) (and|or) defined\\(.*\\)")) {
 			String feature1 = value.substring(value.indexOf("(")+1, value.indexOf(")"));
 			String feature2 = value.substring(value.lastIndexOf("(")+1, value.lastIndexOf(")"));
-				
-			if (value.toLowerCase().contains(MetricType.OR.getIdentifier().toLowerCase())) {				
-				insertMetric(String.format(FAKEMETRICIDENTIFIER, feature1, MetricType.OR.getIdentifier()), MetricType.OR);
-				insertMetric(String.format(FAKEMETRICIDENTIFIER, feature2, MetricType.OR.getIdentifier()), MetricType.OR);
+			
+			MetricType type;
+			if (value.toLowerCase().contains(MetricType.OR.getIdentifier().toLowerCase())) {
+				type = MetricType.OR; 
 			} else {
-				insertMetric(String.format(FAKEMETRICIDENTIFIER, feature1, MetricType.AND.getIdentifier()), MetricType.AND);
-				insertMetric(String.format(FAKEMETRICIDENTIFIER, feature2, MetricType.AND.getIdentifier()), MetricType.AND);
+				type = MetricType.AND;
 			}
+			insertMetric(String.format(FAKEMETRICIDENTIFIER, feature1, type.getIdentifier()), type);
+			insertMetric(String.format(FAKEMETRICIDENTIFIER, feature2, type.getIdentifier()), type);		
 		}		
 		// LOC Metric
 		else if (!isCommentOrBlankLine(value)) {
@@ -178,8 +180,6 @@ public class MetricsProcessor {
 				CLASS_COUNTER++;
 			}
 		}
-
-		
 	}
 	
 	/**
