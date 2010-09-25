@@ -58,8 +58,8 @@ public class UMLClassifierRoleAvailableFeaturesListModel
      */
     protected void buildModelList() {
         //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
-        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
-        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
+        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Statement
+        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Statement
         //@#$LPS-COLLABORATIONDIAGRAM:Localization:EntireMethod
         //@#$LPS-SEQUENCEDIAGRAM:Localization:EntireMethod        
         setAllElements(Model.getCollaborationsHelper()

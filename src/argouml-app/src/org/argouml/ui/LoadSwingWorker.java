@@ -99,7 +99,7 @@ public class LoadSwingWorker extends SwingWorker {
     	    ProjectBrowser.getInstance().addFileSaved(file);
     	} catch (IOException exc) {
     	    //#if defined(LOGGING)
-    	    //@#$LPS-LOGGING:GranularityType:Command
+    	    //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("Failed to save file: " + file
                     + " in most recently used list");
             //#endif

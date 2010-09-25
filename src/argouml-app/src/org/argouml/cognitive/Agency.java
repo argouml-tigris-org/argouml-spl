@@ -177,7 +177,7 @@ public class Agency extends Observable { //implements java.io.Serialization
             dmClass = Class.forName(dmClassName);
         } catch (java.lang.ClassNotFoundException e) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("Error loading dm " + dmClassName, e);
             //#endif
             return;
@@ -189,7 +189,7 @@ public class Agency extends Observable { //implements java.io.Serialization
                 crClass = Class.forName(crClassName);
             } catch (java.lang.ClassNotFoundException e) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.error("Error loading cr " + crClassName, e);
                 //#endif
@@ -199,14 +199,14 @@ public class Agency extends Observable { //implements java.io.Serialization
                 cr = (Critic) crClass.newInstance();
             } catch (java.lang.IllegalAccessException e) {
                 //#if defined(LOGGING)       
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.error("Error instancating cr " + crClassName, e);
                 //#endif
                 return;
             } catch (java.lang.InstantiationException e) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.error("Error instancating cr " + crClassName, e);
                 //#endif
@@ -238,7 +238,7 @@ public class Agency extends Observable { //implements java.io.Serialization
             theCritics.add(cr);
             notifyStaticObservers(cr);
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             LOG.debug("Registered: " + theCritics.toString());
             //#endif
@@ -369,7 +369,7 @@ public class Agency extends Observable { //implements java.io.Serialization
                     c.critique(dm, d);
                 } catch (Exception ex) {
                     //#if defined(LOGGING)
-                    //@#$LPS-LOGGING:GranularityType:Command
+                    //@#$LPS-LOGGING:GranularityType:Statement
                     //@#$LPS-LOGGING:Localization:NestedCommand
                     LOG.error("Disabling critique due to exception\n"
 			      + c + "\n" + dm,

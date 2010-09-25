@@ -104,7 +104,7 @@ public class Tools {
             Class cls = org.tigris.gef.base.Editor.class;
             cls = org.xml.sax.AttributeList.class;
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             cls = org.apache.log4j.Logger.class;
             //#endif
             

@@ -176,7 +176,7 @@ public class UmlFilePersister extends AbstractFilePersister {
 
             String path = file.getParent();
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             if (LOG.isInfoEnabled()) {
                 LOG.info("Dir ==" + path);
             }
@@ -198,7 +198,7 @@ public class UmlFilePersister extends AbstractFilePersister {
             
         } catch (Exception e) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("Exception occured during save attempt", e);
             //#endif
             // frank: in case of exception
@@ -273,7 +273,7 @@ public class UmlFilePersister extends AbstractFilePersister {
             // Note we assume members are ordered correctly already
             for (ProjectMember projectMember : project.getMembers()) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 if (LOG.isInfoEnabled()) {
                     LOG.info("Saving member : " + projectMember);
@@ -329,7 +329,7 @@ public class UmlFilePersister extends AbstractFilePersister {
             // Run through any stylesheet upgrades
             int fileVersion = getPersistenceVersionFromFile(file);
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.info("Loading uml file of version " + fileVersion);
             //#endif
             if (!checkVersion(fileVersion,  getReleaseVersionFromFile(file))) {
@@ -346,7 +346,7 @@ public class UmlFilePersister extends AbstractFilePersister {
                 while (fileVersion < PERSISTENCE_VERSION) {
                     ++fileVersion;
                     //#if defined(LOGGING)
-                    //@#$LPS-LOGGING:GranularityType:Command
+                    //@#$LPS-LOGGING:GranularityType:Statement
                     //@#$LPS-LOGGING:Localization:NestedCommand
                     LOG.info("Upgrading to version " + fileVersion);
                     //#endif
@@ -354,7 +354,7 @@ public class UmlFilePersister extends AbstractFilePersister {
                     file = transform(file, fileVersion);
                     long endTime = System.currentTimeMillis();
                     //#if defined(LOGGING)
-                    //@#$LPS-LOGGING:GranularityType:Command
+                    //@#$LPS-LOGGING:GranularityType:Statement
                     //@#$LPS-LOGGING:Localization:NestedCommand
                     LOG.info("Upgrading took "
                             + ((endTime - startTime) / 1000)
@@ -380,14 +380,14 @@ public class UmlFilePersister extends AbstractFilePersister {
             
             List memberList = parser.getMemberList();
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.info(memberList.size() + " members");
             //#endif
             for (int i = 0; i < memberList.size(); ++i) {
                 MemberFilePersister persister
                     = getMemberFilePersister((String) memberList.get(i));
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.info("Loading member with "
                         + persister.getClass().getName());
@@ -462,7 +462,7 @@ public class UmlFilePersister extends AbstractFilePersister {
             String xsltFileName = upgradeFilesPath + upgradeFile;
             URL xsltUrl = UmlFilePersister.class.getResource(xsltFileName);
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.info("Resource is " + xsltUrl);
             //#endif
             // Read xsltStream into a temporary file

@@ -733,7 +733,7 @@ public abstract class AbstractMessageNotationUml extends MessageNotation {
 
         List<String> args = parseArguments(paramExpr, mayDeleteExpr);
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         printDebugInfo(s, fname, guard, paramExpr, varname, predecessors,
                 seqno, parallell, iterative);
         //#endif
@@ -891,8 +891,8 @@ public abstract class AbstractMessageNotationUml extends MessageNotation {
                 pre.add(ptr.message);
             }
             //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
-            //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
-            //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
+            //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Statement
+            //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Statement
             //@#$LPS-COLLABORATIONDIAGRAM:Localization:EndMethod
             //@#$LPS-SEQUENCEDIAGRAM:Localization:EndMethod               
             Model.getCollaborationsHelper().setPredecessors(umlMessage, pre);
@@ -1034,8 +1034,8 @@ public abstract class AbstractMessageNotationUml extends MessageNotation {
                 throw new ParseException(Translator.localize(msg), 0);
             } 
             //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
-            //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
-            //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command            
+            //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Statement
+            //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Statement            
             else {
                 /* Disconnect the message from the call graph
                  * Make copies of returned live collections
@@ -1320,8 +1320,8 @@ public abstract class AbstractMessageNotationUml extends MessageNotation {
             Model.getCoreHelper().addOwnedElement(Model.getFacade().getContext(
                     Model.getFacade().getInteraction(umlMessage)), a);
             //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
-            //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
-            //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
+            //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Statement
+            //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Statement
             //@#$LPS-COLLABORATIONDIAGRAM:Localization:EndMethod
             //@#$LPS-SEQUENCEDIAGRAM:Localization:EndMethod           
             Model.getCollaborationsHelper().setAction(umlMessage, a);
@@ -1682,8 +1682,8 @@ public abstract class AbstractMessageNotationUml extends MessageNotation {
             successors.add(s);
         }
         //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
-        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
-        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
+        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Statement
+        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Statement
         //@#$LPS-COLLABORATIONDIAGRAM:Localization:EndMethod
         //@#$LPS-SEQUENCEDIAGRAM:Localization:EndMethod             
         Model.getCollaborationsHelper().setSuccessors(m, successors);

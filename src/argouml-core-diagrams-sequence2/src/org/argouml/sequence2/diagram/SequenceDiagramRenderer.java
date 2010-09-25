@@ -77,7 +77,7 @@ class SequenceDiagramRenderer extends UmlDiagramRenderer {
             result = ((UMLDiagram) diag).drop(node, null);
         } else {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
         	//@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
             LOG.warn("SequenceDiagramRenderer getFigNodeFor unexpected node " 
@@ -86,7 +86,7 @@ class SequenceDiagramRenderer extends UmlDiagramRenderer {
             return null;
         }
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
         LOG.debug("SequenceDiagramRenderer getFigNodeFor " + result);
         //#endif

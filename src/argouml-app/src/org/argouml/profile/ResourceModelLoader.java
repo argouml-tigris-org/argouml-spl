@@ -68,7 +68,7 @@ public class ResourceModelLoader extends URLModelLoader {
     public Collection loadModel(ProfileReference reference) 
         throws ProfileException {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         //@#$LPS-LOGGING:Localization:BeforeReturn
         LOG.info("Loading profile from resource'" + reference.getPath() + "'");

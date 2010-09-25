@@ -206,7 +206,7 @@ public abstract class PropPanel extends AbstractArgoJPanel implements
     
     public void buildToolbar() {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         LOG.debug("Building toolbar");
         //#endif
@@ -357,7 +357,7 @@ public abstract class PropPanel extends AbstractArgoJPanel implements
      */
     public void setTarget(Object t) {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         LOG.debug("setTarget called with " + t + " as parameter (not target!)");
         //#endif

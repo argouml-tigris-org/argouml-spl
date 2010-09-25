@@ -203,7 +203,7 @@ public class DnDExplorerTree
             return;
         }
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         if (LOG.isDebugEnabled()) {
             LOG.debug("Drag: start transferring " + targets.size()
                     + " targets.");
@@ -290,7 +290,7 @@ public class DnDExplorerTree
     		Transferable tf) {
         if (destinationPath == null) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             LOG.debug("No valid Drag: no destination found.");
             //#endif
@@ -298,7 +298,7 @@ public class DnDExplorerTree
         }
         if (selectedTreePath.isDescendant(destinationPath)) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             LOG.debug("No valid Drag: move to descendent.");
             //#endif
@@ -307,7 +307,7 @@ public class DnDExplorerTree
         if (!tf.isDataFlavorSupported(
                 TransferableModelElements.UML_COLLECTION_FLAVOR)) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             LOG.debug("No valid Drag: flavor not supported.");
             //#endif
@@ -325,7 +325,7 @@ public class DnDExplorerTree
         /* If the destination is not a NameSpace, then abort: */
         if (!Model.getFacade().isANamespace(dest)) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             LOG.debug("No valid Drag: not a namespace.");
             //#endif
@@ -335,7 +335,7 @@ public class DnDExplorerTree
         /* We are sure "dest" is a Namespace now. */
         if (Model.getModelManagementHelper().isReadOnly(dest)) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             LOG.debug("No valid Drag: "
                     + "this is not an editable UML element (profile?).");
@@ -361,7 +361,7 @@ public class DnDExplorerTree
          */
         if (Model.getFacade().isADataType(dest)) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:StartMethod
             //@#$LPS-LOGGING:Localization:BeforeReturn
             //@#$LPS-LOGGING:Localization:NestedCommand
@@ -387,7 +387,7 @@ public class DnDExplorerTree
                                 && Model.getCoreHelper().isValidNamespace(
                                         element, dest)) {
                             //#if defined(LOGGING)
-                            //@#$LPS-LOGGING:GranularityType:Command
+                            //@#$LPS-LOGGING:GranularityType:Statement
                             //@#$LPS-LOGGING:Localization:NestedCommand
                             LOG.debug("Valid Drag: namespace " + dest);
                             //#endif
@@ -403,7 +403,7 @@ public class DnDExplorerTree
                     Relocatable d = (Relocatable) element;
                     if (d.isRelocationAllowed(dest)) {
                         //#if defined(LOGGING)
-                        //@#$LPS-LOGGING:GranularityType:Command
+                        //@#$LPS-LOGGING:GranularityType:Statement
                         //@#$LPS-LOGGING:Localization:NestedCommand
                         LOG.debug("Valid Drag: diagram " + dest);
                         //#endif
@@ -413,17 +413,17 @@ public class DnDExplorerTree
             }
         } catch (UnsupportedFlavorException e) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.debug(e);
             //#endif
         } catch (IOException e) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.debug(e);
             //#endif
         }
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         LOG.debug("No valid Drag: not a valid namespace.");
         //#endif
         return false;
@@ -615,7 +615,7 @@ public class DnDExplorerTree
         public void dragEnter(
                 DropTargetDragEvent dropTargetDragEvent) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:StartMethod
             LOG.debug("dragEnter");
             //#endif
@@ -632,7 +632,7 @@ public class DnDExplorerTree
          */
         public void dragExit(DropTargetEvent dropTargetEvent) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:StartMethod
             LOG.debug("dragExit");
             //#endif
@@ -749,7 +749,7 @@ public class DnDExplorerTree
             /* If the destination is not a NameSpace, then reject: */
             if (!Model.getFacade().isANamespace(dest)) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 if (LOG.isDebugEnabled()) {                    
                     String name;
@@ -773,7 +773,7 @@ public class DnDExplorerTree
 
             if (Model.getModelManagementHelper().isReadOnly(dest)) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 //@#$LPS-LOGGING:Localization:BeforeReturn
                 LOG.debug("No valid Drag: "
@@ -785,7 +785,7 @@ public class DnDExplorerTree
             /* If the destination is a DataType, then reject: */
             if (Model.getFacade().isADataType(dest)) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.debug("No valid Drag: destination is a DataType.");
                 //#endif
@@ -804,7 +804,7 @@ public class DnDExplorerTree
          */
         public void drop(DropTargetDropEvent dropTargetDropEvent) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:StartMethod
             LOG.debug("dropping ... ");
             //#endif
@@ -827,7 +827,7 @@ public class DnDExplorerTree
                 Point loc = dropTargetDropEvent.getLocation();
                 TreePath destinationPath = getPathForLocation(loc.x, loc.y);
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 if (LOG.isDebugEnabled()) {
                     LOG.debug("Drop location: x=" + loc.x + " y=" + loc.y);
                 }
@@ -843,7 +843,7 @@ public class DnDExplorerTree
                     (Collection) tr.getTransferData(
                         TransferableModelElements.UML_COLLECTION_FLAVOR);
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 if (LOG.isDebugEnabled()) {
                     LOG.debug("transfer data = " + modelElements);
                 }
@@ -897,7 +897,7 @@ public class DnDExplorerTree
                             }
                         }
                         //#if defined(LOGGING)
-                        //@#$LPS-LOGGING:GranularityType:Command
+                        //@#$LPS-LOGGING:GranularityType:Statement
                         if (LOG.isDebugEnabled()) {
                             LOG.debug((moveAction ? "move " : "copy ") + me);
                         }
@@ -916,7 +916,7 @@ public class DnDExplorerTree
                                      * completely implemented - so we will 
                                      * have some exceptions here and there.*/
                                     //#if defined(LOGGING)
-                                    //@#$LPS-LOGGING:GranularityType:Command
+                                    //@#$LPS-LOGGING:GranularityType:Statement
                                     //@#$LPS-LOGGING:Localization:NestedCommand
                                     LOG.error("Exception", e);
                                     //#endif
@@ -959,7 +959,7 @@ public class DnDExplorerTree
                     TargetManager.getInstance().setTargets(newTargets);
                 } catch (java.lang.IllegalStateException ils) {
                     //#if defined(LOGGING)
-                    //@#$LPS-LOGGING:GranularityType:Command
+                    //@#$LPS-LOGGING:GranularityType:Statement
                     LOG.debug("drop IllegalStateException");
                     //#endif
                     dropTargetDropEvent.rejectDrop();
@@ -969,13 +969,13 @@ public class DnDExplorerTree
                     .dropComplete(true);
             } catch (IOException io) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 LOG.debug("drop IOException");
                 //#endif
                 dropTargetDropEvent.rejectDrop();
             } catch (UnsupportedFlavorException ufe) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 LOG.debug("drop UnsupportedFlavorException");
                 //#endif
                 dropTargetDropEvent.rejectDrop();

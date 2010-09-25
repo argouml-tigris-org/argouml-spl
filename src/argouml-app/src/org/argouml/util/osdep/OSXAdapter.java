@@ -127,7 +127,7 @@ public class OSXAdapter implements InvocationHandler {
             enableAboutMethod.invoke(macOSXApplication, new Object[] { Boolean.valueOf(enableAboutMenu) });
         } catch (Exception ex) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("OSXAdapter could not access the About Menu", ex);
             //#endif
         }
@@ -152,7 +152,7 @@ public class OSXAdapter implements InvocationHandler {
             enablePrefsMethod.invoke(macOSXApplication, new Object[] { Boolean.valueOf(enablePrefsMenu) });
         } catch (Exception ex) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("OSXAdapter could not access the About Menu");
             //#endif
             ex.printStackTrace();
@@ -206,12 +206,12 @@ public class OSXAdapter implements InvocationHandler {
             addListenerMethod.invoke(macOSXApplication, new Object[] { osxAdapterProxy });
         } catch (ClassNotFoundException cnfe) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("This version of Mac OS X does not support the Apple EAWT.  ApplicationEvent handling has been disabled (" + cnfe + ")");
             //#endif
         } catch (Exception ex) {  // Likely a NoSuchMethodException or an IllegalAccessException loading/invoking eawt.Application methods
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("Mac OS X Adapter could not talk to EAWT:");
             //#endif
             ex.printStackTrace();
@@ -302,7 +302,7 @@ public class OSXAdapter implements InvocationHandler {
                 setHandledMethod.invoke(event, new Object[] { Boolean.valueOf(handled) });
             } catch (Exception ex) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.error("OSXAdapter was unable to handle an ApplicationEvent: " + event, ex);
                 //#endif

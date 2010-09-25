@@ -120,7 +120,7 @@ public class ProfileUML extends Profile {
             model.add(Model.getModelManagementFactory().createModel());
         }
         //#if defined(COGNITIVE)
-        //@#$LPS-COGNITIVE:GranularityType:Command
+        //@#$LPS-COGNITIVE:GranularityType:Statement
         loadWellFormednessRules();
         //#endif
     }    

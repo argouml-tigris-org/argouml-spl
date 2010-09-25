@@ -505,7 +505,7 @@ public class ShortcutMgr {
 
                 } catch (Exception exc) {
                     //#if defined(LOGGING)
-                    //@#$LPS-LOGGING:GranularityType:Command
+                    //@#$LPS-LOGGING:GranularityType:Statement
                     //@#$LPS-LOGGING:Localization:NestedCommand
                     LOG.error("Exception: " + exc);
                     //#endif
@@ -563,7 +563,7 @@ public class ShortcutMgr {
         } else {
             // it should never go here!
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:BeforeReturn
             LOG.debug("Unknown modifier: " + modifier);
             //#endif
@@ -679,29 +679,29 @@ public class ShortcutMgr {
 
         // create menu
         //#if defined(USECASEDIAGRAM)
-        //@#$LPS-USECASEDIAGRAM:GranularityType:Command
+        //@#$LPS-USECASEDIAGRAM:GranularityType:Statement
         putDefaultShortcut(ACTION_USE_CASE_DIAGRAM, null,
                 new ActionUseCaseDiagram());
         //#endif
         putDefaultShortcut(ACTION_CLASS_DIAGRAM, null, 
                 new ActionClassDiagram());
         //#if defined(SEQUENCEDIAGRAM)
-        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
+        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Statement
         putDefaultShortcut(ACTION_SEQUENCE_DIAGRAM, null,
                 new ActionSequenceDiagram());
         //#endif
         //#if defined(COLLABORATIONDIAGRAM)
-        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
+        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Statement
         putDefaultShortcut(ACTION_COLLABORATION_DIAGRAM, null,
                 new ActionCollaborationDiagram());
         //#endif
         //#if defined(STATEDIAGRAM)
-        //@#$LPS-STATEDIAGRAM:GranularityType:Command
+        //@#$LPS-STATEDIAGRAM:GranularityType:Statement
         putDefaultShortcut(ACTION_STATE_DIAGRAM, null, 
                 new ActionStateDiagram());
         //#endif
         //#if defined(ACTIVITYDIAGRAM)
-        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
+        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Statement
         putDefaultShortcut(ACTION_ACTIVITY_DIAGRAM, null,
                 new ActionActivityDiagram());
         //#endif
@@ -721,7 +721,7 @@ public class ShortcutMgr {
         // critique menu
         // TODO: This dependency should be inverted with the Critics subsystem
         // registering its desired shortcuts with us - tfm
-        //@#$LPS-COGNITIVE:GranularityType:Command
+        //@#$LPS-COGNITIVE:GranularityType:Statement
         //@#$LPS-COGNITIVE:Localization:InsideStaticBlock
         putDefaultShortcut(ACTION_AUTO_CRITIQUE, null, 
                 new ActionAutoCritique());

@@ -84,7 +84,7 @@ public abstract class AbstractFilePersister extends FileFilter
         registerPersister(ProfileConfiguration.class, "profile",
                 ProfileConfigurationFilePersister.class);
         //#if defined(COGNITIVE)    
-        //@#$LPS-COGNITIVE:GranularityType:Command
+        //@#$LPS-COGNITIVE:GranularityType:Statement
         //@#$LPS-COGNITIVE:Localization:InsideStaticBlock
         registerPersister(ProjectMemberTodoList.class, "todo",
                 TodoListMemberFilePersister.class);
@@ -403,13 +403,13 @@ public abstract class AbstractFilePersister extends FileFilter
             return clazz.newInstance();
         } catch (InstantiationException e) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("Exception instantiating file persister " + clazz, e);
             //#endif
             return null;
         } catch (IllegalAccessException e) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("Exception instantiating file persister " + clazz, e);
             //#endif
             return null;

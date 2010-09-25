@@ -473,7 +473,7 @@ public final class TargetManager {
 	    return;
 	}
 	//#if defined(LOGGING)
-	//@#$LPS-LOGGING:GranularityType:Command
+	//@#$LPS-LOGGING:GranularityType:Statement
 	//@#$LPS-LOGGING:Localization:EndMethod
 	LOG.error("Unknown eventName: " + eventName);
 	//#endif
@@ -590,7 +590,7 @@ public final class TargetManager {
      */
     public synchronized void addTarget(Object target) {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         if (target instanceof TargetListener) {            
             LOG.warn("addTarget method received a TargetListener, "
@@ -772,7 +772,7 @@ public final class TargetManager {
 	        }
 	    } catch (RuntimeException e) {
 	        //#if defined(LOGGING)
-	        //@#$LPS-LOGGING:GranularityType:Command
+	        //@#$LPS-LOGGING:GranularityType:Statement
 	        //@#$LPS-LOGGING:Localization:NestedCommand
 	        LOG.error("While calling targetSet for "
 	                + targetEvent
@@ -798,7 +798,7 @@ public final class TargetManager {
 		}
 	    } catch (RuntimeException e) {
 	        //#if defined(LOGGING)
-	        //@#$LPS-LOGGING:GranularityType:Command
+	        //@#$LPS-LOGGING:GranularityType:Statement
 	        //@#$LPS-LOGGING:Localization:NestedCommand
 		LOG.error("While calling targetAdded for "
 			  + targetEvent
@@ -824,7 +824,7 @@ public final class TargetManager {
 		}
 	    } catch (RuntimeException e) {
 	        //#if defined(LOGGING)
-	        //@#$LPS-LOGGING:GranularityType:Command
+	        //@#$LPS-LOGGING:GranularityType:Statement
 	        //@#$LPS-LOGGING:Localization:NestedCommand
 		LOG.warn("While calling targetRemoved for "
 			  + targetEvent
@@ -922,7 +922,7 @@ public final class TargetManager {
     public void navigateForward() throws IllegalStateException {
         historyManager.navigateForward();
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:EndMethod
         LOG.debug("Navigate forward");
         //#endif
@@ -938,7 +938,7 @@ public final class TargetManager {
     public void navigateBackward() throws IllegalStateException {
         historyManager.navigateBackward();
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:EndMethod
         LOG.debug("Navigate backward");
         //#endif
@@ -1017,7 +1017,7 @@ public final class TargetManager {
                     ((NotificationEmitter) o).removeNotificationListener(this);
                 } catch (ListenerNotFoundException e) {
                     //#if defined(LOGGING)
-                    //@#$LPS-LOGGING:GranularityType:Command
+                    //@#$LPS-LOGGING:GranularityType:Statement
                     //@#$LPS-LOGGING:Localization:NestedCommand
                     LOG.error("Notification Listener for "
                                 + "CommentEdge not found", e);

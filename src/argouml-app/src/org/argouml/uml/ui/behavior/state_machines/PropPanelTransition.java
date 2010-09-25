@@ -87,7 +87,7 @@ public class PropPanelTransition extends PropPanelModelElement {
 
         addAction(new ActionNavigateContainerElement());
         //#if defined(STATEDIAGRAM)
-        //@#$LPS-STATEDIAGRAM:GranularityType:Command
+        //@#$LPS-STATEDIAGRAM:GranularityType:Statement
         addAction(getTriggerActions());
         //#endif
         addAction(new ButtonActionNewGuard());

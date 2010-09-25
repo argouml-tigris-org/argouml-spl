@@ -58,8 +58,8 @@ public class ActionAddMessagePredecessor extends AbstractActionAddModelElement2 
         }
         List vec = new ArrayList();
         //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
-        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
-        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
+        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Statement
+        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Statement
         //@#$LPS-COLLABORATIONDIAGRAM:Localization:BeforeReturn
         //@#$LPS-SEQUENCEDIAGRAM:Localization:BeforeReturn           
         vec.addAll(Model.getCollaborationsHelper()
@@ -90,8 +90,8 @@ public class ActionAddMessagePredecessor extends AbstractActionAddModelElement2 
 	    throw new IllegalStateException(
                 "doIt may not be called with null target");
         //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
-        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
-        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
+        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Statement
+        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Statement
         //@#$LPS-COLLABORATIONDIAGRAM:Localization:EndMethod
         //@#$LPS-SEQUENCEDIAGRAM:Localization:EndMethod   	
 	Object message = getTarget();

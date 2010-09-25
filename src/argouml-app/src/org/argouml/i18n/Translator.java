@@ -254,14 +254,14 @@ public final class Translator {
         ResourceBundle bundle = null;
         try {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.debug("Loading " + resource);
             //#endif
             Locale locale = Locale.getDefault();
             bundle = ResourceBundle.getBundle(resource, locale);
         } catch (MissingResourceException e1) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.debug("Resource " + resource
 		      + " not found in the default class loader.");
             //#endif
@@ -270,7 +270,7 @@ public final class Translator {
 		ClassLoader cl = (ClassLoader) iter.next();
 		try {
 		    //#if defined(LOGGING)
-		    //@#$LPS-LOGGING:GranularityType:Command
+		    //@#$LPS-LOGGING:GranularityType:Statement
 		    LOG.debug("Loading " + resource + " from " + cl);
 		    //#endif
 		    bundle =
@@ -280,7 +280,7 @@ public final class Translator {
 		    break;
 		} catch (MissingResourceException e2) {
 		    //#if defined(LOGGING)
-		    //@#$LPS-LOGGING:GranularityType:Command
+		    //@#$LPS-LOGGING:GranularityType:Statement
 		    LOG.debug("Resource " + resource + " not found in " + cl);
 		    //#endif
 		}
@@ -350,7 +350,7 @@ public final class Translator {
         ResourceBundle bundle = bundles.get(name);
         if (bundle == null) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.debug("Bundle (" + name + ") for resource "
                     + key + " not found.");
             //#endif
@@ -361,7 +361,7 @@ public final class Translator {
             return bundle.getString(key);
         } catch (MissingResourceException e) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.debug("Resource " + key + " not found.");
             //#endif
             return key;

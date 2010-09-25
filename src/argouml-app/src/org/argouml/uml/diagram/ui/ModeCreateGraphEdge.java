@@ -144,7 +144,7 @@ public abstract class ModeCreateGraphEdge extends ModeCreatePolyEdge {
             destFig = null;
         } 
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         else {
             LOG.info("Connection valid");
         }
@@ -176,7 +176,7 @@ public abstract class ModeCreateGraphEdge extends ModeCreatePolyEdge {
                 editor.damageAll();
                 p.setComplete(true);
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.info("Connecting");
                 //#endif

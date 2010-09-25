@@ -98,7 +98,7 @@ public class HelpBox extends JFrame implements HyperlinkListener {
                 paneURL = new URL( pages[i][1]);
             } catch ( MalformedURLException e) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.warn( pages[i][0] + " URL malformed: " + pages[i][1]);
                 //#endif
@@ -109,14 +109,14 @@ public class HelpBox extends JFrame implements HyperlinkListener {
                     panes[i].setPage( paneURL);
                 } catch ( IOException e) {
                     //#if defined(LOGGING)
-                    //@#$LPS-LOGGING:GranularityType:Command
+                    //@#$LPS-LOGGING:GranularityType:Statement
                     //@#$LPS-LOGGING:Localization:NestedCommand
                     LOG.warn("Attempted to read a bad URL: " + paneURL);
                     //#endif
                 }
             } 
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             else {
                 LOG.warn("Couldn't find " + pages[i][0]);
             }
@@ -140,7 +140,7 @@ public class HelpBox extends JFrame implements HyperlinkListener {
                 pane.setPage(event.getURL());
             } catch (IOException ioe) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 LOG.warn( "Could not fetch requested URL");
                 //#endif
             }

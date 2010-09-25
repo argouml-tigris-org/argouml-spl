@@ -54,7 +54,7 @@ public class InitProfileSubsystem {
 
         /* Set up the property panels for critics: */
         //#if defined(COGNITIVE)
-        //@#$LPS-COGNITIVE:GranularityType:Command
+        //@#$LPS-COGNITIVE:GranularityType:Statement
         PropPanelFactory factory = new ProfilePropPanelFactory();
         PropPanelFactoryManager.addPropPanelFactory(factory);    
         //#endif

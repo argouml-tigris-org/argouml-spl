@@ -106,7 +106,7 @@ class ZipFilePersister extends XmiFilePersister {
      */
     public void doSave(Project project, File file) throws SaveException {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         LOG.info("Receiving file '" + file.getName() + "'");
         //#endif
@@ -141,7 +141,7 @@ class ZipFilePersister extends XmiFilePersister {
                     project.getMembers().get(i);
                 if (projectMember.getType().equalsIgnoreCase("xmi")) {
                     //#if defined(LOGGING)
-                    //@#$LPS-LOGGING:GranularityType:Command
+                    //@#$LPS-LOGGING:GranularityType:Statement
                     //@#$LPS-LOGGING:Localization:NestedCommand
                     if (LOG.isInfoEnabled()) {
                         LOG.info("Saving member of type: "
@@ -169,7 +169,7 @@ class ZipFilePersister extends XmiFilePersister {
             }
         } catch (Exception e) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("Exception occured during save attempt", e);
             //#endif
             try {
@@ -191,7 +191,7 @@ class ZipFilePersister extends XmiFilePersister {
             bufferedStream.close();
         } catch (IOException ex) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("Failed to close save output writer", ex);
             //#endif
         }
@@ -203,7 +203,7 @@ class ZipFilePersister extends XmiFilePersister {
     public Project doLoad(File file)
         throws OpenException {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         LOG.info("Receiving file '" + file.getName() + "'");
         //#endif

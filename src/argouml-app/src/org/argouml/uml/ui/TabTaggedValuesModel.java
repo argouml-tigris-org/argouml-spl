@@ -79,7 +79,7 @@ public class TabTaggedValuesModel extends AbstractTableModel implements
      */
     public void setTarget(Object t) {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         if (LOG.isDebugEnabled()) {
             LOG.debug("Set target to " + t);

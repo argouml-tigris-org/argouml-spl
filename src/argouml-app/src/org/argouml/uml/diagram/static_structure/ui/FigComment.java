@@ -300,7 +300,7 @@ public class FigComment
                 readyToEdit = true;
             } else {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.debug("not ready to edit note");
                 //#endif
@@ -336,9 +336,9 @@ public class FigComment
             SwingUtilities.invokeLater(delayedNotify);
         } 
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         else {
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:EndMethod
             LOG.debug("FigNodeModelElement got vetoableChange"
 		      + " from non-owner:" + src);
@@ -412,7 +412,7 @@ public class FigComment
                 readyToEdit = true;
             } else {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.debug("not ready to edit note");
                 //#endif

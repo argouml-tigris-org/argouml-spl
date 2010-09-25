@@ -150,7 +150,7 @@ public class FigFinalState extends FigStateVertex {
                 ((SelectionActionState) sel).setOutgoingButtonEnabled(false);
             } 
             //#if defined(STATEDIAGRAM)
-            //@#$LPS-STATEDIAGRAM:GranularityType:Command
+            //@#$LPS-STATEDIAGRAM:GranularityType:Statement
             //@#$LPS-STATEDIAGRAM:Localization:NestedCommand
             //@#$LPS-STATEDIAGRAM:Localization:NestedIfdef-ACTIVITYDIAGRAM
             else {

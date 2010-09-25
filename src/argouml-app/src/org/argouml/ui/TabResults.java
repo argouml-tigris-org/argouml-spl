@@ -315,7 +315,7 @@ public class TabResults
 
 	if (d != null) {
 	    //#if defined(LOGGING)
-	    //@#$LPS-LOGGING:GranularityType:Command
+	    //@#$LPS-LOGGING:GranularityType:Statement
 	    //@#$LPS-LOGGING:Localization:NestedCommand
             LOG.debug("go " + sel + " in " + d.getName());
             //#endif
@@ -365,7 +365,7 @@ public class TabResults
 	    int row = lse.getFirstIndex();
 	    Object sel = results.get(row);
 	    //#if defined(LOGGING)
-	    //@#$LPS-LOGGING:GranularityType:Command
+	    //@#$LPS-LOGGING:GranularityType:Statement
 	    LOG.debug("selected " + sel);
 	    //#endif
 	    related.clear();

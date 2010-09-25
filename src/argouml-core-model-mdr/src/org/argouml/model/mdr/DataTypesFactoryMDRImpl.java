@@ -172,7 +172,7 @@ class DataTypesFactoryMDRImpl extends AbstractUmlModelFactoryMDR
         Multiplicity multiplicity = modelImpl.getUmlPackage().getDataTypes()
                 .getMultiplicity().createMultiplicity();
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         if (LOG.isDebugEnabled()) {
             LOG.debug("Multiplicity created for range " + lower + ".." + upper);
@@ -194,7 +194,7 @@ class DataTypesFactoryMDRImpl extends AbstractUmlModelFactoryMDR
         Multiplicity multiplicity = modelImpl.getUmlPackage().getDataTypes()
                 .getMultiplicity().createMultiplicity();
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         if (LOG.isDebugEnabled()) {
             LOG.debug("Multiplicity created for list " + range);
         }

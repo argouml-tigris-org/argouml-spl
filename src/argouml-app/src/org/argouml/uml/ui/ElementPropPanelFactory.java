@@ -176,7 +176,7 @@ class ElementPropPanelFactory implements PropPanelFactory {
             } else if (Model.getFacade().isAEnumerationLiteral(element)) {
                 return new PropPanelEnumerationLiteral();
            //#if defined(USECASEDIAGRAM)
-           //@#$LPS-USECASEDIAGRAM:GranularityType:Command
+           //@#$LPS-USECASEDIAGRAM:GranularityType:Statement
             } else if (Model.getFacade().isAExtensionPoint(element)) {
                 return new PropPanelExtensionPoint();
             //#endif
@@ -240,7 +240,7 @@ class ElementPropPanelFactory implements PropPanelFactory {
     private PropPanelClassifier getClassifierPropPanel(Object element) {
         if 
         //#if defined(USECASEDIAGRAM)
-        //@#$LPS-USECASEDIAGRAM:GranularityType:Command
+        //@#$LPS-USECASEDIAGRAM:GranularityType:Statement
         (Model.getFacade().isAActor(element)) {
             return new PropPanelActor();
         } else if 
@@ -272,7 +272,7 @@ class ElementPropPanelFactory implements PropPanelFactory {
                 return new PropPanelSignal();
             }
         //#if defined(USECASEDIAGRAM)
-        //@#$LPS-USECASEDIAGRAM:GranularityType:Command
+        //@#$LPS-USECASEDIAGRAM:GranularityType:Statement
         } else if (Model.getFacade().isAUseCase(element)) {
             return new PropPanelUseCase();
         //#endif
@@ -312,7 +312,7 @@ class ElementPropPanelFactory implements PropPanelFactory {
                 return new PropPanelDependency();
             }
         //#if defined(USECASEDIAGRAM)
-        //@#$LPS-USECASEDIAGRAM:GranularityType:Command
+        //@#$LPS-USECASEDIAGRAM:GranularityType:Statement
         } else if (Model.getFacade().isAExtend(element)) {
             return new PropPanelExtend();
         //#endif
@@ -321,7 +321,7 @@ class ElementPropPanelFactory implements PropPanelFactory {
         } else if (Model.getFacade().isAGeneralization(element)) {
             return new PropPanelGeneralization();
         //#if defined(USECASEDIAGRAM)
-        //@#$LPS-USECASEDIAGRAM:GranularityType:Command
+        //@#$LPS-USECASEDIAGRAM:GranularityType:Statement
         } else if (Model.getFacade().isAInclude(element)) {
             return new PropPanelInclude();
         //#endif
@@ -375,8 +375,8 @@ class ElementPropPanelFactory implements PropPanelFactory {
             return new PropPanelPseudostate();
         } 
         //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
-        //@#$LPS-STATEDIAGRAM:GranularityType:Command
-        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
+        //@#$LPS-STATEDIAGRAM:GranularityType:Statement
+        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Statement
         else if (Model.getFacade().isAStubState(element)) {
             return new PropPanelStubState();
         }         

@@ -50,8 +50,8 @@ public class GoStateToDownstream extends AbstractPerspectiveRule {
      */
     public Collection getChildren(Object parent) {
         //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
-        //@#$LPS-STATEDIAGRAM:GranularityType:Command
-        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
+        //@#$LPS-STATEDIAGRAM:GranularityType:Statement
+        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Statement
         //@#$LPS-STATEDIAGRAM:Localization:StartMethod
         //@#$LPS-ACTIVITYDIAGRAM:Localization:StartMethod        
 	if (Model.getFacade().isAStateVertex(parent)) {

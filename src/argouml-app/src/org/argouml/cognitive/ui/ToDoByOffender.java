@@ -68,7 +68,7 @@ public class ToDoByOffender extends ToDoPerspective
      */
     public void toDoItemsChanged(ToDoListEvent tde) {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
         LOG.debug("toDoItemsChanged");
@@ -120,7 +120,7 @@ public class ToDoByOffender extends ToDoPerspective
      */
     public void toDoItemsAdded(ToDoListEvent tde) {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
         LOG.debug("toDoItemAdded");
@@ -174,7 +174,7 @@ public class ToDoByOffender extends ToDoPerspective
      */
     public void toDoItemsRemoved(ToDoListEvent tde) {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
         LOG.debug("toDoItemRemoved");
@@ -202,7 +202,7 @@ public class ToDoByOffender extends ToDoPerspective
                     continue;
                 }
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE       
                 LOG.debug("toDoItemRemoved updating PriorityNode");
                 //#endif

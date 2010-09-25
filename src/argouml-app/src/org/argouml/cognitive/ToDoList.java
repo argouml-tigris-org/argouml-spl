@@ -182,7 +182,7 @@ public class ToDoList extends Observable implements Runnable {
                         pausedMutex.wait();
                     } catch (InterruptedException ignore) {
                         //#if defined(LOGGING)
-                        //@#$LPS-LOGGING:GranularityType:Command
+                        //@#$LPS-LOGGING:GranularityType:Statement
                         //@#$LPS-LOGGING:Localization:NestedCommand
                         //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
                         LOG.error("InterruptedException!!!", ignore);
@@ -197,7 +197,7 @@ public class ToDoList extends Observable implements Runnable {
                 Thread.sleep(SLEEP_SECONDS * 1000);
             } catch (InterruptedException ignore) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
                 LOG.error("InterruptedException!!!", ignore);
                 //#endif
@@ -249,7 +249,7 @@ public class ToDoList extends Observable implements Runnable {
                     buf.append("\n");
                     buf.append(item.toString());
                     //#if defined(LOGGING)
-                    //@#$LPS-LOGGING:GranularityType:Command
+                    //@#$LPS-LOGGING:GranularityType:Statement
                     //@#$LPS-LOGGING:Localization:NestedCommand
                     //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
                     LOG.error(buf.toString(), ex);
@@ -473,7 +473,7 @@ public class ToDoList extends Observable implements Runnable {
                 while (elems.hasNext()) {
                     if (elems.next().equals(rc)) {
                         //#if defined(LOGGING)
-                        //@#$LPS-LOGGING:GranularityType:Command
+                        //@#$LPS-LOGGING:GranularityType:Statement
                         //@#$LPS-LOGGING:Localization:NestedCommand
                         //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
                         LOG.debug("ToDoItem not added because it was resolved");
@@ -602,7 +602,7 @@ public class ToDoList extends Observable implements Runnable {
      */
     public void removeAllElements() {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
         LOG.debug("removing all todo items");

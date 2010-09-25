@@ -117,7 +117,7 @@ public abstract class AbstractSection {
                             endSectionId = getSectId(line);
                         } while (endSectionId == null);
                         //#if defined(LOGGING)
-                        //@#$LPS-LOGGING:GranularityType:Command
+                        //@#$LPS-LOGGING:GranularityType:Statement
                         //@#$LPS-LOGGING:Localization:NestedCommand
                         if (!endSectionId.equals(sectionId)) {  
                             LOG.error("Mismatch between sectionId (\""
@@ -152,7 +152,7 @@ public abstract class AbstractSection {
             fw.close();
         } catch (IOException e) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("Error: " + e.toString());
             //#endif
         }
@@ -194,7 +194,7 @@ public abstract class AbstractSection {
             fr.close();
         } catch (IOException e) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("Error: " + e.toString());
             //#endif
         }

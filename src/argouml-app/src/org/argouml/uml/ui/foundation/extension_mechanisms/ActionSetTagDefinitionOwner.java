@@ -78,7 +78,7 @@ public class ActionSetTagDefinitionOwner extends UndoableAction {
         super.actionPerformed(e);
         Object source = e.getSource();
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         LOG.info("Receiving " + e + "/" + e.getID() + "/"
                 + e.getActionCommand());
         //#endif
@@ -89,7 +89,7 @@ public class ActionSetTagDefinitionOwner extends UndoableAction {
             final Object tagDefinition = combo.getTarget();
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:Localization:NestedCommand
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.info("Set owner to " + o);
             //#endif
             if (Model.getFacade().isAStereotype(o)

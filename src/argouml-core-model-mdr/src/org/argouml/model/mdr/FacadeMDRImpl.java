@@ -2060,7 +2060,7 @@ class FacadeMDRImpl implements Facade {
             }
         } 
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:BeforeReturn
         else {
             LOG.warn("No default extent in getRootElements");
@@ -4022,7 +4022,7 @@ class FacadeMDRImpl implements Facade {
                     return "";
                 }
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 // TODO: Implement support for multiple TaggedValues
                 if (values.size() + refValues.size() > 1) {
@@ -4046,7 +4046,7 @@ class FacadeMDRImpl implements Facade {
                 else {
                     // TODO: Implement support for types other than String
                     //#if defined(LOGGING)
-                    //@#$LPS-LOGGING:GranularityType:Command
+                    //@#$LPS-LOGGING:GranularityType:Statement
                     //@#$LPS-LOGGING:Localization:NestedCommand
                     LOG.warn("Can't handled TaggedValue.dataValues which "
                             + " aren't Strings.  Converting to String");

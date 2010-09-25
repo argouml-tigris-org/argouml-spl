@@ -131,7 +131,7 @@ public class DeferredBufferedImage implements RenderedImage {
 
     public Raster getData() {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         LOG.debug("getData with no params");
         //#endif
@@ -142,7 +142,7 @@ public class DeferredBufferedImage implements RenderedImage {
 //        LOG.debug("getData Rectangle = " + clip);
         if (!isRasterValid(clip)) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.debug("Raster not valid, computing new raster");
             //#endif
             computeRaster(clip);
@@ -175,7 +175,7 @@ public class DeferredBufferedImage implements RenderedImage {
      */
     private void computeRaster(Rectangle clip) {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         LOG.debug("Computing raster for rectangle " + clip);
         //#endif
@@ -245,7 +245,7 @@ public class DeferredBufferedImage implements RenderedImage {
 
     public int getMinX() {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         //@#$LPS-LOGGING:Localization:BeforeReturn
         LOG.debug("getMinX = 0");
@@ -255,7 +255,7 @@ public class DeferredBufferedImage implements RenderedImage {
 
     public int getMinY() {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         //@#$LPS-LOGGING:Localization:BeforeReturn
         LOG.debug("getMinY = 0");
@@ -265,7 +265,7 @@ public class DeferredBufferedImage implements RenderedImage {
 
     public int getMinTileX() {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         //@#$LPS-LOGGING:Localization:BeforeReturn
         LOG.debug("getMinTileX = 0");
@@ -275,7 +275,7 @@ public class DeferredBufferedImage implements RenderedImage {
 
     public int getMinTileY() {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         //@#$LPS-LOGGING:Localization:BeforeReturn
         LOG.debug("getMinTileY = 0");
@@ -285,7 +285,7 @@ public class DeferredBufferedImage implements RenderedImage {
     
     public int getNumXTiles() {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         //@#$LPS-LOGGING:Localization:BeforeReturn
         LOG.debug("getNumXTiles = 1");
@@ -302,7 +302,7 @@ public class DeferredBufferedImage implements RenderedImage {
     public int getNumYTiles() {
         int tiles = (getHeight() + scaledBufferHeight - 1) / scaledBufferHeight;
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:BeforeReturn
         LOG.debug("getNumYTiles = " + tiles);
         //#endif
@@ -331,7 +331,7 @@ public class DeferredBufferedImage implements RenderedImage {
 
     public Raster getTile(int tileX, int tileY) {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         LOG.debug("getTile x=" + tileX + " y = " + tileY);
         //#endif
@@ -350,7 +350,7 @@ public class DeferredBufferedImage implements RenderedImage {
 
     public int getTileGridXOffset() {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         //@#$LPS-LOGGING:Localization:BeforeReturn
         LOG.debug("getTileGridXOffset = 0");
@@ -360,7 +360,7 @@ public class DeferredBufferedImage implements RenderedImage {
 
     public int getTileGridYOffset() {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         //@#$LPS-LOGGING:Localization:BeforeReturn
         LOG.debug("getTileGridYOffset = 0");
@@ -370,7 +370,7 @@ public class DeferredBufferedImage implements RenderedImage {
 
     public int getTileWidth() {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         //@#$LPS-LOGGING:Localization:BeforeReturn
         LOG.debug("getTileWidth = " + width);
@@ -380,7 +380,7 @@ public class DeferredBufferedImage implements RenderedImage {
     
     public int getTileHeight() {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         //@#$LPS-LOGGING:Localization:BeforeReturn
         LOG.debug("getTileHeight = " + scaledBufferHeight);
@@ -390,7 +390,7 @@ public class DeferredBufferedImage implements RenderedImage {
 
     public int getWidth() {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         //@#$LPS-LOGGING:Localization:BeforeReturn
         LOG.debug("getWidth = " + width);
@@ -400,7 +400,7 @@ public class DeferredBufferedImage implements RenderedImage {
     
     public int getHeight() {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         //@#$LPS-LOGGING:Localization:BeforeReturn
         LOG.debug("getHeight = " + height);

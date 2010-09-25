@@ -449,7 +449,7 @@ class CoreHelperMDRImpl implements CoreHelper {
         final boolean alreadyChecked = !dupCheck.add(ge);
         if (alreadyChecked) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:BeforeReturn
             //@#$LPS-LOGGING:Localization:NestedCommand
             LOG.warn("Cyclic generalization found " + getFullName(ge));
@@ -1760,7 +1760,7 @@ class CoreHelperMDRImpl implements CoreHelper {
     public Collection<Namespace> getAllPossibleNamespaces(Object modelElement,
             Object model) {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         LOG.debug("getAllPossibleNamespaces start");
         //#endif
@@ -1768,7 +1768,7 @@ class CoreHelperMDRImpl implements CoreHelper {
         Collection<Namespace>  ret = new HashSet<Namespace> ();
         if (m == null) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             LOG.debug("getAllPossibleNamespaces end");
             //#endif
@@ -1791,7 +1791,7 @@ class CoreHelperMDRImpl implements CoreHelper {
             throw new InvalidElementException(e);
         }
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:BeforeReturn
         if (LOG.isDebugEnabled()) {
             // This is an expensive method that we should ensure is called
@@ -2947,7 +2947,7 @@ class CoreHelperMDRImpl implements CoreHelper {
             }
             if (handle instanceof AssociationEnd) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 //@#$LPS-LOGGING:Localization:BeforeReturn
                 LOG.debug("Setting association end mult to " + mult);
@@ -3406,7 +3406,7 @@ class CoreHelperMDRImpl implements CoreHelper {
                 .refAllOfClass()) {
             String name = ((javax.jmi.model.ModelElement) element).getName();
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             if (names.add(name)) {
                 LOG.debug(" Class " + name);
@@ -3428,7 +3428,7 @@ class CoreHelperMDRImpl implements CoreHelper {
             String name = ((javax.jmi.model.DataType) element).getName();
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:Localization:NestedCommand
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             if (names.add(name)) {                
                 LOG.debug(" DataType " + name);
             } else {
@@ -3444,7 +3444,7 @@ class CoreHelperMDRImpl implements CoreHelper {
                 .refAllOfClass()) {
             String name = ((javax.jmi.model.EnumerationType) element).getName();
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             if (names.add(name)) {
                 LOG.debug(" EnumerationType " + name);
@@ -3462,7 +3462,7 @@ class CoreHelperMDRImpl implements CoreHelper {
                 .refAllOfClass()) {
             String name = ((javax.jmi.model.PrimitiveType) element).getName();
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             if (names.add(name)) {
                 LOG.debug(" PrimitiveType " + name);

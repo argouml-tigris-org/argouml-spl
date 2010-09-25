@@ -174,7 +174,7 @@ public class TabProps
     public void setTarget(Object target) {
         // targets ought to be UML objects or diagrams
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         LOG.info("setTarget: there are "
                 + TargetManager.getInstance().getTargets().size()
@@ -248,7 +248,7 @@ public class TabProps
         TabModelTarget panel = panels.get(trgt.getClass());
         if (panel != null) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             if (LOG.isDebugEnabled()) {
                 LOG.debug("Getting prop panel for: " + trgt.getClass().getName()
                         + ", " + "found (in cache?) " + panel);
@@ -263,7 +263,7 @@ public class TabProps
         panel = createPropPanel(trgt);
         if (panel != null) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.debug("Factory created " + panel.getClass().getName()
                     + " for " + trgt.getClass().getName());
             //#endif
@@ -271,7 +271,7 @@ public class TabProps
             return panel;
         }
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:BeforeReturn
         LOG.error("Failed to create a prop panel for : " + trgt);
         //#endif

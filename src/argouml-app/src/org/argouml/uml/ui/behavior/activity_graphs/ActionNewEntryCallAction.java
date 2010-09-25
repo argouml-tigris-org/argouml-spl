@@ -53,7 +53,7 @@ class ActionNewEntryCallAction extends UndoableAction {
         Object t = TargetManager.getInstance().getModelTarget();
         Object ca = Model.getCommonBehaviorFactory().createCallAction();
         //#if defined(COLLABORATIONDIAGRAM)
-        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
+        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Statement
         Model.getStateMachinesHelper().setEntry(t, ca);
         //#endif
         TargetManager.getInstance().setTarget(ca);

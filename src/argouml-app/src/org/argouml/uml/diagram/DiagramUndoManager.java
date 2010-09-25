@@ -100,7 +100,7 @@ public class DiagramUndoManager extends UndoManager {
     
     public void addPropertyChangeListener(PropertyChangeListener listener) {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         LOG.info("Adding property listener " + listener);
         //#endif

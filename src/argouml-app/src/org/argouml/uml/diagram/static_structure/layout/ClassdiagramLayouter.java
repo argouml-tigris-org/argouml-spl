@@ -165,7 +165,7 @@ public class ClassdiagramLayouter implements Layouter {
                 newRow.addNode(n);
             }
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             if (LOG.isDebugEnabled()) {
                 LOG.debug("Row split. This row width: " + getWidth(gap)
                         + " next row(s) width: " + newRow.getWidth(gap));
@@ -202,7 +202,7 @@ public class ClassdiagramLayouter implements Layouter {
                 result += node.getSize().width + gap;
             }
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             if (LOG.isDebugEnabled()) {
                 LOG.debug("Width of row " + rowNumber + ": " + result);
             }
@@ -424,7 +424,7 @@ public class ClassdiagramLayouter implements Layouter {
         placeNodes();
         placeEdges();
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:EndMethod
         LOG.debug("layout duration: " + (System.currentTimeMillis() - s));
         //#endif
@@ -468,7 +468,7 @@ public class ClassdiagramLayouter implements Layouter {
 		     uplinks.size() == 1 ? node.getPlacementHint() : -1);
         node.setLocation(new Point(xPosNew, yPos));
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         if (LOG.isDebugEnabled()) {
             LOG.debug("placeNode - Row: " + node.getRank() + " Col: "
                     + node.getColumn() + " Weight: " + node.getWeight()
@@ -634,7 +634,7 @@ public class ClassdiagramLayouter implements Layouter {
                     edgeList.add((ClassdiagramInheritanceEdge) edge);
                 } 
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 else {
                     LOG.error("Edge with missing end(s): " + edge);
@@ -647,7 +647,7 @@ public class ClassdiagramLayouter implements Layouter {
                     child.addUplink(parent);
                 } 
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 else {
                     LOG.error("Unexpected parent/child constellation for edge: "
@@ -659,7 +659,7 @@ public class ClassdiagramLayouter implements Layouter {
                 // TODO: Create appropriate ClassdiagramEdge
             } 
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             else {
                 LOG.error("Unsupported edge type");

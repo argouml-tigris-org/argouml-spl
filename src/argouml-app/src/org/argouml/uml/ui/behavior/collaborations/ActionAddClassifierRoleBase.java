@@ -56,8 +56,8 @@ public class ActionAddClassifierRoleBase extends AbstractActionAddModelElement2 
     protected List getChoices() {
         List vec = new ArrayList();
         //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
-        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
-        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
+        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Statement
+        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Statement
         //@#$LPS-COLLABORATIONDIAGRAM:Localization:BeforeReturn
         //@#$LPS-SEQUENCEDIAGRAM:Localization:BeforeReturn           
         vec.addAll(Model.getCollaborationsHelper()
@@ -81,8 +81,8 @@ public class ActionAddClassifierRoleBase extends AbstractActionAddModelElement2 
 
     protected void doIt(Collection selected) {
         //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
-        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
-        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
+        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Statement
+        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Statement
         //@#$LPS-COLLABORATIONDIAGRAM:Localization:EntireMethod
         //@#$LPS-SEQUENCEDIAGRAM:Localization:EntireMethod           
         Object role = getTarget();

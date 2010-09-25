@@ -366,7 +366,7 @@ public class FigClassifierBoxWithAttributes extends FigClassifierBox
         calcBounds();
         updateEdges();
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         LOG.debug("Bounds change : old - " + oldBounds + ", new - " 
                 + getBounds());
         //#endif

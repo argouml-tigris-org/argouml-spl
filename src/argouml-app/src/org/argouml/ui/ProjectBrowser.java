@@ -378,25 +378,25 @@ public final class ProjectBrowser
                 m.invoke(this, argoImages);
             } catch (InvocationTargetException e) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.error("Exception", e);
                 //#endif
             } catch (NoSuchMethodException e) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.error("Exception", e);
                 //#endif
             } catch (IllegalArgumentException e) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.error("Exception", e);
                 //#endif
             } catch (IllegalAccessException e) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.error("Exception", e);
                 //#endif
@@ -1039,7 +1039,7 @@ public final class ProjectBrowser
                 titleHandler.buildTitle(p.getName(), null);
                 //Designer.TheDesigner.getToDoList().removeAllElements();
                 //#if defined(COGNITIVE)
-                //@#$LPS-COGNITIVE:GranularityType:Command
+                //@#$LPS-COGNITIVE:GranularityType:Statement
                 //@#$LPS-COGNITIVE:Localization:NestedCommand
                 Designer.setCritiquingRoot(p);
                 //#endif
@@ -1257,7 +1257,7 @@ public final class ProjectBrowser
             File file, 
             ProgressMonitor pmw) {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         LOG.info("Saving the project");
         //#endif
@@ -1327,7 +1327,7 @@ public final class ProjectBrowser
                     ArgoEventTypes.STATUS_PROJECT_SAVED, this, 
                     file.getAbsolutePath()));
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.debug ("setting most recent project file to "
                    + file.getCanonicalPath());
             //#endif
@@ -1359,7 +1359,7 @@ public final class ProjectBrowser
                             new Object[] {file.getName()}),
                     true, ex);
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error(sMessage, ex);
             //#endif
         }
@@ -1381,7 +1381,7 @@ public final class ProjectBrowser
             if (figs.size() > 0) {
                 Fig fig = (Fig) figs.get(0);
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.error("Setting owner of " 
                         + fig.getClass().getName() + " to null");
@@ -1486,7 +1486,7 @@ public final class ProjectBrowser
     public boolean loadProject(File file, boolean showUI, 
             ProgressMonitor pmw) {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         LOG.info("Loading project.");
         //#endif
@@ -1513,7 +1513,7 @@ public final class ProjectBrowser
         // loading the new one.
       
         //#if defined(COGNITIVE)
-        //@#$LPS-COGNITIVE:GranularityType:Command
+        //@#$LPS-COGNITIVE:GranularityType:Statement
         Designer.disableCritiquing();
         Designer.clearCritiquing();
         //#endif
@@ -1523,7 +1523,7 @@ public final class ProjectBrowser
         if (!(file.canRead())) {
             reportError(pmw, "File not found " + file + ".", showUI);
             //#if defined(COGNITIVE)
-            //@#$LPS-COGNITIVE:GranularityType:Command
+            //@#$LPS-COGNITIVE:GranularityType:Statement
             //@#$LPS-COGNITIVE:Localization:NestedCommand
             Designer.enableCritiquing();
             //#endif
@@ -1594,7 +1594,7 @@ public final class ProjectBrowser
                         showUI);
             } catch (OutOfMemoryError ex) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 LOG.error("Out of memory while loading project", ex);
                 //#endif
                 reportError(
@@ -1603,7 +1603,7 @@ public final class ProjectBrowser
                         showUI);
             } catch (java.lang.InterruptedException ex) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.error("Project loading interrupted by user");
                 //#endif
@@ -1637,7 +1637,7 @@ public final class ProjectBrowser
                 }
             } catch (IOException ex) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.error("Exception while loading project", ex);
                 //#endif
@@ -1649,7 +1649,7 @@ public final class ProjectBrowser
                         showUI, ex);
             } catch (OpenException ex) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.error("Exception while loading project", ex);
                 //#endif
@@ -1662,7 +1662,7 @@ public final class ProjectBrowser
             } catch (RuntimeException ex) {
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:Localization:NestedCommand
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 LOG.error("Exception while loading project", ex);
                 //#endif
                 reportError(
@@ -1696,13 +1696,13 @@ public final class ProjectBrowser
                     };
                     project.getUndoManager().addCommand(cmd);
                     //#if defined(LOGGING)
-                    //@#$LPS-LOGGING:GranularityType:Command
+                    //@#$LPS-LOGGING:GranularityType:Statement
                     //@#$LPS-LOGGING:Localization:NestedCommand
                     LOG.info("There are " + project.getDiagramList().size()
                             + " diagrams in the current project");
                     //#endif
                     //#if defined(COGNITIVE)
-                    //@#$LPS-COGNITIVE:GranularityType:Command
+                    //@#$LPS-COGNITIVE:GranularityType:Statement
                     //@#$LPS-COGNITIVE:Localization:NestedCommand
                     Designer.enableCritiquing();
                     //#endif

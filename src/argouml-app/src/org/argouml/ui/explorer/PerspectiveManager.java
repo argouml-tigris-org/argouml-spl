@@ -327,7 +327,7 @@ public final class PerspectiveManager {
                             userDefinedPerspective.addRule(rule);
                         } catch (ClassNotFoundException e) {
                             //#if defined(LOGGING)
-                            //@#$LPS-LOGGING:GranularityType:Command
+                            //@#$LPS-LOGGING:GranularityType:Statement
                             //@#$LPS-LOGGING:Localization:NestedCommand
                             LOG.error(
                                     "could not create rule " + ruleName 
@@ -338,7 +338,7 @@ public final class PerspectiveManager {
                             //#endif
                         } catch (InstantiationException e) {
                             //#if defined(LOGGING)
-                            //@#$LPS-LOGGING:GranularityType:Command
+                            //@#$LPS-LOGGING:GranularityType:Statement
                             //@#$LPS-LOGGING:Localization:NestedCommand
                             LOG.error(
                                     "could not create rule " + ruleName 
@@ -349,7 +349,7 @@ public final class PerspectiveManager {
                             //#endif
                         } catch (IllegalAccessException e) {
                             //#if defined(LOGGING)
-                            //@#$LPS-LOGGING:GranularityType:Command
+                            //@#$LPS-LOGGING:GranularityType:Statement
                             //@#$LPS-LOGGING:Localization:NestedCommand
                             LOG.error(
                                     "could not create rule " + ruleName 
@@ -400,7 +400,7 @@ public final class PerspectiveManager {
         classPerspective.addRule(new GoProfileConfigurationToProfile());
         classPerspective.addRule(new GoProfileToModel());
         //#if defined(COGNITIVE)
-        //@#$LPS-COGNITIVE:GranularityType:Command
+        //@#$LPS-COGNITIVE:GranularityType:Statement
         classPerspective.addRule(new GoProfileToCritics());
         classPerspective.addRule(new GoCriticsToCritic());
         //#endif
@@ -423,7 +423,7 @@ public final class PerspectiveManager {
         packagePerspective.addRule(new GoProfileConfigurationToProfile());
         packagePerspective.addRule(new GoProfileToModel());
         //#if defined(COGNITIVE)
-        //@#$LPS-COGNITIVE:GranularityType:Command
+        //@#$LPS-COGNITIVE:GranularityType:Statement
         packagePerspective.addRule(new GoProfileToCritics());
         packagePerspective.addRule(new GoCriticsToCritic());
         //#endif
@@ -436,7 +436,7 @@ public final class PerspectiveManager {
         packagePerspective.addRule(new GoClassifierToBehavioralFeature());
         packagePerspective.addRule(new GoEnumerationToLiterals());
         //#if defined(COLLABORATIONDIAGRAM)
-        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
+        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Statement
         packagePerspective.addRule(new GoCollaborationToInteraction());
         //#endif
         packagePerspective.addRule(new GoInteractionToMessages());
@@ -445,13 +445,13 @@ public final class PerspectiveManager {
         packagePerspective.addRule(new GoLinkToStimuli());
         packagePerspective.addRule(new GoStimulusToAction());
         //#if defined(COLLABORATIONDIAGRAM)
-        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
+        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Statement
         packagePerspective.addRule(new GoClassifierToCollaboration());        
         packagePerspective.addRule(new GoOperationToCollaboration());
         //#endif
         packagePerspective.addRule(new GoModelElementToComment());
         //#if defined(COLLABORATIONDIAGRAM)
-        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
+        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Statement
         packagePerspective.addRule(new GoCollaborationToDiagram());
         //#endif
         /*
@@ -461,7 +461,7 @@ public final class PerspectiveManager {
         packagePerspective.addRule(new GoBehavioralFeatureToStateMachine());
         // works for both statediagram as activitygraph
         //#if defined(STATEDIAGRAM)
-        //@#$LPS-STATEDIAGRAM:GranularityType:Command
+        //@#$LPS-STATEDIAGRAM:GranularityType:Statement
         packagePerspective.addRule(new GoStatemachineToDiagram());
         packagePerspective.addRule(new GoStateMachineToState());
         packagePerspective.addRule(new GoCompositeStateToSubvertex());
@@ -471,13 +471,13 @@ public final class PerspectiveManager {
         packagePerspective.addRule(new GoStateToEntry());
         packagePerspective.addRule(new GoStateToExit());
         //#if defined(SEQUENCEDIAGRAM)
-        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
+        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Statement
         packagePerspective.addRule(new GoClassifierToSequenceDiagram());
         packagePerspective.addRule(new GoOperationToSequenceDiagram());
         //#endif
         packagePerspective.addRule(new GoClassifierToInstance());
         //#if defined(STATEDIAGRAM)
-        //@#$LPS-STATEDIAGRAM:GranularityType:Command
+        //@#$LPS-STATEDIAGRAM:GranularityType:Statement
         packagePerspective.addRule(new GoStateToIncomingTrans());
         packagePerspective.addRule(new GoStateToOutgoingTrans());
         //#endif
@@ -494,7 +494,7 @@ public final class PerspectiveManager {
         diagramPerspective.addRule(new GoProfileConfigurationToProfile());
         diagramPerspective.addRule(new GoProfileToModel());
         //#if defined(COGNITIVE)
-        //@#$LPS-COGNITIVE:GranularityType:Command
+        //@#$LPS-COGNITIVE:GranularityType:Statement
         diagramPerspective.addRule(new GoProfileToCritics());
         diagramPerspective.addRule(new GoCriticsToCritic());
         //#endif
@@ -513,7 +513,7 @@ public final class PerspectiveManager {
         classPerspective.addRule(new GoProfileConfigurationToProfile());
         classPerspective.addRule(new GoProfileToModel());
         //#if defined(COGNITIVE)
-        //@#$LPS-COGNITIVE:GranularityType:Command
+        //@#$LPS-COGNITIVE:GranularityType:Statement
         classPerspective.addRule(new GoProfileToCritics());
         classPerspective.addRule(new GoCriticsToCritic());
         //#endif
@@ -529,7 +529,7 @@ public final class PerspectiveManager {
         associationsPerspective.addRule(new GoProfileConfigurationToProfile());
         associationsPerspective.addRule(new GoProfileToModel());
         //#if defined(COGNITIVE)
-        //@#$LPS-COGNITIVE:GranularityType:Command
+        //@#$LPS-COGNITIVE:GranularityType:Statement
         associationsPerspective.addRule(new GoProfileToCritics());
         associationsPerspective.addRule(new GoCriticsToCritic());        
         //#endif
@@ -545,7 +545,7 @@ public final class PerspectiveManager {
         residencePerspective.addRule(new GoProfileConfigurationToProfile());
         residencePerspective.addRule(new GoProfileToModel());
         //#if defined(COGNITIVE)
-        //@#$LPS-COGNITIVE:GranularityType:Command
+        //@#$LPS-COGNITIVE:GranularityType:Statement
         residencePerspective.addRule(new GoProfileToCritics());
         residencePerspective.addRule(new GoCriticsToCritic());
         //#endif
@@ -553,7 +553,7 @@ public final class PerspectiveManager {
         residencePerspective.addRule(new GoNodeToResidentComponent());
         residencePerspective.addRule(new GoComponentToResidentModelElement());
         //#if defined(STATEDIAGRAM)
-        //@#$LPS-STATEDIAGRAM:GranularityType:Command
+        //@#$LPS-STATEDIAGRAM:GranularityType:Statement
         ExplorerPerspective statePerspective =
             new ExplorerPerspective(
                 "combobox.item.state-centric");
@@ -570,7 +570,7 @@ public final class PerspectiveManager {
             new ExplorerPerspective(
                 "combobox.item.transitions-centric");
         //#if defined(STATEDIAGRAM)
-        //@#$LPS-STATEDIAGRAM:GranularityType:Command
+        //@#$LPS-STATEDIAGRAM:GranularityType:Statement
         transitionsPerspective.addRule(new GoProjectToStateMachine());
         transitionsPerspective.addRule(new GoStatemachineToDiagram());
         transitionsPerspective.addRule(new GoStateMachineToTransition());
@@ -588,7 +588,7 @@ public final class PerspectiveManager {
         compositionPerspective.addRule(new GoProfileConfigurationToProfile());
         compositionPerspective.addRule(new GoProfileToModel());
         //#if defined(COGNITIVE)
-        //@#$LPS-COGNITIVE:GranularityType:Command
+        //@#$LPS-COGNITIVE:GranularityType:Statement
         compositionPerspective.addRule(new GoProfileToCritics());
         compositionPerspective.addRule(new GoCriticsToCritic());
         //#endif
@@ -605,7 +605,7 @@ public final class PerspectiveManager {
         c.add(associationsPerspective);
         c.add(residencePerspective);
         //#if defined(STATEDIAGRAM)
-        //@#$LPS-STATEDIAGRAM:GranularityType:Command
+        //@#$LPS-STATEDIAGRAM:GranularityType:Statement
         c.add(statePerspective);
         //#endif
         c.add(transitionsPerspective);

@@ -109,7 +109,7 @@ class MemberList implements List<ProjectMember> {
             return true;            
         } 
         //#if defined(COGNITIVE)
-        //@#$LPS-COGNITIVE:GranularityType:Command
+        //@#$LPS-COGNITIVE:GranularityType:Statement
         else if (member instanceof ProjectMemberTodoList) {
             // otherwise add the diagram at the start
             setTodoList((AbstractProjectMember) member);            
@@ -128,7 +128,7 @@ class MemberList implements List<ProjectMember> {
 
     public synchronized boolean remove(Object member) {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         LOG.info("Removing a member");
         //#endif
@@ -141,7 +141,7 @@ class MemberList implements List<ProjectMember> {
             return true;
         } else if (todoList == member) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             LOG.info("Removing todo list");
             //#endif
@@ -149,7 +149,7 @@ class MemberList implements List<ProjectMember> {
             return true;
         } else if (profileConfiguration == member) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             LOG.info("Removing profile configuration");
             //#endif
@@ -158,7 +158,7 @@ class MemberList implements List<ProjectMember> {
         } else {
             final boolean removed = diagramMembers.remove(member);
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             //@#$LPS-LOGGING:Localization:BeforeReturn
             if (!removed) {
@@ -210,7 +210,7 @@ class MemberList implements List<ProjectMember> {
             }
         }
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:BeforeReturn
         LOG.debug("Failed to remove diagram " + d);
         //#endif
@@ -246,7 +246,7 @@ class MemberList implements List<ProjectMember> {
 
     public synchronized void clear() {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         LOG.info("Clearing members");
         //#endif
@@ -313,7 +313,7 @@ class MemberList implements List<ProjectMember> {
 
     private void setTodoList(AbstractProjectMember member) {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         LOG.info("Setting todoList to " + member);
         //#endif

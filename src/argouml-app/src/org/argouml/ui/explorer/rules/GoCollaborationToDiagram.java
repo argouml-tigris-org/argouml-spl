@@ -77,7 +77,7 @@ public class GoCollaborationToDiagram extends AbstractPerspectiveRule {
                 res.add(d);
             }
             //#if defined(SEQUENCEDIAGRAM)
-            //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
+            //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Statement
             //@#$LPS-SEQUENCEDIAGRAM:Localization:NestedIfdef-COLLABORATIONDIAGRAM
             /* Also show unattached sequence diagrams: */
             if ((d instanceof UMLSequenceDiagram)

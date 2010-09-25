@@ -84,7 +84,7 @@ public class CrCircularInheritance extends CrUML {
 	    } catch (IllegalStateException ex) {
 		problem = PROBLEM_FOUND;
 		//#if defined(LOGGING)
-		//@#$LPS-LOGGING:GranularityType:Command
+		//@#$LPS-LOGGING:GranularityType:Statement
 		//@#$LPS-LOGGING:Localization:NestedCommand
 		//@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
                 LOG.info("problem found for: " + this);

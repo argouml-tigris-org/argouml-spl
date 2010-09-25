@@ -457,7 +457,7 @@ class StateMachinesFactoryMDRImpl extends AbstractUmlModelFactoryMDR
         if (transition instanceof Transition) {
             Transition t = (Transition) transition;
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             if (t.getGuard() != null) {                
                 LOG.warn("Replacing Guard " + t.getGuard().getName() 

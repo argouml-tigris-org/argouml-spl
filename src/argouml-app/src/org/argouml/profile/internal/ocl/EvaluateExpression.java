@@ -873,7 +873,7 @@ public class EvaluateExpression extends DepthFirstAdapter {
     /** Error Handling * */
     private void errorNotType(Object node, String type, Object dft) {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         LOG.error("OCL does not evaluate to a " + type + " expression!! Exp: "
                 + node + " Val: " + val);
@@ -885,7 +885,7 @@ public class EvaluateExpression extends DepthFirstAdapter {
 
     private void error(Object node) {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         LOG.error("Unknown error processing OCL exp!! Exp: " + node + " Val: "
                 + val);

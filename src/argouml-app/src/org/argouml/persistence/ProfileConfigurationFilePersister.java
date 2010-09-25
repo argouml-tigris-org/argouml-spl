@@ -150,7 +150,7 @@ public class ProfileConfigurationFilePersister extends MemberFilePersister {
         writer.write(xmi.toString());
         writer.close();
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         LOG.info("Wrote user defined profile \"" + profileFile 
             + "\", with size " + xmi.length() + ".");
         //#endif
@@ -336,7 +336,7 @@ class ProfileConfigurationParser extends SAXParserBase {
 
             default:
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.warn("WARNING: unknown tag:" + e.getName());
                 //#endif
@@ -344,7 +344,7 @@ class ProfileConfigurationParser extends SAXParserBase {
             }
         } catch (Exception ex) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("Exception in startelement", ex);
             //#endif
         }
@@ -379,7 +379,7 @@ class ProfileConfigurationParser extends SAXParserBase {
 
             default:
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 LOG.warn("WARNING: unknown end tag:" + e.getName());
                 //#endif
                 break;
@@ -405,12 +405,12 @@ class ProfileConfigurationParser extends SAXParserBase {
         if (profile != null) {
             profiles.add(profile);
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.debug("Found plugin profile " + name);
             //#endif
         } 
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         else {
             LOG.error("Unabled to find plugin profile - " + name);
         }
@@ -439,7 +439,7 @@ class ProfileConfigurationParser extends SAXParserBase {
     protected void handleUserDefinedEnd(XMLElement e) {
         // <model> is not used in current implementation
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         if (filename == null /* || model == null */) {
             LOG.error("Got badly formed user defined profile entry " + e);
@@ -453,7 +453,7 @@ class ProfileConfigurationParser extends SAXParserBase {
         } else {
             profiles.add(profile);
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.debug("Loaded user defined profile - filename = " + filename);
             //#endif
         }
@@ -480,7 +480,7 @@ class ProfileConfigurationParser extends SAXParserBase {
     protected void handleFilenameEnd(XMLElement e) {
         filename = e.getText().trim();
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:EndMethod
         LOG.debug("Got filename = " + filename);
         //#endif
@@ -489,7 +489,7 @@ class ProfileConfigurationParser extends SAXParserBase {
     protected void handleModelEnd(XMLElement e) {
         model = e.getText().trim();
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:EndMethod
         LOG.debug("Got model = " + model);
         //#endif

@@ -203,7 +203,7 @@ public class UMLStateDiagram extends UMLDiagram {
                     : Model.getFacade().getBehaviors(ns).size();
             String name = nname + " " + (number++);
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             //@#$LPS-LOGGING:Localization:NestedIfdef-STATEDIAGRAM
             LOG.info("UMLStateDiagram constructor: String name = " + name);
@@ -810,7 +810,7 @@ public class UMLStateDiagram extends UMLDiagram {
         }
         DiagramSettings settings = getDiagramSettings();
         //#if defined(ACTIVITYDIAGRAM)
-        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
+        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Statement
         //@#$LPS-ACTIVITYDIAGRAM:Localization:NestedIfdef-STATEDIAGRAM
         if (Model.getFacade().isAActionState(droppedObject)) {
             figNode = new FigActionState(droppedObject, bounds, settings);
@@ -834,7 +834,7 @@ public class UMLStateDiagram extends UMLDiagram {
             Object kind = Model.getFacade().getKind(droppedObject);
             if (kind == null) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 //@#$LPS-LOGGING:Localization:NestedIfdef-STATEDIAGRAM
                 LOG.warn("found a null type pseudostate");
@@ -865,7 +865,7 @@ public class UMLStateDiagram extends UMLDiagram {
                         settings);
             } 
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             //@#$LPS-LOGGING:Localization:NestedIfdef-STATEDIAGRAM
             else {
@@ -881,7 +881,7 @@ public class UMLStateDiagram extends UMLDiagram {
                 figNode.setLocation(location.x, location.y);
             }
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             //@#$LPS-LOGGING:Localization:NestedIfdef-STATEDIAGRAM
             LOG.debug("Dropped object " + droppedObject + " converted to " 
@@ -889,7 +889,7 @@ public class UMLStateDiagram extends UMLDiagram {
             //#endif
         } 
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:NestedIfdef-STATEDIAGRAM
         else {
             LOG.debug("Dropped object NOT added " + figNode);

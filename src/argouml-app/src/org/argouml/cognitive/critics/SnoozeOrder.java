@@ -138,7 +138,7 @@ public class SnoozeOrder implements Serializable {
 	snoozeUntil.setTime(n + interval);
 	snoozeAgain.setTime(n + interval + INITIAL_INTERVAL_MS);
 	//#if defined(LOGGING)
-	//@#$LPS-LOGGING:GranularityType:Command
+	//@#$LPS-LOGGING:GranularityType:Statement
 	//@#$LPS-LOGGING:Localization:EndMethod
 	//@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 	LOG.info("Setting snooze order to: " + snoozeUntil.toString());

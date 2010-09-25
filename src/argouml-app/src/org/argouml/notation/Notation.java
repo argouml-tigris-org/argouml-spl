@@ -195,7 +195,7 @@ public final class Notation implements PropertyChangeListener {
      */
     public static void setDefaultNotation(NotationName n) {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         LOG.info("default notation set to " + n.getConfigurationValue());
         //#endif
@@ -230,7 +230,7 @@ public final class Notation implements PropertyChangeListener {
             n = NotationNameImpl.findNotation(DEFAULT_NOTATION);
 	}
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:BeforeReturn
         LOG.debug("default notation is " + n.getConfigurationValue());
         //#endif
@@ -257,7 +257,7 @@ public final class Notation implements PropertyChangeListener {
      */
     public void propertyChange(PropertyChangeEvent pce) {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         LOG.info(
             "Notation change:"

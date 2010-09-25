@@ -84,7 +84,7 @@ public class UMLTagDefinitionComboBoxModel  extends UMLComboBoxModel2 {
         
         if (Model.getFacade().isATagDefinition(evt.getSource())) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             LOG.debug("Got TagDefinition event " + evt.toString());
             //#endif
@@ -92,7 +92,7 @@ public class UMLTagDefinitionComboBoxModel  extends UMLComboBoxModel2 {
             setModelInvalid();
         } else if ("stereotype".equals(evt.getPropertyName())) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             LOG.debug("Got stereotype event " + evt.toString());
             //#endif
@@ -101,7 +101,7 @@ public class UMLTagDefinitionComboBoxModel  extends UMLComboBoxModel2 {
             setModelInvalid();
         } 
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         else {
             LOG.debug("Got other event " + evt.toString());
         }    

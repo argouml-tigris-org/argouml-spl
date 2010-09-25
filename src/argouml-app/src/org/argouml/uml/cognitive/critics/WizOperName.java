@@ -263,7 +263,7 @@ public class WizOperName extends WizMEName {
                     addedCreateStereotype = true;
                 } catch (Exception pve) {
                     //#if defined(LOGGING)
-                    //@#$LPS-LOGGING:GranularityType:Command
+                    //@#$LPS-LOGGING:GranularityType:Statement
                     //@#$LPS-LOGGING:Localization:NestedCommand
                     //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
                     LOG.error("could not set stereotype", pve);

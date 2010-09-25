@@ -104,7 +104,7 @@ public class TreeModelComposite extends TreeModelSupport implements TreeModel {
             childCount += tm.getChildCount(parent);
         }
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:BeforeReturn
         LOG.debug("child not found!");
         //#endif

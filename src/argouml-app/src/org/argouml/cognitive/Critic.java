@@ -450,7 +450,7 @@ public class Critic
     public boolean stillValid(ToDoItem i, Designer dsgr) {
 	if (!isActive()) {
 	    //#if defined(LOGGING)
-	    //@#$LPS-LOGGING:GranularityType:Command
+	    //@#$LPS-LOGGING:GranularityType:Statement
 	    //@#$LPS-LOGGING:Localization:NestedCommand
 	    //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 	    LOG.warn("got to stillvalid while not active");
@@ -802,14 +802,14 @@ public class Critic
                 return w;
             } catch (IllegalAccessException illEx) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
                 LOG.error("Could not access wizard: ", illEx);
                 //#endif
             } catch (InstantiationException instEx) {                
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
                 LOG.error("Could not instantiate wizard: ", instEx);

@@ -210,7 +210,7 @@ public final class ArgoEventPump {
 
 	default :
 	    //#if defined(LOGGING)
-	    //@#$LPS-LOGGING:GranularityType:Command
+	    //@#$LPS-LOGGING:GranularityType:Statement
 	    //@#$LPS-LOGGING:Localization:NestedCommand
 	    LOG.error("Invalid event:" + event.getEventType());
 	    //#endif
@@ -249,7 +249,7 @@ public final class ArgoEventPump {
             break;
         default :
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             LOG.error("Invalid event:" + event.getEventType());
             //#endif
@@ -277,7 +277,7 @@ public final class ArgoEventPump {
 
         default :
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             LOG.error("Invalid event:" + event.getEventType());
             //#endif
@@ -318,7 +318,7 @@ public final class ArgoEventPump {
             
         default :
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             LOG.error("Invalid event:" + event.getEventType());
             //#endif
@@ -346,7 +346,7 @@ public final class ArgoEventPump {
 
         default:
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             LOG.error("Invalid event:" + event.getEventType());
             //#endif
@@ -378,7 +378,7 @@ public final class ArgoEventPump {
 
         default:
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             LOG.error("Invalid event:" + event.getEventType());
             //#endif

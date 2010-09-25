@@ -153,7 +153,7 @@ class XmiFilePersister extends AbstractFilePersister
             throw exc;
         } catch (Exception e) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("Exception occured during save attempt", e);
             //#endif
             try {
@@ -192,7 +192,7 @@ class XmiFilePersister extends AbstractFilePersister
                 project.getMembers().get(i);
             if (projectMember.getType().equalsIgnoreCase(getExtension())) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 if (LOG.isInfoEnabled()) {
                     LOG.info("Saving member of type: "
@@ -232,7 +232,7 @@ class XmiFilePersister extends AbstractFilePersister
     public Project doLoad(File file)
         throws OpenException, InterruptedException {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         LOG.info("Loading with XMIFilePersister");
         //#endif
@@ -248,7 +248,7 @@ class XmiFilePersister extends AbstractFilePersister
                 phases = 10;
             }
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.info("File length is " + length + " phase space is "
                     + phaseSpace + " phases is " + phases);
             //#endif
@@ -317,7 +317,7 @@ class XmiFilePersister extends AbstractFilePersister
             argoString = xmiExtensionString;
         } 
         //#if defined(COGNITIVE)
-        //@#$LPS-COGNITIVE:GranularityType:Command
+        //@#$LPS-COGNITIVE:GranularityType:Statement
         //@#$LPS-COGNITIVE:Localization:EndMethod
         else if (label.equals("todo")) {
             todoString = xmiExtensionString;
@@ -335,7 +335,7 @@ class XmiFilePersister extends AbstractFilePersister
         
         if (argoString != null) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.info("Parsing argoString " + argoString.length());
             //#endif
             StringReader inputStream = new StringReader(argoString);
@@ -347,14 +347,14 @@ class XmiFilePersister extends AbstractFilePersister
             }
         } 
         //#if defined(COGNITIVE)
-        //@#$LPS-COGNITIVE:GranularityType:Command
+        //@#$LPS-COGNITIVE:GranularityType:Statement
         else {
             project.addMember(new ProjectMemberTodoList("", project));
         }
         //#endif
         for (String pgml : pgmlStrings) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.info("Parsing pgml " + pgml.length());
             //#endif
             InputStream inputStream = new ByteArrayInputStream(pgml.getBytes());
@@ -367,11 +367,11 @@ class XmiFilePersister extends AbstractFilePersister
             persister.load(project, inputStream);
         }
         //#if defined(COGNITIVE)
-        //@#$LPS-COGNITIVE:GranularityType:Command
+        //@#$LPS-COGNITIVE:GranularityType:Statement
         //@#$LPS-COGNITIVE:Localization:EndMethod
         if (todoString != null) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             LOG.info("Parsing todoString " + todoString.length());
             //#endif

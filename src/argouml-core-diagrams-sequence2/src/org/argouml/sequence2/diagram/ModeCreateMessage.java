@@ -69,7 +69,7 @@ public class ModeCreateMessage extends ModeCreatePolyEdge {
     public ModeCreateMessage(Editor par) {
         super(par);
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:EndMethod
         //@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
         if (LOG.isDebugEnabled()) {
@@ -84,7 +84,7 @@ public class ModeCreateMessage extends ModeCreatePolyEdge {
     public ModeCreateMessage() {
         super();
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:EndMethod
         //@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
         if (LOG.isDebugEnabled()) {
@@ -207,7 +207,7 @@ public class ModeCreateMessage extends ModeCreatePolyEdge {
         
         // Make sure there is the minimum gap below the message being drawn
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
         LOG.info("Looking for minimum space below");
         //#endif

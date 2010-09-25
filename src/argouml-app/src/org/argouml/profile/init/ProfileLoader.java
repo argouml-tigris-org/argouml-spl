@@ -90,7 +90,7 @@ public final class ProfileLoader {
 
     private void huntForProfilesInDir(String dir) {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         LOG.info("Looking for Profiles in " + dir);
         //#endif
@@ -103,7 +103,7 @@ public final class ProfileLoader {
                     jarfile = new JarFile(file);
                     if (jarfile != null) {
                         //#if defined(LOGGING)
-                        //@#$LPS-LOGGING:GranularityType:Command
+                        //@#$LPS-LOGGING:GranularityType:Statement
                         //@#$LPS-LOGGING:Localization:NestedCommand
                         LOG.info("Looking for Profiles in the Jar "
                                 + jarfile.getName());
@@ -115,7 +115,7 @@ public final class ProfileLoader {
                     }
                 } catch (IOException ioe) {
                     //#if defined(LOGGING)
-                    //@#$LPS-LOGGING:GranularityType:Command
+                    //@#$LPS-LOGGING:GranularityType:Statement
                     //@#$LPS-LOGGING:Localization:NestedCommand
                     LOG.debug("Cannot open Jar file " + file, ioe);
                     //#endif
@@ -151,7 +151,7 @@ public final class ProfileLoader {
                         classLoaderAlreadyAdded = true;
                     }
                     //#if defined(COGNITIVE)
-                    //@#$LPS-COGNITIVE:GranularityType:Command
+                    //@#$LPS-COGNITIVE:GranularityType:Statement
                     //@#$LPS-COGNITIVE:Localization:NestedCommand
                     Set<Critic> critics = loadJavaCriticsForProfile(attr,
                             classloader);
@@ -175,20 +175,20 @@ public final class ProfileLoader {
 
                     ProfileFacade.getManager().registerProfile(udp);
                     //#if defined(LOGGING)
-                    //@#$LPS-LOGGING:GranularityType:Command
+                    //@#$LPS-LOGGING:GranularityType:Statement
                     //@#$LPS-LOGGING:Localization:NestedCommand
                     LOG.debug("Registered Profile: " + udp.getDisplayName()
                             + "...");
                     //#endif
                 } catch (ProfileException e) {
                     //#if defined(LOGGING)
-                    //@#$LPS-LOGGING:GranularityType:Command
+                    //@#$LPS-LOGGING:GranularityType:Statement
                     //@#$LPS-LOGGING:Localization:NestedCommand
                     LOG.error("Exception", e);
                     //#endif
                 } catch (IOException e) {
                     //#if defined(LOGGING)
-                    //@#$LPS-LOGGING:GranularityType:Command
+                    //@#$LPS-LOGGING:GranularityType:Statement
                     //@#$LPS-LOGGING:Localization:NestedCommand
                     LOG.error("Exception", e);
                     //#endif
@@ -246,19 +246,19 @@ public final class ProfileLoader {
                     ret.add(critic);
                 } catch (ClassNotFoundException e) {
                     //#if defined(LOGGING)
-                    //@#$LPS-LOGGING:GranularityType:Command
+                    //@#$LPS-LOGGING:GranularityType:Statement
                     //@#$LPS-LOGGING:Localization:NestedCommand
                     LOG.error("Error loading class: " + entry, e);
                     //#endif
                 } catch (InstantiationException e) {
                     //#if defined(LOGGING)
-                    //@#$LPS-LOGGING:GranularityType:Command
+                    //@#$LPS-LOGGING:GranularityType:Statement
                     //@#$LPS-LOGGING:Localization:NestedCommand
                     LOG.error("Error instantianting class: " + entry, e);
                     //#endif
                 } catch (IllegalAccessException e) {
                     //#if defined(LOGGING)
-                    //@#$LPS-LOGGING:GranularityType:Command
+                    //@#$LPS-LOGGING:GranularityType:Statement
                     //@#$LPS-LOGGING:Localization:NestedCommand
                     LOG.error("Exception", e);
                     //#endif

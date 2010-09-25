@@ -61,7 +61,7 @@ public abstract class StreamModelLoader implements ProfileModelLoader {
         
         if (inputStream == null) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("Profile not found");
             //#endif
             throw new ProfileException("Profile not found!");

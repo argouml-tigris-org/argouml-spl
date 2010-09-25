@@ -306,14 +306,14 @@ public class TabStyle extends AbstractArgoJPanel implements TabFigTarget,
                 p = (TabFigTarget) panelClass.newInstance();
             } catch (IllegalAccessException ignore) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.error(ignore);
                 //#endif
                 return null;
             } catch (InstantiationException ignore) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.error(ignore);
                 //#endif
@@ -322,7 +322,7 @@ public class TabStyle extends AbstractArgoJPanel implements TabFigTarget,
             panels.put(targetClass, p);
         }
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         LOG.debug("found style for " + targetClass.getName() + "("
                 + p.getClass() + ")");
         //#endif
@@ -351,7 +351,7 @@ public class TabStyle extends AbstractArgoJPanel implements TabFigTarget,
         StringNamespaceElement targetClassElement =
         	(StringNamespaceElement) classNs.peekNamespaceElement();
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         LOG.debug("Attempt to find style panel for: " + classNs);
         //#endif
         classNs.popNamespaceElement();
@@ -378,7 +378,7 @@ public class TabStyle extends AbstractArgoJPanel implements TabFigTarget,
             return cls;
         } catch (ClassNotFoundException ignore) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.debug("ClassNotFoundException. Could not find class:"
                     + name);
             //#endif

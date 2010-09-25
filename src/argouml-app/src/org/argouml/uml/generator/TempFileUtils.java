@@ -61,7 +61,7 @@ public class TempFileUtils {
             return tmpdir;
         } catch (IOException ioe) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("Error while creating a temporary directory", ioe);
             //#endif
             return null;
@@ -141,7 +141,7 @@ public class TempFileUtils {
             return ret;
         } catch (IOException ioe) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("Exception reading files", ioe);
             //#endif
         }
@@ -161,7 +161,7 @@ public class TempFileUtils {
             });
         } catch (IOException ioe) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("Exception deleting directory", ioe);
             //#endif
         }
@@ -185,7 +185,7 @@ public class TempFileUtils {
             });
         } catch (IOException ioe) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("Exception reading file names", ioe);
             //#endif
         }

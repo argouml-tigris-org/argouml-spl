@@ -137,7 +137,7 @@ public abstract class ClassdiagramInheritanceEdge extends ClassdiagramEdge {
         } else {
             fig.addPoint(centerLow, (int) (low.getLocation().getY()));
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             if (LOG.isDebugEnabled()) {
                 LOG.debug("Point: x: " + centerLow + " y: " 
@@ -147,7 +147,7 @@ public abstract class ClassdiagramInheritanceEdge extends ClassdiagramEdge {
             getUnderlyingFig().addPoint(centerHigh - difference, getDownGap());
             getUnderlyingFig().addPoint(centerHigh, getDownGap());
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             if (LOG.isDebugEnabled()) {
                 LOG.debug("Point: x: " + (centerHigh - difference) + " y: "
@@ -158,7 +158,7 @@ public abstract class ClassdiagramInheritanceEdge extends ClassdiagramEdge {
             fig.addPoint(centerHigh, 
                     high.getLocation().y + high.getSize().height);
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             if (LOG.isDebugEnabled()) {
                 LOG.debug("Point x: " + centerHigh + " y: "

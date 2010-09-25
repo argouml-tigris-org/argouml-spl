@@ -60,7 +60,7 @@ public class ActionDeploymentDiagram extends ActionAddDiagram {
         // that if desired.
         if (!Model.getFacade().isANamespace(namespace)) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             LOG.error("No namespace as argument");
             LOG.error(namespace);
@@ -84,7 +84,7 @@ public class ActionDeploymentDiagram extends ActionAddDiagram {
         if (!Model.getFacade().isANamespace(namespace)) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:Localization:NestedCommand
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("No namespace as argument");
             LOG.error(namespace);
             //#endif

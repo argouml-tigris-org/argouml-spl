@@ -225,8 +225,8 @@ public class TransitionNotationUml extends TransitionNotation {
          */
         Object evt = Model.getFacade().getTrigger(trans);
         //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
-        //@#$LPS-STATEDIAGRAM:GranularityType:Command
-        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
+        //@#$LPS-STATEDIAGRAM:GranularityType:Statement
+        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Statement
         /* It is safe to give a null to the next function,
          * since a statemachine is always composed by a model anyhow. */
         Object ns =
@@ -375,8 +375,8 @@ public class TransitionNotationUml extends TransitionNotation {
         if (guard.length() > 0) {            
             if (g == null) {
                 //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
-                //@#$LPS-STATEDIAGRAM:GranularityType:Command
-                //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
+                //@#$LPS-STATEDIAGRAM:GranularityType:Statement
+                //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Statement
                 // case 1
                 /*TODO: In the next line, I should use buildGuard(),
                  * but it doesn't show the guard on the diagram...
@@ -408,8 +408,8 @@ public class TransitionNotationUml extends TransitionNotation {
                     language = Model.getDataTypesHelper().getLanguage(expr);
                 }
                 //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
-                //@#$LPS-STATEDIAGRAM:GranularityType:Command
-                //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
+                //@#$LPS-STATEDIAGRAM:GranularityType:Statement
+                //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Statement
                 Model.getStateMachinesHelper().setExpression(g,
                         Model.getDataTypesFactory()
                                 .createBooleanExpression(language, guard));
@@ -459,8 +459,8 @@ public class TransitionNotationUml extends TransitionNotation {
                 /* And hook it to the transition immediately,
                  * so that an exception can not cause it to remain dangling: */
                 //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
-                //@#$LPS-STATEDIAGRAM:GranularityType:Command
-                //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
+                //@#$LPS-STATEDIAGRAM:GranularityType:Statement
+                //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Statement
                 Model.getStateMachinesHelper().setEffect(trans, effect);
                 //#endif
                 Model.getCommonBehaviorHelper().setScript(effect,

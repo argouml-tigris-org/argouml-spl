@@ -83,7 +83,7 @@ public class ObjectFlowStateTypeNotationUml
     protected Object parseObjectFlowState1(Object objectFlowState, String s)
         throws ParseException {
         //#if defined(ACTIVITYDIAGRAM)
-        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
+        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Statement
         //@#$LPS-ACTIVITYDIAGRAM:Localization:StartMethod
         Object c =
             Model.getActivityGraphsHelper()

@@ -153,7 +153,7 @@ class FigLifeLine extends ArgoFigGroup implements HandlerFactory {
      */
     public final void removeFig(Fig f) {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         //@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
         LOG.info("Removing " + f.getClass().getName());

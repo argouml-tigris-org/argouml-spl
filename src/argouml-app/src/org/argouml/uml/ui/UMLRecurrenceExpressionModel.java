@@ -79,7 +79,7 @@ public class UMLRecurrenceExpressionModel extends UMLExpressionModel2 {
      */
     public Object newExpression() {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         //@#$LPS-LOGGING:Localization:BeforeReturn
         LOG.debug("new boolean expression");

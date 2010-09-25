@@ -437,7 +437,7 @@ public class ClassGenerationDialog
         } catch (Exception userPressedCancel) {
             // TODO: How does the pressed cancel become a java.lang.Exception?
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.info("user pressed cancel");
             //#endif
         }

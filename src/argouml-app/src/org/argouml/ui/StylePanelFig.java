@@ -407,7 +407,7 @@ public class StylePanelFig
                 // when the edge of the canvas is reached causing either
                 // the width or height to be "adjusted" to a negative value
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.warn("Part of bounding box is off screen " + res);
                 //#endif

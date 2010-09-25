@@ -97,7 +97,7 @@ public class FigEdgeAssociationClass
     private void constructFigs(FigClassAssociationClass classBoxFig,
             Fig ownerFig) {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         LOG.info("FigEdgeAssociationClass constructor");
         //#endif
@@ -188,7 +188,7 @@ public class FigEdgeAssociationClass
         }
         if (!(node instanceof FigEdgePort || node instanceof FigNodeAssociation)) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:BeforeReturn
             LOG.warn("The is no FigEdgePort attached"
                     + " to the association class link");
@@ -204,7 +204,7 @@ public class FigEdgeAssociationClass
             delegate = node;
         }
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         if (LOG.isInfoEnabled()) {
             LOG.info("Delegating remove to " + delegate.getClass().getName());
 //            throw new IllegalArgumentException();

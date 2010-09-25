@@ -93,8 +93,8 @@ public abstract class AbstractActionAddModelElement2 extends UndoableAction {
                              isExclusive());
         int result = dialog.showDialog(ArgoFrame.getInstance());
         //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
-        //@#$LPS-STATEDIAGRAM:GranularityType:Command
-        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
+        //@#$LPS-STATEDIAGRAM:GranularityType:Statement
+        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Statement
         //@#$LPS-STATEDIAGRAM:Localization:EndMethod
         //@#$LPS-ACTIVITYDIAGRAM:Localization:EndMethod       
         if (result == JOptionPane.OK_OPTION) {

@@ -333,7 +333,7 @@ public class UMLActivityDiagram extends UMLDiagram {
      */
     public Object getStateMachine() {
         //#if defined(STATEDIAGRAM)        
-        //@#$LPS-STATEDIAGRAM:GranularityType:Command
+        //@#$LPS-STATEDIAGRAM:GranularityType:Statement
         //@#$LPS-STATEDIAGRAM:Localization:StartMethod
         //@#$LPS-STATEDIAGRAM:Localization:BeforeReturn
         //@#$LPS-STATEDIAGRAM:Localization:NestedIfdef-ACTIVITYDIAGRAM
@@ -845,7 +845,7 @@ public class UMLActivityDiagram extends UMLDiagram {
             Object kind = Model.getFacade().getKind(objectToAccept);
             if (kind == null) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 //@#$LPS-LOGGING:Localization:NestedIfdef-ACTIVITYDIAGRAM
                 LOG.warn("found a null type pseudostate");
@@ -893,7 +893,7 @@ public class UMLActivityDiagram extends UMLDiagram {
             Object kind = Model.getFacade().getKind(droppedObject);
             if (kind == null) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 //@#$LPS-LOGGING:Localization:NestedIfdef-ACTIVITYDIAGRAM
                 LOG.warn("found a null type pseudostate");
@@ -901,7 +901,7 @@ public class UMLActivityDiagram extends UMLDiagram {
                 return null;
             }
             //#if defined(STATEDIAGRAM)
-            //@#$LPS-STATEDIAGRAM:GranularityType:Command     
+            //@#$LPS-STATEDIAGRAM:GranularityType:Statement     
             //@#$LPS-STATEDIAGRAM:Localization:NestedCommand
             //@#$LPS-STATEDIAGRAM:Localization:NestedIfdef-ACTIVITYDIAGRAM
             if (kind.equals(Model.getPseudostateKind().getInitial())) {
@@ -921,7 +921,7 @@ public class UMLActivityDiagram extends UMLDiagram {
             } 
             //#endif
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedIfdef-ACTIVITYDIAGRAM
             else {
                 LOG.warn("found a type not known");
@@ -938,14 +938,14 @@ public class UMLActivityDiagram extends UMLDiagram {
                 figNode.setLocation(location.x, location.y);
             }
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedIfdef-ACTIVITYDIAGRAM
             LOG.debug("Dropped object " + droppedObject + " converted to " 
                     + figNode);
             //#endif
         } 
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:NestedIfdef-ACTIVITYDIAGRAM
         else {
             LOG.debug("Dropped object NOT added. This usualy means that this " 

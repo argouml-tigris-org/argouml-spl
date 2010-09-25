@@ -148,7 +148,7 @@ class DefaultUndoManager implements UndoManager {
     
     public synchronized void startInteraction(String label) {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         LOG.debug("Starting interaction " + label);
         //#endif

@@ -304,7 +304,7 @@ public class PathItemPlacement extends PathConv {
                 if (false /* count >= limit */) {
                     //#if defined(LOGGING)
                     //@#$LPS-LOGGING:Localization:NestedCommand
-                    //@#$LPS-LOGGING:GranularityType:Command
+                    //@#$LPS-LOGGING:GranularityType:Statement
                     LOG.debug("Retry limit exceeded.  Trying other side");
                     //#endif
                     result.setLocation(anchor);
@@ -693,7 +693,7 @@ public class PathItemPlacement extends PathConv {
         }
         // Should never get here.  If we do, return the inner point.
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:BeforeReturn
         LOG.warn("Could not find rectangle intersection, using inner point.");
         //#endif

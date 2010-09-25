@@ -120,7 +120,7 @@ class ModelMemberFilePersister extends MemberFilePersister
             mmodel = getCurModel();
         } catch (OpenException e) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("UmlException caught", e);
             //#endif
             throw e;
@@ -220,7 +220,7 @@ class ModelMemberFilePersister extends MemberFilePersister
     public synchronized void readModels(URL url,
             XmiExtensionParser xmiExtensionParser) throws OpenException {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         LOG.info("=======================================");
         LOG.info("== READING MODEL " + url);
@@ -282,7 +282,7 @@ class ModelMemberFilePersister extends MemberFilePersister
                     current = elements.next();
                     if (facade.isAModel(current)) {
                         //#if defined(LOGGING)
-                        //@#$LPS-LOGGING:GranularityType:Command
+                        //@#$LPS-LOGGING:GranularityType:Statement
                         //@#$LPS-LOGGING:Localization:NestedCommand
                         LOG.info("Loaded model '" + facade.getName(current)
                                  + "'");
@@ -303,7 +303,7 @@ class ModelMemberFilePersister extends MemberFilePersister
             throw new XmiFormatException(ex);
         }
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:EndMethod
         LOG.info("=======================================");
         //#endif
@@ -365,11 +365,11 @@ class ModelMemberFilePersister extends MemberFilePersister
             
             ArgoDiagram diagram = null;
             //#if defined(ACTIVITYDIAGRAM)
-            //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
+            //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Statement
             //@#$LPS-ACTIVITYDIAGRAM:Localization:NestedCommand
             if (facade.isAActivityGraph(statemachine)) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.info("Creating activity diagram for "
                         + facade.getUMLClassName(statemachine)
@@ -383,13 +383,13 @@ class ModelMemberFilePersister extends MemberFilePersister
             //#endif
                 //#if defined(STATEDIAGRAM)
                     //#if defined(LOGGING)
-                    //@#$LPS-LOGGING:GranularityType:Command
+                    //@#$LPS-LOGGING:GranularityType:Statement
                     //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.info("Creating state diagram for "
                         + facade.getUMLClassName(statemachine)
                         + "<<" + facade.getName(statemachine) + ">>");
                     //#endif
-                //@#$LPS-STATEDIAGRAM:GranularityType:Command
+                //@#$LPS-STATEDIAGRAM:GranularityType:Statement
                 diagram = diagramFactory.createDiagram(
                         DiagramType.State,
                 	namespace,

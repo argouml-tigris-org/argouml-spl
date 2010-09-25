@@ -648,7 +648,7 @@ public abstract class FigNodeModelElement
             // TODO: Having Critics actions here introduces an unnecessary
             // dependency on the Critics subsystem.  Have it register its
             // desired actions using an extension mechanism - tfm
-            //@#$LPS-COGNITIVE:GranularityType:Command
+            //@#$LPS-COGNITIVE:GranularityType:Statement
             //@#$LPS-COGNITIVE:Localization:NestedCommand
             ToDoList tdList = Designer.theDesigner().getToDoList();
             List<ToDoItem> items = tdList.elementListForOffender(getOwner());
@@ -993,14 +993,14 @@ public abstract class FigNodeModelElement
     @Override
     public String getTipString(MouseEvent me) {
         //#if defined(COGNITIVE)
-        //@#$LPS-COGNITIVE:GranularityType:Command
+        //@#$LPS-COGNITIVE:GranularityType:Statement
         //@#$LPS-COGNITIVE:Localization:StartMethod
         // TODO: Generalize extension and remove critic specific code
         ToDoItem item = hitClarifier(me.getX(), me.getY());
         //#endif
         String tip = "";
         //#if defined(COGNITIVE)
-        //@#$LPS-COGNITIVE:GranularityType:Command
+        //@#$LPS-COGNITIVE:GranularityType:Statement
         if (item != null
             && Globals.curEditor().getSelectionManager().containsFig(this)) {
             tip = item.getHeadline() + " ";
@@ -1025,7 +1025,7 @@ public abstract class FigNodeModelElement
      */
     public void vetoableChange(PropertyChangeEvent pce) {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         LOG.debug("in vetoableChange");
         //#endif
@@ -1036,7 +1036,7 @@ public abstract class FigNodeModelElement
             SwingUtilities.invokeLater(delayedNotify);
         } 
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         else {
             LOG.debug("FigNodeModelElement got vetoableChange"
 		      + " from non-owner:"
@@ -1050,7 +1050,7 @@ public abstract class FigNodeModelElement
      */
     public void delayedVetoableChange(PropertyChangeEvent pce) {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         LOG.debug("in delayedVetoableChange");
         //#endif
@@ -1112,7 +1112,7 @@ public abstract class FigNodeModelElement
                 endTrans();
             } catch (PropertyVetoException ex) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.error("could not parse the text entered. "
                         + "PropertyVetoException",
@@ -1144,7 +1144,7 @@ public abstract class FigNodeModelElement
                 modelChanged(event);
             } catch (InvalidElementException e) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 if (LOG.isDebugEnabled()) {
                     LOG.debug("modelChanged method accessed deleted element"
@@ -1165,7 +1165,7 @@ public abstract class FigNodeModelElement
                         updateLayout(event);
                     } catch (InvalidElementException e) {
                         //#if defined(LOGGING)
-                        //@#$LPS-LOGGING:GranularityType:Command
+                        //@#$LPS-LOGGING:GranularityType:Statement
                         //@#$LPS-LOGGING:Localization:NestedCommand
                         if (LOG.isDebugEnabled()) {
                             LOG.debug("updateLayout method accessed "
@@ -1223,7 +1223,7 @@ public abstract class FigNodeModelElement
             }
         } catch (InvalidElementException e) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.debug("stereotypeChanged method accessed deleted element ", e);
             //#endif
         }
@@ -1325,7 +1325,7 @@ public abstract class FigNodeModelElement
                 readyToEdit = true;
             } else {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 LOG.debug("not ready to edit name");
                 //#endif
                 return;
@@ -1389,7 +1389,7 @@ public abstract class FigNodeModelElement
                 readyToEdit = true;
             } else {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:BeforeReturn
                 LOG.debug("not ready to edit name");
                 //#endif
@@ -1644,7 +1644,7 @@ public abstract class FigNodeModelElement
     protected void updateStereotypeText() {
         if (getOwner() == null) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:BeforeReturn
             LOG.warn("Null owner for [" + this.toString() + "/"
                     + this.getClass());
@@ -1805,7 +1805,7 @@ public abstract class FigNodeModelElement
             renderingChanged();
         } catch (Exception e) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("Exception", e);
             //#endif
         }
@@ -1867,7 +1867,7 @@ public abstract class FigNodeModelElement
     protected void updateStereotypeIcon() {
 	if (getOwner() == null) {
 	    //#if defined(LOGGING)
-	    //@#$LPS-LOGGING:GranularityType:Command
+	    //@#$LPS-LOGGING:GranularityType:Statement
 	    //@#$LPS-LOGGING:Localization:NestedCommand
 	    //@#$LPS-LOGGING:Localization:BeforeReturn
 	    LOG.warn("Owner of [" + this.toString() + "/" + this.getClass()
@@ -2604,7 +2604,7 @@ public abstract class FigNodeModelElement
         // to use the constructor that accepts a DiagramSettings object
         if (settings == null) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             LOG.debug("Falling back to project-wide settings");
             //#endif

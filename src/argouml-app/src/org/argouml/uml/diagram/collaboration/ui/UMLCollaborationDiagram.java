@@ -165,7 +165,7 @@ public class UMLCollaborationDiagram extends UMLDiagram {
     public void setNamespace(Object handle) {
         if (!Model.getFacade().isANamespace(handle)) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             //@#$LPS-LOGGING:Localization:NestedIfdef-COLLABORATIONDIAGRAM
             LOG.error(
@@ -540,7 +540,7 @@ public class UMLCollaborationDiagram extends UMLDiagram {
             figNode = makeNewFigCR(makeNewCR(droppedObject), location);
         }
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:NestedIfdef-COLLABORATIONDIAGRAM
         if (figNode != null) {            
             LOG.debug("Dropped object " + droppedObject + " converted to " 

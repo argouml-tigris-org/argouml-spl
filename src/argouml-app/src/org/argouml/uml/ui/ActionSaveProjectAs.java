@@ -64,7 +64,7 @@ public class ActionSaveProjectAs extends ActionSaveProject {
      */
     public void actionPerformed(ActionEvent e) {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         LOG.info("Performing saveas action");
         //#endif

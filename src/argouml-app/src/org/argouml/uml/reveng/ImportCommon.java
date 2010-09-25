@@ -483,7 +483,7 @@ public abstract class ImportCommon implements ImportSettingsInternal {
         }
         Model.getPump().stopPumpingEvents();
         //#if defined(COGNITIVE)
-        //@#$LPS-COGNITIVE:GranularityType:Command
+        //@#$LPS-COGNITIVE:GranularityType:Statement
         boolean criticThreadWasOn = Designer.theDesigner().getAutoCritique();
         if (criticThreadWasOn) {
             Designer.theDesigner().setAutoCritique(false);
@@ -493,7 +493,7 @@ public abstract class ImportCommon implements ImportSettingsInternal {
             doImportInternal(files, monitor, progress);
         } finally {
             //#if defined(COGNITIVE)
-            //@#$LPS-COGNITIVE:GranularityType:Command
+            //@#$LPS-COGNITIVE:GranularityType:Statement
             if (criticThreadWasOn) {
                 Designer.theDesigner().setAutoCritique(true);
             }

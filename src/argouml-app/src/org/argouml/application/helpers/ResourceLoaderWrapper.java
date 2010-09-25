@@ -297,7 +297,7 @@ public final class ResourceLoaderWrapper {
                 
                 icon = lookupIconResource(cName);
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 if (icon == null) {
                     LOG.debug("Can't find icon for " + cName);
@@ -314,7 +314,7 @@ public final class ResourceLoaderWrapper {
             }
         } catch (InvalidElementException e) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.debug("Attempted to get icon for deleted element");
             //#endif
             return null;

@@ -186,7 +186,7 @@ public class ProfileConfiguration extends AbstractProjectMember {
                 profileModels.addAll(p.getProfilePackages());
             } catch (ProfileException e) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.warn("Error retrieving profile's " + p + " packages.", e);
                 //#endif
@@ -226,7 +226,7 @@ public class ProfileConfiguration extends AbstractProjectMember {
             profileModels.removeAll(p.getProfilePackages());
         } catch (ProfileException e) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("Exception", e);
             //#endif
         }

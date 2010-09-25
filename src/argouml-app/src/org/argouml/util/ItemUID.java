@@ -192,7 +192,7 @@ public class ItemUID {
 	        return null;
 	    } catch (IllegalArgumentException iare) {
 	        //#if defined(LOGGING)
-	        //@#$LPS-LOGGING:GranularityType:Command
+	        //@#$LPS-LOGGING:GranularityType:Statement
 	        LOG.error("getUUID for " + obj.getClass()
 	                + " takes strange parameter: ",
 	                iare);
@@ -204,7 +204,7 @@ public class ItemUID {
 	        return null;
 	    } catch (InvocationTargetException tie) {
 	        //#if defined(LOGGING)
-	        //@#$LPS-LOGGING:GranularityType:Command
+	        //@#$LPS-LOGGING:GranularityType:Statement
 	        LOG.error("getUUID for " + obj.getClass() + " threw: ",
 	                tie);
 	        //#endif
@@ -216,7 +216,7 @@ public class ItemUID {
 	    return null;
 	} catch (InvocationTargetException tie) {
 	    //#if defined(LOGGING)
-	    //@#$LPS-LOGGING:GranularityType:Command
+	    //@#$LPS-LOGGING:GranularityType:Statement
 	    LOG.error("getItemUID for " + obj.getClass() + " threw: ",
 		      tie);
 	    //#endif
@@ -227,7 +227,7 @@ public class ItemUID {
 	    return null;
 	} catch (IllegalArgumentException iare) {
 	    //#if defined(LOGGING)
-	    //@#$LPS-LOGGING:GranularityType:Command
+	    //@#$LPS-LOGGING:GranularityType:Statement
 	    LOG.error("getItemUID for " + obj.getClass()
 		      + " takes strange parameter: ",
 		      iare);
@@ -235,7 +235,7 @@ public class ItemUID {
 	    return null;
 	} catch (ExceptionInInitializerError eiie) {
 	    //#if defined(LOGGING)
-	    //@#$LPS-LOGGING:GranularityType:Command
+	    //@#$LPS-LOGGING:GranularityType:Statement
 	    LOG.error("getItemUID for " + obj.getClass()
 		      + " exception: ",
 		      eiie);
@@ -249,7 +249,7 @@ public class ItemUID {
 
 	if (!(rv instanceof ItemUID)) {
 	    //#if defined(LOGGING)
-	    //@#$LPS-LOGGING:GranularityType:Command
+	    //@#$LPS-LOGGING:GranularityType:Statement
 	    //@#$LPS-LOGGING:Localization:NestedCommand
 	    //@#$LPS-LOGGING:Localization:BeforeReturn
 	    LOG.error("getItemUID for " + obj.getClass()
@@ -302,7 +302,7 @@ public class ItemUID {
 	    return null;
 	} catch (InvocationTargetException tie) {
 	    //#if defined(LOGGING)
-	    //@#$LPS-LOGGING:GranularityType:Command
+	    //@#$LPS-LOGGING:GranularityType:Statement
 	    LOG.error("setItemUID for " + obj.getClass() + " threw",
 		      tie);
 	    //#endif
@@ -313,7 +313,7 @@ public class ItemUID {
 	    return null;
 	} catch (IllegalArgumentException iare) {
 	    //#if defined(LOGGING)
-	    //@#$LPS-LOGGING:GranularityType:Command
+	    //@#$LPS-LOGGING:GranularityType:Statement
 	    LOG.error("setItemUID for " + obj.getClass()
 		      + " takes strange parameter",
 		      iare);
@@ -321,7 +321,7 @@ public class ItemUID {
 	    return null;
 	} catch (ExceptionInInitializerError eiie) {
 	    //#if defined(LOGGING)
-	    //@#$LPS-LOGGING:GranularityType:Command
+	    //@#$LPS-LOGGING:GranularityType:Statement
 	    LOG.error("setItemUID for " + obj.getClass() + " threw",
 		      eiie);
 	    //#endif

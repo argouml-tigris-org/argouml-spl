@@ -79,7 +79,7 @@ public class ExtensionPointNotationUml extends ExtensionPointNotation {
         // We can do nothing if we don't have both the use case and extension
         // point.
         //#if defined(USECASEDIAGRAM)
-        //@#$LPS-USECASEDIAGRAM:GranularityType:Command        
+        //@#$LPS-USECASEDIAGRAM:GranularityType:Statement        
         if (ep == null) {
             return;
         }

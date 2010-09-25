@@ -62,7 +62,7 @@ public class ActionClassDiagram extends ActionAddDiagram {
                     null);
         }
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         LOG.error("No namespace as argument");
         LOG.error(ns);
         //#endif
@@ -82,7 +82,7 @@ public class ActionClassDiagram extends ActionAddDiagram {
                     settings);
         }
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         LOG.error("No namespace as argument");
         LOG.error(ns);
         //#endif

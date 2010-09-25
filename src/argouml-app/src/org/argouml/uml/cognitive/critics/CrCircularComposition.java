@@ -120,7 +120,7 @@ public class CrCircularComposition extends CrUML {
 	ListSet newOffs = computeOffenders(dm);
 	boolean res = offs.equals(newOffs);
 	//#if defined(LOGGING)
-	//@#$LPS-LOGGING:GranularityType:Command
+	//@#$LPS-LOGGING:GranularityType:Statement
 	//@#$LPS-LOGGING:Localization:BeforeReturn
 	//@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 	LOG.debug("offs=" + offs.toString()

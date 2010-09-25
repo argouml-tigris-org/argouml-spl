@@ -111,7 +111,7 @@ public class UMLCheckItem extends CheckItem {
 	    } catch (ExpansionException e) {
 	        // Really ought to have a CriticException to throw here.
 	        //#if defined(LOGGING)
-	        //@#$LPS-LOGGING:GranularityType:Command
+	        //@#$LPS-LOGGING:GranularityType:Statement
 	        //@#$LPS-LOGGING:Localization:NestedCommand
 	        //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 	        LOG.error("Failed to evaluate critic expression", e);
@@ -122,7 +122,7 @@ public class UMLCheckItem extends CheckItem {
                 evalStr = Translator.localize("misc.name.deleted");
             }
 	    //#if defined(LOGGING)
-	    //@#$LPS-LOGGING:GranularityType:Command
+	    //@#$LPS-LOGGING:GranularityType:Statement
 	    //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 	    LOG.debug("expr='" + expr + "' = '" + evalStr + "'");
 	    //#endif

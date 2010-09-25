@@ -119,7 +119,7 @@ public class UseCaseDiagramRenderer extends UmlDiagramRenderer {
 
         } else {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             //@#$LPS-LOGGING:Localization:NestedIfdef-USECASEDIAGRAM
             LOG.debug(this.getClass().toString()
@@ -164,7 +164,7 @@ public class UseCaseDiagramRenderer extends UmlDiagramRenderer {
             Map styleAttributes) {
 
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         //@#$LPS-LOGGING:Localization:NestedIfdef-USECASEDIAGRAM
         if (LOG.isDebugEnabled()) {

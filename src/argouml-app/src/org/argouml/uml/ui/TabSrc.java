@@ -109,7 +109,7 @@ public class TabSrc
      */
     private void generateSource(Object elem) {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
 	LOG.debug("TabSrc.genText(): getting src for "
 		  + Model.getFacade().getName(elem));
@@ -144,7 +144,7 @@ public class TabSrc
     @Override
     protected void parseText(String s) {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         LOG.debug("TabSrc   setting src for " 
                 + Model.getFacade().getName(getTarget()));

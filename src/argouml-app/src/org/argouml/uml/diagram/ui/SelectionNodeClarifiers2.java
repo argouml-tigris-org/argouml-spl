@@ -293,7 +293,7 @@ public abstract class SelectionNodeClarifiers2 extends SelectionButtons {
             break;
         default:
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             LOG.warn("invalid handle number");
             //#endif

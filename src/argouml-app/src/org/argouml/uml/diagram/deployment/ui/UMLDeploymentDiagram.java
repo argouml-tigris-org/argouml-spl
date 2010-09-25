@@ -145,7 +145,7 @@ public class UMLDeploymentDiagram extends UMLDiagram {
     public void setNamespace(Object handle) {
         if (!Model.getFacade().isANamespace(handle)) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             LOG.error(
                 "Illegal argument. Object " + handle + " is not a namespace");
@@ -517,7 +517,7 @@ public class UMLDeploymentDiagram extends UMLDiagram {
 		|| facade.isAComponent(modelElement)
 		|| facade.isAComponentInstance(modelElement)) {
 	    //#if defined(LOGGING)
-	    //@#$LPS-LOGGING:GranularityType:Command
+	    //@#$LPS-LOGGING:GranularityType:Statement
 	    //@#$LPS-LOGGING:Localization:NestedCommand
 	    LOG.info("Setting namespace of " + modelElement);
 	    //#endif
@@ -571,7 +571,7 @@ public class UMLDeploymentDiagram extends UMLDiagram {
         } else if (Model.getFacade().isAComment(objectToAccept)) {
             return true;
         //#if defined(USECASEDIAGRAM)
-        //@#$LPS-USECASEDIAGRAM:GranularityType:Command
+        //@#$LPS-USECASEDIAGRAM:GranularityType:Statement
         } else if (Model.getFacade().isAActor(objectToAccept)) {
             return true;
         //#endif
@@ -608,7 +608,7 @@ public class UMLDeploymentDiagram extends UMLDiagram {
         } else if (Model.getFacade().isAObject(droppedObject)) {
             figNode = new FigObject(droppedObject, bounds, settings);
         //#if defined(USECASEDIAGRAM)
-        //@#$LPS-USECASEDIAGRAM:GranularityType:Command
+        //@#$LPS-USECASEDIAGRAM:GranularityType:Statement
         } else if (Model.getFacade().isAActor(droppedObject)) {
             figNode = new FigActor(droppedObject, bounds, settings);
         //#endif
@@ -623,14 +623,14 @@ public class UMLDeploymentDiagram extends UMLDiagram {
                 figNode.setLocation(location.x, location.y);
             }
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             LOG.debug("Dropped object " + droppedObject + " converted to " 
                     + figNode);
             //#endif
         } 
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:BeforeReturn
         else {
             LOG.debug("Dropped object NOT added " + figNode);

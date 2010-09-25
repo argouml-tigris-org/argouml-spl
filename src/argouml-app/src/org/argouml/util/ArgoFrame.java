@@ -75,7 +75,7 @@ public class ArgoFrame {
                     if (frames[i] instanceof JFrame) {
                         if (topFrame != null) {
                             //#if defined(LOGGING)
-                            //@#$LPS-LOGGING:GranularityType:Command
+                            //@#$LPS-LOGGING:GranularityType:Statement
                             //@#$LPS-LOGGING:Localization:NestedCommand
                             LOG.warn("Found multiple JFrames");
                             //#endif
@@ -85,7 +85,7 @@ public class ArgoFrame {
                     }
                 }
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 if (topFrame == null) {
                     LOG.warn("Failed to find application JFrame");

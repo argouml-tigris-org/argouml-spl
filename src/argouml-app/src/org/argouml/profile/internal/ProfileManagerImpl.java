@@ -113,7 +113,7 @@ public class ProfileManagerImpl implements ProfileManager {
             profileUML = new ProfileUML();
             profileJava = new ProfileJava(profileUML);
             //#if defined(COGNITIVE)
-            //@#$LPS-COGNITIVE:GranularityType:Command
+            //@#$LPS-COGNITIVE:GranularityType:Statement
             profileGoodPractices = new ProfileGoodPractices();
             profileCodeGeneration = new ProfileCodeGeneration(
                     profileGoodPractices);
@@ -125,7 +125,7 @@ public class ProfileManagerImpl implements ProfileManager {
             // register the built-in profiles
             registerProfile(profileJava);   
             //#if defined(COGNITIVE)
-            //@#$LPS-COGNITIVE:GranularityType:Command
+            //@#$LPS-COGNITIVE:GranularityType:Statement
             registerProfile(profileGoodPractices);
             registerProfile(profileCodeGeneration);
             //#endif
@@ -157,7 +157,7 @@ public class ProfileManagerImpl implements ProfileManager {
 
                 addToDefaultProfiles(profileJava);
                 //#if defined(COGNITIVE)
-                //@#$LPS-COGNITIVE:GranularityType:Command
+                //@#$LPS-COGNITIVE:GranularityType:Statement
                 addToDefaultProfiles(profileGoodPractices);
                 addToDefaultProfiles(profileCodeGeneration);
                 //#endif
@@ -183,7 +183,7 @@ public class ProfileManagerImpl implements ProfileManager {
                                     registerProfile(p);
                                 } catch (ProfileException e) {
                                     //#if defined(LOGGING)
-                                    //@#$LPS-LOGGING:GranularityType:Command
+                                    //@#$LPS-LOGGING:GranularityType:Statement
                                     //@#$LPS-LOGGING:Localization:NestedCommand
                                     LOG.error("Error loading profile: " + file,
                                             e);
@@ -192,14 +192,14 @@ public class ProfileManagerImpl implements ProfileManager {
                             }
                         } catch (URISyntaxException e1) {
                             //#if defined(LOGGING)
-                            //@#$LPS-LOGGING:GranularityType:Command
+                            //@#$LPS-LOGGING:GranularityType:Statement
                             //@#$LPS-LOGGING:Localization:NestedCommand
                             LOG.error("Invalid path for Profile: " + fileName,
                                     e1);
                             //#endif
                         } catch (Throwable e2) {
                             //#if defined(LOGGING)
-                            //@#$LPS-LOGGING:GranularityType:Command
+                            //@#$LPS-LOGGING:GranularityType:Statement
                             //@#$LPS-LOGGING:Localization:NestedCommand
                             LOG.error("Error loading profile: " + fileName,
                                     e2);                            
@@ -278,7 +278,7 @@ public class ProfileManagerImpl implements ProfileManager {
                     || getProfileForClass(p.getClass().getName()) == null) {
                 profiles.add(p);
                 //#if defined(COGNITIVE)
-                //@#$LPS-COGNITIVE:GranularityType:Command
+                //@#$LPS-COGNITIVE:GranularityType:Statement
                 //@#$LPS-COGNITIVE:Localization:NestedCommand
                 for (Critic critic : p.getCritics()) {
                     for (Object meta : critic.getCriticizedDesignMaterials()) {
@@ -371,7 +371,7 @@ public class ProfileManagerImpl implements ProfileManager {
                 Model.getXmiReader().addSearchPath(path);
             } catch (UmlException e) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.error("Couldn't retrive XMI Reader from Model.", e);
                 //#endif
@@ -393,7 +393,7 @@ public class ProfileManagerImpl implements ProfileManager {
                 Model.getXmiReader().removeSearchPath(path);
             } catch (UmlException e) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.error("Couldn't retrive XMI Reader from Model.", e);
                 //#endif
@@ -431,7 +431,7 @@ public class ProfileManagerImpl implements ProfileManager {
                     } catch (ProfileException e) {
                         // if an exception is raised file is unusable
                         //#if defined(LOGGING)
-                        //@#$LPS-LOGGING:GranularityType:Command
+                        //@#$LPS-LOGGING:GranularityType:Statement
                         //@#$LPS-LOGGING:Localization:NestedCommand
                         LOG.warn("Failed to load user defined profile "
                             + file.getAbsolutePath() + ".", e);

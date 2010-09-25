@@ -281,7 +281,7 @@ public class FigDataType extends FigClassifierBox {
             }
         } catch (Exception e) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("could not set package due to:" + e
                     + "' at " + encloser, e);
             //#endif

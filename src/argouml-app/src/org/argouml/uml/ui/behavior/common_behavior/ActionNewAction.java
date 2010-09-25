@@ -105,8 +105,8 @@ public abstract class ActionNewAction extends AbstractActionNewModelElement
         super.actionPerformed(e);
         Object action = createAction();
         //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
-        //@#$LPS-STATEDIAGRAM:GranularityType:Command
-        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
+        //@#$LPS-STATEDIAGRAM:GranularityType:Statement
+        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Statement
         if (getValue(ROLE).equals(Roles.EXIT)) {
             Model.getStateMachinesHelper().setExit(getTarget(), action);
         } else if (getValue(ROLE).equals(Roles.ENTRY)) {
@@ -117,15 +117,15 @@ public abstract class ActionNewAction extends AbstractActionNewModelElement
         } else
         //#endif
         //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
-        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
-        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
+        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Statement
+        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Statement
         if (getValue(ROLE).equals(Roles.ACTION)) {
             Model.getCollaborationsHelper().setAction(getTarget(), action);
         } 
         //#endif
         //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
-        //@#$LPS-STATEDIAGRAM:GranularityType:Command
-        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
+        //@#$LPS-STATEDIAGRAM:GranularityType:Statement
+        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Statement
         else if (getValue(ROLE).equals(Roles.EFFECT)) {
             Model.getStateMachinesHelper().setEffect(getTarget(), action);
         } else 

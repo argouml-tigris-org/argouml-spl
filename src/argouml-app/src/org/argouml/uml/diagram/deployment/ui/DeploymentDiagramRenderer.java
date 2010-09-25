@@ -87,7 +87,7 @@ public class DeploymentDiagramRenderer extends UmlDiagramRenderer {
             figNode = ((UMLDiagram) diag).drop(node, null);
         } else {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             LOG.debug("TODO: DeploymentDiagramRenderer getFigNodeFor");
             //#endif

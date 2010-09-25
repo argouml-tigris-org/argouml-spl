@@ -159,7 +159,7 @@ public abstract class ToDoPerspective extends TreeModelComposite {
 	    return;
 	}
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
         LOG.debug("addFlatChildren");
         //#endif

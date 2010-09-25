@@ -129,7 +129,7 @@ public class UserDefinedProfile extends Profile {
      */
     public UserDefinedProfile(File file) throws ProfileException {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         LOG.info("load " + file);
         //#endif
@@ -155,7 +155,7 @@ public class UserDefinedProfile extends Profile {
      */
     public UserDefinedProfile(URL url) throws ProfileException {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         LOG.info("load " + url);
         //#endif
@@ -182,7 +182,7 @@ public class UserDefinedProfile extends Profile {
             //#endif
             Set<String> dependencies) throws ProfileException {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         LOG.info("load " + url);
         //#endif
@@ -195,7 +195,7 @@ public class UserDefinedProfile extends Profile {
             profilePackages = new ArrayList(0);
         }
         //#if defined(COGNITIVE)
-        //@#$LPS-COGNITIVE:GranularityType:Command
+        //@#$LPS-COGNITIVE:GranularityType:Statement
         this.setCritics(critics);
         //#endif
         for (String profileID : dependencies) {
@@ -225,7 +225,7 @@ public class UserDefinedProfile extends Profile {
                     displayName = name;
                 } 
                 //#if defined(COGNITIVE)
-                //@#$LPS-COGNITIVE:GranularityType:Command
+                //@#$LPS-COGNITIVE:GranularityType:Statement
                 //@#$LPS-COGNITIVE:Localization:NestedCommand
                 else {
                     if (displayName == null) {
@@ -235,7 +235,7 @@ public class UserDefinedProfile extends Profile {
                 }
                 //#endif
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.info("profile " + displayName);
                 //#endif
@@ -251,7 +251,7 @@ public class UserDefinedProfile extends Profile {
                     profile = st.nextToken();
                     if (profile != null) {
                         //#if defined(LOGGING)
-                        //@#$LPS-LOGGING:GranularityType:Command
+                        //@#$LPS-LOGGING:GranularityType:Statement
                         //@#$LPS-LOGGING:Localization:NestedCommand
                         LOG.debug("AddingDependency " + profile);
                         //#endif
@@ -274,7 +274,7 @@ public class UserDefinedProfile extends Profile {
                 String tagName = Model.getFacade().getTag(tag);
                 if (tagName == null) {
                     //#if defined(LOGGING)
-                    //@#$LPS-LOGGING:GranularityType:Command
+                    //@#$LPS-LOGGING:GranularityType:Statement
                     //@#$LPS-LOGGING:Localization:NestedCommand
                     LOG.debug("profile package with stereotype "
                             + Model.getFacade().getName(stereotype)
@@ -282,7 +282,7 @@ public class UserDefinedProfile extends Profile {
                     //#endif
                 } else if (tagName.toLowerCase().equals("figure")) {
                     //#if defined(LOGGING)
-                    //@#$LPS-LOGGING:GranularityType:Command
+                    //@#$LPS-LOGGING:GranularityType:Statement
                     //@#$LPS-LOGGING:Localization:NestedCommand
                     LOG.debug("AddFigNode "
                             + Model.getFacade().getName(stereotype));
@@ -296,7 +296,7 @@ public class UserDefinedProfile extends Profile {
                         figNodeStrategy.addDesrciptor(fnd);
                     } catch (IOException e) {
                         //#if defined(LOGGING)
-                        //@#$LPS-LOGGING:GranularityType:Command
+                        //@#$LPS-LOGGING:GranularityType:Statement
                         //@#$LPS-LOGGING:Localization:NestedCommand
                         LOG.error("Error loading FigNode", e);
                         //#endif
@@ -306,7 +306,7 @@ public class UserDefinedProfile extends Profile {
         }
         //#if defined(COGNITIVE)
         // load critiques
-        //@#$LPS-COGNITIVE:GranularityType:Command
+        //@#$LPS-COGNITIVE:GranularityType:Statement
         Set<Critic> myCritics = this.getCritics();        
         myCritics.addAll(getAllCritiquesInModel());
         this.setCritics(myCritics);
@@ -393,7 +393,7 @@ public class UserDefinedProfile extends Profile {
 
         }
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         LOG.debug("OCL-Critic: " + ocl);
         //#endif
         try {
@@ -401,7 +401,7 @@ public class UserDefinedProfile extends Profile {
                     supportedDecisions, knowledgeTypes, moreInfoURL);
         } catch (InvalidOclException e) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("Invalid OCL in XMI!", e);
             //#endif
             return null;

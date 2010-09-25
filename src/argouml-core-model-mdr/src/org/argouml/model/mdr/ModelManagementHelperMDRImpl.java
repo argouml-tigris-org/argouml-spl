@@ -221,7 +221,7 @@ class ModelManagementHelperMDRImpl implements ModelManagementHelper {
         }
         long duration = System.currentTimeMillis() - startTime;
         //#if defined(LOGGING) 
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:BeforeReturn
         LOG.debug("Get allOfKind took " + duration + " msec.");
         //#endif
@@ -876,7 +876,7 @@ class ModelManagementHelperMDRImpl implements ModelManagementHelper {
              * </pre>
              */
             //#if defined(LOGGING) 
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             if (pack instanceof Collaboration) {
                 // TODO: Not implemented                
                 LOG.debug(

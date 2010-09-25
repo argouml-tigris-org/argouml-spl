@@ -297,7 +297,7 @@ public class ToDoPane extends JPanel
      */
     public void valueChanged(TreeSelectionEvent e) {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
         LOG.debug("ToDoPane valueChanged");
@@ -307,7 +307,7 @@ public class ToDoPane extends JPanel
         Object sel = getSelectedObject();
         ProjectBrowser.getInstance().setToDoItem(sel);
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
         LOG.debug("lastselection: " + lastSel);
 	LOG.debug("sel: " + sel);
@@ -497,7 +497,7 @@ public class ToDoPane extends JPanel
             tree.setVisible(false);
 	} else {
 	    //#if defined(LOGGING)
-	    //@#$LPS-LOGGING:GranularityType:Command
+	    //@#$LPS-LOGGING:GranularityType:Statement
 	    //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
             LOG.debug("ToDoPane setting tree model");
             //#endif
@@ -553,7 +553,7 @@ public class ToDoPane extends JPanel
         //TODO: should fire its own event and ProjectBrowser
         //TODO: should register a listener
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:EndMethod     
         //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
         LOG.debug("2: " + getSelectedObject().toString());

@@ -204,7 +204,7 @@ public class UMLUseCaseDiagram extends UMLDiagram {
     public void setNamespace(Object handle) {
         if (!Model.getFacade().isANamespace(handle)) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedIfdef-USECASEDIAGRAM
             LOG.error(
                 "Illegal argument. Object " + handle + " is not a namespace");
@@ -505,7 +505,7 @@ public class UMLUseCaseDiagram extends UMLDiagram {
             figNode = new FigPackage(droppedObject, bounds, settings);
         }
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:NestedIfdef-USECASEDIAGRAM
         if (figNode != null) {
             LOG.debug("Dropped object " + droppedObject + " converted to " 

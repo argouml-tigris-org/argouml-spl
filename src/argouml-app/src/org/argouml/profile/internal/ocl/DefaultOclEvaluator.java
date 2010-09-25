@@ -71,7 +71,7 @@ public class DefaultOclEvaluator implements OclExpressionEvaluator {
         // XXX this seems to be a bug of the parser, 
         // it always requires a context
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         LOG.debug("OCL: " + ocl);
         //#endif

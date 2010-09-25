@@ -305,7 +305,7 @@ public class WizAssocComposite extends UMLWizard {
 
             if (choice == -1) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
                 LOG.warn("WizAssocComposite: nothing selected, "
@@ -384,7 +384,7 @@ public class WizAssocComposite extends UMLWizard {
 
                 // Someone took our association away.
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
                 LOG.error("WizAssocComposite: could not set " + "aggregation.",
                         pve);

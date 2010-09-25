@@ -62,7 +62,7 @@ public class ConfigurationFactory implements IConfigurationFactory {
                     (IConfigurationFactory) Class.forName(name).newInstance();
             } catch (Exception e) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 Logger.getLogger(ConfigurationFactory.class).
                     warn("Can't create configuration factory "

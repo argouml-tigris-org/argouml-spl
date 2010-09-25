@@ -186,7 +186,7 @@ public class ProjectImpl implements java.io.Serializable, Project {
         historyFile = "";
         defaultModelTypeCache = new HashMap<String, Object>();
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         LOG.info("making empty project with empty model");
         //#endif
         addSearchPath("PROJECT_DIR");
@@ -216,7 +216,7 @@ public class ProjectImpl implements java.io.Serializable, Project {
      */
     public void setUri(URI theUri) {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         if (LOG.isDebugEnabled()) {
             LOG.debug("Setting project URI from \"" + uri
@@ -229,7 +229,7 @@ public class ProjectImpl implements java.io.Serializable, Project {
     public void setFile(final File file) {
         URI theProjectUri = file.toURI();
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         if (LOG.isDebugEnabled()) {
             LOG.debug("Setting project file name from \""
                       + uri
@@ -256,7 +256,7 @@ public class ProjectImpl implements java.io.Serializable, Project {
 
     public List<ProjectMember> getMembers() {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         //@#$LPS-LOGGING:Localization:BeforeReturn
         LOG.info("Getting the members there are " + members.size());
@@ -292,7 +292,7 @@ public class ProjectImpl implements java.io.Serializable, Project {
         // Adding a todo member removes any existing one.
         members.add(pm);
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:EndMethod
         LOG.info("Added todo member, there are now " + members.size());
         //#endif
@@ -306,17 +306,17 @@ public class ProjectImpl implements java.io.Serializable, Project {
                     "A model member must be suppleid");
         } else if (m instanceof ArgoDiagram) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             LOG.info("Adding diagram member");
             //#endif
             addDiagramMember((ArgoDiagram) m);
         } 
         //#if defined(COGNITIVE)
-        //@#$LPS-COGNITIVE:GranularityType:Command
+        //@#$LPS-COGNITIVE:GranularityType:Statement
         else if (m instanceof ProjectMemberTodoList) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             LOG.info("Adding todo member");
             //#endif
@@ -325,7 +325,7 @@ public class ProjectImpl implements java.io.Serializable, Project {
         //#endif
         else if (Model.getFacade().isAModel(m)) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             LOG.info("Adding model member");
             //#endif
@@ -336,7 +336,7 @@ public class ProjectImpl implements java.io.Serializable, Project {
                     + "It is " + m.getClass().getName());
         }
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:EndMethod
         LOG.info("There are now " + members.size() + " members");
         //#endif
@@ -365,14 +365,14 @@ public class ProjectImpl implements java.io.Serializable, Project {
             // got past the veto, add the member
             ProjectMember pm = new ProjectMemberModel(m, this);
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             LOG.info("Adding model member to start of member list");
             //#endif
             members.add(pm);
         } else {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             LOG.info("Attempted to load 2 models");
             //#endif
@@ -399,7 +399,7 @@ public class ProjectImpl implements java.io.Serializable, Project {
         setSaveEnabled(true);
         if (models.size() > 1 || roots.size() > 1) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             LOG.debug("Multiple roots/models");
             //#endif
@@ -413,7 +413,7 @@ public class ProjectImpl implements java.io.Serializable, Project {
     protected void removeProjectMemberDiagram(ArgoDiagram d) {
         if (activeDiagram == d) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             LOG.debug("Deleting active diagram " + d);
             //#endif
@@ -423,7 +423,7 @@ public class ProjectImpl implements java.io.Serializable, Project {
                 // TODO: Once we go MDI we won't need this.
                 
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.debug("Deleting last diagram - creating new default diag");
                 //#endif
@@ -438,7 +438,7 @@ public class ProjectImpl implements java.io.Serializable, Project {
                 // current.
                 defaultDiagram = diagrams.get(0);
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.debug("Candidate default diagram is " + defaultDiagram);
                 //#endif
@@ -446,7 +446,7 @@ public class ProjectImpl implements java.io.Serializable, Project {
                     defaultDiagram = diagrams.get(1);
                     //#if defined(LOGGING)
                     //@#$LPS-LOGGING:Localization:NestedCommand
-                    //@#$LPS-LOGGING:GranularityType:Command
+                    //@#$LPS-LOGGING:GranularityType:Statement
                     LOG.debug("Switching default diagram to " + defaultDiagram);
                     //#endif
                 }
@@ -455,7 +455,7 @@ public class ProjectImpl implements java.io.Serializable, Project {
             TargetManager.getInstance().setTarget(activeDiagram);
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:Localization:NestedCommand
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.debug("New active diagram is " + defaultDiagram);
             //#endif
         }
@@ -574,7 +574,7 @@ public class ProjectImpl implements java.io.Serializable, Project {
                 result.addAll(profile.getProfilePackages());
             } catch (org.argouml.profile.ProfileException e) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.error("Exception when fetching models from profile "
                         + profile.getDisplayName(), e);
@@ -645,7 +645,7 @@ public class ProjectImpl implements java.io.Serializable, Project {
 
         if (cls == null && defineNew) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             LOG.debug("new Type defined!");
             //#endif
@@ -859,7 +859,7 @@ public class ProjectImpl implements java.io.Serializable, Project {
         }
         long endTime = System.currentTimeMillis();
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         LOG.debug("Diagram post load took " + (endTime - startTime) + " msec.");
         //#endif
         
@@ -867,7 +867,7 @@ public class ProjectImpl implements java.io.Serializable, Project {
         // with displaying prop panels
         Object model = getModel();
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         LOG.info("Setting root model to " + model);
         //#endif
         setRoot(model);
@@ -944,7 +944,7 @@ public class ProjectImpl implements java.io.Serializable, Project {
             // for primitive Figs (without owner).
             
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             LOG.info("Request to delete a Fig " + obj.getClass().getName());
             //#endif
@@ -952,7 +952,7 @@ public class ProjectImpl implements java.io.Serializable, Project {
             // TODO: Why is this a special case? - tfm
             CommentEdge ce = (CommentEdge) obj;
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             LOG.info("Removing the link from " + ce.getAnnotatedElement()
                     + " to " + ce.getComment());
@@ -1027,7 +1027,7 @@ public class ProjectImpl implements java.io.Serializable, Project {
         boolean modelFound = false;
         for (Object element : elements) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             if (!Model.getFacade().isAPackage(element)) {                
                 LOG.warn("Top level element other than package found - " 
@@ -1110,7 +1110,7 @@ public class ProjectImpl implements java.io.Serializable, Project {
                 Model.getUmlFactory().deleteExtent(roots.iterator().next());
             } catch (InvalidElementException e) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.warn("Extent deleted a second time");
                 //#endif

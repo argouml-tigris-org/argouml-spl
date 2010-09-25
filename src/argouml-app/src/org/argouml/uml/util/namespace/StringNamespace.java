@@ -159,7 +159,7 @@ public class StringNamespace implements Namespace, Cloneable {
             result = (StringNamespace) this.clone();
         } catch (CloneNotSupportedException e) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:BeforeReturn
             LOG.debug(e);
             //#endif

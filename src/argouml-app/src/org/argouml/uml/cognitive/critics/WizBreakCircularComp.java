@@ -167,7 +167,7 @@ public class WizBreakCircularComp extends UMLWizard {
      */
     public void doAction(int oldStep) {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 	LOG.debug("doAction " + oldStep);
@@ -217,7 +217,7 @@ public class WizBreakCircularComp extends UMLWizard {
 		            Model.getAggregationKind().getNone());
 		} catch (Exception pve) {
 		    //#if defined(LOGGING)
-		    //@#$LPS-LOGGING:GranularityType:Command
+		    //@#$LPS-LOGGING:GranularityType:Statement
 		    //@#$LPS-LOGGING:Localization:NestedCommand
 		    //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 		    LOG.error("could not set aggregation", pve);

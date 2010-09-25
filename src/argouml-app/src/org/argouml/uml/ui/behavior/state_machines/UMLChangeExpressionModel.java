@@ -74,8 +74,8 @@ class UMLChangeExpressionModel extends UMLExpressionModel2 {
                     + getContainer());
         }
         //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
-        //@#$LPS-STATEDIAGRAM:GranularityType:Command
-        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
+        //@#$LPS-STATEDIAGRAM:GranularityType:Statement
+        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Statement
         //@#$LPS-STATEDIAGRAM:Localization:EndMethod
         //@#$LPS-ACTIVITYDIAGRAM:Localization:EndMethod
         Model.getStateMachinesHelper().setChangeExpression(target, expression);
@@ -87,7 +87,7 @@ class UMLChangeExpressionModel extends UMLExpressionModel2 {
      */
     public Object newExpression() {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         //@#$LPS-LOGGING:Localization:BeforeReturn
         LOG.debug("new boolean expression");

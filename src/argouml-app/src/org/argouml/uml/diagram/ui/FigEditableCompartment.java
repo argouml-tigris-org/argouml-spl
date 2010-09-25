@@ -151,7 +151,7 @@ public abstract class FigEditableCompartment extends FigCompartment {
                 && !(fig instanceof CompartmentFigText)
                 && !(fig instanceof FigSeperator)) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             LOG.error("Illegal Fig added to a FigEditableCompartment");
             //#endif
@@ -244,7 +244,7 @@ public abstract class FigEditableCompartment extends FigCompartment {
             // build the rest of the compartment. Hence try/catch should be
             // internal to the loop.
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.debug("Attempted to populate a FigEditableCompartment" 
                     + " using a deleted model element - aborting", e);
             //#endif

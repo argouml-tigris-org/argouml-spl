@@ -85,7 +85,7 @@ class DiagramMemberFilePersister extends MemberFilePersister {
             PGMLStackParser parser = new PGMLStackParser(project.getUUIDRefs(),
                     defaultSettings);
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.info("Adding translations registered by modules");
             //#endif
             for (Map.Entry<String, String> translation

@@ -297,7 +297,7 @@ class ArgoAny implements Any, Type2 {
             rp = returnParams.iterator().next();
         } 
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         if (returnParams.size() > 1)  {
             LOG.warn("OCL compiler only handles one return parameter"
                     + " - Found " + returnParams.size()
@@ -307,7 +307,7 @@ class ArgoAny implements Any, Type2 {
 
 	if (rp == null || Model.getFacade().getType(rp) == null) {
 	    //#if defined(LOGGING)
-	    //@#$LPS-LOGGING:GranularityType:Command
+	    //@#$LPS-LOGGING:GranularityType:Statement
 	    //@#$LPS-LOGGING:Localization:NestedCommand
 	    //@#$LPS-LOGGING:Localization:BeforeReturn
 	    LOG.warn("WARNING: supposing return type void!");
@@ -369,7 +369,7 @@ class ArgoAny implements Any, Type2 {
      */
     public boolean hasState(String name) {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         //@#$LPS-LOGGING:Localization:BeforeReturn
 	LOG.warn("ArgoAny.hasState() has been called, but is "
@@ -425,7 +425,7 @@ class ArgoAny implements Any, Type2 {
         Collection operationParameters =
                 Model.getFacade().getParameters(operation);
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
 	if (!Model.getFacade().isReturn(
                         operationParameters.iterator().next())) {
 	    LOG.warn(

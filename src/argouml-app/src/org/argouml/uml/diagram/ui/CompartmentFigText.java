@@ -109,7 +109,7 @@ public class CompartmentFigText extends FigSingleLineTextWithNotation
             NotationProvider np) {
         super(x, y, w, h, true);
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         if (np == null) {
             LOG.warn("Need a NotationProvider for CompartmentFigText.");
@@ -121,7 +121,7 @@ public class CompartmentFigText extends FigSingleLineTextWithNotation
         // break).
         refFig = aFig;
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         if (refFig == null) {
             LOG.warn(this.getClass().toString()
 		     + ": Cannot create with null compartment fig");
@@ -146,7 +146,7 @@ public class CompartmentFigText extends FigSingleLineTextWithNotation
             DiagramSettings settings, NotationProvider np) {
         super(element, bounds, settings, true);
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         if (np == null) {
             LOG.warn("Need a NotationProvider for CompartmentFigText.");
         }

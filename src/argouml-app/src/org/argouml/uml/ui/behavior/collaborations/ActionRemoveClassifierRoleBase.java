@@ -54,8 +54,8 @@ public class ActionRemoveClassifierRoleBase
     public void actionPerformed(ActionEvent e) {
         super.actionPerformed(e);
         //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
-        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
-        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
+        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Statement
+        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Statement
         //@#$LPS-COLLABORATIONDIAGRAM:Localization:EndMethod
         //@#$LPS-SEQUENCEDIAGRAM:Localization:EndMethod             
         Model.getCollaborationsHelper()

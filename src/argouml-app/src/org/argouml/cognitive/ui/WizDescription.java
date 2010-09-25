@@ -76,7 +76,7 @@ public class WizDescription extends WizStep {
     public WizDescription() {
 	super();
 	//#if defined(LOGGING)
-	//@#$LPS-LOGGING:GranularityType:Command
+	//@#$LPS-LOGGING:GranularityType:Statement
 	//@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 	LOG.info("making WizDescription");
 	//#endif

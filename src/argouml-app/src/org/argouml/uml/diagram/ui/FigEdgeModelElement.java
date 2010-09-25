@@ -320,13 +320,13 @@ public abstract class FigEdgeModelElement
     @Override
     public String getTipString(MouseEvent me) {
         //#if defined(COGNITIVE)
-        //@#$LPS-COGNITIVE:GranularityType:Command
+        //@#$LPS-COGNITIVE:GranularityType:Statement
         //@#$LPS-COGNITIVE:Localization:StartMethod
         ToDoItem item = hitClarifier(me.getX(), me.getY());
         //#endif
         String tip = "";
         //#if defined(COGNITIVE)
-        //@#$LPS-COGNITIVE:GranularityType:Command
+        //@#$LPS-COGNITIVE:GranularityType:Statement
         if (item != null
             && Globals.curEditor().getSelectionManager().containsFig(this)) {
             tip = item.getHeadline();
@@ -339,7 +339,7 @@ public abstract class FigEdgeModelElement
                 // We moused over an object just as it was deleted
                 // transient condition - doesn't require I18N
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.warn("A deleted element still exists on the diagram");
                 //#endif
@@ -378,7 +378,7 @@ public abstract class FigEdgeModelElement
 
         if (TargetManager.getInstance().getTargets().size() == 1) {
             //#if defined(COGNITIVE)
-            //@#$LPS-COGNITIVE:GranularityType:Command
+            //@#$LPS-COGNITIVE:GranularityType:Statement
             //@#$LPS-COGNITIVE:Localization:NestedCommand
             ToDoList list = Designer.theDesigner().getToDoList();
             List<ToDoItem> items = list.elementListForOffender(getOwner());
@@ -649,7 +649,7 @@ public abstract class FigEdgeModelElement
                         removeFromDiagram();
                     } catch (InvalidElementException e) {
                         //#if defined(LOGGING)
-                        //@#$LPS-LOGGING:GranularityType:Command
+                        //@#$LPS-LOGGING:GranularityType:Statement
                         //@#$LPS-LOGGING:Localization:NestedCommand
                         LOG.error("updateLayout method accessed "
                                     + "deleted element", e);
@@ -664,7 +664,7 @@ public abstract class FigEdgeModelElement
         if (pName.equals("editing")
                 && Boolean.FALSE.equals(pve.getNewValue())) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             LOG.debug("finished editing");
             //#endif
@@ -695,7 +695,7 @@ public abstract class FigEdgeModelElement
                         updateLayout(event);
                     } catch (InvalidElementException e) {
                         //#if defined(LOGGING)
-                        //@#$LPS-LOGGING:GranularityType:Command
+                        //@#$LPS-LOGGING:GranularityType:Statement
                         if (LOG.isDebugEnabled()) {
                             LOG.debug("updateLayout method accessed "
                                     + "deleted element ", e);
@@ -1312,7 +1312,7 @@ public abstract class FigEdgeModelElement
         Object owner = getOwner();
         if (owner == null) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:BeforeReturn
             LOG.error("The FigEdge has no owner");
             //#endif
@@ -1320,7 +1320,7 @@ public abstract class FigEdgeModelElement
         }
         if (getLayer() == null) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:BeforeReturn
             LOG.error("The FigEdge has no layer");
             //#endif
@@ -1723,7 +1723,7 @@ public abstract class FigEdgeModelElement
         // to use the constructor that accepts a DiagramSettings object
         if (settings == null) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             LOG.debug("Falling back to project-wide settings");
             //#endif

@@ -247,7 +247,7 @@ public abstract class UMLModelElementListModel2 extends DefaultListModel
              * leave the model empty.
              */
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.debug("buildModelList threw exception for target " 
                     + getTarget() + ": "
                     + exception);

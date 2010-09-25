@@ -165,7 +165,7 @@ public abstract class UMLComboBoxModel2 extends AbstractListModel
                         modelChanged(event);
                     } catch (InvalidElementException e) {
                         //#if defined(LOGGING)
-                        //@#$LPS-LOGGING:GranularityType:Command
+                        //@#$LPS-LOGGING:GranularityType:Statement
                         if (LOG.isDebugEnabled()) {
                             LOG.debug("event = "
                                     + event.getClass().getName());
@@ -415,7 +415,7 @@ public abstract class UMLComboBoxModel2 extends AbstractListModel
     public void setTarget(Object theNewTarget) {
         if (theNewTarget != null && theNewTarget.equals(comboBoxTarget)) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             LOG.debug("Ignoring duplicate setTarget request " + theNewTarget);
             //#endif
@@ -423,7 +423,7 @@ public abstract class UMLComboBoxModel2 extends AbstractListModel
         }
         modelValid = false;
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         LOG.debug("setTarget target :  " + theNewTarget);
         //#endif
         theNewTarget = theNewTarget instanceof Fig 
@@ -500,13 +500,13 @@ public abstract class UMLComboBoxModel2 extends AbstractListModel
             buildModelList();
             long endTime = System.currentTimeMillis();
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.debug("buildModelList took " + (endTime - startTime)
                     + " msec. for " + this.getClass().getName());
             //#endif
         } catch (InvalidElementException e) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.warn("buildModelList attempted to operate on "
                     + "deleted element");
             //#endif
@@ -735,7 +735,7 @@ public abstract class UMLComboBoxModel2 extends AbstractListModel
      */
     public void targetAdded(TargetEvent e) {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         LOG.debug("targetAdded targetevent :  " + e);
         //#endif
@@ -747,7 +747,7 @@ public abstract class UMLComboBoxModel2 extends AbstractListModel
      */
     public void targetRemoved(TargetEvent e) {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         LOG.debug("targetRemoved targetevent :  " + e);
         //#endif
@@ -773,7 +773,7 @@ public abstract class UMLComboBoxModel2 extends AbstractListModel
      */
     public void targetSet(TargetEvent e) {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         LOG.debug("targetSet targetevent :  " + e);
         //#endif

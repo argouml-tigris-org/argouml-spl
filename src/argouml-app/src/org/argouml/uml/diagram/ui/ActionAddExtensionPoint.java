@@ -116,7 +116,7 @@ public final class ActionAddExtensionPoint extends UndoableAction {
             return;
         }
 	//#if defined(USECASEDIAGRAM)
-	//@#$LPS-USECASEDIAGRAM:GranularityType:Command
+	//@#$LPS-USECASEDIAGRAM:GranularityType:Statement
 	//@#$LPS-USECASEDIAGRAM:Localization:EndMethod
         // Create a new extension point and make it the browser target. Then
         // invoke the superclass action method.

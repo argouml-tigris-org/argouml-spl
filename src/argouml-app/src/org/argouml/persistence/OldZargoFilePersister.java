@@ -162,7 +162,7 @@ class OldZargoFilePersister extends ZargoFilePersister {
                 ProjectMember projectMember = project.getMembers().get(i);
                 if (!(projectMember.getType().equalsIgnoreCase("xmi"))) {
                     //#if defined(LOGGING)
-                    //@#$LPS-LOGGING:GranularityType:Command
+                    //@#$LPS-LOGGING:GranularityType:Statement
                     //@#$LPS-LOGGING:Localization:NestedCommand
                     if (LOG.isInfoEnabled()) {
                         LOG.info("Saving member: " 
@@ -189,7 +189,7 @@ class OldZargoFilePersister extends ZargoFilePersister {
                 ProjectMember projectMember = project.getMembers().get(i);
                 if (projectMember.getType().equalsIgnoreCase("xmi")) {
                     //#if defined(LOGGING)
-                    //@#$LPS-LOGGING:GranularityType:Command
+                    //@#$LPS-LOGGING:GranularityType:Statement
                     //@#$LPS-LOGGING:Localization:NestedCommand
                     if (LOG.isInfoEnabled()) {
                         LOG.info("Saving member of type: "
@@ -224,7 +224,7 @@ class OldZargoFilePersister extends ZargoFilePersister {
 
         } catch (Exception e) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("Exception occured during save attempt", e);
             //#endif
             try {
@@ -246,7 +246,7 @@ class OldZargoFilePersister extends ZargoFilePersister {
             writer.close();
         } catch (IOException ex) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("Failed to close save output writer", ex);
             //#endif
         }

@@ -197,7 +197,7 @@ public class MDRModelImplementation implements ModelImplementation {
     public UmlPackage getUmlPackage() {
         synchronized (extents) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             if (umlPackage == null) {
                 LOG.debug("umlPackage is null - no current extent");
@@ -224,7 +224,7 @@ public class MDRModelImplementation implements ModelImplementation {
                             deleteExtentUnchecked(umlPackage);
                         } catch (InvalidObjectException e) {
                             //#if defined(LOGGING)
-                            //@#$LPS-LOGGING:GranularityType:Command
+                            //@#$LPS-LOGGING:GranularityType:Statement
                             //@#$LPS-LOGGING:Localization:NestedCommand
                             LOG.debug("User model extent already deleted");
                             //#endif
@@ -233,7 +233,7 @@ public class MDRModelImplementation implements ModelImplementation {
                     umlPackage = extent;
                 }
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 if (LOG.isDebugEnabled()) {
                     LOG.debug("Created new " + (readOnly ? "readonly " : "")
@@ -246,7 +246,7 @@ public class MDRModelImplementation implements ModelImplementation {
             }
         } catch (CreationFailedException e) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:BeforeReturn
             LOG.error("Extent creation failed for " + name);
             //#endif
@@ -284,7 +284,7 @@ public class MDRModelImplementation implements ModelImplementation {
             if (result == null) {
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:Localization:NestedCommand
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:BeforeReturn
                 LOG.warn("Unable to find extent " + extent);
                 //#endif
@@ -359,7 +359,7 @@ public class MDRModelImplementation implements ModelImplementation {
             throw new UmlException("Could not create UML extent");
         }
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         LOG.debug("MDR Init - created UML extent");
         //#endif
         initializeFactories(umlPackage);
@@ -368,7 +368,7 @@ public class MDRModelImplementation implements ModelImplementation {
     private static MDRepository getDefaultRepository() {
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:Localization:StartMethod
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         LOG.debug("Starting MDR system initialization");
         //#endif
         String storageImplementation =
@@ -396,7 +396,7 @@ public class MDRModelImplementation implements ModelImplementation {
         MDRepository defaultRepository = 
             MDRManager.getDefault().getDefaultRepository();
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:BeforeReturn
         LOG.debug("MDR Init - got default repository");
         //#endif
@@ -407,7 +407,7 @@ public class MDRModelImplementation implements ModelImplementation {
     private void initializeM2() throws UmlException {
         mofExtent = (ModelPackage) repository.getExtent(MOF_EXTENT_NAME);
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         LOG.debug("MDR Init - tried to get MOF extent");
         //#endif
         // Create an extent and read in our metamodel (M2 model)
@@ -420,13 +420,13 @@ public class MDRModelImplementation implements ModelImplementation {
                 throw new UmlException(e);
             }
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             LOG.debug("MDR Init - created MOF extent");
             //#endif
             XMIReader reader = XMIReaderFactory.getDefault().createXMIReader();
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             LOG.debug("MDR Init - created XMI reader");
             //#endif
@@ -441,7 +441,7 @@ public class MDRModelImplementation implements ModelImplementation {
                 throw new UmlException(e);
             }
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             LOG.debug("MDR Init - read UML metamodel");
             //#endif
@@ -472,7 +472,7 @@ public class MDRModelImplementation implements ModelImplementation {
         theModelEventPump = new ModelEventPumpMDRImpl(this, repository);
         theModelEventPump.startPumpingEvents();
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         LOG.debug("MDR Init - event pump started");
         //#endif
 
@@ -488,7 +488,7 @@ public class MDRModelImplementation implements ModelImplementation {
         theExtensionMechanismsFactory =
             new ExtensionMechanismsFactoryMDRImpl(this);
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         LOG.debug("MDR Init - initialized package Extension mechanism");
         //#endif
         // Initialize remaining factories and helpers
@@ -498,36 +498,36 @@ public class MDRModelImplementation implements ModelImplementation {
         theCoreHelper = 
             new UndoCoreHelperDecorator(new CoreHelperMDRImpl(this));
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         LOG.debug("MDR Init - initialized package Core helper");
         //#endif
         theModelManagementHelper = new ModelManagementHelperMDRImpl(this);
         theStateMachinesHelper = new StateMachinesHelperMDRImpl(this);
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         LOG.debug("MDR Init - initialized package StateMachines");
         //#endif
         theUseCasesFactory = new UseCasesFactoryMDRImpl(this);
         theUseCasesHelper = new UseCasesHelperMDRImpl(this);
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         LOG.debug("MDR Init - initialized package Use Cases");
         //#endif
         theActivityGraphsFactory = new ActivityGraphsFactoryMDRImpl(this);
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
         LOG.debug("MDR Init - initialized package Collaborations");
             //#endif
         theCommonBehaviorFactory = new CommonBehaviorFactoryMDRImpl(this);
         theCommonBehaviorHelper = new CommonBehaviorHelperMDRImpl(this);
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         LOG.debug("MDR Init - initialized package CommonBehavior");
         //#endif
         theStateMachinesFactory = new StateMachinesFactoryMDRImpl(this);
         theCoreFactory = new CoreFactoryMDRImpl(this);
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         LOG.debug("MDR Init - all packages initialized");
         //#endif
     }
@@ -546,14 +546,14 @@ public class MDRModelImplementation implements ModelImplementation {
                     umlPackage = null;
                     deleteExtentUnchecked(oldPackage);
                     //#if defined(LOGGING)
-                    //@#$LPS-LOGGING:GranularityType:Command
+                    //@#$LPS-LOGGING:GranularityType:Statement
                     //@#$LPS-LOGGING:Localization:NestedCommand
                     LOG.debug("MDR Init - UML extent existed - "
                             + "deleted it and all UML data");
                     //#endif
                 } catch (InvalidObjectException e) {
                     //#if defined(LOGGING)
-                    //@#$LPS-LOGGING:GranularityType:Command
+                    //@#$LPS-LOGGING:GranularityType:Statement
                     //@#$LPS-LOGGING:Localization:NestedCommand
                     LOG.debug("Got error deleting old default user extent");
                     //#endif
@@ -561,7 +561,7 @@ public class MDRModelImplementation implements ModelImplementation {
             }
             umlPackage = (UmlPackage) createExtent(MODEL_EXTENT_NAME, false);
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             //@#$LPS-LOGGING:Localization:BeforeReturn
             LOG.debug("Created default extent");

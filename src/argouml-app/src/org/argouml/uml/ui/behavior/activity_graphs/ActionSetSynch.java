@@ -65,7 +65,7 @@ public class ActionSetSynch extends UndoableAction {
             UMLCheckBox2 source = (UMLCheckBox2) e.getSource();
             Object target = source.getTarget();
             //#if defined(ACTIVITYDIAGRAM)
-            //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
+            //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Statement
             if (Model.getFacade().isAObjectFlowState(target)) {
                 Object m = target;
                 Model.getActivityGraphsHelper().setSynch(

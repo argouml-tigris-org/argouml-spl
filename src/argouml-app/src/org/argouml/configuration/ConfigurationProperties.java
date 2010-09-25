@@ -79,13 +79,13 @@ class ConfigurationProperties extends ConfigurationHandler {
         try {
             defaults.load(getClass().getResourceAsStream(propertyLocation));
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.debug("Configuration loaded from " + propertyLocation);
             //#endif
         } catch (Exception ioe) {
             // TODO:  What should we do here?
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.warn("Configuration not loaded from " + propertyLocation, ioe);
             //#endif
         }
@@ -135,19 +135,19 @@ class ConfigurationProperties extends ConfigurationHandler {
             return true;
         } catch (final FileNotFoundException e) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("File not found while copying", e);
             //#endif
             return false;
         } catch (final IOException e) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("IO error copying file", e);
             //#endif
             return false;
         } catch (final SecurityException e) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("You are not allowed to copy these files", e);
             //#endif
             return false;
@@ -204,7 +204,7 @@ class ConfigurationProperties extends ConfigurationHandler {
                     final boolean result = copyFile(oldFile, file);
                     if (result) {
                         //#if defined(LOGGING)
-                        //@#$LPS-LOGGING:GranularityType:Command
+                        //@#$LPS-LOGGING:GranularityType:Statement
                         //@#$LPS-LOGGING:Localization:NestedCommand
                         LOG.info("Configuration copied from " 
                                 + oldFile + " to " + file);
@@ -212,7 +212,7 @@ class ConfigurationProperties extends ConfigurationHandler {
                     } 
                     //#if defined(LOGGING)
                     else {
-                        //@#$LPS-LOGGING:GranularityType:Command
+                        //@#$LPS-LOGGING:GranularityType:Statement
                         //@#$LPS-LOGGING:Localization:NestedCommand
                         LOG.error("Error copying old configuration to new, "
                              + "see previous log messages");
@@ -223,7 +223,7 @@ class ConfigurationProperties extends ConfigurationHandler {
                         file.createNewFile();
                     } catch (IOException e) {
                         //#if defined(LOGGING)
-                        //@#$LPS-LOGGING:GranularityType:Command
+                        //@#$LPS-LOGGING:GranularityType:Statement
                         LOG.error("Could not create the properties file at: " 
                                 + file.getAbsolutePath(), e);
                         //#endif
@@ -235,14 +235,14 @@ class ConfigurationProperties extends ConfigurationHandler {
                 try {
                     propertyBundle.load(new FileInputStream(file));
                     //#if defined(LOGGING)
-                    //@#$LPS-LOGGING:GranularityType:Command
+                    //@#$LPS-LOGGING:GranularityType:Statement
                     //@#$LPS-LOGGING:Localization:NestedCommand
                     LOG.info("Configuration loaded from " + file);
                     //#endif
                     return true;
                 } catch (final IOException e) {
                     //#if defined(LOGGING)
-                    //@#$LPS-LOGGING:GranularityType:Command
+                    //@#$LPS-LOGGING:GranularityType:Statement
                     //@#$LPS-LOGGING:Localization:NestedCommand
                     if (canComplain) {
                         LOG.warn("Unable to load configuration " + file);
@@ -253,7 +253,7 @@ class ConfigurationProperties extends ConfigurationHandler {
             }
         } catch (final SecurityException e) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("A security exception occurred trying to load"
                 + " the configuration, check your security settings", e);
             //#endif
@@ -273,13 +273,13 @@ class ConfigurationProperties extends ConfigurationHandler {
             propertyBundle.store(new FileOutputStream(file),
                     "ArgoUML properties");
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.info("Configuration saved to " + file);
             //#endif
             return true;
         } catch (Exception e) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             if (canComplain) {
                 LOG.warn("Unable to save configuration " + file + "\n");
             }
@@ -301,13 +301,13 @@ class ConfigurationProperties extends ConfigurationHandler {
         try {
             propertyBundle.load(url.openStream());
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.info("Configuration loaded from " + url + "\n");
             //#endif
             return true;
         } catch (Exception e) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             if (canComplain) {
                 LOG.warn("Unable to load configuration " + url + "\n");
             }
@@ -355,7 +355,7 @@ class ConfigurationProperties extends ConfigurationHandler {
      */
     public void setValue(String key, String value) {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         LOG.debug("key '" + key + "' set to '" + value + "'");
         //#endif

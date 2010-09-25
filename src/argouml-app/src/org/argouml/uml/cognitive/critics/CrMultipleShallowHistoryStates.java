@@ -91,7 +91,7 @@ public class CrMultipleShallowHistoryStates extends CrUML {
         Object cs = Model.getFacade().getContainer(dm);
         if (cs == null) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
             LOG.debug("null parent state");
@@ -134,7 +134,7 @@ public class CrMultipleShallowHistoryStates extends CrUML {
         Object cs = Model.getFacade().getContainer(ps);
         if (cs == null) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
             LOG.debug("null parent in still valid");

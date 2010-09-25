@@ -196,7 +196,7 @@ public class ClassDiagramGraphModel extends UMLMutableGraphSupport
                 && !Model.getFacade().isANaryAssociation(node)) {
             // A binary association is not a node so reject.
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             LOG.debug("A binary association cannot be added as a node");
             //#endif
@@ -209,7 +209,7 @@ public class ClassDiagramGraphModel extends UMLMutableGraphSupport
         
     	if (containsNode(node)) {
     	    //#if defined(LOGGING)
-    	    //@#$LPS-LOGGING:GranularityType:Command
+    	    //@#$LPS-LOGGING:GranularityType:Statement
     	    //@#$LPS-LOGGING:Localization:NestedCommand
             LOG.error("Addition of node of type " 
                     + node.getClass().getName()
@@ -227,7 +227,7 @@ public class ClassDiagramGraphModel extends UMLMutableGraphSupport
                     Model.getFacade().getClassifier(iter.next());
                 if (!containsNode(classifier)) {
                     //#if defined(LOGGING)
-                    //@#$LPS-LOGGING:GranularityType:Command
+                    //@#$LPS-LOGGING:GranularityType:Statement
                     //@#$LPS-LOGGING:Localization:NestedCommand
                     LOG.error("Addition of node of type "
                             + node.getClass().getName()
@@ -272,7 +272,7 @@ public class ClassDiagramGraphModel extends UMLMutableGraphSupport
             Collection conns = Model.getFacade().getConnections(edge);
             if (conns.size() < 2) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 //@#$LPS-LOGGING:Localization:BeforeReturn
                 LOG.error("Association rejected. Must have at least 2 ends");
@@ -284,7 +284,7 @@ public class ClassDiagramGraphModel extends UMLMutableGraphSupport
             Object associationEnd1 = iter.next();
             if (associationEnd0 == null || associationEnd1 == null) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 //@#$LPS-LOGGING:Localization:BeforeReturn
                 LOG.error("Association rejected. An end is null");
@@ -298,7 +298,7 @@ public class ClassDiagramGraphModel extends UMLMutableGraphSupport
             destModelElement = Model.getFacade().getType(edge);
             if (sourceModelElement == null || destModelElement == null) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 //@#$LPS-LOGGING:Localization:BeforeReturn
                 LOG.error("Association end rejected. An end is null");
@@ -309,7 +309,7 @@ public class ClassDiagramGraphModel extends UMLMutableGraphSupport
             if (!containsEdge(sourceModelElement) 
                     && !containsNode(sourceModelElement)) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 //@#$LPS-LOGGING:Localization:BeforeReturn
                 LOG.error("Association end rejected. The source model element ("
@@ -321,7 +321,7 @@ public class ClassDiagramGraphModel extends UMLMutableGraphSupport
 
             if (!containsNode(destModelElement)) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 //@#$LPS-LOGGING:Localization:BeforeReturn
                 LOG.error("Association end rejected. "
@@ -364,7 +364,7 @@ public class ClassDiagramGraphModel extends UMLMutableGraphSupport
 
         if (sourceModelElement == null || destModelElement == null) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             //@#$LPS-LOGGING:Localization:BeforeReturn
             LOG.error("Edge rejected. Its ends are not attached to anything");
@@ -375,7 +375,7 @@ public class ClassDiagramGraphModel extends UMLMutableGraphSupport
         if (!containsNode(sourceModelElement)
                 && !containsEdge(sourceModelElement)) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             //@#$LPS-LOGGING:Localization:BeforeReturn
             LOG.error("Edge rejected. Its source end is attached to "
@@ -387,7 +387,7 @@ public class ClassDiagramGraphModel extends UMLMutableGraphSupport
         if (!containsNode(destModelElement)
                 && !containsEdge(destModelElement)) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             //@#$LPS-LOGGING:Localization:BeforeReturn
             LOG.error("Edge rejected. Its destination end is attached to "
@@ -440,7 +440,7 @@ public class ClassDiagramGraphModel extends UMLMutableGraphSupport
                     "The source and dest port should be provided on an edge");
         }
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         if (LOG.isInfoEnabled()) {
             LOG.info("Adding an edge of type "
                    + edge.getClass().getName()
@@ -449,7 +449,7 @@ public class ClassDiagramGraphModel extends UMLMutableGraphSupport
         //#endif
         if (!canAddEdge(edge)) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:BeforeReturn
             LOG.info("Attempt to add edge rejected");
             //#endif
@@ -545,7 +545,7 @@ public class ClassDiagramGraphModel extends UMLMutableGraphSupport
 	    //MModelElement modelElement = elementImport.getModelElement();
 	    if (oldOwned.contains(elementImport)) {
 	        //#if defined(LOGGING)
-	        //@#$LPS-LOGGING:GranularityType:Command
+	        //@#$LPS-LOGGING:GranularityType:Statement
 	        //@#$LPS-LOGGING:Localization:NestedCommand
 		LOG.debug("model removed " + modelElement);
 		//#endif
@@ -566,7 +566,7 @@ public class ClassDiagramGraphModel extends UMLMutableGraphSupport
 		}
 	    } 
 	    //#if defined(LOGGING)
-	    //@#$LPS-LOGGING:GranularityType:Command
+	    //@#$LPS-LOGGING:GranularityType:Statement
 	    //@#$LPS-LOGGING:Localization:NestedCommand
 	    else {
 		LOG.debug("model added " + modelElement);

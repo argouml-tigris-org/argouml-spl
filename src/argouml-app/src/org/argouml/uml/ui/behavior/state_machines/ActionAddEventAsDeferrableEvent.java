@@ -101,16 +101,16 @@ public class ActionAddEventAsDeferrableEvent
                 toBeRemoved.remove(o);
             } 
             //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
-            //@#$LPS-STATEDIAGRAM:GranularityType:Command
-            //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command    
+            //@#$LPS-STATEDIAGRAM:GranularityType:Statement
+            //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Statement    
             else {
                 Model.getStateMachinesHelper().addDeferrableEvent(state, o);
             }
             //#endif
         }
         //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
-        //@#$LPS-STATEDIAGRAM:GranularityType:Command
-        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command    
+        //@#$LPS-STATEDIAGRAM:GranularityType:Statement
+        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Statement    
         //@#$LPS-STATEDIAGRAM:Localization:EndMethod
         //@#$LPS-ACTIVITYDIAGRAM:Localization:EndMethod
         for (Object o : toBeRemoved) {

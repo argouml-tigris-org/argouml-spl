@@ -162,7 +162,7 @@ public class ActionSaveAllGraphics extends AbstractAction {
             }
             catch ( FileNotFoundException ignore ) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.error("got a FileNotFoundException", ignore);
                 //#endif
@@ -170,7 +170,7 @@ public class ActionSaveAllGraphics extends AbstractAction {
             catch ( IOException ignore ) {
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:Localization:NestedCommand
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 LOG.error("got an IOException", ignore);
                 //#endif
             }
@@ -279,7 +279,7 @@ public class ActionSaveAllGraphics extends AbstractAction {
         }
         catch ( MalformedURLException ex ) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("exception in opening JFileChooser", ex);
             //#endif
         }

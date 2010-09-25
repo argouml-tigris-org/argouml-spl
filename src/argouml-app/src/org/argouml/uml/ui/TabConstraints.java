@@ -399,7 +399,7 @@ public class TabConstraints extends AbstractArgoJPanel
                         // Ignored: Highly unlikely, and what would we
                         // do anyway?  log it
                         //#if defined(LOGGING)
-                        //@#$LPS-LOGGING:GranularityType:Command
+                        //@#$LPS-LOGGING:GranularityType:Statement
                         LOG.error("problem parsing And Checking Constraints",
 				   ioe);
                         //#endif
@@ -514,13 +514,13 @@ public class TabConstraints extends AbstractArgoJPanel
 
                 } catch (OclTypeException pe) {
                     //#if defined(LOGGING)
-                    //@#$LPS-LOGGING:GranularityType:Command
+                    //@#$LPS-LOGGING:GranularityType:Statement
                     LOG.warn("There was some sort of OCL Type problem", pe);
                     //#endif
                     throw pe;
                 } catch (OclParserException pe1) {
                     //#if defined(LOGGING)
-                    //@#$LPS-LOGGING:GranularityType:Command
+                    //@#$LPS-LOGGING:GranularityType:Statement
                     LOG.warn("Could not parse the constraint", pe1);
                     //#endif
                     throw pe1;
@@ -528,7 +528,7 @@ public class TabConstraints extends AbstractArgoJPanel
                     // a runtime exception that occurs when some
                     // internal test fails
                     //#if defined(LOGGING)
-                    //@#$LPS-LOGGING:GranularityType:Command
+                    //@#$LPS-LOGGING:GranularityType:Statement
                     LOG.warn("There was some unidentified problem");
                     //#endif
                     throw oclExc;
@@ -604,7 +604,7 @@ public class TabConstraints extends AbstractArgoJPanel
                         // any problems and don't set the name in the
                         // constraint body better had log it.
                         //#if defined(LOGGING)
-                        //@#$LPS-LOGGING:GranularityType:Command
+                        //@#$LPS-LOGGING:GranularityType:Statement
                         LOG.error("some unidentified problem", t);
                         //#endif
                     }

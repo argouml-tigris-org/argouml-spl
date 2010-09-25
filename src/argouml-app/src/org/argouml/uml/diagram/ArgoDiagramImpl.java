@@ -184,13 +184,13 @@ public abstract class ArgoDiagramImpl extends Diagram
         if (!(UndoManager.getInstance() instanceof DiagramUndoManager)) {
             UndoManager.setInstance(new DiagramUndoManager());
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             LOG.info("Setting Diagram undo manager");
             //#endif
         } 
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         else {
             LOG.info("Diagram undo manager already set");
         }
@@ -309,7 +309,7 @@ public abstract class ArgoDiagramImpl extends Diagram
     
     private boolean repairFig(Fig f, StringBuffer report) {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         LOG.info("Checking " + figDescription(f) + f.getOwner());
         //#endif
@@ -553,7 +553,7 @@ public abstract class ArgoDiagramImpl extends Diagram
     public void setNamespace(Object ns) {
         if (!Model.getFacade().isANamespace(ns)) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             LOG.error("Not a namespace");
             LOG.error(ns);
@@ -669,7 +669,7 @@ public abstract class ArgoDiagramImpl extends Diagram
                     ((ArgoFig) fig).renderingChanged();
                 } 
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 else {
                     LOG.warn("Diagram " + getName() + " contains non-ArgoFig "
                             + fig);
@@ -677,7 +677,7 @@ public abstract class ArgoDiagramImpl extends Diagram
                 //#endif
             } catch (InvalidElementException e) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 LOG.error("Tried to refresh deleted element ", e);
                 //#endif
             }

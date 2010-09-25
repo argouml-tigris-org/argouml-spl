@@ -282,7 +282,7 @@ public class UseCaseDiagramGraphModel
         // Both ends must be defined and nodes that are on the graph already.
         if (sourceModelElement == null || destModelElement == null) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             //@#$LPS-LOGGING:Localization:BeforeReturn
             //@#$LPS-LOGGING:Localization:NestedIfdef-USECASEDIAGRAM
@@ -294,7 +294,7 @@ public class UseCaseDiagramGraphModel
         if (!containsNode(sourceModelElement)
                 && !containsEdge(sourceModelElement)) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             //@#$LPS-LOGGING:Localization:BeforeReturn
             //@#$LPS-LOGGING:Localization:NestedIfdef-USECASEDIAGRAM
@@ -307,7 +307,7 @@ public class UseCaseDiagramGraphModel
         if (!containsNode(destModelElement)
                 && !containsEdge(destModelElement)) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             //@#$LPS-LOGGING:Localization:BeforeReturn
             //@#$LPS-LOGGING:Localization:NestedIfdef-USECASEDIAGRAM
@@ -342,7 +342,7 @@ public class UseCaseDiagramGraphModel
     @Override
     public void addNode(Object node) {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         //@#$LPS-LOGGING:Localization:NestedIfdef-USECASEDIAGRAM
         LOG.debug("adding usecase node");
@@ -395,7 +395,7 @@ public class UseCaseDiagramGraphModel
                     "The source and dest port should be provided on an edge");
         }
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:NestedIfdef-USECASEDIAGRAM
         if (LOG.isInfoEnabled()) {
             LOG.info("Adding an edge of type "
@@ -405,7 +405,7 @@ public class UseCaseDiagramGraphModel
         //#endif
         if (!canAddEdge(edge)) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:BeforeReturn
             //@#$LPS-LOGGING:Localization:NestedIfdef-USECASEDIAGRAM
             LOG.info("Attempt to add edge rejected");
@@ -572,7 +572,7 @@ public class UseCaseDiagramGraphModel
             if (oldOwned.contains(eo)) {
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:Localization:NestedCommand
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedIfdef-USECASEDIAGRAM
                 LOG.debug("model removed " + me);
                 //#endif
@@ -592,7 +592,7 @@ public class UseCaseDiagramGraphModel
                 }
             } 
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             //@#$LPS-LOGGING:Localization:NestedIfdef-USECASEDIAGRAM
             else {

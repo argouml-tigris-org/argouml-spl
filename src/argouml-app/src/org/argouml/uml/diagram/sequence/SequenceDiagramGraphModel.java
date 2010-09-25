@@ -179,7 +179,7 @@ public class SequenceDiagramGraphModel
         // Both ends must be defined and nodes that are on the graph already.
         if (end0 == null || end1 == null) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             //@#$LPS-LOGGING:Localization:BeforeReturn
             //@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
@@ -190,7 +190,7 @@ public class SequenceDiagramGraphModel
 
         if (!containsNode(end0) && !containsEdge(end0)) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             //@#$LPS-LOGGING:Localization:BeforeReturn
             //@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
@@ -202,7 +202,7 @@ public class SequenceDiagramGraphModel
         }
         if (!containsNode(end1) && !containsEdge(end1)) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:BeforeReturn
             //@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
             LOG.error("Edge rejected. Its destination end is attached to "
@@ -372,8 +372,8 @@ public class SequenceDiagramGraphModel
             }
         }
         //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
-        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
-        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
+        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Statement
+        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Statement
         if (fromObject != null && toObject != null && action != null) {
             Object associationRole =
                 Model.getCollaborationsHelper().getAssociationRole(
@@ -403,7 +403,7 @@ public class SequenceDiagramGraphModel
         }
         //#endif
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:BeforeReturn
         //@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
         if (edge == null) {            
@@ -429,7 +429,7 @@ public class SequenceDiagramGraphModel
             Object me = Model.getFacade().getModelElement(eo);
             if (oldOwned.contains(eo)) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.debug("model removed " + me);
                 //#endif
@@ -441,7 +441,7 @@ public class SequenceDiagramGraphModel
                 }
             } 
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             else {
                 LOG.debug("model added " + me);

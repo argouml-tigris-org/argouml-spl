@@ -190,7 +190,7 @@ public class ActionSetMode extends SetModeAction {
             putValue(Action.SMALL_ICON, icon);
         } 
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         else {
             LOG.debug("Failed to find icon for key " + key);
         }

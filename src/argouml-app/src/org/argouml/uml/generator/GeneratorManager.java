@@ -93,7 +93,7 @@ public final class GeneratorManager {
         ArgoEventPump.fireEvent(
                 new ArgoGeneratorEvent(ArgoEventTypes.GENERATOR_ADDED, gen));
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         LOG.debug("Added generator " + gen + " for " + lang);
         //#endif
     }
@@ -121,7 +121,7 @@ public final class GeneratorManager {
                             ArgoEventTypes.GENERATOR_REMOVED, old));
         }
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:BeforeReturn
         LOG.debug("Removed generator " + old + " for " + lang);
         //#endif

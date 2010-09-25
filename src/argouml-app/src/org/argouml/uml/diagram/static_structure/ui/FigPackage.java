@@ -704,7 +704,7 @@ public class FigPackage extends FigNodeModelElement
 		        createClassDiagram(lNS, lsDefaultName, lP);
 		    } catch (Exception ex) {
 		        //#if defined(LOGGING)
-		        //@#$LPS-LOGGING:GranularityType:Command
+		        //@#$LPS-LOGGING:GranularityType:Statement
 		        //@#$LPS-LOGGING:Localization:NestedCommand
 		        LOG.error(ex);
 		        //#endif
@@ -841,7 +841,7 @@ public class FigPackage extends FigNodeModelElement
 	    // removed from the diagram. Yet to be agreed. Bob.
 	    
 	    //#if defined(LOGGING)
-	    //@#$LPS-LOGGING:GranularityType:Command
+	    //@#$LPS-LOGGING:GranularityType:Statement
 	    //@#$LPS-LOGGING:Localization:NestedCommand
 	    if (LOG.isInfoEnabled() && mee.getNewValue() == null) {
 		LOG.info(Model.getFacade().getName(mee.getOldValue())

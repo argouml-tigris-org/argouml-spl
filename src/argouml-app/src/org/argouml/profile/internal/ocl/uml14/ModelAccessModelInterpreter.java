@@ -806,7 +806,7 @@ public class ModelAccessModelInterpreter implements ModelInterpreter {
             return ret;
         } catch (InvalidOclException e) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("Exception", e);
             //#endif
             return null;

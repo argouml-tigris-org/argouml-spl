@@ -652,7 +652,7 @@ public class PerspectiveConfigurator extends ArgoDialog {
             updateRuleLabel();
         } catch (Exception e) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("problem adding rule", e);
             //#endif
         }

@@ -102,8 +102,8 @@ public class ActionAddConcurrentRegion extends UndoableAction {
     public boolean isEnabled() {
         Object target = TargetManager.getInstance().getModelTarget();
         //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
-        //@#$LPS-STATEDIAGRAM:GranularityType:Command
-        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
+        //@#$LPS-STATEDIAGRAM:GranularityType:Statement
+        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Statement
         //@#$LPS-STATEDIAGRAM:Localization:BeforeReturn
         //@#$LPS-ACTIVITYDIAGRAM:Localization:BeforeReturn
         if (Model.getStateMachinesHelper().isTopState(target)) {
@@ -126,7 +126,7 @@ public class ActionAddConcurrentRegion extends UndoableAction {
                 f = f.getEnclosingFig();
             }
             //#if defined(STATEDIAGRAM)
-            //@#$LPS-STATEDIAGRAM:GranularityType:Command
+            //@#$LPS-STATEDIAGRAM:GranularityType:Statement
             final FigCompositeState figCompositeState = (FigCompositeState) f;
             final List<FigConcurrentRegion> regionFigs = 
                 ((List<FigConcurrentRegion>) f.getEnclosedFigs().clone());
@@ -144,7 +144,7 @@ public class ActionAddConcurrentRegion extends UndoableAction {
                 return;
             }
             //#if defined(STATEDIAGRAM)
-            //@#$LPS-STATEDIAGRAM:GranularityType:Command
+            //@#$LPS-STATEDIAGRAM:GranularityType:Statement
             StateDiagramGraphModel mgm = (StateDiagramGraphModel) gm;
             final StateMachinesFactory factory =
                 Model.getStateMachinesFactory();
@@ -209,7 +209,7 @@ public class ActionAddConcurrentRegion extends UndoableAction {
             //#endif
             editor.getSelectionManager().select(f);
             //#if defined(STATEDIAGRAM)
-            //@#$LPS-STATEDIAGRAM:GranularityType:Command
+            //@#$LPS-STATEDIAGRAM:GranularityType:Statement
             if (mgm.canAddNode(umlRegion2)) {
                 mgm.getNodes().add(umlRegion2);
                 mgm.fireNodeAdded(umlRegion2);
@@ -225,7 +225,7 @@ public class ActionAddConcurrentRegion extends UndoableAction {
             //#endif
         } catch (Exception ex) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("Exception caught", ex);
             //#endif
         }

@@ -142,24 +142,24 @@ public final class DiagramFactory {
         // classes as well, so everything is treated the same
         diagramClasses.put(DiagramType.Class, UMLClassDiagram.class);
         //#if defined(USECASEDIAGRAM)
-        //@#$LPS-USECASEDIAGRAM:GranularityType:Command
+        //@#$LPS-USECASEDIAGRAM:GranularityType:Statement
         diagramClasses.put(DiagramType.UseCase, UMLUseCaseDiagram.class);
         //#endif
         //#if defined(STATEDIAGRAM)
-        //@#$LPS-STATEDIAGRAM:GranularityType:Command
+        //@#$LPS-STATEDIAGRAM:GranularityType:Statement
         diagramClasses.put(DiagramType.State, UMLStateDiagram.class);
         //#endif
         diagramClasses.put(DiagramType.Deployment, UMLDeploymentDiagram.class);
         //#if defined(COLLABORATIONDIAGRAM)
-        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
+        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Statement
         diagramClasses.put(DiagramType.Collaboration, UMLCollaborationDiagram.class);
         //#endif
         //#if defined(ACTIVITYDIAGRAM)
-        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
+        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Statement
         diagramClasses.put(DiagramType.Activity, UMLActivityDiagram.class);
         //#endif
         //#if defined(SEQUENCEDIAGRAM)
-        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
+        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Statement
         diagramClasses.put(DiagramType.Sequence, UMLSequenceDiagram.class);
         //#endif        
     }
@@ -264,7 +264,7 @@ public final class DiagramFactory {
             }
         } else {
             //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
-            //@#$LPS-STATEDIAGRAM:GranularityType:Command
+            //@#$LPS-STATEDIAGRAM:GranularityType:Statement
             if ((
                  //#if defined(STATEDIAGRAM)
                  //@#$LPS-STATEDIAGRAM:GranularityType:Expression
@@ -326,13 +326,13 @@ public final class DiagramFactory {
             diagram = new UMLClassDiagram(namespace);
             diType = ClassDiagram.class;
         //#if defined(USECASEDIAGRAM)
-        //@#$LPS-USECASEDIAGRAM:GranularityType:Command
+        //@#$LPS-USECASEDIAGRAM:GranularityType:Statement
         } else if (type == UMLUseCaseDiagram.class) {
             diagram = new UMLUseCaseDiagram(namespace);
             diType = UseCaseDiagram.class;
         //#endif
         //#if defined(STATEDIAGRAM)
-        //@#$LPS-STATEDIAGRAM:GranularityType:Command
+        //@#$LPS-STATEDIAGRAM:GranularityType:Statement
         } else if (type == UMLStateDiagram.class) {
             diagram = new UMLStateDiagram(namespace, machine);
             diType = StateDiagram.class;
@@ -341,20 +341,20 @@ public final class DiagramFactory {
             diagram = new UMLDeploymentDiagram(namespace);
             diType = DeploymentDiagram.class;
         //#if defined(COLLABORATIONDIAGRAM)
-        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
+        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Statement
         } else if (type == UMLCollaborationDiagram.class) {
             diagram = new UMLCollaborationDiagram(namespace);
             diType = CollaborationDiagram.class;
         //#endif
         //#if defined(ACTIVITYDIAGRAM)      
-        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
+        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Statement
         } else if (type == UMLActivityDiagram.class) {
             diagram = new UMLActivityDiagram(namespace, machine);
             diType = ActivityDiagram.class;
         //#endif
         }
         //#if defined(SEQUENCEDIAGRAM)      
-        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
+        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Statement
          else if (type == UMLSequenceDiagram.class) {
             diagram = new UMLSequenceDiagram(namespace);
             diType = SequenceDiagram.class;

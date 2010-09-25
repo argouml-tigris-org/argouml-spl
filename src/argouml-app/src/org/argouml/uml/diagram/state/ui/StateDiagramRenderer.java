@@ -103,7 +103,7 @@ public class StateDiagramRenderer extends UmlDiagramRenderer {
             figNode = ((UMLDiagram) diag).drop(node, null);
         } else {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             //@#$LPS-LOGGING:Localization:NestedIfdef-STATEDIAGRAM
             //@#$LPS-LOGGING:Localization:NestedIfdef-ACTIVITYDIAGRAM
@@ -139,7 +139,7 @@ public class StateDiagramRenderer extends UmlDiagramRenderer {
         } 
         if (newEdge == null) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             //@#$LPS-LOGGING:Localization:NestedIfdef-STATEDIAGRAM
             //@#$LPS-LOGGING:Localization:NestedIfdef-ACTIVITYDIAGRAM

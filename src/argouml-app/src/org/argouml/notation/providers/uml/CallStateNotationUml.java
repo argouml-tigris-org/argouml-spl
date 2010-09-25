@@ -179,8 +179,8 @@ public class CallStateNotationUml extends CallStateNotation {
                             entry = Model.getCommonBehaviorFactory()
                                 .buildCallAction(op, "ca");
                             //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
-                            //@#$LPS-STATEDIAGRAM:GranularityType:Command
-                            //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
+                            //@#$LPS-STATEDIAGRAM:GranularityType:Statement
+                            //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Statement
                             Model.getStateMachinesHelper().setEntry(
                                     callState, entry);
                             //#endif

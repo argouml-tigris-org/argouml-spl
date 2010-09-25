@@ -214,7 +214,7 @@ class PrivateHandler
                     // diagram with the default settings.
                     
                     //#if defined(LOGGING)
-                    //@#$LPS-LOGGING:GranularityType:Command
+                    //@#$LPS-LOGGING:GranularityType:Statement
                     //@#$LPS-LOGGING:Localization:NestedCommand
                     else {
                         LOG.warn("PGML stored pathitem class name does "
@@ -228,7 +228,7 @@ class PrivateHandler
             // If any of the values are null, ignore the element.
             
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             else {
                 LOG.warn("Could not find all attributes for <" 
                         + qname + "> tag, ignoring.");
@@ -269,7 +269,7 @@ class PrivateHandler
             }
         }
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:BeforeReturn
         LOG.warn("Could not load path item for fig '" + figclassname 
                 + "', using default placement.");
@@ -291,7 +291,7 @@ class PrivateHandler
 
             if (nval != null) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 if (LOG.isDebugEnabled()) {
                     LOG.debug("Private Element: \"" + nval.getName()
                               + "\" \"" + nval.getValue() + "\"");

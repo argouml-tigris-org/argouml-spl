@@ -144,7 +144,7 @@ public abstract class SwingWorker {
     	} catch (Exception exc) {
 	        // what should we do here?
     	    //#if defined(LOGGING)
-    	    //@#$LPS-LOGGING:GranularityType:Command
+    	    //@#$LPS-LOGGING:GranularityType:Statement
     	    LOG.error("Error while loading project: " + exc);
     	    //#endif
         } finally {

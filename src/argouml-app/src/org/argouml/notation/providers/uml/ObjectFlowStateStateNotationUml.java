@@ -144,7 +144,7 @@ public class ObjectFlowStateStateNotationUml extends
                 while (i.hasNext()) {
                     String name = (String) i.next();
                     //#if defined(ACTIVITYDIAGRAM)            
-                    //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
+                    //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Statement
                     //@#$LPS-ACTIVITYDIAGRAM:Localization:NestedCommand                    
                     /*
                      * Now we have to see if any state in any statemachine of
@@ -171,7 +171,7 @@ public class ObjectFlowStateStateNotationUml extends
                     //#endif
                 }
                 //#if defined(ACTIVITYDIAGRAM)                
-                //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
+                //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Statement
                 //@#$LPS-ACTIVITYDIAGRAM:Localization:NestedCommand
                 /* Finally, do the adaptations: */
                 Model.getActivityGraphsHelper().setInStates(c, states);
@@ -184,7 +184,7 @@ public class ObjectFlowStateStateNotationUml extends
                 while (tokenizer.hasMoreTokens()) {
                     String nextToken = tokenizer.nextToken().trim();
                     //#if defined(ACTIVITYDIAGRAM)
-                    //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
+                    //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Statement
                     //@#$LPS-ACTIVITYDIAGRAM:Localization:NestedCommand
                     Object state =
                         Model.getActivityGraphsHelper()
@@ -207,7 +207,7 @@ public class ObjectFlowStateStateNotationUml extends
                 }
                 //#if defined(ACTIVITYDIAGRAM)
                 // let's create a new ClassifierInState with the correct links
-                //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
+                //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Statement
                 //@#$LPS-ACTIVITYDIAGRAM:Localization:NestedCommand
                 Object cis =
                     Model.getActivityGraphsFactory()

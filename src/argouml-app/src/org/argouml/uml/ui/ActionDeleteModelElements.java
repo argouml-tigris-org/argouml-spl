@@ -155,7 +155,7 @@ public class ActionDeleteModelElements extends UndoableAction {
                 }
             } catch (InvalidElementException e) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.debug("Model element deleted twice - ignoring 2nd delete");
                 //#endif
@@ -314,8 +314,8 @@ public class ActionDeleteModelElements extends UndoableAction {
             return Model.getFacade().getOtherAssociationEnds(target).size() > 1;
         }
         //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
-        //@#$LPS-STATEDIAGRAM:GranularityType:Command
-        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
+        //@#$LPS-STATEDIAGRAM:GranularityType:Statement
+        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Statement
         //@#$LPS-STATEDIAGRAM:Localization:BeforeReturn
         //@#$LPS-ACTIVITYDIAGRAM:Localization:BeforeReturn
         if (Model.getStateMachinesHelper().isTopState(target)) {

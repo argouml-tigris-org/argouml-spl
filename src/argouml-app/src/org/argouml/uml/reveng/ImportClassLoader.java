@@ -161,7 +161,7 @@ public final class ImportClassLoader extends URLClassLoader {
             url = f.toURI().toURL();
         } catch (MalformedURLException e) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:BeforeReturn
 	    LOG.warn("could not remove file ", e);
 	    //#endif
@@ -201,7 +201,7 @@ public final class ImportClassLoader extends URLClassLoader {
 		this.addFile(new File(token));
             } catch (MalformedURLException e) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
 		LOG.warn("could not set path ", e);
 		//#endif
@@ -227,7 +227,7 @@ public final class ImportClassLoader extends URLClassLoader {
 		urlList.add(new File(token).toURI().toURL());
             } catch (MalformedURLException e) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
 		LOG.error(e);
 		//#endif
@@ -253,7 +253,7 @@ public final class ImportClassLoader extends URLClassLoader {
 		this.addFile(new File(paths[i].toString()));
             } catch (Exception e) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
 		LOG.warn("could not set path ", e);
 		//#endif

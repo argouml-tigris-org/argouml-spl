@@ -454,7 +454,7 @@ public class ExplorerTreeModel extends DefaultTreeModel
                 children = rule.getChildren(modelElement);
             } catch (InvalidElementException e) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 LOG.debug("InvalidElementException in ExplorerTree : " 
                         + e.getStackTrace());
                 //#endif
@@ -462,7 +462,7 @@ public class ExplorerTreeModel extends DefaultTreeModel
 
             for (Object child : children) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 if (child == null) {                    
                     LOG.warn("PerspectiveRule " + rule + " wanted to "
@@ -485,7 +485,7 @@ public class ExplorerTreeModel extends DefaultTreeModel
                 deps.addAll(dependencies);
             } catch (InvalidElementException e) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 LOG.debug("InvalidElementException in ExplorerTree : " 
                         + e.getStackTrace());
                 //#endif

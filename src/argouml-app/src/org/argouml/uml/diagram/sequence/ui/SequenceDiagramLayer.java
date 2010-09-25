@@ -311,7 +311,7 @@ public class SequenceDiagramLayer extends LayerPerspectiveMutable {
     public void remove(Fig f) {
         if (f instanceof FigMessage) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
             LOG.info("Removing a FigMessage");
             //#endif
@@ -336,7 +336,7 @@ public class SequenceDiagramLayer extends LayerPerspectiveMutable {
         }
         super.remove(f);
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
         LOG.info("A Fig has been removed, updating activations");
         //#endif

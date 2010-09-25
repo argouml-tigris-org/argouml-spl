@@ -192,7 +192,7 @@ public class TabText
             s = "(null)";
         }
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:EndMethod
         LOG.debug("parsing text:" + s);
         //#endif

@@ -111,7 +111,7 @@ class SourcePathTableModel extends DefaultTableModel {
                     type = strInterface;
                 } 
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 else {
                     LOG.warn("Can't assign a type to this model element: "
@@ -124,7 +124,7 @@ class SourcePathTableModel extends DefaultTableModel {
             } 
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:Localization:NestedCommand
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             else {
                 LOG.warn("Unexpected: the source path for " + me + " is null!");
             }

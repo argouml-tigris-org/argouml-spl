@@ -188,7 +188,7 @@ public final class ExplorerEventAdaptor
                         modelChanged((UmlChangeEvent) pce);
                     } catch (InvalidElementException e) {
                         //#if defined(LOGGING)
-                        //@#$LPS-LOGGING:GranularityType:Command
+                        //@#$LPS-LOGGING:GranularityType:Statement
                         //@#$LPS-LOGGING:Localization:NestedCommand
                         if (LOG.isDebugEnabled()) {
                             LOG.debug("updateLayout method accessed "

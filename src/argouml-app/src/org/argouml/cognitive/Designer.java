@@ -304,7 +304,7 @@ public final class Designer
                             this.wait();
                         } catch (InterruptedException ignore) {
                             //#if defined(LOGGING)
-                            //@#$LPS-LOGGING:GranularityType:Command
+                            //@#$LPS-LOGGING:GranularityType:Statement
                             //@#$LPS-LOGGING:Localization:NestedCommand
                             LOG.error("InterruptedException!!!", ignore);
                             //#endif
@@ -373,7 +373,7 @@ public final class Designer
                             } catch (InvalidElementException e) {
                                 // Don't let a transient error kill the thread
                                 //#if defined(LOGGING)
-                                //@#$LPS-LOGGING:GranularityType:Command
+                                //@#$LPS-LOGGING:GranularityType:Statement
                                 //@#$LPS-LOGGING:Localization:NestedCommand
                                 LOG.warn("Element " + dm
                                         + "caused an InvalidElementException.  "
@@ -393,7 +393,7 @@ public final class Designer
                     Math.min(cycleDuration - critiqueDuration, 3000);
                 sleepDuration = Math.max(sleepDuration, 1000);
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.debug("sleepDuration= " + sleepDuration);
                 //#endif
@@ -401,7 +401,7 @@ public final class Designer
                     Thread.sleep(sleepDuration);
                 } catch (InterruptedException ignore) {
                     //#if defined(LOGGING)
-                    //@#$LPS-LOGGING:GranularityType:Command
+                    //@#$LPS-LOGGING:GranularityType:Statement
                     //@#$LPS-LOGGING:Localization:NestedCommand
                     LOG.error("InterruptedException!!!", ignore);
                     //#endif
@@ -409,7 +409,7 @@ public final class Designer
             }
         } catch (Exception e) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("Critic thread killed by exception", e);
             //#endif
         }
@@ -436,7 +436,7 @@ public final class Designer
             return;
         }
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         LOG.debug("critiqueASAP:" + dm);
         //#endif
         int addQueueIndex = addQueue.indexOf(dm);
@@ -476,7 +476,7 @@ public final class Designer
             pcs = new PropertyChangeSupport(theDesigner());
         }
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         LOG.debug("addPropertyChangeListener(" + pcl + ")");
         //#endif
         pcs.addPropertyChangeListener(pcl);
@@ -491,7 +491,7 @@ public final class Designer
     public static void removeListener(PropertyChangeListener p) {
         if (pcs != null) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             LOG.debug("removePropertyChangeListener()");
             //#endif

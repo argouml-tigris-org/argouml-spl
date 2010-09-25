@@ -164,7 +164,7 @@ class PGMLStackParser
             owner = findOwner(href);
             if (owner == null) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.warn("Found href of " 
                 	+ href
@@ -250,7 +250,7 @@ class PGMLStackParser
             Object modelElement = findOwner(href);
             if (modelElement == null) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.error("Can't find href of " + href);
                 //#endif
@@ -267,7 +267,7 @@ class PGMLStackParser
                 }
             }
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             else {
                 LOG.debug("Ignoring href on " + f.getClass().getName()
 			 + " as it's already set");
@@ -422,7 +422,7 @@ class PGMLStackParser
             	|| sourceFigNode == null 
             	|| destFigNode == null) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.error("Can't find nodes for FigEdge: "
                         + edge.getId() + ":"
@@ -499,7 +499,7 @@ class PGMLStackParser
                 return (FigNode) f;
             } else {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 LOG.error("FigID " + figId + " is not a node, edge ignored");
                 //#endif
                 return null;
@@ -682,7 +682,7 @@ class PGMLStackParser
             // TODO: Convert this to a warning or error when all the Figs
             // have been upgraded.
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.debug("No ArgoUML constructor found for " + className
                     + " falling back to GEF's default constructors");
             //#endif

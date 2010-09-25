@@ -442,7 +442,7 @@ class CollaborationsHelperMDRImpl implements CollaborationsHelper {
 
     public Collection<Feature> allAvailableFeatures(Object arole) {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         LOG.info("allAvailableFeatures start");
         //#endif
@@ -460,7 +460,7 @@ class CollaborationsHelperMDRImpl implements CollaborationsHelper {
                     returnList.addAll(classifier.getFeature());
                 }
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.info("allAvailableFeatures " + returnList.size());
                 //#endif
@@ -476,7 +476,7 @@ class CollaborationsHelperMDRImpl implements CollaborationsHelper {
 
     public Collection allAvailableContents(Object arole) {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         LOG.info("allAvailableContents start");
         //#endif
@@ -494,7 +494,7 @@ class CollaborationsHelperMDRImpl implements CollaborationsHelper {
                     returnList.addAll(baseClassifier.getOwnedElement());
                 }
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.info("allAvailableContents " + returnList.size());
                 //#endif

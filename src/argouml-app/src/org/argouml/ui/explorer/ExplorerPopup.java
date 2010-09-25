@@ -260,7 +260,7 @@ public class ExplorerPopup extends JPopupMenu {
             final boolean transitionSelected =
                 Model.getFacade().isATransition(selectedItem);
             //#if defined(ACTIVITYDIAGRAM)
-            //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
+            //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Statement
             final boolean activityDiagramActive =
                 activeDiagram instanceof UMLActivityDiagram;
             //#endif
@@ -270,7 +270,7 @@ public class ExplorerPopup extends JPopupMenu {
                 activeDiagram instanceof UMLSequenceDiagram;
             //#endif
             //#if defined(STATEDIAGRAM)
-            //@#$LPS-STATEDIAGRAM:GranularityType:Command
+            //@#$LPS-STATEDIAGRAM:GranularityType:Statement
             final boolean stateDiagramActive =
                 activeDiagram instanceof UMLStateDiagram;
             final Object selectedStateMachine =
@@ -283,7 +283,7 @@ public class ExplorerPopup extends JPopupMenu {
                     : null;
             //#endif
             //#if defined(ACTIVITYDIAGRAM)
-            //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
+            //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Statement
             final Object diagramActivity =
                 (activityDiagramActive)
                     ? ((UMLActivityDiagram) activeDiagram).getStateMachine()
@@ -410,24 +410,24 @@ public class ExplorerPopup extends JPopupMenu {
      */
     private void initMenuCreateDiagrams() {
         //#if defined(USECASEDIAGRAM)
-        //@#$LPS-USECASEDIAGRAM:GranularityType:Command
+        //@#$LPS-USECASEDIAGRAM:GranularityType:Statement
         createDiagrams.add(new ActionUseCaseDiagram());
         //#endif
         createDiagrams.add(new ActionClassDiagram());
         //#if defined(SEQUENCEDIAGRAM)
-        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
+        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Statement
         createDiagrams.add(new ActionSequenceDiagram());
         //#endif
         //#if defined(COLLABORATIONDIAGRAM)
-        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
+        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Statement
         createDiagrams.add(new ActionCollaborationDiagram());
         //#endif
         //#if defined(STATEDIAGRAM)
-        //@#$LPS-STATEDIAGRAM:GranularityType:Command
+        //@#$LPS-STATEDIAGRAM:GranularityType:Statement
         createDiagrams.add(new ActionStateDiagram());
         //#endif
         //#if defined(ACTIVITYDIAGRAM)
-        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
+        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Statement
         createDiagrams.add(new ActionActivityDiagram());
         //#endif
         createDiagrams.add(new ActionDeploymentDiagram());
@@ -807,7 +807,7 @@ public class ExplorerPopup extends JPopupMenu {
                 }
             } catch (IllegalModelElementConnectionException e1) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 LOG.error("Exception", e1);
                 //#endif
             }
@@ -856,7 +856,7 @@ public class ExplorerPopup extends JPopupMenu {
                 }
             } catch (IllegalModelElementConnectionException e1) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 LOG.error("Exception", e1);
                 //#endif
             }

@@ -254,7 +254,7 @@ public final class NotationProviderFactory2 {
                 // TODO: Why aren't we throwing an exception here?
             	// Returning null results in NPE and no explanation why.
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.error("Exception caught", e);
                 //#endif
@@ -262,7 +262,7 @@ public final class NotationProviderFactory2 {
                 // TODO: Why aren't we throwing an exception here?
             	// Returning null results in NPE and no explanation why.
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.error("Exception caught", e);
                 //#endif
@@ -270,7 +270,7 @@ public final class NotationProviderFactory2 {
                 // TODO: Why aren't we throwing an exception here?
             	// Returning null results in NPE and no explanation why.
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.error("Exception caught", e);
                 //#endif
@@ -278,7 +278,7 @@ public final class NotationProviderFactory2 {
                 // TODO: Why aren't we throwing an exception here?
             	// Returning null results in NPE and no explanation why.
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.error("Exception caught", e);
                 //#endif
@@ -286,7 +286,7 @@ public final class NotationProviderFactory2 {
                 // TODO: Why aren't we throwing an exception here?
             	// Returning null results in NPE and no explanation why.
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.error("Exception caught", e);
                 //#endif
@@ -294,7 +294,7 @@ public final class NotationProviderFactory2 {
                 // TODO: Why aren't we throwing an exception here?
             	// Returning null results in NPE and no explanation why.
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.error("Exception caught", e);
                 //#endif

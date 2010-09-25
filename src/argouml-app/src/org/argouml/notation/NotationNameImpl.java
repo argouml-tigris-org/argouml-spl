@@ -238,7 +238,7 @@ class NotationNameImpl
 	    } catch (Exception e) {
 	        // TODO: Document why we catch this.
 	        //#if defined(LOGGING)
-	        //@#$LPS-LOGGING:GranularityType:Command
+	        //@#$LPS-LOGGING:GranularityType:Statement
 	        //@#$LPS-LOGGING:Localization:NestedCommand
 	        LOG.error("Unexpected exception", e);
 	        //#endif

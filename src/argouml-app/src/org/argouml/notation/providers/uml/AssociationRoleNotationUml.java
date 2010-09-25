@@ -159,8 +159,8 @@ public class AssociationRoleNotationUml extends AssociationRoleNotation {
             }
         }
         //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
-        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
-        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
+        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Statement
+        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Statement
         Collection c = 
             Model.getCollaborationsHelper().getAllPossibleBases(role);
         Iterator i = c.iterator();

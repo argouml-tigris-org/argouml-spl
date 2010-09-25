@@ -831,7 +831,7 @@ class UmlFactoryMDRImpl extends AbstractUmlModelFactoryMDR implements
             elementsToBeDeleted.add((RefObject) elem);
         }
         //#if defined(LOGGING) 
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         if (LOG.isDebugEnabled()) {
             if (top == elem) {
                 LOG.debug("Set top for cascade delete to " + elem);
@@ -948,13 +948,13 @@ class UmlFactoryMDRImpl extends AbstractUmlModelFactoryMDR implements
             // If we get this with the repository locked, it means our root
             // model element was already deleted.  Nothing to do...
             //#if defined(LOGGING) 
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("Encountered deleted object during delete of " + elem);
             //#endif
         } catch (InvalidElementException e) {
             // Our wrapped version of the same error
             //#if defined(LOGGING) 
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("Encountered deleted object during delete of " + elem);
             //#endif
         } finally {
@@ -987,7 +987,7 @@ class UmlFactoryMDRImpl extends AbstractUmlModelFactoryMDR implements
                 }
             } catch (InvalidObjectException e) {
                 //#if defined(LOGGING) 
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.debug("Object already deleted " + elem);
                 //#endif
@@ -1020,7 +1020,7 @@ class UmlFactoryMDRImpl extends AbstractUmlModelFactoryMDR implements
                             }
                         } catch (InvalidObjectException e) {
                             //#if defined(LOGGING) 
-                            //@#$LPS-LOGGING:GranularityType:Command
+                            //@#$LPS-LOGGING:GranularityType:Statement
                             //@#$LPS-LOGGING:Localization:NestedCommand
                             LOG.debug("Object already deleted " + o);
                             //#endif
@@ -1030,7 +1030,7 @@ class UmlFactoryMDRImpl extends AbstractUmlModelFactoryMDR implements
                         o.refDelete();
                     } catch (InvalidObjectException e) {
                         //#if defined(LOGGING) 
-                        //@#$LPS-LOGGING:GranularityType:Command
+                        //@#$LPS-LOGGING:GranularityType:Statement
                         //@#$LPS-LOGGING:Localization:NestedCommand
                         LOG.debug("Object already deleted " + o);
                         //#endif
@@ -1041,7 +1041,7 @@ class UmlFactoryMDRImpl extends AbstractUmlModelFactoryMDR implements
                 elementsInDeletionOrder.clear();
                 if (!elementsToBeDeleted.isEmpty()) {
                     //#if defined(LOGGING) 
-                    //@#$LPS-LOGGING:GranularityType:Command
+                    //@#$LPS-LOGGING:GranularityType:Statement
                     //@#$LPS-LOGGING:Localization:NestedCommand
                     LOG.debug("**Skipped deleting "
                             + elementsToBeDeleted.size()
@@ -1286,7 +1286,7 @@ class UmlFactoryMDRImpl extends AbstractUmlModelFactoryMDR implements
                 (org.omg.uml.UmlPackage) ((RefObject) element)
                     .refOutermostPackage();
             //#if defined(LOGGING) 
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.debug("Removing extent " + extent);
             //#endif
             modelImpl.deleteExtent(extent);

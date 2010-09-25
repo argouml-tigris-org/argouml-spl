@@ -90,7 +90,7 @@ class ArgoParser extends SAXParserBase {
             parse(source);
         } catch (SAXException e) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             logError(source.toString(), e);
             //#endif
             throw e;
@@ -116,7 +116,7 @@ class ArgoParser extends SAXParserBase {
             parse(reader);
         } catch (SAXException e) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             logError(reader.toString(), e);
             //#endif
             throw e;
@@ -125,7 +125,7 @@ class ArgoParser extends SAXParserBase {
 
     private void preRead(Project theProject) {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         LOG.info("=======================================");
         LOG.info("== READING PROJECT " + theProject);
@@ -167,7 +167,7 @@ class ArgoParser extends SAXParserBase {
      */
     public void handleStartElement(XMLElement e) throws SAXException {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod        
         if (DBG) {
             LOG.debug("NOTE: ArgoParser handleStartTag:" + e.getName());
@@ -185,7 +185,7 @@ class ArgoParser extends SAXParserBase {
             break;
         default:
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             if (DBG) {
                 LOG.warn("WARNING: unknown tag:" + e.getName());
@@ -202,7 +202,7 @@ class ArgoParser extends SAXParserBase {
     @SuppressWarnings("deprecation")
     public void handleEndElement(XMLElement e) throws SAXException {        
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod        
         if (DBG) {
             LOG.debug("NOTE: ArgoParser handleEndTag:" + e.getName() + ".");
@@ -283,7 +283,7 @@ class ArgoParser extends SAXParserBase {
             break;
         default:
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             if (DBG) {
                 LOG.warn("WARNING: unknown end tag:" + e.getName());
@@ -501,7 +501,7 @@ class ArgoParser extends SAXParserBase {
             diagramDefaults.setFontSize(Integer.parseInt(dsw));
         } catch (NumberFormatException e1) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("NumberFormatException while parsing Font Size", e1);
             //#endif
         }

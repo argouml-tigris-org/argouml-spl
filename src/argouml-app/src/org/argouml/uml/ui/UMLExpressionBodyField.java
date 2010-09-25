@@ -81,7 +81,7 @@ public class UMLExpressionBodyField extends JTextArea
      */
     public void targetChanged() {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
 	LOG.debug("UMLExpressionBodyField: targetChanged");
 	//#endif
@@ -100,7 +100,7 @@ public class UMLExpressionBodyField extends JTextArea
     /* TODO: This does not work - no event arrives. */
     public void propertyChange(PropertyChangeEvent event) {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         LOG.debug("UMLExpressionBodyField: propertySet" + event);
         //#endif

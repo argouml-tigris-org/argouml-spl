@@ -140,7 +140,7 @@ public abstract class AbstractArgoJPanel extends JPanel
             return this.getClass().newInstance();
         } catch (Exception ex) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("exception in clone()", ex);
             //#endif
         }

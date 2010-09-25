@@ -102,7 +102,7 @@ public class FigEdgeNote extends FigEdgePoly implements ArgoFig, IItemUID,
     @Override
     public void setFig(Fig f) {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         LOG.info("Setting the internal fig to " + f);
         //#endif

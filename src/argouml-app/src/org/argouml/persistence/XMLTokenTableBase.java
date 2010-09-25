@@ -75,7 +75,7 @@ abstract class XMLTokenTableBase {
 	if (push) openTags[++numOpen] = s;
 	else if (s.equals(openTags[numOpen])) {
 	    //#if defined(LOGGING)
-	    //@#$LPS-LOGGING:GranularityType:Command
+	    //@#$LPS-LOGGING:GranularityType:Statement
 	    LOG.debug("matched: " + s);
 	    //#endif
 	    return openTokens[numOpen--];
@@ -110,7 +110,7 @@ abstract class XMLTokenTableBase {
 	if (dbg) {
 	    if (tokens.contains(i) || tokens.containsKey(s)) {
 	        //#if defined(LOGGING)
-	        //@#$LPS-LOGGING:GranularityType:Command
+	        //@#$LPS-LOGGING:GranularityType:Statement
 	        //@#$LPS-LOGGING:Localization:BeforeReturn
 		LOG.error("ERROR: token table already contains " + s);
 		//#endif
@@ -120,7 +120,7 @@ abstract class XMLTokenTableBase {
 	tokens.put(s, i);
 	if (dbg && !error) {
 	    //#if defined(LOGGING)
-	    //@#$LPS-LOGGING:GranularityType:Command
+	    //@#$LPS-LOGGING:GranularityType:Statement
 	    //@#$LPS-LOGGING:Localization:NestedCommand
             LOG.debug("NOTE: added '" + s + "' to token table");
             //#endif

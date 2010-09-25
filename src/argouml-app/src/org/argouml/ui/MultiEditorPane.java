@@ -111,7 +111,7 @@ public class MultiEditorPane
      */
     public MultiEditorPane() {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         LOG.info("making MultiEditorPane");
         //#endif
@@ -249,7 +249,7 @@ public class MultiEditorPane
         }
         lastTab = tabs.getSelectedComponent();
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         LOG.debug(
             "MultiEditorPane state changed:" + lastTab.getClass().getName());
         //#endif

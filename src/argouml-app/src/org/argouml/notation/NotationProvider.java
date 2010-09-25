@@ -198,7 +198,7 @@ public abstract class NotationProvider {
         // end if 
         if (Model.getUmlFactory().isRemoved(modelElement)) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             //@#$LPS-LOGGING:Localization:BeforeReturn
             LOG.warn("Encountered deleted object during delete of " 
@@ -221,7 +221,7 @@ public abstract class NotationProvider {
             Object element) {
         if (Model.getUmlFactory().isRemoved(element)) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             LOG.warn("Encountered deleted object during delete of " + element);
             //#endif
@@ -233,7 +233,7 @@ public abstract class NotationProvider {
             Model.getPump().addModelEventListener(listener, element);
         } 
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         else {
             LOG.warn("Attempted duplicate registration of event listener"
                     + " - Element: " + element + " Listener: " + listener);
@@ -256,7 +256,7 @@ public abstract class NotationProvider {
             Object element, String property) {
         if (Model.getUmlFactory().isRemoved(element)) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.warn("Encountered deleted object during delete of " + element);
             //#endif
             return;
@@ -267,7 +267,7 @@ public abstract class NotationProvider {
             Model.getPump().addModelEventListener(listener, element, property);
         } 
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         else {
             LOG.debug("Attempted duplicate registration of event listener"
                     + " - Element: " + element + " Listener: " + listener);
@@ -290,7 +290,7 @@ public abstract class NotationProvider {
             Object element, String[] property) {
         if (Model.getUmlFactory().isRemoved(element)) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             LOG.warn("Encountered deleted object during delete of " + element);
             //#endif
@@ -302,7 +302,7 @@ public abstract class NotationProvider {
             Model.getPump().addModelEventListener(listener, element, property);
         } 
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         else {
             LOG.debug("Attempted duplicate registration of event listener"
                     + " - Element: " + element + " Listener: " + listener);

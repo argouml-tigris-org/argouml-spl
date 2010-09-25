@@ -427,7 +427,7 @@ public abstract class ConfigurationHandler {
             pcl = new PropertyChangeSupport(this);
         }
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         LOG.debug("addPropertyChangeListener(" + p + ")");
         //#endif
         pcl.addPropertyChangeListener(p);
@@ -441,7 +441,7 @@ public abstract class ConfigurationHandler {
     public final void removeListener(PropertyChangeListener p) {
         if (pcl != null) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             LOG.debug("removePropertyChangeListener()");
             //#endif
@@ -461,7 +461,7 @@ public abstract class ConfigurationHandler {
             pcl = new PropertyChangeSupport(this);
         }
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         LOG.debug("addPropertyChangeListener("
                                 + key.getKey() + ")");
         //#endif
@@ -478,7 +478,7 @@ public abstract class ConfigurationHandler {
                                      PropertyChangeListener p) {
         if (pcl != null) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             LOG.debug("removePropertyChangeListener("
                                     + key.getKey() + ")");

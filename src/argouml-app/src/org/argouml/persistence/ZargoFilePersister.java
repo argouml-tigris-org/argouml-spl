@@ -117,7 +117,7 @@ class ZargoFilePersister extends UmlFilePersister {
     public void doSave(Project project, File file) throws SaveException, 
     InterruptedException {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         LOG.info("Saving");
         //#endif
@@ -150,7 +150,7 @@ class ZargoFilePersister extends UmlFilePersister {
             for (ProjectMember projectMember : project.getMembers()) {
                 if (projectMember.getType().equalsIgnoreCase("xmi")) {
                     //#if defined(LOGGING)
-                    //@#$LPS-LOGGING:GranularityType:Command
+                    //@#$LPS-LOGGING:GranularityType:Statement
                     //@#$LPS-LOGGING:Localization:NestedCommand
                     if (LOG.isInfoEnabled()) {
                         LOG.info("Saving member of type: "
@@ -181,7 +181,7 @@ class ZargoFilePersister extends UmlFilePersister {
 
         } catch (Exception e) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("Exception occured during save attempt", e);
             //#endif
             try {
@@ -205,7 +205,7 @@ class ZargoFilePersister extends UmlFilePersister {
             stream.close();
         } catch (IOException ex) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("Failed to close save output writer", ex);
             //#endif
         }
@@ -250,7 +250,7 @@ class ZargoFilePersister extends UmlFilePersister {
         //boolean upgradeRequired = !checkVersion(fileVersion, releaseVersion)
         boolean upgradeRequired = true;
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         LOG.info("Loading zargo file of version " + fileVersion);
         //#endif
         final Project p;
@@ -283,7 +283,7 @@ class ZargoFilePersister extends UmlFilePersister {
 
             List memberList = parser.getMemberList();
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.info(memberList.size() + " members");
             //#endif
             // Load .xmi file before any PGML files
@@ -302,7 +302,7 @@ class ZargoFilePersister extends UmlFilePersister {
                 if (!"argo".equals(ext) && !"xmi".equals(ext)) {
                     persister = getMemberFilePersister(ext);
                     //#if defined(LOGGING)
-                    //@#$LPS-LOGGING:GranularityType:Command
+                    //@#$LPS-LOGGING:GranularityType:Statement
                     //@#$LPS-LOGGING:Localization:NestedCommand
                     LOG.info("Loading member with "
                             + persister.getClass().getName());
@@ -338,7 +338,7 @@ class ZargoFilePersister extends UmlFilePersister {
         try {
             combinedFile = File.createTempFile("combinedzargo_", ".uml");
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.info(
                 "Combining old style zargo sub files into new style uml file "
                     + combinedFile.getAbsolutePath());
@@ -374,7 +374,7 @@ class ZargoFilePersister extends UmlFilePersister {
             writer.println("</uml>");
             writer.close();
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.info("Completed combining files");
             //#endif
         } catch (IOException e) {
@@ -420,7 +420,7 @@ class ZargoFilePersister extends UmlFilePersister {
         writer.println("<uml version=\"" + version + "\">");
         writer.println(rootLine);
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         LOG.info("Transfering argo contents");
         //#endif
         int memberCount = 0;
@@ -430,7 +430,7 @@ class ZargoFilePersister extends UmlFilePersister {
             }
             if (line.trim().equals("</argo>") && memberCount == 0) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.info("Inserting member info");
                 //#endif
@@ -450,7 +450,7 @@ class ZargoFilePersister extends UmlFilePersister {
             writer.println(line);
         }
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         if (LOG.isInfoEnabled()) {
             LOG.info("Member count = " + memberCount);
         }
@@ -543,7 +543,7 @@ class ZargoFilePersister extends UmlFilePersister {
         int ch;
         while ((ch = reader.read()) != -1) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             if (ch == 0xFFFF) {
                 LOG.info("Stripping out 0xFFFF from save file");

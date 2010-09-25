@@ -257,7 +257,7 @@ public abstract class UMLMutableGraphSupport extends MutableGraphSupport {
 
         if (connection == null) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             if (LOG.isDebugEnabled()) {
                 LOG.debug("Cannot make a " + edgeType
@@ -270,7 +270,7 @@ public abstract class UMLMutableGraphSupport extends MutableGraphSupport {
 
         addEdge(connection);
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:BeforeReturn
         if (LOG.isDebugEnabled()) {
             LOG.debug("Connection type" + edgeType
@@ -338,7 +338,7 @@ public abstract class UMLMutableGraphSupport extends MutableGraphSupport {
 
         // Don't know what to do otherwise
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:BeforeReturn
         LOG.error(this.getClass().toString() + ": getSourcePort("
                 + edge.toString() + ") - can't handle");
@@ -372,7 +372,7 @@ public abstract class UMLMutableGraphSupport extends MutableGraphSupport {
 
         // Don't know what to do otherwise
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:BeforeReturn
         LOG.error(this.getClass().toString() + ": getDestPort("
                 + edge.toString() + ") - can't handle");
@@ -478,7 +478,7 @@ public abstract class UMLMutableGraphSupport extends MutableGraphSupport {
                             unidirectional,
                             namespace);
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
         	LOG.info("Created " + connection + " between " 
         	        + fromElement + " and " + toElement);
@@ -493,7 +493,7 @@ public abstract class UMLMutableGraphSupport extends MutableGraphSupport {
         	// events we expect to happen. We need a different way of
         	// catching well-formedness rules.
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
         	LOG.warn("IllegalArgumentException caught", iae);
         	//#endif

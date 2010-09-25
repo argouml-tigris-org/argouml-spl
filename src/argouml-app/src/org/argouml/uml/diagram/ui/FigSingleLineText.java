@@ -278,7 +278,7 @@ public class FigSingleLineText extends ArgoFigText  {
                         updateLayout(event);
                     } catch (InvalidElementException e) {
                         //#if defined(LOGGING)
-                        //@#$LPS-LOGGING:GranularityType:Command
+                        //@#$LPS-LOGGING:GranularityType:Statement
                         //@#$LPS-LOGGING:Localization:NestedCommand
                         if (LOG.isDebugEnabled()) {
                             LOG.debug("event = "

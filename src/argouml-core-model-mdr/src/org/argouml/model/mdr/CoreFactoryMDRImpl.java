@@ -797,7 +797,7 @@ class CoreFactoryMDRImpl extends AbstractUmlModelFactoryMDR implements
                     cl.refDelete();
                 } catch (InvalidObjectException e) {
                     //#if defined(LOGGING)
-                    //@#$LPS-LOGGING:GranularityType:Command
+                    //@#$LPS-LOGGING:GranularityType:Statement
                     LOG.warn("Object already deleted " + cl);
                     //#endif
                 }
@@ -1625,7 +1625,7 @@ class CoreFactoryMDRImpl extends AbstractUmlModelFactoryMDR implements
      */
     void deleteNamespace(Object elem) {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         LOG.debug("Deleting namespace " + elem);
         //#endif
@@ -1640,7 +1640,7 @@ class CoreFactoryMDRImpl extends AbstractUmlModelFactoryMDR implements
         ownedElements.addAll(((Namespace) elem).getOwnedElement());
         for (ModelElement element : ownedElements) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             LOG.debug("Deleting ownedElement " + element);
             //#endif

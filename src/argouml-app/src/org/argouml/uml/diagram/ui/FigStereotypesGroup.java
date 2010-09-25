@@ -192,7 +192,7 @@ public class FigStereotypesGroup extends ArgoFigGroup {
                 }
             } 
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             else {
                 LOG.warn("Unexpected property " + event.getPropertyName());
@@ -211,7 +211,7 @@ public class FigStereotypesGroup extends ArgoFigGroup {
                 }
             } 
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             else {
                 LOG.warn("Unexpected property " + event.getPropertyName());
@@ -302,7 +302,7 @@ public class FigStereotypesGroup extends ArgoFigGroup {
         if (modelElement == null) {
             // TODO: This block can be removed after issue 4075 is tackled
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             LOG.debug("Cannot populate the stereotype compartment "
                      + "unless the parent has an owner.");
@@ -310,7 +310,7 @@ public class FigStereotypesGroup extends ArgoFigGroup {
             return;
         }
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         if (LOG.isDebugEnabled()) {
             LOG.debug("Populating stereotypes compartment for "
                     + Model.getFacade().getName(modelElement));
@@ -403,7 +403,7 @@ public class FigStereotypesGroup extends ArgoFigGroup {
         Project project = getProject();
         if (project == null) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             LOG.warn("getProject() returned null");
             //#endif

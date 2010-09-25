@@ -52,7 +52,7 @@ public class ZipModelLoader extends StreamModelLoader {
     public Collection loadModel(ProfileReference reference) 
         throws ProfileException {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         LOG.info("Loading profile from ZIP '" + reference.getPath() + "'");
         //#endif
@@ -78,14 +78,14 @@ public class ZipModelLoader extends StreamModelLoader {
             is = openZipStreamAt(modelFile.toURI().toURL(), extension);
         } catch (MalformedURLException e) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("Exception while loading profile '"
                     + reference.getPath() + "'", e);
             //#endif
             throw new ProfileException(e);
         } catch (IOException e) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("Exception while loading profile '"
                     + reference.getPath() + "'", e);
             //#endif

@@ -335,7 +335,7 @@ public final class ModuleLoader2 {
 		    // Catch all exceptions and errors, however severe
 		    catch (Throwable e) {
 		        //#if defined(LOGGING)
-		        //@#$LPS-LOGGING:GranularityType:Command
+		        //@#$LPS-LOGGING:GranularityType:Statement
 		        //@#$LPS-LOGGING:Localization:NestedCommand
 		        LOG.error("Exception or error while trying to "
                                 + "enable module " + module.getName(), e);
@@ -352,7 +352,7 @@ public final class ModuleLoader2 {
 		    catch (Throwable e) {
 		        //#if defined(LOGGING)
 		        //@#$LPS-LOGGING:Localization:NestedCommand
-		        //@#$LPS-LOGGING:GranularityType:Command
+		        //@#$LPS-LOGGING:GranularityType:Statement
 		        LOG.error("Exception or error while trying to "
                                 + "disable module " + module.getName(), e);
 		        //#endif
@@ -386,7 +386,7 @@ public final class ModuleLoader2 {
 		    continue;
 		}
 		//#if defined(LOGGING)
-		//@#$LPS-LOGGING:GranularityType:Command
+		//@#$LPS-LOGGING:GranularityType:Statement
 		//@#$LPS-LOGGING:Localization:NestedCommand
 		if (status.isSelected()) {
 		    LOG.warn("ModuleLoader was not able to enable module "
@@ -464,7 +464,7 @@ public final class ModuleLoader2 {
                     addClass(className);
                 } catch (ClassNotFoundException e) {
                     //#if defined(LOGGING)
-                    //@#$LPS-LOGGING:GranularityType:Command
+                    //@#$LPS-LOGGING:GranularityType:Statement
                     //@#$LPS-LOGGING:Localization:NestedCommand
                     LOG.error("Could not load module from class " + className);
                     //#endif
@@ -509,7 +509,7 @@ public final class ModuleLoader2 {
 
         if (argoRoot != null) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             LOG.info("argoRoot is " + argoRoot);
             //#endif
@@ -526,7 +526,7 @@ public final class ModuleLoader2 {
                         Argo.getEncoding());
             } catch (UnsupportedEncodingException e) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.warn("Encoding " 
                         + Argo.getEncoding() 
@@ -535,7 +535,7 @@ public final class ModuleLoader2 {
             }
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:Localization:NestedCommand
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.info("argoHome is " + argoHome);
             //#endif
         }
@@ -592,7 +592,7 @@ public final class ModuleLoader2 {
 	                    processJarFile(classloader, file);
 	                } catch (ClassNotFoundException e) {
 	                    //#if defined(LOGGING)
-	                    //@#$LPS-LOGGING:GranularityType:Command
+	                    //@#$LPS-LOGGING:GranularityType:Statement
 	                    //@#$LPS-LOGGING:Localization:NestedCommand
 	                    LOG.error("The class is not found.", e);
 	                    //#endif
@@ -601,7 +601,7 @@ public final class ModuleLoader2 {
 		    }
 		} catch (IOException ioe) {
 		    //#if defined(LOGGING)
-		    //@#$LPS-LOGGING:GranularityType:Command
+		    //@#$LPS-LOGGING:GranularityType:Statement
 		    //@#$LPS-LOGGING:Localization:NestedCommand
 		    LOG.error("Cannot open Jar file " + file, ioe);
 		    //#endif
@@ -624,7 +624,7 @@ public final class ModuleLoader2 {
     private void processJarFile(ClassLoader classloader, File file)
         throws ClassNotFoundException {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
 	LOG.info("Opening jar file " + file);
 	//#endif
@@ -633,7 +633,7 @@ public final class ModuleLoader2 {
 	    jarfile = new JarFile(file);
 	} catch (IOException e) {
 	    //#if defined(LOGGING)
-	    //@#$LPS-LOGGING:GranularityType:Command
+	    //@#$LPS-LOGGING:GranularityType:Statement
 	    LOG.error("Unable to open " + file, e);
 	    //#endif
             return;
@@ -646,14 +646,14 @@ public final class ModuleLoader2 {
                 // We expect all extensions to have a manifest even though we
                 // can operate without one if necessary.
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.warn(file + " does not have a manifest");
                 //#endif
             }
         } catch (IOException e) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("Unable to read manifest of " + file, e);
             //#endif
             return;
@@ -688,7 +688,7 @@ public final class ModuleLoader2 {
         // (Done for both modules & localized property file sets)
         Translator.addClassLoader(classloader);
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         // If it didn't have a loadable module class and it doesn't look like
         // a localized property set, warn the user that something funny is in
         // their extension directory
@@ -747,7 +747,7 @@ public final class ModuleLoader2 {
     private boolean addClass(ClassLoader classLoader, String classname)
         throws ClassNotFoundException {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         LOG.info("Loading module " + classname);
         //#endif
@@ -756,13 +756,13 @@ public final class ModuleLoader2 {
             moduleClass = classLoader.loadClass(classname);
         } catch (UnsupportedClassVersionError e) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("Unsupported Java class version for " + classname);
             //#endif
             return false;
         } catch (NoClassDefFoundError e) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("Unable to find required class while loading "
                     + classname + " - may indicate an obsolete"
                     + " extension module or an unresolved dependency", e);
@@ -773,7 +773,7 @@ public final class ModuleLoader2 {
                 throw (ClassNotFoundException) e;
             }
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("Unexpected error while loading " + classname, e);
             //#endif
             return false;
@@ -781,7 +781,7 @@ public final class ModuleLoader2 {
         
         if (!ModuleInterface.class.isAssignableFrom(moduleClass)) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.debug("The class " + classname + " is not a module.");
             //#endif
             return false;
@@ -793,7 +793,7 @@ public final class ModuleLoader2 {
                     moduleClass.getDeclaredConstructor(new Class[] {});
         } catch (SecurityException e) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("The default constructor for class " + classname
                       + " is not accessable.",
                       e);
@@ -801,14 +801,14 @@ public final class ModuleLoader2 {
             return false;
         } catch (NoSuchMethodException e) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("The default constructor for class " + classname
                       + " is not found.", e);
             //#endif
             return false;
         } catch (NoClassDefFoundError e) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("Unable to find required class while loading "
                     + classname + " - may indicate an obsolete"
                     + " extension module or an unresolved dependency", e);
@@ -816,7 +816,7 @@ public final class ModuleLoader2 {
             return false;
         } catch (Throwable e) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("Unexpected error while loading " + classname, e);
             //#endif
             return false;
@@ -824,7 +824,7 @@ public final class ModuleLoader2 {
 
         if (!Modifier.isPublic(defaultConstructor.getModifiers())) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("The default constructor for class " + classname
                     + " is not public.  Not loaded.");
             //#endif
@@ -835,35 +835,35 @@ public final class ModuleLoader2 {
             moduleInstance = defaultConstructor.newInstance(new Object[]{});
         } catch (IllegalArgumentException e) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("The constructor for class " + classname
                     + " is called with incorrect argument.", e);
             //#endif
             return false;
         } catch (InstantiationException e) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("The constructor for class " + classname
                     + " threw an exception.", e);
             //#endif
             return false;
         } catch (IllegalAccessException e) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("The constructor for class " + classname
                     + " is not accessible.", e);
             //#endif
             return false;
         } catch (InvocationTargetException e) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("The constructor for class " + classname
                     + " cannot be called.", e);
             //#endif
             return false;
         } catch (NoClassDefFoundError e) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("Unable to find required class while instantiating "
                     + classname + " - may indicate an obsolete"
                     + " extension module or an unresolved dependency", e);
@@ -871,7 +871,7 @@ public final class ModuleLoader2 {
             return false;
         } catch (Throwable e) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("Unexpected error while instantiating " + classname, e);
             //#endif
             return false;
@@ -881,7 +881,7 @@ public final class ModuleLoader2 {
         // instantiated the module, but double check again
         if (!(moduleInstance instanceof ModuleInterface)) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("The class " + classname + " is not a module.");
             //#endif
             return false;
@@ -890,7 +890,7 @@ public final class ModuleLoader2 {
 
         addModule(mf);
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:BeforeReturn
         LOG.info("Succesfully loaded module " + classname);
         //#endif

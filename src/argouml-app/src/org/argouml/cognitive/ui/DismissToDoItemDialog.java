@@ -167,7 +167,7 @@ public class DismissToDoItemDialog extends ArgoDialog {
                     explain(e);
                 }
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
                 else {                    
                     LOG.warn("DissmissToDoItemDialog: Unknown action: " + e);                   
@@ -249,7 +249,7 @@ public class DismissToDoItemDialog extends ArgoDialog {
         }
         catch (UnresolvableException ure) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
             LOG.error("Resolve failed (ure): ", ure);
             //#endif

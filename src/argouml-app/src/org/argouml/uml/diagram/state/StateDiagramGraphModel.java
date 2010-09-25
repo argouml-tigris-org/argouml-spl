@@ -128,7 +128,7 @@ public class StateDiagramGraphModel extends UMLMutableGraphSupport implements
 	    return new ArrayList(Model.getFacade().getIncomings(port));
 	}
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:BeforeReturn
         //@#$LPS-LOGGING:Localization:NestedIfdef-STATEDIAGRAM
         //@#$LPS-LOGGING:Localization:NestedIfdef-ACTIVITYDIAGRAM
@@ -145,7 +145,7 @@ public class StateDiagramGraphModel extends UMLMutableGraphSupport implements
 	    return new ArrayList(Model.getFacade().getOutgoings(port));
 	}
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:BeforeReturn
         //@#$LPS-LOGGING:Localization:NestedIfdef-STATEDIAGRAM
         //@#$LPS-LOGGING:Localization:NestedIfdef-ACTIVITYDIAGRAM
@@ -225,7 +225,7 @@ public class StateDiagramGraphModel extends UMLMutableGraphSupport implements
         // Both ends must be defined and nodes that are on the graph already.
         if (end0 == null || end1 == null) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             //@#$LPS-LOGGING:Localization:BeforeReturn
             //@#$LPS-LOGGING:Localization:NestedIfdef-STATEDIAGRAM
@@ -238,7 +238,7 @@ public class StateDiagramGraphModel extends UMLMutableGraphSupport implements
         if (!containsNode(end0)
                 && !containsEdge(end0)) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             //@#$LPS-LOGGING:Localization:BeforeReturn
             //@#$LPS-LOGGING:Localization:NestedIfdef-STATEDIAGRAM
@@ -252,7 +252,7 @@ public class StateDiagramGraphModel extends UMLMutableGraphSupport implements
         if (!containsNode(end1)
                 && !containsEdge(end1)) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             //@#$LPS-LOGGING:Localization:BeforeReturn
             //@#$LPS-LOGGING:Localization:NestedIfdef-STATEDIAGRAM
@@ -272,7 +272,7 @@ public class StateDiagramGraphModel extends UMLMutableGraphSupport implements
      */
     public void addNode(Object node) {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         //@#$LPS-LOGGING:Localization:NestedIfdef-STATEDIAGRAM
         //@#$LPS-LOGGING:Localization:NestedIfdef-ACTIVITYDIAGRAM
@@ -300,7 +300,7 @@ public class StateDiagramGraphModel extends UMLMutableGraphSupport implements
      */
     public void addEdge(Object edge) {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         //@#$LPS-LOGGING:Localization:NestedIfdef-STATEDIAGRAM
         //@#$LPS-LOGGING:Localization:NestedIfdef-ACTIVITYDIAGRAM
@@ -340,7 +340,7 @@ public class StateDiagramGraphModel extends UMLMutableGraphSupport implements
     public boolean canConnect(Object fromPort, Object toPort) {
         if (!(Model.getFacade().isAStateVertex(fromPort))) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             //@#$LPS-LOGGING:Localization:NestedIfdef-STATEDIAGRAM
             //@#$LPS-LOGGING:Localization:NestedIfdef-ACTIVITYDIAGRAM
@@ -350,7 +350,7 @@ public class StateDiagramGraphModel extends UMLMutableGraphSupport implements
         }
         if (!(Model.getFacade().isAStateVertex(toPort))) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             //@#$LPS-LOGGING:Localization:NestedIfdef-STATEDIAGRAM
             //@#$LPS-LOGGING:Localization:NestedIfdef-ACTIVITYDIAGRAM
@@ -411,7 +411,7 @@ public class StateDiagramGraphModel extends UMLMutableGraphSupport implements
                 return connection;
             } catch (Exception ex) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 //@#$LPS-LOGGING:Localization:NestedIfdef-STATEDIAGRAM
                 //@#$LPS-LOGGING:Localization:NestedIfdef-ACTIVITYDIAGRAM
@@ -421,7 +421,7 @@ public class StateDiagramGraphModel extends UMLMutableGraphSupport implements
             return null;
         } else {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             //@#$LPS-LOGGING:Localization:BeforeReturn
             //@#$LPS-LOGGING:Localization:NestedIfdef-STATEDIAGRAM
@@ -448,7 +448,7 @@ public class StateDiagramGraphModel extends UMLMutableGraphSupport implements
             Object me = Model.getFacade().getModelElement(eo);
             if (oldOwned.contains(eo)) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 //@#$LPS-LOGGING:Localization:NestedIfdef-STATEDIAGRAM
                 //@#$LPS-LOGGING:Localization:NestedIfdef-ACTIVITYDIAGRAM
@@ -465,7 +465,7 @@ public class StateDiagramGraphModel extends UMLMutableGraphSupport implements
                 }
             } 
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedIfdef-STATEDIAGRAM
             //@#$LPS-LOGGING:Localization:NestedIfdef-ACTIVITYDIAGRAM
             else {

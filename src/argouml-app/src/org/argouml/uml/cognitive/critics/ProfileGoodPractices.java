@@ -53,7 +53,7 @@ public class ProfileGoodPractices extends Profile {
         // general
         critics.add(new CrEmptyPackage());
         //#if defined(SEQUENCEDIAGRAM)
-        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
+        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Statement
         //@#$LPS-SEQUENCEDIAGRAM:Localization:NestedIfdef-COGNITIVE
         critics.add(new CrNodesOverlap());
         //#endif

@@ -100,7 +100,7 @@ public abstract class ActionNewDiagram extends UndoableAction {
         } else {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:Localization:NestedCommand
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("No valid namespace found");
             //#endif
             throw new IllegalStateException("No valid namespace found");

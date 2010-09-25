@@ -104,7 +104,7 @@ public class CollabDiagramRenderer extends UmlDiagramRenderer {
             figNode = ((UMLDiagram) diag).drop(node, null);
         } else {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedIfdef-COLLABORATIONDIAGRAM
             LOG.error("TODO: CollabDiagramRenderer getFigNodeFor");
             //#endif
@@ -127,7 +127,7 @@ public class CollabDiagramRenderer extends UmlDiagramRenderer {
     public FigEdge getFigEdgeFor(GraphModel gm, Layer lay,
 				 Object edge, Map styleAttributes) {
         //#if defined(LOGGING)     
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         //@#$LPS-LOGGING:Localization:NestedIfdef-COLLABORATIONDIAGRAM
         if (LOG.isDebugEnabled()) {

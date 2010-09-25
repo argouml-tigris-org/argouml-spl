@@ -149,7 +149,7 @@ class XmiReferenceResolverImpl extends XmiContext {
         if (isProfile) {
             if (public2SystemIds.containsKey(modelPublicId)) {
                 //#if defined(LOGGING) 
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.warn("Either an already loaded profile is being re-read " 
                     + "or a profile with the same publicId is being loaded! " 
@@ -176,7 +176,7 @@ class XmiReferenceResolverImpl extends XmiContext {
     public void register(final String systemId, final String xmiId, 
             final RefObject object) {
         //#if defined(LOGGING) 
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         if (LOG.isDebugEnabled()) {
             LOG.debug("Registering XMI ID '" + xmiId 
@@ -191,7 +191,7 @@ class XmiReferenceResolverImpl extends XmiContext {
                         systemId.substring(0, systemId.lastIndexOf('/') + 1));
             } catch (URISyntaxException e) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.warn("Bad URI syntax for base URI from XMI document "
                         + systemId, e);
@@ -199,7 +199,7 @@ class XmiReferenceResolverImpl extends XmiContext {
                 baseUri = null;
             }
             //#if defined(LOGGING) 
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             if (LOG.isDebugEnabled()) {
                 LOG.debug("Top system ID set to " + topSystemId);
@@ -216,7 +216,7 @@ class XmiReferenceResolverImpl extends XmiContext {
             resolvedSystemId = reverseUrlMap.get(systemId);
         } 
         //#if defined(LOGGING) 
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         else {
             LOG.debug("Unable to map systemId - " + systemId);
         }
@@ -241,7 +241,7 @@ class XmiReferenceResolverImpl extends XmiContext {
                     && idToObjects.get(key) != object) {
                 ((ModelElement) idToObjects.get(key)).getName();
                 //#if defined(LOGGING) 
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.error("Collision - multiple elements with same xmi.id : "
                         + xmiId);
@@ -256,14 +256,14 @@ class XmiReferenceResolverImpl extends XmiContext {
                 // the referencing file and second in the referenced file
                 //#if defined(LOGGING) 
                 //@#$LPS-LOGGING:Localization:NestedCommand
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 LOG.debug("register called twice for the same object "
                         + "- ignoring second");
                 //#endif
                 XmiReference ref = objectsToId.get(object.refMofId());
                 //#if defined(LOGGING) 
                 //@#$LPS-LOGGING:Localization:NestedCommand
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 LOG.debug(" - first reference = " + ref.getSystemId() + "#"
                         + ref.getXmiId());                
                 LOG.debug(" - 2nd reference   = " + systemId + "#" + xmiId);
@@ -303,7 +303,7 @@ class XmiReferenceResolverImpl extends XmiContext {
     @Override
     public URL toURL(String systemId) {
         //#if defined(LOGGING) 
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         if (LOG.isDebugEnabled()) {
             LOG.debug("attempting to resolve Xmi Href --> '" + systemId + "'");
@@ -349,7 +349,7 @@ class XmiReferenceResolverImpl extends XmiContext {
             // find it if we need it again.
             if (modelUrl != null) {
                 //#if defined(LOGGING) 
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.info("Referenced model --> '" + modelUrl + "'");
                 //#endif
@@ -360,7 +360,7 @@ class XmiReferenceResolverImpl extends XmiContext {
                         relativeUri = baseUri.relativize(new URI(systemId))
                                 .toString();
                         //#if defined(LOGGING) 
-                        //@#$LPS-LOGGING:GranularityType:Command
+                        //@#$LPS-LOGGING:GranularityType:Statement
                         //@#$LPS-LOGGING:Localization:NestedCommand
                         if (LOG.isDebugEnabled()) {
                             LOG.debug("       system ID " + systemId
@@ -372,7 +372,7 @@ class XmiReferenceResolverImpl extends XmiContext {
                     }
                 } catch (URISyntaxException e) {
                     //#if defined(LOGGING) 
-                    //@#$LPS-LOGGING:GranularityType:Command
+                    //@#$LPS-LOGGING:GranularityType:Statement
                     //@#$LPS-LOGGING:Localization:NestedCommand
                     LOG.error("Error relativizing system ID " + systemId, e);
                     //#endif
@@ -406,7 +406,7 @@ class XmiReferenceResolverImpl extends XmiContext {
             return null;
         }
         //#if defined(LOGGING) 
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         if (LOG.isDebugEnabled()) {
             LOG.debug("findModuleURL: modulesPath.size() = " 
                     + modulesPath.size());
@@ -416,7 +416,7 @@ class XmiReferenceResolverImpl extends XmiContext {
             File candidate = new File(moduleDirectory, moduleName);
             //#if defined(LOGGING) 
             //@#$LPS-LOGGING:Localization:NestedCommand
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             if (LOG.isDebugEnabled()) {
                 LOG.debug("candidate '" + candidate.toString() + "' exists="
                         + candidate.exists());
@@ -435,7 +435,7 @@ class XmiReferenceResolverImpl extends XmiContext {
         }
         if (public2SystemIds.containsKey(moduleName)) {
             //#if defined(LOGGING) 
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             if (LOG.isDebugEnabled()) {
                 LOG.debug("Couldn't find user model (\"" + moduleName 
@@ -501,7 +501,7 @@ class XmiReferenceResolverImpl extends XmiContext {
                         .length());
             } 
             //#if defined(LOGGING) 
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             else {
                 LOG.warn("Received systemId with no '/'" + systemId);
@@ -529,7 +529,7 @@ class XmiReferenceResolverImpl extends XmiContext {
                     && CLASSPATH_MODEL_SUFFIXES.length > 0) {
                 for (String suffix : CLASSPATH_MODEL_SUFFIXES) {
                     //#if defined(LOGGING) 
-                    //@#$LPS-LOGGING:GranularityType:Command
+                    //@#$LPS-LOGGING:GranularityType:Statement
                     //@#$LPS-LOGGING:Localization:NestedCommand
                     if (LOG.isDebugEnabled()) {
                         LOG.debug("searching for model reference --> '"
@@ -609,7 +609,7 @@ class XmiReferenceResolverImpl extends XmiContext {
             // exception rather than nesting the exception itself, so
             // we don't have all the information we'd like
             //#if defined(LOGGING) 
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("Error reading external document " + arg0);
             //#endif
             throw new XmiReferenceException(arg0, e);

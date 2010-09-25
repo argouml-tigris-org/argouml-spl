@@ -78,7 +78,7 @@ class XmiHeaderProviderImpl implements XMIHeaderProvider {
             ps.write(header);
         } catch (IOException e) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("Exception while writing XMI header + ", e);
             //#endif
         }

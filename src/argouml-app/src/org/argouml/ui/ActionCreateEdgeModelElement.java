@@ -93,7 +93,7 @@ public class ActionCreateEdgeModelElement extends AbstractAction {
                 rootModel);
         } catch (IllegalModelElementConnectionException e1) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("Exception", e1);
             //#endif
         }

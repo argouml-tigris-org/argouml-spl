@@ -85,7 +85,7 @@ public class SequenceDiagramRenderer extends UmlDiagramRenderer {
             result = new FigComment(node, (Rectangle) null, settings);
         }
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:BeforeReturn
         //@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
         LOG.debug("SequenceDiagramRenderer getFigNodeFor " + result);

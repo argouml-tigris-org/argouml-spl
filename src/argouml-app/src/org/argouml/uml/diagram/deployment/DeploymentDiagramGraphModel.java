@@ -250,7 +250,7 @@ public class DeploymentDiagramGraphModel
         // Both ends must be defined and nodes that are on the graph already.
         if (end0 == null || end1 == null) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             //@#$LPS-LOGGING:Localization:BeforeReturn
             LOG.error("Edge rejected. Its ends are not attached to anything");
@@ -261,7 +261,7 @@ public class DeploymentDiagramGraphModel
         if (!containsNode(end0)
                 && !containsEdge(end0)) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             //@#$LPS-LOGGING:Localization:BeforeReturn
             LOG.error("Edge rejected. Its source end is attached to "
@@ -273,7 +273,7 @@ public class DeploymentDiagramGraphModel
         if (!containsNode(end1)
                 && !containsEdge(end1)) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             //@#$LPS-LOGGING:Localization:BeforeReturn
             LOG.error("Edge rejected. Its destination end is attached to "
@@ -293,7 +293,7 @@ public class DeploymentDiagramGraphModel
     @Override
     public void addNode(Object node) {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         LOG.debug("adding class node!!");
         //#endif
@@ -316,7 +316,7 @@ public class DeploymentDiagramGraphModel
     @Override
     public void addEdge(Object edge) {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         LOG.debug("adding class edge!!!!!!");
         //#endif
@@ -411,7 +411,7 @@ public class DeploymentDiagramGraphModel
             Object me = Model.getFacade().getModelElement(eo);
             if (oldOwned.contains(eo)) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.debug("model removed " + me);
                 //#endif
@@ -447,7 +447,7 @@ public class DeploymentDiagramGraphModel
                 }
             } 
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             else {
                 LOG.debug("model added " + me);
             }

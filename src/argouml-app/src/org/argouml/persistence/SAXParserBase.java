@@ -158,7 +158,7 @@ abstract class SAXParserBase extends DefaultHandler {
             throw new SAXException(e);
         }
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:EndMethod
         if (stats && LOG.isInfoEnabled()) {
             LOG.info("Elapsed time: " + (end - start) + " ms");
@@ -201,7 +201,7 @@ abstract class SAXParserBase extends DefaultHandler {
 
             XMLElement element = createXmlElement(name, atts);
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             if (LOG.isDebugEnabled()) {
                 StringBuffer buf = new StringBuffer();
                 buf.append("START: ").append(name).append(' ').append(element);
@@ -246,7 +246,7 @@ abstract class SAXParserBase extends DefaultHandler {
         if (isElementOfInterest(name)) {
             XMLElement e = elements[--nElements];
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             if (LOG.isDebugEnabled()) {
                 StringBuffer buf = new StringBuffer();
                 buf.append("END: " + e.getName() + " ["
@@ -312,7 +312,7 @@ abstract class SAXParserBase extends DefaultHandler {
             return s;
         } catch (Exception e) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.info("NOTE: Could not open DTD " + systemId
                     + " due to exception");
             //#endif

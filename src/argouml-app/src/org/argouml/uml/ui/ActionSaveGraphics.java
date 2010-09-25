@@ -155,7 +155,7 @@ public class ActionSaveGraphics extends AbstractAction
             ed.setModal(true);
             ed.setVisible(true);
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("Got some exception", e);
             //#endif
         }
@@ -250,12 +250,12 @@ public class ActionSaveGraphics extends AbstractAction
 	    return doSave(file, suffix, false);
 	} catch (FileNotFoundException e) {
 	    //#if defined(LOGGING)
-	    //@#$LPS-LOGGING:GranularityType:Command
+	    //@#$LPS-LOGGING:GranularityType:Statement
 	    LOG.error("File not found error when writing.", e);
 	    //#endif
 	} catch (IOException e) {
 	    //#if defined(LOGGING)
-	    //@#$LPS-LOGGING:GranularityType:Command
+	    //@#$LPS-LOGGING:GranularityType:Statement
 	    LOG.error("IO error when writing.", e);
 	    //#endif
 	}

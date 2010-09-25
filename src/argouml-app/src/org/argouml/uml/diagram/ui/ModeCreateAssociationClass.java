@@ -115,7 +115,7 @@ public class ModeCreateAssociationClass extends ModeCreatePolyEdge {
         DiagramSettings settings = ((ArgoDiagram) ((LayerPerspective) lay)
                 .getDiagram()).getDiagramSettings();
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         LOG.info("Creating Class box for association class");
         //#endif
         FigClassAssociationClass figNode =

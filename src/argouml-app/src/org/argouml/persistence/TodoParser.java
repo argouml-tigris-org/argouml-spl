@@ -108,7 +108,7 @@ class TodoParser extends SAXParserBase {
     public synchronized void readTodoList(
             Reader is) throws SAXException {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         LOG.info("=======================================");
         LOG.info("== READING TO DO LIST");
@@ -158,7 +158,7 @@ class TodoParser extends SAXParserBase {
 
 	    default:
 	        //#if defined(LOGGING)
-	        //@#$LPS-LOGGING:GranularityType:Command
+	        //@#$LPS-LOGGING:GranularityType:Statement
 	        //@#$LPS-LOGGING:Localization:NestedCommand
 		LOG.warn("WARNING: unknown tag:" + e.getName());
 		//#endif
@@ -166,7 +166,7 @@ class TodoParser extends SAXParserBase {
 	    }
 	} catch (Exception ex) {
 	    //#if defined(LOGGING)
-	    //@#$LPS-LOGGING:GranularityType:Command
+	    //@#$LPS-LOGGING:GranularityType:Statement
 	    LOG.error("Exception in startelement", ex);
 	    //#endif
 	}
@@ -223,7 +223,7 @@ class TodoParser extends SAXParserBase {
 
             default:
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
         	LOG.warn("WARNING: unknown end tag:"
         		 + e.getName());

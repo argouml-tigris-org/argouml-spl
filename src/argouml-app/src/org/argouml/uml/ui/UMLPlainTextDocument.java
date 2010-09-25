@@ -234,7 +234,7 @@ public abstract class UMLPlainTextDocument
             }
         } catch (BadLocationException b) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error(
 		      "A BadLocationException happened\n"
 		      + "The string to set was: "

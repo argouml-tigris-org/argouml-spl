@@ -296,7 +296,7 @@ class XmlInputStream extends BufferedInputStream {
                     }
                     endTagName = "/" + tagName;
                     //#if defined(LOGGING)
-                    //@#$LPS-LOGGING:GranularityType:Command
+                    //@#$LPS-LOGGING:GranularityType:Statement
                     //@#$LPS-LOGGING:Localization:NestedCommand
                     LOG.info("Start tag = " + tagName);
                     LOG.info("End tag = " + endTagName);

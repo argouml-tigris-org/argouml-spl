@@ -51,8 +51,8 @@ public class UMLMessageActivatorComboBoxModel extends UMLComboBoxModel2 {
             Object mes = target;
             removeAllElements();
             //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
-            //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
-            //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
+            //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Statement
+            //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Statement
             //@#$LPS-COLLABORATIONDIAGRAM:Localization:EndMethod
             //@#$LPS-SEQUENCEDIAGRAM:Localization:EndMethod
             // fill the list with items

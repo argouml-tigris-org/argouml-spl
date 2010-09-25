@@ -346,7 +346,7 @@ public class PropPanelObjectFlowState extends AbstractPropPanelState
                                 Model.getFacade().getInStates(type));
                         states.remove(state);
                         //#if defined(ACTIVITYDIAGRAM)
-                        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
+                        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Statement
                         Model.getActivityGraphsHelper()
                                 .setInStates(type, states);
                         //#endif
@@ -477,7 +477,7 @@ public class PropPanelObjectFlowState extends AbstractPropPanelState
                 Object parameter = Model.getCoreFactory().createParameter();
                 Model.getCoreHelper().setType(parameter, type);
                 //#if defined(ACTIVITYDIAGRAM)
-                //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
+                //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Statement
                 Model.getActivityGraphsHelper().addParameter(target, parameter);
                 //#endif
             }
@@ -501,7 +501,7 @@ public class PropPanelObjectFlowState extends AbstractPropPanelState
         public void actionPerformed(ActionEvent e) {
             super.actionPerformed(e);
             //#if defined(ACTIVITYDIAGRAM)            
-            //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
+            //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Statement
             //@#$LPS-ACTIVITYDIAGRAM:Localization:EndMethod
             Object param = getObjectToRemove();
             if (param != null) {

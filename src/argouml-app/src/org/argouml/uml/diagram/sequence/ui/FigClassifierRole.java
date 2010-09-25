@@ -675,7 +675,7 @@ public class FigClassifierRole extends FigNodeModelElement
      */
     public void updateActivations() {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         //@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
         LOG.debug("Updating activations");
@@ -1087,7 +1087,7 @@ public class FigClassifierRole extends FigNodeModelElement
             // will end up here any time a new FigClassifierRole is constructed
             // during the setOwner() call - tfm 20080905
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             //@#$LPS-LOGGING:Localization:BeforeReturn
             //@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM

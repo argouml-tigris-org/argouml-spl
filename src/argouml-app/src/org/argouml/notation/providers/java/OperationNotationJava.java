@@ -135,7 +135,7 @@ public class OperationNotationJava extends OperationNotation {
         }
         if (returnParams.size() > 1)  {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             LOG.warn("Java generator only handles one return parameter"
                     + " - Found " + returnParams.size()

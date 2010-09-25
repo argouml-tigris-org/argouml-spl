@@ -63,7 +63,7 @@ public class ActionUseCaseDiagram extends ActionAddDiagram {
     public ArgoDiagram createDiagram(Object namespace) {
         if (!Model.getFacade().isANamespace(namespace)) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             //@#$LPS-LOGGING:Localization:NestedIfdef-USECASEDIAGRAM
             LOG.error("No namespace as argument");
@@ -87,7 +87,7 @@ public class ActionUseCaseDiagram extends ActionAddDiagram {
             DiagramSettings settings) {
         if (!Model.getFacade().isANamespace(namespace)) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             //@#$LPS-LOGGING:Localization:NestedIfdef-USECASEDIAGRAM
             LOG.error("No namespace as argument");

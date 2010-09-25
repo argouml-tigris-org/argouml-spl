@@ -94,17 +94,17 @@ public class ActionExportProfileXMI extends AbstractAction {
         } catch (ProfileException e) {
             // TODO: We should be giving the user more direct feedback
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("Exception", e);
             //#endif
         } catch (IOException e) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("Exception", e);
             //#endif
         } catch (UmlException e) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("Exception", e);
             //#endif
         }

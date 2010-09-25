@@ -78,7 +78,7 @@ public class ActionNew extends AbstractAction {
 
         ProjectBrowser.getInstance().clearDialogs();
         //#if defined(COGNITIVE)
-        //@#$LPS-COGNITIVE:GranularityType:Command
+        //@#$LPS-COGNITIVE:GranularityType:Statement
         Designer.disableCritiquing();
         Designer.clearCritiquing();
         //#endif
@@ -88,7 +88,7 @@ public class ActionNew extends AbstractAction {
         p = ProjectManager.getManager().makeEmptyProject();
         TargetManager.getInstance().setTarget(p.getDiagramList().get(0));
         //#if defined(COGNITIVE)
-        //@#$LPS-COGNITIVE:GranularityType:Command
+        //@#$LPS-COGNITIVE:GranularityType:Statement
         Designer.enableCritiquing();
         //#endif
         Model.getPump().startPumpingEvents();

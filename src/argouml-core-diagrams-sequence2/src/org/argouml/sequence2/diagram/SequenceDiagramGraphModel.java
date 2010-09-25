@@ -161,7 +161,7 @@ class SequenceDiagramGraphModel extends UMLMutableGraphSupport implements
     public Object getCollaboration() {
         if (collaboration == null) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
         	//@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
         	//@#$LPS-LOGGING:Localization:NestedIfdef-COLLABORATIONDIAGRAM
@@ -182,7 +182,7 @@ class SequenceDiagramGraphModel extends UMLMutableGraphSupport implements
      */
     public void setCollaboration(Object c) {
 	//#if defined(LOGGING)
-	//@#$LPS-LOGGING:GranularityType:Command
+	//@#$LPS-LOGGING:GranularityType:Statement
 	//@#$LPS-LOGGING:Localization:StartMethod
     	//@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
         LOG.debug("Setting the collaboration of sequence diagram to " + c);
@@ -204,7 +204,7 @@ class SequenceDiagramGraphModel extends UMLMutableGraphSupport implements
                 Model.getCollaborationsFactory().buildInteraction(
                     collaboration);
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             //@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
             LOG.debug("Interaction built.");
@@ -269,7 +269,7 @@ class SequenceDiagramGraphModel extends UMLMutableGraphSupport implements
         // Both ends must be defined and nodes that are on the graph already.
         if (end0 == null || end1 == null) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:BeforeReturn
             //@#$LPS-LOGGING:Localization:NestedCommand
         	//@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
@@ -280,7 +280,7 @@ class SequenceDiagramGraphModel extends UMLMutableGraphSupport implements
 
         if (!containsNode(end0) && !containsEdge(end0)) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:BeforeReturn
             //@#$LPS-LOGGING:Localization:NestedCommand
         	//@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
@@ -292,7 +292,7 @@ class SequenceDiagramGraphModel extends UMLMutableGraphSupport implements
         }
         if (!containsNode(end1) && !containsEdge(end1)) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:BeforeReturn
             //@#$LPS-LOGGING:Localization:NestedCommand
         	//@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
@@ -418,7 +418,7 @@ class SequenceDiagramGraphModel extends UMLMutableGraphSupport implements
             if (action != null) {
                 Model.getCollaborationsHelper().setAction(message, action);
                 //#if defined(COLLABORATIONDIAGRAM)
-			    //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
+			    //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Statement
 			    //@#$LPS-COLLABORATIONDIAGRAM:Localization:NestedIfdef-SEQUENCEDIAGRAM
                 Model.getCoreHelper().setNamespace(action, getCollaboration());
                 //#endif
@@ -432,7 +432,7 @@ class SequenceDiagramGraphModel extends UMLMutableGraphSupport implements
             edge = message;
         }
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
         if (edge == null) {
             LOG.debug("Incorrect edge");

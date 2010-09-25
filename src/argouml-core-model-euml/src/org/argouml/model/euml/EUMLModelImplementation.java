@@ -185,7 +185,7 @@ public class EUMLModelImplementation implements ModelImplementation {
     public EUMLModelImplementation() {
         initializeEditingDomain();
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:EndMethod
         LOG.debug("EUML Init - editing domain initialized"); //$NON-NLS-1$
         //#endif
@@ -247,7 +247,7 @@ public class EUMLModelImplementation implements ModelImplementation {
             }
             URI uri = URI.createURI("jar:file:" + path + "!/"); //$NON-NLS-1$ //$NON-NLS-2$
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             LOG.debug("eUML.resource URI --> " + uri); //$NON-NLS-1$            
             //#endif

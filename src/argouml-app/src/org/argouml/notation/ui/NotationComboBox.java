@@ -131,7 +131,7 @@ public class NotationComboBox
                 addItem(nn);
             } catch (Exception e) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.error("Unexpected exception", e);
                 //#endif

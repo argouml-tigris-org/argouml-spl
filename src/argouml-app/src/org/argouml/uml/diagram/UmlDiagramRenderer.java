@@ -133,7 +133,7 @@ public abstract class UmlDiagramRenderer
         if (Model.getFacade().isAComment(node)) {
             figNode = new FigComment();
         //#if defined(STATEDIAGRAM)
-        //@#$LPS-STATEDIAGRAM:GranularityType:Command
+        //@#$LPS-STATEDIAGRAM:GranularityType:Statement
         } else if (Model.getFacade().isAStubState(node)) {
             return new FigStubState();
         //#endif
@@ -158,14 +158,14 @@ public abstract class UmlDiagramRenderer
         } else if (Model.getFacade().isAAssociation(node)) {
             figNode = new FigNodeAssociation();
         //#if defined(USECASEDIAGRAM)
-        //@#$LPS-USECASEDIAGRAM:GranularityType:Command
+        //@#$LPS-USECASEDIAGRAM:GranularityType:Statement
         } else if (Model.getFacade().isAActor(node)) {
             figNode = new FigActor();
         } else if (Model.getFacade().isAUseCase(node)) {
             figNode = new FigUseCase();
         //#endif
         //#if defined(ACTIVITYDIAGRAM)
-        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
+        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Statement
         } else if (Model.getFacade().isAPartition(node)) {
             figNode = new FigPartition();
         } else if (Model.getFacade().isACallState(node)) {
@@ -176,7 +176,7 @@ public abstract class UmlDiagramRenderer
             figNode = new FigSubactivityState();
         //#endif
         //#if defined(COLLABORATIONDIAGRAM)
-        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command            
+        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Statement            
         } else if (Model.getFacade().isAClassifierRole(node)) {
             figNode = new FigClassifierRole();
         //#endif
@@ -195,12 +195,12 @@ public abstract class UmlDiagramRenderer
         } else if (Model.getFacade().isAComment(node)) {
             figNode = new FigComment();
         //#if defined(ACTIVITYDIAGRAM)
-        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
+        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Statement
         } else if (Model.getFacade().isAActionState(node)) {
             figNode = new FigActionState();
         //#endif
         //#if defined(STATEDIAGRAM)
-        //@#$LPS-STATEDIAGRAM:GranularityType:Command
+        //@#$LPS-STATEDIAGRAM:GranularityType:Statement
         } else if (Model.getFacade().isAFinalState(node)) {
             figNode = new FigFinalState();
         } else if (Model.getFacade().isASubmachineState(node)) {
@@ -308,17 +308,17 @@ public abstract class UmlDiagramRenderer
         } else if (edge instanceof CommentEdge) {
             newEdge = null;
         //#if defined(COLLABORATIONDIAGRAM)
-        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
+        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Statement
         } else if (Model.getFacade().isAAssociationRole(edge)) {
             newEdge = new FigAssociationRole();
         //#endif
         //#if defined(STATEDIAGRAM)
-        //@#$LPS-STATEDIAGRAM:GranularityType:Command
+        //@#$LPS-STATEDIAGRAM:GranularityType:Statement
         } else if (Model.getFacade().isATransition(edge)) {
             newEdge = new FigTransition();
         //#endif
        //#if defined(USECASEDIAGRAM)
-       //@#$LPS-USECASEDIAGRAM:GranularityType:Command
+       //@#$LPS-USECASEDIAGRAM:GranularityType:Statement
         } else if (Model.getFacade().isAExtend(edge)) {
             newEdge = new FigExtend();
         } else if (Model.getFacade().isAInclude(edge)) {

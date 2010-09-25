@@ -78,7 +78,7 @@ public class AttributeNotationUml extends AttributeNotation {
     protected AttributeNotationUml() {
         super();
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:EndMethod
         LOG.info("Creating AttributeNotationUml");
         //#endif
@@ -421,7 +421,7 @@ public class AttributeNotationUml extends AttributeNotation {
         //      throw pre;
         // }
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         if (LOG.isDebugEnabled()) {
             LOG.debug("ParseAttribute [name: " + name 
                     + " visibility: " + visibility 

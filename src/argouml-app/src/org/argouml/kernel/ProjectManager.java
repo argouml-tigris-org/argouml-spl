@@ -306,7 +306,7 @@ public final class ProjectManager implements ModelCommandCreationObserver {
                 
                 creatingCurrentProject = true;
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 LOG.info("making empty project");
                 //#endif
                 Project newProject = new ProjectImpl();
@@ -340,13 +340,13 @@ public final class ProjectManager implements ModelCommandCreationObserver {
                 project.getProjectSettings().getDefaultDiagramSettings());
         project.addMember(d);
         //#if defined(USECASEDIAGRAM)
-        //@#$LPS-USECASEDIAGRAM:GranularityType:Command
+        //@#$LPS-USECASEDIAGRAM:GranularityType:Statement
         project.addMember(df.create(
                 DiagramFactory.DiagramType.UseCase, model, 
                 project.getProjectSettings().getDefaultDiagramSettings()));
         //#endif
         //#if defined(COGNITIVE)
-        //@#$LPS-COGNITIVE:GranularityType:Command
+        //@#$LPS-COGNITIVE:GranularityType:Statement
         project.addMember(new ProjectMemberTodoList("",
                 project));
         //#endif
@@ -382,7 +382,7 @@ public final class ProjectManager implements ModelCommandCreationObserver {
         // save button/menu item etc.
         
         //#if defined(COGNITIVE)
-        //@#$LPS-COGNITIVE:GranularityType:Command
+        //@#$LPS-COGNITIVE:GranularityType:Statement
         //@#$LPS-COGNITIVE:Localization:EndMethod
         Designer.setSaveAction(save);
         //#endif

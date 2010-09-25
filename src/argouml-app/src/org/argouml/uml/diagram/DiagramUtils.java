@@ -62,7 +62,7 @@ public class DiagramUtils {
             return (ArgoDiagram) layer.getDiagram();
         }
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:BeforeReturn
         LOG.debug("No active diagram");
         //#endif

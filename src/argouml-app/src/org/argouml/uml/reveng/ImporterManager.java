@@ -79,7 +79,7 @@ public final class ImporterManager {
 //        ArgoEventPump.fireEvent(
 //                new ArgoImporterEvent(ArgoEventTypes.IMPORTER_ADDED, gen));
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:EndMethod
         LOG.debug("Added importer " + importer );
         //#endif
@@ -101,7 +101,7 @@ public final class ImporterManager {
 //                            ArgoEventTypes.IMPORTER_REMOVED, old));
 //        }
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:BeforeReturn
         LOG.debug("Removed importer " + importer );
         //#endif

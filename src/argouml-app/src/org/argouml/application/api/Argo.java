@@ -397,7 +397,7 @@ public final class Argo {
 				           .getLastDirectory());
     }
     //#if defined(LOGGING)
-    //@#$LPS-LOGGING:GranularityType:Command
+    //@#$LPS-LOGGING:GranularityType:Statement
     //@#$LPS-LOGGING:Localization:EntireStaticBlock
     static {
 	if (System.getProperty(ARGO_CONSOLE_SUPPRESS) != null) {

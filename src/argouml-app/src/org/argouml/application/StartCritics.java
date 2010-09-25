@@ -75,7 +75,7 @@ public class StartCritics implements Runnable {
             Model.getPump().addModelEventListener(dsgr, model);
         }
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
         LOG.info("spawned critiquing thread");
         //#endif

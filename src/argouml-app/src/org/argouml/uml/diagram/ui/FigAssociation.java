@@ -505,7 +505,7 @@ public class FigAssociation extends FigEdgeModelElement {
     @Override
     public void paint(Graphics g) {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         if (getOwner() == null ) {
             LOG.error("Trying to paint a FigAssociation without an owner. ");

@@ -91,7 +91,7 @@ public class ChildGenUML implements ChildGenerator {
      */
     public Iterator gen2(Object o) {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
         if (LOG.isDebugEnabled()) {

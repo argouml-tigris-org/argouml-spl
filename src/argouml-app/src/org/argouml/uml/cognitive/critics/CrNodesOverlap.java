@@ -84,7 +84,7 @@ public class CrNodesOverlap extends CrUML {
         Diagram d = (Diagram) dm;
 
         //#if defined(SEQUENCEDIAGRAM)
-        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
+        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Statement
         //@#$LPS-SEQUENCEDIAGRAM:Localization:NestedIfdef-COGNITIVE
         // fixes bug #669. Sequencediagrams always overlap, so they shall
         // never report a problem

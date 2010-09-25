@@ -68,7 +68,7 @@ public class StartBrowser {
 		    m.invoke(c.newInstance(), args);
 		} catch (Exception cnfe) {
 		    //#if defined(LOGGING)
-		    //@#$LPS-LOGGING:GranularityType:Command
+		    //@#$LPS-LOGGING:GranularityType:Statement
 		    //@#$LPS-LOGGING:Localization:NestedCommand
 		    LOG.error(cnfe);
 		    LOG.info("Trying a default browser (netscape)");
@@ -86,7 +86,7 @@ public class StartBrowser {
 	catch (IOException ioe) {
 	    // Didn't work.
 	    //#if defined(LOGGING)
-	    //@#$LPS-LOGGING:GranularityType:Command
+	    //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error(ioe);
             //#endif
 	}

@@ -264,7 +264,7 @@ public class DiagramInterface {
             d.setName(getDiagramName(name));
         } catch (PropertyVetoException pve) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("Failed to set diagram name.", pve);
             //#endif
         }

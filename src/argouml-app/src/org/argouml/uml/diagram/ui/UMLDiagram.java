@@ -202,7 +202,7 @@ public abstract class UMLDiagram
             setName(name);
         } catch (PropertyVetoException pve) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.fatal("Name not allowed in construction of diagram");
             //#endif
         }

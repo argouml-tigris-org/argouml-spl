@@ -157,7 +157,7 @@ class XmiReaderImpl implements XmiReader, UnknownElementsListener,
 
         extent = (UmlPackage) modelImpl.createExtent(extentName, readOnly);
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         if (extent == null) {
             LOG.error("Failed to create extent " + extentName);
         }
@@ -165,7 +165,7 @@ class XmiReaderImpl implements XmiReader, UnknownElementsListener,
         
         try {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.info("Loading to extent '" + extentName + "' " + extent);
             //#endif
             InputConfig config = new InputConfig();
@@ -272,7 +272,7 @@ class XmiReaderImpl implements XmiReader, UnknownElementsListener,
                         + unknownElementName);
             }
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             if (ignoredElementCount > 0) {
                 LOG.warn("Ignored one or more elements from list "
                         + ignoredElements);
@@ -336,7 +336,7 @@ class XmiReaderImpl implements XmiReader, UnknownElementsListener,
         throws FileNotFoundException, UmlException, IOException,
             MalformedXMIException {
         //#if defined(LOGGING) 
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         LOG.info("XMI file doesn't appear to be UML 1.4 - "
                 + "attempting UML 1.3->UML 1.4 conversion");
@@ -445,7 +445,7 @@ class XmiReaderImpl implements XmiReader, UnknownElementsListener,
                 // Set up source for style sheet
                 String xsltFileName = STYLE_PATH + styles[i];
                 //#if defined(LOGGING) 
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 if (LOG.isInfoEnabled()) {
                     LOG.info("Transforming with " + xsltFileName);
@@ -471,7 +471,7 @@ class XmiReaderImpl implements XmiReader, UnknownElementsListener,
                 Transformer transformer = stf.newTransformer(xsltStreamSource);
                 transformer.transform(myInput, result);
                 //#if defined(LOGGING) 
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.info("Wrote converted XMI file - " + tmpOutFile
                         + " converted using : " + xsltFileName);
@@ -521,7 +521,7 @@ class XmiReaderImpl implements XmiReader, UnknownElementsListener,
         }
         out.close();
         //#if defined(LOGGING) 
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:BeforeReturn
         LOG.debug("Wrote copied XMI file to " + tmpOutFile);
         //#endif
@@ -620,7 +620,7 @@ class XmiReaderImpl implements XmiReader, UnknownElementsListener,
             unknownElementName = name;
         }
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:EndMethod
         LOG.error("Unknown XMI element named : " + name);
         //#endif
@@ -672,7 +672,7 @@ class XmiReaderImpl implements XmiReader, UnknownElementsListener,
             xmiHeader = new String(bytes);
         } catch (IOException e) {
             //#if defined(LOGGING) 
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("Exception reading XMI file header", e);
             //#endif
         }

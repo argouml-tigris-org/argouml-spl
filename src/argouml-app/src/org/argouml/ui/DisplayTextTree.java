@@ -139,7 +139,7 @@ public class DisplayTextTree extends JTree {
     public String convertValueToText(Object value, boolean selected,
             boolean expanded, boolean leaf, int row, boolean hasFocus) {
         //#if defined(COGNITIVE)
-        //@#$LPS-COGNITIVE:GranularityType:Command
+        //@#$LPS-COGNITIVE:GranularityType:Statement
         //@#$LPS-COGNITIVE:Localization:StartMethod
         if (value instanceof ToDoItem) {
             return ((ToDoItem) value).getHeadline();
@@ -338,7 +338,7 @@ public class DisplayTextTree extends JTree {
 
         super.fireTreeExpanded(path);
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         LOG.debug("fireTreeExpanded");
         //#endif
         if (reexpanding || path == null) {
@@ -356,7 +356,7 @@ public class DisplayTextTree extends JTree {
 
         super.fireTreeCollapsed(path);
         //#if defined(LOGGING)        
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         LOG.debug("fireTreeCollapsed");
         //#endif
         if (path == null || expandedPathsInModel == null) {
@@ -371,7 +371,7 @@ public class DisplayTextTree extends JTree {
      */
     public void setModel(TreeModel newModel) {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         LOG.debug("setModel");
         //#endif
@@ -391,7 +391,7 @@ public class DisplayTextTree extends JTree {
      */
     protected List<TreePath> getExpandedPaths() {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         LOG.debug("getExpandedPaths");
         //#endif
@@ -412,7 +412,7 @@ public class DisplayTextTree extends JTree {
      */
     private void reexpand() {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         LOG.debug("reexpand");
         //#endif

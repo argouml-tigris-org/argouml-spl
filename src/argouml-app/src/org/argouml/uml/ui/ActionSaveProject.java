@@ -80,7 +80,7 @@ public class ActionSaveProject extends AbstractAction {
      */
     public void actionPerformed(ActionEvent e) {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         LOG.info("Performing save action");
         //#endif
@@ -104,7 +104,7 @@ public class ActionSaveProject extends AbstractAction {
             return;
         }
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         if (LOG.isDebugEnabled()) {
             if (!enabled && isEnabled) {
                 Throwable throwable = new Throwable();

@@ -414,7 +414,7 @@ public class CriticBrowserDialog extends ArgoDialog
 	}
 	if (e.getSource() == networkButton) {
 	    //#if defined(LOGGING)
-	    //@#$LPS-LOGGING:GranularityType:Command
+	    //@#$LPS-LOGGING:GranularityType:Statement
 	    //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 	    LOG.debug("TODO: network!");
 	    //#endif
@@ -422,7 +422,7 @@ public class CriticBrowserDialog extends ArgoDialog
 	}
 	if (e.getSource() == configButton) {
 	    //#if defined(LOGGING)
-	    //@#$LPS-LOGGING:GranularityType:Command
+	    //@#$LPS-LOGGING:GranularityType:Statement
 	    //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 	    LOG.debug("TODO: config!");
 	    //#endif
@@ -439,7 +439,7 @@ public class CriticBrowserDialog extends ArgoDialog
             advancedButton.setEnabled(false);
         }
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:EndMethod
         //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 	LOG.debug("unknown src in CriticBrowserDialog: " + e.getSource());
@@ -454,14 +454,14 @@ public class CriticBrowserDialog extends ArgoDialog
 	Object src = lse.getSource();
 	if (src != table.getSelectionModel()) {
 	    //#if defined(LOGGING)
-	    //@#$LPS-LOGGING:GranularityType:Command
+	    //@#$LPS-LOGGING:GranularityType:Statement
 	    //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 	    LOG.debug("src = " + src);
 	    //#endif
 	    return;
 	}
 	//#if defined(LOGGING)
-	//@#$LPS-LOGGING:GranularityType:Command
+	//@#$LPS-LOGGING:GranularityType:Statement
 	//@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 	LOG.debug("got valueChanged from " + src);
 	//#endif
@@ -490,7 +490,7 @@ public class CriticBrowserDialog extends ArgoDialog
      */
     public void insertUpdate(DocumentEvent e) {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 	LOG.debug(getClass().getName() + " insert");
@@ -533,7 +533,7 @@ public class CriticBrowserDialog extends ArgoDialog
 	    setTargetUseClarifiers();
 	} 
 	//#if defined(LOGGING)
-	//@#$LPS-LOGGING:GranularityType:Command
+	//@#$LPS-LOGGING:GranularityType:Statement
 	//@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 	else {
 	    LOG.debug("unknown itemStateChanged src: " + src);	    

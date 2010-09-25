@@ -63,8 +63,8 @@ class ActionSetRepresentedClassifierCollaboration extends UndoableAction {
                 newValue = null;
             }
             //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
-            //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
-            //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
+            //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Statement
+            //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Statement
             //@#$LPS-COLLABORATIONDIAGRAM:Localization:EndMethod
             //@#$LPS-SEQUENCEDIAGRAM:Localization:EndMethod   
             if (Model.getFacade().getRepresentedClassifier(target)

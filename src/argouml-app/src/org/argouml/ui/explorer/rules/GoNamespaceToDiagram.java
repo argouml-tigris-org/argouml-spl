@@ -79,7 +79,7 @@ public class GoNamespaceToDiagram extends AbstractPerspectiveRule {
                 // of the statemachine or activitygraph they belong to.
                 
                 //#if defined(STATEDIAGRAM)
-                //@#$LPS-STATEDIAGRAM:GranularityType:Command
+                //@#$LPS-STATEDIAGRAM:GranularityType:Statement
                 if (diagram instanceof UMLStateDiagram
                         //#if defined(ACTIVITYDIAGRAM)
                         //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Expression

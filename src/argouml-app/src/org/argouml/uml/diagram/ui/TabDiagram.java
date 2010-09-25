@@ -180,7 +180,7 @@ public class TabDiagram
             // This is perfectly normal and happens among other things
             // within the call to setDiagram (below).
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             //@#$LPS-LOGGING:Localization:BeforeReturn
             LOG.debug("target is null in set target or "
@@ -322,7 +322,7 @@ public class TabDiagram
      */
     public void modeChange(ModeChangeEvent mce) {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         LOG.debug("TabDiagram got mode change event");
         //#endif

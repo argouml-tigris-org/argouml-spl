@@ -126,7 +126,7 @@ public class WizNavigable extends UMLWizard {
      */
     public void doAction(int oldStep) {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 	LOG.debug("doAction " + oldStep);
@@ -152,7 +152,7 @@ public class WizNavigable extends UMLWizard {
 		        choice == 1 || choice == 2);
 	    } catch (Exception pve) {
 	        //#if defined(LOGGING)
-	        //@#$LPS-LOGGING:GranularityType:Command
+	        //@#$LPS-LOGGING:GranularityType:Statement
 	        //@#$LPS-LOGGING:Localization:NestedCommand
 	        //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 		LOG.error("could not set navigablity", pve);

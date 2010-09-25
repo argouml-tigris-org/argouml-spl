@@ -81,7 +81,7 @@ public class ActionImportFromSources extends UndoableAction {
             new Import(ArgoFrame.getInstance());
     	} else {
     	    //#if defined(LOGGING)
-    	    //@#$LPS-LOGGING:GranularityType:Command
+    	    //@#$LPS-LOGGING:GranularityType:Statement
     	    //@#$LPS-LOGGING:Localization:NestedCommand
     	    LOG.info("Import sources dialog not shown: no importers!");
     	    //#endif

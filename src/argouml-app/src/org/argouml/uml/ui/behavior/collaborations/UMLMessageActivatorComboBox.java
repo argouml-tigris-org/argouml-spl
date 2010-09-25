@@ -57,8 +57,8 @@ public class UMLMessageActivatorComboBox extends UMLComboBox2 {
      */
     protected void doIt(ActionEvent event) {
         //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
-        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
-        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
+        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Statement
+        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Statement
         //@#$LPS-COLLABORATIONDIAGRAM:Localization:EntireMethod
         //@#$LPS-SEQUENCEDIAGRAM:Localization:EntireMethod        
         Object o = getModel().getElementAt(getSelectedIndex());

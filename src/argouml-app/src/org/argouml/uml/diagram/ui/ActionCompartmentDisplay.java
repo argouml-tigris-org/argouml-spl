@@ -327,7 +327,7 @@ public class ActionCompartmentDisplay extends UndoableAction {
 
             if ((cType & COMPARTMENT_EXTENSIONPOINT) != 0) {
                 //#if defined(USECASEDIAGRAM)
-                //@#$LPS-USECASEDIAGRAM:GranularityType:Command
+                //@#$LPS-USECASEDIAGRAM:GranularityType:Statement
                 if (f instanceof FigUseCase) {
                     ((FigUseCase) f).setExtensionPointVisible(display);
                 }

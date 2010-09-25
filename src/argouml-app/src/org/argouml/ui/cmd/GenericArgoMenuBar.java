@@ -312,7 +312,7 @@ public class GenericArgoMenuBar extends JMenuBar implements
         initMenuArrange();
         initMenuGeneration();
         //#if defined(COGNITIVE)
-        //@#$LPS-COGNITIVE:GranularityType:Command
+        //@#$LPS-COGNITIVE:GranularityType:Statement
         initMenuCritique();
         //#endif
         initMenuTools();
@@ -615,7 +615,7 @@ public class GenericArgoMenuBar extends JMenuBar implements
         createDiagramMenu = add(new JMenu(menuLocalize("Create Diagram")));
         setMnemonic(createDiagramMenu, "Create Diagram");
         //#if defined(USECASEDIAGRAM)
-        //@#$LPS-USECASEDIAGRAM:GranularityType:Command
+        //@#$LPS-USECASEDIAGRAM:GranularityType:Statement
         JMenuItem usecaseDiagram = createDiagramMenu
                 .add(new ActionUseCaseDiagram());
         setMnemonic(usecaseDiagram, "Usecase Diagram");
@@ -630,7 +630,7 @@ public class GenericArgoMenuBar extends JMenuBar implements
         ShortcutMgr.assignAccelerator(classDiagram,
                 ShortcutMgr.ACTION_CLASS_DIAGRAM);
         //#if defined(SEQUENCEDIAGRAM)
-        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
+        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Statement
         JMenuItem sequenzDiagram =
             createDiagramMenu.add(new ActionSequenceDiagram());
         setMnemonic(sequenzDiagram, "Sequenz Diagram");
@@ -639,7 +639,7 @@ public class GenericArgoMenuBar extends JMenuBar implements
                 ShortcutMgr.ACTION_SEQUENCE_DIAGRAM);
         //#endif
         //#if defined(COLLABORATIONDIAGRAM)
-        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command
+        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Statement
         JMenuItem collaborationDiagram =
             createDiagramMenu.add(new ActionCollaborationDiagram());
         setMnemonic(collaborationDiagram, "Collaboration Diagram");
@@ -648,7 +648,7 @@ public class GenericArgoMenuBar extends JMenuBar implements
                 ShortcutMgr.ACTION_COLLABORATION_DIAGRAM);
         //#endif
         //#if defined(STATEDIAGRAM)
-        //@#$LPS-STATEDIAGRAM:GranularityType:Command
+        //@#$LPS-STATEDIAGRAM:GranularityType:Statement
         JMenuItem stateDiagram =
             createDiagramMenu.add(new ActionStateDiagram());
         setMnemonic(stateDiagram, "Statechart Diagram");
@@ -657,7 +657,7 @@ public class GenericArgoMenuBar extends JMenuBar implements
                 ShortcutMgr.ACTION_STATE_DIAGRAM);
         //#endif
         //#if defined(ACTIVITYDIAGRAM)
-        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
+        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Statement
         JMenuItem activityDiagram =
             createDiagramMenu.add(new ActionActivityDiagram());
         setMnemonic(activityDiagram, "Activity Diagram");
@@ -1167,7 +1167,7 @@ public class GenericArgoMenuBar extends JMenuBar implements
                         "macOpenFile", new Class[] {String.class}));
             } catch (Exception e) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.error("Error while loading the OSXAdapter:", e);
                 //#endif

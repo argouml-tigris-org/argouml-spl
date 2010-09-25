@@ -112,7 +112,7 @@ public class SequenceDiagramModule implements ModuleInterface {
                 "org.argouml.uml.diagram.sequence2.ui.FigMessageSpline",
                 "org.argouml.sequence2.diagram.FigMessageSpline");
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:BeforeReturn
         //@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
         LOG.info("SequenceDiagram Module enabled.");
@@ -129,7 +129,7 @@ public class SequenceDiagramModule implements ModuleInterface {
         DiagramFactory.getInstance().registerDiagramFactory(
                 DiagramType.Sequence, (DiagramFactoryInterface2) null);
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:BeforeReturn
         //@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
         LOG.info("SequenceDiagram Module disabled.");

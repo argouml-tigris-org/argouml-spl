@@ -423,7 +423,7 @@ class SavePNGAction2 extends SavePNGAction {
                 saveGraphics(outputStream, ce, dummyArea);
             } catch (java.io.IOException e) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.error("Error while exporting Graphics:", e);
                 //#endif
@@ -452,7 +452,7 @@ class SavePNGAction2 extends SavePNGAction {
         RenderedImage i = new DeferredBufferedImage(canvasArea,
                 BufferedImage.TYPE_INT_ARGB, ce, scale);
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         LOG.debug("Created DeferredBufferedImage - drawingArea = "
                 + canvasArea + " , scale = " + scale);
         //#endif

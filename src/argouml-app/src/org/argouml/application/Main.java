@@ -161,7 +161,7 @@ public class Main {
     public static void main(String[] args) {
         try {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:StartMethod
             LOG.info("ArgoUML Started.");
             //#endif
@@ -239,7 +239,7 @@ public class Main {
             performCommands(commands);
             commands = null;
             //#if defined(COGNITIVE)
-            //@#$LPS-COGNITIVE:GranularityType:Command
+            //@#$LPS-COGNITIVE:GranularityType:Statement
             st.mark("start critics");
             Runnable startCritics = new StartCritics();
             Main.addPostLoadAction(startCritics);
@@ -252,7 +252,7 @@ public class Main {
             Thread postLoadThead = new Thread(pl);
             postLoadThead.start();
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.info("");
             LOG.info("profile of load time ############");
             for (Enumeration i = st.result(); i.hasMoreElements();) {
@@ -270,7 +270,7 @@ public class Main {
         } catch (Throwable t) {
             //#if defined(LOGGING)
             try {                
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 LOG.fatal("Fatal error on startup.  ArgoUML failed to start", 
                         t);
             } finally {
@@ -302,7 +302,7 @@ public class Main {
 
         // then, print out some version info for debuggers...
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         org.argouml.util.Tools.logVersionInfo();
         //#endif
         setSystemProperties();
@@ -317,7 +317,7 @@ public class Main {
         // System to provide proper translation/i18n.
         
         //#if defined(COGNITIVE)
-        //@#$LPS-COGNITIVE:GranularityType:Command
+        //@#$LPS-COGNITIVE:GranularityType:Statement
         //@#$LPS-COGNITIVE:Localization:EndMethod
         org.argouml.cognitive.Translator.setTranslator(
                 new AbstractCognitiveTranslator() {
@@ -446,30 +446,30 @@ public class Main {
         SubsystemUtility.initSubsystem(new InitNotationJava());
         SubsystemUtility.initSubsystem(new InitDiagramAppearanceUI());
         //#if defined(ACTIVITYDIAGRAM)
-        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
+        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Statement
         SubsystemUtility.initSubsystem(new InitActivityDiagram());
         //#endif
         //#if defined(COLLABORATIONDIAGRAM)
-        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Command        
+        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Statement        
         SubsystemUtility.initSubsystem(new InitCollaborationDiagram());
         //#endif
         SubsystemUtility.initSubsystem(new InitDeploymentDiagram());
         //#if defined(SEQUENCEDIAGRAM)
-        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Command
+        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Statement
         SubsystemUtility.initSubsystem(new InitSequenceDiagram());
         //#endif
         //#if defined(STATEDIAGRAM)
-        //@#$LPS-STATEDIAGRAM:GranularityType:Command
+        //@#$LPS-STATEDIAGRAM:GranularityType:Statement
         SubsystemUtility.initSubsystem(new InitStateDiagram());
         //#endif
         SubsystemUtility.initSubsystem(new InitClassDiagram());
         //#if defined(USECASEDIAGRAM)
-        //@#$LPS-USECASEDIAGRAM:GranularityType:Command
+        //@#$LPS-USECASEDIAGRAM:GranularityType:Statement
         SubsystemUtility.initSubsystem(new InitUseCaseDiagram());
         //#endif
         SubsystemUtility.initSubsystem(new InitUmlUI());
         //#if defined(COGNITIVE)
-        //@#$LPS-COGNITIVE:GranularityType:Command
+        //@#$LPS-COGNITIVE:GranularityType:Statement
         SubsystemUtility.initSubsystem(new InitCheckListUI());
         SubsystemUtility.initSubsystem(new InitCognitiveUI());
         //#endif
@@ -499,7 +499,7 @@ public class Main {
         Throwable ret = Model.initialise(className);
         if (ret != null) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             LOG.fatal("Model component not correctly initialized.", ret);
             //#endif
@@ -518,7 +518,7 @@ public class Main {
         
         st.mark("open project");
         //#if defined(COGNITIVE)
-        //@#$LPS-COGNITIVE:GranularityType:Command
+        //@#$LPS-COGNITIVE:GranularityType:Statement
         Designer.disableCritiquing();
         Designer.clearCritiquing();
         //#endif
@@ -558,7 +558,7 @@ public class Main {
 
         st.mark("set project");
         //#if defined(COGNITIVE)
-        //@#$LPS-COGNITIVE:GranularityType:Command
+        //@#$LPS-COGNITIVE:GranularityType:Statement
         //@#$LPS-COGNITIVE:Localization:EndMethod
         Designer.enableCritiquing();
         //#endif
@@ -574,7 +574,7 @@ public class Main {
             File file = new File(s);
             if (file.exists()) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:BeforeReturn
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.info("Re-opening project " + s);
@@ -582,7 +582,7 @@ public class Main {
                 return s;
             } 
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             else {
                 LOG.warn("Cannot re-open " + s
@@ -629,7 +629,7 @@ public class Main {
                 urlToOpen = Util.fileToURL(projectFile);
             } catch (Exception e) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 LOG.error("Exception opening project in main()", e);
                 //#endif
             }
@@ -839,7 +839,7 @@ public class Main {
             ArgoAwtExceptionHandler.class.getName());
 
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:EndStaticBlock
         /*
          *  The string <code>log4j.configuration</code> is the
@@ -920,7 +920,7 @@ public class Main {
         // make the projectbrowser
         JPanel todoPanel;
         //#if defined(COGNITIVE)
-        //@#$LPS-COGNITIVE:GranularityType:Command
+        //@#$LPS-COGNITIVE:GranularityType:Statement
         todoPanel = new ToDoPane(splash);
         //#else
         todoPanel = new JPanel();
@@ -1019,7 +1019,7 @@ class PostLoad implements Runnable {
             Thread.sleep(1000);
         } catch (Exception ex) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("post load no sleep", ex);
             //#endif
         }
@@ -1029,7 +1029,7 @@ class PostLoad implements Runnable {
                 Thread.sleep(100);
             } catch (Exception ex) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 LOG.error("post load no sleep2", ex);
                 //#endif
             }
@@ -1064,7 +1064,7 @@ class LoadModules implements Runnable {
             } catch (ClassNotFoundException e) {
                 /* We don't care if optional modules aren't found. */
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 LOG.debug("Module " + module + " not found");
                 //#endif
             }            
@@ -1077,7 +1077,7 @@ class LoadModules implements Runnable {
     public void run() {
 	huntForInternalModules();
 	//#if defined(LOGGING)
-	//@#$LPS-LOGGING:GranularityType:Command
+	//@#$LPS-LOGGING:GranularityType:Statement
 	//@#$LPS-LOGGING:Localization:EndMethod
         LOG.info("Module loading done");
         //#endif

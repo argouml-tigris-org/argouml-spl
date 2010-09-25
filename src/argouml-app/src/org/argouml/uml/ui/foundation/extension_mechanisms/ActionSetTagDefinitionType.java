@@ -68,7 +68,7 @@ public class ActionSetTagDefinitionType extends UndoableAction {
         super.actionPerformed(e);
         Object source = e.getSource();
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         LOG.debug("Receiving " + e + "/" + e.getID() + "/"
                 + e.getActionCommand());
         //#endif
@@ -84,7 +84,7 @@ public class ActionSetTagDefinitionType extends UndoableAction {
             }
             newType = (String) box.getSelectedItem();
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedCommand
             LOG.debug("Selected item is " + newType);
             //#endif
@@ -92,7 +92,7 @@ public class ActionSetTagDefinitionType extends UndoableAction {
         if (newType != null && !newType.equals(oldType) && tagDef != null) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:Localization:NestedCommand
-            //@#$LPS-LOGGING:GranularityType:Command
+            //@#$LPS-LOGGING:GranularityType:Statement
             LOG.debug("New type is " + newType);
             //#endif
             Model.getExtensionMechanismsHelper().setTagType(tagDef, newType);

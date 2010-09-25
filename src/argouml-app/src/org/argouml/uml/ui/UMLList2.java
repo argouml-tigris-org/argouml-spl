@@ -142,7 +142,7 @@ public abstract class UMLList2
             if (lm instanceof UMLModelElementListModel2) {
                 if (((UMLModelElementListModel2) lm).buildPopup(popup, index)) {
                     //#if defined(LOGGING)
-                    //@#$LPS-LOGGING:GranularityType:Command
+                    //@#$LPS-LOGGING:GranularityType:Statement
                     //@#$LPS-LOGGING:Localization:NestedCommand
                     LOG.debug("Showing popup");
                     //#endif

@@ -144,7 +144,7 @@ public class DetailsPane
      */
     public DetailsPane(String compassPoint, Orientation theOrientation) {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         LOG.info("making DetailsPane(" + compassPoint + ")");
         //#endif
@@ -452,7 +452,7 @@ public class DetailsPane
      */
     public void stateChanged(ChangeEvent e) {
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:Command
+        //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
         LOG.debug("DetailsPane state changed");
         //#endif
@@ -522,7 +522,7 @@ public class DetailsPane
         //TODO: should fire its own event and ProjectBrowser
         //should register a listener
         //#if defined(LOGGING)
-        //@#$LPS-LOGGING:GranularityType:MethodyBody
+        //@#$LPS-LOGGING:GranularityType:MethodBody
         //@#$LPS-LOGGING:Localization:EntireMethod
         LOG.debug("double: "
                 + topLevelTabbedPane.getComponentAt(tab).toString());

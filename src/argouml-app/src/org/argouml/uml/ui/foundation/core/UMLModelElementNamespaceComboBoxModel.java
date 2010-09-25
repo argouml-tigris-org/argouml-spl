@@ -118,7 +118,7 @@ public class UMLModelElementNamespaceComboBoxModel extends UMLComboBoxModel2 {
             if (namespace != null && !elements.contains(namespace)) {
                 elements.add(namespace);
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:GranularityType:Command
+                //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.warn("The current namespace is not a valid one!");
                 //#endif

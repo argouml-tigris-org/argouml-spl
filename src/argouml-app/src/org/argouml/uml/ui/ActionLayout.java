@@ -102,7 +102,7 @@ public class ActionLayout extends UndoableAction {
         if (diagram instanceof UMLClassDiagram) {
             layouter = new ClassdiagramLayouter(diagram);
         //#if defined(ACTIVITYDIAGRAM)
-        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Command
+        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Statement
         } else if (diagram instanceof UMLActivityDiagram) {
             layouter = 
                  new ActivityDiagramLayouter(diagram);
