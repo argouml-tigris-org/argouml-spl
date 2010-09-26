@@ -1,3 +1,6 @@
+//#if defined(DEPLOYMENTDIAGRAM)
+//@#$LPS-DEPLOYMENTDIAGRAM:GranularityType:Package
+
 // $Id$
 // Copyright (c) 2003-2008 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
@@ -34,6 +37,7 @@ import javax.swing.Action;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
+//@#$LPS-LOGGING:Localization:NestedIfdef-DEPLOYMENTDIAGRAM
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.i18n.Translator;
@@ -52,6 +56,7 @@ import org.argouml.uml.diagram.ui.RadioAction;
 import org.argouml.uml.diagram.ui.UMLDiagram;
 //#if defined(USECASEDIAGRAM)
 //@#$LPS-USECASEDIAGRAM:GranularityType:Import
+//@#$LPS-USECASEDIAGRAM:Localization:NestedIfdef-DEPLOYMENTDIAGRAM
 import org.argouml.uml.diagram.use_case.ui.FigActor;
 //#endif
 import org.argouml.util.ToolBarUtility;
@@ -72,6 +77,7 @@ import org.tigris.gef.presentation.FigNode;
 public class UMLDeploymentDiagram extends UMLDiagram {
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
+    //@#$LPS-LOGGING:Localization:NestedIfdef-DEPLOYMENTDIAGRAM
     /**
      * Logger.
      */
@@ -146,7 +152,8 @@ public class UMLDeploymentDiagram extends UMLDiagram {
         if (!Model.getFacade().isANamespace(handle)) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
+            //@#$LPS-LOGGING:Localization:NestedIfdef-DEPLOYMENTDIAGRAM
             LOG.error(
                 "Illegal argument. Object " + handle + " is not a namespace");
             //#endif
@@ -518,7 +525,8 @@ public class UMLDeploymentDiagram extends UMLDiagram {
 		|| facade.isAComponentInstance(modelElement)) {
 	    //#if defined(LOGGING)
 	    //@#$LPS-LOGGING:GranularityType:Statement
-	    //@#$LPS-LOGGING:Localization:NestedCommand
+	    //@#$LPS-LOGGING:Localization:NestedStatement
+	    //@#$LPS-LOGGING:Localization:NestedIfdef-DEPLOYMENTDIAGRAM
 	    LOG.info("Setting namespace of " + modelElement);
 	    //#endif
 	    super.setModelElementNamespace(modelElement, namespace);
@@ -572,6 +580,7 @@ public class UMLDeploymentDiagram extends UMLDiagram {
             return true;
         //#if defined(USECASEDIAGRAM)
         //@#$LPS-USECASEDIAGRAM:GranularityType:Statement
+        //@#$LPS-USECASEDIAGRAM:Localization:NestedIfdef-DEPLOYMENTDIAGRAM
         } else if (Model.getFacade().isAActor(objectToAccept)) {
             return true;
         //#endif
@@ -609,6 +618,7 @@ public class UMLDeploymentDiagram extends UMLDiagram {
             figNode = new FigObject(droppedObject, bounds, settings);
         //#if defined(USECASEDIAGRAM)
         //@#$LPS-USECASEDIAGRAM:GranularityType:Statement
+        //@#$LPS-USECASEDIAGRAM:Localization:NestedIfdef-DEPLOYMENTDIAGRAM
         } else if (Model.getFacade().isAActor(droppedObject)) {
             figNode = new FigActor(droppedObject, bounds, settings);
         //#endif
@@ -624,7 +634,8 @@ public class UMLDeploymentDiagram extends UMLDiagram {
             }
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
+            //@#$LPS-LOGGING:Localization:NestedIfdef-DEPLOYMENTDIAGRAM
             LOG.debug("Dropped object " + droppedObject + " converted to " 
                     + figNode);
             //#endif
@@ -632,11 +643,12 @@ public class UMLDeploymentDiagram extends UMLDiagram {
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:BeforeReturn
+        //@#$LPS-LOGGING:Localization:NestedIfdef-DEPLOYMENTDIAGRAM
         else {
             LOG.debug("Dropped object NOT added " + figNode);
         }
         //#endif
         return figNode;
     }
-
 }
+//#endif

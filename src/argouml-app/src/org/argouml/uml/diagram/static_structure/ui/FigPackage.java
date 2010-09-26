@@ -705,7 +705,7 @@ public class FigPackage extends FigNodeModelElement
 		    } catch (Exception ex) {
 		        //#if defined(LOGGING)
 		        //@#$LPS-LOGGING:GranularityType:Statement
-		        //@#$LPS-LOGGING:Localization:NestedCommand
+		        //@#$LPS-LOGGING:Localization:NestedStatement
 		        LOG.error(ex);
 		        //#endif
 		    }
@@ -842,7 +842,7 @@ public class FigPackage extends FigNodeModelElement
 	    
 	    //#if defined(LOGGING)
 	    //@#$LPS-LOGGING:GranularityType:Statement
-	    //@#$LPS-LOGGING:Localization:NestedCommand
+	    //@#$LPS-LOGGING:Localization:NestedStatement
 	    if (LOG.isInfoEnabled() && mee.getNewValue() == null) {
 		LOG.info(Model.getFacade().getName(mee.getOldValue())
                         + " has been removed from the namespace of "

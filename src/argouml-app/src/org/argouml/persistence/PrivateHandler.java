@@ -215,7 +215,7 @@ class PrivateHandler
                     
                     //#if defined(LOGGING)
                     //@#$LPS-LOGGING:GranularityType:Statement
-                    //@#$LPS-LOGGING:Localization:NestedCommand
+                    //@#$LPS-LOGGING:Localization:NestedStatement
                     else {
                         LOG.warn("PGML stored pathitem class name does "
                                 + "not match the class name on the "

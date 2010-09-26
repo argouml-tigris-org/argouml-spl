@@ -398,7 +398,12 @@ This is designed to work in two different environments:
 			<echo message="COLLABORATIONDIAGRAM"/>
 		</then>
 	</if>  	  	
-  	
+	<if>
+		<isset property="DEPLOYMENTDIAGRAM"/>
+		<then>
+			<echo message="DEPLOYMENTDIAGRAM"/>
+		</then>
+	</if>  	
   </target>
 	
   <!-- =================================================================== -->

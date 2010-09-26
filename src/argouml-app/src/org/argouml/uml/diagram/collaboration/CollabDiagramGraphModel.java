@@ -222,7 +222,7 @@ public class CollabDiagramGraphModel extends UMLMutableGraphSupport
         if (end0 == null || end1 == null) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             //@#$LPS-LOGGING:Localization:NestedIfdef-COLLABORATIONDIAGRAM
             LOG.error("Edge rejected. Its ends are not attached to anything");
             //#endif
@@ -233,7 +233,7 @@ public class CollabDiagramGraphModel extends UMLMutableGraphSupport
                 && !containsEdge(end0)) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             //@#$LPS-LOGGING:Localization:NestedIfdef-COLLABORATIONDIAGRAM
             LOG.error("Edge rejected. Its source end is attached to " + end0
                     + " but this is not in the graph model");
@@ -244,7 +244,7 @@ public class CollabDiagramGraphModel extends UMLMutableGraphSupport
                 && !containsEdge(end1)) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             //@#$LPS-LOGGING:Localization:NestedIfdef-COLLABORATIONDIAGRAM
             LOG.error("Edge rejected. Its destination end is attached to "
                     + end1 + " but this is not in the graph model");
@@ -385,7 +385,7 @@ public class CollabDiagramGraphModel extends UMLMutableGraphSupport
 	    if (oldOwned.contains(eo)) {
 	        //#if defined(LOGGING)
 	        //@#$LPS-LOGGING:GranularityType:Statement
-	        //@#$LPS-LOGGING:Localization:NestedCommand
+	        //@#$LPS-LOGGING:Localization:NestedStatement
 	        //@#$LPS-LOGGING:Localization:NestedIfdef-COLLABORATIONDIAGRAM
 		LOG.debug("model removed " + me);
 		//#endif
@@ -401,7 +401,7 @@ public class CollabDiagramGraphModel extends UMLMutableGraphSupport
 	    }
 	    //#if defined(LOGGING)
 	    //@#$LPS-LOGGING:GranularityType:Statement
-	    //@#$LPS-LOGGING:Localization:NestedCommand
+	    //@#$LPS-LOGGING:Localization:NestedStatement
 	    //@#$LPS-LOGGING:Localization:NestedIfdef-COLLABORATIONDIAGRAM
 	    else {
 		LOG.debug("model added " + me);

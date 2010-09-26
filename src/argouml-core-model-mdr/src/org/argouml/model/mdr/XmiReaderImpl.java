@@ -446,7 +446,7 @@ class XmiReaderImpl implements XmiReader, UnknownElementsListener,
                 String xsltFileName = STYLE_PATH + styles[i];
                 //#if defined(LOGGING) 
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 if (LOG.isInfoEnabled()) {
                     LOG.info("Transforming with " + xsltFileName);
                 }
@@ -472,7 +472,7 @@ class XmiReaderImpl implements XmiReader, UnknownElementsListener,
                 transformer.transform(myInput, result);
                 //#if defined(LOGGING) 
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 LOG.info("Wrote converted XMI file - " + tmpOutFile
                         + " converted using : " + xsltFileName);
                 //#endif

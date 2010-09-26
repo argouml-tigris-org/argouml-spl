@@ -189,7 +189,7 @@ public final class ExplorerEventAdaptor
                     } catch (InvalidElementException e) {
                         //#if defined(LOGGING)
                         //@#$LPS-LOGGING:GranularityType:Statement
-                        //@#$LPS-LOGGING:Localization:NestedCommand
+                        //@#$LPS-LOGGING:Localization:NestedStatement
                         if (LOG.isDebugEnabled()) {
                             LOG.debug("updateLayout method accessed "
                                     + "deleted element", e);

@@ -307,14 +307,14 @@ public class TabStyle extends AbstractArgoJPanel implements TabFigTarget,
             } catch (IllegalAccessException ignore) {
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 LOG.error(ignore);
                 //#endif
                 return null;
             } catch (InstantiationException ignore) {
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 LOG.error(ignore);
                 //#endif
                 return null;

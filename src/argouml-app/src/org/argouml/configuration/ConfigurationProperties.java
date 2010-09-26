@@ -205,7 +205,7 @@ class ConfigurationProperties extends ConfigurationHandler {
                     if (result) {
                         //#if defined(LOGGING)
                         //@#$LPS-LOGGING:GranularityType:Statement
-                        //@#$LPS-LOGGING:Localization:NestedCommand
+                        //@#$LPS-LOGGING:Localization:NestedStatement
                         LOG.info("Configuration copied from " 
                                 + oldFile + " to " + file);
                         //#endif
@@ -213,7 +213,7 @@ class ConfigurationProperties extends ConfigurationHandler {
                     //#if defined(LOGGING)
                     else {
                         //@#$LPS-LOGGING:GranularityType:Statement
-                        //@#$LPS-LOGGING:Localization:NestedCommand
+                        //@#$LPS-LOGGING:Localization:NestedStatement
                         LOG.error("Error copying old configuration to new, "
                              + "see previous log messages");
                     }
@@ -236,14 +236,14 @@ class ConfigurationProperties extends ConfigurationHandler {
                     propertyBundle.load(new FileInputStream(file));
                     //#if defined(LOGGING)
                     //@#$LPS-LOGGING:GranularityType:Statement
-                    //@#$LPS-LOGGING:Localization:NestedCommand
+                    //@#$LPS-LOGGING:Localization:NestedStatement
                     LOG.info("Configuration loaded from " + file);
                     //#endif
                     return true;
                 } catch (final IOException e) {
                     //#if defined(LOGGING)
                     //@#$LPS-LOGGING:GranularityType:Statement
-                    //@#$LPS-LOGGING:Localization:NestedCommand
+                    //@#$LPS-LOGGING:Localization:NestedStatement
                     if (canComplain) {
                         LOG.warn("Unable to load configuration " + file);
                     }

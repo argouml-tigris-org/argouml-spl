@@ -393,7 +393,7 @@ public class CriticBrowserDialog extends ArgoDialog
     private void setTargetUseClarifiers() {
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:MethodBody
-	//@#$LPS-LOGGING:Localization:NestedCommand
+	//@#$LPS-LOGGING:Localization:NestedStatement
         //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 	LOG.debug("setting clarifier usage rule");
 	//#endif

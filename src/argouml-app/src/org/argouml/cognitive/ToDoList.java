@@ -183,7 +183,7 @@ public class ToDoList extends Observable implements Runnable {
                     } catch (InterruptedException ignore) {
                         //#if defined(LOGGING)
                         //@#$LPS-LOGGING:GranularityType:Statement
-                        //@#$LPS-LOGGING:Localization:NestedCommand
+                        //@#$LPS-LOGGING:Localization:NestedStatement
                         //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
                         LOG.error("InterruptedException!!!", ignore);
                         //#endif                        
@@ -250,7 +250,7 @@ public class ToDoList extends Observable implements Runnable {
                     buf.append(item.toString());
                     //#if defined(LOGGING)
                     //@#$LPS-LOGGING:GranularityType:Statement
-                    //@#$LPS-LOGGING:Localization:NestedCommand
+                    //@#$LPS-LOGGING:Localization:NestedStatement
                     //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
                     LOG.error(buf.toString(), ex);
                     //#endif
@@ -474,7 +474,7 @@ public class ToDoList extends Observable implements Runnable {
                     if (elems.next().equals(rc)) {
                         //#if defined(LOGGING)
                         //@#$LPS-LOGGING:GranularityType:Statement
-                        //@#$LPS-LOGGING:Localization:NestedCommand
+                        //@#$LPS-LOGGING:Localization:NestedStatement
                         //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
                         LOG.debug("ToDoItem not added because it was resolved");
                         //#endif

@@ -337,7 +337,7 @@ class ProfileConfigurationParser extends SAXParserBase {
             default:
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 LOG.warn("WARNING: unknown tag:" + e.getName());
                 //#endif
                 break;

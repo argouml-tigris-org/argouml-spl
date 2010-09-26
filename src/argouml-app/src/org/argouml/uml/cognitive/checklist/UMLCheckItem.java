@@ -112,7 +112,7 @@ public class UMLCheckItem extends CheckItem {
 	        // Really ought to have a CriticException to throw here.
 	        //#if defined(LOGGING)
 	        //@#$LPS-LOGGING:GranularityType:Statement
-	        //@#$LPS-LOGGING:Localization:NestedCommand
+	        //@#$LPS-LOGGING:Localization:NestedStatement
 	        //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 	        LOG.error("Failed to evaluate critic expression", e);
 	        //#endif

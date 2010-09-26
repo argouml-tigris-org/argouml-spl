@@ -226,7 +226,7 @@ public class UserDefinedProfile extends Profile {
                 } 
                 //#if defined(COGNITIVE)
                 //@#$LPS-COGNITIVE:GranularityType:Statement
-                //@#$LPS-COGNITIVE:Localization:NestedCommand
+                //@#$LPS-COGNITIVE:Localization:NestedStatement
                 else {
                     if (displayName == null) {
                         displayName = Translator
@@ -236,7 +236,7 @@ public class UserDefinedProfile extends Profile {
                 //#endif
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 LOG.info("profile " + displayName);
                 //#endif
                 // load profile dependencies
@@ -252,7 +252,7 @@ public class UserDefinedProfile extends Profile {
                     if (profile != null) {
                         //#if defined(LOGGING)
                         //@#$LPS-LOGGING:GranularityType:Statement
-                        //@#$LPS-LOGGING:Localization:NestedCommand
+                        //@#$LPS-LOGGING:Localization:NestedStatement
                         LOG.debug("AddingDependency " + profile);
                         //#endif
                         this.addProfileDependency(ProfileFacade.getManager()
@@ -275,7 +275,7 @@ public class UserDefinedProfile extends Profile {
                 if (tagName == null) {
                     //#if defined(LOGGING)
                     //@#$LPS-LOGGING:GranularityType:Statement
-                    //@#$LPS-LOGGING:Localization:NestedCommand
+                    //@#$LPS-LOGGING:Localization:NestedStatement
                     LOG.debug("profile package with stereotype "
                             + Model.getFacade().getName(stereotype)
                             + " contains a null tag definition");
@@ -283,7 +283,7 @@ public class UserDefinedProfile extends Profile {
                 } else if (tagName.toLowerCase().equals("figure")) {
                     //#if defined(LOGGING)
                     //@#$LPS-LOGGING:GranularityType:Statement
-                    //@#$LPS-LOGGING:Localization:NestedCommand
+                    //@#$LPS-LOGGING:Localization:NestedStatement
                     LOG.debug("AddFigNode "
                             + Model.getFacade().getName(stereotype));
                     //#endif
@@ -297,7 +297,7 @@ public class UserDefinedProfile extends Profile {
                     } catch (IOException e) {
                         //#if defined(LOGGING)
                         //@#$LPS-LOGGING:GranularityType:Statement
-                        //@#$LPS-LOGGING:Localization:NestedCommand
+                        //@#$LPS-LOGGING:Localization:NestedStatement
                         LOG.error("Error loading FigNode", e);
                         //#endif
                     }

@@ -1,5 +1,6 @@
-//#if defined(COGNITIVE)
+//#if defined(COGNITIVE) and defined(DEPLOYMENTDIAGRAM)
 //@#$LPS-COGNITIVE:GranularityType:Package
+//@#$LPS-DEPLOYMENTDIAGRAM:GranularityType:Class
 
 // $Id$
 // Copyright (c) 1996-2006 The Regents of the University of California. All

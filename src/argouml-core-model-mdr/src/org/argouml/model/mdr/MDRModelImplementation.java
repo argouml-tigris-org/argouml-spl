@@ -198,7 +198,7 @@ public class MDRModelImplementation implements ModelImplementation {
         synchronized (extents) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             if (umlPackage == null) {
                 LOG.debug("umlPackage is null - no current extent");
             }
@@ -225,7 +225,7 @@ public class MDRModelImplementation implements ModelImplementation {
                         } catch (InvalidObjectException e) {
                             //#if defined(LOGGING)
                             //@#$LPS-LOGGING:GranularityType:Statement
-                            //@#$LPS-LOGGING:Localization:NestedCommand
+                            //@#$LPS-LOGGING:Localization:NestedStatement
                             LOG.debug("User model extent already deleted");
                             //#endif
                         }
@@ -234,7 +234,7 @@ public class MDRModelImplementation implements ModelImplementation {
                 }
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 if (LOG.isDebugEnabled()) {
                     LOG.debug("Created new " + (readOnly ? "readonly " : "")
                             + "extent " + umlPackage);
@@ -283,7 +283,7 @@ public class MDRModelImplementation implements ModelImplementation {
             Boolean result = extents.get(extent);
             if (result == null) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:BeforeReturn
                 LOG.warn("Unable to find extent " + extent);
@@ -421,13 +421,13 @@ public class MDRModelImplementation implements ModelImplementation {
             }
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             LOG.debug("MDR Init - created MOF extent");
             //#endif
             XMIReader reader = XMIReaderFactory.getDefault().createXMIReader();
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             LOG.debug("MDR Init - created XMI reader");
             //#endif
             String metafacade =
@@ -442,7 +442,7 @@ public class MDRModelImplementation implements ModelImplementation {
             }
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             LOG.debug("MDR Init - read UML metamodel");
             //#endif
         }
@@ -547,14 +547,14 @@ public class MDRModelImplementation implements ModelImplementation {
                     deleteExtentUnchecked(oldPackage);
                     //#if defined(LOGGING)
                     //@#$LPS-LOGGING:GranularityType:Statement
-                    //@#$LPS-LOGGING:Localization:NestedCommand
+                    //@#$LPS-LOGGING:Localization:NestedStatement
                     LOG.debug("MDR Init - UML extent existed - "
                             + "deleted it and all UML data");
                     //#endif
                 } catch (InvalidObjectException e) {
                     //#if defined(LOGGING)
                     //@#$LPS-LOGGING:GranularityType:Statement
-                    //@#$LPS-LOGGING:Localization:NestedCommand
+                    //@#$LPS-LOGGING:Localization:NestedStatement
                     LOG.debug("Got error deleting old default user extent");
                     //#endif
                 }
@@ -562,7 +562,7 @@ public class MDRModelImplementation implements ModelImplementation {
             umlPackage = (UmlPackage) createExtent(MODEL_EXTENT_NAME, false);
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             //@#$LPS-LOGGING:Localization:BeforeReturn
             LOG.debug("Created default extent");
             //#endif

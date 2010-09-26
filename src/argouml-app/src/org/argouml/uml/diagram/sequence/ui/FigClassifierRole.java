@@ -1088,7 +1088,7 @@ public class FigClassifierRole extends FigNodeModelElement
             // during the setOwner() call - tfm 20080905
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             //@#$LPS-LOGGING:Localization:BeforeReturn
             //@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
             LOG.debug("Got a ClassifierRole - only legal on load");

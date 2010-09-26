@@ -163,13 +163,13 @@ public class ActionSaveAllGraphics extends AbstractAction {
             catch ( FileNotFoundException ignore ) {
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 LOG.error("got a FileNotFoundException", ignore);
                 //#endif
             }
             catch ( IOException ignore ) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 //@#$LPS-LOGGING:GranularityType:Statement
                 LOG.error("got an IOException", ignore);
                 //#endif

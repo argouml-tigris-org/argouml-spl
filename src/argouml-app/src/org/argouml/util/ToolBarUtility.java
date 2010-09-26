@@ -171,7 +171,7 @@ public class ToolBarUtility {
             if (actions[i] instanceof Action) {
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 LOG.info("Adding a " + actions[i] + " to the toolbar");
                 //#endif
                 Action a = (Action) actions[i];
@@ -194,7 +194,7 @@ public class ToolBarUtility {
             } 
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             else {
         	LOG.error("Can't add a " + actions[i] + " to the toolbar");
             }

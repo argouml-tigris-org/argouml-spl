@@ -156,7 +156,7 @@ public class ActionDeleteModelElements extends UndoableAction {
             } catch (InvalidElementException e) {
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 LOG.debug("Model element deleted twice - ignoring 2nd delete");
                 //#endif
             }

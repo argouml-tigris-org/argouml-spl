@@ -167,14 +167,14 @@ class DiagramNameDocument implements DocumentListener, TargetListener {
                     } catch (BadLocationException e1) {
                         //#if defined(LOGGING)
                         //@#$LPS-LOGGING:GranularityType:Statement
-                        //@#$LPS-LOGGING:Localization:NestedCommand
+                        //@#$LPS-LOGGING:Localization:NestedStatement
                         LOG.debug("Nested exception", e1);
                         //#endif
                     }
                 } catch (BadLocationException ble) {
                     //#if defined(LOGGING)
                     //@#$LPS-LOGGING:GranularityType:Statement
-                    //@#$LPS-LOGGING:Localization:NestedCommand
+                    //@#$LPS-LOGGING:Localization:NestedStatement
                     LOG.debug(ble);
                     //#endif
                 }                

@@ -142,7 +142,7 @@ class MemberList implements List<ProjectMember> {
         } else if (todoList == member) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             LOG.info("Removing todo list");
             //#endif
             setTodoList(null);
@@ -150,7 +150,7 @@ class MemberList implements List<ProjectMember> {
         } else if (profileConfiguration == member) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             LOG.info("Removing profile configuration");
             //#endif
             profileConfiguration = null;
@@ -159,7 +159,7 @@ class MemberList implements List<ProjectMember> {
             final boolean removed = diagramMembers.remove(member);
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             //@#$LPS-LOGGING:Localization:BeforeReturn
             if (!removed) {
                 LOG.warn("Failed to remove diagram member " + member);

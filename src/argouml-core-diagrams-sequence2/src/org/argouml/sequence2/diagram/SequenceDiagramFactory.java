@@ -92,7 +92,7 @@ public class SequenceDiagramFactory
             } catch (PropertyVetoException e) {
         	//#if defined(LOGGING)
         	//@#$LPS-LOGGING:GranularityType:Statement
-        	//@#$LPS-LOGGING:Localization:NestedCommand
+        	//@#$LPS-LOGGING:Localization:NestedStatement
             //@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
                 LOG.error("Cannot set the name " + name + 
                         " to the diagram just created: "+ diagram.getName(), e);

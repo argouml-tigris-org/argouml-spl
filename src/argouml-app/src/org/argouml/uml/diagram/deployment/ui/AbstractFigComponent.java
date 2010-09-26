@@ -1,3 +1,6 @@
+//#if defined(DEPLOYMENTDIAGRAM)
+//@#$LPS-DEPLOYMENTDIAGRAM:GranularityType:Package
+
 // $Id$
 // Copyright (c) 2007-2009 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
@@ -245,3 +248,4 @@ public abstract class AbstractFigComponent extends FigNodeModelElement {
     }
 
 }
+//#endif

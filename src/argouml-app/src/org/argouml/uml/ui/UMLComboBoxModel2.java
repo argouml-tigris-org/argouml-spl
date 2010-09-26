@@ -416,7 +416,7 @@ public abstract class UMLComboBoxModel2 extends AbstractListModel
         if (theNewTarget != null && theNewTarget.equals(comboBoxTarget)) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             LOG.debug("Ignoring duplicate setTarget request " + theNewTarget);
             //#endif
             return;

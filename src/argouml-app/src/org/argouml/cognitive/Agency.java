@@ -190,7 +190,7 @@ public class Agency extends Observable { //implements java.io.Serialization
             } catch (java.lang.ClassNotFoundException e) {
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 LOG.error("Error loading cr " + crClassName, e);
                 //#endif
                 return;
@@ -200,14 +200,14 @@ public class Agency extends Observable { //implements java.io.Serialization
             } catch (java.lang.IllegalAccessException e) {
                 //#if defined(LOGGING)       
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 LOG.error("Error instancating cr " + crClassName, e);
                 //#endif
                 return;
             } catch (java.lang.InstantiationException e) {
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 LOG.error("Error instancating cr " + crClassName, e);
                 //#endif
                 return;                
@@ -239,7 +239,7 @@ public class Agency extends Observable { //implements java.io.Serialization
             notifyStaticObservers(cr);
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             LOG.debug("Registered: " + theCritics.toString());
             //#endif
             cachedCritics.remove(clazz);
@@ -370,7 +370,7 @@ public class Agency extends Observable { //implements java.io.Serialization
                 } catch (Exception ex) {
                     //#if defined(LOGGING)
                     //@#$LPS-LOGGING:GranularityType:Statement
-                    //@#$LPS-LOGGING:Localization:NestedCommand
+                    //@#$LPS-LOGGING:Localization:NestedStatement
                     LOG.error("Disabling critique due to exception\n"
 			      + c + "\n" + dm,
 			      ex);

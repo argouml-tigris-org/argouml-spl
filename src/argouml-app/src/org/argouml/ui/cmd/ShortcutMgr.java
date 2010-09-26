@@ -70,7 +70,10 @@ import org.argouml.uml.ui.ActionClassDiagram;
 import org.argouml.uml.ui.ActionCollaborationDiagram;
 //#endif
 import org.argouml.uml.ui.ActionDeleteModelElements;
+//#if defined(DEPLOYMENTDIAGRAM)
+//@#$LPS-DEPLOYMENTDIAGRAM:GranularityType:Import
 import org.argouml.uml.ui.ActionDeploymentDiagram;
+//#endif
 import org.argouml.uml.ui.ActionGenerateAll;
 import org.argouml.uml.ui.ActionGenerateOne;
 import org.argouml.uml.ui.ActionGenerateProjectCode;
@@ -246,9 +249,11 @@ public class ShortcutMgr {
     /** Action key for activity diagram */
     public static final String ACTION_ACTIVITY_DIAGRAM = "activityDiagrams";
     //#endif
+    //#if defined(DEPLOYMENTDIAGRAM)
+    //@#$LPS-DEPLOYMENTDIAGRAM:GranularityType:Field
     /** Action key for deployment diagram */
     public static final String ACTION_DEPLOYMENT_DIAGRAM = "deploymentDiagrams";
-
+    //#endif
     /** Action key for generate one */
     public static final String ACTION_GENERATE_ONE = "generateOne";
 
@@ -506,7 +511,7 @@ public class ShortcutMgr {
                 } catch (Exception exc) {
                     //#if defined(LOGGING)
                     //@#$LPS-LOGGING:GranularityType:Statement
-                    //@#$LPS-LOGGING:Localization:NestedCommand
+                    //@#$LPS-LOGGING:Localization:NestedStatement
                     LOG.error("Exception: " + exc);
                     //#endif
                 }
@@ -705,9 +710,11 @@ public class ShortcutMgr {
         putDefaultShortcut(ACTION_ACTIVITY_DIAGRAM, null,
                 new ActionActivityDiagram());
         //#endif
+        //#if defined(DEPLOYMENTDIAGRAM)
+        //@#$LPS-DEPLOYMENTDIAGRAM:GranularityType:Statement
         putDefaultShortcut(ACTION_DEPLOYMENT_DIAGRAM, null,
                 new ActionDeploymentDiagram());
-
+        //#endif
         // generate menu
         putDefaultShortcut(ACTION_GENERATE_ONE, null, new ActionGenerateOne());
         putDefaultShortcut(ACTION_GENERATE_PROJECT_CODE, null,

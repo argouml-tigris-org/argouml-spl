@@ -99,7 +99,7 @@ public class HelpBox extends JFrame implements HyperlinkListener {
             } catch ( MalformedURLException e) {
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 LOG.warn( pages[i][0] + " URL malformed: " + pages[i][1]);
                 //#endif
             }
@@ -110,7 +110,7 @@ public class HelpBox extends JFrame implements HyperlinkListener {
                 } catch ( IOException e) {
                     //#if defined(LOGGING)
                     //@#$LPS-LOGGING:GranularityType:Statement
-                    //@#$LPS-LOGGING:Localization:NestedCommand
+                    //@#$LPS-LOGGING:Localization:NestedStatement
                     LOG.warn("Attempted to read a bad URL: " + paneURL);
                     //#endif
                 }

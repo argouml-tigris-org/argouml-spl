@@ -187,7 +187,7 @@ public class ProfileConfiguration extends AbstractProjectMember {
             } catch (ProfileException e) {
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 LOG.warn("Error retrieving profile's " + p + " packages.", e);
                 //#endif
             }

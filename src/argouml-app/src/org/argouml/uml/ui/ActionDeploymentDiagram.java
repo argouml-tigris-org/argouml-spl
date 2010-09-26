@@ -1,3 +1,6 @@
+//#if defined(DEPLOYMENTDIAGRAM)
+//@#$LPS-DEPLOYMENTDIAGRAM:GranularityType:Class
+
 // $Id$
 // Copyright (c) 1996-2007 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
@@ -26,6 +29,7 @@ package org.argouml.uml.ui;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
+//@#$LPS-LOGGING:Localization:NestedIfdef-DEPLOYMENTDIAGRAM
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.model.Model;
@@ -38,6 +42,7 @@ import org.argouml.uml.diagram.DiagramFactory;
 public class ActionDeploymentDiagram extends ActionAddDiagram {
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
+    //@#$LPS-LOGGING:Localization:NestedIfdef-DEPLOYMENTDIAGRAM
     /**
      * Logger.
      */
@@ -61,7 +66,8 @@ public class ActionDeploymentDiagram extends ActionAddDiagram {
         if (!Model.getFacade().isANamespace(namespace)) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
+            //@#$LPS-LOGGING:Localization:NestedIfdef-DEPLOYMENTDIAGRAM
             LOG.error("No namespace as argument");
             LOG.error(namespace);
             //#endif
@@ -83,8 +89,9 @@ public class ActionDeploymentDiagram extends ActionAddDiagram {
         // according to the uml spec
         if (!Model.getFacade().isANamespace(namespace)) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             //@#$LPS-LOGGING:GranularityType:Statement
+            //@#$LPS-LOGGING:Localization:NestedIfdef-DEPLOYMENTDIAGRAM
             LOG.error("No namespace as argument");
             LOG.error(namespace);
             //#endif
@@ -128,3 +135,4 @@ public class ActionDeploymentDiagram extends ActionAddDiagram {
      */
     private static final long serialVersionUID = 9027235104963895167L;
 } 
+//#endif

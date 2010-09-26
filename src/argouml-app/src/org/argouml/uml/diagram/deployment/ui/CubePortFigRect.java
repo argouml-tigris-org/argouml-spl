@@ -1,3 +1,6 @@
+//#if defined(DEPLOYMENTDIAGRAM)
+//@#$LPS-DEPLOYMENTDIAGRAM:GranularityType:Package
+
 // $Id$
 // Copyright (c) 2005-2006 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
@@ -89,3 +92,4 @@ class CubePortFigRect extends FigRect {
      */
     private static final long serialVersionUID = -136360467045533658L;
 }
+//#endif

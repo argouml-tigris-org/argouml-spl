@@ -118,7 +118,7 @@ public abstract class AbstractSection {
                         } while (endSectionId == null);
                         //#if defined(LOGGING)
                         //@#$LPS-LOGGING:GranularityType:Statement
-                        //@#$LPS-LOGGING:Localization:NestedCommand
+                        //@#$LPS-LOGGING:Localization:NestedStatement
                         if (!endSectionId.equals(sectionId)) {  
                             LOG.error("Mismatch between sectionId (\""
                                     + sectionId + "\") and endSectionId (\""

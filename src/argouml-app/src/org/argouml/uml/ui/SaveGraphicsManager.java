@@ -424,7 +424,7 @@ class SavePNGAction2 extends SavePNGAction {
             } catch (java.io.IOException e) {
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 LOG.error("Error while exporting Graphics:", e);
                 //#endif
             }

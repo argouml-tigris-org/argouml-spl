@@ -45,7 +45,7 @@ public class AwtExceptionHandler {
     public void handle(Throwable t) {
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:MethodBody
-        //@#$LPS-LOGGING:Localization:NestedCommand
+        //@#$LPS-LOGGING:Localization:NestedStatement
         try {
             LOG.error("Last chance error handler in AWT thread caught", t);
         } catch (Throwable t2) {

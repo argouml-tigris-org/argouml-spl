@@ -151,7 +151,7 @@ class ZargoFilePersister extends UmlFilePersister {
                 if (projectMember.getType().equalsIgnoreCase("xmi")) {
                     //#if defined(LOGGING)
                     //@#$LPS-LOGGING:GranularityType:Statement
-                    //@#$LPS-LOGGING:Localization:NestedCommand
+                    //@#$LPS-LOGGING:Localization:NestedStatement
                     if (LOG.isInfoEnabled()) {
                         LOG.info("Saving member of type: "
                                 + projectMember.getType());
@@ -303,7 +303,7 @@ class ZargoFilePersister extends UmlFilePersister {
                     persister = getMemberFilePersister(ext);
                     //#if defined(LOGGING)
                     //@#$LPS-LOGGING:GranularityType:Statement
-                    //@#$LPS-LOGGING:Localization:NestedCommand
+                    //@#$LPS-LOGGING:Localization:NestedStatement
                     LOG.info("Loading member with "
                             + persister.getClass().getName());
                     //#endif
@@ -431,7 +431,7 @@ class ZargoFilePersister extends UmlFilePersister {
             if (line.trim().equals("</argo>") && memberCount == 0) {
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 LOG.info("Inserting member info");
                 //#endif
                 writer.println("<member type='xmi' name='.xmi' />");
@@ -544,7 +544,7 @@ class ZargoFilePersister extends UmlFilePersister {
         while ((ch = reader.read()) != -1) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             if (ch == 0xFFFF) {
                 LOG.info("Stripping out 0xFFFF from save file");
             } else if (ch == 8) {

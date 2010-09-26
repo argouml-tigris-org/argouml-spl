@@ -90,7 +90,7 @@ public class CrMultipleInitialStates extends CrUML {
         if (cs == null) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
             LOG.debug("null parent state");
             //#endif
@@ -134,7 +134,7 @@ public class CrMultipleInitialStates extends CrUML {
         if (cs == null) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
             LOG.debug("null parent in still valid");
             //#endif

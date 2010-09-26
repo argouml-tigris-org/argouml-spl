@@ -298,7 +298,7 @@ public final class ResourceLoaderWrapper {
                 icon = lookupIconResource(cName);
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 if (icon == null) {
                     LOG.debug("Can't find icon for " + cName);
                 } else 

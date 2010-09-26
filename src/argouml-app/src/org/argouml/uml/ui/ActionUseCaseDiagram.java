@@ -64,7 +64,7 @@ public class ActionUseCaseDiagram extends ActionAddDiagram {
         if (!Model.getFacade().isANamespace(namespace)) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             //@#$LPS-LOGGING:Localization:NestedIfdef-USECASEDIAGRAM
             LOG.error("No namespace as argument");
             LOG.error(namespace);
@@ -88,7 +88,7 @@ public class ActionUseCaseDiagram extends ActionAddDiagram {
         if (!Model.getFacade().isANamespace(namespace)) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             //@#$LPS-LOGGING:Localization:NestedIfdef-USECASEDIAGRAM
             LOG.error("No namespace as argument");
             LOG.error(namespace);

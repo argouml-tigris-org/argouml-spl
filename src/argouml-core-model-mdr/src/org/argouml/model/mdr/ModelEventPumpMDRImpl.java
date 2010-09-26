@@ -339,7 +339,7 @@ class ModelEventPumpMDRImpl extends AbstractModelEventPump implements
             } 
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement            
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             else if (ae.isOfType(AssociationEvent.EVENT_ASSOCIATION_SET)) {                
                 LOG.error("Unexpected EVENT_ASSOCIATION_SET received");
             } else {
@@ -489,7 +489,7 @@ class ModelEventPumpMDRImpl extends AbstractModelEventPump implements
             for (PropertyChangeListener pcl : listeners) {
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 if (false /*(LOG.isDebugEnabled()*/) {
                     
                     LOG.debug("Firing event on " + pcl.getClass().getName()
@@ -503,7 +503,7 @@ class ModelEventPumpMDRImpl extends AbstractModelEventPump implements
             // OR the logging for every event which is fired - not both
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             if (false/*LOG.isDebugEnabled()*/) {                
                 LOG.debug("No listener for "
                         + modelImpl.getMetaTypes().getName(event)
@@ -563,7 +563,7 @@ class ModelEventPumpMDRImpl extends AbstractModelEventPump implements
         if (listener == null || modelElement == null) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             LOG.error("Attempt to unregister null listener(" + listener
                     + ") or modelElement (" + modelElement
                     + ")! [Property names: " + propertyNames + "]");
@@ -573,7 +573,7 @@ class ModelEventPumpMDRImpl extends AbstractModelEventPump implements
         if (!(modelElement instanceof RefBaseObject)) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             LOG.error("Ignoring non-RefBaseObject received by "
                     + "unregisterModelEvent - " + modelElement);
             //#endif
@@ -610,7 +610,7 @@ class ModelEventPumpMDRImpl extends AbstractModelEventPump implements
             String className = getClassName(modelClass);
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             if (LOG.isDebugEnabled()) {
                 LOG.debug("Register class ["
                         + modelImpl.getMetaTypes().getName(modelClass)
@@ -643,7 +643,7 @@ class ModelEventPumpMDRImpl extends AbstractModelEventPump implements
             String className = getClassName(modelClass);
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             if (LOG.isDebugEnabled()) {
                 LOG.debug("Unregister class [" + className
                         + ", properties:" + formatArray(propertyNames)
@@ -802,7 +802,7 @@ class ModelEventPumpMDRImpl extends AbstractModelEventPump implements
             String name = element.getName();
             //#if defined(LOGGING)          
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             if (names.containsKey(name)) {                
                 LOG.error("Found duplicate class '" + name + "' in metamodel");
             } else {
@@ -1079,7 +1079,7 @@ class Registry<T> {
             } 
             //#if defined(LOGGING) 
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             else {
                 if (LOG.isDebugEnabled()) {
                     LOG.debug("Duplicate registration attempt for " + key + ":"

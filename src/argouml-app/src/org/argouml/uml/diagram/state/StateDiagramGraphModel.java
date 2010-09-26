@@ -226,7 +226,7 @@ public class StateDiagramGraphModel extends UMLMutableGraphSupport implements
         if (end0 == null || end1 == null) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             //@#$LPS-LOGGING:Localization:BeforeReturn
             //@#$LPS-LOGGING:Localization:NestedIfdef-STATEDIAGRAM
             //@#$LPS-LOGGING:Localization:NestedIfdef-ACTIVITYDIAGRAM
@@ -239,7 +239,7 @@ public class StateDiagramGraphModel extends UMLMutableGraphSupport implements
                 && !containsEdge(end0)) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             //@#$LPS-LOGGING:Localization:BeforeReturn
             //@#$LPS-LOGGING:Localization:NestedIfdef-STATEDIAGRAM
             //@#$LPS-LOGGING:Localization:NestedIfdef-ACTIVITYDIAGRAM
@@ -253,7 +253,7 @@ public class StateDiagramGraphModel extends UMLMutableGraphSupport implements
                 && !containsEdge(end1)) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             //@#$LPS-LOGGING:Localization:BeforeReturn
             //@#$LPS-LOGGING:Localization:NestedIfdef-STATEDIAGRAM
             //@#$LPS-LOGGING:Localization:NestedIfdef-ACTIVITYDIAGRAM
@@ -341,7 +341,7 @@ public class StateDiagramGraphModel extends UMLMutableGraphSupport implements
         if (!(Model.getFacade().isAStateVertex(fromPort))) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             //@#$LPS-LOGGING:Localization:NestedIfdef-STATEDIAGRAM
             //@#$LPS-LOGGING:Localization:NestedIfdef-ACTIVITYDIAGRAM
             LOG.error("internal error not from sv");
@@ -351,7 +351,7 @@ public class StateDiagramGraphModel extends UMLMutableGraphSupport implements
         if (!(Model.getFacade().isAStateVertex(toPort))) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             //@#$LPS-LOGGING:Localization:NestedIfdef-STATEDIAGRAM
             //@#$LPS-LOGGING:Localization:NestedIfdef-ACTIVITYDIAGRAM
             LOG.error("internal error not to sv");
@@ -412,7 +412,7 @@ public class StateDiagramGraphModel extends UMLMutableGraphSupport implements
             } catch (Exception ex) {
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 //@#$LPS-LOGGING:Localization:NestedIfdef-STATEDIAGRAM
                 //@#$LPS-LOGGING:Localization:NestedIfdef-ACTIVITYDIAGRAM
                 LOG.error("buildConnection() failed", ex);
@@ -422,7 +422,7 @@ public class StateDiagramGraphModel extends UMLMutableGraphSupport implements
         } else {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             //@#$LPS-LOGGING:Localization:BeforeReturn
             //@#$LPS-LOGGING:Localization:NestedIfdef-STATEDIAGRAM
             //@#$LPS-LOGGING:Localization:NestedIfdef-ACTIVITYDIAGRAM
@@ -449,7 +449,7 @@ public class StateDiagramGraphModel extends UMLMutableGraphSupport implements
             if (oldOwned.contains(eo)) {
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 //@#$LPS-LOGGING:Localization:NestedIfdef-STATEDIAGRAM
                 //@#$LPS-LOGGING:Localization:NestedIfdef-ACTIVITYDIAGRAM
                 LOG.debug("model removed " + me);

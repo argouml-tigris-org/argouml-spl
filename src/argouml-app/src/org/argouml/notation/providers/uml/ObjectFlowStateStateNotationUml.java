@@ -145,7 +145,7 @@ public class ObjectFlowStateStateNotationUml extends
                     String name = (String) i.next();
                     //#if defined(ACTIVITYDIAGRAM)            
                     //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Statement
-                    //@#$LPS-ACTIVITYDIAGRAM:Localization:NestedCommand                    
+                    //@#$LPS-ACTIVITYDIAGRAM:Localization:NestedStatement                    
                     /*
                      * Now we have to see if any state in any statemachine of
                      * classifier is named [name]. If so, then we only have to
@@ -172,7 +172,7 @@ public class ObjectFlowStateStateNotationUml extends
                 }
                 //#if defined(ACTIVITYDIAGRAM)                
                 //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Statement
-                //@#$LPS-ACTIVITYDIAGRAM:Localization:NestedCommand
+                //@#$LPS-ACTIVITYDIAGRAM:Localization:NestedStatement
                 /* Finally, do the adaptations: */
                 Model.getActivityGraphsHelper().setInStates(c, states);
                 //#endif
@@ -185,7 +185,7 @@ public class ObjectFlowStateStateNotationUml extends
                     String nextToken = tokenizer.nextToken().trim();
                     //#if defined(ACTIVITYDIAGRAM)
                     //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Statement
-                    //@#$LPS-ACTIVITYDIAGRAM:Localization:NestedCommand
+                    //@#$LPS-ACTIVITYDIAGRAM:Localization:NestedStatement
                     Object state =
                         Model.getActivityGraphsHelper()
                             .findStateByName(c, nextToken);
@@ -208,7 +208,7 @@ public class ObjectFlowStateStateNotationUml extends
                 //#if defined(ACTIVITYDIAGRAM)
                 // let's create a new ClassifierInState with the correct links
                 //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Statement
-                //@#$LPS-ACTIVITYDIAGRAM:Localization:NestedCommand
+                //@#$LPS-ACTIVITYDIAGRAM:Localization:NestedStatement
                 Object cis =
                     Model.getActivityGraphsFactory()
                         .buildClassifierInState(c, statesToBeAdded);

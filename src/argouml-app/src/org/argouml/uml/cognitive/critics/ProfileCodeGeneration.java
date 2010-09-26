@@ -110,14 +110,17 @@ public class ProfileCodeGeneration extends Profile {
         critics.add(new CrUnconventionalAttrName());
         critics.add(new CrUnconventionalClassName());
         critics.add(new CrUnconventionalPackName());
+        //#if defined(DEPLOYMENTDIAGRAM)
+        //@#$LPS-DEPLOYMENTDIAGRAM:GranularityType:Statement
         critics.add(new CrNodeInsideElement());
-        critics.add(new CrNodeInstanceInsideElement());
+        critics.add(new CrNodeInstanceInsideElement());        
         critics.add(new CrComponentWithoutNode());
         critics.add(new CrCompInstanceWithoutNode());
         critics.add(new CrClassWithoutComponent());
         critics.add(new CrInterfaceWithoutComponent());
         critics.add(new CrObjectWithoutComponent());
         critics.add(new CrInstanceWithoutClassifier());
+        //#endif
         critics.add(noTrans1);
         critics.add(noTrans2);                                  
         

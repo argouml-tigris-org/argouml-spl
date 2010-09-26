@@ -89,7 +89,10 @@ import org.argouml.uml.diagram.activity.ui.InitActivityDiagram;
 //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Import
 import org.argouml.uml.diagram.collaboration.ui.InitCollaborationDiagram;
 //#endif
+//#if defined(DEPLOYMENTDIAGRAM)
+//@#$LPS-DEPLOYMENTDIAGRAM:GranularityType:Import
 import org.argouml.uml.diagram.deployment.ui.InitDeploymentDiagram;
+//#endif
 //#if defined(SEQUENCEDIAGRAM)
 //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Import
 import org.argouml.uml.diagram.sequence.ui.InitSequenceDiagram;
@@ -453,7 +456,10 @@ public class Main {
         //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Statement        
         SubsystemUtility.initSubsystem(new InitCollaborationDiagram());
         //#endif
+        //#if defined(DEPLOYMENTDIAGRAM)
+        //@#$LPS-DEPLOYMENTDIAGRAM:GranularityType:Statement
         SubsystemUtility.initSubsystem(new InitDeploymentDiagram());
+        //#endif
         //#if defined(SEQUENCEDIAGRAM)
         //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Statement
         SubsystemUtility.initSubsystem(new InitSequenceDiagram());
@@ -500,7 +506,7 @@ public class Main {
         if (ret != null) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             LOG.fatal("Model component not correctly initialized.", ret);
             //#endif
             System.err.println(className
@@ -576,14 +582,14 @@ public class Main {
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:BeforeReturn
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 LOG.info("Re-opening project " + s);
                 //#endif
                 return s;
             } 
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             else {
                 LOG.warn("Cannot re-open " + s
                         + " because it does not exist");

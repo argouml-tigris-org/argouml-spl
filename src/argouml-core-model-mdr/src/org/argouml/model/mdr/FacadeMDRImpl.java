@@ -4023,7 +4023,7 @@ class FacadeMDRImpl implements Facade {
                 }
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 // TODO: Implement support for multiple TaggedValues
                 if (values.size() + refValues.size() > 1) {
                     LOG.warn("Don't know how to manage multiple values "
@@ -4047,7 +4047,7 @@ class FacadeMDRImpl implements Facade {
                     // TODO: Implement support for types other than String
                     //#if defined(LOGGING)
                     //@#$LPS-LOGGING:GranularityType:Statement
-                    //@#$LPS-LOGGING:Localization:NestedCommand
+                    //@#$LPS-LOGGING:Localization:NestedStatement
                     LOG.warn("Can't handled TaggedValue.dataValues which "
                             + " aren't Strings.  Converting to String");
                     //#endif

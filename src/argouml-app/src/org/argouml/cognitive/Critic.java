@@ -451,7 +451,7 @@ public class Critic
 	if (!isActive()) {
 	    //#if defined(LOGGING)
 	    //@#$LPS-LOGGING:GranularityType:Statement
-	    //@#$LPS-LOGGING:Localization:NestedCommand
+	    //@#$LPS-LOGGING:Localization:NestedStatement
 	    //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 	    LOG.warn("got to stillvalid while not active");
 	    //#endif
@@ -803,14 +803,14 @@ public class Critic
             } catch (IllegalAccessException illEx) {
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
                 LOG.error("Could not access wizard: ", illEx);
                 //#endif
             } catch (InstantiationException instEx) {                
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
                 LOG.error("Could not instantiate wizard: ", instEx);
                 //#endif

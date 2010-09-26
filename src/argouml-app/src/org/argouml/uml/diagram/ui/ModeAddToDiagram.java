@@ -114,7 +114,7 @@ public class ModeAddToDiagram extends FigModifyingModeImpl {
     	if (me.isConsumed()) {
     	    //#if defined(LOGGING)
     	    //@#$LPS-LOGGING:GranularityType:Statement
-    	    //@#$LPS-LOGGING:Localization:NestedCommand
+    	    //@#$LPS-LOGGING:Localization:NestedStatement
             if (LOG.isDebugEnabled()) {
                 LOG.debug("MouseReleased but rejected as already consumed");
             }
@@ -149,7 +149,7 @@ public class ModeAddToDiagram extends FigModifyingModeImpl {
                     pers.setLocation(snapPt.x + (count++ * 100), snapPt.y);
                     //#if defined(LOGGING)
                     //@#$LPS-LOGGING:GranularityType:Statement
-                    //@#$LPS-LOGGING:Localization:NestedCommand
+                    //@#$LPS-LOGGING:Localization:NestedStatement
                     if (LOG.isDebugEnabled()) {
                         LOG.debug("mouseMoved: Location set ("
                                 + pers.getX() + "," + pers.getY() + ")");
@@ -212,7 +212,7 @@ public class ModeAddToDiagram extends FigModifyingModeImpl {
     public void keyTyped(KeyEvent ke) {
         if (ke.getKeyChar() == KeyEvent.VK_ESCAPE) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             //@#$LPS-LOGGING:GranularityType:Statement
             LOG.debug("ESC pressed");
             //#endif

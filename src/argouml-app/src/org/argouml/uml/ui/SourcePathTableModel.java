@@ -112,7 +112,7 @@ class SourcePathTableModel extends DefaultTableModel {
                 } 
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 else {
                     LOG.warn("Can't assign a type to this model element: "
                             + me);
@@ -123,7 +123,7 @@ class SourcePathTableModel extends DefaultTableModel {
                 });
             } 
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             //@#$LPS-LOGGING:GranularityType:Statement
             else {
                 LOG.warn("Unexpected: the source path for " + me + " is null!");

@@ -162,7 +162,7 @@ class SequenceDiagramGraphModel extends UMLMutableGraphSupport implements
         if (collaboration == null) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
         	//@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
         	//@#$LPS-LOGGING:Localization:NestedIfdef-COLLABORATIONDIAGRAM
             LOG.debug("The collaboration is null so creating a new collaboration");
@@ -205,7 +205,7 @@ class SequenceDiagramGraphModel extends UMLMutableGraphSupport implements
                     collaboration);
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             //@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
             LOG.debug("Interaction built.");
             //#endif
@@ -271,7 +271,7 @@ class SequenceDiagramGraphModel extends UMLMutableGraphSupport implements
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:BeforeReturn
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
         	//@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
             LOG.error("Edge rejected. Its ends are not attached to anything");
             //#endif
@@ -282,7 +282,7 @@ class SequenceDiagramGraphModel extends UMLMutableGraphSupport implements
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:BeforeReturn
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
         	//@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
             LOG.error("Edge rejected. Its source end is attached to "
                     + end0
@@ -294,7 +294,7 @@ class SequenceDiagramGraphModel extends UMLMutableGraphSupport implements
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:BeforeReturn
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
         	//@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
             LOG.error("Edge rejected. Its destination end is attached to "
                     + end1

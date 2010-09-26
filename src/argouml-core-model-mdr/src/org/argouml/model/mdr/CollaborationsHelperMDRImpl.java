@@ -461,7 +461,7 @@ class CollaborationsHelperMDRImpl implements CollaborationsHelper {
                 }
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 LOG.info("allAvailableFeatures " + returnList.size());
                 //#endif
                 return returnList;
@@ -495,7 +495,7 @@ class CollaborationsHelperMDRImpl implements CollaborationsHelper {
                 }
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 LOG.info("allAvailableContents " + returnList.size());
                 //#endif
                 return returnList;

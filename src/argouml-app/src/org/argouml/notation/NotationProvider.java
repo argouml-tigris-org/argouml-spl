@@ -199,7 +199,7 @@ public abstract class NotationProvider {
         if (Model.getUmlFactory().isRemoved(modelElement)) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             //@#$LPS-LOGGING:Localization:BeforeReturn
             LOG.warn("Encountered deleted object during delete of " 
                     + modelElement);
@@ -222,7 +222,7 @@ public abstract class NotationProvider {
         if (Model.getUmlFactory().isRemoved(element)) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             LOG.warn("Encountered deleted object during delete of " + element);
             //#endif
             return;
@@ -291,7 +291,7 @@ public abstract class NotationProvider {
         if (Model.getUmlFactory().isRemoved(element)) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             LOG.warn("Encountered deleted object during delete of " + element);
             //#endif
             return;

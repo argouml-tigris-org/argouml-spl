@@ -89,7 +89,7 @@ public class LanguageComboBox
             } catch (Exception e) {
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 LOG.error("Unexpected exception", e);
                 //#endif
             }

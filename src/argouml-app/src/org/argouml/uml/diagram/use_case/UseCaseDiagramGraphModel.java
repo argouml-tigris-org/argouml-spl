@@ -56,7 +56,7 @@ public class UseCaseDiagramGraphModel
         implements VetoableChangeListener {
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
-    //@#$LPS-LOGGING:Localization:NestedCommand
+    //@#$LPS-LOGGING:Localization:NestedStatement
     //@#$LPS-LOGGING:Localization:NestedIfdef-USECASEDIAGRAM
     /**
      * Logger.
@@ -283,7 +283,7 @@ public class UseCaseDiagramGraphModel
         if (sourceModelElement == null || destModelElement == null) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             //@#$LPS-LOGGING:Localization:BeforeReturn
             //@#$LPS-LOGGING:Localization:NestedIfdef-USECASEDIAGRAM
             LOG.error("Edge rejected. Its ends are not attached to anything");
@@ -295,7 +295,7 @@ public class UseCaseDiagramGraphModel
                 && !containsEdge(sourceModelElement)) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             //@#$LPS-LOGGING:Localization:BeforeReturn
             //@#$LPS-LOGGING:Localization:NestedIfdef-USECASEDIAGRAM
             LOG.error("Edge rejected. Its source end is attached to "
@@ -308,7 +308,7 @@ public class UseCaseDiagramGraphModel
                 && !containsEdge(destModelElement)) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             //@#$LPS-LOGGING:Localization:BeforeReturn
             //@#$LPS-LOGGING:Localization:NestedIfdef-USECASEDIAGRAM
             LOG.error("Edge rejected. Its destination end is attached to "
@@ -571,7 +571,7 @@ public class UseCaseDiagramGraphModel
 
             if (oldOwned.contains(eo)) {
                 //#if defined(LOGGING)
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedIfdef-USECASEDIAGRAM
                 LOG.debug("model removed " + me);
@@ -593,7 +593,7 @@ public class UseCaseDiagramGraphModel
             } 
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             //@#$LPS-LOGGING:Localization:NestedIfdef-USECASEDIAGRAM
             else {
                 // Something was added - nothing for us to worry about                

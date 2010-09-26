@@ -120,7 +120,7 @@ public abstract class ArgoFigGroup extends FigGroup implements ArgoFig {
             } 
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             else {
                 LOG.debug("Found non-Argo fig nested");
             }

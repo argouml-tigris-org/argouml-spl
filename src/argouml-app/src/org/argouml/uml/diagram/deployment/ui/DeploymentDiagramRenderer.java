@@ -1,3 +1,6 @@
+//#if defined(DEPLOYMENTDIAGRAM)
+//@#$LPS-DEPLOYMENTDIAGRAM:GranularityType:Package
+
 // $Id$
 // Copyright (c) 2003-2008 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
@@ -29,6 +32,7 @@ import java.util.Map;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
+//@#$LPS-LOGGING:Localization:NestedIfdef-DEPLOYMENTDIAGRAM
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.model.Model;
@@ -60,6 +64,7 @@ public class DeploymentDiagramRenderer extends UmlDiagramRenderer {
     static final long serialVersionUID = 8002278834226522224L;
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
+    //@#$LPS-LOGGING:Localization:NestedIfdef-DEPLOYMENTDIAGRAM
     /**
      * Logger.
      */
@@ -88,7 +93,8 @@ public class DeploymentDiagramRenderer extends UmlDiagramRenderer {
         } else {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
+            //@#$LPS-LOGGING:Localization:NestedIfdef-DEPLOYMENTDIAGRAM
             LOG.debug("TODO: DeploymentDiagramRenderer getFigNodeFor");
             //#endif
             return null;
@@ -191,3 +197,4 @@ public class DeploymentDiagramRenderer extends UmlDiagramRenderer {
         return newEdge;
     }
 }
+//#endif

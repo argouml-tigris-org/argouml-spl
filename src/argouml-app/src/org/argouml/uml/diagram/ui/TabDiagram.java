@@ -181,7 +181,7 @@ public class TabDiagram
             // within the call to setDiagram (below).
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             //@#$LPS-LOGGING:Localization:BeforeReturn
             LOG.debug("target is null in set target or "
 		      + "not an instance of UMLDiagram");

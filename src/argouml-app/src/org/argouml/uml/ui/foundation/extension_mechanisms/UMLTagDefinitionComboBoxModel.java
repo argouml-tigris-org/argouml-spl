@@ -85,7 +85,7 @@ public class UMLTagDefinitionComboBoxModel  extends UMLComboBoxModel2 {
         if (Model.getFacade().isATagDefinition(evt.getSource())) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             LOG.debug("Got TagDefinition event " + evt.toString());
             //#endif
             // Just mark for rebuild next time since we use lazy loading
@@ -93,7 +93,7 @@ public class UMLTagDefinitionComboBoxModel  extends UMLComboBoxModel2 {
         } else if ("stereotype".equals(evt.getPropertyName())) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             LOG.debug("Got stereotype event " + evt.toString());
             //#endif
             // A stereotype got applied or removed

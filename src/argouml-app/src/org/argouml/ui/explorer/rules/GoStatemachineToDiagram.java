@@ -65,7 +65,7 @@ public class GoStatemachineToDiagram extends AbstractPerspectiveRule {
             for (ArgoDiagram diagram : proj.getDiagramList()) {
                 //#if defined(ACTIVITYDIAGRAM)
                 //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Statement
-                //@#$LPS-ACTIVITYDIAGRAM:Localization:NestedCommand
+                //@#$LPS-ACTIVITYDIAGRAM:Localization:NestedStatement
                 //@#$LPS-ACTIVITYDIAGRAM:Localization:NestedIfdef-STATEDIAGRAM
                 if (diagram instanceof UMLActivityDiagram) {
                     UMLActivityDiagram activityDiagram =

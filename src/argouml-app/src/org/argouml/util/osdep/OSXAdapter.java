@@ -303,7 +303,7 @@ public class OSXAdapter implements InvocationHandler {
             } catch (Exception ex) {
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 LOG.error("OSXAdapter was unable to handle an ApplicationEvent: " + event, ex);
                 //#endif
             }

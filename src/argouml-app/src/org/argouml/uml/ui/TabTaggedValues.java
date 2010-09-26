@@ -198,7 +198,7 @@ public class TabTaggedValues extends AbstractArgoJPanel
                 // we are changing targets anyway, so just log it.
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 LOG.warn("failed to cancel editing - " 
                         + "model element deleted while edit in progress");
                 //#endif

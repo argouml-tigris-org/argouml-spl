@@ -316,7 +316,7 @@ public class TabResults
 	if (d != null) {
 	    //#if defined(LOGGING)
 	    //@#$LPS-LOGGING:GranularityType:Statement
-	    //@#$LPS-LOGGING:Localization:NestedCommand
+	    //@#$LPS-LOGGING:Localization:NestedStatement
             LOG.debug("go " + sel + " in " + d.getName());
             //#endif
             TargetManager.getInstance().setTarget(d);

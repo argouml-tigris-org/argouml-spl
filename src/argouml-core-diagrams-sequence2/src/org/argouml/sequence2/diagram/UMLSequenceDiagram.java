@@ -399,7 +399,7 @@ public class UMLSequenceDiagram extends UMLDiagram {
                     if (context != collaboration) {
                 	//#if defined(LOGGING)
                 	//@#$LPS-LOGGING:GranularityType:Statement
-                	//@#$LPS-LOGGING:Localization:NestedCommand
+                	//@#$LPS-LOGGING:Localization:NestedStatement
                     //@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
                         LOG.warn("namespace of interaction does not match "
                                 + "collaboration - moving "
@@ -413,7 +413,7 @@ public class UMLSequenceDiagram extends UMLDiagram {
                         if (facade.getMessages(interaction).isEmpty()) {
                             //#if defined(LOGGING)
                             //@#$LPS-LOGGING:GranularityType:Statement
-                            //@#$LPS-LOGGING:Localization:NestedCommand
+                            //@#$LPS-LOGGING:Localization:NestedStatement
                         	//@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
                             LOG.warn("Deleting empty interaction "
                                     + interaction);
@@ -424,7 +424,7 @@ public class UMLSequenceDiagram extends UMLDiagram {
                             if (facade.getOwnedElements(context).isEmpty()) {
                         	//#if defined(LOGGING)
                         	//@#$LPS-LOGGING:GranularityType:Statement
-                        	//@#$LPS-LOGGING:Localization:NestedCommand
+                        	//@#$LPS-LOGGING:Localization:NestedStatement
                             //@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
                                 LOG.warn("Deleting empty collaboration "
                                         + context);
@@ -439,7 +439,7 @@ public class UMLSequenceDiagram extends UMLDiagram {
                     if (namespace != collaboration) {
                 	//#if defined(LOGGING)
                 	//@#$LPS-LOGGING:GranularityType:Statement
-                	//@#$LPS-LOGGING:Localization:NestedCommand
+                	//@#$LPS-LOGGING:Localization:NestedStatement
                     	//@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
                         LOG.warn("namespace of classifierrole does not match "
                                 + "collaboration - moving "
@@ -461,7 +461,7 @@ public class UMLSequenceDiagram extends UMLDiagram {
                         if (facade.getOwnedElements(namespace).isEmpty()) {
                             //#if defined(LOGGING)
                             //@#$LPS-LOGGING:GranularityType:Statement
-                            //@#$LPS-LOGGING:Localization:NestedCommand
+                            //@#$LPS-LOGGING:Localization:NestedStatement
                         	//@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
                             LOG.warn("Deleting empty collaboration "
                                     + collaboration);

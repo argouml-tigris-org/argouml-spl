@@ -442,7 +442,7 @@ public abstract class ConfigurationHandler {
         if (pcl != null) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             LOG.debug("removePropertyChangeListener()");
             //#endif
             pcl.removePropertyChangeListener(p);
@@ -479,7 +479,7 @@ public abstract class ConfigurationHandler {
         if (pcl != null) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             LOG.debug("removePropertyChangeListener("
                                     + key.getKey() + ")");
             //#endif

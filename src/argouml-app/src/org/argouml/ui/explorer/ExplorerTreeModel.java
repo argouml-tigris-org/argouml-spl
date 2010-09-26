@@ -463,7 +463,7 @@ public class ExplorerTreeModel extends DefaultTreeModel
             for (Object child : children) {
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 if (child == null) {                    
                     LOG.warn("PerspectiveRule " + rule + " wanted to "
                             + "add null to the explorer tree!");

@@ -61,7 +61,10 @@ import org.argouml.uml.diagram.activity.ui.UMLActivityDiagram;
 //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Import
 import org.argouml.uml.diagram.collaboration.ui.UMLCollaborationDiagram;
 //#endif
+//#if defined(DEPLOYMENTDIAGRAM)
+//@#$LPS-DEPLOYMENTDIAGRAM:GranularityType:Import
 import org.argouml.uml.diagram.deployment.ui.UMLDeploymentDiagram;
+//#endif
 //#if defined(SEQUENCEDIAGRAM)
 //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Import
 import org.argouml.uml.diagram.sequence.ui.UMLSequenceDiagram;
@@ -115,7 +118,10 @@ public final class DiagramFactory {
         //@#$LPS-STATEDIAGRAM:GranularityType:Enumeration
         State, 
         //#endif
+        //#if defined(DEPLOYMENTDIAGRAM)
+        //@#$LPS-DEPLOYMENTDIAGRAM:GranularityType:Enumeration
         Deployment,
+        //#endif
         //#if defined(COLLABORATIONDIAGRAM)
         //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Enumeration
         Collaboration,
@@ -149,7 +155,10 @@ public final class DiagramFactory {
         //@#$LPS-STATEDIAGRAM:GranularityType:Statement
         diagramClasses.put(DiagramType.State, UMLStateDiagram.class);
         //#endif
+        //#if defined(DEPLOYMENTDIAGRAM)
+        //@#$LPS-DEPLOYMENTDIAGRAM:GranularityType:Statement
         diagramClasses.put(DiagramType.Deployment, UMLDeploymentDiagram.class);
+        //#endif
         //#if defined(COLLABORATIONDIAGRAM)
         //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Statement
         diagramClasses.put(DiagramType.Collaboration, UMLCollaborationDiagram.class);
@@ -269,6 +278,7 @@ public final class DiagramFactory {
                  //#if defined(STATEDIAGRAM)
                  //@#$LPS-STATEDIAGRAM:GranularityType:Expression
                  //@#$LPS-STATEDIAGRAM:Localization:NestedIfdef-ACTIVITYDIAGRAM
+                 //@#$LPS-STATEDIAGRAM:Localization:NestedStatement
                  type == DiagramType.State
                  //#endif
                     //#if defined(STATEDIAGRAM) and defined(ACTIVITYDIAGRAM)
@@ -337,9 +347,12 @@ public final class DiagramFactory {
             diagram = new UMLStateDiagram(namespace, machine);
             diType = StateDiagram.class;
         //#endif
+        //#if defined(DEPLOYMENTDIAGRAM)
+        //@#$LPS-DEPLOYMENTDIAGRAM:GranularityType:Statement
         } else if (type == UMLDeploymentDiagram.class) {
             diagram = new UMLDeploymentDiagram(namespace);
             diType = DeploymentDiagram.class;
+        //#endif
         //#if defined(COLLABORATIONDIAGRAM)
         //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Statement
         } else if (type == UMLCollaborationDiagram.class) {

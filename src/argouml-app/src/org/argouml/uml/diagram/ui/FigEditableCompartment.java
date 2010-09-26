@@ -152,7 +152,7 @@ public abstract class FigEditableCompartment extends FigCompartment {
                 && !(fig instanceof FigSeperator)) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             LOG.error("Illegal Fig added to a FigEditableCompartment");
             //#endif
             throw new IllegalArgumentException(

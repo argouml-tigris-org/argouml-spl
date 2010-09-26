@@ -104,7 +104,7 @@ public class StateDiagramRenderer extends UmlDiagramRenderer {
         } else {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             //@#$LPS-LOGGING:Localization:NestedIfdef-STATEDIAGRAM
             //@#$LPS-LOGGING:Localization:NestedIfdef-ACTIVITYDIAGRAM
             LOG.debug("TODO: StateDiagramRenderer getFigNodeFor");
@@ -140,7 +140,7 @@ public class StateDiagramRenderer extends UmlDiagramRenderer {
         if (newEdge == null) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             //@#$LPS-LOGGING:Localization:NestedIfdef-STATEDIAGRAM
             //@#$LPS-LOGGING:Localization:NestedIfdef-ACTIVITYDIAGRAM
             LOG.debug("TODO: StateDiagramRenderer getFigEdgeFor");

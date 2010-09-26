@@ -340,7 +340,7 @@ public abstract class FigEdgeModelElement
                 // transient condition - doesn't require I18N
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 LOG.warn("A deleted element still exists on the diagram");
                 //#endif
                 return Translator.localize("misc.name.deleted");
@@ -379,7 +379,7 @@ public abstract class FigEdgeModelElement
         if (TargetManager.getInstance().getTargets().size() == 1) {
             //#if defined(COGNITIVE)
             //@#$LPS-COGNITIVE:GranularityType:Statement
-            //@#$LPS-COGNITIVE:Localization:NestedCommand
+            //@#$LPS-COGNITIVE:Localization:NestedStatement
             ToDoList list = Designer.theDesigner().getToDoList();
             List<ToDoItem> items = list.elementListForOffender(getOwner());
             if (items != null && items.size() > 0) {
@@ -650,7 +650,7 @@ public abstract class FigEdgeModelElement
                     } catch (InvalidElementException e) {
                         //#if defined(LOGGING)
                         //@#$LPS-LOGGING:GranularityType:Statement
-                        //@#$LPS-LOGGING:Localization:NestedCommand
+                        //@#$LPS-LOGGING:Localization:NestedStatement
                         LOG.error("updateLayout method accessed "
                                     + "deleted element", e);
                         //#endif
@@ -665,7 +665,7 @@ public abstract class FigEdgeModelElement
                 && Boolean.FALSE.equals(pve.getNewValue())) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             LOG.debug("finished editing");
             //#endif
             // parse the text that was edited
@@ -1724,7 +1724,7 @@ public abstract class FigEdgeModelElement
         if (settings == null) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             LOG.debug("Falling back to project-wide settings");
             //#endif
             Project p = getProject();

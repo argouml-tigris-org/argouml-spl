@@ -88,7 +88,7 @@ public class ActionSetTagDefinitionOwner extends UndoableAction {
             Object o = combo.getSelectedItem();
             final Object tagDefinition = combo.getTarget();
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             //@#$LPS-LOGGING:GranularityType:Statement
             LOG.info("Set owner to " + o);
             //#endif

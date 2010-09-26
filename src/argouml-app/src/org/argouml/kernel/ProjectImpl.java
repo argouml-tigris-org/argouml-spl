@@ -307,7 +307,7 @@ public class ProjectImpl implements java.io.Serializable, Project {
         } else if (m instanceof ArgoDiagram) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             LOG.info("Adding diagram member");
             //#endif
             addDiagramMember((ArgoDiagram) m);
@@ -317,7 +317,7 @@ public class ProjectImpl implements java.io.Serializable, Project {
         else if (m instanceof ProjectMemberTodoList) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             LOG.info("Adding todo member");
             //#endif
             addTodoMember((ProjectMemberTodoList) m);
@@ -326,7 +326,7 @@ public class ProjectImpl implements java.io.Serializable, Project {
         else if (Model.getFacade().isAModel(m)) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             LOG.info("Adding model member");
             //#endif
             addModelMember(m);
@@ -366,14 +366,14 @@ public class ProjectImpl implements java.io.Serializable, Project {
             ProjectMember pm = new ProjectMemberModel(m, this);
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             LOG.info("Adding model member to start of member list");
             //#endif
             members.add(pm);
         } else {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             LOG.info("Attempted to load 2 models");
             //#endif
             throw new IllegalArgumentException(
@@ -400,7 +400,7 @@ public class ProjectImpl implements java.io.Serializable, Project {
         if (models.size() > 1 || roots.size() > 1) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             LOG.debug("Multiple roots/models");
             //#endif
         }
@@ -414,7 +414,7 @@ public class ProjectImpl implements java.io.Serializable, Project {
         if (activeDiagram == d) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             LOG.debug("Deleting active diagram " + d);
             //#endif
             ArgoDiagram defaultDiagram = null;
@@ -424,7 +424,7 @@ public class ProjectImpl implements java.io.Serializable, Project {
                 
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 LOG.debug("Deleting last diagram - creating new default diag");
                 //#endif
                 Object projectRoot = getRoot();
@@ -439,13 +439,13 @@ public class ProjectImpl implements java.io.Serializable, Project {
                 defaultDiagram = diagrams.get(0);
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 LOG.debug("Candidate default diagram is " + defaultDiagram);
                 //#endif
                 if (defaultDiagram == d) {
                     defaultDiagram = diagrams.get(1);
                     //#if defined(LOGGING)
-                    //@#$LPS-LOGGING:Localization:NestedCommand
+                    //@#$LPS-LOGGING:Localization:NestedStatement
                     //@#$LPS-LOGGING:GranularityType:Statement
                     LOG.debug("Switching default diagram to " + defaultDiagram);
                     //#endif
@@ -454,7 +454,7 @@ public class ProjectImpl implements java.io.Serializable, Project {
             activeDiagram = defaultDiagram;
             TargetManager.getInstance().setTarget(activeDiagram);
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             //@#$LPS-LOGGING:GranularityType:Statement
             LOG.debug("New active diagram is " + defaultDiagram);
             //#endif
@@ -575,7 +575,7 @@ public class ProjectImpl implements java.io.Serializable, Project {
             } catch (org.argouml.profile.ProfileException e) {
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 LOG.error("Exception when fetching models from profile "
                         + profile.getDisplayName(), e);
                 //#endif
@@ -646,7 +646,7 @@ public class ProjectImpl implements java.io.Serializable, Project {
         if (cls == null && defineNew) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             LOG.debug("new Type defined!");
             //#endif
             cls =
@@ -945,7 +945,7 @@ public class ProjectImpl implements java.io.Serializable, Project {
             
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             LOG.info("Request to delete a Fig " + obj.getClass().getName());
             //#endif
         } else if (obj instanceof CommentEdge) {
@@ -953,7 +953,7 @@ public class ProjectImpl implements java.io.Serializable, Project {
             CommentEdge ce = (CommentEdge) obj;
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             LOG.info("Removing the link from " + ce.getAnnotatedElement()
                     + " to " + ce.getComment());
             //#endif
@@ -1028,7 +1028,7 @@ public class ProjectImpl implements java.io.Serializable, Project {
         for (Object element : elements) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             if (!Model.getFacade().isAPackage(element)) {                
                 LOG.warn("Top level element other than package found - " 
                         + Model.getFacade().getName(element));
@@ -1111,7 +1111,7 @@ public class ProjectImpl implements java.io.Serializable, Project {
             } catch (InvalidElementException e) {
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 LOG.warn("Extent deleted a second time");
                 //#endif
             }

@@ -308,7 +308,7 @@ class ArgoAny implements Any, Type2 {
 	if (rp == null || Model.getFacade().getType(rp) == null) {
 	    //#if defined(LOGGING)
 	    //@#$LPS-LOGGING:GranularityType:Statement
-	    //@#$LPS-LOGGING:Localization:NestedCommand
+	    //@#$LPS-LOGGING:Localization:NestedStatement
 	    //@#$LPS-LOGGING:Localization:BeforeReturn
 	    LOG.warn("WARNING: supposing return type void!");
 	    //#endif

@@ -202,7 +202,7 @@ public final class ImportClassLoader extends URLClassLoader {
             } catch (MalformedURLException e) {
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
 		LOG.warn("could not set path ", e);
 		//#endif
 	    }
@@ -228,7 +228,7 @@ public final class ImportClassLoader extends URLClassLoader {
             } catch (MalformedURLException e) {
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
 		LOG.error(e);
 		//#endif
 	    }
@@ -254,7 +254,7 @@ public final class ImportClassLoader extends URLClassLoader {
             } catch (Exception e) {
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
 		LOG.warn("could not set path ", e);
 		//#endif
 	    }

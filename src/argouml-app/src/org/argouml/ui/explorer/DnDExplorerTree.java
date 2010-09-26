@@ -291,7 +291,7 @@ public class DnDExplorerTree
         if (destinationPath == null) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             LOG.debug("No valid Drag: no destination found.");
             //#endif
             return false;
@@ -299,7 +299,7 @@ public class DnDExplorerTree
         if (selectedTreePath.isDescendant(destinationPath)) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             LOG.debug("No valid Drag: move to descendent.");
             //#endif
             return false;
@@ -308,7 +308,7 @@ public class DnDExplorerTree
                 TransferableModelElements.UML_COLLECTION_FLAVOR)) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             LOG.debug("No valid Drag: flavor not supported.");
             //#endif
             return false;
@@ -326,7 +326,7 @@ public class DnDExplorerTree
         if (!Model.getFacade().isANamespace(dest)) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             LOG.debug("No valid Drag: not a namespace.");
             //#endif
             return false;
@@ -336,7 +336,7 @@ public class DnDExplorerTree
         if (Model.getModelManagementHelper().isReadOnly(dest)) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             LOG.debug("No valid Drag: "
                     + "this is not an editable UML element (profile?).");
             //#endif
@@ -364,7 +364,7 @@ public class DnDExplorerTree
             //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:StartMethod
             //@#$LPS-LOGGING:Localization:BeforeReturn
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             LOG.debug("No valid Drag: destination is a DataType.");
             //#endif
             return false;
@@ -388,7 +388,7 @@ public class DnDExplorerTree
                                         element, dest)) {
                             //#if defined(LOGGING)
                             //@#$LPS-LOGGING:GranularityType:Statement
-                            //@#$LPS-LOGGING:Localization:NestedCommand
+                            //@#$LPS-LOGGING:Localization:NestedStatement
                             LOG.debug("Valid Drag: namespace " + dest);
                             //#endif
                             return true;
@@ -404,7 +404,7 @@ public class DnDExplorerTree
                     if (d.isRelocationAllowed(dest)) {
                         //#if defined(LOGGING)
                         //@#$LPS-LOGGING:GranularityType:Statement
-                        //@#$LPS-LOGGING:Localization:NestedCommand
+                        //@#$LPS-LOGGING:Localization:NestedStatement
                         LOG.debug("Valid Drag: diagram " + dest);
                         //#endif
                         return true;
@@ -750,7 +750,7 @@ public class DnDExplorerTree
             if (!Model.getFacade().isANamespace(dest)) {
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 if (LOG.isDebugEnabled()) {                    
                     String name;
                     if (Model.getFacade().isAUMLElement(dest)) {
@@ -774,7 +774,7 @@ public class DnDExplorerTree
             if (Model.getModelManagementHelper().isReadOnly(dest)) {
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 //@#$LPS-LOGGING:Localization:BeforeReturn
                 LOG.debug("No valid Drag: "
                         + "not an editable UML element (profile?).");
@@ -786,7 +786,7 @@ public class DnDExplorerTree
             if (Model.getFacade().isADataType(dest)) {
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 LOG.debug("No valid Drag: destination is a DataType.");
                 //#endif
                 dropTargetDragEvent.rejectDrag();
@@ -917,7 +917,7 @@ public class DnDExplorerTree
                                      * have some exceptions here and there.*/
                                     //#if defined(LOGGING)
                                     //@#$LPS-LOGGING:GranularityType:Statement
-                                    //@#$LPS-LOGGING:Localization:NestedCommand
+                                    //@#$LPS-LOGGING:Localization:NestedStatement
                                     LOG.error("Exception", e);
                                     //#endif
                                 }

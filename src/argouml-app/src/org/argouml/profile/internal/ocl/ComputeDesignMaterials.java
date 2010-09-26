@@ -75,7 +75,7 @@ public class ComputeDesignMaterials extends DepthFirstAdapter {
             } catch (Exception e) {
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 LOG.error("Metaclass not found: " + str, e);
                 //#endif
             }

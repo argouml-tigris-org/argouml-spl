@@ -635,7 +635,7 @@ public class ClassdiagramLayouter implements Layouter {
                 } 
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 else {
                     LOG.error("Edge with missing end(s): " + edge);
                 }
@@ -648,7 +648,7 @@ public class ClassdiagramLayouter implements Layouter {
                 } 
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 else {
                     LOG.error("Unexpected parent/child constellation for edge: "
                                     + edge);
@@ -660,7 +660,7 @@ public class ClassdiagramLayouter implements Layouter {
             } 
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             else {
                 LOG.error("Unsupported edge type");
             }

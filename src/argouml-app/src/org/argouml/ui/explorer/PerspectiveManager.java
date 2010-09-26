@@ -328,7 +328,7 @@ public final class PerspectiveManager {
                         } catch (ClassNotFoundException e) {
                             //#if defined(LOGGING)
                             //@#$LPS-LOGGING:GranularityType:Statement
-                            //@#$LPS-LOGGING:Localization:NestedCommand
+                            //@#$LPS-LOGGING:Localization:NestedStatement
                             LOG.error(
                                     "could not create rule " + ruleName 
                                     + " you can try to "
@@ -339,7 +339,7 @@ public final class PerspectiveManager {
                         } catch (InstantiationException e) {
                             //#if defined(LOGGING)
                             //@#$LPS-LOGGING:GranularityType:Statement
-                            //@#$LPS-LOGGING:Localization:NestedCommand
+                            //@#$LPS-LOGGING:Localization:NestedStatement
                             LOG.error(
                                     "could not create rule " + ruleName 
                                     + " you can try to "
@@ -350,7 +350,7 @@ public final class PerspectiveManager {
                         } catch (IllegalAccessException e) {
                             //#if defined(LOGGING)
                             //@#$LPS-LOGGING:GranularityType:Statement
-                            //@#$LPS-LOGGING:Localization:NestedCommand
+                            //@#$LPS-LOGGING:Localization:NestedStatement
                             LOG.error(
                                     "could not create rule " + ruleName 
                                     + " you can try to "

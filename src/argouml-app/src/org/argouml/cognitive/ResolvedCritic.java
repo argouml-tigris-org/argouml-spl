@@ -261,7 +261,7 @@ public class ResolvedCritic {
 		}
 		//#if defined(LOGGING)
 		//@#$LPS-LOGGING:GranularityType:Statement
-		//@#$LPS-LOGGING:Localization:NestedCommand
+		//@#$LPS-LOGGING:Localization:NestedStatement
 		//@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 		LOG.warn("Offender " + obj.getClass() + " unresolvable");
 		//#endif

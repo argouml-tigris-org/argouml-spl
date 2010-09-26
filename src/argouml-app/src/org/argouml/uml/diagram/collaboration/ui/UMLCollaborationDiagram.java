@@ -166,7 +166,7 @@ public class UMLCollaborationDiagram extends UMLDiagram {
         if (!Model.getFacade().isANamespace(handle)) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             //@#$LPS-LOGGING:Localization:NestedIfdef-COLLABORATIONDIAGRAM
             LOG.error(
                 "Illegal argument. Object " + handle + " is not a namespace");

@@ -1,3 +1,6 @@
+//#if defined(DEPLOYMENTDIAGRAM)
+//@#$LPS-DEPLOYMENTDIAGRAM:GranularityType:Package
+
 // $Id$
 // Copyright (c) 2003-2006 The Regents of the University of California. All
 // Rights Reserved. Permission to use, copy, modify, and distribute this
@@ -33,6 +36,7 @@ import java.util.List;
 
 //#if defined(LOGGING)
 //@#$LPS-LOGGING:GranularityType:Import
+//@#$LPS-LOGGING:Localization:NestedIfdef-DEPLOYMENTDIAGRAM
 import org.apache.log4j.Logger;
 //#endif
 import org.argouml.model.Model;
@@ -52,6 +56,7 @@ public class DeploymentDiagramGraphModel
     implements VetoableChangeListener {
     //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
+    //@#$LPS-LOGGING:Localization:NestedIfdef-DEPLOYMENTDIAGRAM
     /**
      * Logger.
      */
@@ -251,8 +256,9 @@ public class DeploymentDiagramGraphModel
         if (end0 == null || end1 == null) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             //@#$LPS-LOGGING:Localization:BeforeReturn
+            //@#$LPS-LOGGING:Localization:NestedIfdef-DEPLOYMENTDIAGRAM
             LOG.error("Edge rejected. Its ends are not attached to anything");
             //#endif
             return false;
@@ -262,8 +268,9 @@ public class DeploymentDiagramGraphModel
                 && !containsEdge(end0)) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             //@#$LPS-LOGGING:Localization:BeforeReturn
+            //@#$LPS-LOGGING:Localization:NestedIfdef-DEPLOYMENTDIAGRAM
             LOG.error("Edge rejected. Its source end is attached to "
                     + end0
                     + " but this is not in the graph model");
@@ -274,8 +281,9 @@ public class DeploymentDiagramGraphModel
                 && !containsEdge(end1)) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             //@#$LPS-LOGGING:Localization:BeforeReturn
+            //@#$LPS-LOGGING:Localization:NestedIfdef-DEPLOYMENTDIAGRAM
             LOG.error("Edge rejected. Its destination end is attached to "
                     + end1
                     + " but this is not in the graph model");
@@ -295,6 +303,7 @@ public class DeploymentDiagramGraphModel
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
+        //@#$LPS-LOGGING:Localization:NestedIfdef-DEPLOYMENTDIAGRAM
         LOG.debug("adding class node!!");
         //#endif
         if (!canAddNode(node)) {
@@ -318,6 +327,7 @@ public class DeploymentDiagramGraphModel
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
+        //@#$LPS-LOGGING:Localization:NestedIfdef-DEPLOYMENTDIAGRAM
         LOG.debug("adding class edge!!!!!!");
         //#endif
         if (!canAddEdge(edge)) {
@@ -412,7 +422,8 @@ public class DeploymentDiagramGraphModel
             if (oldOwned.contains(eo)) {
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
+                //@#$LPS-LOGGING:Localization:NestedIfdef-DEPLOYMENTDIAGRAM
                 LOG.debug("model removed " + me);
                 //#endif
                 if (Model.getFacade().isANode(me)) {
@@ -448,6 +459,8 @@ public class DeploymentDiagramGraphModel
             } 
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
+            //@#$LPS-LOGGING:Localization:NestedStatement
+            //@#$LPS-LOGGING:Localization:NestedIfdef-DEPLOYMENTDIAGRAM
             else {
                 LOG.debug("model added " + me);
             }
@@ -461,3 +474,4 @@ public class DeploymentDiagramGraphModel
     static final long serialVersionUID = 1003748292917485298L;
 
 }
+//#endif

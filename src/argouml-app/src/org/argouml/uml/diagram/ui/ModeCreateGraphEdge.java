@@ -177,7 +177,7 @@ public abstract class ModeCreateGraphEdge extends ModeCreatePolyEdge {
                 p.setComplete(true);
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 LOG.info("Connecting");
                 //#endif
                 FigEdge fe = buildConnection(

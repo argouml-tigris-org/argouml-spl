@@ -69,7 +69,7 @@ public class StartBrowser {
 		} catch (Exception cnfe) {
 		    //#if defined(LOGGING)
 		    //@#$LPS-LOGGING:GranularityType:Statement
-		    //@#$LPS-LOGGING:Localization:NestedCommand
+		    //@#$LPS-LOGGING:Localization:NestedStatement
 		    LOG.error(cnfe);
 		    LOG.info("Trying a default browser (netscape)");
 		    //#endif

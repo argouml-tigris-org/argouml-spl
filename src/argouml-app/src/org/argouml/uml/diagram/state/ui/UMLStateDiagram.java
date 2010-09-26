@@ -204,7 +204,7 @@ public class UMLStateDiagram extends UMLDiagram {
             String name = nname + " " + (number++);
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             //@#$LPS-LOGGING:Localization:NestedIfdef-STATEDIAGRAM
             LOG.info("UMLStateDiagram constructor: String name = " + name);
             //#endif
@@ -835,7 +835,7 @@ public class UMLStateDiagram extends UMLDiagram {
             if (kind == null) {
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 //@#$LPS-LOGGING:Localization:NestedIfdef-STATEDIAGRAM
                 LOG.warn("found a null type pseudostate");
                 //#endif
@@ -866,7 +866,7 @@ public class UMLStateDiagram extends UMLDiagram {
             } 
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             //@#$LPS-LOGGING:Localization:NestedIfdef-STATEDIAGRAM
             else {
                 LOG.warn("found a type not known");
@@ -882,7 +882,7 @@ public class UMLStateDiagram extends UMLDiagram {
             }
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             //@#$LPS-LOGGING:Localization:NestedIfdef-STATEDIAGRAM
             LOG.debug("Dropped object " + droppedObject + " converted to " 
                     + figNode);

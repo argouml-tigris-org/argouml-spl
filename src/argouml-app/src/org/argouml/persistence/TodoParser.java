@@ -159,7 +159,7 @@ class TodoParser extends SAXParserBase {
 	    default:
 	        //#if defined(LOGGING)
 	        //@#$LPS-LOGGING:GranularityType:Statement
-	        //@#$LPS-LOGGING:Localization:NestedCommand
+	        //@#$LPS-LOGGING:Localization:NestedStatement
 		LOG.warn("WARNING: unknown tag:" + e.getName());
 		//#endif
 		break;
@@ -224,7 +224,7 @@ class TodoParser extends SAXParserBase {
             default:
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
         	LOG.warn("WARNING: unknown end tag:"
         		 + e.getName());
         	//#endif

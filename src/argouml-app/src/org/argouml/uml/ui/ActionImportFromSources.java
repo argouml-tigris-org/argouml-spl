@@ -82,7 +82,7 @@ public class ActionImportFromSources extends UndoableAction {
     	} else {
     	    //#if defined(LOGGING)
     	    //@#$LPS-LOGGING:GranularityType:Statement
-    	    //@#$LPS-LOGGING:Localization:NestedCommand
+    	    //@#$LPS-LOGGING:Localization:NestedStatement
     	    LOG.info("Import sources dialog not shown: no importers!");
     	    //#endif
             ExceptionDialog ed = new ExceptionDialog(ArgoFrame.getInstance(),

@@ -150,7 +150,7 @@ class XmiReferenceResolverImpl extends XmiContext {
             if (public2SystemIds.containsKey(modelPublicId)) {
                 //#if defined(LOGGING) 
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 LOG.warn("Either an already loaded profile is being re-read " 
                     + "or a profile with the same publicId is being loaded! " 
                     + "publicId = \"" + publicId + "\"; existing systemId = \""
@@ -192,7 +192,7 @@ class XmiReferenceResolverImpl extends XmiContext {
             } catch (URISyntaxException e) {
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 LOG.warn("Bad URI syntax for base URI from XMI document "
                         + systemId, e);
                 //#endif
@@ -200,7 +200,7 @@ class XmiReferenceResolverImpl extends XmiContext {
             }
             //#if defined(LOGGING) 
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             if (LOG.isDebugEnabled()) {
                 LOG.debug("Top system ID set to " + topSystemId);
             }
@@ -242,7 +242,7 @@ class XmiReferenceResolverImpl extends XmiContext {
                 ((ModelElement) idToObjects.get(key)).getName();
                 //#if defined(LOGGING) 
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 LOG.error("Collision - multiple elements with same xmi.id : "
                         + xmiId);
                 //#endif
@@ -255,14 +255,14 @@ class XmiReferenceResolverImpl extends XmiContext {
                 // object in two different composition associations, first in
                 // the referencing file and second in the referenced file
                 //#if defined(LOGGING) 
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 //@#$LPS-LOGGING:GranularityType:Statement
                 LOG.debug("register called twice for the same object "
                         + "- ignoring second");
                 //#endif
                 XmiReference ref = objectsToId.get(object.refMofId());
                 //#if defined(LOGGING) 
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 //@#$LPS-LOGGING:GranularityType:Statement
                 LOG.debug(" - first reference = " + ref.getSystemId() + "#"
                         + ref.getXmiId());                
@@ -350,7 +350,7 @@ class XmiReferenceResolverImpl extends XmiContext {
             if (modelUrl != null) {
                 //#if defined(LOGGING) 
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 LOG.info("Referenced model --> '" + modelUrl + "'");
                 //#endif
                 urlMap.put(suffixWithExt, modelUrl);
@@ -361,7 +361,7 @@ class XmiReferenceResolverImpl extends XmiContext {
                                 .toString();
                         //#if defined(LOGGING) 
                         //@#$LPS-LOGGING:GranularityType:Statement
-                        //@#$LPS-LOGGING:Localization:NestedCommand
+                        //@#$LPS-LOGGING:Localization:NestedStatement
                         if (LOG.isDebugEnabled()) {
                             LOG.debug("       system ID " + systemId
                                     + "\n  relativized as " + relativeUri);                        
@@ -373,7 +373,7 @@ class XmiReferenceResolverImpl extends XmiContext {
                 } catch (URISyntaxException e) {
                     //#if defined(LOGGING) 
                     //@#$LPS-LOGGING:GranularityType:Statement
-                    //@#$LPS-LOGGING:Localization:NestedCommand
+                    //@#$LPS-LOGGING:Localization:NestedStatement
                     LOG.error("Error relativizing system ID " + systemId, e);
                     //#endif
                     relativeUri = systemId;
@@ -415,7 +415,7 @@ class XmiReferenceResolverImpl extends XmiContext {
         for (String moduleDirectory : modulesPath) {
             File candidate = new File(moduleDirectory, moduleName);
             //#if defined(LOGGING) 
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             //@#$LPS-LOGGING:GranularityType:Statement
             if (LOG.isDebugEnabled()) {
                 LOG.debug("candidate '" + candidate.toString() + "' exists="
@@ -436,7 +436,7 @@ class XmiReferenceResolverImpl extends XmiContext {
         if (public2SystemIds.containsKey(moduleName)) {
             //#if defined(LOGGING) 
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             if (LOG.isDebugEnabled()) {
                 LOG.debug("Couldn't find user model (\"" + moduleName 
                     + "\") in modulesPath, attempt " 
@@ -502,7 +502,7 @@ class XmiReferenceResolverImpl extends XmiContext {
             } 
             //#if defined(LOGGING) 
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             else {
                 LOG.warn("Received systemId with no '/'" + systemId);
             }
@@ -530,7 +530,7 @@ class XmiReferenceResolverImpl extends XmiContext {
                 for (String suffix : CLASSPATH_MODEL_SUFFIXES) {
                     //#if defined(LOGGING) 
                     //@#$LPS-LOGGING:GranularityType:Statement
-                    //@#$LPS-LOGGING:Localization:NestedCommand
+                    //@#$LPS-LOGGING:Localization:NestedStatement
                     if (LOG.isDebugEnabled()) {
                         LOG.debug("searching for model reference --> '"
                                 + modelUrl + "'");

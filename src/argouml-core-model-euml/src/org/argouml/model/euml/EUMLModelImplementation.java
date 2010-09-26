@@ -248,7 +248,7 @@ public class EUMLModelImplementation implements ModelImplementation {
             URI uri = URI.createURI("jar:file:" + path + "!/"); //$NON-NLS-1$ //$NON-NLS-2$
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             LOG.debug("eUML.resource URI --> " + uri); //$NON-NLS-1$            
             //#endif
             resourceSet.getPackageRegistry().put(

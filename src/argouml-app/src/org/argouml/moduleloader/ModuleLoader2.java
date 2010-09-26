@@ -336,7 +336,7 @@ public final class ModuleLoader2 {
 		    catch (Throwable e) {
 		        //#if defined(LOGGING)
 		        //@#$LPS-LOGGING:GranularityType:Statement
-		        //@#$LPS-LOGGING:Localization:NestedCommand
+		        //@#$LPS-LOGGING:Localization:NestedStatement
 		        LOG.error("Exception or error while trying to "
                                 + "enable module " + module.getName(), e);
 		        //#endif
@@ -351,7 +351,7 @@ public final class ModuleLoader2 {
                     // Catch all exceptions and errors, however severe
 		    catch (Throwable e) {
 		        //#if defined(LOGGING)
-		        //@#$LPS-LOGGING:Localization:NestedCommand
+		        //@#$LPS-LOGGING:Localization:NestedStatement
 		        //@#$LPS-LOGGING:GranularityType:Statement
 		        LOG.error("Exception or error while trying to "
                                 + "disable module " + module.getName(), e);
@@ -387,7 +387,7 @@ public final class ModuleLoader2 {
 		}
 		//#if defined(LOGGING)
 		//@#$LPS-LOGGING:GranularityType:Statement
-		//@#$LPS-LOGGING:Localization:NestedCommand
+		//@#$LPS-LOGGING:Localization:NestedStatement
 		if (status.isSelected()) {
 		    LOG.warn("ModuleLoader was not able to enable module "
 		             + module.getName());
@@ -465,7 +465,7 @@ public final class ModuleLoader2 {
                 } catch (ClassNotFoundException e) {
                     //#if defined(LOGGING)
                     //@#$LPS-LOGGING:GranularityType:Statement
-                    //@#$LPS-LOGGING:Localization:NestedCommand
+                    //@#$LPS-LOGGING:Localization:NestedStatement
                     LOG.error("Could not load module from class " + className);
                     //#endif
                 }
@@ -510,7 +510,7 @@ public final class ModuleLoader2 {
         if (argoRoot != null) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             LOG.info("argoRoot is " + argoRoot);
             //#endif
             if (argoRoot.startsWith(FILE_PREFIX)) {
@@ -527,14 +527,14 @@ public final class ModuleLoader2 {
             } catch (UnsupportedEncodingException e) {
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 LOG.warn("Encoding " 
                         + Argo.getEncoding() 
                         + " is unknown.");
                 //#endif
             }
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             //@#$LPS-LOGGING:GranularityType:Statement
             LOG.info("argoHome is " + argoHome);
             //#endif
@@ -593,7 +593,7 @@ public final class ModuleLoader2 {
 	                } catch (ClassNotFoundException e) {
 	                    //#if defined(LOGGING)
 	                    //@#$LPS-LOGGING:GranularityType:Statement
-	                    //@#$LPS-LOGGING:Localization:NestedCommand
+	                    //@#$LPS-LOGGING:Localization:NestedStatement
 	                    LOG.error("The class is not found.", e);
 	                    //#endif
 	                    return;
@@ -602,7 +602,7 @@ public final class ModuleLoader2 {
 		} catch (IOException ioe) {
 		    //#if defined(LOGGING)
 		    //@#$LPS-LOGGING:GranularityType:Statement
-		    //@#$LPS-LOGGING:Localization:NestedCommand
+		    //@#$LPS-LOGGING:Localization:NestedStatement
 		    LOG.error("Cannot open Jar file " + file, ioe);
 		    //#endif
 		}
@@ -647,7 +647,7 @@ public final class ModuleLoader2 {
                 // can operate without one if necessary.
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 LOG.warn(file + " does not have a manifest");
                 //#endif
             }

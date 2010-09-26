@@ -181,6 +181,8 @@ public class CallStateNotationUml extends CallStateNotation {
                             //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
                             //@#$LPS-STATEDIAGRAM:GranularityType:Statement
                             //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Statement
+                            //@#$LPS-ACTIVITYDIAGRAM:Localization:NestedStatement
+                            //@#$LPS-STATEDIAGRAM:Localization:NestedStatement
                             Model.getStateMachinesHelper().setEntry(
                                     callState, entry);
                             //#endif

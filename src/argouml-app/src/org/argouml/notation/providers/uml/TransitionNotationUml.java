@@ -377,6 +377,8 @@ public class TransitionNotationUml extends TransitionNotation {
                 //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
                 //@#$LPS-STATEDIAGRAM:GranularityType:Statement
                 //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Statement
+                //@#$LPS-ACTIVITYDIAGRAM:Localization:NestedStatement
+                //@#$LPS-STATEDIAGRAM:Localization:NestedStatement
                 // case 1
                 /*TODO: In the next line, I should use buildGuard(),
                  * but it doesn't show the guard on the diagram...
@@ -410,6 +412,8 @@ public class TransitionNotationUml extends TransitionNotation {
                 //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
                 //@#$LPS-STATEDIAGRAM:GranularityType:Statement
                 //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Statement
+                //@#$LPS-ACTIVITYDIAGRAM:Localization:NestedStatement
+                //@#$LPS-STATEDIAGRAM:Localization:NestedStatement
                 Model.getStateMachinesHelper().setExpression(g,
                         Model.getDataTypesFactory()
                                 .createBooleanExpression(language, guard));
@@ -461,6 +465,8 @@ public class TransitionNotationUml extends TransitionNotation {
                 //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
                 //@#$LPS-STATEDIAGRAM:GranularityType:Statement
                 //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Statement
+                //@#$LPS-ACTIVITYDIAGRAM:Localization:NestedStatement
+                //@#$LPS-STATEDIAGRAM:Localization:NestedStatement
                 Model.getStateMachinesHelper().setEffect(trans, effect);
                 //#endif
                 Model.getCommonBehaviorHelper().setScript(effect,

@@ -104,7 +104,7 @@ public final class ProfileLoader {
                     if (jarfile != null) {
                         //#if defined(LOGGING)
                         //@#$LPS-LOGGING:GranularityType:Statement
-                        //@#$LPS-LOGGING:Localization:NestedCommand
+                        //@#$LPS-LOGGING:Localization:NestedStatement
                         LOG.info("Looking for Profiles in the Jar "
                                 + jarfile.getName());
                         //#endif
@@ -116,7 +116,7 @@ public final class ProfileLoader {
                 } catch (IOException ioe) {
                     //#if defined(LOGGING)
                     //@#$LPS-LOGGING:GranularityType:Statement
-                    //@#$LPS-LOGGING:Localization:NestedCommand
+                    //@#$LPS-LOGGING:Localization:NestedStatement
                     LOG.debug("Cannot open Jar file " + file, ioe);
                     //#endif
                 }
@@ -152,7 +152,7 @@ public final class ProfileLoader {
                     }
                     //#if defined(COGNITIVE)
                     //@#$LPS-COGNITIVE:GranularityType:Statement
-                    //@#$LPS-COGNITIVE:Localization:NestedCommand
+                    //@#$LPS-COGNITIVE:Localization:NestedStatement
                     Set<Critic> critics = loadJavaCriticsForProfile(attr,
                             classloader);
                     //#endif
@@ -168,7 +168,7 @@ public final class ProfileLoader {
                             modelURL, 
                             //#if defined(COGNITIVE)
                             //@#$LPS-COGNITIVE:GranularityType:MethodCall
-                            //@#$LPS-COGNITIVE:Localization:NestedCommand
+                            //@#$LPS-COGNITIVE:Localization:NestedStatement
                             critics,
                             //#endif
                             loadManifestDependenciesForProfile(attr));
@@ -176,20 +176,20 @@ public final class ProfileLoader {
                     ProfileFacade.getManager().registerProfile(udp);
                     //#if defined(LOGGING)
                     //@#$LPS-LOGGING:GranularityType:Statement
-                    //@#$LPS-LOGGING:Localization:NestedCommand
+                    //@#$LPS-LOGGING:Localization:NestedStatement
                     LOG.debug("Registered Profile: " + udp.getDisplayName()
                             + "...");
                     //#endif
                 } catch (ProfileException e) {
                     //#if defined(LOGGING)
                     //@#$LPS-LOGGING:GranularityType:Statement
-                    //@#$LPS-LOGGING:Localization:NestedCommand
+                    //@#$LPS-LOGGING:Localization:NestedStatement
                     LOG.error("Exception", e);
                     //#endif
                 } catch (IOException e) {
                     //#if defined(LOGGING)
                     //@#$LPS-LOGGING:GranularityType:Statement
-                    //@#$LPS-LOGGING:Localization:NestedCommand
+                    //@#$LPS-LOGGING:Localization:NestedStatement
                     LOG.error("Exception", e);
                     //#endif
                 }
@@ -247,19 +247,19 @@ public final class ProfileLoader {
                 } catch (ClassNotFoundException e) {
                     //#if defined(LOGGING)
                     //@#$LPS-LOGGING:GranularityType:Statement
-                    //@#$LPS-LOGGING:Localization:NestedCommand
+                    //@#$LPS-LOGGING:Localization:NestedStatement
                     LOG.error("Error loading class: " + entry, e);
                     //#endif
                 } catch (InstantiationException e) {
                     //#if defined(LOGGING)
                     //@#$LPS-LOGGING:GranularityType:Statement
-                    //@#$LPS-LOGGING:Localization:NestedCommand
+                    //@#$LPS-LOGGING:Localization:NestedStatement
                     LOG.error("Error instantianting class: " + entry, e);
                     //#endif
                 } catch (IllegalAccessException e) {
                     //#if defined(LOGGING)
                     //@#$LPS-LOGGING:GranularityType:Statement
-                    //@#$LPS-LOGGING:Localization:NestedCommand
+                    //@#$LPS-LOGGING:Localization:NestedStatement
                     LOG.error("Exception", e);
                     //#endif
                 }

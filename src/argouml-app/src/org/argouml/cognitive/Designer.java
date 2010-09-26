@@ -305,7 +305,7 @@ public final class Designer
                         } catch (InterruptedException ignore) {
                             //#if defined(LOGGING)
                             //@#$LPS-LOGGING:GranularityType:Statement
-                            //@#$LPS-LOGGING:Localization:NestedCommand
+                            //@#$LPS-LOGGING:Localization:NestedStatement
                             LOG.error("InterruptedException!!!", ignore);
                             //#endif
                         }
@@ -374,7 +374,7 @@ public final class Designer
                                 // Don't let a transient error kill the thread
                                 //#if defined(LOGGING)
                                 //@#$LPS-LOGGING:GranularityType:Statement
-                                //@#$LPS-LOGGING:Localization:NestedCommand
+                                //@#$LPS-LOGGING:Localization:NestedStatement
                                 LOG.warn("Element " + dm
                                         + "caused an InvalidElementException.  "
                                         + "Ignoring for this pass.");
@@ -394,7 +394,7 @@ public final class Designer
                 sleepDuration = Math.max(sleepDuration, 1000);
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 LOG.debug("sleepDuration= " + sleepDuration);
                 //#endif
                 try {
@@ -402,7 +402,7 @@ public final class Designer
                 } catch (InterruptedException ignore) {
                     //#if defined(LOGGING)
                     //@#$LPS-LOGGING:GranularityType:Statement
-                    //@#$LPS-LOGGING:Localization:NestedCommand
+                    //@#$LPS-LOGGING:Localization:NestedStatement
                     LOG.error("InterruptedException!!!", ignore);
                     //#endif
                 }
@@ -492,7 +492,7 @@ public final class Designer
         if (pcs != null) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             LOG.debug("removePropertyChangeListener()");
             //#endif
             pcs.removePropertyChangeListener(p);

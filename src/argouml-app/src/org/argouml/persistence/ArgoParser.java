@@ -186,7 +186,7 @@ class ArgoParser extends SAXParserBase {
         default:
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             if (DBG) {
                 LOG.warn("WARNING: unknown tag:" + e.getName());
             }
@@ -284,7 +284,7 @@ class ArgoParser extends SAXParserBase {
         default:
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             if (DBG) {
                 LOG.warn("WARNING: unknown end tag:" + e.getName());
             }

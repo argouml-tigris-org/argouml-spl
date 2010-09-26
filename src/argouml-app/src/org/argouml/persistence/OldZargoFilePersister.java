@@ -163,7 +163,7 @@ class OldZargoFilePersister extends ZargoFilePersister {
                 if (!(projectMember.getType().equalsIgnoreCase("xmi"))) {
                     //#if defined(LOGGING)
                     //@#$LPS-LOGGING:GranularityType:Statement
-                    //@#$LPS-LOGGING:Localization:NestedCommand
+                    //@#$LPS-LOGGING:Localization:NestedStatement
                     if (LOG.isInfoEnabled()) {
                         LOG.info("Saving member: " 
                                 + project.getMembers().get(i).getZipName());
@@ -190,7 +190,7 @@ class OldZargoFilePersister extends ZargoFilePersister {
                 if (projectMember.getType().equalsIgnoreCase("xmi")) {
                     //#if defined(LOGGING)
                     //@#$LPS-LOGGING:GranularityType:Statement
-                    //@#$LPS-LOGGING:Localization:NestedCommand
+                    //@#$LPS-LOGGING:Localization:NestedStatement
                     if (LOG.isInfoEnabled()) {
                         LOG.info("Saving member of type: "
                                 + project.getMembers().get(i).getType());

@@ -306,7 +306,7 @@ public class WizAssocComposite extends UMLWizard {
             if (choice == -1) {
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
                 LOG.warn("WizAssocComposite: nothing selected, "
                         + "should not get here");

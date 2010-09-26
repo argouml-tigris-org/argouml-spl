@@ -749,7 +749,13 @@ Building this requires:
 		<then>
 			<echo message="COLLABORATIONDIAGRAM"/>
 		</then>
-	</if>  	
+	</if>
+	<if>
+		<isset property="DEPLOYMENTDIAGRAM"/>
+		<then>
+			<echo message="DEPLOYMENTDIAGRAM"/>
+		</then>
+	</if>  	  	
   </target>
 
   <!-- =================================================================== -->

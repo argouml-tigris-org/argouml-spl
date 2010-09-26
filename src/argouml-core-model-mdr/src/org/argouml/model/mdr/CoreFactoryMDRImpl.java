@@ -1641,7 +1641,7 @@ class CoreFactoryMDRImpl extends AbstractUmlModelFactoryMDR implements
         for (ModelElement element : ownedElements) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             LOG.debug("Deleting ownedElement " + element);
             //#endif
             modelImpl.getUmlFactory().delete(element);

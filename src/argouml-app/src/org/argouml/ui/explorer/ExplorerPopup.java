@@ -83,7 +83,10 @@ import org.argouml.uml.ui.ActionClassDiagram;
 import org.argouml.uml.ui.ActionCollaborationDiagram;
 //#endif
 import org.argouml.uml.ui.ActionDeleteModelElements;
+//#if defined(DEPLOYMENTDIAGRAM)
+//@#$LPS-DEPLOYMENTDIAGRAM:GranularityType:Import
 import org.argouml.uml.ui.ActionDeploymentDiagram;
+//#endif
 //#if defined(SEQUENCEDIAGRAM)
 //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Import
 import org.argouml.uml.ui.ActionSequenceDiagram;
@@ -298,10 +301,12 @@ public class ExplorerPopup extends JPopupMenu {
                                 && !projectModels.contains(selectedItem))
                         //#if defined(ACTIVITYDIAGRAM)
                         //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Expression
+                        //@#$LPS-ACTIVITYDIAGRAM:Localization:NestedStatement
                         || (stateVertexSelected
                                 && activityDiagramActive
                                 //#if defined(STATEDIAGRAM)
                                 //@#$LPS-STATEDIAGRAM:GranularityType:Expression
+                                //@#$LPS-STATEDIAGRAM:Localization:NestedStatement
                                 && diagramActivity == selectedStateMachine
                                 //#endif
                                 )
@@ -309,6 +314,7 @@ public class ExplorerPopup extends JPopupMenu {
                         || (stateVertexSelected
                                 //#if defined(STATEDIAGRAM)
                                 //@#$LPS-STATEDIAGRAM:GranularityType:Expression
+                                //@#$LPS-STATEDIAGRAM:Localization:NestedStatement
                                 && stateDiagramActive                                
                                 && diagramStateMachine == selectedStateMachine
                                 //#endif
@@ -317,6 +323,7 @@ public class ExplorerPopup extends JPopupMenu {
                                 && !dataValueSelected
                                 //#if defined(SEQUENCEDIAGRAM)
                                 //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Expression
+                                //@#$LPS-SEQUENCEDIAGRAM:Localization:NestedStatement
                                 && !sequenceDiagramActive
                                 //#endif
                                 )
@@ -335,6 +342,7 @@ public class ExplorerPopup extends JPopupMenu {
                         || (linkSelected
                                 //#if defined(SEQUENCEDIAGRAM)
                                 //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Expression
+                                //@#$LPS-SEQUENCEDIAGRAM:Localization:NestedStatement
                                 && !sequenceDiagramActive
                                 //#endif
                                 )
@@ -430,7 +438,10 @@ public class ExplorerPopup extends JPopupMenu {
         //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Statement
         createDiagrams.add(new ActionActivityDiagram());
         //#endif
+        //#if defined(DEPLOYMENTDIAGRAM)
+        //@#$LPS-DEPLOYMENTDIAGRAM:GranularityType:Statement
         createDiagrams.add(new ActionDeploymentDiagram());
+        //#endif
     }
 
     /**

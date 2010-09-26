@@ -255,7 +255,7 @@ public final class NotationProviderFactory2 {
             	// Returning null results in NPE and no explanation why.
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 LOG.error("Exception caught", e);
                 //#endif
             } catch (NoSuchMethodException e) {
@@ -263,7 +263,7 @@ public final class NotationProviderFactory2 {
             	// Returning null results in NPE and no explanation why.
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 LOG.error("Exception caught", e);
                 //#endif
             } catch (IllegalArgumentException e) {
@@ -271,7 +271,7 @@ public final class NotationProviderFactory2 {
             	// Returning null results in NPE and no explanation why.
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 LOG.error("Exception caught", e);
                 //#endif
             } catch (InstantiationException e) {
@@ -279,7 +279,7 @@ public final class NotationProviderFactory2 {
             	// Returning null results in NPE and no explanation why.
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 LOG.error("Exception caught", e);
                 //#endif
             } catch (IllegalAccessException e) {
@@ -287,7 +287,7 @@ public final class NotationProviderFactory2 {
             	// Returning null results in NPE and no explanation why.
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 LOG.error("Exception caught", e);
                 //#endif
             } catch (InvocationTargetException e) {
@@ -295,7 +295,7 @@ public final class NotationProviderFactory2 {
             	// Returning null results in NPE and no explanation why.
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 LOG.error("Exception caught", e);
                 //#endif
             }

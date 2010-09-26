@@ -70,7 +70,7 @@ public class ReaderModelLoader implements ProfileModelLoader {
         if (reader == null) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             LOG.error("Profile not found");
             //#endif
             throw new ProfileException("Profile not found!");

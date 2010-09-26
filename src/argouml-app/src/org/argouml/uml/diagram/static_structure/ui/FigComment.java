@@ -301,7 +301,7 @@ public class FigComment
             } else {
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 LOG.debug("not ready to edit note");
                 //#endif
                 return;
@@ -413,7 +413,7 @@ public class FigComment
             } else {
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 LOG.debug("not ready to edit note");
                 //#endif
                 return;

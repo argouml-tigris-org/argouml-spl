@@ -193,7 +193,7 @@ public class FigStereotypesGroup extends ArgoFigGroup {
             } 
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             else {
                 LOG.warn("Unexpected property " + event.getPropertyName());
             }
@@ -212,7 +212,7 @@ public class FigStereotypesGroup extends ArgoFigGroup {
             } 
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             else {
                 LOG.warn("Unexpected property " + event.getPropertyName());
             }
@@ -303,7 +303,7 @@ public class FigStereotypesGroup extends ArgoFigGroup {
             // TODO: This block can be removed after issue 4075 is tackled
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             LOG.debug("Cannot populate the stereotype compartment "
                      + "unless the parent has an owner.");
             //#endif
@@ -404,7 +404,7 @@ public class FigStereotypesGroup extends ArgoFigGroup {
         if (project == null) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             LOG.warn("getProject() returned null");
             //#endif
             return null;

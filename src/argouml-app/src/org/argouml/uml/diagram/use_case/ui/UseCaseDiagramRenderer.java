@@ -120,7 +120,7 @@ public class UseCaseDiagramRenderer extends UmlDiagramRenderer {
         } else {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             //@#$LPS-LOGGING:Localization:NestedIfdef-USECASEDIAGRAM
             LOG.debug(this.getClass().toString()
                   + ": getFigNodeFor(" + gm.toString() + ", "

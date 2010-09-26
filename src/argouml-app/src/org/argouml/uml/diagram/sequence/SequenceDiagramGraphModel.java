@@ -180,7 +180,7 @@ public class SequenceDiagramGraphModel
         if (end0 == null || end1 == null) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             //@#$LPS-LOGGING:Localization:BeforeReturn
             //@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
             LOG.error("Edge rejected. Its ends are not attached to anything");
@@ -191,7 +191,7 @@ public class SequenceDiagramGraphModel
         if (!containsNode(end0) && !containsEdge(end0)) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             //@#$LPS-LOGGING:Localization:BeforeReturn
             //@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
             LOG.error("Edge rejected. Its source end is attached to "
@@ -430,7 +430,7 @@ public class SequenceDiagramGraphModel
             if (oldOwned.contains(eo)) {
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 LOG.debug("model removed " + me);
                 //#endif
                 if (Model.getFacade().isAClassifierRole(me)) {
@@ -442,7 +442,7 @@ public class SequenceDiagramGraphModel
             } 
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             else {
                 LOG.debug("model added " + me);
             }

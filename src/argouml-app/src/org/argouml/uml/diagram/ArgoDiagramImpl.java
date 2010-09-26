@@ -185,7 +185,7 @@ public abstract class ArgoDiagramImpl extends Diagram
             UndoManager.setInstance(new DiagramUndoManager());
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             LOG.info("Setting Diagram undo manager");
             //#endif
         } 
@@ -413,6 +413,7 @@ public abstract class ArgoDiagramImpl extends Diagram
                 && f.getOwner() == null 
                 //#if defined(ACTIVITYDIAGRAM)
                 //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Expression
+                //@#$LPS-ACTIVITYDIAGRAM:Localization:NestedStatement
                 && !(f instanceof FigPool)
                 //#endif
                 ) {
@@ -554,7 +555,7 @@ public abstract class ArgoDiagramImpl extends Diagram
         if (!Model.getFacade().isANamespace(ns)) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             LOG.error("Not a namespace");
             LOG.error(ns);
             //#endif
@@ -670,6 +671,7 @@ public abstract class ArgoDiagramImpl extends Diagram
                 } 
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 else {
                     LOG.warn("Diagram " + getName() + " contains non-ArgoFig "
                             + fig);
@@ -678,6 +680,7 @@ public abstract class ArgoDiagramImpl extends Diagram
             } catch (InvalidElementException e) {
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 LOG.error("Tried to refresh deleted element ", e);
                 //#endif
             }

@@ -66,6 +66,7 @@ public class ActionSetSynch extends UndoableAction {
             Object target = source.getTarget();
             //#if defined(ACTIVITYDIAGRAM)
             //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Statement
+            //@#$LPS-ACTIVITYDIAGRAM:Localization:NestedStatement
             if (Model.getFacade().isAObjectFlowState(target)) {
                 Object m = target;
                 Model.getActivityGraphsHelper().setSynch(

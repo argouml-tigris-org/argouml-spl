@@ -451,7 +451,7 @@ class CoreHelperMDRImpl implements CoreHelper {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:BeforeReturn
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             LOG.warn("Cyclic generalization found " + getFullName(ge));
             //#endif
             return false;
@@ -1769,7 +1769,7 @@ class CoreHelperMDRImpl implements CoreHelper {
         if (m == null) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             LOG.debug("getAllPossibleNamespaces end");
             //#endif
             return ret;
@@ -2948,7 +2948,7 @@ class CoreHelperMDRImpl implements CoreHelper {
             if (handle instanceof AssociationEnd) {
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 //@#$LPS-LOGGING:Localization:BeforeReturn
                 LOG.debug("Setting association end mult to " + mult);
                 //#endif
@@ -3407,7 +3407,7 @@ class CoreHelperMDRImpl implements CoreHelper {
             String name = ((javax.jmi.model.ModelElement) element).getName();
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             if (names.add(name)) {
                 LOG.debug(" Class " + name);
             } else {
@@ -3427,7 +3427,7 @@ class CoreHelperMDRImpl implements CoreHelper {
                 .refAllOfClass()) {
             String name = ((javax.jmi.model.DataType) element).getName();
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             //@#$LPS-LOGGING:GranularityType:Statement
             if (names.add(name)) {                
                 LOG.debug(" DataType " + name);
@@ -3445,7 +3445,7 @@ class CoreHelperMDRImpl implements CoreHelper {
             String name = ((javax.jmi.model.EnumerationType) element).getName();
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             if (names.add(name)) {
                 LOG.debug(" EnumerationType " + name);
             } else {
@@ -3463,7 +3463,7 @@ class CoreHelperMDRImpl implements CoreHelper {
             String name = ((javax.jmi.model.PrimitiveType) element).getName();
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             if (names.add(name)) {
                 LOG.debug(" PrimitiveType " + name);
             } else {

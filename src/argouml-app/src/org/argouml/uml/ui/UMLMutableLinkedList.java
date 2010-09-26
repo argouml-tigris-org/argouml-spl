@@ -315,7 +315,7 @@ public class UMLMutableLinkedList extends UMLLinkedList
                 initActions();
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 LOG.info("Showing popup at " + e.getX() + "," + e.getY());
                 //#endif
                 popup.show(this, e.getX(), e.getY());
@@ -336,7 +336,7 @@ public class UMLMutableLinkedList extends UMLLinkedList
                 initActions();
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 LOG.debug("Showing popup at " + e.getX() + "," + e.getY());
                 //#endif
                 getPopupMenu().show(this, e.getX(), e.getY());
@@ -403,7 +403,7 @@ public class UMLMutableLinkedList extends UMLLinkedList
                 initActions();
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 LOG.info("Showing popup at " + e.getX() + "," + e.getY());
                 //#endif
                 getPopupMenu().show(this, e.getX(), e.getY());

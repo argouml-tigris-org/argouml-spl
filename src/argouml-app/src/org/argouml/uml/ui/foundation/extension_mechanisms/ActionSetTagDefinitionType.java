@@ -85,13 +85,13 @@ public class ActionSetTagDefinitionType extends UndoableAction {
             newType = (String) box.getSelectedItem();
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             LOG.debug("Selected item is " + newType);
             //#endif
         }
         if (newType != null && !newType.equals(oldType) && tagDef != null) {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             //@#$LPS-LOGGING:GranularityType:Statement
             LOG.debug("New type is " + newType);
             //#endif

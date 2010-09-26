@@ -151,7 +151,7 @@ public class FigFinalState extends FigStateVertex {
             } 
             //#if defined(STATEDIAGRAM)
             //@#$LPS-STATEDIAGRAM:GranularityType:Statement
-            //@#$LPS-STATEDIAGRAM:Localization:NestedCommand
+            //@#$LPS-STATEDIAGRAM:Localization:NestedStatement
             //@#$LPS-STATEDIAGRAM:Localization:NestedIfdef-ACTIVITYDIAGRAM
             else {
                 sel = new SelectionState(this);

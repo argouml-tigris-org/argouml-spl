@@ -78,7 +78,7 @@ class SequenceDiagramRenderer extends UmlDiagramRenderer {
         } else {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
         	//@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
             LOG.warn("SequenceDiagramRenderer getFigNodeFor unexpected node " 
                     + node);

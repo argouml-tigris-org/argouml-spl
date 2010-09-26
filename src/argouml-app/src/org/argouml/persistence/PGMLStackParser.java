@@ -165,7 +165,7 @@ class PGMLStackParser
             if (owner == null) {
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 LOG.warn("Found href of " 
                 	+ href
                 	+ " with no matching element in model");
@@ -251,7 +251,7 @@ class PGMLStackParser
             if (modelElement == null) {
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 LOG.error("Can't find href of " + href);
                 //#endif
                 throw new SAXException("Found href of " + href
@@ -423,7 +423,7 @@ class PGMLStackParser
             	|| destFigNode == null) {
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 LOG.error("Can't find nodes for FigEdge: "
                         + edge.getId() + ":"
                         + edge.toString());

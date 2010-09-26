@@ -134,7 +134,7 @@ public class ClAttributeCompartment implements Clarifier {
 	if (!(fig instanceof AttributesCompartmentContainer)) {
 	    //#if defined(LOGGING)
 	    //@#$LPS-LOGGING:GranularityType:Statement
-	    //@#$LPS-LOGGING:Localization:NestedCommand
+	    //@#$LPS-LOGGING:Localization:NestedStatement
 	    //@#$LPS-LOGGING:Localization:BeforeReturn
 	    //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 	    LOG.debug("not a FigClass");

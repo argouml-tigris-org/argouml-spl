@@ -30,7 +30,10 @@ import javax.swing.Icon;
 
 import org.argouml.application.helpers.ResourceLoaderWrapper;
 import org.argouml.model.Model;
+//#if defined(DEPLOYMENTDIAGRAM)
+//@#$LPS-DEPLOYMENTDIAGRAM:GranularityType:Import
 import org.argouml.uml.diagram.deployment.DeploymentDiagramGraphModel;
+//#endif
 import org.argouml.uml.diagram.ui.SelectionNodeClarifiers2;
 import org.tigris.gef.base.Editor;
 import org.tigris.gef.base.Globals;
@@ -82,11 +85,13 @@ public abstract class SelectionGeneralizableElement extends
     protected Icon[] getIcons() {
         Editor ce = Globals.curEditor();
         GraphModel gm = ce.getGraphModel();
-    
+        //#if defined(DEPLOYMENTDIAGRAM)
+        //@#$LPS-DEPLOYMENTDIAGRAM:GranularityType:Statement
         // No generalizations in Deployment Diagrams
         if (gm instanceof DeploymentDiagramGraphModel) {
             return null;
         }
+        //#endif
         if (Model.getModelManagementHelper().isReadOnly(
                 getContent().getOwner())) {
             return new Icon[] {null, inherit, null, null, null };

@@ -239,7 +239,7 @@ class NotationNameImpl
 	        // TODO: Document why we catch this.
 	        //#if defined(LOGGING)
 	        //@#$LPS-LOGGING:GranularityType:Statement
-	        //@#$LPS-LOGGING:Localization:NestedCommand
+	        //@#$LPS-LOGGING:Localization:NestedStatement
 	        LOG.error("Unexpected exception", e);
 	        //#endif
 	    }

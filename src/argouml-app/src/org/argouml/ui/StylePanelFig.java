@@ -408,7 +408,7 @@ public class StylePanelFig
                 // the width or height to be "adjusted" to a negative value
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 LOG.warn("Part of bounding box is off screen " + res);
                 //#endif
             }

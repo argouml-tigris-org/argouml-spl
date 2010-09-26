@@ -85,7 +85,7 @@ public class CrCircularInheritance extends CrUML {
 		problem = PROBLEM_FOUND;
 		//#if defined(LOGGING)
 		//@#$LPS-LOGGING:GranularityType:Statement
-		//@#$LPS-LOGGING:Localization:NestedCommand
+		//@#$LPS-LOGGING:Localization:NestedStatement
 		//@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
                 LOG.info("problem found for: " + this);
                 //#endif

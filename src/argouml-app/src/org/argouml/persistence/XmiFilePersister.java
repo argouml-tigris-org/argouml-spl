@@ -193,7 +193,7 @@ class XmiFilePersister extends AbstractFilePersister
             if (projectMember.getType().equalsIgnoreCase(getExtension())) {
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 if (LOG.isInfoEnabled()) {
                     LOG.info("Saving member of type: "
                             + (project.getMembers()
@@ -372,7 +372,7 @@ class XmiFilePersister extends AbstractFilePersister
         if (todoString != null) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             LOG.info("Parsing todoString " + todoString.length());
             //#endif
             InputStream inputStream = 

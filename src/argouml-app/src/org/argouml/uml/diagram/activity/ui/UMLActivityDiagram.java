@@ -846,7 +846,7 @@ public class UMLActivityDiagram extends UMLDiagram {
             if (kind == null) {
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 //@#$LPS-LOGGING:Localization:NestedIfdef-ACTIVITYDIAGRAM
                 LOG.warn("found a null type pseudostate");
                 //#endif
@@ -894,7 +894,7 @@ public class UMLActivityDiagram extends UMLDiagram {
             if (kind == null) {
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 //@#$LPS-LOGGING:Localization:NestedIfdef-ACTIVITYDIAGRAM
                 LOG.warn("found a null type pseudostate");
                 //#endif
@@ -902,7 +902,7 @@ public class UMLActivityDiagram extends UMLDiagram {
             }
             //#if defined(STATEDIAGRAM)
             //@#$LPS-STATEDIAGRAM:GranularityType:Statement     
-            //@#$LPS-STATEDIAGRAM:Localization:NestedCommand
+            //@#$LPS-STATEDIAGRAM:Localization:NestedStatement
             //@#$LPS-STATEDIAGRAM:Localization:NestedIfdef-ACTIVITYDIAGRAM
             if (kind.equals(Model.getPseudostateKind().getInitial())) {
                 figNode = new FigInitialState(droppedObject, bounds, settings);

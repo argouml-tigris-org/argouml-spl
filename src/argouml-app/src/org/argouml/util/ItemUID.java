@@ -250,7 +250,7 @@ public class ItemUID {
 	if (!(rv instanceof ItemUID)) {
 	    //#if defined(LOGGING)
 	    //@#$LPS-LOGGING:GranularityType:Statement
-	    //@#$LPS-LOGGING:Localization:NestedCommand
+	    //@#$LPS-LOGGING:Localization:NestedStatement
 	    //@#$LPS-LOGGING:Localization:BeforeReturn
 	    LOG.error("getItemUID for " + obj.getClass()
 		      + " returns strange value: " + rv.getClass());

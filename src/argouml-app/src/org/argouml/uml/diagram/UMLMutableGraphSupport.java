@@ -258,7 +258,7 @@ public abstract class UMLMutableGraphSupport extends MutableGraphSupport {
         if (connection == null) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             if (LOG.isDebugEnabled()) {
                 LOG.debug("Cannot make a " + edgeType
                         + " between a " + fromPort.getClass().getName()
@@ -479,7 +479,7 @@ public abstract class UMLMutableGraphSupport extends MutableGraphSupport {
                             namespace);
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
         	LOG.info("Created " + connection + " between " 
         	        + fromElement + " and " + toElement);
         	//#endif
@@ -494,7 +494,7 @@ public abstract class UMLMutableGraphSupport extends MutableGraphSupport {
         	// catching well-formedness rules.
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
         	LOG.warn("IllegalArgumentException caught", iae);
         	//#endif
             }

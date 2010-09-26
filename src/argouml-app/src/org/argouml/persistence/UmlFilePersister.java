@@ -274,7 +274,7 @@ public class UmlFilePersister extends AbstractFilePersister {
             for (ProjectMember projectMember : project.getMembers()) {
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 if (LOG.isInfoEnabled()) {
                     LOG.info("Saving member : " + projectMember);
                 }
@@ -347,7 +347,7 @@ public class UmlFilePersister extends AbstractFilePersister {
                     ++fileVersion;
                     //#if defined(LOGGING)
                     //@#$LPS-LOGGING:GranularityType:Statement
-                    //@#$LPS-LOGGING:Localization:NestedCommand
+                    //@#$LPS-LOGGING:Localization:NestedStatement
                     LOG.info("Upgrading to version " + fileVersion);
                     //#endif
                     long startTime = System.currentTimeMillis();                    
@@ -355,7 +355,7 @@ public class UmlFilePersister extends AbstractFilePersister {
                     long endTime = System.currentTimeMillis();
                     //#if defined(LOGGING)
                     //@#$LPS-LOGGING:GranularityType:Statement
-                    //@#$LPS-LOGGING:Localization:NestedCommand
+                    //@#$LPS-LOGGING:Localization:NestedStatement
                     LOG.info("Upgrading took "
                             + ((endTime - startTime) / 1000)
                             + " seconds");
@@ -388,7 +388,7 @@ public class UmlFilePersister extends AbstractFilePersister {
                     = getMemberFilePersister((String) memberList.get(i));
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 LOG.info("Loading member with "
                         + persister.getClass().getName());
                 //#endif

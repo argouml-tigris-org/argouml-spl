@@ -303,7 +303,7 @@ public class PathItemPlacement extends PathConv {
                 // If we timed out, give it one more try on the other side
                 if (false /* count >= limit */) {
                     //#if defined(LOGGING)
-                    //@#$LPS-LOGGING:Localization:NestedCommand
+                    //@#$LPS-LOGGING:Localization:NestedStatement
                     //@#$LPS-LOGGING:GranularityType:Statement
                     LOG.debug("Retry limit exceeded.  Trying other side");
                     //#endif

@@ -139,7 +139,7 @@ public class WizMEName extends UMLWizard {
 	    catch (Exception pve) {
 	        //#if defined(LOGGING)
 	        //@#$LPS-LOGGING:GranularityType:Statement
-	        //@#$LPS-LOGGING:Localization:NestedCommand
+	        //@#$LPS-LOGGING:Localization:NestedStatement
 	        //@#$LPS-LOGGING:Localization:NestedIfdef-COGNITIVE
 		LOG.error("could not set name", pve);
 		//#endif

@@ -121,7 +121,7 @@ abstract class XMLTokenTableBase {
 	if (dbg && !error) {
 	    //#if defined(LOGGING)
 	    //@#$LPS-LOGGING:GranularityType:Statement
-	    //@#$LPS-LOGGING:Localization:NestedCommand
+	    //@#$LPS-LOGGING:Localization:NestedStatement
             LOG.debug("NOTE: added '" + s + "' to token table");
             //#endif
         }

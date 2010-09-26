@@ -644,12 +644,13 @@ public abstract class FigNodeModelElement
 
         /* Check if multiple items are selected: */
         if (TargetManager.getInstance().getTargets().size() == 1) {
-            //#if defined(COGNITIVE)            
+            //#if defined(COGNITIVE)      
+            //@#$LPS-COGNITIVE:Localization:NestedStatement
             // TODO: Having Critics actions here introduces an unnecessary
             // dependency on the Critics subsystem.  Have it register its
             // desired actions using an extension mechanism - tfm
             //@#$LPS-COGNITIVE:GranularityType:Statement
-            //@#$LPS-COGNITIVE:Localization:NestedCommand
+            //@#$LPS-COGNITIVE:Localization:NestedStatement
             ToDoList tdList = Designer.theDesigner().getToDoList();
             List<ToDoItem> items = tdList.elementListForOffender(getOwner());
             if (items != null && items.size() > 0) {
@@ -1113,7 +1114,7 @@ public abstract class FigNodeModelElement
             } catch (PropertyVetoException ex) {
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 LOG.error("could not parse the text entered. "
                         + "PropertyVetoException",
                         ex);
@@ -1145,7 +1146,7 @@ public abstract class FigNodeModelElement
             } catch (InvalidElementException e) {
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 if (LOG.isDebugEnabled()) {
                     LOG.debug("modelChanged method accessed deleted element"
                             + formatEvent(event),
@@ -1166,7 +1167,7 @@ public abstract class FigNodeModelElement
                     } catch (InvalidElementException e) {
                         //#if defined(LOGGING)
                         //@#$LPS-LOGGING:GranularityType:Statement
-                        //@#$LPS-LOGGING:Localization:NestedCommand
+                        //@#$LPS-LOGGING:Localization:NestedStatement
                         if (LOG.isDebugEnabled()) {
                             LOG.debug("updateLayout method accessed "
                                     + "deleted element " 
@@ -1868,7 +1869,7 @@ public abstract class FigNodeModelElement
 	if (getOwner() == null) {
 	    //#if defined(LOGGING)
 	    //@#$LPS-LOGGING:GranularityType:Statement
-	    //@#$LPS-LOGGING:Localization:NestedCommand
+	    //@#$LPS-LOGGING:Localization:NestedStatement
 	    //@#$LPS-LOGGING:Localization:BeforeReturn
 	    LOG.warn("Owner of [" + this.toString() + "/" + this.getClass()
 		    + "] is null.");
@@ -2605,7 +2606,7 @@ public abstract class FigNodeModelElement
         if (settings == null) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             LOG.debug("Falling back to project-wide settings");
             //#endif
             Project p = getProject();

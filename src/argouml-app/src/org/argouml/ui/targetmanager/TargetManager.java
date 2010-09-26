@@ -773,7 +773,7 @@ public final class TargetManager {
 	    } catch (RuntimeException e) {
 	        //#if defined(LOGGING)
 	        //@#$LPS-LOGGING:GranularityType:Statement
-	        //@#$LPS-LOGGING:Localization:NestedCommand
+	        //@#$LPS-LOGGING:Localization:NestedStatement
 	        LOG.error("While calling targetSet for "
 	                + targetEvent
 	                + " in "
@@ -799,7 +799,7 @@ public final class TargetManager {
 	    } catch (RuntimeException e) {
 	        //#if defined(LOGGING)
 	        //@#$LPS-LOGGING:GranularityType:Statement
-	        //@#$LPS-LOGGING:Localization:NestedCommand
+	        //@#$LPS-LOGGING:Localization:NestedStatement
 		LOG.error("While calling targetAdded for "
 			  + targetEvent
 			  + " in "
@@ -825,7 +825,7 @@ public final class TargetManager {
 	    } catch (RuntimeException e) {
 	        //#if defined(LOGGING)
 	        //@#$LPS-LOGGING:GranularityType:Statement
-	        //@#$LPS-LOGGING:Localization:NestedCommand
+	        //@#$LPS-LOGGING:Localization:NestedStatement
 		LOG.warn("While calling targetRemoved for "
 			  + targetEvent
 			  + " in "
@@ -1018,7 +1018,7 @@ public final class TargetManager {
                 } catch (ListenerNotFoundException e) {
                     //#if defined(LOGGING)
                     //@#$LPS-LOGGING:GranularityType:Statement
-                    //@#$LPS-LOGGING:Localization:NestedCommand
+                    //@#$LPS-LOGGING:Localization:NestedStatement
                     LOG.error("Notification Listener for "
                                 + "CommentEdge not found", e);
                     //#endif

@@ -99,7 +99,7 @@ public abstract class ActionNewDiagram extends UndoableAction {
             TargetManager.getInstance().setTarget(diagram);
         } else {
             //#if defined(LOGGING)
-            //@#$LPS-LOGGING:Localization:NestedCommand
+            //@#$LPS-LOGGING:Localization:NestedStatement
             //@#$LPS-LOGGING:GranularityType:Statement
             LOG.error("No valid namespace found");
             //#endif

@@ -283,7 +283,7 @@ class ModelMemberFilePersister extends MemberFilePersister
                     if (facade.isAModel(current)) {
                         //#if defined(LOGGING)
                         //@#$LPS-LOGGING:GranularityType:Statement
-                        //@#$LPS-LOGGING:Localization:NestedCommand
+                        //@#$LPS-LOGGING:Localization:NestedStatement
                         LOG.info("Loaded model '" + facade.getName(current)
                                  + "'");
                         //#endif
@@ -366,11 +366,11 @@ class ModelMemberFilePersister extends MemberFilePersister
             ArgoDiagram diagram = null;
             //#if defined(ACTIVITYDIAGRAM)
             //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Statement
-            //@#$LPS-ACTIVITYDIAGRAM:Localization:NestedCommand
+            //@#$LPS-ACTIVITYDIAGRAM:Localization:NestedStatement
             if (facade.isAActivityGraph(statemachine)) {
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 LOG.info("Creating activity diagram for "
                         + facade.getUMLClassName(statemachine)
                         + "<<" + facade.getName(statemachine) + ">>");
@@ -384,7 +384,7 @@ class ModelMemberFilePersister extends MemberFilePersister
                 //#if defined(STATEDIAGRAM)
                     //#if defined(LOGGING)
                     //@#$LPS-LOGGING:GranularityType:Statement
-                    //@#$LPS-LOGGING:Localization:NestedCommand
+                    //@#$LPS-LOGGING:Localization:NestedStatement
                 LOG.info("Creating state diagram for "
                         + facade.getUMLClassName(statemachine)
                         + "<<" + facade.getName(statemachine) + ">>");

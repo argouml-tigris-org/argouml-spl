@@ -988,7 +988,7 @@ class UmlFactoryMDRImpl extends AbstractUmlModelFactoryMDR implements
             } catch (InvalidObjectException e) {
                 //#if defined(LOGGING) 
                 //@#$LPS-LOGGING:GranularityType:Statement
-                //@#$LPS-LOGGING:Localization:NestedCommand
+                //@#$LPS-LOGGING:Localization:NestedStatement
                 LOG.debug("Object already deleted " + elem);
                 //#endif
             }
@@ -1021,7 +1021,7 @@ class UmlFactoryMDRImpl extends AbstractUmlModelFactoryMDR implements
                         } catch (InvalidObjectException e) {
                             //#if defined(LOGGING) 
                             //@#$LPS-LOGGING:GranularityType:Statement
-                            //@#$LPS-LOGGING:Localization:NestedCommand
+                            //@#$LPS-LOGGING:Localization:NestedStatement
                             LOG.debug("Object already deleted " + o);
                             //#endif
                         }
@@ -1031,7 +1031,7 @@ class UmlFactoryMDRImpl extends AbstractUmlModelFactoryMDR implements
                     } catch (InvalidObjectException e) {
                         //#if defined(LOGGING) 
                         //@#$LPS-LOGGING:GranularityType:Statement
-                        //@#$LPS-LOGGING:Localization:NestedCommand
+                        //@#$LPS-LOGGING:Localization:NestedStatement
                         LOG.debug("Object already deleted " + o);
                         //#endif
                     }
@@ -1042,7 +1042,7 @@ class UmlFactoryMDRImpl extends AbstractUmlModelFactoryMDR implements
                 if (!elementsToBeDeleted.isEmpty()) {
                     //#if defined(LOGGING) 
                     //@#$LPS-LOGGING:GranularityType:Statement
-                    //@#$LPS-LOGGING:Localization:NestedCommand
+                    //@#$LPS-LOGGING:Localization:NestedStatement
                     LOG.debug("**Skipped deleting "
                             + elementsToBeDeleted.size()
                             + " elements (probably in a deleted container");
