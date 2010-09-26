@@ -55,7 +55,6 @@ public class GatherMetrics {
 	FilenameFilter javaFileFilter = new FilenameFilter() { 
 		public boolean accept(File dir, String name) {
 			return name.endsWith(".java");
-//			&& name.equals("Agency.java");
 			} 
 		};	 
 		
@@ -108,10 +107,13 @@ public class GatherMetrics {
 	private void processFile(File file) {
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(file));
-			HasValidJavaFile = br.ready();
+			Boolean hasData = false;
 			while (br.ready()) {
-				metricsProcessor.insertMetric(br.readLine().trim());
-				
+				String line = br.readLine().trim();
+				if (!line.isEmpty()) {
+					metricsProcessor.insertMetric(line);
+					HasValidJavaFile = true;
+				}								
 			}
 			br.close();
 		} catch (FileNotFoundException e) {

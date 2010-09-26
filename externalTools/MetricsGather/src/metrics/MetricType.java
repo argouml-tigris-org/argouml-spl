@@ -6,7 +6,7 @@ package metrics;
  *
  */
 public enum MetricType {
-	GRANULARITY("GranularityType"), LOCALIZATION("Localization"), OR("OR"), AND("AND"), 
+	GRANULARITY("GranularityType"), LOCALIZATION("Localization"), OR("OR"), AND("AND"), SD("SD"), 
 	CLASS_NUMBER("#Classes"), PACKAGE_NUMBER("#Pacotes"), LOC("LOC");	
 	
 	 /** Origem da venda.*/

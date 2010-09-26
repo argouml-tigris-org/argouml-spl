@@ -147,7 +147,6 @@ public class MetricsProcessor {
 	 * @param value linha lida da classe Java.
 	 */
 	public void insertMetric(String value) {
-		value = value.trim();
 		// Common Metrics
 		if (value.contains(MetricsProcessor.IDENTIFIER)) {
 			if (value.contains(MetricType.GRANULARITY.getIdentifier())) {			
@@ -158,19 +157,26 @@ public class MetricsProcessor {
 				Log.info("Identificador inválido. Dados: "  + value);
 			}
 		}
-		// AND e OR Metrics
-		else if (value.matches("//#if defined\\(.*\\) (and|or) defined\\(.*\\)")) {
+		// AND, OR e SD Metrics
+		else if (value.matches("//#if defined\\(.*\\).*")) {
 			String feature1 = value.substring(value.indexOf("(")+1, value.indexOf(")"));
-			String feature2 = value.substring(value.lastIndexOf("(")+1, value.lastIndexOf(")"));
-			
-			MetricType type;
-			if (value.toLowerCase().contains(MetricType.OR.getIdentifier().toLowerCase())) {
-				type = MetricType.OR; 
-			} else {
-				type = MetricType.AND;
+			// AND e OR
+			if (value.matches("//#if defined\\(.*\\) (and|or) defined\\(.*\\)")) {
+				String feature2 = value.substring(value.lastIndexOf("(")+1, value.lastIndexOf(")"));
+				MetricType type;
+				if (value.toLowerCase().contains(MetricType.OR.getIdentifier().toLowerCase())) {
+					type = MetricType.OR; 
+				} else {
+					type = MetricType.AND;
+				}
+				// Inserir métricas AND e OR
+				insertMetric(String.format(FAKEMETRICIDENTIFIER, feature1, type.getIdentifier()), type);
+				insertMetric(String.format(FAKEMETRICIDENTIFIER, feature2, type.getIdentifier()), type);		
+				// Inserir métrica SD
+				insertMetric(String.format(FAKEMETRICIDENTIFIER, feature2, MetricType.SD.getIdentifier()), MetricType.SD);
 			}
-			insertMetric(String.format(FAKEMETRICIDENTIFIER, feature1, type.getIdentifier()), type);
-			insertMetric(String.format(FAKEMETRICIDENTIFIER, feature2, type.getIdentifier()), type);		
+			// Inserir métrica SD
+			insertMetric(String.format(FAKEMETRICIDENTIFIER, feature1, MetricType.SD.getIdentifier()), MetricType.SD);
 		}		
 		// LOC Metric
 		else if (!isCommentOrBlankLine(value)) {
