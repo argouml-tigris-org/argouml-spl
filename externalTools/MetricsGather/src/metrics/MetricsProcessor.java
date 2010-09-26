@@ -211,15 +211,18 @@ public class MetricsProcessor {
 	
 	/**
 	 * Processa as métricas colhidas.
+	 * @param onlyBasicMetrics Informa se é para processar apenas métricas básicas.
 	 * @return <code>true</code> se processamento correto, <false> caso contrário.
 	 */
-	public boolean processGatheredMetrics() {
+	public boolean processGatheredMetrics(Boolean onlyBasicMetrics) {
 		// Inserir métrica que contabiliza o número de classes
 		insertMetric(MetricType.CLASS_NUMBER, CLASS_COUNTER);
 		// Processar demais métricas.
 		boolean result = this.processGatheredMetrics(otherMetrics);
-		result = result && this.processGatheredMetrics(granMetrics);
-		result = result && this.processGatheredMetrics(localMetrics);
+		if (!onlyBasicMetrics) {
+			result = result && this.processGatheredMetrics(granMetrics);
+			result = result && this.processGatheredMetrics(localMetrics);
+		}
 		return result;
 	}
 	

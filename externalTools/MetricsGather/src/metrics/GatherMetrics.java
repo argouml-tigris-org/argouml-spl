@@ -26,8 +26,15 @@ public class GatherMetrics {
 	 */
 	private static Integer PACKAGE_COUNTER;
 	
+	/** 
+	 * Informa se o diretório possui arquivos Java válidos, para ser usado na contabilização de pacotes. 
+	 */
 	private static Boolean HasValidJavaFile;
 	
+	/**
+	 * Informa se é para processar apenas métricas básicas: LOC, AND, OR, SD.
+	 */
+	private static Boolean OnlyBasicMetrics;
 	
 	/**
 	 * Filtro de diretórios.
@@ -67,7 +74,18 @@ public class GatherMetrics {
 		metricsProcessor = new MetricsProcessor();
 		PACKAGE_COUNTER = 0;
 		HasValidJavaFile = false;
+		OnlyBasicMetrics = false;
 	}
+
+	/**
+	 * Construtor padrão
+	 * @param rootDir Diretório raiz (onde se inicia a varredura)
+	 * @param onlyBasicMetrics Informa se é para processar apenas métricas básicas.
+	 */
+	public GatherMetrics(String rootDir, Boolean onlyBasicMetrics) {
+		this(rootDir);
+		OnlyBasicMetrics = onlyBasicMetrics;
+	}	
 	
 	/**
 	 * Colhe as métricas e as salva em arquivo.
@@ -76,10 +94,14 @@ public class GatherMetrics {
 	public void gatherMetrics(String filename) {
 		this.listDir(new File(rootDir));
 		metricsProcessor.insertMetric(MetricType.PACKAGE_NUMBER, PACKAGE_COUNTER);
-		metricsProcessor.processGatheredMetrics();
+		metricsProcessor.processGatheredMetrics(OnlyBasicMetrics);
 		metricsProcessor.saveGatheredMetrics(filename);
 	}
 	
+	/**
+	 * Lista os diretórios e subdiretórios. 
+	 * @param dir
+	 */
 	private void listDir(File dir) {
 		if (dir.isDirectory()) {			
 			listDirFiles(dir);
@@ -90,6 +112,10 @@ public class GatherMetrics {
 		}		
 	}
 	
+	/**
+	 * Lista os arquivos .java de um diretório.
+	 * @param dir Diretório a ser lido.
+	 */
 	private void listDirFiles(File dir) {
 		Log.debug(dir.toString());
 		String[] children = dir.list(javaFileFilter);
@@ -102,8 +128,13 @@ public class GatherMetrics {
 	    if (HasValidJavaFile && (i > 0)) {
 	    	PACKAGE_COUNTER++;
 	    }
+	    HasValidJavaFile = false;
 	}
 	
+	/**
+	 * Efetua a leitura dos arquivos .java 
+	 * @param file Arguivo Java a ser lido.
+	 */
 	private void processFile(File file) {
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(file));
