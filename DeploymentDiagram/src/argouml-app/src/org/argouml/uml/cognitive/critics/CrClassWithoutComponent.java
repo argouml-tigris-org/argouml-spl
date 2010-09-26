@@ -1,5 +1,6 @@
-//#if defined(COGNITIVE)
+//#if defined(COGNITIVE) and defined(DEPLOYMENTDIAGRAM) 
 //@#$LPS-COGNITIVE:GranularityType:Package
+//@#$LPS-DEPLOYMENTDIAGRAM:GranularityType:Class
 
 // $Id$
 // Copyright (c) 1996-2006 The Regents of the University of California. All
@@ -36,7 +37,11 @@ import org.argouml.cognitive.ToDoItem;
 import org.argouml.model.Model;
 import org.argouml.uml.cognitive.UMLDecision;
 import org.argouml.uml.cognitive.UMLToDoItem;
+//#if defined(DEPLOYMENTDIAGRAM)
+//@#$LPS-DEPLOYMENTDIAGRAM:GranularityType:Import
+//@#$LPS-DEPLOYMENTDIAGRAM:Localization:NestedIfdef-COGNITIVE
 import org.argouml.uml.diagram.deployment.ui.UMLDeploymentDiagram;
+//#endif
 import org.argouml.uml.diagram.static_structure.ui.FigClass;
 
 /**

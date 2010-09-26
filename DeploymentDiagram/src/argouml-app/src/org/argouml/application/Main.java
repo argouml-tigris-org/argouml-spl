@@ -89,7 +89,10 @@ import org.argouml.uml.diagram.activity.ui.InitActivityDiagram;
 //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Import
 import org.argouml.uml.diagram.collaboration.ui.InitCollaborationDiagram;
 //#endif
+//#if defined(DEPLOYMENTDIAGRAM)
+//@#$LPS-DEPLOYMENTDIAGRAM:GranularityType:Import
 import org.argouml.uml.diagram.deployment.ui.InitDeploymentDiagram;
+//#endif
 //#if defined(SEQUENCEDIAGRAM)
 //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Import
 import org.argouml.uml.diagram.sequence.ui.InitSequenceDiagram;
@@ -453,7 +456,10 @@ public class Main {
         //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Statement        
         SubsystemUtility.initSubsystem(new InitCollaborationDiagram());
         //#endif
+        //#if defined(DEPLOYMENTDIAGRAM)
+        //@#$LPS-DEPLOYMENTDIAGRAM:GranularityType:Statement
         SubsystemUtility.initSubsystem(new InitDeploymentDiagram());
+        //#endif
         //#if defined(SEQUENCEDIAGRAM)
         //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Statement
         SubsystemUtility.initSubsystem(new InitSequenceDiagram());

@@ -413,6 +413,7 @@ public abstract class ArgoDiagramImpl extends Diagram
                 && f.getOwner() == null 
                 //#if defined(ACTIVITYDIAGRAM)
                 //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Expression
+                //@#$LPS-ACTIVITYDIAGRAM:Localization:NestedCommand
                 && !(f instanceof FigPool)
                 //#endif
                 ) {
@@ -670,6 +671,7 @@ public abstract class ArgoDiagramImpl extends Diagram
                 } 
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
+                //@#$LPS-LOGGING:Localization:NestedCommand
                 else {
                     LOG.warn("Diagram " + getName() + " contains non-ArgoFig "
                             + fig);
@@ -678,6 +680,7 @@ public abstract class ArgoDiagramImpl extends Diagram
             } catch (InvalidElementException e) {
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
+                //@#$LPS-LOGGING:Localization:NestedCommand
                 LOG.error("Tried to refresh deleted element ", e);
                 //#endif
             }

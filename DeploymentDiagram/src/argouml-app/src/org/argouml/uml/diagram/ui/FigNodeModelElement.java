@@ -644,7 +644,8 @@ public abstract class FigNodeModelElement
 
         /* Check if multiple items are selected: */
         if (TargetManager.getInstance().getTargets().size() == 1) {
-            //#if defined(COGNITIVE)            
+            //#if defined(COGNITIVE)      
+            //@#$LPS-COGNITIVE:Localization:NestedCommand
             // TODO: Having Critics actions here introduces an unnecessary
             // dependency on the Critics subsystem.  Have it register its
             // desired actions using an extension mechanism - tfm

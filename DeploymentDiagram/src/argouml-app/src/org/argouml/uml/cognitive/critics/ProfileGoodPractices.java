@@ -71,7 +71,11 @@ public class ProfileGoodPractices extends Profile {
         critics.add(new CrTooManyTransitions());
         critics.add(new CrTooManyStates());
         critics.add(new CrTooManyClasses());
+        //#if defined(DEPLOYMENTDIAGRAM)
+        //@#$LPS-DEPLOYMENTDIAGRAM:GranularityType:Statement
+        //@#$LPS-DEPLOYMENTDIAGRAM:Localization:NestedIfdef-COGNITIVE
         critics.add(new CrWrongLinkEnds());
+        //#endif
         critics.add(new CrUtilityViolated());
 
         this.setCritics(critics);

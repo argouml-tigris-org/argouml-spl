@@ -38,11 +38,14 @@ import org.apache.log4j.Logger;
 import org.argouml.i18n.Translator;
 import org.argouml.model.Model;
 import org.argouml.uml.diagram.DiagramSettings;
+//#if defined(DEPLOYMENTDIAGRAM)
+//@#$LPS-DEPLOYMENTDIAGRAM:GranularityType:Import
 import org.argouml.uml.diagram.deployment.ui.FigComponent;
 import org.argouml.uml.diagram.deployment.ui.FigComponentInstance;
 import org.argouml.uml.diagram.deployment.ui.FigMNode;
 import org.argouml.uml.diagram.deployment.ui.FigNodeInstance;
 import org.argouml.uml.diagram.deployment.ui.FigObject;
+//#endif
 import org.argouml.uml.diagram.static_structure.ClassDiagramGraphModel;
 import org.argouml.uml.diagram.ui.FigClassAssociationClass;
 import org.argouml.uml.diagram.ui.FigEdgeAssociationClass;
@@ -706,15 +709,19 @@ public class UMLClassDiagram extends UMLDiagram {
         } else if (Model.getFacade().isAException(droppedObject)) {
             figNode = new FigException(droppedObject, bounds, settings);
         } else if (Model.getFacade().isASignal(droppedObject)) {
-            figNode = new FigSignal(droppedObject, bounds, settings);
+            figNode = new FigSignal(droppedObject, bounds, settings);        
+        } 
         //#if defined(USECASEDIAGRAM)
-        //@#$LPS-USECASEDIAGRAM:GranularityType:Statement
-        } else if (Model.getFacade().isAActor(droppedObject)) {
+        //@#$LPS-USECASEDIAGRAM:GranularityType:Statement        
+        else if (Model.getFacade().isAActor(droppedObject)) {
             figNode = new FigActor(droppedObject, bounds, settings);
         } else if (Model.getFacade().isAUseCase(droppedObject)) {
-            figNode = new FigUseCase(droppedObject, bounds, settings);
+            figNode = new FigUseCase(droppedObject, bounds, settings);        
+        } 
         //#endif
-        } else if (Model.getFacade().isAObject(droppedObject)) {
+        //#if defined(DEPLOYMENTDIAGRAM)
+        //@#$LPS-DEPLOYMENTDIAGRAM:GranularityType:Statement
+        else if (Model.getFacade().isAObject(droppedObject)) {
             figNode = new FigObject(droppedObject, bounds, settings);
         } else if (Model.getFacade().isANodeInstance(droppedObject)) {
             figNode = new FigNodeInstance(droppedObject, bounds, settings);
@@ -725,6 +732,7 @@ public class UMLClassDiagram extends UMLDiagram {
         } else if (Model.getFacade().isAComponent(droppedObject)) {
             figNode = new FigComponent(droppedObject, bounds, settings);
         }
+        //#endif
         
         if (figNode != null) {
             // if location is null here the position of the new figNode is set

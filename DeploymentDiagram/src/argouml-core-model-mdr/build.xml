@@ -505,7 +505,12 @@ Building this requires:
 			<echo message="COLLABORATIONDIAGRAM"/>
 		</then>
 	</if>  	
-  	
+	<if>
+		<isset property="DEPLOYMENTDIAGRAM"/>
+		<then>
+			<echo message="DEPLOYMENTDIAGRAM"/>
+		</then>
+	</if>  	
   </target>	
 	
   <!-- =================================================================== -->

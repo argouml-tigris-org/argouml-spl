@@ -30,7 +30,10 @@ import javax.swing.Icon;
 
 import org.argouml.application.helpers.ResourceLoaderWrapper;
 import org.argouml.model.Model;
+//#if defined(DEPLOYMENTDIAGRAM)
+//@#$LPS-DEPLOYMENTDIAGRAM:GranularityType:Import
 import org.argouml.uml.diagram.deployment.DeploymentDiagramGraphModel;
+//#endif
 import org.argouml.uml.diagram.ui.SelectionNodeClarifiers2;
 import org.tigris.gef.base.Globals;
 import org.tigris.gef.presentation.Fig;
@@ -93,13 +96,16 @@ public class SelectionClass extends SelectionNodeClarifiers2 {
     protected Icon[] getIcons() {
         Icon workingIcons[] = new Icon[icons.length];
         System.arraycopy(icons, 0, workingIcons, 0, icons.length);
-
+         
+        //#if defined(DEPLOYMENTDIAGRAM)
+        //@#$LPS-DEPLOYMENTDIAGRAM:GranularityType:Statement
         // No Generalizations on Deployment Diagram
         if (Globals.curEditor().getGraphModel() 
                 instanceof DeploymentDiagramGraphModel) {
             workingIcons[TOP - BASE] = null;
             workingIcons[BOTTOM - BASE] = null;
         }
+        //#endif
         if (useComposite) {
             workingIcons[LEFT - BASE] = compos;
             workingIcons[RIGHT - BASE] = compos;

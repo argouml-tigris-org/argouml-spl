@@ -968,9 +968,8 @@ For details see http://www.clarkware.com/software/JDepend.html.
 	<ant dir="../argouml-core-model-mdr"			inheritAll="false" target="jpp-preprocess"/>
 	<ant dir="../argouml-core-model-euml"			inheritAll="false" target="jpp-preprocess"/>
 	<ant dir="../argouml-app"						inheritAll="false" target="jpp-preprocess"/>
-	<ant dir="../argouml-core-diagrams-sequence2"	inheritAll="false" 	target="jpp-preprocess"/>
+	<ant dir="../argouml-core-diagrams-sequence2"	inheritAll="false" target="jpp-preprocess"/>
 	  	
   </target>		
 </project>
 <!-- End of file -->
-

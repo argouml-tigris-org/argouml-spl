@@ -42,11 +42,14 @@ import org.argouml.uml.diagram.activity.ui.FigSubactivityState;
 import org.argouml.uml.diagram.collaboration.ui.FigAssociationRole;
 import org.argouml.uml.diagram.collaboration.ui.FigClassifierRole;
 //#endif
+//#if defined(DEPLOYMENTDIAGRAM)
+//@#$LPS-DEPLOYMENTDIAGRAM:GranularityType:Import
 import org.argouml.uml.diagram.deployment.ui.FigComponent;
 import org.argouml.uml.diagram.deployment.ui.FigComponentInstance;
 import org.argouml.uml.diagram.deployment.ui.FigMNode;
 import org.argouml.uml.diagram.deployment.ui.FigNodeInstance;
 import org.argouml.uml.diagram.deployment.ui.FigObject;
+//#endif
 //#if defined(STATEDIAGRAM)
 //@#$LPS-STATEDIAGRAM:GranularityType:Import
 import org.argouml.uml.diagram.state.ui.FigBranchState;
@@ -131,13 +134,15 @@ public abstract class UmlDiagramRenderer
         }
         FigNode figNode = null;
         if (Model.getFacade().isAComment(node)) {
-            figNode = new FigComment();
+            figNode = new FigComment();        
+        } 
         //#if defined(STATEDIAGRAM)
         //@#$LPS-STATEDIAGRAM:GranularityType:Statement
-        } else if (Model.getFacade().isAStubState(node)) {
-            return new FigStubState();
+        else if (Model.getFacade().isAStubState(node)) {
+            return new FigStubState();        
+        }
         //#endif
-        } else if (Model.getFacade().isAAssociationClass(node)) {
+        else if (Model.getFacade().isAAssociationClass(node)) {
             figNode = new FigClassAssociationClass(node, x, y, 10, 10);
         } else if (Model.getFacade().isAClass(node)) {
             figNode = new FigClass(node, x, y, 10, 10);
@@ -156,17 +161,19 @@ public abstract class UmlDiagramRenderer
         } else if (Model.getFacade().isAPackage(node)) {
             figNode = new FigPackage(node, x, y);
         } else if (Model.getFacade().isAAssociation(node)) {
-            figNode = new FigNodeAssociation();
+            figNode = new FigNodeAssociation();        
+        } 
         //#if defined(USECASEDIAGRAM)
         //@#$LPS-USECASEDIAGRAM:GranularityType:Statement
-        } else if (Model.getFacade().isAActor(node)) {
+        else if (Model.getFacade().isAActor(node)) {
             figNode = new FigActor();
         } else if (Model.getFacade().isAUseCase(node)) {
-            figNode = new FigUseCase();
+            figNode = new FigUseCase();        
+        } 
         //#endif
         //#if defined(ACTIVITYDIAGRAM)
         //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Statement
-        } else if (Model.getFacade().isAPartition(node)) {
+        else if (Model.getFacade().isAPartition(node)) {
             figNode = new FigPartition();
         } else if (Model.getFacade().isACallState(node)) {
             figNode = new FigCallState();
@@ -174,15 +181,20 @@ public abstract class UmlDiagramRenderer
             figNode = new FigObjectFlowState();
         } else if (Model.getFacade().isASubactivityState(node)) {
             figNode = new FigSubactivityState();
+        } 
         //#endif
         //#if defined(COLLABORATIONDIAGRAM)
-        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Statement            
-        } else if (Model.getFacade().isAClassifierRole(node)) {
-            figNode = new FigClassifierRole();
+        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Statement
+        else if (Model.getFacade().isAClassifierRole(node)) {
+            figNode = new FigClassifierRole();                    
+        } 
         //#endif
-        } else if (Model.getFacade().isAMessage(node)) {
+        else if (Model.getFacade().isAMessage(node)) {
             figNode = new FigMessage();
-        } else if (Model.getFacade().isANode(node)) {
+        } 
+        //#if defined(DEPLOYMENTDIAGRAM)
+        //@#$LPS-DEPLOYMENTDIAGRAM:GranularityType:Statement
+        else if (Model.getFacade().isANode(node)) {
             figNode = new FigMNode();
         } else if (Model.getFacade().isANodeInstance(node)) {
             figNode = new FigNodeInstance();
@@ -192,16 +204,20 @@ public abstract class UmlDiagramRenderer
             figNode = new FigComponentInstance();
         } else if (Model.getFacade().isAObject(node)) {
             figNode = new FigObject();
-        } else if (Model.getFacade().isAComment(node)) {
-            figNode = new FigComment();
+        } 
+        //#endif
+        else if (Model.getFacade().isAComment(node)) {
+            figNode = new FigComment();        
+        }
         //#if defined(ACTIVITYDIAGRAM)
         //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Statement
-        } else if (Model.getFacade().isAActionState(node)) {
-            figNode = new FigActionState();
+        else if (Model.getFacade().isAActionState(node)) {
+            figNode = new FigActionState();        
+        } 
         //#endif
         //#if defined(STATEDIAGRAM)
         //@#$LPS-STATEDIAGRAM:GranularityType:Statement
-        } else if (Model.getFacade().isAFinalState(node)) {
+        else if (Model.getFacade().isAFinalState(node)) {
             figNode = new FigFinalState();
         } else if (Model.getFacade().isASubmachineState(node)) {
             figNode = new FigSubmachineState();
@@ -234,9 +250,9 @@ public abstract class UmlDiagramRenderer
             } else if (Model.getPseudostateKind().getDeepHistory()
                     .equals(kind)) {
                 figNode = new FigDeepHistoryState();
-            }
-            //#endif
+            }            
         }
+        //#endif
         
 
         if (figNode == null) {

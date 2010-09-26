@@ -229,6 +229,8 @@ public class ClassifierRoleNotationUml extends ClassifierRoleNotation {
             //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
             //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Statement
             //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Statement
+            //@#$LPS-SEQUENCEDIAGRAM:Localization:NestedCommand
+            //@#$LPS-COLLABORATIONDIAGRAM:Localization:NestedCommand
             while (it.hasNext()) {
                 c = it.next();
                 if (!bases.contains(Model.getFacade().getName(c))) {
@@ -256,6 +258,8 @@ public class ClassifierRoleNotationUml extends ClassifierRoleNotation {
                 //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
                 //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Statement
                 //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Statement
+                //@#$LPS-SEQUENCEDIAGRAM:Localization:NestedCommand
+                //@#$LPS-COLLABORATIONDIAGRAM:Localization:NestedCommand
                 Model.getCollaborationsHelper().addBase(cls, c);
                 //#endif
             }

@@ -255,7 +255,7 @@ public class PropPanelObjectFlowState extends AbstractPropPanelState
 
 
         protected void doIt(Collection selected) {
-          //#if defined(ACTIVITYDIAGRAM)
+            //#if defined(ACTIVITYDIAGRAM)
             //@#$LPS-ACTIVITYDIAGRAM:GranularityType:MethodBody
             //@#$LPS-ACTIVITYDIAGRAM:Localization:EntireMethod
             Object t = getTarget();
@@ -347,6 +347,7 @@ public class PropPanelObjectFlowState extends AbstractPropPanelState
                         states.remove(state);
                         //#if defined(ACTIVITYDIAGRAM)
                         //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Statement
+                        //@#$LPS-ACTIVITYDIAGRAM:Localization:NestedCommand
                         Model.getActivityGraphsHelper()
                                 .setInStates(type, states);
                         //#endif
@@ -478,6 +479,7 @@ public class PropPanelObjectFlowState extends AbstractPropPanelState
                 Model.getCoreHelper().setType(parameter, type);
                 //#if defined(ACTIVITYDIAGRAM)
                 //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Statement
+                //@#$LPS-ACTIVITYDIAGRAM:Localization:NestedCommand
                 Model.getActivityGraphsHelper().addParameter(target, parameter);
                 //#endif
             }

@@ -37,8 +37,12 @@ import org.argouml.cognitive.Designer;
 import org.argouml.cognitive.ListSet;
 import org.argouml.cognitive.ToDoItem;
 import org.argouml.uml.cognitive.UMLDecision;
+//#if defined(DEPLOYMENTDIAGRAM)
+//@#$LPS-DEPLOYMENTDIAGRAM:GranularityType:Import
+//@#$LPS-DEPLOYMENTDIAGRAM:Localization:NestedIfdef-COGNITIVE
 import org.argouml.uml.diagram.deployment.ui.FigObject;
 import org.argouml.uml.diagram.deployment.ui.UMLDeploymentDiagram;
+//#endif
 //#if defined(SEQUENCEDIAGRAM)
 //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Import
 //@#$LPS-SEQUENCEDIAGRAM:Localization:NestedIfdef-COGNITIVE
@@ -150,6 +154,10 @@ public class CrNodesOverlap extends CrUML {
                 }
                 FigNode fnj = (FigNode) oj;
                 if (fnj.intersects(boundsi)) {
+                    //#if defined(DEPLOYMENTDIAGRAM)
+                    //@#$LPS-DEPLOYMENTDIAGRAM:GranularityType:Expression
+                    //@#$LPS-DEPLOYMENTDIAGRAM:Localization:NestedIfdef-COGNITIVE
+                    //@#$LPS-DEPLOYMENTDIAGRAM:Localization:NestedCommand
                     if (!(d instanceof UMLDeploymentDiagram)) {
                         if (fni instanceof FigNodeModelElement) {
                             if (((FigNodeModelElement) fni).getEnclosingFig()
@@ -168,14 +176,30 @@ public class CrNodesOverlap extends CrUML {
                     // while they are not the EnclosingFig, so you
                     // have to prouve only these elements.
                     else {
+                    //#endif
                         if ((!((fni instanceof  FigClass)
                                 || (fni instanceof FigInterface)
-                                || (fni instanceof FigObject)))
+                                //#if defined(DEPLOYMENTDIAGRAM)
+                                //@#$LPS-DEPLOYMENTDIAGRAM:GranularityType:Expression
+                                //@#$LPS-DEPLOYMENTDIAGRAM:Localization:NestedIfdef-COGNITIVE
+                                //@#$LPS-DEPLOYMENTDIAGRAM:Localization:NestedCommand
+                                || (fni instanceof FigObject)
+                                //#endif
+                                ))
+                                
                                 || (!((fnj instanceof  FigClass)
                                         || (fnj instanceof FigInterface)
-                                        || (fnj instanceof FigObject))))
+                                        //#if defined(DEPLOYMENTDIAGRAM)
+                                        //@#$LPS-DEPLOYMENTDIAGRAM:GranularityType:Expression
+                                        //@#$LPS-DEPLOYMENTDIAGRAM:Localization:NestedIfdef-COGNITIVE
+                                        //@#$LPS-DEPLOYMENTDIAGRAM:Localization:NestedCommand
+                                        || (fnj instanceof FigObject)
+                                        //#endif
+                                        )))
                             continue;
+                    //#if defined(DEPLOYMENTDIAGRAM)
                     }
+                    //#endif
                     if (offs == null) {
                         offs = new ListSet();
                         offs.add(d);

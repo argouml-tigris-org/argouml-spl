@@ -76,7 +76,10 @@ import org.argouml.uml.ui.ActionClassDiagram;
 import org.argouml.uml.ui.ActionCollaborationDiagram;
 //#endif
 import org.argouml.uml.ui.ActionDeleteModelElements;
+//#if defined(DEPLOYMENTDIAGRAM)
+//@#$LPS-DEPLOYMENTDIAGRAM:GranularityType:Import
 import org.argouml.uml.ui.ActionDeploymentDiagram;
+//#endif
 import org.argouml.uml.ui.ActionGenerateAll;
 import org.argouml.uml.ui.ActionGenerateOne;
 import org.argouml.uml.ui.ActionGenerateProjectCode;
@@ -665,13 +668,15 @@ public class GenericArgoMenuBar extends JMenuBar implements
         ShortcutMgr.assignAccelerator(activityDiagram,
                 ShortcutMgr.ACTION_ACTIVITY_DIAGRAM);
         //#endif
+        //#if defined(DEPLOYMENTDIAGRAM)
+        //@#$LPS-DEPLOYMENTDIAGRAM:GranularityType:Statement
         JMenuItem deploymentDiagram =
             createDiagramMenu.add(new ActionDeploymentDiagram());
         setMnemonic(deploymentDiagram, "Deployment Diagram");
         toolbarTools.add((new ActionDeploymentDiagram()));
         ShortcutMgr.assignAccelerator(deploymentDiagram,
                 ShortcutMgr.ACTION_DEPLOYMENT_DIAGRAM);
-
+        //#endif
         createDiagramToolbar = 
             (new ToolBarFactory(toolbarTools)).createToolBar();
         createDiagramToolbar.setName(

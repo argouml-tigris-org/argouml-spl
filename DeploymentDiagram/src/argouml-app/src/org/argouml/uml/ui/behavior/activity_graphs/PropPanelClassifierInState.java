@@ -330,6 +330,7 @@ class ActionRemoveCISState extends AbstractActionRemoveElement {
                 states.remove(state);
                 //#if defined(ACTIVITYDIAGRAM)
                 //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Statement
+                //@#$LPS-ACTIVITYDIAGRAM:Localization:NestedCommand
                 Model.getActivityGraphsHelper().setInStates(cis, states);
                 //#endif
             }

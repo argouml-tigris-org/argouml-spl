@@ -1036,6 +1036,8 @@ public abstract class AbstractMessageNotationUml extends MessageNotation {
             //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
             //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Statement
             //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Statement            
+            //@#$LPS-SEQUENCEDIAGRAM:Localization:NestedCommand
+            //@#$LPS-COLLABORATIONDIAGRAM:Localization:NestedCommand
             else {
                 /* Disconnect the message from the call graph
                  * Make copies of returned live collections

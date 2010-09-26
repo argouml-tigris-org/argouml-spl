@@ -80,6 +80,7 @@ class ActionNewClassifierInState extends UndoableAction {
                 super.actionPerformed(e);
                 //#if defined(ACTIVITYDIAGRAM)
                 //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Statement
+                //@#$LPS-ACTIVITYDIAGRAM:Localization:NestedCommand
                 Object cis = Model.getActivityGraphsFactory()
                     .buildClassifierInState(type, states);
                 Model.getCoreHelper().setType(ofs, cis);
