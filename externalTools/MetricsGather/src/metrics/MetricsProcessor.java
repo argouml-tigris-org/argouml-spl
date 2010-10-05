@@ -182,7 +182,7 @@ public class MetricsProcessor {
 		else if (!isCommentOrBlankLine(value)) {
 			insertMetric(value, MetricType.LOC);
 			// Contabilizar classes
-			if (value.matches("(private|public|protected){0,1}.*class .*")) {
+			if (value.matches("(public|protected|private|static|abstract|final|native|synchronized|transient|volatile|strictfp| )*class .*")) {
 				CLASS_COUNTER++;
 			}
 		}
