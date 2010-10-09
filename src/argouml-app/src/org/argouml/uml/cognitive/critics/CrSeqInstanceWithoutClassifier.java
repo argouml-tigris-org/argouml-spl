@@ -1,6 +1,6 @@
 //#if defined(SEQUENCEDIAGRAM) and defined(COGNITIVE) 
 //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Class
-//@#$LPS-COGNITIVE:GranularityType:Class
+//@#$LPS-COGNITIVE:GranularityType:Package
 
 // $Id$
 // Copyright (c) 1996-2006 The Regents of the University of California. All
