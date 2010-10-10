@@ -52,6 +52,7 @@ public class GatherMetrics {
 					&& !name.equals("lib") && !name.equals("bin") && !name.equals("templates")
 					&& !name.equals("staging") && !name.equals("tests") && !name.equals("argouml-build")
 					&& !name.equals("argouml-core-tools") && !name.equals("argouml-core-infra") 
+					&& !name.startsWith("argouml-core-model")
 					);
 			} 
 		};	 
