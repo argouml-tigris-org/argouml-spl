@@ -219,12 +219,13 @@ public class GenericArgoMenuBar extends JMenuBar implements
      * This should be invoked automatically when importing sources.
      */
     private ArgoJMenu arrange;
-
+    //#if defined(COGNITIVE)    
+    //@#$LPS-LOGGING:GranularityType:Field   
     /**
      * The critique menu.
      */
     private ArgoJMenu critique;
-
+    //#endif
     /**
      * It needs it. Currently there is only system information and an about
      * text. Hyperlinking to online docs at argouml.org is considered to be a

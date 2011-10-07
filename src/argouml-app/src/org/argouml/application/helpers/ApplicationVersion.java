@@ -45,7 +45,9 @@ public class ApplicationVersion {
     public static String getVersion() {
         return version;
     }
-    
+
+    //#if defined(COGNITIVE)    
+    //@#$LPS-LOGGING:GranularityType:Method    
     /**
      * Retrieve the online HTML manual of ArgoUML for a critic. 
      * You need to append the critic class-name.
@@ -65,7 +67,8 @@ public class ApplicationVersion {
             + stableVersion
             + "-single/argomanual.html#critics.";
     }
-
+    //#endif
+    
     /**
      * Retrieve the URL of the online manual of ArgoUML.
      * 

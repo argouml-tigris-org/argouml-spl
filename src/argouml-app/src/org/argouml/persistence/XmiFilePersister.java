@@ -69,8 +69,10 @@ class XmiFilePersister extends AbstractFilePersister
     //#endif
     private List<String> pgmlStrings = new ArrayList<String>();
     
+    //#if defined(COGNITIVE)    
+    //@#$LPS-LOGGING:GranularityType:Field
     private String todoString;
-    
+    //#endif
     private String argoString;
     
     /**

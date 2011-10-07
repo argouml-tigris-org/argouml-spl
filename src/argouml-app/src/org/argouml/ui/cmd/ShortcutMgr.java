@@ -276,10 +276,11 @@ public class ShortcutMgr {
 
     /** Action key for open goals */
     public static final String ACTION_OPEN_GOALS = "openGoals";
-
+    //#if defined(COGNITIVE)    
+    //@#$LPS-LOGGING:GranularityType:Field   
     /** Action key for open critics */
     public static final String ACTION_OPEN_CRITICS = "openCritics";
-
+    //#endif
     /** Action key for help */
     public static final String ACTION_HELP = "help";
 

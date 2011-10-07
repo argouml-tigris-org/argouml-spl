@@ -86,8 +86,11 @@ class MemberList implements List<ProjectMember> {
 
     private List<ProjectMemberDiagram> diagramMembers = 
         new ArrayList<ProjectMemberDiagram>(10);
-
+    
+    //#if defined(COGNITIVE)    
+    //@#$LPS-LOGGING:GranularityType:Field
     private AbstractProjectMember todoList;
+    //#endif
     private AbstractProjectMember profileConfiguration;
 
     /**
@@ -139,15 +142,20 @@ class MemberList implements List<ProjectMember> {
         if (model == member) {
             model = null;
             return true;
-        } else if (todoList == member) {
+        } 
+        //#if defined(COGNITIVE)
+        //@#$LPS-COGNITIVE:GranularityType:Statement
+        else if (todoList == member) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedStatement
             LOG.info("Removing todo list");
             //#endif
-            setTodoList(null);
+            setTodoList(null);            
             return true;
-        } else if (profileConfiguration == member) {
+        } 
+        //#endif
+        else if (profileConfiguration == member) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedStatement
@@ -195,9 +203,12 @@ class MemberList implements List<ProjectMember> {
             temp.add(model);
         }
         temp.addAll(diagramMembers);
+        //#if defined(COGNITIVE)    
+        //@#$LPS-LOGGING:GranularityType:Statement
         if (todoList != null) {
             temp.add(todoList);
         }
+        //#endif
         return temp;
     }
     
@@ -222,9 +233,12 @@ class MemberList implements List<ProjectMember> {
         if (model != null) {
             ++size;
         }
+        //#if defined(COGNITIVE)
+        //@#$LPS-COGNITIVE:GranularityType:Statement
         if (todoList != null) {
             ++size;
         }
+        //#endif
         if (profileConfiguration != null) {
             ++size;
         }
@@ -232,9 +246,12 @@ class MemberList implements List<ProjectMember> {
     }
 
     public synchronized boolean contains(Object member) {
+        //#if defined(COGNITIVE)    
+        //@#$LPS-LOGGING:GranularityType:Statement
         if (todoList == member) {
             return true;
         }
+        //#endif
         if (model == member) {
             return true;
         }
@@ -253,9 +270,12 @@ class MemberList implements List<ProjectMember> {
         if (model != null) {
             model.remove();
         }
+        //#if defined(COGNITIVE)    
+        //@#$LPS-LOGGING:GranularityType:Statement
         if (todoList != null) {
             todoList.remove();
         }
+        //#endif
         if (profileConfiguration != null) {
             profileConfiguration.remove();
         }
@@ -275,11 +295,17 @@ class MemberList implements List<ProjectMember> {
         }
 
         if (i == diagramMembers.size()) {
+            //#if defined(COGNITIVE)    
+            //@#$LPS-LOGGING:GranularityType:Statement
             if (todoList != null) {
                 return todoList;
             } else {
+            //#endif
                 return profileConfiguration;
+            //#if defined(COGNITIVE)    
+            //@#$LPS-LOGGING:GranularityType:Statement
             }
+            //#endif
         }
         
         if (i == (diagramMembers.size() + 1)) {
@@ -302,15 +328,20 @@ class MemberList implements List<ProjectMember> {
         for (ProjectMemberDiagram d : diagramMembers) {
             temp[pos++] = d;
         }
+        //#if defined(COGNITIVE)
+        //@#$LPS-COGNITIVE:GranularityType:Statement
         if (todoList != null) {
             temp[pos++] = todoList;
         }
+        //#endif
         if (profileConfiguration != null) {
             temp[pos++] = profileConfiguration;
         }
         return temp;
     }
-
+    
+    //#if defined(COGNITIVE)    
+    //@#$LPS-LOGGING:GranularityType:Method
     private void setTodoList(AbstractProjectMember member) {
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Statement
@@ -319,6 +350,7 @@ class MemberList implements List<ProjectMember> {
         //#endif
         todoList = member;
     }
+    //#endif
 
     public <T> T[] toArray(T[] a) {
         throw new UnsupportedOperationException();
