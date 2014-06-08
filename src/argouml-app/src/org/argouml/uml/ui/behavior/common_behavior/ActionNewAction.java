@@ -35,7 +35,7 @@ import org.tigris.toolbar.toolbutton.ModalAction;
  * @since Dec 15, 2002
  * @author jaap.branderhorst@xs4all.nl
  */
-public abstract class ActionNewAction extends AbstractActionNewModelElement 
+public abstract class ActionNewAction extends AbstractActionNewModelElement
     implements ModalAction {
 
     /**
@@ -121,14 +121,14 @@ public abstract class ActionNewAction extends AbstractActionNewModelElement
         //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Statement
         if (getValue(ROLE).equals(Roles.ACTION)) {
             Model.getCollaborationsHelper().setAction(getTarget(), action);
-        } 
+        } else
         //#endif
         //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
         //@#$LPS-STATEDIAGRAM:GranularityType:Statement
         //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Statement
-        else if (getValue(ROLE).equals(Roles.EFFECT)) {
+        if (getValue(ROLE).equals(Roles.EFFECT)) {
             Model.getStateMachinesHelper().setEffect(getTarget(), action);
-        } else 
+        } else
         //#endif
             if (getValue(ROLE).equals(Roles.MEMBER)) {
             Model.getCommonBehaviorHelper().addAction(getTarget(), action);
