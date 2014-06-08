@@ -57,9 +57,9 @@ import org.xml.sax.InputSource;
  *
  * @author Bob Tarling
  */
-class XmiFilePersister extends AbstractFilePersister 
+class XmiFilePersister extends AbstractFilePersister
     implements XmiExtensionParser {
-    //#if defined(LOGGING)    
+    //#if defined(LOGGING)
     //@#$LPS-LOGGING:GranularityType:Field
     /**
      * Logger.
@@ -68,13 +68,13 @@ class XmiFilePersister extends AbstractFilePersister
         Logger.getLogger(XmiFilePersister.class);
     //#endif
     private List<String> pgmlStrings = new ArrayList<String>();
-    
-    //#if defined(COGNITIVE)    
-    //@#$LPS-LOGGING:GranularityType:Field
+
+    //#if defined(COGNITIVE)
+    //@#$LPS-COGNITIVE:GranularityType:Field
     private String todoString;
     //#endif
     private String argoString;
-    
+
     /**
      * The constructor.
      */
@@ -116,7 +116,7 @@ class XmiFilePersister extends AbstractFilePersister
         ProgressMgr progressMgr = new ProgressMgr();
         progressMgr.setNumberOfPhases(4);
         progressMgr.nextPhase();
-        
+
         File lastArchiveFile = new File(file.getAbsolutePath() + "~");
         File tempFile = null;
 
@@ -172,7 +172,7 @@ class XmiFilePersister extends AbstractFilePersister
         }
         progressMgr.nextPhase();
     }
-    
+
     /**
      * Write the output for a project on the given stream.
      *
@@ -183,9 +183,9 @@ class XmiFilePersister extends AbstractFilePersister
      * @throws SaveException If something goes wrong.
      * @throws InterruptedException     if the thread is interrupted
      */
-    void writeProject(Project project, 
-            OutputStream stream, 
-            ProgressMgr progressMgr) throws SaveException, 
+    void writeProject(Project project,
+            OutputStream stream,
+            ProgressMgr progressMgr) throws SaveException,
             InterruptedException {
 
         int size = project.getMembers().size();
@@ -240,8 +240,8 @@ class XmiFilePersister extends AbstractFilePersister
         //#endif
         try {
             Project p = ProjectFactory.getInstance().createProject();
-            
-            
+
+
             long length = file.length();
             long phaseSpace = 100000;
             int phases = (int) (length / phaseSpace);
@@ -257,15 +257,15 @@ class XmiFilePersister extends AbstractFilePersister
             ProgressMgr progressMgr = new ProgressMgr();
             progressMgr.setNumberOfPhases(phases);
             ThreadUtils.checkIfInterrupted();
-            
+
             InputSource source = new InputSource(new XmiInputStream(file
                     .toURI().toURL().openStream(), this, phaseSpace,
                     progressMgr));
             source.setSystemId(file.toURI().toURL().toString());
-            
+
             ModelMemberFilePersister modelPersister =
                 new ModelMemberFilePersister();
-            
+
             modelPersister.readModels(source);
             Object model = modelPersister.getCurModel();
             progressMgr.nextPhase();
@@ -274,11 +274,11 @@ class XmiFilePersister extends AbstractFilePersister
             p.addMember(model);
             parseXmiExtensions(p);
             modelPersister.registerDiagrams(p);
-            
+
             p.setRoot(model);
             p.setRoots(modelPersister.getElementsRead());
             File defaultProjectFile = new File(file.getPath() + ".zargo");
-            // Make sure the file doesn't exist so the user will 
+            // Make sure the file doesn't exist so the user will
             // get prompted to choose a new name
             for (int i = 0; i < 99; i++) {
                 if (!defaultProjectFile.exists()) {
@@ -299,7 +299,7 @@ class XmiFilePersister extends AbstractFilePersister
 
     /**
      * Returns true. All Argo specific files have an icon.
-     * 
+     *
      * @see org.argouml.persistence.AbstractFilePersister#hasAnIcon()
      */
     public boolean hasAnIcon() {
@@ -317,7 +317,7 @@ class XmiFilePersister extends AbstractFilePersister
             pgmlStrings.add(xmiExtensionString);
         } else if (label.equals("argo")) {
             argoString = xmiExtensionString;
-        } 
+        }
         //#if defined(COGNITIVE)
         //@#$LPS-COGNITIVE:GranularityType:Statement
         //@#$LPS-COGNITIVE:Localization:EndMethod
@@ -329,12 +329,12 @@ class XmiFilePersister extends AbstractFilePersister
 
     /**
      * Parse all the extensions that were found when reading XMI
-     * 
+     *
      * @param project
      * @exception OpenException
      */
     public void parseXmiExtensions(Project project) throws OpenException {
-        
+
         if (argoString != null) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
@@ -347,7 +347,7 @@ class XmiFilePersister extends AbstractFilePersister
             } catch (Exception e) {
                 throw new OpenException("Exception caught", e);
             }
-        } 
+        }
         //#if defined(COGNITIVE)
         //@#$LPS-COGNITIVE:GranularityType:Statement
         else {
@@ -360,7 +360,7 @@ class XmiFilePersister extends AbstractFilePersister
             LOG.info("Parsing pgml " + pgml.length());
             //#endif
             InputStream inputStream = new ByteArrayInputStream(pgml.getBytes());
-            MemberFilePersister persister = 
+            MemberFilePersister persister =
             // TODO: Cyclic dependency between PersistanceManager and here
                 PersistenceManager.getInstance()
                         .getDiagramMemberFilePersister();
@@ -377,7 +377,7 @@ class XmiFilePersister extends AbstractFilePersister
             //@#$LPS-LOGGING:Localization:NestedStatement
             LOG.info("Parsing todoString " + todoString.length());
             //#endif
-            InputStream inputStream = 
+            InputStream inputStream =
                 new ByteArrayInputStream(todoString.getBytes());
             MemberFilePersister persister = null;
             persister = new TodoListMemberFilePersister();

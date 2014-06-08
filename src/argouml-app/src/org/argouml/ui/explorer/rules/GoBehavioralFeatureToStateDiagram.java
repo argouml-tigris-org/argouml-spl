@@ -37,10 +37,9 @@ import org.argouml.kernel.Project;
 import org.argouml.kernel.ProjectManager;
 import org.argouml.model.Model;
 import org.argouml.uml.diagram.ArgoDiagram;
-//#if defined(STATEDIAGRAM)
-//@#$LPS-STATEDIAGRAM:GranularityType:Import
+
 import org.argouml.uml.diagram.state.ui.UMLStateDiagram;
-//#endif;
+
 
 /**
  * The rule for Behavioral Feature->Statechart diagram.

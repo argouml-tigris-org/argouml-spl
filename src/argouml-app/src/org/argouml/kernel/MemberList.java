@@ -44,34 +44,34 @@ import org.argouml.uml.diagram.ProjectMemberDiagram;
 
 /**
  * List of ProjectMembers. <p>
- * 
- * <p>The project members are grouped into 4 categories: 
+ *
+ * <p>The project members are grouped into 4 categories:
  * model, diagrams, the todo item list and the profile configuration. <p>
  *
- * <p>The purpose of these categories is to make sure that members are read 
- * and written in the correct order. 
- * 
+ * <p>The purpose of these categories is to make sure that members are read
+ * and written in the correct order.
+ *
  * <p>When reading the todo items it will fail if the diagrams elements or model
  * elements have not yet been read that they refer to. When reading diagrams
  * that will fail if the model elements don't yet exist that they refer to.
  * When loading the model that may fail if the correct profile has not been
  * loaded.
- * 
+ *
  * <p>Hence, the save (and therefore load) order is profile, model, diagrams,
  * todo items.
  *
  * <p>This implementation supports only one profile configuration, one model
  * member, multiple diagram members, one todo list member.
- * 
+ *
  * <p>Comments by mvw: <p>
- * This class should be reworked to be independent 
- * of the org.argouml.uml package. That can be done by extending the 
- * ProjectMember interface with functions returning the sorting order, 
+ * This class should be reworked to be independent
+ * of the org.argouml.uml package. That can be done by extending the
+ * ProjectMember interface with functions returning the sorting order,
  * and if multiple entries of the same type are allowed. <p>
- * 
- * In preparation, this class is made simpler by deprecating 
+ *
+ * In preparation, this class is made simpler by deprecating
  * all operations that are not part of the List interface.
- * 
+ *
  * @author Bob Tarling
  */
 class MemberList implements List<ProjectMember> {
@@ -84,11 +84,11 @@ class MemberList implements List<ProjectMember> {
     //#endif
     private AbstractProjectMember model;
 
-    private List<ProjectMemberDiagram> diagramMembers = 
+    private List<ProjectMemberDiagram> diagramMembers =
         new ArrayList<ProjectMemberDiagram>(10);
-    
-    //#if defined(COGNITIVE)    
-    //@#$LPS-LOGGING:GranularityType:Field
+
+    //#if defined(COGNITIVE)
+    //@#$LPS-COGNITIVE:GranularityType:Field
     private AbstractProjectMember todoList;
     //#endif
     private AbstractProjectMember profileConfiguration;
@@ -109,15 +109,15 @@ class MemberList implements List<ProjectMember> {
         if (member instanceof ProjectMemberModel) {
             // Always put the model at the top
             model = (AbstractProjectMember) member;
-            return true;            
-        } 
+            return true;
+        }
         //#if defined(COGNITIVE)
         //@#$LPS-COGNITIVE:GranularityType:Statement
         else if (member instanceof ProjectMemberTodoList) {
             // otherwise add the diagram at the start
-            setTodoList((AbstractProjectMember) member);            
+            setTodoList((AbstractProjectMember) member);
             return true;
-        } 
+        }
         //#endif
         else if (member instanceof ProfileConfiguration) {
             profileConfiguration = (AbstractProjectMember) member;
@@ -142,7 +142,7 @@ class MemberList implements List<ProjectMember> {
         if (model == member) {
             model = null;
             return true;
-        } 
+        }
         //#if defined(COGNITIVE)
         //@#$LPS-COGNITIVE:GranularityType:Statement
         else if (todoList == member) {
@@ -151,9 +151,9 @@ class MemberList implements List<ProjectMember> {
             //@#$LPS-LOGGING:Localization:NestedStatement
             LOG.info("Removing todo list");
             //#endif
-            setTodoList(null);            
+            setTodoList(null);
             return true;
-        } 
+        }
         //#endif
         else if (profileConfiguration == member) {
             //#if defined(LOGGING)
@@ -190,11 +190,11 @@ class MemberList implements List<ProjectMember> {
     }
 
     /**
-     * @return the list of members in the order that they need to be written 
+     * @return the list of members in the order that they need to be written
      *         out in.
      */
     private List<ProjectMember> buildOrderedMemberList() {
-        List<ProjectMember> temp = 
+        List<ProjectMember> temp =
             new ArrayList<ProjectMember>(size());
         if (profileConfiguration != null) {
             temp.add(profileConfiguration);
@@ -203,15 +203,15 @@ class MemberList implements List<ProjectMember> {
             temp.add(model);
         }
         temp.addAll(diagramMembers);
-        //#if defined(COGNITIVE)    
-        //@#$LPS-LOGGING:GranularityType:Statement
+        //#if defined(COGNITIVE)
+        //@#$LPS-COGNITIVE:GranularityType:Statement
         if (todoList != null) {
             temp.add(todoList);
         }
         //#endif
         return temp;
     }
-    
+
     private boolean removeDiagram(ArgoDiagram d) {
         for (ProjectMemberDiagram pmd : diagramMembers) {
             if (pmd.getDiagram() == d) {
@@ -246,8 +246,8 @@ class MemberList implements List<ProjectMember> {
     }
 
     public synchronized boolean contains(Object member) {
-        //#if defined(COGNITIVE)    
-        //@#$LPS-LOGGING:GranularityType:Statement
+        //#if defined(COGNITIVE)
+        //@#$LPS-COGNITIVE:GranularityType:Statement
         if (todoList == member) {
             return true;
         }
@@ -270,8 +270,8 @@ class MemberList implements List<ProjectMember> {
         if (model != null) {
             model.remove();
         }
-        //#if defined(COGNITIVE)    
-        //@#$LPS-LOGGING:GranularityType:Statement
+        //#if defined(COGNITIVE)
+        //@#$LPS-COGNITIVE:GranularityType:Statement
         if (todoList != null) {
             todoList.remove();
         }
@@ -295,19 +295,19 @@ class MemberList implements List<ProjectMember> {
         }
 
         if (i == diagramMembers.size()) {
-            //#if defined(COGNITIVE)    
+            //#if defined(COGNITIVE)
             //@#$LPS-LOGGING:GranularityType:Statement
             if (todoList != null) {
                 return todoList;
             } else {
             //#endif
                 return profileConfiguration;
-            //#if defined(COGNITIVE)    
-            //@#$LPS-LOGGING:GranularityType:Statement
+            //#if defined(COGNITIVE)
+            //@#$LPS-COGNITIVE:GranularityType:Statement
             }
             //#endif
         }
-        
+
         if (i == (diagramMembers.size() + 1)) {
             return profileConfiguration;
         }
@@ -339,9 +339,9 @@ class MemberList implements List<ProjectMember> {
         }
         return temp;
     }
-    
-    //#if defined(COGNITIVE)    
-    //@#$LPS-LOGGING:GranularityType:Method
+
+    //#if defined(COGNITIVE)
+    //@#$LPS-COGNITIVE:GranularityType:Method
     private void setTodoList(AbstractProjectMember member) {
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Statement

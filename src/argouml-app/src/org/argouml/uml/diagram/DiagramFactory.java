@@ -83,7 +83,7 @@ import org.tigris.gef.graph.GraphNodeRenderer;
 
 /**
 * Provide a factory method to create different UML diagrams.
-* 
+*
 * @author Bob Tarling
 */
 public final class DiagramFactory {
@@ -97,9 +97,9 @@ public final class DiagramFactory {
      * NOTE: This needs to be initialized before the constructor is called
      * to initialize the singleton.
      */
-    private static Map<DiagramType, Class> diagramClasses = 
+    private static Map<DiagramType, Class> diagramClasses =
         new EnumMap<DiagramType, Class>(DiagramType.class);
-    
+
     /**
      * The singleton instance.
      */
@@ -109,14 +109,14 @@ public final class DiagramFactory {
      * Enumeration containing all the different types of UML diagrams.
      */
     public enum DiagramType {
-        Class, 
+        Class,
         //#if defined(USECASEDIAGRAM)
         //@#$LPS-USECASEDIAGRAM:GranularityType:Enumeration
         UseCase,
         //#endif
         //#if defined(STATEDIAGRAM)
         //@#$LPS-STATEDIAGRAM:GranularityType:Enumeration
-        State, 
+        State,
         //#endif
         //#if defined(DEPLOYMENTDIAGRAM)
         //@#$LPS-DEPLOYMENTDIAGRAM:GranularityType:Enumeration
@@ -128,7 +128,7 @@ public final class DiagramFactory {
         //#endif
         //#if defined(ACTIVITYDIAGRAM)
         //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Enumeration
-        Activity, 
+        Activity,
         //#endif
         //#if defined(SEQUENCEDIAGRAM)
         //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Enumeration
@@ -168,9 +168,9 @@ public final class DiagramFactory {
         diagramClasses.put(DiagramType.Activity, UMLActivityDiagram.class);
         //#endif
         //#if defined(SEQUENCEDIAGRAM)
-        //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Statement
+        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Statement
         diagramClasses.put(DiagramType.Sequence, UMLSequenceDiagram.class);
-        //#endif        
+        //#endif
     }
 
     /**
@@ -180,10 +180,10 @@ public final class DiagramFactory {
         return diagramFactory;
     }
 
-    
+
     /**
      * Factory method to create a new default instance of an ArgoDiagram.
-     * @param namespace The namespace that (in)directly 
+     * @param namespace The namespace that (in)directly
      *                        owns the elements on the diagram
      * @return the newly instantiated class diagram
      */
@@ -195,32 +195,32 @@ public final class DiagramFactory {
      * Factory method to create a new instance of an ArgoDiagram.
      *
      * @param type The class of rendering diagram to create
-     * @param namespace The namespace that (in)directly 
+     * @param namespace The namespace that (in)directly
      *                        owns the elements on the diagram
      * @param machine The StateMachine for the diagram
      *                         (only: statemachine - activitygraph)
      * @return the newly instantiated class diagram
-     * @deprecated for 0.27.3 by tfmorris.  Use 
+     * @deprecated for 0.27.3 by tfmorris.  Use
      * {@link #create(DiagramType, Object, DiagramSettings)}.  The 'owner'
      * argument should be the 'machine' for a state diagram or activity diagram
-     * (which can figure out the correct namespace from that) and the 
+     * (which can figure out the correct namespace from that) and the
      * 'namespace' for all others.
      */
     @Deprecated
     public ArgoDiagram createDiagram(final DiagramType type,
             final Object namespace, final Object machine) {
-        
+
         DiagramSettings settings = ProjectManager.getManager()
                 .getCurrentProject().getProjectSettings()
                 .getDefaultDiagramSettings();
-        
+
         return createInternal(type, namespace, machine, settings);
     }
 
 
     /**
      * Factory method to create a new instance of an ArgoDiagram.
-     * 
+     *
      * @param type The class of rendering diagram to create
      * @param owner the owning UML element. For most diagrams this is a
      *            namespace, but for the state diagram it is the state machine
@@ -232,7 +232,7 @@ public final class DiagramFactory {
             final DiagramType type,
             final Object owner,
             final DiagramSettings settings) {
-        
+
         return  createInternal(type, owner, null, settings);
     }
 
@@ -250,7 +250,7 @@ public final class DiagramFactory {
             throw new IllegalArgumentException(
                     "DiagramSettings may not be null");
         }
-        
+
         Object factory = factories.get(type);
         if (factory != null) {
             Object owner;
@@ -274,6 +274,7 @@ public final class DiagramFactory {
         } else {
             //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
             //@#$LPS-STATEDIAGRAM:GranularityType:Statement
+            //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Statement
             if ((
                  //#if defined(STATEDIAGRAM)
                  //@#$LPS-STATEDIAGRAM:GranularityType:Expression
@@ -308,20 +309,20 @@ public final class DiagramFactory {
 
         return diagram;
     }
-    
+
     /**
      * Factory method to create a new instance of an ArgoDiagram.
      *
      * @param type The class of rendering diagram to create
-     * @param namespace The namespace that (in)directly 
+     * @param namespace The namespace that (in)directly
      *                        owns the elements on the diagram
      * @param machine The StateMachine for the diagram
      *                         (only: statemachine - activitygraph)
      * @return the newly instantiated class diagram
-     * @deprecated for 0.25.4 by tfmorris.  Use 
+     * @deprecated for 0.25.4 by tfmorris.  Use
      * {@link #create(DiagramType, Object, DiagramSettings)}.  The 'owner'
      * argument should be the 'machine' for a state diagram or activity diagram
-     * (which can figure out the correct namespace from that) and the 
+     * (which can figure out the correct namespace from that) and the
      * 'namespace' for all others.
      */
     @Deprecated
@@ -359,14 +360,14 @@ public final class DiagramFactory {
             diagram = new UMLCollaborationDiagram(namespace);
             diType = CollaborationDiagram.class;
         //#endif
-        //#if defined(ACTIVITYDIAGRAM)      
+        //#if defined(ACTIVITYDIAGRAM)
         //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Statement
         } else if (type == UMLActivityDiagram.class) {
             diagram = new UMLActivityDiagram(namespace, machine);
             diType = ActivityDiagram.class;
         //#endif
         }
-        //#if defined(SEQUENCEDIAGRAM)      
+        //#if defined(SEQUENCEDIAGRAM)
         //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Statement
          else if (type == UMLSequenceDiagram.class) {
             diagram = new UMLSequenceDiagram(namespace);
@@ -376,7 +377,7 @@ public final class DiagramFactory {
         if (diagram == null) {
             throw new IllegalArgumentException ("Unknown diagram type");
         }
-        
+
         if (Model.getDiagramInterchangeModel() != null) {
             // TODO: This is never executed as Ludos DI work was never
             // finished.
@@ -421,13 +422,13 @@ public final class DiagramFactory {
                 rend.getFigNodeFor(model, 0, 0, noStyleProperties);
         return renderingElement;
     }
-    
+
     /**
      * Register a specific factory class to create diagram instances for a
      * specific diagram type
      * @param type the diagram type
      * @param factory the factory instance
-     * @deprecated for 0.27.3 by tfmorris.  Use 
+     * @deprecated for 0.27.3 by tfmorris.  Use
      * {@link #registerDiagramFactory(DiagramType, DiagramFactoryInterface2)}.
      */
     @Deprecated
@@ -436,7 +437,7 @@ public final class DiagramFactory {
             final DiagramFactoryInterface factory) {
         factories.put(type, factory);
     }
-    
+
     /**
      * Register a specific factory class to create diagram instances for a
      * specific diagram type

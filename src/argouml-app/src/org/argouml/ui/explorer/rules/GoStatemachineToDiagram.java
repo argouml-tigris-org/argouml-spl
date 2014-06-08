@@ -41,10 +41,8 @@ import org.argouml.uml.diagram.ArgoDiagram;
 //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Import
 import org.argouml.uml.diagram.activity.ui.UMLActivityDiagram;
 //#endif
-//#if defined(STATEDIAGRAM)
-//@#$LPS-STATEDIAGRAM:GranularityType:Import
+
 import org.argouml.uml.diagram.state.ui.UMLStateDiagram;
-//#endif;
 
 /**
  * A go rule to navigate from a statemachine or activitygraph

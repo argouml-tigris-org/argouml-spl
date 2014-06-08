@@ -65,18 +65,18 @@ import org.tigris.gef.undo.UndoableAction;
 /**
  * Add a concurrent region to a concurrent composite state
  * <p>
- * This action can be executed with either 
+ * This action can be executed with either
  * the composite concurrent state selected,
  * or one of its concurrent regions.
  * <p>
  * TODO: Move all the magic numbers to constants
- * 
+ *
  * @author pepargouml@yahoo.es
  */
 public class ActionAddConcurrentRegion extends UndoableAction {
 
     //#if defined(LOGGING)
-    //@#$LPS-LOGGING:GranularityType:Import
+    //@#$LPS-LOGGING:GranularityType:Field
     /** logger */
     private static final Logger LOG =
         Logger.getLogger(ActionAddConcurrentRegion.class);
@@ -89,7 +89,7 @@ public class ActionAddConcurrentRegion extends UndoableAction {
                 ResourceLoaderWrapper.lookupIcon(
                         "action.add-concurrent-region"));
         // Set the tooltip string:
-        putValue(Action.SHORT_DESCRIPTION, 
+        putValue(Action.SHORT_DESCRIPTION,
                 Translator.localize("action.add-concurrent-region"));
     }
 
@@ -128,7 +128,7 @@ public class ActionAddConcurrentRegion extends UndoableAction {
             //#if defined(STATEDIAGRAM)
             //@#$LPS-STATEDIAGRAM:GranularityType:Statement
             final FigCompositeState figCompositeState = (FigCompositeState) f;
-            final List<FigConcurrentRegion> regionFigs = 
+            final List<FigConcurrentRegion> regionFigs =
                 ((List<FigConcurrentRegion>) f.getEnclosedFigs().clone());
             final Object umlCompositeState = figCompositeState.getOwner();
             //#endif
@@ -152,17 +152,17 @@ public class ActionAddConcurrentRegion extends UndoableAction {
                 final Object umlRegion1 =
                     factory.buildCompositeState(umlCompositeState);
                 Rectangle bounds = new Rectangle(
-                        f.getX() + FigConcurrentRegion.INSET_HORZ, 
-                        f.getY() + rName.height 
-                            + FigConcurrentRegion.INSET_VERT, 
-                        rFig.width - 2 * FigConcurrentRegion.INSET_HORZ, 
-                        rFig.height - rName.height 
+                        f.getX() + FigConcurrentRegion.INSET_HORZ,
+                        f.getY() + rName.height
+                            + FigConcurrentRegion.INSET_VERT,
+                        rFig.width - 2 * FigConcurrentRegion.INSET_HORZ,
+                        rFig.height - rName.height
                             - 2 * FigConcurrentRegion.INSET_VERT);
                 DiagramSettings settings = figCompositeState.getSettings();
                 final FigConcurrentRegion firstRegionFig =
                     new FigConcurrentRegion(
                         umlRegion1, bounds, settings);
-                /* The 1st region has an invisible divider line 
+                /* The 1st region has an invisible divider line
                  * (the box is always invisible): */
                 firstRegionFig.setLineColor(ArgoFig.INVISIBLE_LINE_COLOR);
                 firstRegionFig.setEnclosingFig(figCompositeState);
@@ -173,7 +173,7 @@ public class ActionAddConcurrentRegion extends UndoableAction {
                     mgm.fireNodeAdded(umlRegion1);
                 }
 
-                /* Throw out any previous elements that were 
+                /* Throw out any previous elements that were
                  * enclosed but are not a concurrent region;
                  * let's move them onto the first region: */
                 if (!regionFigs.isEmpty()) {
@@ -185,14 +185,14 @@ public class ActionAddConcurrentRegion extends UndoableAction {
                     }
                 }
             }
-            final Object umlRegion2 = 
+            final Object umlRegion2 =
                 factory.buildCompositeState(umlCompositeState);
-            
+
             // TODO: What are these magic numbers?
             Rectangle bounds = new Rectangle(
-                    f.getX() + FigConcurrentRegion.INSET_HORZ, 
+                    f.getX() + FigConcurrentRegion.INSET_HORZ,
                     f.getY() + rFig.height - 1, //linewidth?
-                    rFig.width - 2 * FigConcurrentRegion.INSET_HORZ, 
+                    rFig.width - 2 * FigConcurrentRegion.INSET_HORZ,
                     126);
             DiagramSettings settings = figCompositeState.getSettings();
             final FigConcurrentRegion newRegionFig =
@@ -213,12 +213,12 @@ public class ActionAddConcurrentRegion extends UndoableAction {
             if (mgm.canAddNode(umlRegion2)) {
                 mgm.getNodes().add(umlRegion2);
                 mgm.fireNodeAdded(umlRegion2);
-            }            
+            }
 
-            /* TODO: Verify this. 
-             * IIUC, then this triggers the CompountStateFig 
+            /* TODO: Verify this.
+             * IIUC, then this triggers the CompountStateFig
              * to draw itself correctly.
-             * Hence, there was a reason to wait this long 
+             * Hence, there was a reason to wait this long
              * to make the state concurrent. */
             Model.getStateMachinesHelper().setConcurrent(
                     umlCompositeState, true);

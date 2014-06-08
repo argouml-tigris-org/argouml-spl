@@ -104,7 +104,7 @@ import org.tigris.gef.base.ZoomAction;
 
 /**
  * This class manages all Argo's shortcuts
- * 
+ *
  * @author nirux
  */
 public class ShortcutMgr {
@@ -137,7 +137,7 @@ public class ShortcutMgr {
     public static final String ACTION_REMOVE_FROM_DIAGRAM = "removeFromDiagram";
 
     /** Action key for delete model elements */
-    public static final String ACTION_DELETE_MODEL_ELEMENTS = 
+    public static final String ACTION_DELETE_MODEL_ELEMENTS =
         "deleteModelElements";
 
     /** Action key for zoom out */
@@ -150,7 +150,7 @@ public class ShortcutMgr {
     public static final String ACTION_FIND = "find";
 
     /** Action key for generate all classes */
-    public static final String ACTION_GENERATE_ALL_CLASSES = 
+    public static final String ACTION_GENERATE_ALL_CLASSES =
         "generateAllClasses";
 
     /** Action key for align rights */
@@ -184,7 +184,7 @@ public class ShortcutMgr {
     public static final String ACTION_SAVE_ALL_GRAPHICS = "saveAllGraphics";
 
     /** Action key for navigate forward */
-    public static final String ACTION_NAVIGATE_FORWARD = 
+    public static final String ACTION_NAVIGATE_FORWARD =
         "navigateTargetForward";
 
     /** Action key for navigate back */
@@ -236,7 +236,7 @@ public class ShortcutMgr {
     //#if defined(COLLABORATIONDIAGRAM)
     //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Field
     /** Action key for collaboration diagram */
-    public static final String ACTION_COLLABORATION_DIAGRAM = 
+    public static final String ACTION_COLLABORATION_DIAGRAM =
         "collaborationDiagrams";
     //#endif
     //#if defined(STATEDIAGRAM)
@@ -258,11 +258,11 @@ public class ShortcutMgr {
     public static final String ACTION_GENERATE_ONE = "generateOne";
 
     /** Action key for generate project code */
-    public static final String ACTION_GENERATE_PROJECT_CODE = 
+    public static final String ACTION_GENERATE_PROJECT_CODE =
         "generateProjectCode";
 
     /** Action key for generation settings */
-    public static final String ACTION_GENERATION_SETTINGS = 
+    public static final String ACTION_GENERATION_SETTINGS =
         "generationSettings";
 
     /** Action key for preferred size */
@@ -276,8 +276,8 @@ public class ShortcutMgr {
 
     /** Action key for open goals */
     public static final String ACTION_OPEN_GOALS = "openGoals";
-    //#if defined(COGNITIVE)    
-    //@#$LPS-LOGGING:GranularityType:Field   
+    //#if defined(COGNITIVE)
+    //@#$LPS-COGNITIVE:GranularityType:Field
     /** Action key for open critics */
     public static final String ACTION_OPEN_CRITICS = "openCritics";
     //#endif
@@ -306,19 +306,19 @@ public class ShortcutMgr {
     public static final String ACTION_ALIGN_TO_GRID = "alignToGrid";
 
     /** Action key for distribute h spacing */
-    public static final String ACTION_DISTRIBUTE_H_SPACING = 
+    public static final String ACTION_DISTRIBUTE_H_SPACING =
         "distributeHSpacing";
 
     /** Action key for distribute h centers */
-    public static final String ACTION_DISTRIBUTE_H_CENTERS = 
+    public static final String ACTION_DISTRIBUTE_H_CENTERS =
         "distributeHCenters";
 
     /** Action key for distribute v spacing */
-    public static final String ACTION_DISTRIBUTE_V_SPACING = 
+    public static final String ACTION_DISTRIBUTE_V_SPACING =
         "distributeVSpacing";
 
     /** Action key for distribute v centers */
-    public static final String ACTION_DISTRIBUTE_V_CENTERS = 
+    public static final String ACTION_DISTRIBUTE_V_CENTERS =
         "distributeVCenters";
 
     /** Action key for reorder forward */
@@ -345,15 +345,15 @@ public class ShortcutMgr {
     private static final int SHIFTED_DEFAULT_MASK = Toolkit.getDefaultToolkit()
             .getMenuShortcutKeyMask() | KeyEvent.SHIFT_DOWN_MASK;
 
-    private static HashMap<String, ActionWrapper> shortcutHash = 
+    private static HashMap<String, ActionWrapper> shortcutHash =
         new HashMap<String, ActionWrapper>(90);
 
-    private static HashMap<KeyStroke, KeyStroke> duplicate = 
+    private static HashMap<KeyStroke, KeyStroke> duplicate =
         new HashMap<KeyStroke, KeyStroke>(10);
 
     /**
      * Return the shortcuts as an ActionWrapper array
-     * 
+     *
      * @return an array of ActionWrappers
      */
     static ActionWrapper[] getShortcuts() {
@@ -377,13 +377,13 @@ public class ShortcutMgr {
 
     /**
      * Assign a shortcut to the given JMenuItem
-     * 
+     *
      * @param menuItem
      *            the menu item
      * @param shortcutKey
      *            the shortcut key
      */
-    public static void assignAccelerator(JMenuItem menuItem, 
+    public static void assignAccelerator(JMenuItem menuItem,
             String shortcutKey) {
         ActionWrapper shortcut = shortcutHash.get(shortcutKey);
 
@@ -406,13 +406,13 @@ public class ShortcutMgr {
 
     /**
      * Assign a shortcut to the given JPanel (only when focused)
-     * 
+     *
      * @param panel
      *            the panel
      * @param shortcutKey
      *            the shortcut key
      */
-    public static void assignAccelerator(JPanel panel, 
+    public static void assignAccelerator(JPanel panel,
             String shortcutKey) {
         ActionWrapper shortcut = shortcutHash.get(shortcutKey);
 
@@ -420,35 +420,35 @@ public class ShortcutMgr {
             KeyStroke keyStroke = shortcut.getCurrentShortcut();
             if (keyStroke != null) {
                 // TODO: This method is obsolete.  Use getInputMap etc as below
-                panel.registerKeyboardAction(shortcut.getActionInstance(), 
+                panel.registerKeyboardAction(shortcut.getActionInstance(),
                         keyStroke, JComponent.WHEN_FOCUSED);
             }
             KeyStroke alternativeKeyStroke = duplicate.get(keyStroke);
             if (alternativeKeyStroke != null) {
-                String actionName = (String) 
+                String actionName = (String)
                     shortcut.getActionInstance().getValue(AbstractAction.NAME);
 
                 panel.getInputMap(JComponent.WHEN_FOCUSED).put(
                         alternativeKeyStroke, actionName);
-                panel.getActionMap().put(actionName, 
+                panel.getActionMap().put(actionName,
                         shortcut.getActionInstance());
             }
         }
     }
-    
+
     /**
      * Search for the duplicate of a given KeyStroke
-     * 
+     *
      * @param keyStroke         the KeyStroke to search for
      * @return                  the duplicate, or null if not present
      */
     static KeyStroke getDuplicate(KeyStroke keyStroke) {
         return duplicate.get(keyStroke);
     }
-    
+
     /**
      * Returns a shortcut for the given action id
-     * 
+     *
      * @param actionId
      *            the id of the action
      * @return the given action, or null if the action is not found
@@ -459,7 +459,7 @@ public class ShortcutMgr {
 
     private static void putDefaultShortcut(String shortcutKey,
         KeyStroke defaultKeyStroke, AbstractAction action) {
-        putDefaultShortcut(shortcutKey, defaultKeyStroke, action, 
+        putDefaultShortcut(shortcutKey, defaultKeyStroke, action,
                 getActionDefaultName(action));
     }
 
@@ -481,7 +481,7 @@ public class ShortcutMgr {
             currentKeyStroke = decodeKeyStroke(confCurrentShortcut);
         }
 
-        ActionWrapper currentShortcut = 
+        ActionWrapper currentShortcut =
             new ActionWrapper(shortcutKey, currentKeyStroke,
                 defaultKeyStroke, action, actionName);
         shortcutHash.put(shortcutKey, currentShortcut);
@@ -489,7 +489,7 @@ public class ShortcutMgr {
 
     /**
      * This method decodes the given String into the corresponding KeyStroke
-     * 
+     *
      * @param strKeyStroke
      *            the String to be decoded
      * @return the corresponding KeyStroke
@@ -523,7 +523,7 @@ public class ShortcutMgr {
 
     /**
      * Saves the given actions in the configuration file
-     * 
+     *
      * @param newActions
      *            the actions array
      */
@@ -580,11 +580,11 @@ public class ShortcutMgr {
     private static String getActionDefaultName(AbstractAction action) {
         return (String) action.getValue(AbstractAction.NAME);
     }
-    
+
     // let's load the default shortcut for every action
     static {
         // First of all, let's set up the duplicate hash. This hash contains
-        // all the duplicate key for another key. 
+        // all the duplicate key for another key.
         //
         // TODO: every duplicate.put() is done twice - but how to avoid this?
         duplicate.put(KeyStroke.getKeyStroke(KeyEvent.VK_MINUS, DEFAULT_MASK),
@@ -592,9 +592,9 @@ public class ShortcutMgr {
         duplicate.put(KeyStroke.getKeyStroke(
                 KeyEvent.VK_SUBTRACT, DEFAULT_MASK),
                 KeyStroke.getKeyStroke(KeyEvent.VK_MINUS, DEFAULT_MASK));
-        duplicate.put(KeyStroke.getKeyStroke(KeyEvent.VK_PLUS, DEFAULT_MASK), 
+        duplicate.put(KeyStroke.getKeyStroke(KeyEvent.VK_PLUS, DEFAULT_MASK),
                 KeyStroke.getKeyStroke(KeyEvent.VK_ADD, DEFAULT_MASK));
-        duplicate.put(KeyStroke.getKeyStroke(KeyEvent.VK_ADD, DEFAULT_MASK), 
+        duplicate.put(KeyStroke.getKeyStroke(KeyEvent.VK_ADD, DEFAULT_MASK),
                 KeyStroke.getKeyStroke(KeyEvent.VK_PLUS, DEFAULT_MASK));
 
         // file menu
@@ -603,7 +603,7 @@ public class ShortcutMgr {
         putDefaultShortcut(ACTION_OPEN_PROJECT, KeyStroke.getKeyStroke(
                 KeyEvent.VK_O, DEFAULT_MASK), new ActionOpenProject());
         putDefaultShortcut(ACTION_SAVE_PROJECT, KeyStroke.getKeyStroke(
-                KeyEvent.VK_S, DEFAULT_MASK), 
+                KeyEvent.VK_S, DEFAULT_MASK),
                 ProjectBrowser.getInstance().getSaveAction());
         putDefaultShortcut(ACTION_SAVE_PROJECT_AS, null,
                 new ActionSaveProjectAs());
@@ -616,7 +616,7 @@ public class ShortcutMgr {
         putDefaultShortcut(ACTION_PROJECT_SETTINGS, null,
                 new ActionProjectSettings());
         putDefaultShortcut(ACTION_PAGE_SETUP, null, new ActionPageSetup());
-        putDefaultShortcut(ACTION_SAVE_GRAPHICS, null, 
+        putDefaultShortcut(ACTION_SAVE_GRAPHICS, null,
                 new ActionSaveGraphics());
         putDefaultShortcut(ACTION_SAVE_ALL_GRAPHICS, null,
                 new ActionSaveAllGraphics());
@@ -626,7 +626,7 @@ public class ShortcutMgr {
 
         // edit menu
         putDefaultShortcut(ACTION_SELECT_ALL, KeyStroke.getKeyStroke(
-                KeyEvent.VK_A, DEFAULT_MASK), 
+                KeyEvent.VK_A, DEFAULT_MASK),
                 new ActionSelectAll());
         putDefaultShortcut(ACTION_REDO, KeyStroke.getKeyStroke(KeyEvent.VK_Y,
                 DEFAULT_MASK), ProjectActions.getInstance().getRedoAction());
@@ -636,7 +636,7 @@ public class ShortcutMgr {
                 new NavigateTargetForwardAction());
         putDefaultShortcut(ACTION_NAVIGATE_BACK, null,
                 new NavigateTargetBackAction());
-        putDefaultShortcut(ACTION_SELECT_INVERT, null, 
+        putDefaultShortcut(ACTION_SELECT_INVERT, null,
                 new ActionSelectInvert());
         putDefaultShortcut(ACTION_PERSPECTIVE_CONFIG, null,
                 new ActionPerspectiveConfig());
@@ -645,13 +645,13 @@ public class ShortcutMgr {
                 KeyEvent.VK_DELETE, 0), ProjectActions.getInstance()
                 .getRemoveFromDiagramAction());
         putDefaultShortcut(ACTION_DELETE_MODEL_ELEMENTS, KeyStroke
-                .getKeyStroke(KeyEvent.VK_DELETE, DEFAULT_MASK), 
+                .getKeyStroke(KeyEvent.VK_DELETE, DEFAULT_MASK),
                 ActionDeleteModelElements.getTargetFollower());
 
         // view menu
         putDefaultShortcut(ACTION_GO_TO_DIAGRAM, null, new ActionGotoDiagram());
         putDefaultShortcut(ACTION_ZOOM_RESET, null, new ZoomAction(0.0));
-        
+
         List gridActions = ActionAdjustGrid.createAdjustGridActions(true);
         Iterator i = gridActions.iterator();
         while (i.hasNext()) {
@@ -659,7 +659,7 @@ public class ShortcutMgr {
             putDefaultShortcut(ACTION_ADJUST_GRID + cmdAG.getValue("ID"),
                     (KeyStroke) cmdAG.getValue("shortcut"), cmdAG);
         }
-        
+
         List snapActions = ActionAdjustSnap.createAdjustSnapActions();
         i = snapActions.iterator();
         while (i.hasNext()) {
@@ -689,7 +689,7 @@ public class ShortcutMgr {
         putDefaultShortcut(ACTION_USE_CASE_DIAGRAM, null,
                 new ActionUseCaseDiagram());
         //#endif
-        putDefaultShortcut(ACTION_CLASS_DIAGRAM, null, 
+        putDefaultShortcut(ACTION_CLASS_DIAGRAM, null,
                 new ActionClassDiagram());
         //#if defined(SEQUENCEDIAGRAM)
         //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Statement
@@ -703,7 +703,7 @@ public class ShortcutMgr {
         //#endif
         //#if defined(STATEDIAGRAM)
         //@#$LPS-STATEDIAGRAM:GranularityType:Statement
-        putDefaultShortcut(ACTION_STATE_DIAGRAM, null, 
+        putDefaultShortcut(ACTION_STATE_DIAGRAM, null,
                 new ActionStateDiagram());
         //#endif
         //#if defined(ACTIVITYDIAGRAM)
@@ -724,14 +724,14 @@ public class ShortcutMgr {
                 new ActionGenerationSettings());
         putDefaultShortcut(ACTION_GENERATE_ALL_CLASSES, KeyStroke.getKeyStroke(
                 KeyEvent.VK_F7, 0), new ActionGenerateAll());
-        
+
         //#if defined(COGNITIVE)
+        //@#$LPS-COGNITIVE:GranularityType:Statement
+        //@#$LPS-COGNITIVE:Localization:InsideStaticBlock
         // critique menu
         // TODO: This dependency should be inverted with the Critics subsystem
         // registering its desired shortcuts with us - tfm
-        //@#$LPS-COGNITIVE:GranularityType:Statement
-        //@#$LPS-COGNITIVE:Localization:InsideStaticBlock
-        putDefaultShortcut(ACTION_AUTO_CRITIQUE, null, 
+        putDefaultShortcut(ACTION_AUTO_CRITIQUE, null,
                 new ActionAutoCritique());
         putDefaultShortcut(ACTION_OPEN_DECISIONS, null,
                 new ActionOpenDecisions());
@@ -741,7 +741,7 @@ public class ShortcutMgr {
         // help menu
         putDefaultShortcut(ACTION_SYSTEM_INFORMATION, null,
                 new ActionSystemInfo());
-        putDefaultShortcut(ACTION_ABOUT_ARGOUML, null, 
+        putDefaultShortcut(ACTION_ABOUT_ARGOUML, null,
                 new ActionAboutArgoUML());
 
         // arrange menu
@@ -754,10 +754,10 @@ public class ShortcutMgr {
         putDefaultShortcut(ACTION_ALIGN_BOTTOMS, null, new AlignAction(
                 AlignAction.ALIGN_BOTTOMS));
         putDefaultShortcut(ACTION_ALIGN_RIGHTS, KeyStroke.getKeyStroke(
-                KeyEvent.VK_R, DEFAULT_MASK), 
+                KeyEvent.VK_R, DEFAULT_MASK),
                 new AlignAction(AlignAction.ALIGN_RIGHTS));
         putDefaultShortcut(ACTION_ALIGN_LEFTS, KeyStroke.getKeyStroke(
-                KeyEvent.VK_L, DEFAULT_MASK), 
+                KeyEvent.VK_L, DEFAULT_MASK),
                 new AlignAction(AlignAction.ALIGN_LEFTS));
         putDefaultShortcut(ACTION_ALIGN_H_CENTERS, null, new AlignAction(
                 AlignAction.ALIGN_H_CENTERS));
@@ -795,8 +795,8 @@ public class ShortcutMgr {
                         ReorderAction.SEND_TO_BACK));
 
 	// help menu
-	putDefaultShortcut(ACTION_HELP, 
-                           KeyStroke.getKeyStroke( KeyEvent.VK_F1, 0), 
+	putDefaultShortcut(ACTION_HELP,
+                           KeyStroke.getKeyStroke( KeyEvent.VK_F1, 0),
                            new ActionHelp());
     }
 }

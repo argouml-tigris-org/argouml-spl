@@ -175,7 +175,7 @@ public class SequenceDiagramGraphModel
         } else {
             return false;
         }
-        
+
         // Both ends must be defined and nodes that are on the graph already.
         if (end0 == null || end1 == null) {
             //#if defined(LOGGING)
@@ -299,7 +299,7 @@ public class SequenceDiagramGraphModel
      * can point to a MessageCoordinates instance or to a Object
      * instance. On a sequence diagram you can only draw Messages. So
      * other edgeClasses then links are not supported.
-     * 
+     *
      * {@inheritDoc}
      * @see org.tigris.gef.graph.MutableGraphModel#connect(
      *          Object, Object, Class)
@@ -371,9 +371,7 @@ public class SequenceDiagramGraphModel
                 // not implemented yet
             }
         }
-        //#if defined(COLLABORATIONDIAGRAM) or defined(SEQUENCEDIAGRAM)
-        //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Statement
-        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Statement
+
         if (fromObject != null && toObject != null && action != null) {
             Object associationRole =
                 Model.getCollaborationsHelper().getAssociationRole(
@@ -401,12 +399,11 @@ public class SequenceDiagramGraphModel
             addEdge(message);
             edge = message;
         }
-        //#endif
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:BeforeReturn
         //@#$LPS-LOGGING:Localization:NestedIfdef-SEQUENCEDIAGRAM
-        if (edge == null) {            
+        if (edge == null) {
             LOG.debug("Incorrect edge");
         }
         //#endif
@@ -439,7 +436,7 @@ public class SequenceDiagramGraphModel
                 if (Model.getFacade().isAMessage(me)) {
                     removeEdge(me);
                 }
-            } 
+            }
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
             //@#$LPS-LOGGING:Localization:NestedStatement
@@ -513,14 +510,14 @@ public class SequenceDiagramGraphModel
     private static final long serialVersionUID = -3799402191353570488L;
 
     public void propertyChange(PropertyChangeEvent evt) {
-        
+
         if (evt instanceof DeleteInstanceEvent
                 && evt.getSource() == interaction) {
             Model.getPump().removeModelEventListener(this, interaction);
             interaction = null;
         }
         // TODO Auto-generated method stub
-        
+
     }
 }
 //#endif

@@ -46,10 +46,10 @@ public class ApplicationVersion {
         return version;
     }
 
-    //#if defined(COGNITIVE)    
-    //@#$LPS-LOGGING:GranularityType:Method    
+    //#if defined(COGNITIVE)
+    //@#$LPS-COGNITIVE:GranularityType:Method
     /**
-     * Retrieve the online HTML manual of ArgoUML for a critic. 
+     * Retrieve the online HTML manual of ArgoUML for a critic.
      * You need to append the critic class-name.
      * This syntax is synchronized with:
      * <ol>
@@ -63,15 +63,15 @@ public class ApplicationVersion {
      */
     public static String getManualForCritic() {
         return "http://argouml-stats.tigris.org/documentation/"
-            + "manual-" 
+            + "manual-"
             + stableVersion
             + "-single/argomanual.html#critics.";
     }
     //#endif
-    
+
     /**
      * Retrieve the URL of the online manual of ArgoUML.
-     * 
+     *
      * @return the URL
      */
     public static String getOnlineManual() {
@@ -81,7 +81,7 @@ public class ApplicationVersion {
 
     /**
      * Retrieve the URL of the location for online support for ArgoUML.
-     * 
+     *
      * @return the URL
      */
     public static String getOnlineSupport() {
