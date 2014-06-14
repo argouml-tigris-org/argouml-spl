@@ -296,7 +296,7 @@ class MemberList implements List<ProjectMember> {
 
         if (i == diagramMembers.size()) {
             //#if defined(COGNITIVE)
-            //@#$LPS-LOGGING:GranularityType:Statement
+            //@#$LPS-COGNITIVE:GranularityType:Statement
             if (todoList != null) {
                 return todoList;
             } else {
