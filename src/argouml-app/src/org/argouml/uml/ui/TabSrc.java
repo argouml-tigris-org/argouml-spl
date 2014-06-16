@@ -66,7 +66,7 @@ public class TabSrc
 
     private LanguageComboBox cbLang = new LanguageComboBox();
     private JComboBox cbFiles = new JComboBox();
-    
+
     /**
      * These predicates determine if this tab is enabled.
      */
@@ -103,7 +103,7 @@ public class TabSrc
         cbLang.removeItemListener(this);
     }
 
-    
+
     /**
      * Populate files[] and cbFiles, using the specified element.
      */
@@ -113,7 +113,7 @@ public class TabSrc
         //@#$LPS-LOGGING:Localization:StartMethod
 	LOG.debug("TabSrc.genText(): getting src for "
 		  + Model.getFacade().getName(elem));
-	//#endif
+        //#endif
 	Collection code =
 	    GeneratorHelper.generate(langName, elem, false);
 	cbFiles.removeAllItems();
@@ -146,7 +146,7 @@ public class TabSrc
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
-        LOG.debug("TabSrc   setting src for " 
+        LOG.debug("TabSrc   setting src for "
                 + Model.getFacade().getName(getTarget()));
         //#endif
         Object modelObject = getTarget();
@@ -220,12 +220,12 @@ public class TabSrc
 
     /**
      * This function allows extra predicates to be added.
-     * The predicates are conditions for cases where the 
-     * TabSrc should show source code. If a plugin module 
+     * The predicates are conditions for cases where the
+     * TabSrc should show source code. If a plugin module
      * is able to generate code for certain objects, for
      * which ArgoUML itself does not generate code, then
      * this function will allow the module to show the tab.
-     *  
+     *
      * @param predicate the predicate to be added
      */
     public static void addPredicate(Predicate predicate) {
