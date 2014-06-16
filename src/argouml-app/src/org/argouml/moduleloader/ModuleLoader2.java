@@ -81,10 +81,10 @@ public final class ModuleLoader2 {
      * The keys is the list of available modules.
      */
     private Map<ModuleInterface, ModuleStatus> moduleStatus;
-    
+
     /**
      * List of locations that we've searched and/or loaded modules
-     * from.  This is for information purposes only to allow it to 
+     * from.  This is for information purposes only to allow it to
      * be displayed in the settings Environment tab.
      */
     private List<String> extensionLocations = new ArrayList<String>();
@@ -342,7 +342,7 @@ public final class ModuleLoader2 {
 		        //#endif
 		    }
 		} else if (status.isEnabled() && !status.isSelected()) {
-		    try { 
+		    try {
 		        if (module.disable()) {
 		            someModuleSucceeded = true;
 		            status.setDisabled();
@@ -447,7 +447,7 @@ public final class ModuleLoader2 {
      */
     private void huntForModules() {
         //#if defined(SEQUENCEDIAGRAM)
-        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:MethodBody   
+        //@#$LPS-SEQUENCEDIAGRAM:GranularityType:MethodBody
         huntForModulesFromExtensionDir();
         // TODO: huntForModulesFromJavaWebStart();
 
@@ -473,14 +473,14 @@ public final class ModuleLoader2 {
         }
      //#endif
     }
-    
+
     /**
      * Find and enable modules from our "ext" directory and from the
      * directory specified in "argo.ext.dir".<p>
      */
     private void huntForModulesFromExtensionDir() {
         for (String location : extensionLocations) {
-            huntModulesFromNamedDirectory(location);            
+            huntModulesFromNamedDirectory(location);
         }
     }
 
@@ -522,14 +522,14 @@ public final class ModuleLoader2 {
             }
 
             try {
-                argoHome = java.net.URLDecoder.decode(argoHome, 
+                argoHome = java.net.URLDecoder.decode(argoHome,
                         Argo.getEncoding());
             } catch (UnsupportedEncodingException e) {
                 //#if defined(LOGGING)
                 //@#$LPS-LOGGING:GranularityType:Statement
                 //@#$LPS-LOGGING:Localization:NestedStatement
-                LOG.warn("Encoding " 
-                        + Argo.getEncoding() 
+                LOG.warn("Encoding "
+                        + Argo.getEncoding()
                         + " is unknown.");
                 //#endif
             }
@@ -556,7 +556,7 @@ public final class ModuleLoader2 {
             extensionLocations.add(extdir);
         }
     }
-    
+
     /**
      * Get the list of locations that we've loaded extension modules from.
      * @return A list of the paths we've loaded from.
@@ -626,8 +626,8 @@ public final class ModuleLoader2 {
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Statement
         //@#$LPS-LOGGING:Localization:StartMethod
-	LOG.info("Opening jar file " + file);
-	//#endif
+        LOG.info("Opening jar file " + file);
+        //#endif
         JarFile jarfile;
 	try {
 	    jarfile = new JarFile(file);
@@ -658,13 +658,13 @@ public final class ModuleLoader2 {
             //#endif
             return;
         }
-        
+
         // TODO: It is a performance drain to load all classes at startup time.
         // They should be lazy loaded when needed.  Instead of scanning all
-        // classes for ones which implement our loadable module interface, we 
+        // classes for ones which implement our loadable module interface, we
         // should use a manifest entry or a special name/name pattern that we
         // look for to find the single main module class to load here.  - tfm
-	
+
         boolean loadedClass = false;
         if (manifest == null) {
             Enumeration<JarEntry> jarEntries = jarfile.entries();
@@ -702,7 +702,7 @@ public final class ModuleLoader2 {
     /**
      * Process a JAR file entry, attempting to load anything that looks like a
      * Java class.
-     * 
+     *
      * @param classloader
      *            the classloader to use when loading the class
      * @param cname
@@ -778,7 +778,7 @@ public final class ModuleLoader2 {
             //#endif
             return false;
         }
-        
+
         if (!ModuleInterface.class.isAssignableFrom(moduleClass)) {
             //#if defined(LOGGING)
             //@#$LPS-LOGGING:GranularityType:Statement
