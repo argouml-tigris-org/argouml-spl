@@ -181,7 +181,7 @@ class ArgoAny implements Any, Type2 {
 		    && (Model.getFacade().getUpper(multiplicity) > 1
 			|| Model.getFacade().getUpper(multiplicity)
                            == -1)) {
-		    if (Model.getExtensionMechanismsHelper().hasStereotype(ae, 
+		    if (Model.getExtensionMechanismsHelper().hasStereotype(ae,
 		            "ordered")) {
                         isSequence = true;
                     } else {
@@ -288,14 +288,14 @@ class ArgoAny implements Any, Type2 {
 	    }
 	}
 
-        Collection returnParams = 
+        Collection returnParams =
             Model.getCoreHelper().getReturnParameters(foundOp);
         Object rp;
         if (returnParams.size() == 0) {
             rp = null;
         } else {
             rp = returnParams.iterator().next();
-        } 
+        }
         //#if defined(LOGGING)
         //@#$LPS-LOGGING:GranularityType:Statement
         if (returnParams.size() > 1)  {
@@ -374,7 +374,7 @@ class ArgoAny implements Any, Type2 {
         //@#$LPS-LOGGING:Localization:BeforeReturn
 	LOG.warn("ArgoAny.hasState() has been called, but is "
 		 + "not implemented yet!");
-	//#endif
+        //#endif
 	return false;
     }
 
