@@ -38,9 +38,9 @@ import org.apache.log4j.Logger;
 //#endif
 
 /**
- * This class provides a user configuration based upon 
+ * This class provides a user configuration based upon
  * the properties file "argo.user.properties" in the user's home directory.
- * 
+ *
  * @author Thierry Lach
  */
 class ConfigurationProperties extends ConfigurationHandler {
@@ -98,7 +98,7 @@ class ConfigurationProperties extends ConfigurationHandler {
      * @return a generic path string.
      */
     public String getDefaultPath() {
-        return System.getProperty("user.home") 
+        return System.getProperty("user.home")
             + "/.argouml/argo.user.properties";
     }
 
@@ -114,9 +114,9 @@ class ConfigurationProperties extends ConfigurationHandler {
 
     /**
      * Copy a file from source to destination.
-     * 
+     *
      * TODO: Perhaps belongs in a utilities class of some sort.
-     * 
+     *
      * @param source the source file to be copied
      * @param dest the destination file
      * @return success status flag
@@ -156,75 +156,75 @@ class ConfigurationProperties extends ConfigurationHandler {
 
     /**
      * Load the configuration from a specified location. <p>
-     * 
-     * Before version 0.25.4, ArgoUML used to store the 
+     *
+     * Before version 0.25.4, ArgoUML used to store the
      * properties file in a different location. A user who
-     * upgrades his ArgoUML to a newer version, 
+     * upgrades his ArgoUML to a newer version,
      * would not like to loose his settings.
-     * Hence, in case a properties file does not exist 
+     * Hence, in case a properties file does not exist
      * (in the new location),
      * this code attempts to copy the file
      * from the old location to the new location. <p>
-     * 
-     * In this upgrade case, the properties file 
+     *
+     * In this upgrade case, the properties file
      * is copied, not moved.
      * Rationale: see issue 5364. <p>
-     * 
+     *
      * The meaning of the return value is not simply success
-     * in loading the properties file, 
-     * but it indicates if we may save the properties 
+     * in loading the properties file,
+     * but it indicates if we may save the properties
      * on top of this file later.
-     * Hence, in case a properties file did not exist 
-     * (not in the new location, nor in the old location), 
-     * then a new empty file is created, 
+     * Hence, in case a properties file did not exist
+     * (not in the new location, nor in the old location),
+     * then a new empty file is created,
      * and in this case the return value is true. <p>
-     * 
+     *
      * Returning false here would mean that no properties
-     * will be saved at all. 
+     * will be saved at all.
      *
      * @param file  the path to load the configuration from.
      *
-     * @return true if the given file-location may be used 
+     * @return true if the given file-location may be used
      * for writing the properties later.
      */
     public boolean loadFile(File file) {
         try {
             if (!file.exists()) {
-                // check for the older properties file and 
+                // check for the older properties file and
                 // copy it over if possible
 
-                // This is done for compatibility with previous version: 
+                // This is done for compatibility with previous version:
                 // Move the argo.user.properties
                 // written before 0.25.4 to the new location, if it exists.
                 final File oldFile = new File(getOldDefaultPath());
-                if (oldFile.exists() && oldFile.isFile() && oldFile.canRead() 
+                if (oldFile.exists() && oldFile.isFile() && oldFile.canRead()
                         && file.getParentFile().canWrite()) {
-                    // copy to new file and let the regular load code 
+                    // copy to new file and let the regular load code
                     // do the actual load
                     final boolean result = copyFile(oldFile, file);
                     if (result) {
                         //#if defined(LOGGING)
                         //@#$LPS-LOGGING:GranularityType:Statement
                         //@#$LPS-LOGGING:Localization:NestedStatement
-                        LOG.info("Configuration copied from " 
+                        LOG.info("Configuration copied from "
                                 + oldFile + " to " + file);
                         //#endif
-                    } 
-                    //#if defined(LOGGING)
+                    }
                     else {
+                        //#if defined(LOGGING)
                         //@#$LPS-LOGGING:GranularityType:Statement
                         //@#$LPS-LOGGING:Localization:NestedStatement
                         LOG.error("Error copying old configuration to new, "
                              + "see previous log messages");
+                        //#endif
                     }
-                    //#endif
                 } else {
                     try {
                         file.createNewFile();
                     } catch (IOException e) {
                         //#if defined(LOGGING)
                         //@#$LPS-LOGGING:GranularityType:Statement
-                        LOG.error("Could not create the properties file at: " 
+                        LOG.error("Could not create the properties file at: "
                                 + file.getAbsolutePath(), e);
                         //#endif
                     }
