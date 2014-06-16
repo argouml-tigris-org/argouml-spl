@@ -213,7 +213,7 @@ public class TabResults
         relatedLabel.setText(
             Translator.localize("dialog.tabresults.related-items"));
     }
-    
+
     /*
      * @see org.argouml.ui.AbstractArgoJPanel#spawn()
      */
@@ -314,9 +314,9 @@ public class TabResults
 	}
 
 	if (d != null) {
-	    //#if defined(LOGGING)
-	    //@#$LPS-LOGGING:GranularityType:Statement
-	    //@#$LPS-LOGGING:Localization:NestedStatement
+            //#if defined(LOGGING)
+            //@#$LPS-LOGGING:GranularityType:Statement
+            //@#$LPS-LOGGING:Localization:NestedStatement
             LOG.debug("go " + sel + " in " + d.getName());
             //#endif
             TargetManager.getInstance().setTarget(d);
