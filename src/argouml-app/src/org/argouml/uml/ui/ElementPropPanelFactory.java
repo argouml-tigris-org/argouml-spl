@@ -120,9 +120,9 @@ import org.argouml.uml.ui.model_management.PropPanelPackage;
 import org.argouml.uml.ui.model_management.PropPanelSubsystem;
 
 /**
- * This factory creates the right PropPanelModelElement 
+ * This factory creates the right PropPanelModelElement
  * for a given UML Element. <p>
- * 
+ *
  * Constraint: Every UML element shall have a proppanel.
  * We throw an exception if one is not found.
  *
@@ -143,7 +143,7 @@ class ElementPropPanelFactory implements PropPanelFactory {
             } else if (Model.getFacade().isAStateVertex(element)) {
                 return getStateVertexPropPanel(element);
             } else if (Model.getFacade().isAActionSequence(element)) {
-                // This is not a subtype of PropPanelAction, 
+                // This is not a subtype of PropPanelAction,
                 // so it must come first
                 return new PropPanelActionSequence();
             } else if (Model.getFacade().isAAction(element)) {
@@ -175,12 +175,14 @@ class ElementPropPanelFactory implements PropPanelFactory {
                 return new PropPanelConstraint();
             } else if (Model.getFacade().isAEnumerationLiteral(element)) {
                 return new PropPanelEnumerationLiteral();
-           //#if defined(USECASEDIAGRAM)
-           //@#$LPS-USECASEDIAGRAM:GranularityType:Statement
-            } else if (Model.getFacade().isAExtensionPoint(element)) {
+            } else
+            //#if defined(USECASEDIAGRAM)
+            //@#$LPS-USECASEDIAGRAM:GranularityType:Statement
+            if (Model.getFacade().isAExtensionPoint(element)) {
                 return new PropPanelExtensionPoint();
+            } else
             //#endif
-            } else if (Model.getFacade().isAGuard(element)) {
+            if (Model.getFacade().isAGuard(element)) {
                 return new PropPanelGuard();
             } else if (Model.getFacade().isAInteraction(element)) {
                 return new PropPanelInteraction();
@@ -238,14 +240,13 @@ class ElementPropPanelFactory implements PropPanelFactory {
 
 
     private PropPanelClassifier getClassifierPropPanel(Object element) {
-        if 
         //#if defined(USECASEDIAGRAM)
         //@#$LPS-USECASEDIAGRAM:GranularityType:Statement
-        (Model.getFacade().isAActor(element)) {
+        if (Model.getFacade().isAActor(element)) {
             return new PropPanelActor();
-        } else if 
+        } else
         //#endif
-        (Model.getFacade().isAAssociationClass(element)) {
+        if (Model.getFacade().isAAssociationClass(element)) {
             return new PropPanelAssociationClass();
         } else if (Model.getFacade().isAClass(element)) {
             return new PropPanelClass();
@@ -277,18 +278,18 @@ class ElementPropPanelFactory implements PropPanelFactory {
             return new PropPanelUseCase();
         //#endif
         }
-        
+
         // TODO: A Subsystem is a Classifier, but its PropPanel is derived from
         // PropPanelPackage
 //        else if (Model.getFacade().isASubsystem(element)) {
 //            return new PropPanelSubsystem();
 //        }
 
-        
+
         // TODO: In UML 2.x Associations will fall through here because they
         // are Classifiers as well as Relationships, but we test for Classifier
         // first.
-        
+
         throw new IllegalArgumentException("Unsupported Element type");
     }
 
@@ -347,7 +348,7 @@ class ElementPropPanelFactory implements PropPanelFactory {
         }
         throw new IllegalArgumentException("Unsupported Action type");
     }
-    
+
     private PropPanelStateVertex getStateVertexPropPanel(Object element) {
         if (Model.getFacade().isAState(element)) {
             if (Model.getFacade().isACallState(element)) {
@@ -373,13 +374,13 @@ class ElementPropPanelFactory implements PropPanelFactory {
             }
         } else if (Model.getFacade().isAPseudostate(element)) {
             return new PropPanelPseudostate();
-        } 
+        }
         //#if defined(STATEDIAGRAM) or defined(ACTIVITYDIAGRAM)
         //@#$LPS-STATEDIAGRAM:GranularityType:Statement
         //@#$LPS-ACTIVITYDIAGRAM:GranularityType:Statement
         else if (Model.getFacade().isAStubState(element)) {
             return new PropPanelStubState();
-        }         
+        }
         else if (Model.getFacade().isASynchState(element)) {
             return new PropPanelSynchState();
         }

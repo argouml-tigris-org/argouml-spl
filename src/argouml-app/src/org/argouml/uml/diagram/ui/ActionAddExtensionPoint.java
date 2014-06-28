@@ -67,7 +67,7 @@ public final class ActionAddExtensionPoint extends UndoableAction {
         super(Translator.localize("button.new-extension-point"),
                 ResourceLoaderWrapper.lookupIcon("button.new-extension-point"));
         // Set the tooltip string:
-        putValue(Action.SHORT_DESCRIPTION, 
+        putValue(Action.SHORT_DESCRIPTION,
                 Translator.localize("button.new-extension-point"));
     }
 
@@ -115,13 +115,13 @@ public final class ActionAddExtensionPoint extends UndoableAction {
 	if (!(Model.getFacade().isAUseCase(target))) {
             return;
         }
-	//#if defined(USECASEDIAGRAM)
-	//@#$LPS-USECASEDIAGRAM:GranularityType:Statement
-	//@#$LPS-USECASEDIAGRAM:Localization:EndMethod
+        //#if defined(USECASEDIAGRAM)
+        //@#$LPS-USECASEDIAGRAM:GranularityType:Statement
+        //@#$LPS-USECASEDIAGRAM:Localization:EndMethod
         // Create a new extension point and make it the browser target. Then
         // invoke the superclass action method.
-	
-	Object ep =
+
+        Object ep =
             Model.getUseCasesFactory()
             	.buildExtensionPoint(target);
 

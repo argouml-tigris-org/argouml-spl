@@ -61,7 +61,7 @@ public class ActionAddMessagePredecessor extends AbstractActionAddModelElement2 
         //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Statement
         //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Statement
         //@#$LPS-COLLABORATIONDIAGRAM:Localization:BeforeReturn
-        //@#$LPS-SEQUENCEDIAGRAM:Localization:BeforeReturn           
+        //@#$LPS-SEQUENCEDIAGRAM:Localization:BeforeReturn
         vec.addAll(Model.getCollaborationsHelper()
                 .getAllPossiblePredecessors(getTarget()));
         //#endif
@@ -93,10 +93,10 @@ public class ActionAddMessagePredecessor extends AbstractActionAddModelElement2 
         //@#$LPS-COLLABORATIONDIAGRAM:GranularityType:Statement
         //@#$LPS-SEQUENCEDIAGRAM:GranularityType:Statement
         //@#$LPS-COLLABORATIONDIAGRAM:Localization:EndMethod
-        //@#$LPS-SEQUENCEDIAGRAM:Localization:EndMethod   	
-	Object message = getTarget();
-	Model.getCollaborationsHelper().setPredecessors(message, selected);
-	//#endif
+        //@#$LPS-SEQUENCEDIAGRAM:Localization:EndMethod
+        Object message = getTarget();
+        Model.getCollaborationsHelper().setPredecessors(message, selected);
+        //#endif
     }
 
     /**
